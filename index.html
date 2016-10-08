@@ -1,0 +1,22 @@
+---
+layout: list
+---
+
+  <h1 class="page-heading">Blogs</h1>
+
+  <ul class="index-list">
+    {% for blog in site.data.index %}
+    <li class="li-item">
+      <h3 class="li-item-title">
+        <a href="{{ blog.url }}">{{ blog.name }} </a>
+      </h3>
+      <p class="li-item-description">
+        {{blog.desc}}
+      </p>
+    </li>
+    {% endfor %}
+  </ul>
+
+
+
+
