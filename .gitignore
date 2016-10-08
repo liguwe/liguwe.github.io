@@ -1,6 +1,6 @@
 # Created by .ignore support plugin (hsz.mobi)
 ### Jekyll template
-_site/
+#_site/
 .sass-cache/
 .jekyll-metadata
-.idea
+.idea/
