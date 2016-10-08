@@ -1,22 +1,11 @@
 <header class="site-header ">
   <div class="li-container">
-    <div class="nav-item ">
-      <a class="header-nav-link" href="/">Blogs</a>
-    </div>
+    {% for item in site.data.header %}
     <div class="nav-item">
-      <a class="header-nav-link" href="/fe">Front-end</a>
+      <a class="header-nav-link" 
+          title="{{ item.desc}}"
+          href="{{ item.url }}">{{ item.name }}</a>
     </div>
-    <div class="nav-item">
-      <a class="header-nav-link" href="/cs">CS</a>
-    </div>
-    <div class="nav-item">
-      <a class="header-nav-link" href="/design">Design</a>
-    </div>
-    <div class="nav-item">
-      <a class="header-nav-link" href="/projects">Projects</a>
-    </div>
-    <div class="nav-item">
-      <a class="header-nav-link" href="/about">About</a>
-    </div>
+    {% endfor %}
   </div>
 </header>

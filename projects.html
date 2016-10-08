@@ -6,13 +6,13 @@ layout: list
 <h1 class="page-heading">Project</h1>
 
 <ul class="index-list">
-  {% for project in site.data.projects %}
+  {% for item in site.data.projects %}
   <li class="li-item">
     <h3 class="li-item-title">
-      <a href="{{ project.url }}">{{ project.name }} </a>
+      <a href="{{ item.url }}">{{ item.name }} </a>
     </h3>
     <p class="li-item-description">
-      {{project.desc}}
+      {{item.desc}}
     </p>
   </li>
   {% endfor %}
