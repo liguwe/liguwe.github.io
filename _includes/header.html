@@ -1,11 +1,11 @@
-<header class="site-header ">
-  <div class="li-container">
-    {% for item in site.data.header %}
-    <div class="nav-item">
-      <a class="header-nav-link" 
-          title="{{ item.desc}}"
-          href="{{ item.url }}">{{ item.name }}</a>
-    </div>
-    {% endfor %}
+<header class="header">
+  <div class="container clearfix">
+    <ul class="header-nav float-left" role="navigation">
+      {% for item in site.data.header %}
+      <li class="header-nav-item">
+        <a class="js-selected-navigation-item header-nav-link" title="{{ item.desc}}" href="{{ item.url }}">{{ item.name }}</a>
+      </li>
+      {% endfor %}
+    </ul>
   </div>
 </header>
