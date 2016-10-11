@@ -6,6 +6,7 @@ layout: list
 
   <ul class="index-list">
     {% for item in site.github.public_repositories %}
+    {{item}}
     <li class="li-item">
       <h3 class="li-item-title">
         <a href="{{ item.html_url }}">{{ item.name }} </a>
@@ -17,7 +18,7 @@ layout: list
     {% endfor %}
   </ul>
 
-  {{site.repository}}
+
 
 
 
