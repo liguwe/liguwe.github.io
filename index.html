@@ -5,10 +5,10 @@ layout: list
   <h1 class="page-heading">Blogs</h1>
 
   <ul class="index-list">
-    {% for item in site.data.index %}
+    {% for item in site.github.public_repositories %}
     <li class="li-item">
       <h3 class="li-item-title">
-        <a href="{{ item.url }}">{{ item.name }} </a>
+        <a href="{{ item.html_url }}">{{ item.name }} </a>
       </h3>
       <p class="li-item-description">
         {{item.desc}}
@@ -18,9 +18,7 @@ layout: list
   </ul>
 
 
-{% for repository in site.github.public_repositories %}
-  * [{{ repository.name }}]({{ repository.html_url }})
-{% endfor %}
+
 
 
 
