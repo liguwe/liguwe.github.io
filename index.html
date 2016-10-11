@@ -18,10 +18,9 @@ layout: list
   </ul>
 
 
-  <div>
-    <iframe src="https://github.com/likeastore/ngDialog/blob/master/README.md" frameborder="0"></iframe>
-  </div>
-
+{% for repository in site.github.public_repositories %}
+  * [{{ repository.name }}]({{ repository.html_url }})
+{% endfor %}
 
 
 
