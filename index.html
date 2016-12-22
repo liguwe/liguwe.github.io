@@ -5,8 +5,7 @@ layout: list
   <h1 class="page-heading">Blogs</h1>
 
   <ul class="index-list">
-    {% for item in site.github.public_repositories %}
-    {{item}}
+    {% for item in site.data.index %}
     <li class="li-item">
       <h3 class="li-item-title">
         <a href="{{ item.html_url }}">{{ item.name }} </a>
