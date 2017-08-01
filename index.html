@@ -2,13 +2,43 @@
 <html lang="en">
 
 <head>
-    <meta name="Keywords" content="李广卫的博客，李广卫的个人网站,liguwe,liguangwei,liguwe.com">
-    <meta name="description" content="李广卫的博客，李广卫的个人网站，liguwe.com,liguangwei,liguwe,liguwe's blog,liguangwei's blog,https://github.com/liguwe" />
-    <meta http-equiv="refresh" content="0; url=http://www.jianshu.com/u/fdb2c604ffeb" />
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>李广卫的博客(liguwe's blog,liguangwei's blog)</title>
+  <meta name="Keywords" content="李广卫的博客，李广卫的个人网站,liguwe,liguangwei,liguwe.com">
+  <meta name="description"
+        content="李广卫的博客，李广卫的个人网站，liguwe.com,liguangwei,liguwe,liguwe's blog,liguangwei's blog,https://github.com/liguwe"/>
+  <meta http-equiv="refresh" content="0; url=http://www.jianshu.com/u/fdb2c604ffeb"/>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script>
+    var pcURL = 'http://blog.liguwe.com';
+    var mobileUrl = 'http://www.jianshu.com/u/fdb2c604ffeb';
+    function mobile_device_detect(){
+      var thisOS=navigator.platform;
+      var check = navigator.appVersion;
+      var os=new Array("iPhone","iPod","iPad","android","Nokia","SymbianOS","Symbian","Windows Phone","Phone","Linux armv71","MAUI","UNTRUSTED/1.0","Windows CE","BlackBerry","IEMobile");
+      for(var i=0;i<os.length;i++){
+        if(thisOS.match(os[i])){
+          window.location=mobileUrl;
+          return;
+        }
+      }
+      if(navigator.platform.indexOf('iPad') != -1){
+        window.location=mobileUrl;
+        return;
+      }
+      if( check.match(/linux/i) ){
+        if(check.match(/mobile/i) || check.match(/X11/i)) {
+          window.location=mobileUrl;
+          return;
+        }
+      }
+      window.location=pcURL;
+    }
+    mobile_device_detect();
+
+  </script>
+  <title>李广卫的博客(liguwe's blog,liguangwei's blog)</title>
 </head>
 
 <body>
