@@ -16,7 +16,7 @@
     function mobile_device_detect(){
       var thisOS=navigator.platform;
       var check = navigator.appVersion;
-      var os=new Array("iPhone","iPod","iPad","android","Nokia","SymbianOS","Symbian","Windows Phone","Phone","Linux armv71","MAUI","UNTRUSTED/1.0","Windows CE","BlackBerry","IEMobile");
+      var os = new Array("iPhone","iPod","iPad","android","Nokia","SymbianOS","Symbian","Windows Phone","Phone","Linux armv71","MAUI","UNTRUSTED/1.0","Windows CE","BlackBerry","IEMobile");
       for(var i=0;i<os.length;i++){
         if(thisOS.match(os[i])){
           window.location=mobileUrl;
