@@ -1,0 +1,1 @@
+import{_ as e,o,c as s,a as n}from"./app.69d62d8a.js";const d=JSON.parse('{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":"yuque/fnbhwx34twlmw762.md"}'),t={name:"yuque/fnbhwx34twlmw762.md"},a=n("",15),r=[a];function p(l,i,c,h,m,y){return o(),s("div",null,r)}const g=e(t,[["render",p]]);export{d as __pageData,g as default};
