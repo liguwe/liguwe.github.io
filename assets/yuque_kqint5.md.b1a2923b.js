@@ -1,1 +1,0 @@
-import{_ as e,o as t,c as a}from"./app.9dce95d3.js";const m=JSON.parse('{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":"yuque/kqint5.md"}'),n={name:"yuque/kqint5.md"};function r(o,s,c,i,p,_){return t(),a("div")}const u=e(n,[["render",r]]);export{m as __pageData,u as default};
