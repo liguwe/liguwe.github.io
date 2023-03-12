@@ -6,6 +6,8 @@ tags: []
 categories: []
 ---
 
+# 前端框架设计里的 权衡 与 选择
+
 ## 1、命令式框架与声明式框架
 
 - `Jquery` 就是典型的 **命令式框架**，关注`过程`
@@ -21,21 +23,21 @@ categories: []
 
 ## 2、性能 与 维护性 的平衡
 
-![](https://blog-1310531898.cos.ap-beijing.myqcloud.com/FkPqA2uVDAvzBIJAIjpDRdxhQsyp.png)
+![](https://blog-1310531898.cos.ap-beijing.myqcloud.com//FkPqA2uVDAvzBIJAIjpDRdxhQsyp.png)
 
 ## 3、运行时 与 编译时
 
 ### 纯运行时，即直接`Render`即可
 
-![](https://blog-1310531898.cos.ap-beijing.myqcloud.com/Fg50nk8zQ1iWJbRkEKmVDMyNO4bZ.png)
+![](https://blog-1310531898.cos.ap-beijing.myqcloud.com//Fg50nk8zQ1iWJbRkEKmVDMyNO4bZ.png)
 
 ### 运行时 + 编译时 ，如下图，常用的 Vue/Angular/React 都属于这类框架
 
-### ![](https://blog-1310531898.cos.ap-beijing.myqcloud.com/Fq1iu91nLCuPM-w-HHaPfXLX9Bxh.png)
+### ![](https://blog-1310531898.cos.ap-beijing.myqcloud.com//Fq1iu91nLCuPM-w-HHaPfXLX9Bxh.png)
 
 ### 纯编译时框架，代表`Svelte`
 
-![](https://blog-1310531898.cos.ap-beijing.myqcloud.com/FhVc9j0TN1GNOR6dW_jxUMDygi_n.png)
+![](https://blog-1310531898.cos.ap-beijing.myqcloud.com//FhVc9j0TN1GNOR6dW_jxUMDygi_n.png)
 
 ## 4、原生 JS 操作 DOM、InnerHTML 与 虚拟 DOM 快慢对比
 
