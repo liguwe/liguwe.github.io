@@ -1,4 +1,4 @@
-<style lang="less">
+<style>
 .custom-block {
     width: 800px;
     margin:0 auto;
