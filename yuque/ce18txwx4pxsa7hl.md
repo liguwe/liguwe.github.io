@@ -1,5 +1,5 @@
 ---
-title: FE.002.如何检测一个页面是否在前台运行或如何检测页面的可见性
+title: FE.如何检测一个页面是否在前台运行或如何检测页面的可见性
 urlname: ce18txwx4pxsa7hl
 date: '2023-03-17 08:36:00 +0800'
 tags: []
@@ -14,11 +14,11 @@ categories: []
 
 ## 常见的几种方法
 
-1、document.hidden 只读属性
+1、`document.hidden` 只读属性
 
-2、document.visibilityState 检测页面可见性，返回只读属性
+2、`document.visibilityState` 检测页面可见性，返回只读属性
 
-3、visibilitychange 事件
+3、`visibilitychange` 事件
 
 4、`window.addEventListener()`方法监听 `blur` 和 `focus` 事件来检测页面是否在前台或后台。当页面失去焦点时触发 `blur` 事件，而当页面重新获得焦点时触发 `focus` 事件。亲测可以
 
@@ -35,5 +35,5 @@ categories: []
 
 注意兼容性，另外整体可以分为两类
 
-- document 上的`属性值`或者`具体方法`
+- `document`上的`属性值`或者`具体方法`
 - 监听特定事件
