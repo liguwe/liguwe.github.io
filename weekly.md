@@ -20,7 +20,7 @@ title: index
         v-for="(page,index) in pages.filter(page => page?.title?.indexOf('Weekly.') === 0)"
         :key="page.title + index">
         <a target="_blank"  :href="'/yuque/' + page.slug + '.html'" style="color:#10b981">
-            {{page.title}}（{{page.created_at.split('T')[0]}}）
+            {{{page.title}}（{{page.created_at.split('T')[0]}}）
         </a>
     </li>
 </ul>
