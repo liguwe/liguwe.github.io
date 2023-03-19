@@ -1,5 +1,5 @@
 ---
-title: 算法.斐波那契数列
+title: 0001.AL.斐波那契数列
 urlname: lrw0ogxz251sbto3
 date: '2023-03-11 17:27:43 +0800'
 tags: []

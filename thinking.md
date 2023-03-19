@@ -17,15 +17,17 @@ title: index
     padding: 24px;
     min-height: calc(100vh - 64px);">
     <li style="line-height: 36px;list-style: disc" 
-        v-for="(page,index) in pages.filter(page => page?.title?.includes('.FE.'))"
+        v-for="(page,index) in pages.filter(page => page?.title?.includes('.Thinking.'))"
         :key="page.title + index">
-          <a target="_blank"  :href="'/yuque/' + page.slug + '.html'" style="color:#10b981">
+        <a target="_blank"  :href="'/yuque/' + page.slug + '.html'" style="color:#10b981">
             {{page.title}}（{{page.created_at.split('T')[0]}}）
         </a>
     </li>
 </ul>
 
+
 <!--@include: ./include-style.md-->
+
 
 
 

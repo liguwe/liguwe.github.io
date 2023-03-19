@@ -1,5 +1,5 @@
 ---
-title: 994：FE.从Vue3 框架视角来看框架设计的 核心要素
+title: 0006.FE.从Vue3 框架视角来看框架设计的 核心要素
 urlname: edpatyel8wbhesin
 date: '2023-03-19 10:56:07 +0800'
 tags: []
@@ -53,7 +53,7 @@ categories: []
 }
 ```
 
-![](https://blog-1310531898.cos.ap-beijing.myqcloud.com/FlCHkMNBkulAN0La183XnAxpmDRJ.png)
+![](https://blog-1310531898.cos.ap-beijing.myqcloud.com//FlCHkMNBkulAN0La183XnAxpmDRJ.png)
 
 ## 5、支持特性开关
 

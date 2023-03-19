@@ -1,5 +1,5 @@
 ---
-title: 993：AL.最小硬币数
+title: 0007.AL.最小硬币数
 urlname: tvw0dc2bsg2qrk7r
 date: '2023-03-19 10:57:07 +0800'
 tags: []
@@ -10,7 +10,7 @@ categories: []
 
 > [https://leetcode.cn/problems/coin-change/](https://leetcode.cn/problems/coin-change/)
 
-![](https://blog-1310531898.cos.ap-beijing.myqcloud.com/FkATxOO47-UNZ5C3Fa025dwsRiQZ.png)
+![](https://blog-1310531898.cos.ap-beijing.myqcloud.com//FkATxOO47-UNZ5C3Fa025dwsRiQZ.png)
 
 ## 动态规划的要点
 
@@ -26,7 +26,7 @@ categories: []
 
 dp 函数：`dp(n)` 表示，输入一个目标金额 `n`，返回凑出目标金额 `n` 所需的最少硬币数量
 
-![](https://blog-1310531898.cos.ap-beijing.myqcloud.com/Fl-SIbQh_fIw4dTGa7M7m_wKaqQ2.png)
+![](https://blog-1310531898.cos.ap-beijing.myqcloud.com//Fl-SIbQh_fIw4dTGa7M7m_wKaqQ2.png)
 
 - 第一步、确定 `base case`  , 比如 需要 找零  `0元` ，那么最小的硬币数就为 `0`
 - 第二步、确定`状态`， 即`原问题和子问题`中会变化的`变量`  ， 所以，该问题的状态 为 `找零多少钱
@@ -78,7 +78,7 @@ function dp (coins, amount) {
 
 分析一下时间复杂度：
 
-![](https://blog-1310531898.cos.ap-beijing.myqcloud.com/FszSnAjjVLN28wzt7ncyjG2aUsJL.png)
+![](https://blog-1310531898.cos.ap-beijing.myqcloud.com//FszSnAjjVLN28wzt7ncyjG2aUsJL.png)
 
 下面看看算法复杂度：
 

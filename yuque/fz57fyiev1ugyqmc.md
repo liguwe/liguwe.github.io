@@ -1,5 +1,5 @@
 ---
-title: 995：FE.再说说回流及重绘
+title: 0005.FE.再说说回流及重绘
 urlname: fz57fyiev1ugyqmc
 date: '2023-03-18 12:33:19 +0800'
 tags: []
@@ -18,7 +18,7 @@ categories: []
 
 `重绘`不一定导致`重排`，但`重排`一定会导致`重绘`  ，如下图：
 
-![](https://blog-1310531898.cos.ap-beijing.myqcloud.com/FlZu3JAJ-ErmLOs8X8uUmwmwQjaL.png)
+![](https://blog-1310531898.cos.ap-beijing.myqcloud.com//FlZu3JAJ-ErmLOs8X8uUmwmwQjaL.png)
 
 ## 导致`回流`的场景
 
@@ -52,7 +52,7 @@ categories: []
 - 修改 `opacity` 和 `visibility` 属性通常只会触发`重绘`，而不会触发`回流`
 - 而修改 `display` 属性则可能会触发`回流和重绘`
 
-![](https://blog-1310531898.cos.ap-beijing.myqcloud.com/FoySReyxjWhXqWgg80FvDibCE246.png)
+![](https://blog-1310531898.cos.ap-beijing.myqcloud.com//FoySReyxjWhXqWgg80FvDibCE246.png)
 
 ## 修改  `left` 和 `right`
 
