@@ -87,7 +87,7 @@ categories: []
 
 所以，一共有 `8 种句子成分`，如下：
 
-![](https://blog-1310531898.cos.ap-beijing.myqcloud.com/FllX-9LQ3Z8laoYl4gWhlX3n3CyG.png)
+![](https://blog-1310531898.cos.ap-beijing.myqcloud.com//FllX-9LQ3Z8laoYl4gWhlX3n3CyG.png)
 
 > [!tip]
 > 插入语 解释如上图
