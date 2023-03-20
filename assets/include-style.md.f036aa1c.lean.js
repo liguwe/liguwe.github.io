@@ -1,0 +1,1 @@
+import{_ as e,o as t,c as n}from"./app.a18e47fc.js";const p=JSON.parse('{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":"include-style.md"}'),a={name:"include-style.md"};function c(s,o,r,_,l,d){return t(),n("div")}const m=e(a,[["render",c]]);export{p as __pageData,m as default};
