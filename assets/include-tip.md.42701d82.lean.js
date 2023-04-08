@@ -1,1 +1,0 @@
-import{_ as e,o as t,c as r,b as a}from"./app.c60a45d1.js";const g=JSON.parse('{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":"include-tip.md"}'),s={name:"include-tip.md"},i=a("",2),o=[i];function c(l,n,_,p,u,d){return t(),r("div",null,o)}const f=e(s,[["render",c]]);export{g as __pageData,f as default};
