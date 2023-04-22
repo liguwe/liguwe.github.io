@@ -1,0 +1,1 @@
+import{_ as s,o,c as a,O as l}from"./chunks/framework.97fbe135.js";const A=JSON.parse('{"title":"长列表渲染优化的一些思路","description":"","frontmatter":{},"headers":[],"relativePath":"post/0004.md"}'),n={name:"post/0004.md"},p=l("",28),e=[p];function c(t,r,F,y,D,i){return o(),a("div",null,e)}const C=s(n,[["render",c]]);export{A as __pageData,C as default};
