@@ -1,1 +1,0 @@
-import{_ as s,o as n,c as a,O as l}from"./chunks/framework.97fbe135.js";const i=JSON.parse('{"title":"All in EN + 影响力（管理+领导+专利+开源项目等）","description":"","frontmatter":{},"headers":[],"relativePath":"page/0024.md"}'),p={name:"page/0024.md"},o=l("",22),e=[o];function t(c,r,y,F,D,A){return n(),a("div",null,e)}const d=s(p,[["render",t]]);export{i as __pageData,d as default};
