@@ -1,0 +1,1 @@
+import{_ as l,o as a,c as i,O as e}from"./chunks/framework.97fbe135.js";const q=JSON.parse('{"title":"All in Fuck-FE-Interview + Back150","description":"","frontmatter":{},"headers":[],"relativePath":"page/0023.md"}'),r={name:"page/0023.md"},o=e("",82),h=[o];function t(n,c,d,s,u,p){return a(),i("div",null,h)}const k=l(r,[["render",t]]);export{q as __pageData,k as default};
