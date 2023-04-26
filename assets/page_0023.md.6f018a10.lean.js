@@ -1,1 +1,0 @@
-import{_ as a,o as l,c as i,O as e}from"./chunks/framework.97fbe135.js";const q=JSON.parse('{"title":"2023.M4.W4","description":"","frontmatter":{},"headers":[],"relativePath":"page/0023.md"}'),o={name:"page/0023.md"},h=e("",85),r=[h];function t(n,d,s,c,p,u){return l(),i("div",null,r)}const _=a(o,[["render",t]]);export{q as __pageData,_ as default};
