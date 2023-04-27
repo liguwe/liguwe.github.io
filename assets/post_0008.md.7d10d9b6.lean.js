@@ -1,0 +1,1 @@
+import{_ as e,o,c as a,V as c}from"./chunks/framework.9ad71fd6.js";const b=JSON.parse('{"title":"英语语法综述","description":"","frontmatter":{},"headers":[],"relativePath":"post/0008.md"}'),d={name:"post/0008.md"},p=c("",72),i=[p];function t(r,l,n,s,h,m){return o(),a("div",null,i)}const u=e(d,[["render",t]]);export{b as __pageData,u as default};
