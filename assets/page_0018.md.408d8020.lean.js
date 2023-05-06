@@ -1,1 +1,0 @@
-import{_ as s,o as n,c as a,V as l}from"./chunks/framework.9ad71fd6.js";const C=JSON.parse('{"title":"树数据结构的一些基本概念","description":"","frontmatter":{},"headers":[],"relativePath":"page/0018.md"}'),p={name:"page/0018.md"},o=l("",42),e=[o];function t(c,r,F,y,D,i){return n(),a("div",null,e)}const d=s(p,[["render",t]]);export{C as __pageData,d as default};

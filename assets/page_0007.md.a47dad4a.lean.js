@@ -1,1 +1,0 @@
-import{_ as s,o as n,c as a,V as l}from"./chunks/framework.9ad71fd6.js";const A=JSON.parse('{"title":"最小硬币数","description":"","frontmatter":{},"headers":[],"relativePath":"page/0007.md"}'),o={name:"page/0007.md"},p=l("",33),e=[p];function c(t,r,y,F,D,C){return n(),a("div",null,e)}const d=s(o,[["render",c]]);export{A as __pageData,d as default};
