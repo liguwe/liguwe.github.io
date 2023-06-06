@@ -1,1 +1,0 @@
-import{_ as e,o,c,V as a}from"./chunks/framework.c7a3dc5c.js";const m=JSON.parse('{"title":"从Vue3 框架视角来看前端框架设计需要的 核心要素","description":"","frontmatter":{},"headers":[],"relativePath":"post/0002.md"}'),d={name:"post/0002.md"},t=a("",31),s=[t];function l(r,p,n,i,u,h){return o(),c("div",null,s)}const D=e(d,[["render",l]]);export{m as __pageData,D as default};
