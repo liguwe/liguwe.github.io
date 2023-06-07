@@ -1,0 +1,1 @@
+import{_ as s,o as n,c as a,V as l}from"./chunks/framework.c7a3dc5c.js";const i=JSON.parse('{"title":"Vue 的响应式系统设计原理","description":"","frontmatter":{},"headers":[],"relativePath":"post/0012.md"}'),p={name:"post/0012.md"},o=l("",97),e=[o];function t(c,r,y,F,D,A){return n(),a("div",null,e)}const f=s(p,[["render",t]]);export{i as __pageData,f as default};
