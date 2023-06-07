@@ -1,1 +1,0 @@
-import{_ as s,o as a,c as n,V as o}from"./chunks/framework.c7a3dc5c.js";const A=JSON.parse('{"title":"为什么要用 setTimeout 模拟 setInterval ？","description":"","frontmatter":{},"headers":[],"relativePath":"post/0009.md"}'),l={name:"post/0009.md"},e=o("",17),p=[e];function t(c,r,i,F,y,D){return a(),n("div",null,p)}const C=s(l,[["render",t]]);export{A as __pageData,C as default};

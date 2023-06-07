@@ -1,0 +1,1 @@
+import{_ as e,o as a,c as o,V as t}from"./chunks/framework.c7a3dc5c.js";const m=JSON.parse('{"title":"前端框架设计里的 权衡 与 选择","description":"","frontmatter":{},"headers":[],"relativePath":"post/0006.md"}'),s={name:"post/0006.md"},l=t("",25),n=[l];function c(i,r,d,p,h,u){return a(),o("div",null,n)}const _=e(s,[["render",c]]);export{m as __pageData,_ as default};
