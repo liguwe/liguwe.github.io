@@ -1,0 +1,1 @@
+import{_ as s,o as n,c as a,V as l}from"./chunks/framework.5e406744.js";const A=JSON.parse('{"title":"Vue3 组件的实现原理","description":"","frontmatter":{},"headers":[],"relativePath":"post/0035.md","filePath":"post/0035.md"}'),p={name:"post/0035.md"},o=l("",61),e=[o];function t(c,r,y,F,D,i){return n(),a("div",null,e)}const d=s(p,[["render",t]]);export{A as __pageData,d as default};
