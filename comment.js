@@ -12,7 +12,7 @@ function addComment() {
             script.setAttribute('label', 'Comment');
             script.setAttribute('theme', 'github-dark');
             comment.appendChild(script);
-        }, 3000);
+        }, 2000);
     } catch (e) {
         console.log(e);
     }
