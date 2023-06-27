@@ -2,6 +2,7 @@ function addComment() {
     try {
         setTimeout(() => {
             const comment = document.querySelector('#liguwe-comment');
+            if (!comment) return;
             if (comment && comment.innerHTML) return;
             const script = document.createElement('script');
             script.src = 'https://utteranc.es/client.js';
