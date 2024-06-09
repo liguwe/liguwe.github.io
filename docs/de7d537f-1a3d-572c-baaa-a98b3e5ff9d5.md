@@ -2,7 +2,7 @@
 # 树的一些基本概念
 
 
-<Badge type="info">#算法/二叉树</Badge> <Badge type="danger">#算法/树</Badge>  <Badge type="warning">#算法/数据结构</Badge> <Badge type="tip">#2023/04/18</Badge>
+<Badge type="warning">#算法/二叉树</Badge> <Badge type="tip">#算法/树</Badge>  <Badge type="warning">#算法/数据结构</Badge> <Badge type="warning">#2023/04/18</Badge>
 
 
 ## 二叉树、满二叉树、完全二叉树
