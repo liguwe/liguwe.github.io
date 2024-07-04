@@ -3,9 +3,9 @@
 layout: home
 
 hero:
-  name: "liguwe's blog"
-  text: "个人知识库合集"
-  tagline: "语雀知识库 → 开源电子书"
+  name: liguwe's blog
+  text: 个人知识库合集
+  tagline: 语雀知识库 → 开源电子书
   #::::开源作品
   actions:
     - theme: brand

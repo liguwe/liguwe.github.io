@@ -9,16 +9,16 @@ export default defineConfig({
   head: [
     ['link', {rel: 'icon', href: '/logo.png'}],
     [
-      'script', {src: '/baidu.js', async: true, crossorigin: true},
+      'script', {src: '/baidu.js', async: '', crossorigin: ''},
     ],
     [
-      'script', {src: 'https://www.googletagmanager.com/gtag/js?id=G-CVQ2HFFN9E', async: true, crossorigin: true},
+      'script', {src: 'https://www.googletagmanager.com/gtag/js?id=G-CVQ2HFFN9E', async: '', crossorigin: ''},
     ],
     [
-      'script', {src: '/google.js', async: true, crossorigin: true},
+      'script', {src: '/google.js', async: '', crossorigin: ''},
     ],
     [
-      'script', {src: '/comment.js', defer: true, crossorigin: true},
+      'script', {src: '/comment.js', defer: '', crossorigin: ''},
     ],
   ],
   themeConfig: {
