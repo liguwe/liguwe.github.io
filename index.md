@@ -35,11 +35,6 @@ features:
     details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
     link: /markdown-examples
     target: _blank
-  - icon: 🚀
-    title: 《算法》
-    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
-    link: /markdown-examples
-    target: _blank
 ---
 
 <style>
