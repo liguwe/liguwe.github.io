@@ -3,13 +3,14 @@
     {
       "id": 173003513,
       "doc_id": "63bc4318-ebbc-5441-ab77-37d4705e0af2",
-      "updated": 1717914291000,
+      "updated": 1720175803000,
       "properties": {
-        "title": "算法/树/翻转二叉树的两种解题思路",
+        "title": "翻转二叉树的两种解题思路",
         "urlname": "63bc4318-ebbc-5441-ab77-37d4705e0af2",
         "date": "2024-06-09 14:24:50",
-        "updated": "2024-06-09 14:24:51",
-        "author": "liguwe"
+        "updated": "2024-07-05 18:36:43",
+        "author": "liguwe",
+        "description": "翻转二叉树的两种解题思路#算法/二叉树 #2023/06/13 二叉树的解题总纲 - 两种思路二叉树解题的思维模式分两类：1、是否可以通过遍历一遍二叉树得到答案？如果可以，用一个 traverse 函数配合外部变量来实现，这叫 「遍历」的思维模式。2、是否可以定义一个递归函数，通过子问题（子树..."
       },
       "catalog": [],
       "realName": "63bc4318-ebbc-5441-ab77-37d4705e0af2",
@@ -35,13 +36,14 @@
     {
       "id": 173003512,
       "doc_id": "7d001d04-2978-58c3-8b2d-2aedd27a1300",
-      "updated": 1717914290000,
+      "updated": 1720175739000,
       "properties": {
-        "title": "算法/树/二叉树算法概述",
+        "title": "二叉树算法概述",
         "urlname": "7d001d04-2978-58c3-8b2d-2aedd27a1300",
         "date": "2024-06-09 14:24:50",
-        "updated": "2024-06-09 14:24:50",
-        "author": "liguwe"
+        "updated": "2024-07-05 18:35:39",
+        "author": "liguwe",
+        "description": "二叉树算法概述#算法/二叉树  #2023/04/22总结二叉树的重要性：只要涉及到递归，就是二叉树问题理解二叉树的前后中序遍历，另外可参考 [[二叉树的前后中序遍历详解]] 二叉树的两种解法，另外可以参考  [[二叉树的两种解题思路]] 示例：二叉树的最大深度示例：求解二叉树的直径 层次遍历..."
       },
       "catalog": [],
       "realName": "7d001d04-2978-58c3-8b2d-2aedd27a1300",
@@ -67,12 +69,12 @@
     {
       "id": 172804453,
       "doc_id": "913adb85-34cd-560c-bd9f-f0190c86de81",
-      "updated": 1717736088000,
+      "updated": 1720177346000,
       "properties": {
         "title": "算法/基础/算法的复杂度评估",
         "urlname": "913adb85-34cd-560c-bd9f-f0190c86de81",
         "date": "2024-06-07 12:54:48",
-        "updated": "2024-06-07 12:54:48",
+        "updated": "2024-07-05 19:02:26",
         "author": "liguwe"
       },
       "catalog": [],
@@ -99,12 +101,12 @@
     {
       "id": 172664764,
       "doc_id": "b65bee99-7800-5167-88a2-c2cac2f47061",
-      "updated": 1717914289000,
+      "updated": 1720175753000,
       "properties": {
-        "title": "算法/树/二叉树的前后中序遍历详解",
+        "title": "算法：二叉树的前后中序遍历详解",
         "urlname": "b65bee99-7800-5167-88a2-c2cac2f47061",
         "date": "2024-06-06 13:50:13",
-        "updated": "2024-06-09 14:24:49",
+        "updated": "2024-07-05 18:35:53",
         "author": "liguwe",
         "description": "二叉树的前后中序遍历详解#算法/二叉树  #2023/06/06[!tip] 递归函数 可以理解为一个 指针递归顺序是不会变的前后中序是三个不同的时间点 或 时机[!tip] 移步至： #语雀  https://www.yuque.com/liguwe/agorithms/gzg70n2dxb..."
       },
@@ -116,14 +118,14 @@
     {
       "id": 172664762,
       "doc_id": "ca21f673-03b2-586c-b334-2ab48bec490e",
-      "updated": 1717914288000,
+      "updated": 1720175763000,
       "properties": {
-        "title": "算法/树/二叉树的两种解题思路",
+        "title": "算法：二叉树的两种解题思路",
         "urlname": "ca21f673-03b2-586c-b334-2ab48bec490e",
         "date": "2024-06-06 13:50:12",
-        "updated": "2024-06-09 14:24:48",
+        "updated": "2024-07-05 18:36:03",
         "author": "liguwe",
-        "description": "二叉树的两种解题思路#树/二叉树 #2023/06/06[!tip] 移步至： #语雀   https://www.yuque.com/liguwe/agorithms/nu6uaih4ff4cgdz9#cyYuw阅读原文https://liguwe.github.io/post/ca21f6..."
+        "description": "二叉树的两种解题思路#树/二叉树 #2023/06/06[!tip]移步至： #语雀   https://www.yuque.com/liguwe/agorithms/nu6uaih4ff4cgdz9#cyYuw阅读原文https://liguwe.github.io/post/ca21f67..."
       },
       "catalog": [],
       "realName": "ca21f673-03b2-586c-b334-2ab48bec490e",
@@ -167,12 +169,12 @@
     {
       "id": 172626939,
       "doc_id": "bd4652d6-8954-5bf3-804d-0118ed1007be",
-      "updated": 1717653014000,
+      "updated": 1720176619000,
       "properties": {
         "title": "算法/动态规划/最长递增子序列 + 俄罗斯套娃信封问题",
         "urlname": "bd4652d6-8954-5bf3-804d-0118ed1007be",
         "date": "2024-06-06 09:42:00",
-        "updated": "2024-06-06 13:50:14",
+        "updated": "2024-07-05 18:50:19",
         "author": "liguwe",
         "description": "最长递增子序列 + 俄罗斯套娃信封问题#算法/动态规划 #2023/03/24最长递增子序列https://leetcode.cn/problems/longest-increasing-subsequence/「子序列」和「子串」的区别：  子串一定是连续的，而子序列不一定是连续的数学归纳法..."
       },
@@ -184,12 +186,12 @@
     {
       "id": 172455737,
       "doc_id": "de7d537f-1a3d-572c-baaa-a98b3e5ff9d5",
-      "updated": 1717541656000,
+      "updated": 1720176595000,
       "properties": {
         "title": "算法/树/树的一些基本概念",
         "urlname": "de7d537f-1a3d-572c-baaa-a98b3e5ff9d5",
         "date": "2024-06-05 06:54:15",
-        "updated": "2024-06-05 06:54:16",
+        "updated": "2024-07-05 18:49:55",
         "author": "liguwe"
       },
       "catalog": [],
@@ -216,12 +218,12 @@
     {
       "id": 172455735,
       "doc_id": "5dad5968-f583-5c57-94ae-8aa692c69c9f",
-      "updated": 1717541655000,
+      "updated": 1720176585000,
       "properties": {
         "title": "算法/栈/翻转二叉树的两种解题思路",
         "urlname": "5dad5968-f583-5c57-94ae-8aa692c69c9f",
         "date": "2024-06-05 06:54:14",
-        "updated": "2024-06-05 06:54:15",
+        "updated": "2024-07-05 18:49:45",
         "author": "liguwe"
       },
       "catalog": [],
@@ -232,12 +234,12 @@
     {
       "id": 172416659,
       "doc_id": "bceddf09-da9a-5795-9c4c-bb640f2bc363",
-      "updated": 1717505453000,
+      "updated": 1720176582000,
       "properties": {
         "title": "翻译/什么才是真正做事？",
         "urlname": "bceddf09-da9a-5795-9c4c-bb640f2bc363",
         "date": "2024-06-04 20:50:53",
-        "updated": "2024-06-04 20:50:53",
+        "updated": "2024-07-05 18:49:42",
         "author": "liguwe"
       },
       "catalog": [],
@@ -248,12 +250,12 @@
     {
       "id": 172455734,
       "doc_id": "8fbc80cc-ba66-5782-9643-31f176a3fa0a",
-      "updated": 1717541654000,
+      "updated": 1720176574000,
       "properties": {
         "title": "算法/框架/计算机算法的框架思维",
         "urlname": "8fbc80cc-ba66-5782-9643-31f176a3fa0a",
         "date": "2024-06-05 06:54:13",
-        "updated": "2024-06-05 06:54:14",
+        "updated": "2024-07-05 18:49:34",
         "author": "liguwe"
       },
       "catalog": [],
@@ -280,12 +282,12 @@
     {
       "id": 172416655,
       "doc_id": "4424154a-634d-5616-9c99-cbda52018d09",
-      "updated": 1717505451000,
+      "updated": 1720177349000,
       "properties": {
         "title": "工具/Manico 快捷键",
         "urlname": "4424154a-634d-5616-9c99-cbda52018d09",
         "date": "2024-06-04 20:50:51",
-        "updated": "2024-06-04 20:50:51",
+        "updated": "2024-07-05 19:02:29",
         "author": "liguwe"
       },
       "catalog": [],
@@ -361,12 +363,12 @@
     {
       "id": 171574867,
       "doc_id": "3a29791d-db02-5ceb-acd0-6bf884b409ac",
-      "updated": 1717505453000,
+      "updated": 1720175725000,
       "properties": {
-        "title": "播客/张云帆的芒格之道",
+        "title": "张云帆的芒格之道",
         "urlname": "3a29791d-db02-5ceb-acd0-6bf884b409ac",
         "date": "2024-05-29 16:14:28",
-        "updated": "2024-06-04 20:50:53",
+        "updated": "2024-07-05 18:35:25",
         "author": "liguwe",
         "description": "张云帆的芒格之道#播客 #2023/12/23一、知行合一人生的终极哲学是芒格所说「知行合一」  ：不仅能把事情做成，人生也是自恰的对知识诚实，知道就是知道，不知道就是不知道。知之为知之，不知为不知读书不会带来改变，思考不会带来改变，只有读书后的思考而带来的行动才会对生活有改变（即知行合一）对..."
       },
@@ -394,49 +396,17 @@
     {
       "id": 171574865,
       "doc_id": "4214e1f9-529d-5201-b575-248082694fd6",
-      "updated": 1716970467000,
+      "updated": 1720175441000,
       "properties": {
         "title": "前端/性能/长列表或大数据渲染优化的一些思路",
         "urlname": "4214e1f9-529d-5201-b575-248082694fd6",
         "date": "2024-05-29 16:14:27",
-        "updated": "2024-05-29 16:14:27",
+        "updated": "2024-07-05 18:30:41",
         "author": "liguwe"
       },
       "catalog": [],
       "realName": "4214e1f9-529d-5201-b575-248082694fd6",
       "relativePath": "/4214e1f9-529d-5201-b575-248082694fd6.md",
-      "docPath": "post"
-    },
-    {
-      "id": 168216266,
-      "doc_id": "57d16359-e2d9-50e3-b2e5-471c38db8b70",
-      "updated": 1714780858000,
-      "properties": {
-        "title": "思维模型/机会成本与沉没成本",
-        "urlname": "57d16359-e2d9-50e3-b2e5-471c38db8b70",
-        "date": "2024-05-04 08:00:58",
-        "updated": "2024-05-04 08:00:58",
-        "author": "liguwe"
-      },
-      "catalog": [],
-      "realName": "57d16359-e2d9-50e3-b2e5-471c38db8b70",
-      "relativePath": "/57d16359-e2d9-50e3-b2e5-471c38db8b70.md",
-      "docPath": "post"
-    },
-    {
-      "id": 168216265,
-      "doc_id": "27b086f5-4074-5ef2-908e-f697b587b80b",
-      "updated": 1720153999000,
-      "properties": {
-        "title": "播客/Same as Ever 得到听书笔记",
-        "urlname": "27b086f5-4074-5ef2-908e-f697b587b80b",
-        "date": "2024-05-04 08:00:57",
-        "updated": "2024-07-05 12:33:19",
-        "author": "liguwe"
-      },
-      "catalog": [],
-      "realName": "27b086f5-4074-5ef2-908e-f697b587b80b",
-      "relativePath": "/27b086f5-4074-5ef2-908e-f697b587b80b.md",
       "docPath": "post"
     },
     {
@@ -588,13 +558,14 @@
     {
       "id": 168095550,
       "doc_id": "d7481637-7459-5c98-ba1f-5180cd1e0948",
-      "updated": 1714646669000,
+      "updated": 1720175691000,
       "properties": {
-        "title": "前端/JavaScript/实现批量请求并控制最大并发数",
+        "title": "实现批量请求并控制最大并发数",
         "urlname": "d7481637-7459-5c98-ba1f-5180cd1e0948",
         "date": "2024-05-02 18:44:28",
-        "updated": "2024-05-02 18:44:29",
-        "author": "liguwe"
+        "updated": "2024-07-05 18:34:51",
+        "author": "liguwe",
+        "description": "实现批量请求并控制最大并发数#前端 #2023/04/26 为了实现批量请求并控制最大并发数，我们可以使用Promise.all()和Promise.race()结合循环来实现先使用 setimeout 模拟请求/**  * 模拟异步请求  * @param {*} id 标识符  * @pa..."
       },
       "catalog": [],
       "realName": "d7481637-7459-5c98-ba1f-5180cd1e0948",
@@ -620,13 +591,14 @@
     {
       "id": 168095547,
       "doc_id": "465a49b1-860d-5c7e-a763-b8a32555fa08",
-      "updated": 1714646666000,
+      "updated": 1720176569000,
       "properties": {
         "title": "前端/CSS/回流和重绘",
         "urlname": "465a49b1-860d-5c7e-a763-b8a32555fa08",
         "date": "2024-05-02 18:44:26",
-        "updated": "2024-05-02 18:44:26",
-        "author": "liguwe"
+        "updated": "2024-07-05 18:49:29",
+        "author": "liguwe",
+        "description": "回流和重绘#2023/03/17  #前端 #css 先看定义回流（或重排）：布局引擎会根据各种样式计算每个盒子在页面上的大小与位置重绘：当计算好盒模型的位置、大小及其他属性后，浏览器根据每个盒子特性进行绘制重绘不一定导致重排，但重排一定会导致重绘  ，如下图：导致回流的场景页面首次渲染浏览器..."
       },
       "catalog": [],
       "realName": "465a49b1-860d-5c7e-a763-b8a32555fa08",
@@ -636,25 +608,883 @@
     {
       "id": 168095548,
       "doc_id": "e5a02817-e232-5d13-a043-455e0e4140e6",
-      "updated": 1714646667000,
+      "updated": 1720175808000,
       "properties": {
         "title": "前端/JavaScript/为什么要用 setTimeout 模拟 setInterval ？",
         "urlname": "e5a02817-e232-5d13-a043-455e0e4140e6",
         "date": "2024-05-02 18:44:27",
-        "updated": "2024-05-02 18:44:27",
+        "updated": "2024-07-05 18:36:48",
         "author": "liguwe"
       },
       "catalog": [],
       "realName": "e5a02817-e232-5d13-a043-455e0e4140e6",
       "relativePath": "/e5a02817-e232-5d13-a043-455e0e4140e6.md",
       "docPath": "post"
+    },
+    {
+      "id": 176716796,
+      "doc_id": "yaz2vh30ea8p7x43",
+      "updated": 1720178162000,
+      "properties": {
+        "title": "链表的双指针技巧合集",
+        "urlname": "yaz2vh30ea8p7x43",
+        "date": "2024-07-05 19:15:01",
+        "updated": "2024-07-05 19:16:02",
+        "author": "liguwe",
+        "description": "createAt: 2023-12-23 15:17:13updateAt: 2023-12-23category: 算法private: truedone: falsetags:#算法/链表第 1 题：合并两个有序单链表https://leetcode.cn/problems/merge-t..."
+      },
+      "catalog": [],
+      "realName": "yaz2vh30ea8p7x43",
+      "relativePath": "/yaz2vh30ea8p7x43.md",
+      "docPath": "post"
+    },
+    {
+      "id": 176716682,
+      "doc_id": "sth8xr4l6zogso84",
+      "updated": 1720177968000,
+      "properties": {
+        "title": "二维数组的遍历技巧汇总",
+        "urlname": "sth8xr4l6zogso84",
+        "date": "2024-07-05 19:12:33",
+        "updated": "2024-07-05 19:12:48",
+        "author": "liguwe",
+        "description": "updateAt: 2023.05.27category: 算法#算法 为什么需要单独聊聊这个话题动态规划 经常需要 遍历二维 dp 数组二维遍历，既考验编程能力，也考验一些技巧性思路如何初始化一个二维数组/**  * @description 初始化一个 3* 5 的二维数组，每个元素都是'..."
+      },
+      "catalog": [],
+      "realName": "sth8xr4l6zogso84",
+      "relativePath": "/sth8xr4l6zogso84.md",
+      "docPath": "post"
+    },
+    {
+      "id": 176716761,
+      "doc_id": "gi3twisq3b1337qz",
+      "updated": 1720178103000,
+      "properties": {
+        "title": "回溯算法",
+        "urlname": "gi3twisq3b1337qz",
+        "date": "2024-07-05 19:14:22",
+        "updated": "2024-07-05 19:15:03",
+        "author": "liguwe",
+        "description": "updateAt: 2023.05.18done: falsecategory: 算法#算法/回溯  #算法/DFS回溯算法 与 DFS 算法的区别？其实回溯算法和我们常说的 DFS 算法非常类似，本质上就是一种暴力穷举算法。回溯算法 和 DFS 算法的细微差别是：回溯算法是在遍历「树枝」DF..."
+      },
+      "catalog": [],
+      "realName": "gi3twisq3b1337qz",
+      "relativePath": "/gi3twisq3b1337qz.md",
+      "docPath": "post"
+    },
+    {
+      "id": 176716646,
+      "doc_id": "zbl1db669xvp4hiw",
+      "updated": 1720177942000,
+      "properties": {
+        "title": "动态规划解题思路",
+        "urlname": "zbl1db669xvp4hiw",
+        "date": "2024-07-05 19:11:48",
+        "updated": "2024-07-05 19:12:22",
+        "author": "liguwe",
+        "description": "createAt: 2024-01-14 11:15:24updateAt: 2024-01-14category: 算法private: truedone: falsetags:  - 算法  - 算法/动态规划动态规划问题的特点动态规划问题的一般形式就是求最值求解动态规划的核心问题是穷举 ..."
+      },
+      "catalog": [],
+      "realName": "zbl1db669xvp4hiw",
+      "relativePath": "/zbl1db669xvp4hiw.md",
+      "docPath": "post"
+    },
+    {
+      "id": 176716613,
+      "doc_id": "tq2kmctm5phirwhr",
+      "updated": 1720177906000,
+      "properties": {
+        "title": "常见的微前端方案及微前端的原理解析",
+        "urlname": "tq2kmctm5phirwhr",
+        "date": "2024-07-05 19:11:25",
+        "updated": "2024-07-05 19:11:46",
+        "author": "liguwe",
+        "description": "updateAt: 2023.04.22category: 前端done: false#前端 #微前端有一个基座应用（主应用），来管理各个子应用的加载和卸载微前端的核心三大原则就是：独立运行、独立部署、独立开发从single-spa  到 qiankun基于 WebComponent   的 ..."
+      },
+      "catalog": [],
+      "realName": "tq2kmctm5phirwhr",
+      "relativePath": "/tq2kmctm5phirwhr.md",
+      "docPath": "post"
+    },
+    {
+      "id": 176716591,
+      "doc_id": "tz3mi5gqs5l59ncv",
+      "updated": 1720177867000,
+      "properties": {
+        "title": "不同的子序列个数",
+        "urlname": "tz3mi5gqs5l59ncv",
+        "date": "2024-07-05 19:10:53",
+        "updated": "2024-07-05 19:11:07",
+        "author": "liguwe",
+        "description": "updateAt: 2023.04.11category: 算法#算法/动态规划 先回顾下动态规划的解题要点明确 dp 函数或数组的定义，从已知的「状态」中推导出未知的「状态」就算 dp 函数/数组的定义相同，如果你使用不同的「视角」进行穷举，效率也不见得是相同的，如下  [[#两种穷举的思路..."
+      },
+      "catalog": [],
+      "realName": "tz3mi5gqs5l59ncv",
+      "relativePath": "/tz3mi5gqs5l59ncv.md",
+      "docPath": "post"
+    },
+    {
+      "id": 176716492,
+      "doc_id": "dqb04ndy5of50yht",
+      "updated": 1720177773000,
+      "properties": {
+        "title": "Vue3 的异步组件与函数式组件的实现原理",
+        "urlname": "dqb04ndy5of50yht",
+        "date": "2024-07-05 19:09:03",
+        "updated": "2024-07-05 19:09:33",
+        "author": "liguwe",
+        "description": "#vue #2023/06/20 异步组件的概念即，以异步的方式加载并渲染一个组件。 这在页面性能 、 代码分割、服务端下发组件等场景中尤为重要异步组件的简易实现同步渲染，如下面的代码就是同步渲染的最简单的异步组件加载渲染实现：使用 import() 只异步渲染页面的某一部分关于 is，是vu..."
+      },
+      "catalog": [],
+      "realName": "dqb04ndy5of50yht",
+      "relativePath": "/dqb04ndy5of50yht.md",
+      "docPath": "post"
+    },
+    {
+      "id": 176716458,
+      "doc_id": "zqgi2fpd7ac3dqn4",
+      "updated": 1720177735000,
+      "properties": {
+        "title": "Vue中的编译器原理",
+        "urlname": "zqgi2fpd7ac3dqn4",
+        "date": "2024-07-05 19:08:35",
+        "updated": "2024-07-05 19:08:55",
+        "author": "liguwe",
+        "description": "#vue #2023/06/24 Vue.js 的模板和 JSX  都属于 领域特定语言(DSL)  编译器其实只是一段程序，它用来将“一种语言 A”  翻译成  “另外一 种语言 B”。完整的编译流程如下：教科书式的编译模型如上，但 Vue 模板有所不同，如下：[[#Vue.js 模板编译为..."
+      },
+      "catalog": [],
+      "realName": "zqgi2fpd7ac3dqn4",
+      "relativePath": "/zqgi2fpd7ac3dqn4.md",
+      "docPath": "post"
+    },
+    {
+      "id": 171575084,
+      "doc_id": "d89613a5-d295-55d4-8d69-2307afad7a8c",
+      "updated": 1720178348000,
+      "properties": {
+        "title": "2023/0085.提示词工程师",
+        "urlname": "d89613a5-d295-55d4-8d69-2307afad7a8c",
+        "date": "2024-05-29 16:15:31",
+        "updated": "2024-07-05 19:19:08",
+        "author": "liguwe"
+      },
+      "catalog": [],
+      "realName": "d89613a5-d295-55d4-8d69-2307afad7a8c",
+      "relativePath": "/d89613a5-d295-55d4-8d69-2307afad7a8c.md",
+      "docPath": "post"
+    },
+    {
+      "id": 171575073,
+      "doc_id": "f916d21d-9d57-52a7-baa0-99b6b24a5b58",
+      "updated": 1720178463000,
+      "properties": {
+        "title": "2023/0077.Vue3 中 Transition 组件的实现原理",
+        "urlname": "f916d21d-9d57-52a7-baa0-99b6b24a5b58",
+        "date": "2024-05-29 16:15:28",
+        "updated": "2024-07-05 19:21:03",
+        "author": "liguwe"
+      },
+      "catalog": [],
+      "realName": "f916d21d-9d57-52a7-baa0-99b6b24a5b58",
+      "relativePath": "/f916d21d-9d57-52a7-baa0-99b6b24a5b58.md",
+      "docPath": "post"
+    },
+    {
+      "id": 171575071,
+      "doc_id": "c752eefc-e877-529f-b4e8-78b03122840b",
+      "updated": 1720178418000,
+      "properties": {
+        "title": "2023/0076.Vue3中 Teleport 组件的实现原理",
+        "urlname": "c752eefc-e877-529f-b4e8-78b03122840b",
+        "date": "2024-05-29 16:15:28",
+        "updated": "2024-07-05 19:20:18",
+        "author": "liguwe"
+      },
+      "catalog": [],
+      "realName": "c752eefc-e877-529f-b4e8-78b03122840b",
+      "relativePath": "/c752eefc-e877-529f-b4e8-78b03122840b.md",
+      "docPath": "post"
+    },
+    {
+      "id": 171575068,
+      "doc_id": "cad548a6-9b49-5a8b-abad-3f4b0f3f70e0",
+      "updated": 1720178480000,
+      "properties": {
+        "title": "2023/0074.Vue3 中 keepAlive组件的实现原理",
+        "urlname": "cad548a6-9b49-5a8b-abad-3f4b0f3f70e0",
+        "date": "2024-05-29 16:15:26",
+        "updated": "2024-07-05 19:21:20",
+        "author": "liguwe"
+      },
+      "catalog": [],
+      "realName": "cad548a6-9b49-5a8b-abad-3f4b0f3f70e0",
+      "relativePath": "/cad548a6-9b49-5a8b-abad-3f4b0f3f70e0.md",
+      "docPath": "post"
+    },
+    {
+      "id": 171575050,
+      "doc_id": "17d00493-ed04-56d9-81b7-c6ed480aef12",
+      "updated": 1720178325000,
+      "properties": {
+        "title": "2023/0067.贪心算法",
+        "urlname": "17d00493-ed04-56d9-81b7-c6ed480aef12",
+        "date": "2024-05-29 16:15:22",
+        "updated": "2024-07-05 19:18:45",
+        "author": "liguwe"
+      },
+      "catalog": [],
+      "realName": "17d00493-ed04-56d9-81b7-c6ed480aef12",
+      "relativePath": "/17d00493-ed04-56d9-81b7-c6ed480aef12.md",
+      "docPath": "post"
+    },
+    {
+      "id": 171575035,
+      "doc_id": "09e22930-7d28-5390-8666-84f5e66295a1",
+      "updated": 1720178445000,
+      "properties": {
+        "title": "2023/0035.Vue3 组件的实现原理",
+        "urlname": "09e22930-7d28-5390-8666-84f5e66295a1",
+        "date": "2024-05-29 16:15:18",
+        "updated": "2024-07-05 19:20:45",
+        "author": "liguwe"
+      },
+      "catalog": [],
+      "realName": "09e22930-7d28-5390-8666-84f5e66295a1",
+      "relativePath": "/09e22930-7d28-5390-8666-84f5e66295a1.md",
+      "docPath": "post"
+    },
+    {
+      "id": 171575026,
+      "doc_id": "4655c4c8-d29d-514b-a335-0e93c6c12e50",
+      "updated": 1720178529000,
+      "properties": {
+        "title": "2023/0033.Vue3 的 Diff 算法",
+        "urlname": "4655c4c8-d29d-514b-a335-0e93c6c12e50",
+        "date": "2024-05-29 16:15:17",
+        "updated": "2024-07-05 19:22:09",
+        "author": "liguwe"
+      },
+      "catalog": [],
+      "realName": "4655c4c8-d29d-514b-a335-0e93c6c12e50",
+      "relativePath": "/4655c4c8-d29d-514b-a335-0e93c6c12e50.md",
+      "docPath": "post"
+    },
+    {
+      "id": 171575009,
+      "doc_id": "25ef9f60-aa9b-57cc-95c0-6ae8d7ff4923",
+      "updated": 1720178589000,
+      "properties": {
+        "title": "2023/0028.BFS 算法",
+        "urlname": "25ef9f60-aa9b-57cc-95c0-6ae8d7ff4923",
+        "date": "2024-05-29 16:15:13",
+        "updated": "2024-07-05 19:23:09",
+        "author": "liguwe"
+      },
+      "catalog": [],
+      "realName": "25ef9f60-aa9b-57cc-95c0-6ae8d7ff4923",
+      "relativePath": "/25ef9f60-aa9b-57cc-95c0-6ae8d7ff4923.md",
+      "docPath": "post"
+    },
+    {
+      "id": 171575022,
+      "doc_id": "483f2e40-8c18-5541-95ea-968c54cedc41",
+      "updated": 1720178496000,
+      "properties": {
+        "title": "2023/0032.vue3 的渲染器原理",
+        "urlname": "483f2e40-8c18-5541-95ea-968c54cedc41",
+        "date": "2024-05-29 16:15:16",
+        "updated": "2024-07-05 19:21:36",
+        "author": "liguwe"
+      },
+      "catalog": [],
+      "realName": "483f2e40-8c18-5541-95ea-968c54cedc41",
+      "relativePath": "/483f2e40-8c18-5541-95ea-968c54cedc41.md",
+      "docPath": "post"
+    },
+    {
+      "id": 171575001,
+      "doc_id": "8e54dc8d-2b77-5366-95c5-4b68e45e40a4",
+      "updated": 1720178562000,
+      "properties": {
+        "title": "2023/0023.Markdown格式编辑器研究",
+        "urlname": "8e54dc8d-2b77-5366-95c5-4b68e45e40a4",
+        "date": "2024-05-29 16:15:10",
+        "updated": "2024-07-05 19:22:42",
+        "author": "liguwe"
+      },
+      "catalog": [],
+      "realName": "8e54dc8d-2b77-5366-95c5-4b68e45e40a4",
+      "relativePath": "/8e54dc8d-2b77-5366-95c5-4b68e45e40a4.md",
+      "docPath": "post"
+    },
+    {
+      "id": 171574996,
+      "doc_id": "76a8c0da-c4b2-5964-ac1c-4e11591d34e3",
+      "updated": 1720178306000,
+      "properties": {
+        "title": "2023/0020.深入理解快速排序",
+        "urlname": "76a8c0da-c4b2-5964-ac1c-4e11591d34e3",
+        "date": "2024-05-29 16:15:08",
+        "updated": "2024-07-05 19:18:26",
+        "author": "liguwe"
+      },
+      "catalog": [],
+      "realName": "76a8c0da-c4b2-5964-ac1c-4e11591d34e3",
+      "relativePath": "/76a8c0da-c4b2-5964-ac1c-4e11591d34e3.md",
+      "docPath": "post"
+    },
+    {
+      "id": 171574998,
+      "doc_id": "6ab4f912-ece9-5cf0-88d8-4332c2412dfc",
+      "updated": 1720178306000,
+      "properties": {
+        "title": "2023/0021.深入理解归并排序",
+        "urlname": "6ab4f912-ece9-5cf0-88d8-4332c2412dfc",
+        "date": "2024-05-29 16:15:09",
+        "updated": "2024-07-05 19:18:26",
+        "author": "liguwe"
+      },
+      "catalog": [],
+      "realName": "6ab4f912-ece9-5cf0-88d8-4332c2412dfc",
+      "relativePath": "/6ab4f912-ece9-5cf0-88d8-4332c2412dfc.md",
+      "docPath": "post"
+    },
+    {
+      "id": 171574985,
+      "doc_id": "1a2c10e4-97bc-59e1-8558-4e23670617c8",
+      "updated": 1720178512000,
+      "properties": {
+        "title": "2023/0017.Vue3 的非原始值响应式方案",
+        "urlname": "1a2c10e4-97bc-59e1-8558-4e23670617c8",
+        "date": "2024-05-29 16:15:05",
+        "updated": "2024-07-05 19:21:52",
+        "author": "liguwe"
+      },
+      "catalog": [],
+      "realName": "1a2c10e4-97bc-59e1-8558-4e23670617c8",
+      "relativePath": "/1a2c10e4-97bc-59e1-8558-4e23670617c8.md",
+      "docPath": "post"
+    },
+    {
+      "id": 171574970,
+      "doc_id": "aa2716eb-8a4f-5bf4-85ed-7152a9a5aa2c",
+      "updated": 1720178394000,
+      "properties": {
+        "title": "2023/0014.最小编辑距离",
+        "urlname": "aa2716eb-8a4f-5bf4-85ed-7152a9a5aa2c",
+        "date": "2024-05-29 16:15:03",
+        "updated": "2024-07-05 19:19:54",
+        "author": "liguwe"
+      },
+      "catalog": [],
+      "realName": "aa2716eb-8a4f-5bf4-85ed-7152a9a5aa2c",
+      "relativePath": "/aa2716eb-8a4f-5bf4-85ed-7152a9a5aa2c.md",
+      "docPath": "post"
+    },
+    {
+      "id": 171574977,
+      "doc_id": "a51e78f1-ebc3-5f81-afe9-65570c3d2ebb",
+      "updated": 1720178368000,
+      "properties": {
+        "title": "2023/0015.下降路径的最小和",
+        "urlname": "a51e78f1-ebc3-5f81-afe9-65570c3d2ebb",
+        "date": "2024-05-29 16:15:03",
+        "updated": "2024-07-05 19:19:28",
+        "author": "liguwe"
+      },
+      "catalog": [],
+      "realName": "a51e78f1-ebc3-5f81-afe9-65570c3d2ebb",
+      "relativePath": "/a51e78f1-ebc3-5f81-afe9-65570c3d2ebb.md",
+      "docPath": "post"
+    },
+    {
+      "id": 171574966,
+      "doc_id": "3315d11d-10cf-5f53-89c4-fc98ce1c9dcc",
+      "updated": 1720178608000,
+      "properties": {
+        "title": "2023/0013.最优子结构原理 和 DP 数组遍历方向",
+        "urlname": "3315d11d-10cf-5f53-89c4-fc98ce1c9dcc",
+        "date": "2024-05-29 16:15:02",
+        "updated": "2024-07-05 19:23:28",
+        "author": "liguwe"
+      },
+      "catalog": [],
+      "realName": "3315d11d-10cf-5f53-89c4-fc98ce1c9dcc",
+      "relativePath": "/3315d11d-10cf-5f53-89c4-fc98ce1c9dcc.md",
+      "docPath": "post"
+    },
+    {
+      "id": 171574960,
+      "doc_id": "abb0fb9e-2a86-5309-a34e-7b4fce3a2cc2",
+      "updated": 1720178546000,
+      "properties": {
+        "title": "2023/0012.Vue 的响应式的系统设计原理",
+        "urlname": "abb0fb9e-2a86-5309-a34e-7b4fce3a2cc2",
+        "date": "2024-05-29 16:15:01",
+        "updated": "2024-07-05 19:22:26",
+        "author": "liguwe"
+      },
+      "catalog": [],
+      "realName": "abb0fb9e-2a86-5309-a34e-7b4fce3a2cc2",
+      "relativePath": "/abb0fb9e-2a86-5309-a34e-7b4fce3a2cc2.md",
+      "docPath": "post"
     }
   ],
   "catalog": [
     {
+      "uuid": "rN2b-pB-JxcncecO",
+      "type": "DOC",
+      "title": "2023/0013.最优子结构原理 和 DP 数组遍历方向",
+      "url": "3315d11d-10cf-5f53-89c4-fc98ce1c9dcc",
+      "slug": "3315d11d-10cf-5f53-89c4-fc98ce1c9dcc",
+      "id": 171574966,
+      "doc_id": 171574966,
+      "level": 0,
+      "depth": 1,
+      "open_window": 1,
+      "visible": 1,
+      "prev_uuid": "",
+      "sibling_uuid": "Ki_bPqIC0bHbL_-M",
+      "child_uuid": "",
+      "parent_uuid": "",
+      "_serializer": "v2.toc_item"
+    },
+    {
+      "uuid": "Ki_bPqIC0bHbL_-M",
+      "type": "DOC",
+      "title": "2023/0028.BFS 算法",
+      "url": "25ef9f60-aa9b-57cc-95c0-6ae8d7ff4923",
+      "slug": "25ef9f60-aa9b-57cc-95c0-6ae8d7ff4923",
+      "id": 171575009,
+      "doc_id": 171575009,
+      "level": 0,
+      "depth": 1,
+      "open_window": 1,
+      "visible": 1,
+      "prev_uuid": "rN2b-pB-JxcncecO",
+      "sibling_uuid": "rYyiTsZ0b3oIpN4P",
+      "child_uuid": "",
+      "parent_uuid": "",
+      "_serializer": "v2.toc_item"
+    },
+    {
+      "uuid": "rYyiTsZ0b3oIpN4P",
+      "type": "DOC",
+      "title": "2023/0023.Markdown格式编辑器研究",
+      "url": "8e54dc8d-2b77-5366-95c5-4b68e45e40a4",
+      "slug": "8e54dc8d-2b77-5366-95c5-4b68e45e40a4",
+      "id": 171575001,
+      "doc_id": 171575001,
+      "level": 0,
+      "depth": 1,
+      "open_window": 1,
+      "visible": 1,
+      "prev_uuid": "Ki_bPqIC0bHbL_-M",
+      "sibling_uuid": "k0qmImpgvJEXAj6z",
+      "child_uuid": "",
+      "parent_uuid": "",
+      "_serializer": "v2.toc_item"
+    },
+    {
+      "uuid": "k0qmImpgvJEXAj6z",
+      "type": "DOC",
+      "title": "2023/0012.Vue 的响应式的系统设计原理",
+      "url": "abb0fb9e-2a86-5309-a34e-7b4fce3a2cc2",
+      "slug": "abb0fb9e-2a86-5309-a34e-7b4fce3a2cc2",
+      "id": 171574960,
+      "doc_id": 171574960,
+      "level": 0,
+      "depth": 1,
+      "open_window": 1,
+      "visible": 1,
+      "prev_uuid": "rYyiTsZ0b3oIpN4P",
+      "sibling_uuid": "WmwCdPSXGfAj8ny5",
+      "child_uuid": "",
+      "parent_uuid": "",
+      "_serializer": "v2.toc_item"
+    },
+    {
+      "uuid": "WmwCdPSXGfAj8ny5",
+      "type": "DOC",
+      "title": "2023/0033.Vue3 的 Diff 算法",
+      "url": "4655c4c8-d29d-514b-a335-0e93c6c12e50",
+      "slug": "4655c4c8-d29d-514b-a335-0e93c6c12e50",
+      "id": 171575026,
+      "doc_id": 171575026,
+      "level": 0,
+      "depth": 1,
+      "open_window": 1,
+      "visible": 1,
+      "prev_uuid": "k0qmImpgvJEXAj6z",
+      "sibling_uuid": "bceW7hkzul9Yu2_t",
+      "child_uuid": "",
+      "parent_uuid": "",
+      "_serializer": "v2.toc_item"
+    },
+    {
+      "uuid": "bceW7hkzul9Yu2_t",
+      "type": "DOC",
+      "title": "2023/0017.Vue3 的非原始值响应式方案",
+      "url": "1a2c10e4-97bc-59e1-8558-4e23670617c8",
+      "slug": "1a2c10e4-97bc-59e1-8558-4e23670617c8",
+      "id": 171574985,
+      "doc_id": 171574985,
+      "level": 0,
+      "depth": 1,
+      "open_window": 1,
+      "visible": 1,
+      "prev_uuid": "WmwCdPSXGfAj8ny5",
+      "sibling_uuid": "gUsJvduhQd5_qX3W",
+      "child_uuid": "",
+      "parent_uuid": "",
+      "_serializer": "v2.toc_item"
+    },
+    {
+      "uuid": "gUsJvduhQd5_qX3W",
+      "type": "DOC",
+      "title": "2023/0032.vue3 的渲染器原理",
+      "url": "483f2e40-8c18-5541-95ea-968c54cedc41",
+      "slug": "483f2e40-8c18-5541-95ea-968c54cedc41",
+      "id": 171575022,
+      "doc_id": 171575022,
+      "level": 0,
+      "depth": 1,
+      "open_window": 1,
+      "visible": 1,
+      "prev_uuid": "bceW7hkzul9Yu2_t",
+      "sibling_uuid": "Q6f9Eu8zleLnPsDf",
+      "child_uuid": "",
+      "parent_uuid": "",
+      "_serializer": "v2.toc_item"
+    },
+    {
+      "uuid": "Q6f9Eu8zleLnPsDf",
+      "type": "DOC",
+      "title": "2023/0074.Vue3 中 keepAlive组件的实现原理",
+      "url": "cad548a6-9b49-5a8b-abad-3f4b0f3f70e0",
+      "slug": "cad548a6-9b49-5a8b-abad-3f4b0f3f70e0",
+      "id": 171575068,
+      "doc_id": 171575068,
+      "level": 0,
+      "depth": 1,
+      "open_window": 1,
+      "visible": 1,
+      "prev_uuid": "gUsJvduhQd5_qX3W",
+      "sibling_uuid": "OA9j7Qubnr4o8Nbo",
+      "child_uuid": "",
+      "parent_uuid": "",
+      "_serializer": "v2.toc_item"
+    },
+    {
+      "uuid": "OA9j7Qubnr4o8Nbo",
+      "type": "DOC",
+      "title": "2023/0077.Vue3 中 Transition 组件的实现原理",
+      "url": "f916d21d-9d57-52a7-baa0-99b6b24a5b58",
+      "slug": "f916d21d-9d57-52a7-baa0-99b6b24a5b58",
+      "id": 171575073,
+      "doc_id": 171575073,
+      "level": 0,
+      "depth": 1,
+      "open_window": 1,
+      "visible": 1,
+      "prev_uuid": "Q6f9Eu8zleLnPsDf",
+      "sibling_uuid": "dFNnKiBR5bMcyujM",
+      "child_uuid": "",
+      "parent_uuid": "",
+      "_serializer": "v2.toc_item"
+    },
+    {
+      "uuid": "dFNnKiBR5bMcyujM",
+      "type": "DOC",
+      "title": "2023/0035.Vue3 组件的实现原理",
+      "url": "09e22930-7d28-5390-8666-84f5e66295a1",
+      "slug": "09e22930-7d28-5390-8666-84f5e66295a1",
+      "id": 171575035,
+      "doc_id": 171575035,
+      "level": 0,
+      "depth": 1,
+      "open_window": 1,
+      "visible": 1,
+      "prev_uuid": "OA9j7Qubnr4o8Nbo",
+      "sibling_uuid": "W3lV8_KOVDEse8cF",
+      "child_uuid": "",
+      "parent_uuid": "",
+      "_serializer": "v2.toc_item"
+    },
+    {
+      "uuid": "W3lV8_KOVDEse8cF",
+      "type": "DOC",
+      "title": "2023/0076.Vue3中 Teleport 组件的实现原理",
+      "url": "c752eefc-e877-529f-b4e8-78b03122840b",
+      "slug": "c752eefc-e877-529f-b4e8-78b03122840b",
+      "id": 171575071,
+      "doc_id": 171575071,
+      "level": 0,
+      "depth": 1,
+      "open_window": 1,
+      "visible": 1,
+      "prev_uuid": "dFNnKiBR5bMcyujM",
+      "sibling_uuid": "ADGdYa68jRSK19ih",
+      "child_uuid": "",
+      "parent_uuid": "",
+      "_serializer": "v2.toc_item"
+    },
+    {
+      "uuid": "ADGdYa68jRSK19ih",
+      "type": "DOC",
+      "title": "2023/0014.最小编辑距离",
+      "url": "aa2716eb-8a4f-5bf4-85ed-7152a9a5aa2c",
+      "slug": "aa2716eb-8a4f-5bf4-85ed-7152a9a5aa2c",
+      "id": 171574970,
+      "doc_id": 171574970,
+      "level": 0,
+      "depth": 1,
+      "open_window": 1,
+      "visible": 1,
+      "prev_uuid": "W3lV8_KOVDEse8cF",
+      "sibling_uuid": "qrh16Gr5hIloBp-V",
+      "child_uuid": "",
+      "parent_uuid": "",
+      "_serializer": "v2.toc_item"
+    },
+    {
+      "uuid": "qrh16Gr5hIloBp-V",
+      "type": "DOC",
+      "title": "2023/0015.下降路径的最小和",
+      "url": "a51e78f1-ebc3-5f81-afe9-65570c3d2ebb",
+      "slug": "a51e78f1-ebc3-5f81-afe9-65570c3d2ebb",
+      "id": 171574977,
+      "doc_id": 171574977,
+      "level": 0,
+      "depth": 1,
+      "open_window": 1,
+      "visible": 1,
+      "prev_uuid": "ADGdYa68jRSK19ih",
+      "sibling_uuid": "s6QsQHF9S-RhOV5V",
+      "child_uuid": "",
+      "parent_uuid": "",
+      "_serializer": "v2.toc_item"
+    },
+    {
+      "uuid": "s6QsQHF9S-RhOV5V",
+      "type": "DOC",
+      "title": "2023/0085.提示词工程师",
+      "url": "d89613a5-d295-55d4-8d69-2307afad7a8c",
+      "slug": "d89613a5-d295-55d4-8d69-2307afad7a8c",
+      "id": 171575084,
+      "doc_id": 171575084,
+      "level": 0,
+      "depth": 1,
+      "open_window": 1,
+      "visible": 1,
+      "prev_uuid": "qrh16Gr5hIloBp-V",
+      "sibling_uuid": "bc9i6I2ywGbAkNGu",
+      "child_uuid": "",
+      "parent_uuid": "",
+      "_serializer": "v2.toc_item"
+    },
+    {
+      "uuid": "bc9i6I2ywGbAkNGu",
+      "type": "DOC",
+      "title": "2023/0067.贪心算法",
+      "url": "17d00493-ed04-56d9-81b7-c6ed480aef12",
+      "slug": "17d00493-ed04-56d9-81b7-c6ed480aef12",
+      "id": 171575050,
+      "doc_id": 171575050,
+      "level": 0,
+      "depth": 1,
+      "open_window": 1,
+      "visible": 1,
+      "prev_uuid": "s6QsQHF9S-RhOV5V",
+      "sibling_uuid": "n25DKsligXmAG3U5",
+      "child_uuid": "",
+      "parent_uuid": "",
+      "_serializer": "v2.toc_item"
+    },
+    {
+      "uuid": "n25DKsligXmAG3U5",
+      "type": "DOC",
+      "title": "2023/0020.深入理解快速排序",
+      "url": "76a8c0da-c4b2-5964-ac1c-4e11591d34e3",
+      "slug": "76a8c0da-c4b2-5964-ac1c-4e11591d34e3",
+      "id": 171574996,
+      "doc_id": 171574996,
+      "level": 0,
+      "depth": 1,
+      "open_window": 1,
+      "visible": 1,
+      "prev_uuid": "bc9i6I2ywGbAkNGu",
+      "sibling_uuid": "d05slRMW392kP4h9",
+      "child_uuid": "",
+      "parent_uuid": "",
+      "_serializer": "v2.toc_item"
+    },
+    {
+      "uuid": "d05slRMW392kP4h9",
+      "type": "DOC",
+      "title": "2023/0021.深入理解归并排序",
+      "url": "6ab4f912-ece9-5cf0-88d8-4332c2412dfc",
+      "slug": "6ab4f912-ece9-5cf0-88d8-4332c2412dfc",
+      "id": 171574998,
+      "doc_id": 171574998,
+      "level": 0,
+      "depth": 1,
+      "open_window": 1,
+      "visible": 1,
+      "prev_uuid": "n25DKsligXmAG3U5",
+      "sibling_uuid": "bwVfrKjDCdEcuPzu",
+      "child_uuid": "",
+      "parent_uuid": "",
+      "_serializer": "v2.toc_item"
+    },
+    {
+      "uuid": "bwVfrKjDCdEcuPzu",
+      "type": "DOC",
+      "title": "链表的双指针技巧合集",
+      "url": "yaz2vh30ea8p7x43",
+      "slug": "yaz2vh30ea8p7x43",
+      "id": 176716796,
+      "doc_id": 176716796,
+      "level": 0,
+      "depth": 1,
+      "open_window": 1,
+      "visible": 1,
+      "prev_uuid": "d05slRMW392kP4h9",
+      "sibling_uuid": "UXfd19LBTh4-zo3t",
+      "child_uuid": "",
+      "parent_uuid": "",
+      "_serializer": "v2.toc_item"
+    },
+    {
+      "uuid": "UXfd19LBTh4-zo3t",
+      "type": "DOC",
+      "title": "回溯算法",
+      "url": "gi3twisq3b1337qz",
+      "slug": "gi3twisq3b1337qz",
+      "id": 176716761,
+      "doc_id": 176716761,
+      "level": 0,
+      "depth": 1,
+      "open_window": 1,
+      "visible": 1,
+      "prev_uuid": "bwVfrKjDCdEcuPzu",
+      "sibling_uuid": "FwTWRM6mXXtHGaTY",
+      "child_uuid": "",
+      "parent_uuid": "",
+      "_serializer": "v2.toc_item"
+    },
+    {
+      "uuid": "FwTWRM6mXXtHGaTY",
+      "type": "DOC",
+      "title": "二维数组的遍历技巧汇总",
+      "url": "sth8xr4l6zogso84",
+      "slug": "sth8xr4l6zogso84",
+      "id": 176716682,
+      "doc_id": 176716682,
+      "level": 0,
+      "depth": 1,
+      "open_window": 1,
+      "visible": 1,
+      "prev_uuid": "UXfd19LBTh4-zo3t",
+      "sibling_uuid": "2H6SV5eF3Gn_0Xri",
+      "child_uuid": "",
+      "parent_uuid": "",
+      "_serializer": "v2.toc_item"
+    },
+    {
+      "uuid": "2H6SV5eF3Gn_0Xri",
+      "type": "DOC",
+      "title": "动态规划解题思路",
+      "url": "zbl1db669xvp4hiw",
+      "slug": "zbl1db669xvp4hiw",
+      "id": 176716646,
+      "doc_id": 176716646,
+      "level": 0,
+      "depth": 1,
+      "open_window": 1,
+      "visible": 1,
+      "prev_uuid": "FwTWRM6mXXtHGaTY",
+      "sibling_uuid": "yY55UJuz3gHfie3W",
+      "child_uuid": "",
+      "parent_uuid": "",
+      "_serializer": "v2.toc_item"
+    },
+    {
+      "uuid": "yY55UJuz3gHfie3W",
+      "type": "DOC",
+      "title": "常见的微前端方案及微前端的原理解析",
+      "url": "tq2kmctm5phirwhr",
+      "slug": "tq2kmctm5phirwhr",
+      "id": 176716613,
+      "doc_id": 176716613,
+      "level": 0,
+      "depth": 1,
+      "open_window": 1,
+      "visible": 1,
+      "prev_uuid": "2H6SV5eF3Gn_0Xri",
+      "sibling_uuid": "0JqErifbZuKvvowQ",
+      "child_uuid": "",
+      "parent_uuid": "",
+      "_serializer": "v2.toc_item"
+    },
+    {
+      "uuid": "0JqErifbZuKvvowQ",
+      "type": "DOC",
+      "title": "不同的子序列个数",
+      "url": "tz3mi5gqs5l59ncv",
+      "slug": "tz3mi5gqs5l59ncv",
+      "id": 176716591,
+      "doc_id": 176716591,
+      "level": 0,
+      "depth": 1,
+      "open_window": 1,
+      "visible": 1,
+      "prev_uuid": "yY55UJuz3gHfie3W",
+      "sibling_uuid": "OYiOvnEHf2bNyLff",
+      "child_uuid": "",
+      "parent_uuid": "",
+      "_serializer": "v2.toc_item"
+    },
+    {
+      "uuid": "OYiOvnEHf2bNyLff",
+      "type": "DOC",
+      "title": "Vue3 的异步组件与函数式组件的实现原理",
+      "url": "dqb04ndy5of50yht",
+      "slug": "dqb04ndy5of50yht",
+      "id": 176716492,
+      "doc_id": 176716492,
+      "level": 0,
+      "depth": 1,
+      "open_window": 1,
+      "visible": 1,
+      "prev_uuid": "0JqErifbZuKvvowQ",
+      "sibling_uuid": "8LFzJ0xUC77ghhEX",
+      "child_uuid": "",
+      "parent_uuid": "",
+      "_serializer": "v2.toc_item"
+    },
+    {
+      "uuid": "8LFzJ0xUC77ghhEX",
+      "type": "DOC",
+      "title": "Vue中的编译器原理",
+      "url": "zqgi2fpd7ac3dqn4",
+      "slug": "zqgi2fpd7ac3dqn4",
+      "id": 176716458,
+      "doc_id": 176716458,
+      "level": 0,
+      "depth": 1,
+      "open_window": 1,
+      "visible": 1,
+      "prev_uuid": "OYiOvnEHf2bNyLff",
+      "sibling_uuid": "JxxCK5aUtrl5bp5D",
+      "child_uuid": "",
+      "parent_uuid": "",
+      "_serializer": "v2.toc_item"
+    },
+    {
       "uuid": "JxxCK5aUtrl5bp5D",
       "type": "DOC",
-      "title": "算法/树/翻转二叉树的两种解题思路",
+      "title": "翻转二叉树的两种解题思路",
       "url": "63bc4318-ebbc-5441-ab77-37d4705e0af2",
       "slug": "63bc4318-ebbc-5441-ab77-37d4705e0af2",
       "id": 173003513,
@@ -663,7 +1493,7 @@
       "depth": 1,
       "open_window": 1,
       "visible": 1,
-      "prev_uuid": "",
+      "prev_uuid": "8LFzJ0xUC77ghhEX",
       "sibling_uuid": "0Eu8E_zN12z1DP3C",
       "child_uuid": "",
       "parent_uuid": "",
@@ -672,7 +1502,7 @@
     {
       "uuid": "0Eu8E_zN12z1DP3C",
       "type": "DOC",
-      "title": "算法/树/二叉树算法概述",
+      "title": "二叉树算法概述",
       "url": "7d001d04-2978-58c3-8b2d-2aedd27a1300",
       "slug": "7d001d04-2978-58c3-8b2d-2aedd27a1300",
       "id": 173003512,
@@ -690,7 +1520,7 @@
     {
       "uuid": "8-rjdmC7TsH2MYAB",
       "type": "DOC",
-      "title": "算法/树/二叉树的前后中序遍历详解",
+      "title": "算法：二叉树的前后中序遍历详解",
       "url": "b65bee99-7800-5167-88a2-c2cac2f47061",
       "slug": "b65bee99-7800-5167-88a2-c2cac2f47061",
       "id": 172664764,
@@ -708,7 +1538,7 @@
     {
       "uuid": "BHHpp24J7Udh9nIt",
       "type": "DOC",
-      "title": "算法/树/二叉树的两种解题思路",
+      "title": "算法：二叉树的两种解题思路",
       "url": "ca21f673-03b2-586c-b334-2ab48bec490e",
       "slug": "ca21f673-03b2-586c-b334-2ab48bec490e",
       "id": 172664762,
@@ -942,7 +1772,7 @@
     {
       "uuid": "Muyg_khqJmEGHFxb",
       "type": "DOC",
-      "title": "播客/张云帆的芒格之道",
+      "title": "张云帆的芒格之道",
       "url": "3a29791d-db02-5ceb-acd0-6bf884b409ac",
       "slug": "3a29791d-db02-5ceb-acd0-6bf884b409ac",
       "id": 171574867,
@@ -1302,7 +2132,7 @@
     {
       "uuid": "IAeHIWarwSN0dxTG",
       "type": "DOC",
-      "title": "前端/JavaScript/实现批量请求并控制最大并发数",
+      "title": "实现批量请求并控制最大并发数",
       "url": "d7481637-7459-5c98-ba1f-5180cd1e0948",
       "slug": "d7481637-7459-5c98-ba1f-5180cd1e0948",
       "id": 168095550,
