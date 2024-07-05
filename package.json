@@ -13,7 +13,8 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "vitepress": "^1.2.3"
+    "vitepress": "^1.2.3",
+    "@elog/cli": "^0.14.1"
   },
   "dependencies": {
     "vue": "^3.4.31"
