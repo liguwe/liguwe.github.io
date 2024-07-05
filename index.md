@@ -18,7 +18,7 @@ hero:
       target: _blank
     - theme: alt
       text: Github 中查看
-      link: https://github.com/liguwe
+      link: https://github.com/liguwe/liguwe.github.io
       target: _blank
   image:
     src: /Books_icon.svg

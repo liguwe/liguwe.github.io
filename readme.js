@@ -30,8 +30,20 @@ const block = [
             {
                 text: '📗 algorithm-book',
                 detail: '算法与数据结构，持续构建算法知识体系',
-                link: 'https://github.com/liguwe/front-end-book',
-            }
+                link: 'https://github.com/liguwe/algorithm-book',
+            },
+
+            // todo 电子书
+            // {
+            //     text: '📕 front-end-book',
+            //     detail: '个人知道的关于前端一切，建立前端知识体系',
+            //     link: 'https://github.com/liguwe/front-end-book',
+            // },
+            // {
+            //     text: '📗 algorithm-book',
+            //     detail: '算法与数据结构，持续构建算法知识体系',
+            //     link: 'https://github.com/liguwe/algorithm-book',
+            // },
         ]
     },
 ]
