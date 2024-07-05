@@ -4,8 +4,8 @@ layout: home
 
 hero:
   name: liguwe's site
-#  text: 博客、知识库、电子书、开源项目
-  tagline: 博客、知识库、电子书、开源项目
+#  text: 博客、知识库、电子书、开源作品
+  tagline: 博客、知识库、电子书、开源作品
   #::::开源作品
   actions:
     - theme: brand
