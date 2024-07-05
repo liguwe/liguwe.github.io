@@ -9,15 +9,15 @@ hero:
   #::::开源作品
   actions:
     - theme: brand
-      text: 个人博客
+      text: 📝 个人博客
       link: /blog
       target: _self
     - theme: alt
-      text: 语雀中查看
+      text: 🦜 语雀中查看
       link: https://www.yuque.com/liguwe
       target: _blank
     - theme: alt
-      text: Github 中查看
+      text: 👨🏻‍💻 Github 中查看
       link: https://github.com/liguwe/liguwe.github.io
       target: _blank
   image:
