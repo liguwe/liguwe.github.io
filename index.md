@@ -3,18 +3,22 @@
 layout: home
 
 hero:
-  name: liguwe's blog
-  text: 个人知识库合集
-  tagline: 语雀知识库 → 开源电子书
+  name: liguwe's books
+  text: 开源电子书合集
+#  tagline: 语雀知识库 → 开源电子书（mdbook）
   #::::开源作品
   actions:
-    - theme: alt
+    - theme: brand
       text: 语雀中查看
       link: https://www.yuque.com/liguwe
       target: _blank
     - theme: alt
-      text: 语雀 → mdbook
-      link: https://github.com/liguwe/yuque-to-mdBook
+      text: Github 中查看
+      link: https://liguwe.github.io
+      target: _blank  
+    - theme: alt
+      text: Vercel 中查看
+      link: https://liguwe.vercel.app
       target: _blank
   image:
     src: /vitepress-logo-large.webp
@@ -31,16 +35,16 @@ features:
     details: 算法与数据结构，建立算法知识体系
     link: https://liguwe.github.io/algorithm-book
     target: _blank
-  - icon: 🧠
-    title: 《通往 AGI 之路》
-    details: 如何使用 AGI 来武装自己，建立 AGI 知识体系
-    link: https://liguwe.github.io/agi-book
-    target: _blank
-  - icon: 👨‍👦‍👦
-    title: 《技术管理之路》
-    details: 技术管理之路，各类管理知识，建立技术管理知识体系
-    link: https://liguwe.github.io/tech-management-book
-    target: _blank
+#  - icon: 🧠
+#    title: 《通往 AGI 之路》
+#    details: 如何使用 AGI 来武装自己，建立 AGI 知识体系
+#    link: https://liguwe.github.io/agi-book
+#    target: _blank
+#  - icon: 👨‍👦‍👦
+#    title: 《技术管理之路》
+#    details: 技术管理之路，各类管理知识，建立技术管理知识体系
+#    link: https://liguwe.github.io/tech-management-book
+#    target: _blank
 ---
 
 <style>
