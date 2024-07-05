@@ -1,11 +1,12 @@
-import { defineConfig } from 'vitepress'
+import { defineConfig } from 'vitepress';
+import sidebar from '../sidebar.json';
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
-  title: "liguwe's books",
+  title: "liguwe's site",
   lang: 'zh-CN',
   base: '/',
-  description: "liguwe's books，Guangwei Li's Book，liguwe's blog，liguwe's book，liguwe's site， Guangwei Li's site ，Guangwei Li's Books， Guangwei Li's blog，李广卫, 李广卫的知识库、 李广卫的博客、李广卫的个人网站、李广卫的站点",
+  description: "liguwe's site，liguwe's book，liguwe's blog , liguwe's books，Guangwei Li's Book，liguwe's blog，liguwe's book，liguwe's site， Guangwei Li's site ，Guangwei Li's Books， Guangwei Li's blog，李广卫, 李广卫的知识库、 李广卫的博客、李广卫的个人网站、李广卫的站点",
   head: [
     ['link', {rel: 'icon', href: '/logo.png'}],
     [
@@ -17,18 +18,24 @@ export default defineConfig({
     [
       'script', {src: '/google.js', async: '', crossorigin: ''},
     ],
-    // [
-    //   'script', {src: '/comment.js', defer: '', crossorigin: ''},
-    // ],
+    [
+      'script', {src: '/comment.js', defer: '', crossorigin: ''},
+    ],
   ],
   themeConfig: {
     logo: '/logo.png',
     outline: [2, 6],
+    search: {
+      provider: 'local'
+    },
     footer: {
       copyright: `copyright ${new Date().getFullYear()}©liguwe.github.io`
     },
+    sidebar,
     // 顶部导航
     nav: [
+      {text: 'Home', link: '/'},
+      {text: '博客', link: '/blog'},
       {text: '语雀', link: 'https://www.yuque.com/liguwe'},
     ],
     // 社交Link

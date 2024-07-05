@@ -3,26 +3,26 @@
 layout: home
 
 hero:
-  name: liguwe's books
-  text: 开源电子书合集
-#  tagline: 语雀知识库 → 开源电子书（mdbook）
+  name: liguwe's site
+  text: 个人站点，开源电子书
+#  tagline: 语雀知识库 → 开源电子书
   #::::开源作品
   actions:
     - theme: brand
+      text: 个人博客
+      link: /blog
+      target: _blank
+    - theme: alt
       text: 语雀中查看
       link: https://www.yuque.com/liguwe
       target: _blank
-#    - theme: alt
-#      text: Vercel 中查看
-#      link: https://liguwe.vercel.app
-#      target: _blank
 #    - theme: alt
 #      text: Github 中查看
 #      link: https://liguwe.github.io
 #      target: _blank
   image:
     src: /Books_icon.svg
-    alt: VitePress
+    alt: liguwe's books
 
 features:
   - icon: 📱

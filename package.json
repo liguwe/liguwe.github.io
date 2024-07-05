@@ -4,7 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "sync": "elog sync",
+    "sync-local": "elog sync -e .elog.env",
+    "sync-clean": "elog clean",
     "dev": "vitepress dev",
     "build": "vitepress build",
     "preview": "vitepress preview"
@@ -13,10 +15,11 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "vitepress": "^1.2.3",
-    "@elog/cli": "^0.14.1"
+    "@elog/cli": "^0.14.1",
+    "vitepress": "^1.2.3"
   },
   "dependencies": {
+    "dayjs": "^1.11.11",
     "vue": "^3.4.31"
   }
 }
