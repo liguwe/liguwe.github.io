@@ -13,15 +13,15 @@ hero:
       link: https://www.yuque.com/liguwe
       target: _blank
     - theme: alt
-      text: Github 中查看
-      link: https://liguwe.github.io
-      target: _blank  
-    - theme: alt
       text: Vercel 中查看
       link: https://liguwe.vercel.app
       target: _blank
+    - theme: alt
+      text: Github 中查看
+      link: https://liguwe.github.io
+      target: _blank
   image:
-    src: /vitepress-logo-large.webp
+    src: /Books_icon.svg
     alt: VitePress
 
 features:
