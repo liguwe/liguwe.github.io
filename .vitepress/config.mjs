@@ -30,7 +30,7 @@ export default defineConfig({
     // 顶部导航
     nav: [
       {text: '语雀', link: 'https://www.yuque.com/liguwe'},
-      {text: 'Vercel', link: 'https://liguwe.vercel.app/'},
+      // {text: 'Vercel', link: 'https://liguwe.vercel.app/'},
     ],
     // 社交Link
     socialLinks: [

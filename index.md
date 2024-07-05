@@ -12,14 +12,14 @@ hero:
       text: 语雀中查看
       link: https://www.yuque.com/liguwe
       target: _blank
-    - theme: alt
-      text: Vercel 中查看
-      link: https://liguwe.vercel.app
-      target: _blank
-    - theme: alt
-      text: Github 中查看
-      link: https://liguwe.github.io
-      target: _blank
+#    - theme: alt
+#      text: Vercel 中查看
+#      link: https://liguwe.vercel.app
+#      target: _blank
+#    - theme: alt
+#      text: Github 中查看
+#      link: https://liguwe.github.io
+#      target: _blank
   image:
     src: /Books_icon.svg
     alt: VitePress
