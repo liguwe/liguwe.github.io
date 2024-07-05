@@ -35,16 +35,16 @@ features:
     details: 算法与数据结构，持续构建算法知识体系
     link: /algorithm-book/
     target: _blank
-  - icon: 🧠
-    title: 《通往 AGI 之路》
-    details: 如何使用 AGI 来武装自己，建立 AGI 知识体系
-    link: /agi-book/
-    target: _blank
-  - icon: 👨‍👦‍👦
-    title: 《技术管理之路》
-    details: 各类管理知识及经验，建立技术管理知识体系
-    link: /tech-management-book/
-    target: _blank
+#  - icon: 🧠
+#    title: 《通往 AGI 之路》
+#    details: 如何使用 AGI 来武装自己，建立 AGI 知识体系
+#    link: /agi-book/
+#    target: _blank
+#  - icon: 👨‍👦‍👦
+#    title: 《技术管理之路》
+#    details: 各类管理知识及经验，建立技术管理知识体系
+#    link: /tech-management-book/
+#    target: _blank
   - icon: 🔌
     title: Deeptest
     details: 免费开源的端到端API设计、调试、测试和管理平台
