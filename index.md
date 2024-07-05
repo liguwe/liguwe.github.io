@@ -26,13 +26,13 @@ hero:
 
 features:
   - icon: 📕
-    title: 《前端》
+    title: 《前端十年》
     details: 个人知道的关于前端一切，建立前端知识体系
     link: /front-end-book/
     target: _blank
   - icon: 📗
     title: 《算法》
-    details: 算法与数据结构，建立算法知识体系
+    details: 算法与数据结构，持续构建算法知识体系
     link: /algorithm-book
     target: _blank
   - icon: 🧠
@@ -42,8 +42,13 @@ features:
     target: _blank
   - icon: 👨‍👦‍👦
     title: 《技术管理之路》
-    details: 技术管理之路，各类管理知识，建立技术管理知识体系
+    details: 各类管理知识及经验，建立技术管理知识体系
     link: /tech-management-book
+    target: _blank
+  - icon: 🔌
+    title: Deeptest
+    details: 免费开源的端到端API设计、调试、测试和管理平台
+    link: https://github.com/deeptest-com/deeptest
     target: _blank
 ---
 

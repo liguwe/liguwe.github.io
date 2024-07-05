@@ -1,6 +1,6 @@
 import { defineConfig } from 'vitepress';
 import sidebar from '../sidebar.json';
-
+import {  YuQueSVG } from "../utils/index.js";
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
   title: "liguwe's site",
@@ -35,11 +35,11 @@ export default defineConfig({
     // 顶部导航
     nav: [
       {text: 'Home', link: '/'},
-      {text: '博客', link: '/blog'},
-      {text: '语雀', link: 'https://www.yuque.com/liguwe'},
+      {text: 'Blog', link: '/blog'},
     ],
     // 社交Link
     socialLinks: [
+      { icon: { svg: YuQueSVG }, link: "https://www.yuque.com/liguwe" },
       {icon: 'github', link: 'https://github.com/liguwe'},
     ]
   }
