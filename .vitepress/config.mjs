@@ -29,7 +29,7 @@ export default defineConfig({
       provider: 'local'
     },
     footer: {
-      copyright: `copyright ${new Date().getFullYear()}©liguwe.github.io`
+      copyright: `copyright ${new Date().getFullYear()}©liguwe.site`
     },
     sidebar,
     // 顶部导航

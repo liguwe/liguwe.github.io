@@ -47,7 +47,7 @@ features:
 #    target: _blank
   - icon: 🔌
     title: Deeptest
-    details: 免费开源的端到端API设计、调试、测试和管理平台
+    details: 免费开源的端到端 API 设计、调试、测试和管理平台
     link: https://github.com/deeptest-com/deeptest
     target: _blank
 ---
