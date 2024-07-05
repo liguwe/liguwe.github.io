@@ -19,7 +19,7 @@ const menus = ref(items);
                </div>
                 <div class="liguwe-block-content" v-show="posts.collapsed">
                    <div class="liguwe-block-item" v-for="(post,index) in posts.items"  :key="post.index">
-                       <a class="liguwe-a" :href="post.link" target="_blank">
+                       <a class="liguwe-a" :href="post.link">
                          <span class="liguwe-a-left" :title="post.text">{{post.text}}</span>
                          <span class="liguwe-a-middle"/>
                          <span class="liguwe-a-right">{{post.createdAt.split(' ')[0]}}</span>
