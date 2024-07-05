@@ -17,9 +17,9 @@ export default defineConfig({
     [
       'script', {src: '/google.js', async: '', crossorigin: ''},
     ],
-    [
-      'script', {src: '/comment.js', defer: '', crossorigin: ''},
-    ],
+    // [
+    //   'script', {src: '/comment.js', defer: '', crossorigin: ''},
+    // ],
   ],
   themeConfig: {
     logo: '/logo.png',
@@ -30,7 +30,6 @@ export default defineConfig({
     // 顶部导航
     nav: [
       {text: '语雀', link: 'https://www.yuque.com/liguwe'},
-      // {text: 'Vercel', link: 'https://liguwe.vercel.app/'},
     ],
     // 社交Link
     socialLinks: [
