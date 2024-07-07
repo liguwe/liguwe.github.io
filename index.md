@@ -31,8 +31,8 @@ features:
     link: /front-end-book/
     target: _blank
   - icon: 📗
-    title: 《数据结构、算法、LeetCode 题解》
-    details: 算法与数据结构，持续的 LeetCode 刷题
+    title: 《数据结构与算法、LeetCode 题解》
+    details: 数据结构与算法，持续的 LeetCode 刷题
     link: /algorithm-book/
     target: _blank
 #  - icon: 🧠

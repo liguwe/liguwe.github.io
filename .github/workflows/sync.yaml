@@ -1,0 +1,50 @@
+# 先从语雀拉取文档，再推送到GitHub仓库，然后再部署到GitHub Pages
+name: sync from yuque and build
+
+on:
+  # 允许外部仓库事件触发
+  repository_dispatch:
+    types:
+      - sync-from-yuque
+jobs:
+  sync-build:
+    runs-on: ubuntu-latest
+    steps:
+      #::::检查代码
+      - name: ① 检查分支
+        uses: actions/checkout@main
+      #::::使用pnpm
+      - uses: pnpm/action-setup@v3 # 如果使用 pnpm，请取消注释
+        with:
+          version: 7
+      #::::设置node环境
+      - name: ② Setup Node Env
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: pnpm
+      #::::安装依赖
+      - name: ③ Install dependencies
+        run: pnpm install
+      #::::拉取语雀文档
+      - name: ④ 拉取语雀文档
+        env:
+          YUQUE_TOKEN: ${{ secrets.YUQUE_TOKEN }}
+          YUQUE_LOGIN: liguwe
+          YUQUE_REPO: fe
+        run: npm run sync  && npm run sidebar &&  npm run readme
+      #::::配置git用户名邮箱
+      - name: ⑤ 配置Git用户名邮箱
+        run: |
+          git config --global user.name "liguwe"
+          git config --global user.email "liguwe@qq.com"
+      #::::提交拉取的文档到GitHub仓库
+      - name: ⑥提交拉取的文档到GitHub仓库
+        run: |
+          echo `date +"%Y-%m-%d %H:%M:%S"` begin > time.txt
+          git add .
+          git commit -m "Refresh elog.cache.json" -a
+      - name: 推送文档到仓库
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.YUQUE_GITHUB_TOKEN }}
