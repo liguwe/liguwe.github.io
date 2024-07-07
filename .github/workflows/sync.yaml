@@ -31,7 +31,7 @@ jobs:
         env:
           YUQUE_TOKEN: ${{ secrets.YUQUE_TOKEN }}
           YUQUE_LOGIN: liguwe
-          YUQUE_REPO: fe
+          YUQUE_REPO: post
         run: npm run sync  && npm run sidebar &&  npm run readme
       #::::配置git用户名邮箱
       - name: ⑤ 配置Git用户名邮箱
