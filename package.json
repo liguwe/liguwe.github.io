@@ -6,7 +6,7 @@
   "scripts": {
     "sync": "elog sync",
     "sync-local": "elog sync -e .elog.env",
-    "sync-clean": "elog clean",
+    "clean": "elog clean",
     "sidebar": "node sidebar.js",
     "readme": "node readme.js",
     "dev": "npm run sync-local && npm run sidebar &&  npm run readme && vitepress dev",
