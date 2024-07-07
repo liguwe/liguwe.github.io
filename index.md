@@ -26,13 +26,13 @@ hero:
 
 features:
   - icon: 📕
-    title: 《前端十年》
+    title: 《前端知识体系》
     details: 个人知道的关于前端一切，建立前端知识体系
     link: /front-end-book/
     target: _blank
   - icon: 📗
-    title: 《算法》
-    details: 算法与数据结构，持续构建算法知识体系
+    title: 《数据结构、算法、LeetCode题解》
+    details: 算法与数据结构，持续 leetcode 刷题
     link: /algorithm-book/
     target: _blank
 #  - icon: 🧠
