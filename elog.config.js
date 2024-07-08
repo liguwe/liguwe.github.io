@@ -14,8 +14,9 @@ module.exports = {
         local: {
             outputDir: './post',
             filename: 'urlname',
-            catalog: true,
+            catalog: false, // 是否生成目录，在 src/docs 目录下生成目录文件,默认打平的就好
             format: 'markdown',
+            formatExt:'./formatExt.js' // 格式化文档内容，处理文档内容，整体缩进标题层级
         },
     },
     image: {
