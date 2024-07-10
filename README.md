@@ -6,4 +6,4 @@
 - [📗 algorithm-book](https://github.com/liguwe/algorithm-book)：算法与数据结构，持续构建算法知识体系 
 ## Blog 
 ### 2024 
-- [播客：AI 时代的频率跃迁背景下个人的选择：高频的卷或低频的定（2024-06-04）](/post/aqkdr1zguky1o534.md) 
+- [播客：AI 时代的频率跃迁背景下个人的选择-高频的卷或低频的定（2024-06-04）](/post/aqkdr1zguky1o534.md) 
