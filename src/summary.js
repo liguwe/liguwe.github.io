@@ -21,8 +21,6 @@ const prefix = sidebar.slice(0, partIndex);
 const suffix = sidebar.slice(partLastIndex + 1);
 const part = sidebar.slice(partIndex, partLastIndex + 1);
 
-console.log(part);
-
 // 获取 md 链接
 const getMdLink = (item) => {
   const uid = item?.isIndex ? item?.indexFile?.uid : item?.uid;
