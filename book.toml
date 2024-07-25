@@ -1,0 +1,19 @@
+[book]
+authors = ["Guangwei Li"]
+language = "zh-CN"
+multilingual = false
+src = "src"
+title = "liguwe.site（个人博客、知识库、电子书、开源作品合集）"
+description = "liguwe.github.io,liguwe.site,liguwe's blog,liguwe's notes,liguwe's wiki,liguwe's site，liguwe's book，liguwe's blog , liguwe's books，Guangwei Li's Book，liguwe's blog，liguwe's book，liguwe's site， Guangwei Li's site ，Guangwei Li's Books， Guangwei Li's blog，李广卫, 李广卫的知识库、 李广卫的博客、李广卫的个人网站、李广卫的站点"
+
+
+[output.html]
+smart-punctuation = true
+mathjax-support = true
+git-repository-url = "https://github.com/liguwe/liguwe.github.io"
+edit-url-template = "https://github.com/liguwe/liguwe.github.io/blob/master/{path}"
+
+
+[output.html.fold]
+enable = true
+level = 0
