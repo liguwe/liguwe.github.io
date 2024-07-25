@@ -1,31 +1,32 @@
-# 生成个人博客网站
 
-- 基于`vitepress` 搭建
-- 支持一些 `vitepress` 语法，具体可看 [官网](https://vitepress.vuejs.org/guide/getting-started.html)
-- 数据来源于 Obsidian App
+# liguwe.site
 
-## 本地开发
+> 个人博客、知识库、电子书、开源作品合集
 
-使用 node20 版本
+## 📝 个人博客
 
-`pnpm install`
+详见《第一部分 博客》内容
 
-`npm run dev`
+## 📕 大前端技术知识体系
 
+结合以往的笔记，利用 GPT 工具，梳理个人所知道的关于大前端的一切，体系化大前端技术知识
 
-## 部署到 liguwe.github.io
+## 📗 数据结构、算法、LeetCode
 
-`sh publish.sh`
+结合以往数据结构与算法笔记和 LeetCode 刷题笔记，利用 GPT 工具，体系化数据结构与算法知识
 
-## 发布到这三个地方
+## 🧠 通往 AGI 之路
 
-`npm run publish`
+如何使用 AGI 来武装自己，建立 AGI 知识体系
 
-- liguwe.github.io
-- yuque.com/liguwe/post
-- yuque.com/liguwe/obsidian
+## ☯️ 技术管理之路
 
+沉淀各类研发管理知识及经验，建立研发管理知识体系
 
+## 📺 计算机科学
 
+整合以往学过的计算机相关的所有知识，体系化计算机科学知识
 
+## 🔌 Deeptest
 
+免费开源的端到端 API 设计、调试、测试和管理平台，详见 [Deeptest](https://github.com/deeptest-com/deeptest)
