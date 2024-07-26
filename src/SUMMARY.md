@@ -176,7 +176,12 @@
   - [刷题篇]()
 
 
-    - [LeetCode 精华 75 题](post/ff6edcf3-0164-540a-9c1c-fad098f57d2a.md)
+    - [LeetCode 精华 75 题](post/8e963a75-5772-5af3-ae0c-8fdb027f52f1.md)
+
+
+      - [确定两个字符串是否接近](post/2906a3ed-5a98-5ef1-98a6-0eb6c171ee98.md)
+
+      - [相等行列对](post/0ebec899-21ba-5690-99c6-7cdc2709c122.md)
 
     - [LeetCode 热题 100 题]()
 
