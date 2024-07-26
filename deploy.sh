@@ -1,10 +1,7 @@
 #!/usr/bin/env sh
 
-# 生成 sidebar.json
-node src/obsidian.js
-
-# 生成 summary.md
-node src/summary.js
+# 生成 sidebar.json →  生成 summary.md
+node src/obsidian.js && node src/summary.js
 
 
 # set -e 是一个 Bash shell 命令，它指示 shell 在执行命令时遇到任何错误即停止执行脚本，并返回一个非零退出状态码。
