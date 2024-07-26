@@ -1,6 +1,6 @@
 # liguwe's Books
 
-[前言](post/7f976dd1-7b93-55d5-aca1-ea5895f09c1a.md)
+[📚 832 之书](post/8662e1ce-a25e-54f1-aece-1e4b0ef95f05.md)
 
 
 # 第一部分 博客&播客
