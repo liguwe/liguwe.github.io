@@ -15,8 +15,6 @@ const path = require("path");
 const sidebar = require("./sidebar.json");
 const post = require("./post.json");
 
-console.log("sidebar", sidebar);
-
 const partIndex = sidebar.findIndex((item) => item.isPart);
 const partLastIndex = sidebar.findLastIndex((item) => item.isPart);
 const prefix = sidebar.slice(0, partIndex);
