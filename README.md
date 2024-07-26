@@ -1,5 +1,5 @@
 
-# liguwe.site (832 之书)
+# [832 之书](https://liguwe.site)
 
 > 个人博客、知识库、电子书、开源作品合集
 
