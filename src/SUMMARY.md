@@ -29,9 +29,9 @@
 # 第四卷 技术管理
 
 
-  - [前序]()
+  - [前言]()
 
-  - [后序]()
+  - [后记]()
 
 # 第五卷 前端
 
@@ -181,10 +181,10 @@
 
   - [算法篇]()
 
-  - [刷题篇](post/96d0431a-ee19-52cf-82dd-55fab5ae3e0a.md)
+  - [刷题篇](post/b058e1e2-0362-5f08-a26d-2c0ac670a8b7.md)
 
 
-    - [LeetCode 精华 75 题](post/b23f85ee-2fa5-5476-aec2-2630e21e5182.md)
+    - [LeetCode 精华 75 题](post/62510796-8ebd-5791-8381-720ad6d1e0a0.md)
 
 
       - [确定两个字符串是否接近](post/8927f8bc-0b49-5997-821a-086ccab0862e.md)
@@ -195,9 +195,13 @@
 
       - [小行星碰撞](post/125d953c-f7d6-5f08-8db4-a1bedf7e70c8.md)
 
-    - [LeetCode 热题 100 题]()
+      - [字符串解码](post/2153167b-a7f4-59a1-8e01-ea483f941c29.md)
 
-    - [LeetCode 经典 150 题]()
+      - [最近的请求次数](post/532a6977-ffe4-5ffb-805a-60c18ceafa72.md)
+
+    - [LeetCode 热题 100 题](post/77d439a7-81ef-5295-a497-3824f8fe975f.md)
+
+    - [LeetCode 经典 150 题](post/d8ae4c07-4083-5688-b712-af7e4abae7b5.md)
 
   - [后记]()
 
