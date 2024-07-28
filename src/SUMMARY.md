@@ -177,9 +177,14 @@
 
   - [前言](post/f5ec65b0-e050-59cd-90d5-f75a6e38d2f8.md)
 
-  - [数据结构篇]()
+  - [数据结构篇](post/7355a992-7474-5660-b11e-f03c300eae0a.md)
 
-  - [算法篇]()
+
+    - [基础数据结构](post/3fcb837a-ddff-5a3e-b04e-a41633e2c60d.md)
+
+    - [树](post/8401ad25-9723-5c29-a69a-d32ea56a044a.md)
+
+  - [算法篇](post/a7d27fa7-f4c1-5177-b9ef-bb88cd32247e.md)
 
   - [刷题篇](post/b058e1e2-0362-5f08-a26d-2c0ac670a8b7.md)
 
