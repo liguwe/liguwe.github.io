@@ -199,9 +199,69 @@
 
       - [最近的请求次数](post/532a6977-ffe4-5ffb-805a-60c18ceafa72.md)
 
+      - [Dota2 参议院](post/7b60281b-5b24-5274-8ffe-aafb7266beaa.md)
+
+      - [除自身以外数组的乘积](post/3ee5129a-31b1-511d-b72a-0e9a806c239e.md)
+
+      - [递增的三元子序列](post/32c7a6a2-6cb3-53b1-8444-fbed500cf5ab.md)
+
+      - [定长子串中元音的最大数目](post/16a0475d-b2a2-56c0-bfff-3d7221053fdc.md)
+
+      - [独一无二的出现次数](post/5e1ecf3d-2945-5445-ada9-e37cdd903991.md)
+
+      - [反转字符串中的单词](post/2be361fd-25ee-54d8-a7d1-67c149482a27.md)
+
+      - [反转字符串中的元音字母](post/bc21f8f6-fe66-5068-be82-c066de6720ca.md)
+
+      - [交替合并字符串](post/cf198732-1e5a-59ee-aba2-0c394fb3bbcf.md)
+
+      - [判断子序列](post/b0540d73-e742-538c-9dc6-415b0ef24882.md)
+
+      - [删掉一个元素以后全为 1 的最长子数组](post/15ab3884-62f2-5420-bf62-bdfec75b6ec7.md)
+
+      - [盛最多水的容器](post/21efc1a5-ac02-508d-a2a5-7b8d2248503a.md)
+
+      - [寻找数组的中心下标](post/7646de6d-494c-5f2c-9bc1-8fa430cc4f2f.md)
+
+      - [压缩字符串](post/f9bf9fba-9787-5b8b-a354-3da177a90fb6.md)
+
+      - [移动零](post/69d1c61c-c81b-5ad7-b6c3-2f12cac3d5ae.md)
+
+      - [拥有最多糖果的孩子](post/9f700079-5c7b-5519-ae5d-4cd87c656194.md)
+
+      - [找出两数组的不同](post/aff998aa-dcb4-529c-81b0-fc2b2f91a3e0.md)
+
+      - [找到最高海拔](post/9ee8aa36-fea2-5106-b05c-6be001013231.md)
+
+      - [种花问题](post/c038f6b3-d180-5125-b4f5-4f5f4a026a16.md)
+
+      - [字符串的最大公因子](post/78441e94-63a3-533b-8887-4e1e678fcd58.md)
+
+      - [子数组最大平均数 I](post/79ea85eb-b408-5f88-b192-349535abce8f.md)
+
+      - [最大连续 1 的个数 III](post/689824e8-8110-5183-8d7c-85c53e2c5f34.md)
+
+      - [K 和数对的最大数目](post/db0e050a-0f82-503e-804f-6e69792665f8.md)
+
     - [LeetCode 热题 100 题](post/77d439a7-81ef-5295-a497-3824f8fe975f.md)
 
+
+      - [两数之和](post/8c6c664c-97a0-5cc9-b6dd-2f139db15ef8.md)
+
+      - [字母异位词分组](post/8e69581e-f0b6-5973-b5ff-64871d2467dc.md)
+
+      - [最长连续序列](post/fb1436f5-ac33-5d86-bb7d-001e784b30a7.md)
+
     - [LeetCode 经典 150 题](post/d8ae4c07-4083-5688-b712-af7e4abae7b5.md)
+
+
+      - [合并两个有序数组](post/1b8eb0c9-4a54-530a-8b6b-be840437edb7.md)
+
+      - [移除元素](post/3cd3a773-1e01-57ff-a509-f71ddb27b1e8.md)
+
+      - [删除有序数组中的重复项](post/5ee6ec26-a7c1-5886-b795-280521c84024.md)
+
+      - [删除有序数组中的重复项 II](post/6f701d55-d0d0-57c8-9d0a-664749cd5553.md)
 
   - [后记]()
 
