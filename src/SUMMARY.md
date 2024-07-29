@@ -36,8 +36,6 @@
     - [HTML 篇](post/0c2a1295-472f-5e6a-8794-d923daf8b0ff.md)
 
 
-      - [HTML 模板语言](post/249dbe95-9593-5262-90c5-9be14f3f033b.md)
-
       - [HTML 概述](post/ba72cdd2-d818-5468-891c-ca9c12c3648f.md)
 
       - [HTML 标签与 HTML 属性](post/31c71668-e2fd-54e6-8c4b-49131696fc7e.md)
@@ -53,6 +51,8 @@
       - [说说 HTML 标准规范都有哪些？](post/4cff5010-243b-5467-b148-01b482f78b80.md)
 
       - [什么是响应式图片](post/98b41efe-4ed3-5d88-bc5b-1bc8fce3bf74.md)
+
+      - [HTML 模板语言](post/3de769b7-2675-5bb0-b805-2c64f53b27bd.md)
 
     - [CSS 篇](post/55663541-ce62-5ad5-adbd-6caa0198052b.md)
 
@@ -70,8 +70,6 @@
       - [CSS 布局](post/9bbe9179-584b-5666-96be-a63b54d7179f.md)
 
       - [CSS 性能优化有哪些思路？](post/7ad95026-3bba-5a9e-af80-22abcfde8d21.md)
-
-      - [CSS 是什么？](post/a0630d45-bc24-5e8e-9f0d-c4785ac0b839.md)
 
       - [CSS 滚动自动吸附效果与吸顶效果的区别？](post/94853b14-99cd-56d0-8057-80b5e568eae1.md)
 
@@ -92,6 +90,8 @@
       - [说说回流和重绘](post/58ca2b0b-10bd-53fa-a836-504ec643b2e8.md)
 
       - [请列举 CSS 兼容性相关的知识点](post/40533495-e10c-5043-a951-67cbde6c11ef.md)
+
+      - [CSS 是什么？](post/1419e55b-0072-5d61-a131-0c0d58e71c2a.md)
 
     - [JavaScript 篇](post/bd4811c6-285b-56db-b3c4-19022b8bc7e4.md)
 
