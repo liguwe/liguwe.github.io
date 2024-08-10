@@ -254,7 +254,14 @@
 
       - [买卖股票的最佳时机](post/03d61ca1-9d74-50d8-a994-038cc6b13768.md)
 
+      - [买卖股票的最佳时机 II 1](post/9141f1c6-5b4d-5a5c-80ea-5c2ef262ad3f.md)
+
       - [买卖股票的最佳时机 II](post/a0ce04a7-1d27-5ee4-a744-7abb614b5018.md)
+
+    - [labuladong 算法刷题](post/5f65bb18-2ac2-577b-b1f9-3e5e1f5f303f.md)
+
+
+      - [买卖股票的最佳时机 IV](post/c2c9a745-44e7-5871-9f76-727fdefadff7.md)
 
   - [后记]()
 

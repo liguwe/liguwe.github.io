@@ -75,6 +75,7 @@ const handleFileAndWrite = (file, depth) => {
   file.uid = uid;
   file.link = `/post/${uid}`;
   file.mdLink = `./post/${uid}.md`;
+  // 添加 H1 标题
   const H1Content = "\n" + `# ${file.title}` + "\n";
   const postContent = H1Content + "\n" + content;
   postObj[uid] = postContent;
