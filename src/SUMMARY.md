@@ -222,6 +222,10 @@
 
       - [奇偶链表](post/dbb62c23d6dc5049abd8a21d3eefca7e.md)
 
+      - [反转链表](post/1c8143dd7ec35d2cb2342baeac9eac51.md)
+
+      - [链表最大孪生和](post/87a786e725c45185b19bdce97d557ea2.md)
+
     - [LeetCode 热题 100 题](post/77d439a781ef5295a4973824f8fe975f.md)
 
 
@@ -236,6 +240,10 @@
       - [接雨水](post/951ef10196695c78ac2b549dbb549c7c.md)
 
       - [无重复字符的最长子串](post/d231787060d15095a64e48c2ce3c029b.md)
+
+      - [找到字符串中所有字母异位词](post/a5f706c77ae755a084b6007363a57571.md)
+
+      - [和为 K 的子数组](post/e7fa950369ed55b29e9d24bc8c1114bf.md)
 
     - [LeetCode 经典 150 题](post/d8ae4c0740835688b712af7e4abae7b5.md)
 
