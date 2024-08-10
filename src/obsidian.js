@@ -119,15 +119,28 @@ const handleFileAndWrite = (file, depth) => {
     // [[12. 算法/3. 刷题篇/3. LeetCode 经典 150 题/7. 买卖股票的最佳时机|7. 买卖股票的最佳时机]]
     // 变成 买卖股票的最佳时机
     // 正则，注意不以 ! 开头,否则会匹配到图片
-
     content = content.replace(/\[\[(.*?)\]\]/g, (match, p1) => {
         return `【${p1.split("|")[1]}】`;
     });
 
+    // markdown 内容中的 #单链表  #2024/07/30  #单链表/双指针 #单链表/快慢指针
+    // 变成 `#单链表` `#2024/07/30` `#单链表/双指针` `#单链表/快慢指针`
+    const reg3 = /#([^\s#]+)(?:\/([^\s#]+))*/g;
 
+
+    content = content.replace(reg3, (match, p1) => {
+        return `\`${match}\``;
+    });
 
     // 添加 H1 标题
     const H1Content = "\n" + `# ${file.title}` + "\n";
+
+    // 匹配到第一个 ## 标题，将其替换为目录
+    const reg4  = /^##\s*(.+)$/m;
+    content = content.replace(reg4, (match, p1) => {
+        return `\n## 目录\n` + `<!-- toc -->` + `\n ## ${p1} `;
+    });
+
     const postContent = H1Content + "\n" + content;
 
     postObj[uid] = postContent;

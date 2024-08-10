@@ -8,4 +8,4 @@ node src/summary.js
 
 
 # 本地启动
-mdbook serve --open
+mdbook serve
