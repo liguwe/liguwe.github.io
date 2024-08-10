@@ -7,19 +7,10 @@
   "author": "liguwe@qq.com",
   "license": "MIT",
   "scripts": {
-    "dev": "sh ./server.sh",
-    "sidebar": "node src/obsidian.js",
-    "preview": "vitepress preview docs",
-    "build": "npm run sidebar && vitepress build docs",
-    "serve": "npm run build && vitepress serve docs",
-    "sync-liguwe-blog": "sh publish.sh",
-    "sync-yuque-post": "npm run sidebar  && node ./src/yuque.post.js",
-    "sync-yuque-obsidian": "npm run obsidian  && node ./src/yuque.obsidian.js",
-    "publish": "npm run sidebar && npm run sync-liguwe-blog && npm run sync-yuque-post && npm run sync-yuque-obsidian",
-    "push": "sh ./push.sh"
+    "dev": "sh ./server.sh"
   },
   "devDependencies": {
-    "vitepress": "*"
+
   },
   "dependencies": {
     "directory-tree": "^3.5.1",
