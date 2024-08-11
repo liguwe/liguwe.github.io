@@ -132,7 +132,7 @@
 
   - [Node.js 篇]()
 
-  - [前端工程及架构篇]()
+  - [前端工程化及架构篇]()
 
   - [大前端篇]()
 
@@ -140,7 +140,7 @@
 
   - [交互体验及性能篇]()
 
-  - [终端前沿技术篇]()
+  - [前沿终端技术篇]()
 
   - [前端项目篇]()
 
@@ -156,16 +156,45 @@
   - [数据结构篇](post/7355a99274745660b11ef03c300eae0a.md)
 
 
-    - [基础数据结构](post/3fcb837addff5a3eb04ea41633e2c60d.md)
+    - [数据结构基础篇](post/386f08d4c9a25464980951770ce7ac56.md)
 
-    - [树的基础概念](post/5e626684e8f957d7ac7b7dc8779383e1.md)
+    - [数组与链表篇](post/e30086f54e0c550082bb0259461b553a.md)
+
+    - [栈与队列篇](post/c0c46bd89ce456c5a75fa8e9bb3efd04.md)
+
+    - [哈希表篇](post/31e2c462753056f7a01c0fc98c3274b1.md)
+
+    - [树形结构篇](post/27ea20717ac258a7bbdac33f9fc6c571.md)
+
+
+      - [树的基础概念](post/5f6707cb7a1e5f05aecf7d2448f55097.md)
+
+    - [图结构篇](post/fb9afc375957539890b8372de2704627.md)
 
   - [算法篇](post/a7d27fa7f4c15177b9efbb88cd32247e.md)
 
 
-    - [算法复杂度](post/05685c8ef92c5501824cdcbf8a4b8317.md)
+    - [算法核心框架篇](post/ac203c8c36f95e4180fb2fb0c125a5d3.md)
 
-    - [经典数据结构算法](post/cc72dba2d464548badc06e934cd028f9.md)
+    - [算法基础篇](post/8561aae078c95b7ea1ec308e3f199566.md)
+
+
+      - [算法复杂度](post/895d087e9843507aa4ab2f3f57e9be47.md)
+
+    - [基础数据结构算法篇](post/c8bd2bf2defd5845899e55aeb44d20b6.md)
+
+
+      - [单调列队算法](post/494b14ecf85a5333913480a48f6a6459.md)
+
+    - [二叉树篇](post/6a9e42a4ed7456baafecac8f96c04702.md)
+
+    - [图算法篇](post/31a972075ef25aaba62c7c0c38ca1f34.md)
+
+    - [暴力穷举算法篇（回溯、DFS、BFS）](post/f54cfb71409c5f78af2f9fa70d4bf663.md)
+
+    - [动态规划篇](post/6cb33579e86e5f03882452321c1c9627.md)
+
+    - [其他算法篇](post/2bbcbba8bcc056d8879a6b0f061954b2.md)
 
   - [刷题篇](post/b058e1e203625f08a26d2c0ac670a8b7.md)
 
@@ -275,10 +304,10 @@
 
       - [买卖股票的最佳时机 II](post/a0ce04a71d275ee4a7447abb614b5018.md)
 
-    - [labuladong 算法刷题](post/5f65bb182ac2577bb1f93e5e1f5f303f.md)
+    - [labuladong 刷题笔记](post/3aa643b0df4e564bb8c0b8e417741a0e.md)
 
 
-      - [买卖股票的最佳时机 IV](post/c2c9a74544e758719f76727fdefadff7.md)
+      - [买卖股票的最佳时机 IV](post/70bfdd5a2116524ea13bbf6b140b3eb0.md)
 
   - [后记]()
 
