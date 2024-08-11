@@ -24,7 +24,7 @@ jobs:
           curl -sSL $url | tar -xz --directory=./mdbook
           curl -Lf "https://github.com/badboy/mdbook-toc/releases/download/0.14.2/mdbook-toc-0.14.2-x86_64-unknown-linux-gnu.tar.gz" | tar -xz --directory=./installed-bins
           echo `pwd`/mdbook >> $GITHUB_PATH
-          echo `pwd`/installed-bins >> $GITHUB_PATH 
+          echo `pwd`/installed-bins >> $GITHUB_PATH
       - name: Build Book
         run: |
           # This assumes your book is in the root of your repository.
