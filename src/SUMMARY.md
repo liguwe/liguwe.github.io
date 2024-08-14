@@ -157,6 +157,8 @@
 
         - [Vue3 组件的实现原理](post/c80f89e649b95ceeb658a4c8f72146c0.md)
 
+        - [Vue 的响应式的系统设计原理](post/17e4bd97c8725c07bfc9a394ede5d40f.md)
+
       - [Vue 实践篇]()
 
     - [其他框架篇](post/1cb6970fbe18510abc0a4b336a14a4ca.md)
