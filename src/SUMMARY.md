@@ -117,7 +117,7 @@
     - [前端框架原理篇](post/2547a7c2f31e5a22a991c5a40f03ed1d.md)
 
 
-      - [前端框架相关的知识点](post/3000e93f3ab85c5c9a9e70bbe8cbe5da.md)
+      - [前端框架相关的前置知识点](post/cbfcd56f3e055d3c887b292543d7c147.md)
 
       - [前端框架设计里的"权衡" 与"选择"](post/b0540cdc45165633ae8c87ab199af84e.md)
 
@@ -157,7 +157,7 @@
 
         - [Vue3 组件的实现原理](post/c80f89e649b95ceeb658a4c8f72146c0.md)
 
-        - [Vue 的响应式的系统设计原理](post/17e4bd97c8725c07bfc9a394ede5d40f.md)
+        - [Vue3 的响应式的系统设计原理](post/3e7117d93f3152dabb39341aab7f76c1.md)
 
       - [Vue 实践篇]()
 
