@@ -347,6 +347,8 @@
 
       - [买卖股票的最佳时机 II](post/a0ce04a71d275ee4a7447abb614b5018.md)
 
+      - [跳跃游戏](post/dd0706084ded59df9fafa46d4fe76c7c.md)
+
     - [labuladong 刷题笔记](post/3aa643b0df4e564bb8c0b8e417741a0e.md)
 
 
