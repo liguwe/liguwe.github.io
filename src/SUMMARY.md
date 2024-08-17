@@ -349,6 +349,8 @@
 
       - [跳跃游戏](post/dd0706084ded59df9fafa46d4fe76c7c.md)
 
+      - [跳跃游戏 II](post/451cd7f0d9fe5b91b4c06e4ad953af96.md)
+
     - [labuladong 刷题笔记](post/3aa643b0df4e564bb8c0b8e417741a0e.md)
 
 
