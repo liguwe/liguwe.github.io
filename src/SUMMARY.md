@@ -111,7 +111,7 @@
 
     - [计算机网络篇](post/4cc7360449485c78b1c50c65b4971daa.md)
 
-  - [前端架构篇](post/d542cd6adc2759b5adb7626c43fa677e.md)
+  - [前端架构篇](post/4dcf3c34969d530cb987ef86a760338e.md)
 
 
     - [前端框架原理篇](post/d4c20d5c26885592b7e74db00569a0b9.md)
@@ -225,7 +225,10 @@
 
     - [动态规划篇](post/6cb33579e86e5f03882452321c1c9627.md)
 
-    - [其他算法篇](post/2bbcbba8bcc056d8879a6b0f061954b2.md)
+    - [其他常见算法篇](post/f89841b494bc5ca68ab97aca72eee4d1.md)
+
+
+      - [区间问题](post/19614602099f541e8832cc65cbe77e14.md)
 
   - [刷题篇](post/b058e1e203625f08a26d2c0ac670a8b7.md)
 
@@ -329,6 +332,8 @@
       - [最小覆盖子串](post/c40fe1a902795e848742e1b9924be369.md)
 
       - [最大子数组和](post/cbe375f7a27651dea396d777d258ab4e.md)
+
+      - [合并区间](post/f4e023a14b9f5b2590e2e90b475c3021.md)
 
     - [LeetCode 经典 150 题](post/d8ae4c0740835688b712af7e4abae7b5.md)
 
