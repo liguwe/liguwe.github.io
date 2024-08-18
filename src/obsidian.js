@@ -30,7 +30,7 @@ const excludeArr = [
     /832\/832\/\d+\.\s*.+@832/,
 ];
 // 并且只显示文件夹和.md 文件
-const indexReg = /^\d+\.\s+/;
+const indexReg = /^\d+\.\s*/;
 const tree = dirTree(
     ObsidianPath,
     {
@@ -311,6 +311,7 @@ const recursive = (arr) => {
                 arr[index] = {
                     ...item,
                     indexFile,
+                    title: item.title,
                     isIndex: true,
                 };
                 arr[index].children.splice(0, 1);
