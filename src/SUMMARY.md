@@ -132,8 +132,6 @@
 
       - [React 实践篇]()
 
-    - [Vue]()
-
     - [Vue 篇](post/8fc566e7460a576eb8d80de0eaa5dc1a.md)
 
 
