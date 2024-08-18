@@ -135,10 +135,10 @@
     - [Vue 篇](post/8fc566e7460a576eb8d80de0eaa5dc1a.md)
 
 
-      - [Vue 基础篇](post/3dace6f8f0a95f60a7643c1bd9f12b7d.md)
+      - [Vue 基础篇](post/23ee92d569e557768d8c9e2a1b105a9b.md)
 
 
-        - [开始、应用、模板语法](post/c3c414dc983e5a409b020a2a233fe2ff.md)
+        - [基础概念](post/1e38f6cf143a51918fec74770ba78353.md)
 
         - [响应式](post/9de19e78cb9f5e31900cadff592de4d9.md)
 
