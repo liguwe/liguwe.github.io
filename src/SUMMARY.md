@@ -132,6 +132,8 @@
 
       - [React 实践篇]()
 
+    - [Vue]()
+
     - [Vue 篇](post/8fc566e7460a576eb8d80de0eaa5dc1a.md)
 
 
@@ -205,7 +207,7 @@
   - [算法篇](post/a7d27fa7f4c15177b9efbb88cd32247e.md)
 
 
-    - [算法核心框架篇](post/ac203c8c36f95e4180fb2fb0c125a5d3.md)
+    - [核心框架篇](post/fc0df1a1e20a576b97c433dc5397ef81.md)
 
     - [算法基础篇](post/8561aae078c95b7ea1ec308e3f199566.md)
 
@@ -327,6 +329,8 @@
       - [滑动窗口最大值](post/88fa169cd7805e02909437483bef1d0a.md)
 
       - [最小覆盖子串](post/c40fe1a902795e848742e1b9924be369.md)
+
+      - [最大子数组和](post/cbe375f7a27651dea396d777d258ab4e.md)
 
     - [LeetCode 经典 150 题](post/d8ae4c0740835688b712af7e4abae7b5.md)
 
