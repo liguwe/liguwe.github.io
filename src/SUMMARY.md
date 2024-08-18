@@ -135,20 +135,18 @@
     - [Vue 篇](post/8fc566e7460a576eb8d80de0eaa5dc1a.md)
 
 
-      - [Vue 基础篇](post/921577adb4fc5adb8ed64ad228d1644b.md)
+      - [Vue 基础篇](post/3dace6f8f0a95f60a7643c1bd9f12b7d.md)
 
 
-        - [2、响应式](post/cb2aa40753105a29b05994c07f0582df.md)
+        - [开始、应用、模板语法](post/c3c414dc983e5a409b020a2a233fe2ff.md)
 
-        - [3.2 基础](post/4354f139ee0157e8bf522dd367629631.md)
+        - [响应式](post/9de19e78cb9f5e31900cadff592de4d9.md)
 
-        - [3.3 组件](post/b9f4fc4838a658e3855bf2068009fad6.md)
+        - [基础](post/239eba1ff968547dbc2b1c4f5ad08c96.md)
 
-        - [3.4 更多](post/3d679f825f5f515cb5455316cefd0bfa.md)
+        - [组件](post/5ee6ad49d55d5d6b898b72412786f018.md)
 
-        - [Vue3 基础](post/54e74005ca865a7596c2a2e7de4f606c.md)
-
-        - [开始](post/af0ec0be8c455d3b9f482d804e105ff1.md)
+        - [更多](post/5f06a2cb379f54d9a738c805f67d0260.md)
 
       - [Vue 原理篇](post/012961f1cc2459e2ad394bcbedea1185.md)
 
