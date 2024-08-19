@@ -217,6 +217,8 @@
 
       - [单调列队算法](post/494b14ecf85a5333913480a48f6a6459.md)
 
+      - [常数时间删除、查找数组中的任意元素@ing](post/170ce8fc2b7b52469bf7888ead5589b6.md)
+
     - [二叉树篇](post/6a9e42a4ed7456baafecac8f96c04702.md)
 
     - [图算法篇](post/31a972075ef25aaba62c7c0c38ca1f34.md)
@@ -357,6 +359,8 @@
       - [跳跃游戏](post/dd0706084ded59df9fafa46d4fe76c7c.md)
 
       - [跳跃游戏 II](post/451cd7f0d9fe5b91b4c06e4ad953af96.md)
+
+      - [H 指数](post/0bb63398b64254c6b288855ff7d145fa.md)
 
     - [labuladong 刷题笔记](post/3aa643b0df4e564bb8c0b8e417741a0e.md)
 
