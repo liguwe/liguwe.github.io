@@ -217,7 +217,7 @@
 
       - [单调列队算法](post/494b14ecf85a5333913480a48f6a6459.md)
 
-      - [常数时间删除、查找数组中的任意元素@ing](post/170ce8fc2b7b52469bf7888ead5589b6.md)
+      - [常数时间删除、查找数组中的任意元素](post/f4bc17906a01558ba63aceb03ac52ec0.md)
 
     - [二叉树篇](post/6a9e42a4ed7456baafecac8f96c04702.md)
 
