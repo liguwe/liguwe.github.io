@@ -1,6 +1,6 @@
 # liguwe's Books
 
-[832 之书](post/aa0a5c16484e5093b49a182e8f4bf34c.md)
+[前言](post/2eb2f6f5459358b1825d1af5f4f9b1cd.md)
 [更新日志](post/2d268e4a1df35904b881dc25abac5ead.md)
 [更新计划](post/8f4cda4514295a0999b6e472e154bd1e.md)
 
