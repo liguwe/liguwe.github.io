@@ -1,6 +1,6 @@
 [book]
 authors = ["Guangwei Li"]
-language = "zh-CN"
+language = "zh-Hans"
 multilingual = false
 create-missing = false
 src = "src"
@@ -23,6 +23,9 @@ page-break = false # insert page-break after each chapter
 [output.html.fold]
 enable = true
 level = 0
+
+[output.html.search]
+enable = false    # 因为不支持中文搜索
 
 
 [preprocessor.toc]

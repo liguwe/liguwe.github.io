@@ -23,10 +23,13 @@ const ObsidianPath = path.resolve(__dirname, "../../832");
 // 用于存储所有的内容，key为 uid, value 为文件内容
 const postObj = {};
 
+// 用于存储 uid 和 path 的映射关系
+const pathMapUid = {};
+
 const excludeArr = [
     // 排除的以.开头的文件夹和文件
     /832\/832\/\.\w+/,
-    // 排除包含 @832 的文件夹, 它是私有的
+    // 排除包含 @832 的文件夹, 它是私有的，这是一级目录
     /832\/832\/\d+\.\s*.+@832/,
 ];
 // 并且只显示文件夹和.md 文件
@@ -41,6 +44,10 @@ const tree = dirTree(
     },
     // 文件
     (item, PATH, stats) => {
+        // console.log(item.path)
+        // 保存 uid 和 path 的映射关系
+        const pathKey = item.path.split('832/832/')[1].split('.md')[0];
+        pathMapUid[pathKey] = generateUniqueId(item.path);
         if (indexReg.test(item.name)) {
             item.index = parseInt(item.name.split(".")[0]);
             item.title = item.name.split(indexReg)[1].split(".md")[0];
@@ -71,13 +78,13 @@ const handleFileAndWrite = (file, depth) => {
     let content = res?.content || "";
     // 根据文件的路径生成唯一的 id
     const uid = generateUniqueId(file.path);
+
     file.mtime = stats.mtime;
     file.depth = depth;
     file.createAt = stats.birthtime;
     file.uid = uid;
     file.link = `/post/${uid}`;
     file.mdLink = `./post/${uid}.md`;
-
 
     // 从 content 中所有的文件地址（图片或者文件等）
     // 比如 ![[99. Obsidian@832/files/Pasted image 20240809084132.png|504]] 中的 `99. Obsidian@832/files/Pasted image 20240809084132.png|504`
@@ -107,7 +114,6 @@ const handleFileAndWrite = (file, depth) => {
 
     // 修改 content 中的文件地址,使用标准的 markdown 语法
     // ![[99. Obsidian@832/files/Pasted image 20240809084132.png]] 变成 ![图片&文件](./files/Pasted image 20240809084132.png)
-
     content = content.replace(imageOrFileRegex, (match, p1) => {
         const fileName = p1.split("/").pop().replace(/\s/g, "").split("|")[0];
         return `![图片&文件](./files/${fileName})\n`;
@@ -122,7 +128,16 @@ const handleFileAndWrite = (file, depth) => {
     // 变成 买卖股票的最佳时机
     // 正则，注意不以 ! 开头,否则会匹配到图片
     content = content.replace(localLinkRegex, (match, p1) => {
-        return `[${p1.split("|")[1]}](post/${file.uid}.md)`;
+        const pathKey = p1.split("|")[0];
+        // console.log(832, p1);
+        const postLink = pathMapUid[pathKey];
+        // 这种情况一般是本地的锚点#，不需要处理
+        if(!postLink) {
+            let text = p1;
+            p1 = p1.replace(/\s/g, "-").replace(/\./g, "").replace(/#/g, "").replace('：', "");
+            return `[${text}](/post/${uid}.html#${p1})`;
+        }
+        return `[${p1.split("|")[1]}](/post/${postLink}.html)`;
     });
 
     /*************************************************
@@ -130,7 +145,12 @@ const handleFileAndWrite = (file, depth) => {
      ************************************************/
     // markdown 内容中的 #单链表  #2024/07/30  #单链表/双指针 #单链表/快慢指针
     // 变成 `#单链表` `#2024/07/30` `#单链表/双指针` `#单链表/快慢指针`
-    const tagRegex = /#([^\s#]+)(?:\/([^\s#]+))*/g;
+    // 但不包含锚点，即在.html#后面的内容
+
+    // const tagRegex = /#([^\s#]+)(?:\/([^\s#]+))*/g;
+    // const tagRegex = /(?:^|\s)(#[^\s#]+(?:\/[^\s#]+)*)(?=$|\s)/g;
+    const tagRegex = /(?<!\S)#([^\s#]+)(?:\/([^\s#]+))*(?!\S)/g;
+
 
     content = content.replace(tagRegex, (match, p1) => {
         return `\`${match}\``;
@@ -333,3 +353,5 @@ const sidebar = [...prefix, ...part, ...suffix];
 fs.writeFileSync("./src/sidebar.json", JSON.stringify(sidebar));
 // 生成 post.json 文件
 fs.writeFileSync("./src/post.json", JSON.stringify(postObj));
+// 生成 pathMapUid.json 文件
+fs.writeFileSync("./src/pathMapUid.json", JSON.stringify(pathMapUid));
