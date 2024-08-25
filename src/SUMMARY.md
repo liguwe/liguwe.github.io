@@ -337,6 +337,12 @@
 
       - [合并区间](post/f4e023a14b9f5b2590e2e90b475c3021.md)
 
+      - [轮转数组](post/add68b3b6c015c5aa710d0cf18e2b6ef.md)
+
+      - [除自身以外数组的乘积](post/a8992cbb847c585696479aa926632b7a.md)
+
+      - [缺失的第一个正数](post/b32a8e12d366561d8dbcc8722490babd.md)
+
     - [LeetCode 经典 150 题](post/d8ae4c0740835688b712af7e4abae7b5.md)
 
 

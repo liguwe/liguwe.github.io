@@ -79,15 +79,13 @@ const handleFileAndWrite = (file, depth) => {
     file.mdLink = `./post/${uid}.md`;
 
 
-    // 从 content 中所有的文件地址
+    // 从 content 中所有的文件地址（图片或者文件等）
     // 比如 ![[99. Obsidian@832/files/Pasted image 20240809084132.png|504]] 中的 `99. Obsidian@832/files/Pasted image 20240809084132.png|504`
-
-    const regex = /\n!\[\[(.*?)\]\]\n/g;
+    const  imageOrFileRegex = /!\[\[(.*?)\]\]\n/g;
     let files = [];
     let match;
 
-    while ((match = regex.exec(content)) !== null) {
-        // console.log(832,match[1]);
+    while ((match = imageOrFileRegex.exec(content)) !== null) {
         files.push(match[1]);
     }
 
@@ -110,25 +108,31 @@ const handleFileAndWrite = (file, depth) => {
     // 修改 content 中的文件地址,使用标准的 markdown 语法
     // ![[99. Obsidian@832/files/Pasted image 20240809084132.png]] 变成 ![图片&文件](./files/Pasted image 20240809084132.png)
 
-    content = content.replace(regex, (match, p1) => {
+    content = content.replace(imageOrFileRegex, (match, p1) => {
         const fileName = p1.split("/").pop().replace(/\s/g, "").split("|")[0];
-        return `\n![图片&文件](./files/${fileName})\n`;
+        return `![图片&文件](./files/${fileName})\n`;
     });
 
 
+    /*************************************************
+     * :::: 匹配本地链接 ::::
+     ************************************************/
+    const localLinkRegex = /\[\[(.*?)\]\]/g;
     // [[12. 算法/3. 刷题篇/3. LeetCode 经典 150 题/7. 买卖股票的最佳时机|7. 买卖股票的最佳时机]]
     // 变成 买卖股票的最佳时机
     // 正则，注意不以 ! 开头,否则会匹配到图片
-    content = content.replace(/\[\[(.*?)\]\]/g, (match, p1) => {
-        return `【${p1.split("|")[1]}】`;
+    content = content.replace(localLinkRegex, (match, p1) => {
+        return `[${p1.split("|")[1]}](post/${file.uid}.md)`;
     });
 
+    /*************************************************
+     * :::: 匹配标签 ::::
+     ************************************************/
     // markdown 内容中的 #单链表  #2024/07/30  #单链表/双指针 #单链表/快慢指针
     // 变成 `#单链表` `#2024/07/30` `#单链表/双指针` `#单链表/快慢指针`
-    const reg3 = /#([^\s#]+)(?:\/([^\s#]+))*/g;
+    const tagRegex = /#([^\s#]+)(?:\/([^\s#]+))*/g;
 
-
-    content = content.replace(reg3, (match, p1) => {
+    content = content.replace(tagRegex, (match, p1) => {
         return `\`${match}\``;
     });
 
