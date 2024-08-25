@@ -5,7 +5,23 @@
 [更新计划](post/8f4cda4514295a0999b6e472e154bd1e.md)
 
 
-# 第一卷 前端
+# 第一卷 AGI
+
+
+  - [前言篇](post/8a599dd85c5854f1a6de8c2290382ba7.md)
+
+  - [入门篇](post/0198f76597785e58b28eb7eda7cbf25a.md)
+
+  - [提示词篇](post/da1a4688cdc35f06a935b00d011aec73.md)
+
+  - [Agent 篇](post/82b0946e47735857bb636bd07783f75e.md)
+
+
+    - [Agent 是什么？](post/52d8da8fb4d058a1b87c26c88f38a72a.md)
+
+  - [后记](post/ecde0e887a875f7a9b22afe362303a53.md)
+
+# 第二卷 前端
 
 
   - [前言](post/07e40f4348475b2aa6d5abbe2ceeb66e.md)
@@ -179,7 +195,7 @@
 
   - [后记]()
 
-# 第二卷 算法
+# 第三卷 算法
 
 
   - [前言](post/f5ec65b0e05059cd90d5f75a6e38d2f8.md)
