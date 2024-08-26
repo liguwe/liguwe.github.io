@@ -131,10 +131,13 @@ const handleFileAndWrite = (file, depth) => {
         const pathKey = p1.split("|")[0];
         // console.log(832, p1);
         const postLink = pathMapUid[pathKey];
+        console.log(postLink);
         // 这种情况一般是本地的锚点#，不需要处理
+        // todo 但是，因为ob 每次都会格式化标题序号，所以这里的锚点可能会有问题
         if(!postLink) {
             let text = p1;
             p1 = p1.replace(/\s/g, "-").replace(/\./g, "").replace(/#/g, "").replace('：', "");
+            console.log(p1)
             return `[${text}](/post/${uid}.html#${p1})`;
         }
         return `[${p1.split("|")[1]}](/post/${postLink}.html)`;
