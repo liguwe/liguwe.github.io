@@ -2,7 +2,6 @@
 
 [前言](post/2eb2f6f5459358b1825d1af5f4f9b1cd.md)
 [更新日志](post/2d268e4a1df35904b881dc25abac5ead.md)
-[更新计划](post/8f4cda4514295a0999b6e472e154bd1e.md)
 
 
 # 第一卷 AGI
@@ -11,6 +10,9 @@
   - [前言](post/c3056399857f5786a1c240c8d22c1d9d.md)
 
   - [入门篇](post/0028c4a9ba94574db517c164d21c3e63.md)
+
+
+    - [Transformer model 是如何改变机器翻译的？](post/350ecf1f122f5e63b19dd8fefd91f8cd.md)
 
   - [提示词篇](post/b20a444a962c56cab0f0470af59ed143.md)
 
@@ -24,6 +26,9 @@
     - [Agent 的进化之路](post/447ec601edac5bb6827a7cf8d9dd7762.md)
 
   - [后记](post/464d8699eaea5e5f8c40943e52673b63.md)
+
+
+    - [后记篇](post/ecde0e887a875f7a9b22afe362303a53.md)
 
 # 第二卷 前端
 
@@ -241,6 +246,9 @@
 
     - [二叉树篇](post/6a9e42a4ed7456baafecac8f96c04702.md)
 
+
+      - [一个方法秒杀 5 道最近公共祖先问题](post/f0e445aee36d59e19106f6e8aedf140e.md)
+
     - [图算法篇](post/31a972075ef25aaba62c7c0c38ca1f34.md)
 
     - [暴力穷举算法篇（回溯、DFS、BFS）](post/f54cfb71409c5f78af2f9fa70d4bf663.md)
@@ -329,6 +337,10 @@
       - [统计二叉树中好节点的数目](post/5a304d3644045d47a81eb81a9475b2f9.md)
 
       - [路径总和 III](post/fd3cf851d24b5886b126c66efbf5ad02.md)
+
+      - [二叉树中的最长交错路径](post/bd14e426cc4a5deeb5345a749448428f.md)
+
+      - [二叉树的最近公共祖先](post/e628f633d8ac59359d359560229e98c1.md)
 
     - [LeetCode 热题 100 题](post/77d439a781ef5295a4973824f8fe975f.md)
 
