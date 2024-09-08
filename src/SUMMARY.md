@@ -12,7 +12,11 @@
   - [入门篇](post/0028c4a9ba94574db517c164d21c3e63.md)
 
 
-    - [Transformer model 是如何改变机器翻译的？](post/350ecf1f122f5e63b19dd8fefd91f8cd.md)
+    - [chatGPT 是什么（篇一）](post/939966fcd5b75bdab0eafc80a3655f6d.md)
+
+    - [chatGPT 是什么（篇二）](post/29c2278815b35bffaf0e444648f0f394.md)
+
+    - [Transformer model 是如何改变机器翻译的？](post/98cff80976cc54179c8aedd2642b9d76.md)
 
   - [提示词篇](post/b20a444a962c56cab0f0470af59ed143.md)
 
@@ -341,6 +345,10 @@
       - [二叉树中的最长交错路径](post/bd14e426cc4a5deeb5345a749448428f.md)
 
       - [二叉树的最近公共祖先](post/e628f633d8ac59359d359560229e98c1.md)
+
+      - [二叉树的右视图](post/53d0716e96a55317902dba8386fcd396.md)
+
+      - [最大层内元素和](post/b5050cdc06f55f2f97c130dbbcfd2f27.md)
 
     - [LeetCode 热题 100 题](post/77d439a781ef5295a4973824f8fe975f.md)
 
