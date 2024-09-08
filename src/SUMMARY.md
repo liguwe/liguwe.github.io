@@ -253,6 +253,10 @@
 
       - [一个方法秒杀 5 道最近公共祖先问题](post/f0e445aee36d59e19106f6e8aedf140e.md)
 
+      - [二叉搜索树（篇一：二叉树的特性）](post/ab6853ba04bb54128e35672c636a8999.md)
+
+      - [二叉搜索树（篇二：BST 的增删改查）](post/b6e8f6eb715a5304bd4f981cd416439f.md)
+
     - [图算法篇](post/31a972075ef25aaba62c7c0c38ca1f34.md)
 
     - [暴力穷举算法篇（回溯、DFS、BFS）](post/f54cfb71409c5f78af2f9fa70d4bf663.md)
@@ -350,6 +354,10 @@
 
       - [最大层内元素和](post/b5050cdc06f55f2f97c130dbbcfd2f27.md)
 
+      - [二叉搜索树中的搜索](post/be9bb4ac6e9854d6ab04532a2ffa6c55.md)
+
+      - [删除二叉搜索树中的节点](post/3a3b74a1ed215259b87d4ff721bc1368.md)
+
     - [LeetCode 热题 100 题](post/77d439a781ef5295a4973824f8fe975f.md)
 
 
@@ -410,10 +418,10 @@
 
       - [H 指数](post/0bb63398b64254c6b288855ff7d145fa.md)
 
-    - [labuladong 刷题笔记](post/3aa643b0df4e564bb8c0b8e417741a0e.md)
+    - [其他算法题](post/67d107c8f36c5200bdb2533015a66dc6.md)
 
 
-      - [买卖股票的最佳时机 IV](post/70bfdd5a2116524ea13bbf6b140b3eb0.md)
+      - [买卖股票的最佳时机 IV](post/37621780a57d5f6ca44da46dc45b8467.md)
 
   - [后记]()
 
