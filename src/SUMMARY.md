@@ -257,6 +257,8 @@
 
       - [二叉搜索树（篇二：BST 的增删改查）](post/b6e8f6eb715a5304bd4f981cd416439f.md)
 
+      - [二叉搜索树（篇三：BST 的构造）](post/73d0982e4b525a21b717a98e5e665463.md)
+
     - [图算法篇](post/31a972075ef25aaba62c7c0c38ca1f34.md)
 
     - [暴力穷举算法篇（回溯、DFS、BFS）](post/f54cfb71409c5f78af2f9fa70d4bf663.md)
