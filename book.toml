@@ -22,10 +22,10 @@ page-break = false # insert page-break after each chapter
 
 [output.html.fold]
 enable = true
-level = 1
+level = 0
 
 [output.html.search]
-enable = false    # 因为不支持中文搜索
+enable = false # 因为不支持中文搜索
 
 
 [preprocessor.toc]
