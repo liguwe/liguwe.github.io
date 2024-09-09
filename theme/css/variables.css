@@ -1,7 +1,8 @@
 /* Globals */
 
 :root {
-    --sidebar-width: 420px;
+    /* 今年 32 岁，马上 32 周岁，就从这里开始吧    */
+    --sidebar-width: 320px;
     --sidebar-resize-indicator-width: 8px;
     --sidebar-resize-indicator-space: 2px;
     --page-padding: 15px;
