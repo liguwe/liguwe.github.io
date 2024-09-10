@@ -251,7 +251,7 @@
 
     - [图结构篇](post/05bd89c17cc45dad808f3b13e6e582dd.md)
 
-  - [算法篇](post/a92aab31f47c59cca3ccd8b0ad85d071.md)
+  - [算法篇](post/21306e62266d5d819b17e071e0747b99.md)
 
 
     - [核心框架篇](post/99c091a7e9735318ab35f252a9d1edae.md)
@@ -278,6 +278,8 @@
       - [二叉搜索树（篇二：BST 的增删改查）](post/744d1d43ae4452b190c5da5610bea509.md)
 
       - [二叉搜索树（篇三：BST 的构造）](post/6556755e45c35c04adb53f4182b44175.md)
+
+      - [二叉搜索树（篇四：BST 的后序位置）](post/bbb1b68ac82a577fb2bb5288e6c4921b.md)
 
     - [图算法篇](post/f2aa7b7e98475219a5a427aaac02f766.md)
 
