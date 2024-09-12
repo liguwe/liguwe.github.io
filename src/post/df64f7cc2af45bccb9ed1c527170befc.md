@@ -54,7 +54,7 @@ JavaScript 异步编程是一种处理非阻塞操作的编程方式，允许程
 10. `.finally`方法也是返回一个`Promise`，他在`Promise`结束的时候，无论结果为`resolved`还是`rejected`，都会执行里面的回调函数。
 
 
-### 题目 1：打印 new Promise 的效果
+### 打印 new Promise 的效果
 
 ```javascript
 Promise { <fulfilled>: value }   // 注意：不是 Promise { <resolved> } 
@@ -62,7 +62,7 @@ Promise { <pending> }
 Promise { <rejected>: reason }  
 ```
 
-### 题目 1：没有 resolve不会执行 then
+### 没有 resolve不会执行 then
 
 ```javascript hl:14
 const promise = new Promise((resolve, reject) => {
@@ -83,7 +83,7 @@ console.log(4);
 
 ```
 
-### 题目 3：注意 resolve 后会执行 then
+### 注意 resolve 后会执行 then
 
 ```javascript hl:16
 const promise1 = new Promise((resolve, reject) => {
@@ -106,7 +106,7 @@ console.log("2", promise2);
 
 ```
 
-### 题目 4： `setTimeout` 里面嵌入 `Promise` 的场景
+###  `setTimeout` 里面嵌入 `Promise` 的场景
 
 
 ![图片&文件](./files/Pastedimage20240911082045.png)
@@ -127,7 +127,7 @@ console.log("2", promise2);
 'timer2'
 ```
 
-### 题目 5：`catch`不管被连接到哪里，都能捕获上层的错误，并且`catch()`也会返回一个`Promise`
+### `catch`不管被连接到哪里，都能捕获上层的错误，并且`catch()`也会返回一个`Promise`
 
 ```javascript
 const promise = new Promise((resolve, reject) => {
@@ -152,4 +152,91 @@ promise
 // catch:  error
 // then3:  undefined
 ```
+
+###  `return 2` 会被包装成`resolve(2)`
+
+```javascript
+Promise.resolve(1)
+  .then((res) => {
+    console.log(res);
+    return 2; // 等价于 resolve(2)
+  })
+  .catch((err) => {
+    return 3;
+  })
+  .then((res) => {
+    console.log(res);
+  });
+
+// output: 1 2
+
+```
+
+### resolve 后每个 then 和 catch 能被调用多次
+
+`Promise` 的 `.then` 或者 `.catch` 可以被调用多次，但这里 `Promise` 构造函数只执行一次。或者说 `promise` 内部状态一经改变，并且有了一个值，那么后续每次调用 `.then` 或者 `.catch` 都会直接拿到该值。
+
+```javascript
+const promise = new Promise((resolve, reject) => {
+  setTimeout(() => {
+    console.log("timer");
+    resolve("success");
+  }, 1000);
+});
+const start = Date.now();
+promise.then((res) => {
+  console.log(res, Date.now() - start);
+});
+promise.then((res) => {
+  console.log(res, Date.now() - start);
+});
+
+// Output:
+// timer
+// success 1003
+// success 1003 or success 1004
+
+```
+
+### `return new Error('error!!!')` 不走 `reject`
+
+```javascript
+Promise.resolve()
+  .then(() => {
+    return new Error("error!!!");
+  })
+  .then((res) => {
+    console.log("then: ", res);
+  })
+  .catch((err) => {
+    console.log("catch: ", err);
+  });
+
+// Output:
+// then:  Error: error!!!
+```
+
+### 走 catch 的场景
+
+```javascript hl:3,5
+Promise.resolve()
+  .then(() => {
+    return Promise.reject(new Error("error!!!"));
+    // or
+    throw new Error("error!!!");
+  })
+  .then((res) => {
+    console.log("then: ", res);
+  })
+  .catch((err) => {
+    console.log("catch: ", err);
+  });
+
+// Output:
+// catch:  Error: error!!!
+```
+
+
+
+
 

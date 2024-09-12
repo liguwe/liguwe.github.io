@@ -386,6 +386,8 @@
 
       - [钥匙和房间](post/e2da75147b725a9a8ae883853c163843.md)
 
+      - [省份数量](post/3e2a91b626a251b88df3161863a58398.md)
+
     - [LeetCode 热题 100 题](post/1ed6976be7525872a4dbabe4d4c6fea9.md)
 
 
