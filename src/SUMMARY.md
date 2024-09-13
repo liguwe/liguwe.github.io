@@ -47,7 +47,10 @@
 
     - [Agent 的进化之路](post/71d47dcf36dd5620961dde5ae3d0d08f.md)
 
-    - [LangChain（篇一：基础入门篇）](post/8e556ce18b0152719db8f79fa4592b03.md)
+  - [LangChain](post/ba4ac99832a7550d9dc3b89fb82bd503.md)
+
+
+    - [LangChain（篇一：基础入门篇）](post/3f8951329fd55452aeb91fa2528f92ec.md)
 
   - [后记](post/466db255cfb359bdb644bd7a5e9ccdab.md)
 
@@ -387,6 +390,8 @@
       - [钥匙和房间](post/e2da75147b725a9a8ae883853c163843.md)
 
       - [省份数量](post/3e2a91b626a251b88df3161863a58398.md)
+
+      - [重新规划路线](post/2353dc1dd35b5ae7bae4be5cb5719170.md)
 
     - [LeetCode 热题 100 题](post/1ed6976be7525872a4dbabe4d4c6fea9.md)
 
