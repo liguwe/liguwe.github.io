@@ -236,7 +236,126 @@ Promise.resolve()
 // catch:  Error: error!!!
 ```
 
+### 死循环
+
+```javascript
+const promise = Promise.resolve().then(() => {
+  return promise;
+})
+promise.catch(console.err)
+```
+
+### 值穿透 
+
+```javascript
+// 发生了 值穿透
+Promise.resolve(1)
+  .then(2)
+  .then(Promise.resolve(3))
+  // console.log 是一个函数，它被作为参数传递给 .then()
+  // 当 Promise 解析时，.then() 会调用这个函数，并将前一个 Promise 的值作为参数传入
+  // 所以这里的 console.log 会打印出 1
+  .then(console.log);
+```
+
+- `.then` 或者 `.catch` 的参数期望是函数，传入非函数则会发生**值透传**
+- `.then()` 会**执行**传入的函数参数，并把参数传**递给它**
+
+下面打印出 4
+
+```javascript hl:5
+Promise.resolve(1)  
+    .then(2)  
+    .then(Promise.resolve(3))  
+    .then(() => {  
+        return Promise.resolve(4);  
+    }).then(console.log)  
+  
+// 打印结果 4
+```
 
 
+### 需要注意是否有 reject 函数
+
+```javascript hl:7,8
+Promise.reject("err!!!")
+  .then(
+    (res) => {
+      // 这里不会执行
+      console.log("success", res);
+    },
+    // 这里会执行: error err!!!
+    (err) => {
+      console.log("error", err);
+    },
+  )
+  .catch((err) => {
+    console.log("catch", err);
+  });
+
+```
+
+### finally 虽然一定会执行，但还是有顺序的 
+
+```javascript hl:13,20
+Promise.resolve("2")
+  .finally(() => {
+    console.log("f2");
+    return "3";
+  })
+  .then((res) => {
+    console.log(res);
+  });
+// 打印结果 f2 2
+
+Promise.resolve("1")
+  .finally(() => {
+    console.log("f1");
+    throw new Error("f1 error");
+  })
+  .then((res) => {
+    console.log(res);
+  })
+  .catch((err) => {
+    console.log(err);
+  });
+
+// 打印结果：
+// f1
+// VM327:10 Error: f1 error
+//     at <anonymous>:4:11
+//     at <anonymous>
+
+```
+
+### `finally()`也是微任务队列
+
+```javascript
+function promise1() {
+  return new Promise((resolve) => {
+    console.log("p1");
+    resolve("1");
+  });
+}
+function promise2() {
+  return new Promise((resolve, reject) => {
+    console.log("p2");
+    reject("err");
+  });
+}
+promise1()
+  .then((res) => console.log(res))
+  .catch((err) => console.log(err))
+  // 第一轮，不会将 finally 里的函数放入微任务队列
+  .finally(() => console.log("f1"));
+
+promise2()
+  .then((res) => console.log(res))
+  .catch((err) => console.log(err))
+  .finally(() => console.log("f2"));
+
+// p1 p2 1 err f1 f2
+
+```
 
 
