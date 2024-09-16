@@ -277,6 +277,8 @@ Promise.resolve(1)
 
 ### 需要注意是否有 reject 函数
 
+> `.then()`方法的第二个参数`reject`也是可以捕获错误
+
 ```javascript hl:7,8
 Promise.reject("err!!!")
   .then(
@@ -359,3 +361,243 @@ promise2()
 ```
 
 
+### `.catch()`函数能够捕获到`.all()`里**最先**的那个异常，并且**只执行一次**
+
+> [!danger]
+> - 并不是只要有异常就完事了，每个都会执行
+> - catch 只捕获最新的那个异常，并且执行一次
+> - `Promise.all().then()`结果中数组的顺序和`Promise.all()`接收到的数组顺序一致
+
+
+```javascript
+function runAsync(x) {
+  return new Promise((resolve) =>
+    setTimeout(() => resolve(x, console.log(x)), 1000),
+  );
+}
+function runReject(x) {
+  return new Promise((resolve, reject) =>
+    setTimeout(() => reject(`Error: ${x}`, console.log(x)), 1000 * x),
+  );
+}
+Promise.all([runAsync(1), runReject(4), runAsync(3), runReject(2)])
+  .then((res) => console.log(res))
+  .catch((err) => console.log(err));
+
+1; // 1s后输出
+3; // 1s后输出
+2; // 2s后输出
+Error: 2; // 2s后输出
+4; // 4s后输出
+
+```
+
+
+再看下面一段代码，第 4s 即使 reject 了，也不再触发17 行了
+
+```javascript hl:14,17
+function runAsync(x) {
+  return new Promise((resolve) =>
+    setTimeout(() => resolve(x, console.log(x)), 1000),
+  );
+}
+function runReject(x) {
+  return new Promise((resolve, reject) =>
+    setTimeout(() => reject(`Error: ${x}`, console.log(x)), 1000 * x),
+  );
+}
+Promise.all([runAsync(1), runReject(4), runAsync(3), runReject(2)])
+  .then(
+    (res) => console.log(res),
+    // 添加 reject 回调函数参数
+    (reason) => console.log("reject", reason),
+  )
+  // 这段代码不执行
+  .catch((err) => console.log("catch:", err));
+
+1; // 1s 后输出 1
+3; // 1s 后输出 3
+2; // 2s 后输出 2
+reject Error: 2; // 2s 后输出 Error: 2
+4; // 4s 后输出 4
+
+```
+
+
+现在，让我们解释为什么上面 `catch` 没有被触发：
+
+1. `Promise.all` 的特性：
+    - 当其中任何一个 Promise 被拒绝时，`Promise.all` 就会立即拒绝，并返回第一个被拒绝的 Promise 的原因。
+    - 在这个例子中，`runReject(2)` 会在 2 秒后首先被拒绝。
+2. `then` 方法的处理：
+    - 您在 `then` 方法中提供了两个回调函数：
+        - 一个用于成功（第一个参数）
+        - 一个用于失败（第二个参数）。
+    - 当 `Promise.all` 被拒绝时，它会调用 `then` 中的第二个回调函数（失败回调）。
+    - 在这个例子中，失败回调 `(reason) => console.log("reject", reason)` 被调用。
+3. 错误被处理：
+    - 一旦错误在 `then` 的第二个回调中被处理，JavaScript 认为这个错误已经被"捕获"和"处理"了。
+    - 因此，错误不会继续传播到后面的 `catch` 语句。
+4. `catch` 的作用：
+    - ==`catch` 主要用于捕获在前面的 `then` 链中未被处理的错误。==
+    - 在这个例子中，错误已经在 `then` 的第二个回调中被处理了，所以 `catch` 不会被触发
+
+> 总结就是：Promise.all 只处理一个异常，其他的都被吞了
+
+
+### race会获取最新有结论的任务，然后走后面then或者 catch，其他的正常执行，但不走后面的then和 catch 了,执行结果会被抛弃
+
+```javascript
+function runAsync(x) {
+  return new Promise((r) => setTimeout(() => r(x, console.log(x)), 1000));
+}
+Promise.race([runAsync(1), runAsync(2), runAsync(3)])
+  // 只需要有一个promise实例率先改变状态，新的Promise状态就跟着改变
+  // 然后就会调用then方法，绑定回调函数
+  // 之后就不会在理会其他promise实例的状态，但还是会继续执行
+  // 只不过不走后面 then 和 catch 方法了
+  .then((res) => console.log("result: ", res))
+  .catch((err) => console.log(err));
+
+// 1
+// 'result: ' 1
+// 2
+// 3
+
+```
+
+
+### `await async2()` 会立即同步执行 `async2`
+
+```javascript hl:3
+async function async1() {
+  console.log("1");
+  // 这里 async2() 会立即执行，所以立即同步打印 3
+  await async2();
+  console.log("2");
+}
+async function async2() {
+  console.log("3");
+}
+async1();
+console.log("4");
+
+// 打印结果 1 3 4 2
+
+```
+
+### 并不需要 sync 一定返回一个 promise，然后才执行下面的东西
+
+```javascript
+async function async1() {
+  console.log("1");
+  await async2();
+  console.log("2");
+}
+
+// 并不需要 async2 一定返回一个 promise
+// 下面这个没有返回值，那么返回 undefined
+async function async2() {
+  // 下一轮宏任务，所以最后执行
+  setTimeout(() => {
+    console.log("3");
+  }, 0);
+  console.log("4");
+}
+async1();
+console.log("5");
+
+1;
+4;
+5;
+2;
+3;
+```
+
+### 注意 setTimeout(fn,0) 的第一次解析的顺序
+
+```javascript hl:18
+async function async1() {
+  console.log("1");
+  await async2();
+  console.log("2");
+  setTimeout(() => {
+    console.log("3");
+  }, 0);
+}
+async function async2() {
+  setTimeout(() => {
+    console.log("4");
+  }, 0);
+  console.log("5");
+}
+
+async1();
+
+// 先于第 5 行解析到
+setTimeout(() => {
+  console.log("6");
+}, 0);
+
+console.log("7");
+
+// 1 5 7 2 4 6 3
+
+```
+
+### async 的返回值
+
+```javascript
+async function fn() {
+  // return await 1234
+  // 等同于 相等于 resolve(123)
+  return 123;
+}
+fn().then((res) => console.log(res));
+```
+
+### await new Promise() 注意有没有 resolve 或者 reject 
+
+```javascript
+async function async1() {
+  console.log("1");
+  // Promise是没有返回值的，也就是它的状态始终是pending状态
+  // 因此相当于一直在await,后面的 3 和 4 不会被打印
+  await new Promise((resolve) => {
+    console.log("2");
+    // 下面的注释放开就能正常打印所有的 log
+    // resolve("22");
+  });
+  console.log("3");
+  return "4";
+}
+console.log("5");
+async1().then((res) => console.log(res));
+console.log("6");
+
+// 5 1 2 6
+
+```
+
+
+### 如果在`async函数`中抛出了错误，则终止**错误结果**，不会继续向下执行
+
+```javascript hl:3
+async function async1() {
+  await async2();
+  // 下面都是执行了，因为 async2 报错了
+  console.log("2");
+  return "3";
+}
+async function async2() {
+  return new Promise((resolve, reject) => {
+    console.log("3");
+    reject("e4");
+  });
+}
+async1().then((res) => console.log(res));
+
+// 3
+// Uncaught (in promise) e4
+
+```

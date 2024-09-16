@@ -52,6 +52,8 @@
 
     - [LangChain（篇一：基础入门篇）](post/3f8951329fd55452aeb91fa2528f92ec.md)
 
+  - [LangGraph]()
+
   - [后记](post/466db255cfb359bdb644bd7a5e9ccdab.md)
 
 
@@ -302,6 +304,8 @@
 
       - [区间问题](post/1db12e023bb553cc972e6129595bc3c2.md)
 
+      - [快速排序算法的原理及运用](post/fe8d8d783f8251acace0777a798ef73b.md)
+
   - [刷题篇](post/94a9f06bb86f50f68d82f6846f70676b.md)
 
 
@@ -400,6 +404,10 @@
 
       - [除法求值](post/042a93d9b82255a180b5b375ef4258ed.md)
 
+      - [迷宫中离入口最近的出口](post/ea5b63477f805757bc404385c00f3678.md)
+
+      - [腐烂的橘子](post/df971531e5865d7982ca0273ee8cf819.md)
+
     - [LeetCode 热题 100 题](post/1ed6976be7525872a4dbabe4d4c6fea9.md)
 
 
@@ -466,6 +474,22 @@
       - [买卖股票的最佳时机 IV](post/5aae3260fd1f57b0867225ffef129393.md)
 
   - [后记]()
+
+# 第六卷 计算机科学
+
+
+  - [前序](post/1c23ff19bb3a58e5b5c9030fa87f45aa.md)
+
+  - [Python 编程语言](post/93736455c0575ba8b2a9e0942fa3edc9.md)
+
+
+    - [语言基础](post/fb7ddbe03ea55ca1b55ea2e57c776b52.md)
+
+    - [函数](post/fbdd21c4abf551029ac833182600c480.md)
+
+    - [类](post/a959491802295a8b93e627e39042db95.md)
+
+  - [后序]()
 
 -----------
 [关于](post/b049496c4d0f5c1cb601a8e8daaeb19c.md)
