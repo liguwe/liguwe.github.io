@@ -256,7 +256,18 @@
 
       - [树的基础概念](post/55f1c4e27801589983464c18cc8a2210.md)
 
+      - [二叉堆](post/be11761c1ed95a4d8c2aba3e475574b0.md)
+
+      - [数据结构中的堆和内存中的堆的区别](post/0072ad78920a5695975750c85caa326b.md)
+
+      - [堆内存和栈内存的区别](post/117b86985d935429a7aa2f594d7d91fc.md)
+
     - [图结构篇](post/05bd89c17cc45dad808f3b13e6e582dd.md)
+
+
+      - [图的基本概念](post/8723f556f04f5279b5652d7dfe9da16c.md)
+
+      - [图的遍历](post/84064dc987ca5158a7ca17d0e7bed2c7.md)
 
   - [算法篇](post/21306e62266d5d819b17e071e0747b99.md)
 
@@ -408,6 +419,10 @@
 
       - [腐烂的橘子](post/df971531e5865d7982ca0273ee8cf819.md)
 
+      - [数组中的第K个最大元素](post/c466cf1ca6e25e65ac04a4022f4562b6.md)
+
+      - [无限集中的最小数字@ing](post/c2e7e0e489d85316ab38f68735d74cf4.md)
+
     - [LeetCode 热题 100 题](post/1ed6976be7525872a4dbabe4d4c6fea9.md)
 
 
@@ -483,11 +498,13 @@
   - [Python 编程语言](post/93736455c0575ba8b2a9e0942fa3edc9.md)
 
 
-    - [语言基础](post/fb7ddbe03ea55ca1b55ea2e57c776b52.md)
+    - [Python 语言基础](post/f243cdf92657516ea7bb60c541b3eb61.md)
 
-    - [函数](post/fbdd21c4abf551029ac833182600c480.md)
+    - [Python 函数与模块](post/e0abc9a5b128589a95b1da5a9c72fafb.md)
 
-    - [类](post/a959491802295a8b93e627e39042db95.md)
+    - [Python 类](post/b35fb3cd5f3c535bb191db5687c23d92.md)
+
+    - [Python 文件与异常处理](post/27114d670b6e57f880be232ceac34467.md)
 
   - [后序]()
 
