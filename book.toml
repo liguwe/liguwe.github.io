@@ -13,7 +13,7 @@ create-missing = false
 [output.html]
 smart-punctuation = true
 mathjax-support = true
-git-repository-url = "https://github.com/liguwe/liguwe.github.io"
+git-repository-url = "https://github.com/liguwe"
 edit-url-template = "https://github.com/liguwe/liguwe.github.io/blob/master/{path}"
 
 [output.html.print]
