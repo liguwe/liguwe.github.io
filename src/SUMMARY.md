@@ -5,22 +5,7 @@
 [目录](post/923eccb881c559c98e2fa78fcd663636.md)
 
 
-# 第一卷 月报
-
-
-  - [第 000 期：前言（2024.09.09）](post/b0326378fa825be5bddb8fd01964d725.md)
-
-# 第二卷 博客&播客
-
-
-  - [2024](post/6087803239715405b9f9912ffb5007ab.md)
-
-
-    - [播客：AI 时代的频率跃迁背景下个人的选择-高频的卷或低频的定](post/44db27a919d353f989add4df74bc8390.md)
-
-    - [播客：张云帆的芒格之道](post/78cf86e76c58569da4f46f0c0e34c663.md)
-
-# 第三卷 AGI
+# 第一卷 AGI
 
 
   - [前言](post/84cc60078c855f12b8bd87aca181f7c2.md)
@@ -59,7 +44,7 @@
 
     - [后记篇](post/38e9a79ef7c857d08e8e3d0ea044fc5f.md)
 
-# 第四卷 前端
+# 第二卷 前端
 
 
   - [前言](post/6466503f6b6f53fb89850c4a8a001103.md)
@@ -235,7 +220,7 @@
 
   - [后记]()
 
-# 第五卷 算法
+# 第三卷 算法
 
 
   - [前言](post/23891ecf97ad5f0b8b465d2c1d406476.md)
@@ -243,31 +228,65 @@
   - [数据结构篇](post/2276f2b07c7456659804d42221e725c8.md)
 
 
-    - [数据结构基础篇](post/faf0852b2c3e56368ff1b54eadfd95c7.md)
+    - [数据结构基础](post/03975b2aae47534d94a366201dd61eb3.md)
 
-    - [数组与链表篇](post/4e2df040936053f5b7bcf5e0957ac6d6.md)
-
-    - [栈与队列篇](post/6b9ea43e2e735de5b8b48a722414d9c8.md)
-
-    - [哈希表篇](post/51af8d588be0596da5f5110ee7a0a4a2.md)
-
-    - [树形结构篇](post/a6b46d0f9add5aad90ac6e82eb50308a.md)
+    - [数组与链表](post/390ad87a19c15e45a552f65b7b2e6446.md)
 
 
-      - [树的基础概念](post/55f1c4e27801589983464c18cc8a2210.md)
+      - [数组：Python 描述](post/b71171914d1e58538e2676a475dafaee.md)
 
-      - [二叉堆](post/be11761c1ed95a4d8c2aba3e475574b0.md)
+      - [链表：Python 描述](post/ce4dc05ff0f45520a114d1ecee6e0a6a.md)
 
-      - [数据结构中的堆和内存中的堆的区别](post/0072ad78920a5695975750c85caa326b.md)
+      - [列表：Python 描述](post/3feb8fa51d1b591382363b33d56e2f6f.md)
 
-      - [堆内存和栈内存的区别](post/117b86985d935429a7aa2f594d7d91fc.md)
+      - [数组链表与内存缓存的关系](post/31e246765ffc5ff0a3dd553780ab02cb.md)
 
-    - [图结构篇](post/05bd89c17cc45dad808f3b13e6e582dd.md)
+    - [栈与队列](post/b41c29b6969e569989382bb8653ac357.md)
 
 
-      - [图的基本概念](post/8723f556f04f5279b5652d7dfe9da16c.md)
+      - [栈：Python 描述](post/083d291ac98a54d2a535d87cea6a5459.md)
 
-      - [图的遍历](post/84064dc987ca5158a7ca17d0e7bed2c7.md)
+      - [列队：Python 描述](post/963a842f36d85d53a213af2f49c0fb82.md)
+
+      - [双向队列：Python 描述](post/1d978a86f88e56d986140ef8609d6cb8.md)
+
+    - [哈希表](post/d0275943d8045a5eafe4f7f3b536719c.md)
+
+
+      - [哈希表概述](post/406ece3d1ab3574e8b58e72dedacf831.md)
+
+      - [哈希集合](post/9f9c3d24256656f093a92066664e0b87.md)
+
+    - [树](post/439995c42d1154bbb799f9fef48cb055.md)
+
+
+      - [二叉树基本概念：Python 描述](post/c7becb7bcb0a5c05a048047cbf364ebc.md)
+
+      - [二叉树的存储方式](post/727fa51db8f151978f2a2f70a327a81a.md)
+
+      - [二叉树的遍历](post/5cdd4a90f06c562e8a249671eebd5f76.md)
+
+      - [多叉树的遍历：Python 描述](post/3d9bb984dee85899a0857b2b0716a80e.md)
+
+      - [二叉搜索树：Python 描述](post/b8639185cde65168ac17a9ee2030fd4b.md)
+
+      - [AVL 树和红黑树](post/ea4b3074a36256758dc50f7886b2df55.md)
+
+    - [堆](post/ea3d5f7c8d555790930916f3ff2582e7.md)
+
+
+      - [二叉堆](post/02dd23fb7c7b500a84eeec788bcfaf97.md)
+
+      - [数据结构中的堆和内存中的堆的区别](post/15e691089a3c55859497f0cbb2bb2fe5.md)
+
+      - [堆内存和栈内存的区别](post/34133433c2ea5f29bf36b8b3f683a9ce.md)
+
+    - [图](post/0a863425c92858b49577bb4e47f854d3.md)
+
+
+      - [图的基本概念](post/cc1035b1331a5921a12bd38b417b7fad.md)
+
+      - [图的基本实现：python 描述](post/63fc6d06d05d5d34b89dcd941307ce69.md)
 
   - [算法篇](post/21306e62266d5d819b17e071e0747b99.md)
 
@@ -490,7 +509,7 @@
 
   - [后记]()
 
-# 第六卷 计算机科学
+# 第四卷 计算机科学
 
 
   - [前序](post/1c23ff19bb3a58e5b5c9030fa87f45aa.md)
@@ -508,5 +527,9 @@
 
   - [后序]()
 
+# 第五卷 后记
+
+
+  - [关于](post/b049496c4d0f5c1cb601a8e8daaeb19c.md)
+
 -----------
-[关于](post/b049496c4d0f5c1cb601a8e8daaeb19c.md)
