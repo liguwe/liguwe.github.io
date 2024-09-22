@@ -503,6 +503,21 @@
 
   - [后记]()
 
+# 第四卷 计算机科学
+
+
+  - [前言]()
+
+  - [Python 编程语言](post/bd6d40a5791d56f980e1a862975f08cb.md)
+
+
+    - [Python 语言基础](post/f243cdf92657516ea7bb60c541b3eb61.md)
+
+    - [Python 函数与模块](post/e0abc9a5b128589a95b1da5a9c72fafb.md)
+
+    - [Python 类](post/b35fb3cd5f3c535bb191db5687c23d92.md)
+
+    - [Python 文件与异常处理](post/27114d670b6e57f880be232ceac34467.md)
+
 -----------
-[前言]()
-[Python 编程语言]()
+[关于](post/b049496c4d0f5c1cb601a8e8daaeb19c.md)
