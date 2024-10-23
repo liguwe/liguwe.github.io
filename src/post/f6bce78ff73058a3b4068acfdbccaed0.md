@@ -29,29 +29,29 @@
 
 比如，如何描述一个人现实中的人了，如下图：
 
-![图片&文件](./files/Pastedimage20240907160925.png)
+![图片](https://blog-1310531898.cos.ap-beijing.myqcloud.com/832-34-20241012/Pasted%20image%2020240907160925.png)
 
 ### 2.2. 方便寻找规律
 
 比如看两个人的相似度，如下图
 
-![图片&文件](./files/Pastedimage20240907161243.png)
+![图片](https://blog-1310531898.cos.ap-beijing.myqcloud.com/832-34-20241012/Pasted%20image%2020240907161243.png)
 
 ### 2.3. 更高维度
 
-![图片&文件](./files/Pastedimage20240907161423.png)
+![图片](https://blog-1310531898.cos.ap-beijing.myqcloud.com/832-34-20241012/Pasted%20image%2020240907161423.png)
 
 ### 2.4. 初始化维度
 
-![图片&文件](./files/Pastedimage20240907161549.png)
+![图片](https://blog-1310531898.cos.ap-beijing.myqcloud.com/832-34-20241012/Pasted%20image%2020240907161549.png)
 
 ### 2.5. 如何训练修改维度值呢？
 
-![图片&文件](./files/Pastedimage20240907162001.png)
+![图片](https://blog-1310531898.cos.ap-beijing.myqcloud.com/832-34-20241012/Pasted%20image%2020240907162001.png)
 
 ### 2.6. 大量语料训练输入，修改维度值
 
-![图片&文件](./files/Pastedimage20240907161749.png)
+![图片](https://blog-1310531898.cos.ap-beijing.myqcloud.com/832-34-20241012/Pasted%20image%2020240907161749.png)
 
 ## 3. 第二步：信息压缩和特征提取
 
@@ -65,29 +65,29 @@
 
 主要问题是会忘记前面说了啥？如下图
 
-![图片&文件](./files/Pastedimage20240907162735.png)
+![图片](https://blog-1310531898.cos.ap-beijing.myqcloud.com/832-34-20241012/Pasted%20image%2020240907162735.png)
 
 ### 3.3. TransFormer
 
-![图片&文件](./files/Pastedimage20240907163023.png)
+![图片](https://blog-1310531898.cos.ap-beijing.myqcloud.com/832-34-20241012/Pasted%20image%2020240907163023.png)
 
 使用这种机制训练，可以让电脑**成功向量化**
 
-![图片&文件](./files/Pastedimage20240907163214.png)
+![图片](https://blog-1310531898.cos.ap-beijing.myqcloud.com/832-34-20241012/Pasted%20image%2020240907163214.png)
 
 各自发展路线图
 
-![图片&文件](./files/Pastedimage20240907163711.png)
+![图片](https://blog-1310531898.cos.ap-beijing.myqcloud.com/832-34-20241012/Pasted%20image%2020240907163711.png)
 
 ### 3.4. OpenAI的选择
 
 #### 3.4.1. 生成
 
-![图片&文件](./files/Pastedimage20240907164539.png)
+![图片](https://blog-1310531898.cos.ap-beijing.myqcloud.com/832-34-20241012/Pasted%20image%2020240907164539.png)
 
 #### 3.4.2. 增加参数
 
-![图片&文件](./files/Pastedimage20240907163806.png)
+![图片](https://blog-1310531898.cos.ap-beijing.myqcloud.com/832-34-20241012/Pasted%20image%2020240907163806.png)
 
 ## 4. 涌现
 

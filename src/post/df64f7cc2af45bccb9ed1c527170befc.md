@@ -109,7 +109,7 @@ console.log("2", promise2);
 ###  `setTimeout` 里面嵌入 `Promise` 的场景
 
 
-![图片&文件](./files/Pastedimage20240911082045.png)
+![图片](https://blog-1310531898.cos.ap-beijing.myqcloud.com/832-34-20241012/Pasted%20image%2020240911082045.png)
 
 打印效果：
 

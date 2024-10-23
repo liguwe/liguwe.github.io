@@ -32,19 +32,19 @@ root.right.right = TreeNode(6)
 # 4   5   6
 ```
 
-![图片&文件](./files/Pastedimage20240922163210.png)
+![图片](https://blog-1310531898.cos.ap-beijing.myqcloud.com/832-34-20241012/Pasted%20image%2020240922163210.png)
 ## 2. 常见术语
 
-![图片&文件](./files/Pastedimage20240922163226.png)
+![图片](https://blog-1310531898.cos.ap-beijing.myqcloud.com/832-34-20241012/Pasted%20image%2020240922163226.png)
 
 ## 3. 完美二叉树：满二叉树
 
-![图片&文件](./files/Pastedimage20240922163758.png)
+![图片](https://blog-1310531898.cos.ap-beijing.myqcloud.com/832-34-20241012/Pasted%20image%2020240922163758.png)
 
 ## 4. 完全二叉树：只有最底层没被填满
 
 
-![图片&文件](./files/Pastedimage20240922163825.png)
+![图片](https://blog-1310531898.cos.ap-beijing.myqcloud.com/832-34-20241012/Pasted%20image%2020240922163825.png)
 
 这里着重说下`完全二叉树`：
 - 叶子节点都在 `最底下两层`
@@ -60,13 +60,13 @@ root.right.right = TreeNode(6)
 
 完满二叉树（full binary tree）除了叶节点之外，其余所有节点都有两个子节点。
 
-![图片&文件](./files/Pastedimage20240922164014.png)
+![图片](https://blog-1310531898.cos.ap-beijing.myqcloud.com/832-34-20241012/Pasted%20image%2020240922164014.png)
 
 ## 6. 平衡二叉树
 
 平衡二叉树（balanced binary tree）中任意节点的左子树和右子树的高度之差的绝对值不超过 1
 
-![图片&文件](./files/Pastedimage20240922164058.png)
+![图片](https://blog-1310531898.cos.ap-beijing.myqcloud.com/832-34-20241012/Pasted%20image%2020240922164058.png)
 
 
 二叉树中`任意一个节点的左右子树`的`高度相差不能大于 1`
@@ -77,9 +77,9 @@ root.right.right = TreeNode(6)
 
 ## 7. 二叉树的退化 → 单链表
 
-![图片&文件](./files/Pastedimage20240922164118.png)
+![图片](https://blog-1310531898.cos.ap-beijing.myqcloud.com/832-34-20241012/Pasted%20image%2020240922164118.png)
 
-![图片&文件](./files/Pastedimage20240922164214.png)
+![图片](https://blog-1310531898.cos.ap-beijing.myqcloud.com/832-34-20241012/Pasted%20image%2020240922164214.png)
 
 
 
