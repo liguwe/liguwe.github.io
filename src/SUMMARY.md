@@ -266,36 +266,55 @@
 
     - [从人机交互着手，如何解决前端性能问题](post/b0234f053bbe5f8fb02876c97c8789f2.md)
 
-  - [前端面试篇](post/563e5ebae23852429978c611044e499b.md)
+  - [WebGIS](post/afae6c444530545ca2f409f3ac54e3f4.md)
 
 
-    - [常见面试题一](post/a0da195c6b745370ba3ebdb73f07b514.md)
+    - [学习路径](post/0c9e705eb15755eba2232974618fb8d3.md)
 
-    - [常见面试题二](post/a23771e4476255c7bd7193b935ae3d9a.md)
+    - [0  地图投影和坐标系统](post/d6c50975e6bd5ddd90cf80e93ffb07a2.md)
 
-    - [常见面试题三](post/f7f5478210f35a0195a90f2a5494ed02.md)
+    - [1  地图投影的主要类型](post/4f24309dbe6a5a669e06b7f0981f7b6d.md)
 
-    - [常见面试题四](post/0203ca39371755d0a977dbf548d3dd50.md)
+    - [2 空间数据类型 gpt 4o](post/247d15e5175257cf84fb52322ab2ee29.md)
 
-    - [JavaScript 对象](post/feebf749291c5b0c9d43cca92b9cd85f.md)
+    - [2 空间数据类型](post/dd7176184ace51cab5469abc042dc749.md)
 
-    - [常见面试题](post/96b1db4bf1395da0bae83c1789ec5c69.md)
+    - [3 矢量和栅格的区别？](post/0addaf652e5159b59b70e4669c1b2883.md)
 
-    - [常见面试题](post/6c3b117201ec5c229fe144f480e64cff.md)
+    - [地理要素的概念和属性](post/cdd9f279a8d8592da45c97c76a0fb6b4.md)
 
-    - [异步编程](post/6bb4d544f8d152a8a2911018daa8718b.md)
+    - [0.  地图前端渲染](post/77dea245c894517dac6db7d1ea2385b9.md)
 
-    - [渲染、性能、网络](post/d441c03089c75322b3f4b9f77d2688c1.md)
+  - [前端面试篇](post/60353df49fe15743a44072a5131f0e4d.md)
 
-    - [前端工程及架构（篇一）](post/fafe7c9fadbc5ff3b1a6a72487993292.md)
 
-    - [常见面试题](post/fc78d57d4a51510e8eeaae3bcb7ca9ec.md)
+    - [常见面试题一](post/be60ea0d4e295634b6a911cfdf0ab8e5.md)
 
-    - [前端工程及架构（篇二）](post/0f61c60c19d2503480d90b6d0b6e1456.md)
+    - [常见面试题二](post/9422d96feaf353ac972b49e37dd3f1eb.md)
 
-    - [通用问题](post/91a77cc27807583c8d574a41f1a0b0a9.md)
+    - [常见面试题三](post/d574a7d46ec85579858a99f880a8064b.md)
 
-    - [Vue](post/c1fc0191ac695ea89ae5d175b4270456.md)
+    - [常见面试题四](post/1093cf1c5d02559986afbf6a24b9a36e.md)
+
+    - [JavaScript 对象](post/3fa46ad951945172839034a2279d2dcf.md)
+
+    - [常见面试题](post/32e0ed7246db507082c888fdb0b974ed.md)
+
+    - [常见面试题](post/23fd276580b25a4b9f8dd4300a0e0cdd.md)
+
+    - [异步编程](post/0f16e63d7fbc53dcb8b0c58293099f11.md)
+
+    - [渲染、性能、网络](post/f5c1b385a49c5336b17d8f1e570cfe0a.md)
+
+    - [前端工程及架构（篇一）](post/58a22f48143d5a22af28addc7c5ab8bc.md)
+
+    - [常见面试题](post/b6fc3b39570b57978e3932f51327fe2c.md)
+
+    - [前端工程及架构（篇二）](post/5cc4d991b2f65a31b26469d06dd9adcb.md)
+
+    - [通用问题](post/51b75e8c7eb551e1bd5a729efa9d7af9.md)
+
+    - [Vue](post/7050714ec43e58668a1a92bb3624227e.md)
 
 # 第三卷 算法
 
