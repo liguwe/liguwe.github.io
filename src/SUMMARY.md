@@ -46,25 +46,6 @@
 
   - [前言](post/6466503f6b6f53fb89850c4a8a001103.md)
 
-  - [现代 Web 技术概述篇](post/c240152fbb4c54d0b2b9856fa8d1c91e.md)
-
-
-    - [什么是互联网？](post/323a8efdaeb05cd681bb1ec8676594c1.md)
-
-    - [什么是万维网（World Wide Web）？](post/a1aacc8dcccb50e083a4726ebf3b9c28.md)
-
-    - [什么是 Web 应用（Web Application）？](post/3b64c4568e99516d8e489c0f2c4962e4.md)
-
-    - [前端技术关键词解释](post/703227f5d0b856b98f527f80c0097c48.md)
-
-    - [现代 Web 技术有哪些变化和趋势？](post/7d370814a5cb52d5b68369fef7d848be.md)
-
-    - [Web 技术都有哪些？](post/3d726fccdd0050949e21238b940faa39.md)
-
-    - [Web 技术新兴技术和标准](post/cdd98929664253e9ac2bafe2bfcb60b9.md)
-
-    - [JAMstack 架构概述](post/55991f6170a959388f05d03c917d4203.md)
-
   - [HTML 篇](post/fc299d2c272f5751a9c54c336092ccdc.md)
 
 
@@ -232,8 +213,6 @@
 
     - [immer.js 在 React 中的使用](post/93854c5ca9625be5a43b8d8e38daa7ec.md)
 
-    - [聊聊 Redux](post/9aeb84295fa0562cbfe88f373fcc3e0e.md)
-
     - [聊聊最新的 umi](post/0fd4baba20745d6bbf508c4a4f5cde20.md)
 
     - [请介绍一下 next.js 框架](post/a835e51c9a20532484d8fb99003df310.md)
@@ -242,7 +221,7 @@
 
     - [请介绍一下 remix 框架](post/8ecea72f0c175d5fa166c3adab93f97f.md)
 
-    - [React Fiber架构的原理和工作模式](post/75a00424467c55f1a8317744f15e93d2.md)
+    - [React Fiber 架构的原理和工作模式](post/0b27121126755a2a96410b8cb6a68507.md)
 
     - [使用 useTransition 进行非阻塞渲染](post/7935ea9476a05ca2b17fa5345e58844d.md)
 
@@ -274,6 +253,8 @@
     - [如何治理端侧性能](post/14e9ce27a0bc5c49989eb20fbb15eb3f.md)
 
     - [跨端的核心技术点](post/2d47dea639a4502580cc30c62800d08b.md)
+
+    - [再聊聊跨端（PC、移动端、小程序、Web 等）](post/5515c3486fc855b1bf7cb6fbc898511b.md)
 
     - [前端研发工作台的设计和实现](post/47619277c8e95a9d815c0813060dbbe1.md)
 
@@ -618,8 +599,6 @@
     - [腐烂的橘子](post/46929a31613a51608e08f41fd4eca920.md)
 
     - [数组中的第K个最大元素](post/b16df90250b9567391924b3ede9df173.md)
-
-    - [无限集中的最小数字@ing](post/e965b06fa1d5560e943c20b2bfe157ca.md)
 
 # 第四卷 计算机科学
 

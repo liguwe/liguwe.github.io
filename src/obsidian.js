@@ -67,6 +67,24 @@ const tree = dirTree(
   },
 );
 
+// tree 排除任何包含 @832 或者 @ing 的文件夹或者文件
+const excludeReg = /@832|@ing/;
+// 递归处理所有的文件
+const handleExcludeTree = (tree) => {
+  const traverse = (item) => {
+    if (item.type === "directory") {
+      item.children = item?.children?.filter((child) => {
+        return !excludeReg.test(child.path);
+      });
+      item.children.forEach((child) => {
+        traverse(child);
+      });
+    }
+  };
+  traverse(tree);
+};
+handleExcludeTree(tree);
+
 // 单独处理某个文件
 const handleFileAndWrite = (file, depth) => {
   const stats = fs.statSync(file.path);
