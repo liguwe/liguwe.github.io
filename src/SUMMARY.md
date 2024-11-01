@@ -276,7 +276,9 @@
 
     - [谈一谈脚手架](post/13d91bc96af75f8fa288e89f06b23f65.md)
 
-    - [微前端原理篇](post/ed4295e940e453c8aa5e8b69496e953d.md)
+    - [微前端核心原理及常见的微前端方案](post/6775393dfd9e5cdbacd4d2ae6c4bdd2e.md)
+
+    - [聊聊技术与业务架构](post/6c2a8ce5cc6851849f97af06fc1a52cd.md)
 
   - [前端性能及体验篇](post/a34f529d45e35aad82704731df47db3b.md)
 
