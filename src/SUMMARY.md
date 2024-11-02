@@ -139,7 +139,7 @@
 
     - [实现一个简易版的 Koa](post/bb400cd27f045c7396c9c47337a64159.md)
 
-  - [Vue  篇](post/7e269514e56d5694a9a9b85163e34a51.md)
+  - [Vue  篇](post/a6d7522188d35c9a9df96791a4c70f3c.md)
 
 
     - [Vue3 基础（篇一）](post/3abe29bc738b592c876a72cae4005117.md)
@@ -148,17 +148,13 @@
 
     - [Vue3 基础（篇三）](post/6c152cd061ac5cbcbbadd7aa76057296.md)
 
-    - [Vue3 组件](post/5049299b49eb50c2b1a94caffe3b9991.md)
+    - [Vue3 组件](post/d60d72b996b053a49903884d313c885c.md)
+
+    - [请介绍下  Vue3  生态最新动态](post/117f9c7a06c25d2383a3e1f6b5ca9448.md)
 
     - [Vue3 的渲染器原理](post/1d4b6077acf55710b1a41f7b8e299b2f.md)
 
-    - [前端框架相关的前置知识点](post/3ca03726957250b7a9a00f3e6fc9a9e3.md)
-
     - [Vue3 组件的实现原理](post/71ffd6926a4155939fe1a83954dd862c.md)
-
-    - [前端框架设计里的"权衡" 与"选择"](post/d85a52c076715f178c0254e08d514a0e.md)
-
-    - [前端框架设计时需要考虑的点](post/947cb009c51d57fc999bb58cbcd00c81.md)
 
     - [Vue3 的响应式的系统设计原理](post/956fa407b09056b58e613f2a7b8901f9.md)
 
@@ -259,66 +255,87 @@
 
     - [React 的优先级调度机制和打断处理](post/fdfacf7b9e295604a8e276deb7a3c30b.md)
 
-  - [前端工程及架构篇](post/791eae9a0fdb5c4190478d72bd89554a.md)
+    - [任务饥饿（Task Starvation）](post/cbc732a09b7f5d17817eb9df28bc9d23.md)
+
+  - [前端框架篇](post/f564cf89c90c5db9b902499186e8a907.md)
 
 
-    - [前端团队可沉淀的前端资产都有哪些？](post/d470827f95d4569ea50001e1b697d4fa.md)
+    - [前端框架未来趋势分析](post/18f9a147015c55c29eedca1a02f9ea89.md)
 
-    - [聊聊你对前端工程化的理解](post/4eb5c9a238165b8995040f13aee0cfae.md)
+    - [前端框架后面的金主及生态情况](post/18b588dbc4b057d4b9b5a48a50fb9d9b.md)
 
-    - [聊聊前端工程重构的时机](post/571914665de85ff59d3a31bdd4074705.md)
+    - [编译时框架 vs 运行时框架](post/24905416c19f52cc97a0979da7f6977a.md)
 
-    - [如何治理端侧性能](post/14e9ce27a0bc5c49989eb20fbb15eb3f.md)
+    - [如何理解元框架（Meta Framework）](post/933f728f0fcb5ce2a69c608b417a4a7b.md)
 
-    - [跨端的核心技术点](post/2d47dea639a4502580cc30c62800d08b.md)
+    - [聊聊前端框架与 AI 大模型的集成](post/ced1e00311e05d9c88dcced8345da8f2.md)
 
-    - [再聊聊跨端（PC、移动端、小程序、Web 等）](post/5515c3486fc855b1bf7cb6fbc898511b.md)
+    - [前端框架相关的前置知识点](post/95517257f4a4528b827405a6e94b48cf.md)
 
-    - [前端研发工作台的设计和实现](post/47619277c8e95a9d815c0813060dbbe1.md)
+    - [前端框架设计里的"权衡" 与"选择"](post/bc88a20eb05b5e79a91ea5354658e88e.md)
 
-    - [谈一谈脚手架](post/13d91bc96af75f8fa288e89f06b23f65.md)
+    - [前端框架设计时需要考虑的点](post/fbb49243d9b3583e88b7e670a64cb3d3.md)
 
-    - [微前端核心原理及常见的微前端方案](post/6775393dfd9e5cdbacd4d2ae6c4bdd2e.md)
-
-    - [Webpack 5 的 Module Federation（模块联邦）](post/d6142b9cf4175ac4b691037228a38828.md)
-
-    - [优化 webpack 的性能的手段](post/12a849040fbe57b09b11917f2b7835d6.md)
-
-    - [当前主流的前端构建工具](post/a6f7ad5596af54eea5a44b848c814f9c.md)
-
-    - [vite 中如何使用 Module Federation（模块联邦）](post/38da65457811554085e518773ae04cf7.md)
-
-    - [前端构建提速的体系化思路](post/d4b73d30e1775cd68da2b62542ef0d08.md)
-
-    - [vite 的架构设计](post/460c3d7a92fb579d88fff6cd635de117.md)
-
-  - [前端性能及体验篇](post/a34f529d45e35aad82704731df47db3b.md)
+  - [前端工程及架构篇](post/11980a8ed5f150da8d4360e645760dfa.md)
 
 
-    - [从人机交互着手，如何解决前端性能问题](post/b0234f053bbe5f8fb02876c97c8789f2.md)
+    - [前端团队可沉淀的前端资产都有哪些？](post/c29ec391a9b95c51b7f3c1e7a4e9bd27.md)
 
-    - [如何度量前端性能](post/a5fc730d5ede5a6e830fe2f48ad02b18.md)
+    - [聊聊你对前端工程化的理解](post/86a8734afe2d58ffb05b801afc2a3e72.md)
 
-    - [性能优化的思路](post/fe5344aac3dc543da66416a03aa9b23c.md)
+    - [聊聊前端工程重构的时机](post/a57577ff991c5e71b0018829e3e1d8f8.md)
 
-  - [WebGIS](post/afae6c444530545ca2f409f3ac54e3f4.md)
+    - [如何治理端侧性能](post/5415831c0faa5a0e83063b4cc8e7b968.md)
+
+    - [跨端的核心技术点](post/547f1cb48bfe54b899e8da7b0d2efe19.md)
+
+    - [再聊聊跨端（PC、移动端、小程序、Web 等）](post/4dfedd91db225ffe8f415612f16a89a2.md)
+
+    - [前端研发工作台的设计和实现](post/cc20a4dd5cf75ee5af48521ada53c507.md)
+
+    - [谈一谈脚手架](post/0b067bec2813539993337fdda3aa566e.md)
+
+    - [微前端核心原理及常见的微前端方案](post/a8a21b1d6fa3589ebc390dafd13d533f.md)
+
+    - [Webpack 5 的 Module Federation（模块联邦）](post/02260e437042521f83516b7cac24bf78.md)
+
+    - [优化 webpack 的性能的手段](post/287e706d7e3d518b915e27d1499ff26c.md)
+
+    - [当前主流的前端构建工具](post/1bc6047ae29d5194bc31c6a1c56ccdc3.md)
+
+    - [vite 中如何使用 Module Federation（模块联邦）](post/9e9b7c72335355ac94a813f65b132484.md)
+
+    - [前端构建提速的体系化思路](post/ae6194feba05522bab4e7a1dda1a7808.md)
+
+    - [vite 的架构设计](post/57702019a2f757f48290de3bdc0ec7e1.md)
+
+  - [前端性能及体验篇](post/6772b59df93f51828b6f593d40b3cc76.md)
 
 
-    - [学习路径](post/0c9e705eb15755eba2232974618fb8d3.md)
+    - [从人机交互着手，如何解决前端性能问题](post/303b5abd5ddd5f529a7a30903ad2465d.md)
 
-    - [0  地图投影和坐标系统](post/d6c50975e6bd5ddd90cf80e93ffb07a2.md)
+    - [如何度量前端性能](post/e9d05be919375e3789ea47518109c59f.md)
 
-    - [1  地图投影的主要类型](post/4f24309dbe6a5a669e06b7f0981f7b6d.md)
+    - [性能优化的思路](post/1ad483abf6515f02aabdedb27700c69c.md)
 
-    - [2 空间数据类型 gpt 4o](post/247d15e5175257cf84fb52322ab2ee29.md)
+  - [WebGIS](post/98f627043c7a57d3ac891d7d660cdf70.md)
 
-    - [2 空间数据类型](post/dd7176184ace51cab5469abc042dc749.md)
 
-    - [3 矢量和栅格的区别？](post/0addaf652e5159b59b70e4669c1b2883.md)
+    - [学习路径](post/de93f0f12e565ba9bb131afec0230158.md)
 
-    - [地理要素的概念和属性](post/cdd9f279a8d8592da45c97c76a0fb6b4.md)
+    - [0  地图投影和坐标系统](post/4bdff6b1f4665f3b925a9b4d3cd885b7.md)
 
-    - [0.  地图前端渲染](post/77dea245c894517dac6db7d1ea2385b9.md)
+    - [1  地图投影的主要类型](post/fc5e0cf98e73514281b666402f88103a.md)
+
+    - [2 空间数据类型 gpt 4o](post/f6078f4b65725621b88b9a8787da406e.md)
+
+    - [2 空间数据类型](post/cf48ec5439bd5d25bb67ee1c1101fa77.md)
+
+    - [3 矢量和栅格的区别？](post/084911aba68b56adbfa68fd41557e85c.md)
+
+    - [地理要素的概念和属性](post/6dd16d1bc94a5e78b35f54f4619a9d65.md)
+
+    - [0.  地图前端渲染](post/afddbcf90c985f289b60fad8f48975ed.md)
 
   - [前端面试篇](post/60353df49fe15743a44072a5131f0e4d.md)
 
@@ -350,6 +367,8 @@
     - [通用问题](post/51b75e8c7eb551e1bd5a729efa9d7af9.md)
 
     - [Vue](post/7050714ec43e58668a1a92bb3624227e.md)
+
+  - [前端职业篇](post/f7b9d848a72a5a6686709dcdae97a36c.md)
 
 # 第三卷 算法
 
