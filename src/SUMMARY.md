@@ -128,6 +128,8 @@
 
     - [JavaScript 中有哪些不会冒泡的事件，以及为什么不支持冒泡？](post/e18dca28cba550b78c39b3124e5f0f96.md)
 
+    - [使用 requestAnimationFrame 批量处理操作的原理](post/a46b7be6b5315c388983afe45331e6af.md)
+
   - [Node.js 篇](post/d9e0588bf2d759d5a53bb6d70f656ddb.md)
 
 
@@ -152,13 +154,29 @@
 
     - [请介绍下  Vue3  生态最新动态](post/117f9c7a06c25d2383a3e1f6b5ca9448.md)
 
+    - [Vue3 的响应式的系统设计原理（effect、computed、watch 的原理 ）](post/1c52539699f15d5d80f350f4a7d98915.md)
+
+    - [Vue3 中 effect 的调度选项（scheduler）的使用示例](post/c682639afe0b5e52b50a2455332e00a6.md)
+
+    - [vue3 watch 的取消监听与清理副作用](post/c276d7aca9a052f18a31537ee2bf64d5.md)
+
+    - [Vue3 的非原始值响应式方案（Map、WeakMap 、Set 、WeakSet ）](post/bf137ce405e5590ba39bee0ccd7feafe.md)
+
+    - [原始值的响应方案](post/30b62fd7a2f358eeaf2b7c400e740dc4.md)
+
     - [Vue3 的渲染器原理](post/1d4b6077acf55710b1a41f7b8e299b2f.md)
 
-    - [Vue3 组件的实现原理](post/71ffd6926a4155939fe1a83954dd862c.md)
+    - [Vue3 的 diff 算法](post/15d13e5949de5fdf8f8c72f1a2ade238.md)
 
-    - [Vue3 的响应式的系统设计原理](post/956fa407b09056b58e613f2a7b8901f9.md)
+    - [Vue3 组件的实现原理](post/d6757822f66e55c483673891ac1025cc.md)
 
-    - [vue的 diff 算法](post/44cc3365bf5c5c67a569853274741b82.md)
+    - [Vue3 中 keepAlive组件的实现原理](post/51cf1a1cd0915b80a43b9174b6b58bce.md)
+
+    - [Vue3中 Teleport 组件的实现原理](post/40e3d7ca4b0b5b81810ef117c1778e11.md)
+
+    - [Vue3 中 Transition 组件的实现原理](post/a713a2c2701155e5874c07b27acbe1d8.md)
+
+    - [异步组件和函数式组件的实现原理](post/3f5c34f92c7451ee9e183ed97e9593b1.md)
 
   - [React 篇](post/1fad285c47a05d63ba58bf0cfbaa8fb3.md)
 
@@ -260,21 +278,21 @@
   - [前端框架篇](post/f564cf89c90c5db9b902499186e8a907.md)
 
 
-    - [前端框架未来趋势分析](post/18f9a147015c55c29eedca1a02f9ea89.md)
+    - [前端框架设计的前置知识点](post/09e17fda609f5b56b02d0be1c8fdcd2f.md)
 
-    - [前端框架后面的金主及生态情况](post/18b588dbc4b057d4b9b5a48a50fb9d9b.md)
+    - [前端框架设计里的"权衡" 与"选择"](post/f3b55818e1db563b98470a98f2860b08.md)
 
-    - [编译时框架 vs 运行时框架](post/24905416c19f52cc97a0979da7f6977a.md)
+    - [前端框架设计时需要考虑的点](post/789ffd93147b5a1c842412b88146e171.md)
 
-    - [如何理解元框架（Meta Framework）](post/933f728f0fcb5ce2a69c608b417a4a7b.md)
+    - [如何理解元框架（Meta Framework）](post/734e2db787dc5859895127dcf14a4360.md)
 
-    - [聊聊前端框架与 AI 大模型的集成](post/ced1e00311e05d9c88dcced8345da8f2.md)
+    - [聊聊前端框架与 AI 大模型的集成](post/631b94eb60125b71b439c0a06a43d836.md)
 
-    - [前端框架相关的前置知识点](post/95517257f4a4528b827405a6e94b48cf.md)
+    - [编译时框架 vs 运行时框架](post/9fe39f35cb525c72a8d7860c08948933.md)
 
-    - [前端框架设计里的"权衡" 与"选择"](post/bc88a20eb05b5e79a91ea5354658e88e.md)
+    - [前端框架未来趋势分析](post/4d086c3f2667538da5deb250ad6da061.md)
 
-    - [前端框架设计时需要考虑的点](post/fbb49243d9b3583e88b7e670a64cb3d3.md)
+    - [前端框架后面的金主及生态情况](post/01ea3717e03f51b8a2bfe7174cf2f750.md)
 
   - [前端工程及架构篇](post/11980a8ed5f150da8d4360e645760dfa.md)
 
