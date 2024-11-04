@@ -170,13 +170,13 @@
 
     - [Vue3 组件的实现原理](post/d6757822f66e55c483673891ac1025cc.md)
 
+    - [异步组件和函数式组件的实现原理](post/1fc960b4c1155170a35fe29830468223.md)
+
     - [Vue3 中 keepAlive组件的实现原理](post/51cf1a1cd0915b80a43b9174b6b58bce.md)
 
     - [Vue3中 Teleport 组件的实现原理](post/40e3d7ca4b0b5b81810ef117c1778e11.md)
 
     - [Vue3 中 Transition 组件的实现原理](post/a713a2c2701155e5874c07b27acbe1d8.md)
-
-    - [异步组件和函数式组件的实现原理](post/3f5c34f92c7451ee9e183ed97e9593b1.md)
 
   - [React 篇](post/1fad285c47a05d63ba58bf0cfbaa8fb3.md)
 
