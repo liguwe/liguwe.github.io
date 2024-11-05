@@ -209,6 +209,8 @@
 
     - [Vue3 中不常用的 API](post/f0b04591a01c53bdae029a9b98e90929.md)
 
+    - [Vue3 源码主要包功能介绍分析](post/8c5b1d526bea513d9ded1cafe5f79d33.md)
+
   - [React 篇](post/1fad285c47a05d63ba58bf0cfbaa8fb3.md)
 
 

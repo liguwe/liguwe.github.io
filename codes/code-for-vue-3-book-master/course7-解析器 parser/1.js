@@ -1,26 +1,3 @@
-
-# Vue3 的编译器原理（篇二：完善的 HTML 解析器）
-
-`#vue3` 
-
-
-## 目录
-<!-- toc -->
- ## 1. 前言 
-
-- 解析器本质上是一个状态机。·
-- 正则表达式其实也是一个状态机。
-- 因此在编写 parser 的时候，利用正则表达式能够让我们少写不少代码。本章我们将更多地利用正则表达式来实现 HTML 解析器。
-- 另外，一个完善的 HTML 解析器远比想象的要复杂。 我们知道，**浏览器会对 HTML 文本进行解析**，那么它是如何做的呢? 
-	- 其实关于 HTML 文本的解析，是有规范可循的，即 WHATWG 关于 HTML 的解析规范，其中**定义了完整的错误处理和状态机的状态迁移流程**，还提及了一些**特殊的状态**，
-		- 例如 DATA、CDATA、RCDATA、 RAWTEXT 等。
-		- 那么，这些状态有什么含义呢?
-		- 它们对解析器有哪些影 响呢?什么是 HTML 实体，
-		- 以及 Vue.js 模板解析器需要如何处理 HTML 实体呢?
-
-## 2. 完善的 HTML 解析器
-
-```javascript
 // 定义文本模式，状态表
 const TextModes = {
   DATA: "DATA", // 普通文本模式
@@ -403,38 +380,7 @@ function parseComment(context) {
   };
 }
 
-
-
-```
-
-## 3. 执行结果测试
-
-```js
 // 测试解析函数
 const s = `<div><!-- comments --></div>`;
 const ast = parse(s); // 解析模板字符串
 console.log(ast); // 输出解析结果
-
-{
-    "type": "Root",
-    "children": [
-        {
-            "type": "Element",
-            "tag": "div",
-            "props": [],
-            "children": [
-                {
-                    "type": "Comment",
-                    "content": " comments "
-                }
-            ],
-            "isSelfClosing": false
-        }
-    ]
-}
-```
-
-## 4. 更多
-
-细节需要再慢慢看看书中的内容吧，不需要每行每字的看了，别浪费时间，以后需要直接来看调试这个代码，或者看书，或者借助其他工具都行
-
