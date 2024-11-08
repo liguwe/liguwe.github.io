@@ -1,0 +1,10 @@
+{
+  "confirm": {
+    "actions": [
+      {
+        "actionType": "preventDefault",
+        "expression": "${command === 'Do not close'}"
+      }
+    ]
+  }
+}
