@@ -412,6 +412,11 @@
 
   - [前端职业篇](post/f7b9d848a72a5a6686709dcdae97a36c.md)
 
+
+    - [从“全干”工程师的发展路径看前端的定位与价值](post/f98db6cef8e6532f9bf4a71f78609917.md)
+
+    - [](post/0d0cf07b65e150bfa07b105a6c458da3.md)
+
 # 第三卷 算法
 
 
@@ -508,6 +513,35 @@
   - [暴力穷举算法（回溯、DFS、BFS）](post/5804f473bc38514b85b4b7e289fffa38.md)
 
   - [动态规划算法](post/913516d39f845aa1ae34d1bc61a1e794.md)
+
+
+    - [斐波那契数列](post/70b818ac7beb5aa7b4430467224bd239.md)
+
+    - [动态规划解题套路框架（最小零钱）](post/fe09476041b056eb821c1b71d0fcfef4.md)
+
+    - [如何查找状态转移方程（最长递增子序列与俄罗斯套娃）](post/c40c5aab585c5d0b965212b6cb545f58.md)
+
+    - [base case 和备忘录的初始值怎么定（下降路径的最小和）](post/f8c6070c1b8b51b18b842e32eb4ba6a5.md)
+
+    - [最优子结构原理 和 DP 数组遍历方向](post/1ef0e19feaa95bafa35c3f5ee5efc690.md)
+
+    - [动态规划穷举的两种视角：不同的子序列个数](post/e5cb4e0d24ff56ddba1a24c09da00ea2.md)
+
+    - [动态规划和回溯算法的思维转换（单词拆分）](post/c86bb92d521d58d08ba9a773b2e299b8.md)
+
+    - [对动态规划进行空间压缩](post/c8d2663d678d59bbbc7650f3ce0bf434.md)
+
+    - [子序列：最小编辑距离](post/a5de5c33ec865d728f1440ce3828583f.md)
+
+    - [子序列：最大子数组](post/85df0ace5d445a4eb31717103aba803c.md)
+
+    - [子序列：最长公共子序列问题](post/dcbb55719d79514ea326d9256bd16448.md)
+
+    - [子序列： 动态规划之子序列问题解题模板（最长回文子序列）](post/1326cd4fbf0c57e29fcdfcfc4b609a57.md)
+
+    - [背包：0-1 背包问题](post/38f4b34af3d959b882345107215e0951.md)
+
+    - [背包：数组是否可以分割两个子集，使得这两子集的元素和相等](post/93a004131b26548394ad47c53597f49e.md)
 
   - [排序算法](post/4dbe7341ddc656aab948e23b4cdbedbf.md)
 
@@ -714,6 +748,8 @@
     - [Python 文件与异常处理](post/27114d670b6e57f880be232ceac34467.md)
 
   - [计算机网络篇](post/7e793931fd2a505d86fb24a497e79762.md)
+
+  - [其他](post/4d0f984f93e957d2b86297dc21cc6e65.md)
 
 -----------
 [关于](post/b049496c4d0f5c1cb601a8e8daaeb19c.md)
