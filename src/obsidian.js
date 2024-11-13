@@ -10,11 +10,13 @@ const dirTree = require("directory-tree");
 /**
  * @description 根据传入的 name ,生成唯一且不变的 id
  * */
-const uuid = require("uuid");
-const v5 = uuid.v5;
+// const uuid = require("uuid");
+// const v5 = uuid.v5;
+const ShortIdGenerator = require("./shortId");
 
 function generateUniqueId(name) {
-  return v5(name, uuid.v5.URL).replace(/-/g, "");
+  return new ShortIdGenerator().generate(name);
+  // return v5(name, uuid.v5.URL).replace(/-/g, "");
 }
 
 const ObsidianPath = path.resolve(__dirname, "../../832");
