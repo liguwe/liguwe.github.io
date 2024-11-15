@@ -43,6 +43,7 @@
 ## 6. 延迟加载和异步加载
 
 - 异步加载 CSS：使用 `media` 属性和 `onload` 事件异步加载非关键 CSS。
+
 ```html
 <link rel="stylesheet" href="non-critical.css" media="print" onload="this.media='all'">
 <noscript><link rel="stylesheet" href="non-critical.css"></noscript>

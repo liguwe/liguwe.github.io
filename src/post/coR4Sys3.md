@@ -36,24 +36,24 @@ document.addEventListener('click', function(e) {
 
 以下事件不会冒泡：
 
-a) 焦点事件：
-- focus
-- blur
-b) 资源事件：
-- load
-- unload
-- abort
-- error
-c) 鼠标事件：
-- mouseenter
-- mouseleave
-d) 媒体事件：
-- pause
-- play
-- playing
-- ended
-- volumechange
-- stalled
+- a) 焦点事件：
+	- focus
+	- blur
+- b) 资源事件：
+	- load
+	- unload
+	- abort
+	- error
+- c) 鼠标事件：
+	- mouseenter
+	- mouseleave
+- d) 媒体事件：
+	- pause
+	- play
+	- playing
+	- ended
+	- volumechange
+	- stalled
 
 > 这些事件**只在目标元素上触发**
 
@@ -135,7 +135,7 @@ parent.addEventListener('focus', function(e) {
 
 ### 4.2. 使用替代事件
 
-```javascript
+```javascript hl:2
 // 使用 focusin/focusout 代替 focus/blur
 // focusin/focusout 是会冒泡的
 element.addEventListener('focusin', function(e) {
@@ -193,9 +193,9 @@ document.querySelectorAll('input').forEach(input => {
 });
 ```
 
-## 6. 调试技巧
+## 6. 检测事件是否冒泡
 
-```javascript
+```javascript hl:7
 // 检测事件是否冒泡
 function isEventBubbling(eventName) {
     const element = document.createElement('div');

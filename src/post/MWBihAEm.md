@@ -3,7 +3,8 @@
 
 
 
-MessageChannel 是 HTML5 中的一个 API，它提供了一种在**不同的浏览器上下文（如窗口、标签页、iframe）之间**建立双向通信通道的方法。每个 MessageChannel 都有两个 MessagePort 对象，它们分别代表通道的两个端点。
+MessageChannel 是 HTML5 中的一个 API，它提供了一种在**不同的浏览器上下文（如窗口、标签页、iframe）之间**建立双向通信通道的方法。
+- 每个 MessageChannel 都有两个 MessagePort 对象，它们分别代表通道的两个端点。
 
 
 ## 目录
@@ -124,10 +125,11 @@ port.postMessage('从组件B发送消息');
 ### 3.5. 广播通道
 
 可以创建一个广播系统，where`多个窗口或标签页`可以订阅和接收消息
+
 ## 4. MessageChannel 的优势
 
 1. 双向通信：两个端口都可以发送和接收消息
-2. 安全性：比直接使用 postMessage 更安全，因为通信是点对点的
+2. 安全性：比直接使用 postMessage 更安全，因为通信是**点对点**的
 3. 隔离性：不同的通道之间互不干扰
 4. 性能：适合频繁通信的场景，性能较好
 

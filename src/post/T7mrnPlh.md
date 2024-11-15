@@ -7,4 +7,5 @@
 - CSS Grid Layout：二维布局系统
 - CSS Flexbox：维布局模型
 - 多列布局：column-count、column-gap 等
-- 浮动布局：不展开了，不建议使用了
+- 浮动布局：
+	- 不展开了，不建议使用了

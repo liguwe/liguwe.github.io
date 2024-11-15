@@ -40,7 +40,7 @@
 
 - `min()` 返回最小值。
 - `max()` 返回最大值。
-- `clamp()` 返回一个在指定范围内的值。
+- `clamp()` 返回一个==在指定范围内的值==。
 
 ```css
 .element {
@@ -62,7 +62,7 @@
 
 ## 5. `env()`
 
-`env()` 函数用于访问环境变量，例如安全区域（safe area）内边距。
+`env()` 函数用于`访问环境变量`，例如安全区域（safe area）内边距。
 
 ```css
 .element {
@@ -106,7 +106,7 @@
 
 `fit-content()` 函数用于定义一个自适应内容的大小。
 
-```css
+```css hl:2
 .element {
   width: fit-content(200px); /* 根据内容自适应宽度，不超过 200px */
 }
@@ -145,6 +145,7 @@
 ## 13. `linear-gradient()`
 
 `linear-gradient()` 函数用于创建线性渐变。
+
 ```css
 .element {
   background: linear-gradient(to right, red, yellow, green);
@@ -154,6 +155,7 @@
 ## 14. `radial-gradient()`
 
 `radial-gradient()` 函数用于创建径向渐变。
+
 ```css
 .element {
   background: radial-gradient(circle, red, yellow, green);
@@ -182,9 +184,15 @@
 
 ## 17. `hsl()`, `hsla()`
 
-`hsl()` 和 `hsla()` 函数用于定义 HSL 颜色值，可以包含计算值。
+`hsl()` 和 `hsla()` 函数用于定义 `HSL 颜色值`，可以包含计算值。
 
 ```css
+/* HSL 语法 */
+color: hsl(色相, 饱和度, 亮度);
+/* HSLA 语法（带透明度） */
+color: hsla(色相, 饱和度, 亮度, 透明度);
+
+
 .element {
   color: hsl(120, 100%, 50%);
   background-color: hsla(240, 100%, 50%, 0.5);
@@ -264,7 +272,7 @@
 
 ## 25. `circle()`, `ellipse()`, `inset()`, `polygon()`
 
-这些函数用于定义裁剪路径（clip path）。
+这些函数用于定义`裁剪路径`（clip path）。
 
 ```css
 .element {
@@ -277,7 +285,7 @@
 
 ## 26. `counter()`, `counters()`
 
-这些函数用于生成计数器内容。
+这些函数用于生成计数器内容
 
 ```css
 ol {

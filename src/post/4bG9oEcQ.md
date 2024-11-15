@@ -11,14 +11,14 @@
 ###  2024-10-25 星期五
 
 - 前端面试题相关
-	-  [1.  常见面试题一](/post/MQ7rbwjv.html)
+	-  [1.  面试题一](/post/EjYirQBp.html)
 	- [2. 常见面试题二](/post/uk1yX34y.html)
 	- [3. 常见面试题三](/post/w3iGknBa.html)
 	- [4. 常见面试题四](/post/cZgRUcVU.html)
-	- [5. JavaScript 对象](/post/BZFWjhQr.html)
+	- [5. 面试题（JavaScript 对象）](/post/I06QIfOZ.html)
 	- [6. 异步编程](/post/eXzVOKZY.html)
 	- [7. 渲染、性能、网络](/post/Fp8rzAe1.html)
-	- [1. Nodejs 篇（篇一）](/post/CS7DLe1L.html)
+	- [5. Nodejs 的单线程与多核](/post/GLwNQwLb.html)
 	- [10. 前端工程及架构（篇一）](/post/XZkiQV9g.html)
 	- [6.  React 原理篇（一）](/post/TqGR2e1u.html)
 	- [13. 面试题](/post/MOjZb1SO.html)
@@ -70,7 +70,7 @@
 	- [x] [48.  腐烂的橘子](/post/I1n6aUfz.html)
 	- [ ] [2. 快速排序算法的原理及运用](/post/xlWQaaiQ.html)
 - [x] 前端
-	- [x] [4. JavaScript 异步编程](/post/KInNNIbi.html)
+	- [x] [4. JavaScript 异步编程简介](/post/x45wL9Jh.html)
 - [x] 计算机科学
 	- [x] [1.  Python 语言基础](/post/n5wax2jm.html)
 
@@ -81,7 +81,7 @@
 	- [x] [2. 图的实现：JavaScript 描述](/post/FCAb78wk.html)
 	- [x] [3. 图的两种遍历方式：DFS 和 BFS](/post/BUrArfcI.html)
 - [x] 前端
-	- [ ] [4. JavaScript 异步编程](/post/KInNNIbi.html)
+	- [ ] [4. JavaScript 异步编程简介](/post/x45wL9Jh.html)
 
 
 
@@ -92,7 +92,7 @@
 - [x] 算法
 	- [x] [46.  除法求值](/post/8L7hEHg6.html) 
 - [x] 前端
-	- [ ] [4. JavaScript 异步编程](/post/KInNNIbi.html)
+	- [ ] [4. JavaScript 异步编程简介](/post/x45wL9Jh.html)
 
 ### 2024-09-13 星期五
 
@@ -106,7 +106,7 @@
 - [x] 算法
 	- [x] [44. 省份数量](/post/ejL9PhON.html)
 - [x] 前端
-	- [ ] [4. JavaScript 异步编程](/post/KInNNIbi.html)
+	- [ ] [4. JavaScript 异步编程简介](/post/x45wL9Jh.html)
 
 
 ### 2024-09-11 星期三
@@ -114,7 +114,7 @@
 - [x] 算法
 	- [x] [43. 钥匙和房间](/post/r1iISwPO.html)
 - [x] 前端
-	- [ ] [4. JavaScript 异步编程](/post/KInNNIbi.html)
+	- [ ] [4. JavaScript 异步编程简介](/post/x45wL9Jh.html)
 
 
 ### 2024-09-10 星期二

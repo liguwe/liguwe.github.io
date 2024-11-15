@@ -9,14 +9,17 @@
 <!-- toc -->
  ## 1. 先说说 `setInterval`  的问题 
 
-`setInterval(fn, N)`;  即`fn()` 将会在 `N` 秒之后被推入`任务队列`，但是每次推之前，都要判断看`上次的任务是否还在队列中`，如果在，则不添加。所以 `setInterval` 有两个`缺点`：
-
-- 使用 `setInterval` 时，某些间隔会`被跳过`；
-- 甚至可能多个定时器会`连续执行` ，即刚好在两个队列的缝隙时，会`连续执行`
+`setInterval(fn, N)`;  
+- 即`fn()` 将会在 `N` 秒之后被推入`任务队列`
+- 但每次推之前，都要判断看`上次的任务是否还在队列中`，
+	- 如果在，则不添加。所以 `setInterval` 有两个`缺点`：
+		- 使用 `setInterval` 时，某些间隔会`被跳过`；
+		- 甚至可能多个定时器会`连续执行` ，即刚好在两个队列的缝隙时，会`连续执行`
 
 ## 2. 再看看 `setTimeout`
 
 一个经典案例：
+
 ```javascript
 for (var i = 0; i < 5; i++) {
   setTimeout(function() {
@@ -25,19 +28,21 @@ for (var i = 0; i < 5; i++) {
 }
 ```
 
-为什么是`一秒后输出了 5 个 5` 呢？ `for` 是`主线程代码`，先执行完了，才轮到执行 `setTimeout`
-每个 `setTimeout` 产生的新的任务会直接 `push` 到`任务队列`中。而且它是`一次性`的，
-或者换个思路，`setInterval` 循环执行，链路长，不好控制，而 `setTimeout` 只是延时`一次` ，方便控制。
+为什么是`一秒后输出了 5 个 5` 呢？ 
+- `for` 是`主线程代码`，先执行完了，才轮到执行 `setTimeout`
+- 每个 `setTimeout` 产生的新的任务会直接 `push` 到`任务队列`中。
+
+而且它是`一次性`的，或者换个思路，`setInterval` 循环执行，链路长，不好控制，而 `setTimeout` 只是延时`一次` ，方便控制。
 
 ## 3. 使用 `setTimeout`  来模拟  `setInterval`
 
 ```javascript
 function mySetInterval(fn, timeout) {
-    // ::::关键，标识是否继续,并返回
+    // 关键，标识是否继续,并返回
     let timer = {
         flag: true
     }
-    // :::: 两次 settimeout，需要闭包定义一个函数
+    // 两次 settimeout，需要闭包定义一个函数
     function func() {
         if (timer.flag) {
             fn();

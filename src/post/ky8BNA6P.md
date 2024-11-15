@@ -17,7 +17,9 @@
 
 3、visibilitychange 事件
 
-4、`window.addEventListener()`方法监听 `blur` 和 `focus` 事件来检测页面是否在前台或后台。当**页面**失去焦点时触发 `blur` 事件，而当**页面**重新获得焦点时触发 `focus` 事件。亲测可以
+4、`window.addEventListener()`方法监听 `blur` 和 `focus` 事件来检测页面是否在前台或后台。
+- 当**页面**失去焦点时触发 `blur` 事件
+- 而当**页面**重新获得焦点时触发 `focus` 事件。亲测可以
 
 5、`document.hasFocus()` 检测页面是否在前台，即是否获得焦点
 
@@ -34,3 +36,4 @@
 
 - document上的`属性值`或者`具体方法` 
 - 监听特定事件
+
