@@ -2,7 +2,7 @@
 # Vue3 的非原始值响应式方案（Map、WeakMap 、Set 、WeakSet ）
 
 
-前文 [6. Vue3 的响应式的系统设计原理（effect、computed、watch 的原理 ）](/post/xqfmdWJa.html) 注意讲了基本的响应式方案
+前文 [6. Vue3 的响应式原理（effect、computed、watch 的实现原理 ）](/post/rMLcAXU9.html) 注意讲了基本的响应式方案
 
 本文，主要讲解更复杂场景 ，比如
 - 如何拦截 `for-in` ?
@@ -18,11 +18,13 @@
 - Vue 的响应式数据是基于 Proxy 实现的
 	- Proxy 可以为其他对象创建一个代理对象。
 	- 在实现代理的过程中，我们遇到了访问器属性的 `this 指向`问题，这需要使用 `Reflect.* 方法`并指定正确的 receiver 来解决。
-- 在 ECMAScript 规范中，JavaScript 中有两种对象，其中一叫作`常规对象`，另一种叫作`异质对象`。
+- 在 ECMAScript 规范中，JavaScript 中有两种对象，
+	- 其中一叫作`常规对象`
+	- 另一种叫作`异质对象`。
 - 代理 `Object对象` 的本质， 就是**查阅规范**并找到可拦截的基本操作的方法。
 	- 有一些操作并不是基本操作，而是复合操作，这需要我们查阅规范了解它们都依赖哪些基本操作，从而通过基本操作的拦截方法**间接**地处理复合操作。
 - 添加、修改、删除属性对 `for...in` 操作的影响
-	- `添加和删除`属性都会影响 for...in 循环的`执行次数`，所以当这些操作发生时，需要触发与 `ITERATE_KEY` 相关联的副作用函数重新执行。
+	- `添加和删除`属性都会影响 `for...in` 循环的`执行次数`，所以当这些操作发生时，需要触发与 `ITERATE_KEY` 相关联的副作用函数重新执行。
 	-  `修改`属性值则不影响 `for...in` 循环的执行次数，因此无须处理。
 -  如何合理地触发副作用函数重新执行，包括
 	- 对 `NaN` 的处理，
@@ -57,7 +59,7 @@
 ### 1.3. 集合类型的响应式方案
 
 - 集合类型指 Set、Map、WeakSet 以及 WeakMap
-	- 例如，集合类型的 size 属性是一个访问器属性，当通过代理 对象访问 size 属性时，由于代理对象本身并没有部署 `[SetData](/post/jKi9dCol.html#SetData)` 这样的内部槽，所以会发生错误。
+	- 例如，集合类型的 size 属性是一个访问器属性，当通过代理 对象访问 size 属性时，由于代理对象本身并没有部署 `[SetData](/post/jKi9dCol.html#SetData)` 这样的**内部槽**，所以会发生错误。
 	- 另外，通过代理对象执行集合类型 的操作方法时，要注意这些方法执行时的 this 指向，我们需要在 get 拦截函数内通过 .bind 函数为这些方法绑定正确的 `this 值`。
 - 集合类型响应式数据的实现。
 	- 我们需要通过“**重写**”集合方法的方式来实现自定义的能力，
@@ -116,7 +118,7 @@ const p2 = new Proxy(fn, {
 `Reflect` 还接受`第三个参数`，如下：
 
 ![](https://832-1310531898.cos.ap-beijing.myqcloud.com/6f6465918bdc361e993206a4b58d401d.png)
-前文 [6. Vue3 的响应式的系统设计原理（effect、computed、watch 的原理 ）](/post/xqfmdWJa.html) 的` Effect` 函数，如果对于下面的数据结构有问题，`无法正常收集响应信息`。这时候就需要用到 `Reflect 的第三个参数了`
+前文 [6. Vue3 的响应式原理（effect、computed、watch 的实现原理 ）](/post/rMLcAXU9.html) 的` Effect` 函数，如果对于下面的数据结构有问题，`无法正常收集响应信息`。这时候就需要用到 `Reflect 的第三个参数了`
 
 ```javascript hl:3
 const obj = {
@@ -134,11 +136,11 @@ const obj = {
 JS 中一切都是对象，函数也是对象，那么如何区分呢？
 - 对象真正语义由`内部方法`实现，即对对象进行某个操作时，`引擎内部`实际调用的方法，对用户是不可见的
 
-![](https://832-1310531898.cos.ap-beijing.myqcloud.com/facf27b921187c6c77f36e11511f2d2d.png)
+![|576](https://832-1310531898.cos.ap-beijing.myqcloud.com/facf27b921187c6c77f36e11511f2d2d.png)
 
 如上图，是 常规对象 的 `内部方法`，下面是`函数对象的内部方法`
 
-![](https://832-1310531898.cos.ap-beijing.myqcloud.com/5ffa20e66f443a16309655b8ae9201c4.png)
+![|608](https://832-1310531898.cos.ap-beijing.myqcloud.com/5ffa20e66f443a16309655b8ae9201c4.png)
 
 所以，根据是否部署 `[Call](/post/jKi9dCol.html#Call)`  方法，就可以判断是 `普通对象` 还是`函数对象` 
 > [https://262.ecma-international.org/#sec-ordinary-and-exotic-objects-behaviours](https://262.ecma-international.org/#sec-ordinary-and-exotic-objects-behaviours)
@@ -240,9 +242,9 @@ child.bar = 2;
 
 如下图：修改嵌套内层的 `bar属性`，也应该触发副作用函数
 
-![](https://832-1310531898.cos.ap-beijing.myqcloud.com/53a08f4b30bc2b6d8a8d9247b6de2c82.png)
+![|524](https://832-1310531898.cos.ap-beijing.myqcloud.com/53a08f4b30bc2b6d8a8d9247b6de2c82.png)
 所以，我们需要再递归再返回属性值，如下图：
-![](https://832-1310531898.cos.ap-beijing.myqcloud.com/009b93436fd03c02c033d8c930b0f27f.png)
+![|568](https://832-1310531898.cos.ap-beijing.myqcloud.com/009b93436fd03c02c033d8c930b0f27f.png)
 
 如下代码：
 ```javascript
@@ -264,6 +266,7 @@ obj.text2 = 1; // [Vue warn] Set operation on key "text2" failed: target is read
 - 另外对于数组的查找方法：用户可能会对`代理数组对象`进行查找，当然也可能对`原始对象`进行查找，所以我们`重写了`数组的查找方法。
 
 所以，首先，我需要知道 `读取` 和 `写入` 操作都有哪些？
+
 对于数组所有可能的`读取操作`有哪些？
 
 - `arr[0]`
@@ -276,8 +279,8 @@ obj.text2 = 1; // [Vue warn] Set operation on key "text2" failed: target is read
 
 - `arr[0]=1`
 - `length=0`
-- 栈方法：push pop等等，它还会`隐式`修改 `length`
-- 改变原数组的方法：如 spice 、sort  、fill 等
+- 栈方法：push pop 等等，它还会`隐式`修改 `length`
+- 改变原数组的方法：如 `spice 、sort  、fill` 等
 
 然后，去查文档，看看每个操作后面的调用逻辑是什么？再有针对性的去跟踪建立响应。
 为什么我们要重写` includes` 、 `indexOf` 和 `lastIndexof` 呢？
@@ -305,6 +308,7 @@ const arrayInstrumentations = {}
 ```
 
 下面看看为什么重写 栈方法：如 `push`，看下面示例：
+
 > 你可以想想，语言规范里，调用 `push`  肯定有一步是修改 `length` 的
 
 ```javascript
@@ -315,10 +319,13 @@ effect(() => {
 })
 // ::::第二个 effect
 effect(() => {
-    arr.push(1); // 间接读取 length,还会间接修改 length, 然后就执行第 一 已经建立好的effect，然后就死循环了，导致栈溢出
+	// 间接读取 length,还会间接修改 length, 然后就执行第 一 已经建立好的effect，然后就死循环了，导致栈溢出
+    arr.push(1); 
 })
 ```
+
 上面的代码会`栈溢出` ，解决方案是：使用全局变量 `shouldTrack` 来禁止追踪，断开 length 属性 与 副作用函数的响应联系。
+
 ```javascript
 let shouldTrack = true
 ;['push','unshift','pop'].forEach(method => {
@@ -339,6 +346,7 @@ function track(target, key) {
   if (!activeEffect || !shouldTrack) return
 }
 ```
+
 `pop 、 shift、unshift 、splice` 等方法类似。
 
 ## 7. 对于 Set 和 Map 的代理

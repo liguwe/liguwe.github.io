@@ -13,7 +13,7 @@
 
 定义：使用 `SFC` 或者 `特定JavaScript 对象`
 
-![image.png](https://832-1310531898.cos.ap-beijing.myqcloud.com/yuque/b3751bcb2ed0be8d12f1ebf08cf1fc8e.png)
+![image.png|656](https://832-1310531898.cos.ap-beijing.myqcloud.com/yuque/b3751bcb2ed0be8d12f1ebf08cf1fc8e.png)
 
 > 内联模板字符串时，必须这样：`<script type="text/x-template">`
 
@@ -120,14 +120,14 @@ app
 
 （1）使用 `<script setup>`，导入的组件可以直接在模板中使用，无需注册
 
-（2）不使用`<script setup>`， 则需要使用` components 选项`来`显式注册
+（2）不使用`<script setup>`， 则需要使用` components 选项` 来`显式注册
 `
 （3）局部注册的组件在`后代组件`中不可用，即只在当前组件可用
 
 ### 2.3. 组件命名和使用命名
 
 `组件定义命名`和`组件使用命名`：比如 `MyComponent` 为名注册的组件，在模板中可以通过 `<MyComponent>` 或 `<my-component>` 
-- PascalCase 这样的组件定义在 IDE 中友好
+- `PascalCase` 这样的组件定义在 IDE 中友好
 - `PascalCase` 格式的一看就是 `Vue 组件`，很容易和`自定义元素 (web components)` 区分开来
 
 ## 3. Props 定义
@@ -142,7 +142,7 @@ app
 
 2、使用一个对象绑定多个 `prop`，如下示例：
 
-```typescript
+```typescript hl:6
 const post = {
   id: 1,
   title: 'My Journey with Vue'
@@ -255,6 +255,7 @@ defineProps({
 ```
 
 3、如果一个原生事件的名字 (例如 `click`) 被定义在 `emits` 选项中，则监听器只会监听组件触发的 `click` 事件而不会再响应原生的` click` 事件。
+- 会覆盖了
 
 4、和`原生 DOM 事件`不一样，组件触发的事件`没有冒泡机制`。你只能监听直接子组件触发的事件。平级组件或是跨越多层嵌套的组件间通信，应使用一个外部的`事件总线`，或是使用一个[全局状态管理方案](https://cn.vuejs.org/guide/scaling-up/state-management.html)。
 

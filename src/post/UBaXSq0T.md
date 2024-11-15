@@ -12,10 +12,11 @@
 ### 1.1. 摘要
 
 本文深入探讨了Vue3渲染器的原理和实现。
+
 - 文章详细解释了渲染器的概念、工作原理以及与响应式系统的结合。
-- 同时，介绍了如何实现一个跨平台的渲染器
+- 同时，介绍了如何实现一个**跨平台的渲染器**
 - 并详细讲解了渲染过程中的各种细节，包括属性处理、事件处理、子节点更新等。
-- 文章还讨论了一些特殊情况的处理，如Fragment和文本节点的渲染。
+- 文章还讨论了一些特殊情况的处理，如 Fragment和文本节点的渲染。
 
 ### 1.2. 要点
 
@@ -42,7 +43,7 @@ renderer(`<h1>hello app</h1>`, document.getElementById('app'));
 ```
 
 > [!info]
-> 渲染器的作用是，把虚拟DOM 对象渲染为真实 DOM元素。它的工作原理是，递归地遍历虛拟DOM对象，并调用原生  DOM  API 来完成真实 DOM 的创建。渲染器的精髓在于后续的更新，它会通过Diff算法我出变更点，并且只会更新需要更新的内容
+> 渲染器的作用是，把**虚拟DOM 对象渲染为真实 DOM元素**。它的工作原理是，递归地遍历虛拟DOM对象，并调用原生  DOM  API 来完成真实 DOM 的创建。渲染器的精髓在于后续的更新，它会通过Diff算法我出变更点，并且只会更新需要更新的内容
 
 ## 3. 渲染器与响应式系统
 
@@ -51,7 +52,7 @@ renderer(`<h1>hello app</h1>`, document.getElementById('app'));
 
 如下代码，使用 `effect`, `ref` 两个变量。
 
-```vue hl:8,
+```vue hl:8,18,23
 
 <div id="app"></div>
 
@@ -112,12 +113,11 @@ setTimeout(() => {
         
         }
         function render(vnode, container) {
+	        // 新 vnode 存在，将其与旧 vnode 一起传递给 patch 函数进行打补丁
             if (vnode) {
-                // ::: 新 vnode 存在，将其与旧 vnode 一起传递给 patch 函数进行打补丁
                 patch(container._vnode, vnode, container);
-                
             } else {
-                if (container._vnode) { // ::::卸载操作
+                if (container._vnode) { // 卸载操作
                     // 旧 vnode 存在，且新 vnode 不存在，说明是 卸载(unmount)操作
                     // 只需要将 container 内的 DOM 清空即可
                     container.innerHTML = ''
@@ -155,7 +155,7 @@ setTimeout(() => {
 	- 或 Node.js 端
 	- 或 客户端 等
 
-```js
+```js hl:26,27
 function createRenderer(options) {
     // ::::为了实现跨平台，将渲染器的操作抽象为 options 对象::::
     // 如：创建元素 createElement，
@@ -181,6 +181,7 @@ function createRenderer(options) {
     }
     
     function patch(n1, n2, container) {
+        // 真正的挂载操作
         if (!n1) {
             mountElement(n2, container)
         } else {
@@ -267,7 +268,7 @@ renderer2.render(vnode, container);
 
 以下是是一个能够跑起来的 `最简易的 DEMO` :
 
-```js
+```js hl:23,16,25,15
 <div id="app"></div>
 
 <script src="https://unpkg.com/@vue/reactivity@3.0.5/dist/reactivity.global.js"></script>
@@ -283,19 +284,19 @@ renderer2.render(vnode, container);
             const el = createElement(vnode.type)
             if (typeof vnode.children === 'string') {
                 setElementText(el, vnode.children)
-                // :::::::::递归渲染子节点即可
+                // 递归渲染子节点即可
             } else if (Array.isArray(vnode.children)) {
                 vnode.children.forEach(child => {
                     patch(null, child, el)
                 })
             }
-            // :::::::::设置属性
+            // 设置属性
             if (vnode.props) {
                 for (const key in vnode.props) {
                     el.setAttribute(key, vnode.props[key])
                 }
             }
-            // ::插入到容器中
+            // 插入到容器中
             insert(el, container)
         }
         function patch(n1, n2, container) {
@@ -725,7 +726,7 @@ effect(() => {
 
 如何解决呢？符合正常预期。如下代码：
 
-![](https://od-1310531898.cos.ap-beijing.myqcloud.com/202305252000226.png)
+![|608](https://od-1310531898.cos.ap-beijing.myqcloud.com/202305252000226.png)
 
 即，屏蔽所有`绑定时间 晚于 真正执行时间`的执行 。
 
@@ -781,7 +782,7 @@ function patchChildren(oldNode, newNode, container) {
 			- 清晰的类型区分
 			- 易于在渲染过程中进行特殊处理
 
-```js
+```js hl:1,2
 const Text = Symbol();
 const Comment = Symbol();
 

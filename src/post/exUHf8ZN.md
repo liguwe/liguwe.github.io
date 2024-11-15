@@ -15,8 +15,14 @@
 - JavaScript对象
 - v-dom
 
-1. `声明式描述 UI`，比如 `<div class='btn' id='test' @click="handle"> button </div>`， 包含信息 tag名，属性，事件，层级关系
-2. 使用 `JavaScript对象 ` 来描述 UI，如下代码
+### 1.1. 声明式描述 UI
+
+`声明式描述 UI`，比如 `<div class='btn' id='test' @click="handle"> button </div>`， 包含信息 tag名，属性，事件，层级关系
+
+### 1.2. JavaScript对象
+
+使用 `JavaScript对象 ` 来描述 UI，如下代码
+
 ```javascript
 const title = {
     tag: 'h1', // tag 名称
@@ -29,7 +35,10 @@ const title = {
 }
 ```
 
-3. `虚拟 DOM` 描述 UI，比如 vue 中的 `渲染函数 - h` ，如下代码：
+### 1.3. v-dom
+
+`虚拟 DOM` 描述 UI，比如 vue 中的 `渲染函数 - h` ，如下代码：
+
 ```javascript
 import {h} from "vue";
 export default{
@@ -50,7 +59,8 @@ export default{
     }
 }
 ```
-> `h` 返回的其实就是 `js 对象`， `h函数`就是辅助创建虚拟 DOM 的工具函数而已，所**以他俩其实是一个东西**
+
+> `h` 返回的其实就是 `js 对象`， `h函数`就是辅助创建虚拟 DOM 的工具函数而已，**所以他俩其实是一个东西**
 
 - 哪种方式**更灵活**呢？
    - 答案是：`JavaScript 对象`（或`虚拟 DOM` ） 的方式，
@@ -64,10 +74,13 @@ export default{
    - 如 vue 会根据返回的`虚拟 DOM` ， 把组件渲染出来
 
 ## 3. 渲染器
+
 `渲染器`的作用，就是把 `虚拟 DOM`，如  `h('div','hello')`  转成 `真实的 DOM` 
+
 > 这里再强调一下，`h('div','hello')` 返回的其实就一个 `用于表示 UI 的 js 对象`
 
 如何实现一个`渲染器`? 
+
 ```javascript
 const vnode = {}; // 用于描述 UI 的 js 对象。
 function renderer(vnode,container){
@@ -79,8 +92,8 @@ function renderer(vnode,container){
 
 所以`渲染器` 的
 
-- **本质**是，递归遍历 `vdom` , 调用`原生 DOM API` 完成真实的 `DOM 创建`
-- 但**精髓**在于，**如何做 diff 更新**
+- **本质是**，递归遍历 `vdom` , 调用`原生 DOM API` 完成真实的 `DOM 创建`
+- 但**精髓在于**，**如何做 diff 更新**
 
 ## 4. 组件的本质
 
@@ -112,7 +125,9 @@ export default{
 </script>
 
 ```
+
 最终**编译**成的样子如下：
+
 ```javascript
 export default{
     data(){},
@@ -129,5 +144,11 @@ export default{
 
 - 组件的实现依赖于 `渲染器`
 - 模板的编译依赖于 `编译器`
-- `渲染器` 和  `编译器` 是存在`信息交流`的，比如虚拟 DOM 对象中 的 `patchFlages` 属性，用于标识是 `动态属性` 和 `静态属性`？ 互相配合使得性能得到提升
+- `渲染器` 和  `编译器` 是存在`信息交流`的
+	- 比如虚拟 DOM 对象中 的 `patchFlages` 属性，用于标识是 `动态属性` 和 `静态属性`？
+	-  互相配合使得性能得到提升
+
+## 7. 最后
+
+后文还有详细介绍
 

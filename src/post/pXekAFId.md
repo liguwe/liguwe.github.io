@@ -90,7 +90,7 @@ obj.foo = 2;
 
 ## 4. toRef 与 toRefs
 
-```javascript
+```javascript hl:12
 function toRefs(obj) {
   const ret = {}
   for (const key in obj) {
@@ -134,5 +134,5 @@ function toRef(obj, key) {
 
 有啥办法解决吗？ 其实很简单，如下代码：
 
-![](https://832-1310531898.cos.ap-beijing.myqcloud.com/4a689b99b8f3b3e902890b4f5a93765a.png)
+![|672](https://832-1310531898.cos.ap-beijing.myqcloud.com/4a689b99b8f3b3e902890b4f5a93765a.png)
 
