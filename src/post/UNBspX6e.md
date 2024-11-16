@@ -11,6 +11,10 @@
 
 > 实际工程中还是使用 `===` 吧
 
+- ① true == undefined
+- ② Number 和 （字符串 或者 布尔类型） 比较，转成数字比较
+- ③ 对象 和 原始值比较，对象先转 `valueOf()` ，然后再转 `toString()`
+
 ## 2. a+++b 、a++++b 、 a+++++b 的结果？
 
 > [!danger]
@@ -19,6 +23,7 @@
 ```javascript
 var a = 1;
 var b = 2;
+console.log(a+++ b);  // 3
 console.log(a++ + b); // 3
 
 var a = 1;
@@ -28,10 +33,12 @@ console.log(a + ++b); // 4
 var a = 1;
 var b = 2;
 console.log(a ++++ b); // 报错
+console.log(a++ + +b); // 3
 
 var a = 1;
 var b = 2;
 console.log(a++ + ++b); // 4
+console.log(a+++++b); // 报错
 ```
 
 ## 3. 说说你平时常用的命令行
@@ -172,8 +179,13 @@ function flatTree(tree) {
     }
   }
 
+  traverse(tree);
+
   return res;
 }
+
+console.log(flatTree(ss));
+
 
 ```
 
@@ -181,7 +193,7 @@ function flatTree(tree) {
 
 ```javascript
 // 断一个数是否是素数
-
+// 关键点： i * i < n
 function isPrime(n) {
   if (n < 2) {
     return false;
@@ -195,7 +207,6 @@ function isPrime(n) {
 }
 
 // 列举出 n 以内的所有素数
-
 function listPrimes(n) {
   const res = [];
   for (let i = 2; i <= n; i++) {
@@ -209,7 +220,6 @@ function listPrimes(n) {
 // :::: 优化
 //  首先 2 是一个素数，那么 2 × 2 = 4, 3 × 2 = 6, 4 × 2 = 8… 都不可能是素数了。
 //  然后我们发现 3 也是素数，那么 3 × 2 = 6, 3 × 3 = 9, 3 × 4 = 12… 也都不可能是素数了
-
 function listPrimes(n) {
   const res = [];
   // primes.flll(true) ,表示所有的数都是素数
@@ -230,21 +240,23 @@ function listPrimes(n) {
 
 ## 7. 实现 `子元素宽度`永远是`父元素的一半`，且`宽高比`永远为 `2 :1`
 
+原理：**如果 paading/left 为百分比时，都是以父元素的 width 为参考的**
+
 ![图片&文件](./files/20241028-18.png)
 
 ## 8. 关于 DOM 操作的一些细节点
 
-- isConnect 表示是否在文档中
+- `isConnect` 表示是否在文档中
 - DOM 树中有`前后兄弟节点`的指针引用属性
 - `document.elementFromPoint(x,y)` 方法返回位于页面指定位置`最上层的元素节点`
 - `Event.composedPath()` 返回冒泡经过的 DOM 节点
-- `Navigator.sendBeacon()` 常使用在埋点场景，浏览器会把放在队列里，所以页面关闭也会正常发送
+- `Navigator.sendBeacon()` 常使用在**埋点场景**，浏览器会把放在队列里，所以**页面关闭也会正常发送**
 
 ## 9. 普通函数和箭头函数在 this 绑定上的区别
 
 ### 9.1. 普通函数的 this
 
-普通函数的 this 是**动态绑定**的，取决于**函数的调用方式**：
+普通函数的 this 是**动态绑定**的，取决于**函数在哪儿调用**：
 
 ```javascript hl:1,7,16,23
 // 1. 直接调用：this 指向全局对象（非严格模式）或 undefined（严格模式）
@@ -279,9 +291,10 @@ boundFunc();               // { name: 'custom' }
 
 ### 9.2. 箭头函数的 this
 
-箭头函数的 this 是**词法绑定**的，**继承自定义时所在的上下文**：
+箭头函数的 this 是**定义时绑定的，继承自定义时所在的上下文**：
 
-```javascript hl:1,20
+继承外层作用域的 this
+```javascript hl:1,20,12
 // 1. 继承外层作用域的 this
 const obj = {
     name: 'object',
@@ -301,6 +314,12 @@ const obj = {
 obj.normalMethod(); // 'object'
 obj.arrowMethod();  // undefined
 
+
+```
+
+#### 9.2.1. 不能通过 call/apply/bind 改变 this
+
+```javascript
 // 2. 不能通过 call/apply/bind 改变 this
 const arrowFunc = () => {
     console.log(this);
@@ -317,7 +336,7 @@ boundFunc();              // window
 
 #### 9.3.1. **定时器中的 this**
 
-```javascript hl:1,11,21
+```javascript hl:1,11,21,25
 // 问题：普通函数
 const obj = {
     name: 'object',
@@ -352,7 +371,7 @@ const obj2 = {
 
 #### 9.3.2. **事件处理中的 this**
 
-```javascript hl:1,15,26
+```javascript hl:1,15,26,21,30
 // 问题：类方法作为事件处理器
 class Handler {
     constructor() {
@@ -384,7 +403,6 @@ class Handler2 {
         this.name = 'handler';
         this.handleClick = this.handleClick.bind(this);
     }
-    
     handleClick() {
         console.log(this.name);
     }
@@ -427,11 +445,11 @@ class DataFetcher1 {
 
 ### 9.4. 总结
 
-1. 普通函数的 this 是动态的，取决于调用方式
-2. 箭头函数的 this 是静态的，继承定义时的上下文
+1. 普通函数的 this 是**动态的，取决于调用方式**
+2. 箭头函数的 this 是**静态的，继承定义时的上下文**
 3. 选择使用哪种函数取决于你是否需要动态的 this 绑定
-4. 在需要保持 this 上下文的场景（如回调、事件处理器）中，箭头函数很有用
-5. 在需要动态 this 的场景（如对象方法、原型方法）中，使用普通函数更合适
+4. 在需要保持 this 上下文的场景（如**回调、事件处理器**）中，**箭头函数**很有用
+5. 在需要动态 this 的场景（如**对象方法、原型方法**）中，使用**普通函数**更合适
 
 ## 10. js 实现继承的方式有哪些？
 
@@ -534,7 +552,7 @@ function createObj(o) {
 }
 ```
 
-### 10.7. es5：寄生组合式继承
+### 10.7. es5：寄生组合式继承：最佳方式
 
 ```javascript
 /*********************************************
@@ -552,7 +570,7 @@ function prototype(child, parent) {
 
 ## 11. 手写 promise.all 、race 、retry
 
-```javascript hl:4,26,53
+```javascript hl:4,26,53,22
 Promise._race = (tasks) => {
   return new Promise((resolve, reject) => {
     for (let i = 0; i < arr.length; i++) {
@@ -571,14 +589,14 @@ Promise._race = (tasks) => {
   });
 };
 
-Promise.retry = function (promiseFn, times = 3) {
+Promise.retry = function (fn, times = 3) {
   return new Promise(async (resolve, reject) => {
     // times: 重试次数
     while (times--) {
       try {
-        let ret = await promiseFn();
-        resolve(ret);
-        // 832: 如果成功了，就直接break了
+        let res = await fn();
+        resolve(res);
+        // 如果成功了，就直接break了
         break;
       } catch (error) {
         if (!times) reject(error);
@@ -618,42 +636,6 @@ Promise._all = (tasks) => {
 
 ```
 
-## 12. 深拷贝最终实现
-
-```javascript
-function fn(obj, map = new WeakMap()) {
-  // 基本数据类型
-  if (
-    ["String", "Boolean", "Number", "Null", "Undefined"].includes(getType(obj))
-  ) {
-    return obj;
-  }
-
-  // 如果是对象
-  if (map.get(obj)) {
-    return obj;
-  }
-
-  let target = Array.isArray(obj) ? [] : {};
-  map.set(obj, target);
-
-  // TODO 这个不会检测出symbol
-  // 1、可以使用Reflect.keys 全部能检测出全部keys
-  // 2、可以使用 Object.getOwnPropertySymbols(obj) 检测出symbol keys
-  Reflect.ownKeys(obj).forEach((key) => {
-    // 改动
-    if (isObject(obj[key])) {
-      target[key] = fn(obj[key], map);
-    } else {
-      target[key] = obj[key];
-    }
-  });
-
-  return target;
-}
-
-```
-
 ## 13. 遍历对象的方式都有哪些？
 
 - 使用 `Object.keys()` 当：
@@ -663,11 +645,14 @@ function fn(obj, map = new WeakMap()) {
     - 性能是主要考虑因素
         - `Object.keys()` 通常性能更好，因为它只处理可枚举属性
 - 使用 `Reflect.ownKeys()` 当：
-    - 需要完整的属性列表
-    - 不返回继承的属性
-    - 需要包含 Symbol 属性
-    - 需要不可枚举属性
-    - 需要确保特定的属性顺序
+    -  返回对象的**所有有属性键的数组** ，包括：
+        - 所有字符串键（可枚举和不可枚举）
+        - 所有 Symbol 键（可枚举和不可枚举）
+        - 不返回继承的属性
+    - 返回顺序：
+        1. 数字键（按升序）
+        2. 字符串键（按添加顺序）
+        3. Symbol 键（按添加顺序）
 - **for...in 循环**
 	- 返回**所有可枚举**属性，包括**继承**的
 	- 不返回 Symbol 属性
@@ -683,6 +668,9 @@ function fn(obj, map = new WeakMap()) {
     - 使用 `Object.getOwnPropertyNames()`
 4. **需要 Symbol 属性**
     - 使用 `Object.getOwnPropertySymbols()`
+    - 只返回对象的 Symbol 类型的
+        - 包括可枚举和不可枚举的 Symbol
+        - 不包含字符串键
 5. **需要所有类型的属性**
     - 使用 `Reflect.ownKeys()`
 6. **需要键值对**
@@ -1025,10 +1013,9 @@ console.log(hasCircularReference(obj3));  // false
 ```javascript
 function _new(fn, ...args) {
   const obj = Object.create(fn.prototype);
-  const ret = fn.apply(obj, args);
-  return ret instanceof Object ? ret : obj;
+  const res = fn.apply(obj, args);
+  return res instanceof Object ? res : obj;
 }
-
 ```
 
 ## 20. 实现一个拖拽会话框
@@ -1154,8 +1141,8 @@ setTimeout(() => {
 
 setTimeout 和 setImmediate 都是宏任务
 - setTimeout **通常**会先于 setImmediate 执行
-- 但如果涉及到 I/O 操作，setImmediate 这更快执行，
-	- 因为setImmediate 总是在 I/O 操作之后执行
+- 但如果**涉及到 I/O 操作**，setImmediate 这更快执行，
+	- **因为 setImmediate 总是在 I/O 操作之后执行**
 
 ```javascript hl:2,18,22
 setImmediate(function () {
@@ -1272,43 +1259,7 @@ console.log("这是同步代码");
 
 ```
 
-## 25. queueMicrotask
-
-`queueMicrotask` 是一个用于将回调函数作为**微任务（microtask）** 添加到微任务队列中的全局函数， nodejs 环境和浏览器环境都可用
-
-`queueMicrotask` 可用于批量处理状态更新，确保 DOM 只更新一次，而不是每次状态变化都更新，如下代码
-
-```javascript hl:9,22,23,24
-let state = { count: 0 };
-let updateScheduled = false;
-
-function updateState(newState) {
-  Object.assign(state, newState);
-
-  if (!updateScheduled) {
-    updateScheduled = true;
-    queueMicrotask(() => {
-      updateDOM();
-      updateScheduled = false;
-    });
-  }
-}
-
-function updateDOM() {
-  console.log("Updating DOM with state:", state);
-  // 实际的 DOM 更新操作
-}
-
-// 使用示例
-updateState({ count: 1 });
-updateState({ count: 2 });
-updateState({ count: 3 });
-
-console.log("Current state:", state);
-
-```
-
-## 26. `async`和`await`的串行并行问题
+## 25. `async`和`await`的串行并行问题
 
 ```javascript hl:2,7,10
 async function main() {
@@ -1329,7 +1280,10 @@ async function main() {
 
 ```
 
-## 27. 假设本地机器无法做加减乘除法，需要通过远程请求让服务端来实现
+## 26. 假设本地机器无法做加减乘除法，需要通过远程请求让服务端来实现
+
+- 并行请求
+- 记得云端缓存结果
 
 ```javascript hl:12,27,49
 // 假设本地机器无法做加减乘除法，需要通过远程请求让服务端来实现
@@ -1403,9 +1357,10 @@ async function add(...args) {
 
 ```
 
-## 28. 在循环中使用 async、await 的注意事项
+## 27. 在循环中使用 async、await 的注意事项
 
-- `forEach` 不能很好地与 `async/await` 配合使用，因为它不会等待异步操作完成；如果一定使用，注意使用**立即执行函数**包装
+- `forEach` 不能很好地与 `async/await` 配合使用，因为它不会等待异步操作完成；
+	- 如果一定使用，注意使用**立即执行函数**包装
 - `map` 可以配合 `Promise.all` 使用
 - `for...of` 是在循环中使用 async/await **最自然和推荐**的方式
 - `while` 循环可以很好地与 async/await 配合使用
@@ -1413,7 +1368,7 @@ async function add(...args) {
 - 传统的 `for 循环`也可以与 async/await 一起使用
 - 使用`filter`，完全没用，因为回调返回 `都是promise对象，都为true`
 
-## 29. 一个经典的循环与闭包的问题
+## 28. 一个经典的循环与闭包的问题
 
 ```javascript hl:8
 // 可能出现问题的代码
@@ -1432,18 +1387,7 @@ for (let i = 0; i < 5; i++) {
 
 ```
 
-## 30. PaaS 、SaaS 等
-- PaaS是（Platform as a Service）的缩写
-- SaaS
-- Faas
-- 基础设施即服务(IaaS) ，`IaaS`是指基础设施服务，Infrastructure-as-a-service
-- `BaaS`是指后端即服务，Backend as a Service
-- `DaaS`是指函数即服务，Data as a Service。
-- `NaaS`是指网络即服务，Network as a Service
-- XPaaS 是指各种类型的 PaaS，它和 XaaS 一样，类的术语，这里是 PaaS 类的统称
-- `UIPaaS`是UI平台即服务，User Interface PaaS。产品界面设计与研发一站式解决方案
-
-## 31. 最后来一段代码的执行顺序
+## 29. 最后来一段代码的执行顺序
 
 ```javascript
 async function async1() {
@@ -1495,7 +1439,7 @@ console.log("6");
 13
 ```
 
-## 32. 同级的先清空，然后再到下一级
+## 30. 同级的先清空，然后再到下一级
 
 ```javascript
 // 111
@@ -1544,17 +1488,17 @@ new Promise(resolve => {
 
 ```
 
-## 33. 如何实现吸顶效果
+## 31. 如何实现吸顶效果
 
 ![图片&文件](./files/20241028-21.png)
 
-## 34. `Element.getBoundingClientRect()` 的 6 个属性
+## 32. `Element.getBoundingClientRect()` 的 6 个属性
 
 返回相对视口的 6 个属性，如下图：
 
 ![图片&文件](./files/20241028-20.png)
 
-## 35. 实现模糊搜索结果的关键词高亮显示
+## 33. 实现模糊搜索结果的关键词高亮显示
 
 ```javascript hl:3,5
 let value = "北京";
@@ -1568,7 +1512,7 @@ console.log(s);
 
 ```
 
-## 36. 如何实现 `(5).add(3).minus(2)`
+## 34. 如何实现 `(5).add(3).minus(2)`
 
 ```javascript hl:5,11
 Number.prototype.add = function (i) {
@@ -1590,7 +1534,7 @@ console.log(s);
 
 ```
 
-## 37. 实现下面的诉求（`==`）
+## 35. 实现下面的诉求（`==`）
 
 ```javascript
 /**
@@ -1603,7 +1547,7 @@ console.log(s);
 
 ```
 
-### 37.1. 使用 valueOf 方法
+### 35.1. 使用 valueOf 方法
 
 ```javascript
 var a = {
@@ -1618,7 +1562,7 @@ if(a == 1 && a == 2 && a == 3) {
 }
 ```
 
-### 37.2. 使用 toString 方法
+### 35.2. 使用 toString 方法
 
 ```javascript
 var a = {
@@ -1633,7 +1577,7 @@ if(a == 1 && a == 2 && a == 3) {
 }
 ```
 
-### 37.3. 使用 getter (Object.defineProperty)
+### 35.3. 使用 getter (Object.defineProperty)
 
 ```javascript hl:2
 var value = 0;
@@ -1648,7 +1592,7 @@ if(a == 1 && a == 2 && a == 3) {
 }
 ```
 
-### 37.4. 使用数组和 toString
+### 35.4. 使用数组和 toString
 
 ```javascript hl:2
 var a = [1,2,3];
@@ -1659,7 +1603,7 @@ if(a == 1 && a == 2 && a == 3) {
 }
 ```
 
-### 37.5. 使用 Symbol.toPrimitive
+### 35.5. 使用 Symbol.toPrimitive
 
 ```javascript
 var a = {
@@ -1676,7 +1620,7 @@ if(a == 1 && a == 2 && a == 3) {
 }
 ```
 
-### 37.6. 使用 Proxy
+### 35.6. 使用 Proxy
 
 ```javascript
 let value = 0;
@@ -1694,7 +1638,7 @@ if(a == 1 && a == 2 && a == 3) {
 原理解释：
 
 1. 这些方法都利用了 JavaScript 的类型转换机制。当使用 `==` 进行比较时，如果操作数类型不同，JavaScript 会进行类型转换。
-2. 在进行类型转换时，JavaScript 会按以下顺序调用对象的方法：
+2. **在进行类型转换时，JavaScript 会按以下顺序调用对象的方法**：
    - 首先检查 `Symbol.toPrimitive`
    - 然后是 `valueOf()`
    - 最后是 `toString()`
@@ -1702,13 +1646,13 @@ if(a == 1 && a == 2 && a == 3) {
 4. getter 方法的实现利用了属性访问时会调用 get 方法的特性。
 5. Proxy 方案利用了代理对象可以拦截各种操作的特性。
 
-### 37.7. 注意事项
+### 35.7. 注意事项
 
 - 这些实现都是一些技巧性的代码，在实际开发中**应该避免使用**
 - 这类代码可能会导致代码难以理解和维护
 - 主要用于理解 JavaScript 的`类型转换机制`和对象属性访问机制
 
-## 38. 实现下面的诉求（`===`）
+## 36. 实现下面的诉求（`===`）
 
 ```javascript
 /**
@@ -1723,7 +1667,7 @@ if(a == 1 && a == 2 && a == 3) {
 
 如果使用严格相等 `===`，情况会更加受限，因为 `===` 不会进行类型转换，它要求类型和值都相等。不过仍然有几种方法可以实现：
 
-### 38.1. 使用 Object.defineProperty 定义 getter
+### 36.1. 使用 Object.defineProperty 定义 getter
 
 ```javascript
 let value = 0;
@@ -1738,7 +1682,7 @@ if(a === 1 && a === 2 && a === 3) {
 }
 ```
 
-### 38.2. 使用全局变量和 Proxy
+### 36.2. 使用全局变量和 Proxy
 
 ```javascript
 let value = 0;
@@ -1753,7 +1697,7 @@ if(a === 1 && a === 2 && a === 3) {
 }
 ```
 
-### 38.3. 使用类的 getter
+### 36.3. 使用类的 getter
 
 ```javascript
 class NumberClass {
@@ -1772,7 +1716,7 @@ if(obj.a === 1 && obj.a === 2 && obj.a === 3) {
 }
 ```
 
-### 38.4. 使用闭包
+### 36.4. 使用闭包
 
 ```javascript
 let getA = (function() {
@@ -1787,18 +1731,18 @@ if(getA() === 1 && getA() === 2 && getA() === 3) {
 }
 ```
 
-## 39. 说说 `Symbol.toPrimitive`
+## 37. 说说 `Symbol.toPrimitive`
 
 `Symbol.toPrimitive` 从字面意思拆解来看：
 
-1. **Symbol**：
-   - 这是 JavaScript 中的一个基本数据类型
-   - 用于创建唯一的标识符
-   - ES6 引入的新特性
-2. **toPrimitive**：
-   - "to" 表示转换到
-   - "Primitive" 表示`原始值/基本类型`
-   - 合起来就是"转换为原始值"
+- **Symbol**：
+	- 这是 JavaScript 中的一个基本数据类型
+	- 用于创建唯一的标识符
+	- ES6 引入的新特性
+- **toPrimitive**：
+	- "to" 表示转换到
+	- "Primitive" 表示`原始值/基本类型`
+	- 合起来就是"转换为原始值"
 
 所以 `Symbol.toPrimitive` 字面意思就是"`转换为原始值的符号`"。它是一个内置的 Symbol 值，作为对象的一个属性，用来指定将对象转换为原始值的方法。
 
@@ -1836,6 +1780,7 @@ obj + '';       // 打印 "Converting to default" 返回 "default"
 ```
 
 hint 参数可能的值：
+
 1. `"number"` - 当需要转换为数字时
 2. `"string"` - 当需要转换为字符串时
 3. `"default"` - 当转换可以是任意类型时
@@ -1867,12 +1812,13 @@ console.log(date + '');     // "1/12/2024"
 ```
 
 总结：
+
 1. Symbol.toPrimitive 是一个特殊的 Symbol 值
 2. 它用作对象的方法名，定义对象转换为原始值的行为
 3. 这个名字直观地表明了其功能：将对象转换（to）为原始值（primitive）
 4. 它是 JavaScript 类型转换系统中的一个重要部分
 
-## 40. 编程题：请实现一个函数，输入为数据 data 和 id，输出为从根节点到 id 的完整路径
+## 38. 编程题：请实现一个函数，输入为数据 data 和 id，输出为从根节点到 id 的完整路径
 
 本质是`多叉树`的遍历，找到一条路径即可
 
@@ -1916,9 +1862,13 @@ const data = [
 
 ```
 
-### 40.1. 实现
+### 38.1. 实现
 
-```javascript hl:10
+注意点：
+- 三个参数：`dfs(data, id, path)`
+- 选择与取消选择
+
+```javascript hl:10,7,16
 // 请实现一个函数，输入为数据 data 和 id，输出为从根节点到 id 的完整路径
 function findPath(data, id) {
   const res = [];
@@ -1948,7 +1898,7 @@ console.log(findPath(data, "122")); // ["1", "12", "122"]
 console.log(findPath(data, "111")); // ["1", "11", "111"]
 ```
 
-## 41. 关于异步的一些细节点
+## 39. 关于异步的一些细节点
 
 - `then(console.log(1))` ， 表达式会同步执行
 - 如果没有 `resolve`，永远不会往下执行
@@ -1962,17 +1912,17 @@ console.log(findPath(data, "111")); // ["1", "11", "111"]
 - 上面 `7` 不打印，是因为这个参数多余
 - `8` 不打印，是因为已经在上面 `catch` 了 
 
-## 42. Promise 的 then 方法接受两个参数
+## 40. Promise 的 then 方法接受两个参数
 
 ![图片&文件](./files/20241028-24.png)
 
-## 43. promise 里 `return 2` 相等于 `resolve(2)`
+## 41. promise 里 `return 2` 相等于 `resolve(2)`
 
 ```javascript hl:4
 Promise.resolve(1)
   .then((res) => {
     console.log(res);
-    //  返回 return 2 实际上是包装成了 resolve(2)
+    //  返回 return 2 实际上是包装成了 return resolve(2)
     return 2;
   })
   .catch((err) => {
@@ -1984,7 +1934,7 @@ Promise.resolve(1)
 
 ```
 
-## 44. 再看一段代码
+## 42. 再看一段代码
 
 ```javascript hl:4,26
 console.log(1);
@@ -2029,7 +1979,7 @@ setTimeout(() => {
 
 ```
 
-## 45. 自己实现 Promise：setTimeout 模拟
+## 43. 自己实现 Promise：setTimeout 模拟
 
 ```javascript hl:5,34,56
 const PENDING = "pending";
@@ -2223,7 +2173,7 @@ MyPromise.race = function (promises) {
 
 ```
 
-## 46. 自己实现 Promise ： class
+## 44. 自己实现 Promise ： class
 
 核心特性：
 1. 三种状态（PENDING、FULFILLED、REJECTED）
@@ -2340,7 +2290,7 @@ class MyPromise {
 
 ```
 
-### 46.1. 待完善
+### 44.1. 待完善
 
 1. 实现 Promise 的 resolve 和 reject 静态方法
 2. 实现 catch 方法
@@ -2350,9 +2300,9 @@ class MyPromise {
 5. 完善 Promise 解决过程（Promise Resolution Procedure）
 6. 处理 thenable 对象
 
-## 47. 包装请求图片为 Promise
+## 45. 包装请求图片为 Promise
 
-```javascript
+```javascript hl:2
 function loadImageAsync(url) {
   return new Promise(function (resolve, reject) {
     const image = new Image();
@@ -2380,9 +2330,9 @@ const preloadImage = function (url) {
 
 ```
 
-## 48. 包装 XHR 为 Promise
+## 46. 包装 XHR 为 Promise
 
-```javascript
+```javascript hl:2
 const getJSON = function (url) {
   const promise = new Promise(function (resolve, reject) {
     const handler = function () {
@@ -2417,13 +2367,13 @@ getJSON("/posts.json").then(
 
 ```
 
-## 49. 伪类与伪元素
+## 47. 伪类与伪元素
 
 - **伪类**使用单冒号 `:`
 - **伪元素**使用双冒号 `::`（CSS3 规范）
     - 注：为了兼容旧浏览器，一些伪元素也可以使用单冒号，比如 `:after` 和 `::after` 都行
 
-### 49.1. 常见伪类
+### 47.1. 常见伪类
 
 ```less
 /* 未访问的链接 */
@@ -2468,7 +2418,7 @@ tr:nth-child(odd) {
 
 ```
 
-### 49.2. 常见伪元素
+### 47.2. 常见伪元素
 
 ```less
 /* 在元素内容之前插入 */
@@ -2503,12 +2453,12 @@ p::selection {
 
 ```
 
-## 50. `行内元素`的 padding 和 margin 是否有效
+## 48. `行内元素`的 padding 和 margin 是否有效
 
 - 水平有效
 - 垂直无效
 
-## 51. `link` 和 `@import` 有什么区别
+## 49. `link` 和 `@import` 有什么区别
 
 - `@import` 只能引入样式，并且页面加载完成才会加载
 - `link` 可引入样式、rss、`rel`，网站图标等；
@@ -2517,22 +2467,22 @@ p::selection {
 	- CSS 文件会**并行下载**，不会阻塞其他 CSS 文件的下载
 	- 但会阻塞页面渲染（render-blocking）
 
-## 52. min-width > max-width > width 
+## 50. min-width > max-width > width 
 
 即使设置了 important
 
-## 53. CSS 中哪些属性可以继承
+## 51. CSS 中哪些属性可以继承
 
 ![图片&文件](./files/20241024-20.png)
 
-## 54. 常见的浏览器内核
+## 52. 常见的浏览器内核
 
 - safari：webkit
 - chrome： blink ，webkit 的一个分支
 - edge 也使用  webkit 了
 - firfox: Gecko 内核
 
-## 55. 如何判断浏览器是否支持 webp 格式
+## 53. 如何判断浏览器是否支持 webp 格式
 
 `image.src = 'xxx.wep'` ，如果能获取到宽高，则支持
 

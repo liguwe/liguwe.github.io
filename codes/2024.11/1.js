@@ -1,5 +1,8 @@
-let arr = [1, 4, 2, 6, 0, 6, 2, 6];
+Promise.resolve().then(() => {
+  console.log("方式2");
+});
 
-arr.sort((a, b) => (a > b ? 1 : -1));
-
-console.log(arr);
+// 这两种方式效果相同
+queueMicrotask(() => {
+  console.log("方式1");
+});

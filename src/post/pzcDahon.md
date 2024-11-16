@@ -705,7 +705,8 @@ array.findLastIndex()
 // 3. WeakMap 支持 Symbol 键
 ```
 
-ES2024 (提案阶段)
+### 44.10. ES2024 (提案阶段)
+
 ```javascript
 // 1. Promise.withResolvers
 const {promise, resolve, reject} = Promise.withResolvers()
@@ -718,7 +719,8 @@ str.isWellFormed()
 str.toWellFormed()
 ```
 
-重要性排序（TOP 10）：
+### 44.11. 重要性排序（TOP 10）
+
 1. let/const
 2. 箭头函数
 3. async/await
@@ -726,41 +728,23 @@ str.toWellFormed()
 5. Promise
 6. 模块化(import/export)
 7. Class语法
-8. 可选链(?.)
-9. 展开运算符(...)
+8. 可选链(`?.`)
+9. 展开运算符(`...`)
 10. 模板字符串
-
-使用建议：
-1. 优先掌握 ES6 的特性，这是基础
-2. async/await 是重点，因为异步处理很常见
-3. 可选链和空值合并是提高代码健壮性的利器
-4. Class 语法对面向对象编程很重要
-5. 注意新特性的浏览器兼容性
-
-记忆技巧：
-- ES6 是最大更新，重点掌握
-- 之后的版本主要是细节改进
-- 按照解决的问题分类记忆：
-  - 语法糖：箭头函数、解构赋值
-  - 异步处理：Promise、async/await
-  - 面向对象：Class
-  - 安全性：可选链、空值合并
-  - 工具方法：Array、Object新方法
 
 ## 45. WeakRef 
 
-WeakRef（弱引用）是 ECMAScript 2021 (ES12) 引入的一个新特性。它的主要作用是允许你保持对对象的引用，而不阻止该对象被垃圾回收器回收。这在某些特定场景下非常有用。让我详细解释一下 WeakRef 的作用和使用场景：
+WeakRef（弱引用）是 ECMAScript 2021 (ES12) 引入的一个新特性。它的主要作用是**允许你保持对对象的引用，而不阻止该对象被垃圾回收器回收**。这在某些特定场景下非常有用。让我详细解释一下 WeakRef 的作用和使用场景：
 
 ### 45.1. 主要作用
 
 WeakRef 的主要作用是创建对对象的弱引用。这意味着：
-
 - 如果一个对象只被 WeakRef 引用，它可以被垃圾回收。
 - WeakRef 不会阻止其引用的对象被垃圾回收。
 
 ### 45.2. 使用方法
 
-```javascript hl:2
+```javascript hl:2,9
 let obj = { data: "some data" };
 let weakRef = new WeakRef(obj);
 
@@ -773,53 +757,8 @@ if (objAgain) {
 }
 ```
 
-### 45.3. 主要使用场景
-
-#### 45.3.1. 缓存系统
-```javascript
-const cache = new Map();
-
-function getDataForKey(key) {
-    let weakRef = cache.get(key);
-    if (weakRef) {
-        let data = weakRef.deref();
-        if (data) return data;
-    }
-    
-    // 如果数据不存在或已被回收，重新获取数据
-    let newData = expensiveOperation(key);
-    cache.set(key, new WeakRef(newData));
-    return newData;
-}
-```
-
-#### 45.3.2. 观察者模式
-```javascript
-class Subject {
-    constructor() {
-        this.observers = new Set();
-    }
-
-    addObserver(observer) {
-        this.observers.add(new WeakRef(observer));
-    }
-
-    notifyObservers() {
-        for (let weakRef of this.observers) {
-            const observer = weakRef.deref();
-            if (observer) {
-                observer.update();
-            } else {
-                this.observers.delete(weakRef);
-            }
-        }
-    }
-}
-```
-
-#### 45.3.3. 大型对象的临时引用
-
-```javascript
+```javascript hl:1,8
+大型对象的临时引用
 function processLargeObject(obj) {
     let weakRef = new WeakRef(obj);
     
@@ -833,25 +772,26 @@ function processLargeObject(obj) {
 }
 ```
 
-### 45.4. 优点
+### 45.3. 优点
 
-- 内存效率：允许垃圾回收器回收不再需要的对象，防止内存泄漏。
+- 内存效率：允**许垃圾回收器回收不再需要的对象，防止内存泄漏**。
 - 灵活性：可以保持对对象的引用，同时允许该对象在必要时被回收。
 
-### 45.5. 注意事项
+### 45.4. 注意事项
 
 - 不确定性：**无法预测对象何时会被回收**。
 - 性能开销：频繁检查对象是否仍然存在可能会影响性能。
 - 复杂性：增加了代码的复杂性，使用时需要额外的检查。
 
-### 45.6. 与 WeakMap 和 WeakSet 的关系
+### 45.5. 与 WeakMap 和 WeakSet 的关系
 
-WeakRef 与 WeakMap 和 WeakSet 类似，都是处理对象的弱引用。但 WeakRef 更加灵活，允许你直接操作弱引用。
+- WeakRef 与 WeakMap 和 WeakSet 类似，都是处理对象的弱引用。
+- 但 WeakRef 更加灵活，允许你直接操作弱引用。
 
-### 45.7. 最佳实践
+### 45.6. 最佳实践
 
 - 仅在真正需要时使用 WeakRef。
-- 总是检查 `deref()` 的结果是否为 null。
+- 总是检查 `deref()` 的结果是否为 `null`。
 - 考虑使用 `FinalizationRegistry` 来清理相关资源。
 
 ```javascript
@@ -867,13 +807,9 @@ registry.register(obj, "my object");
 obj = null; // 允许对象被回收
 ```
 
-### 45.8. 总结
-
-WeakRef 是一个强大但需谨慎使用的特性。它主要用于需要临时引用大型对象或需要在对象可能被回收的情况下维护引用的场景。正确使用可以提高内存效率，但也增加了代码的复杂性。
-
 ## 46. FinalizationRegistry 概述
 
-FinalizationRegistry 对象可以让你**在对象被垃圾回收时请求一个回调**。这个机制提供了一种方式来为那些不再被使用的对象执行一些清理操作。
+`FinalizationRegistry 对象`可以让你**在对象被垃圾回收时请求一个回调**。这个机制提供了一种方式来为那些不再被使用的对象执行一些清理操作。
 
 ```javascript
 const registry = new FinalizationRegistry(heldValue => {
@@ -888,9 +824,9 @@ registry.register(obj, "自定义数据");
 
 ### 46.1. FinalizationRegistry 不能主动触发垃圾回收
 
-虽然 FinalizationRegistry 确实与垃圾回收（GC）密切相关，但它并不能直接触发垃圾回收
+虽然 FinalizationRegistry 确实与垃圾回收（GC）密切相关，但它并**不能直接触发垃圾回收**
 
-FinalizationRegistry 主要用于在对象被垃圾回收后执行一些清理操作。它允许你注册一个回调函数，这个函数会在某个对象被垃圾回收后被调用。
+FinalizationRegistry 主要用于在对象被垃圾回收后执行一些清理操作。它允许你注册一个**回调函数**，这个函数会在某个对象被垃圾回收后被调用。
 
 FinalizationRegistry 是一个**被动机制**。它依赖于 JavaScript 引擎的垃圾回收器来触发回调，而不是主动触发垃圾回收
 
@@ -1165,7 +1101,6 @@ function numberToChinese(num) {
   for (let i = 0; i < length; i++) {
     const digit = parseInt(numStr[i]);
     const position = length - 1 - i; // 位置（从右往左）
-
     // 跳过零的处理
     if (digit === 0) {
       // 当前数字是0，且不是最后一位，且后面的数字不是0
@@ -1174,7 +1109,6 @@ function numberToChinese(num) {
       }
       continue;
     }
-
     // 处理十位数的特殊情况（如：一十 => 十）
     if (position === 1 && digit === 1 && i === 0) {
       result.push(unitMap[position]);
@@ -1183,7 +1117,6 @@ function numberToChinese(num) {
       result.push(unitMap[position]);
     }
   }
-
   return result.join("");
 }
 
@@ -1202,6 +1135,9 @@ console.log(numberToChinese(1000001)); // 一百万零一
 
 ## 51. 将类数组对象转成真正数组的 4 种方法
 
+- 最后一种 ④ 挺有意思，使用 `...扩展` ，在函数里作为参数传入，然后再 return 
+	- 所以**扩展符，就是可以转数组**
+
 ![图片&文件](./files/20241111-42.png)
 
 ## 52. 虚拟 DOM 渲染到页面时，框架会做那些处理？
@@ -1217,9 +1153,9 @@ array.reduce(callback(accumulator, currentValue[, index[, array]])[, initialValu
 ```
 
 - `callback`: 执行数组中每个值的函数，包含四个参数：
-	- `accumulator`: 累加器，累加回调的返回值
-	- `currentValue`: 数组中正在处理的元素
-	- `index`（可选）: 数组中正在处理的当前元素的索引
+	- `accumulator`: 累加器，**累加回调的返回值**
+	- `currentValue`: 数组中**正在处理的元素**
+	- `index`（可选）: 数组中正在处理的当前元素的**索引**
 	- `array`（可选）: 调用 `reduce()` 的数组
 - `initialValue`（可选）: 作为第一次调用 `callback` 函数时的第一个参数的值
 	- ==注意：如果不传时，调用空数组会报错==

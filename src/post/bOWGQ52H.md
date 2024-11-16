@@ -24,7 +24,7 @@ console.log(false ?? true);    // 输出: false
 
 ## 2. this 指向问题
 
-```javascript
+```javascript hl:12
 const obj = {
   fn1: () => {
     // this 指向定义时所在的对象，即 window
@@ -46,27 +46,23 @@ const y = new obj.fn2(); // fn2 {}
 
 ## 3. cookie 的有效期设置为 0 会怎么样？
 
-### 3.1. 会话 Cookie（Session Cookie）
+将 cookie 的有效期设置为 0 实际上是创建了一个**会话 cookie**，它在浏览器会话期间有效，并在用户关闭浏览器时自动删除。这种 cookie 适用于需要临时存储信息但不希望长期保留在用户设备上的场景。
 
-当你将 cookie 的有效期设置为 0 时，实际上是创建了一个会话 cookie（session cookie）。这种 cookie 没有明确的过期时间。
+会话 cookie 会在用户关闭浏览器时自动删除。这意味着**当用户结束当前的浏览会话（关闭所有浏览器窗口）时**，这个 cookie 就会被清除。
 
-### 3.2. 浏览器关闭时删除
-
-会话 cookie 会在用户关闭浏览器时自动删除。这意味着当用户结束当前的浏览会话（关闭所有浏览器窗口）时，这个 cookie 就会被清除。
-
-### 3.3. 生命周期
+### 3.1. 生命周期
 
 - 在浏览器打开期间，这个 cookie 会一直存在并可用。
 - 只要浏览器保持打开状态，**即使用户关闭了特定的标签页或窗口，cookie 仍然有效**。
 
-### 3.4. 用途
+### 3.2. 用途
 
 会话 cookie 通常用于**存储临时信息**，比如：
 - 用户的登录状态
-- 购物车内容
-- 用户在网站上的临时设置或偏好
+- **购物车**内容
+- 用户在网站上的**临时设置或偏好**
 
-### 3.5. 设置方法
+### 3.3. 设置方法
 
 在 JavaScript 中，你可以这样设置一个会话 cookie：
 
@@ -76,31 +72,10 @@ document.cookie = "username=John Doe; path=/";
 
 注意这里没有设置 `expires` 或 `max-age` 属性。
 
-### 3.6. 与持久 Cookie 的区别
+### 3.4. 与持久 Cookie 的区别
 
 - 持久 cookie 有明确的过期时间，会被保存在用户的**硬盘上**。
 - 会话 cookie 只存在于**内存**中，浏览器关闭后就会消失。
-
-### 3.7. 安全考虑
-
-- 会话 cookie 相对更安全，因为它们不会长期存储在用户的设备上。
-- 但它们仍然可能被中间人攻击或跨站脚本（XSS）攻击利用。
-
-### 3.8. 浏览器行为差异
-
-不同的浏览器可能对会话 cookie 有略微不同的处理方式。例如，某些浏览器的"恢复会话"功能可能会在浏览器重新打开时恢复会话 cookie。
-
-### 3.9. 无法保证精确的生命周期
-
-由于会话 cookie 的生命周期依赖于用户何时关闭浏览器，因此无法精确控制它的有效期。
-
-### 3.10. 不影响已存在的同名持久 Cookie
-
-如果已经存在一个同名的持久 cookie，设置有效期为 0 的新 cookie 不会覆盖或删除原有的持久 cookie。
-
-### 3.11. 总结
-
-将 cookie 的有效期设置为 0 实际上是创建了一个会话 cookie，它在浏览器会话期间有效，并在用户关闭浏览器时自动删除。这种 cookie 适用于需要临时存储信息但不希望长期保留在用户设备上的场景。
 
 ## 4. 下面代码的输出是？
 
@@ -111,19 +86,17 @@ console.log(typeof console.log(1));
 
 ```
 
-### 4.1. 分析
-
-```javascript
+```javascript hl:5,10
 // 分析
 // 1. typeof null 返回的是 "object"
 // 2. typeof typeof null：即 typeof "object" 返回的是 "string"
 // 3. typeof typeof typeof null：即 typeof "string" 返回的 "string"
-console.log(typeof typeof typeof null);
+console.log(typeof typeof typeof null);  // string
 
 // 分析：
 // 1. console.log(1) 返回的是 undefined
 // 2. typeof undefined 返回的是 "undefined"
-console.log(typeof console.log(1));
+console.log(typeof console.log(1)); // undefined
 
 // 所以 output:
 // string
@@ -134,7 +107,7 @@ console.log(typeof console.log(1));
 
 ## 5. 下面代码的执行顺序
 
-```javascript hl:12
+```javascript hl:12,1
 var a = 3;
 function c() {
   alert(a);
@@ -262,6 +235,8 @@ var obj = {
 obj.print(); // 123
 
 ```
+
+**a 函数是再全局作用域被调用的，因为它在 15 行调用的**
 
 ## 10. generator 函数是如何做到中断和恢复执行的？
 
@@ -414,18 +389,20 @@ runGenerator(fetchData);
 
 ### 10.5. 总结
 
-Generator 函数通过巧妙的状态管理和闭包机制，实现了函数执行的中断和恢复。这种机制为处理复杂的同步和异步流程提供了强大而灵活的工具，尽管在某些情况下可能会带来轻微的性能开销。理解 Generator 的工作原理有助于更好地利用这一强大特性，特别是在处理异步操作和复杂数据流时。
+Generator 函数**通过巧妙的状态管理和闭包机制，实现了函数执行的中断和恢复**。这种机制为处理复杂的同步和异步流程提供了强大而灵活的工具，尽管在某些情况下可能会带来轻微的性能开销。
+
+理解 Generator 的工作原理有助于更好地利用这一强大特性，特别是在处理异步操作和复杂数据流时。
 
 ## 11. 列举浏览器的几个宏任务和微任务
 
-- dom 事件
-- script 标签的加载与执行
+- **dom 事件**
+- **script 标签的加载与执行**
 
 ![图片&文件](./files/20241111-48.png)
 
 ## 12. 说说 toPrimitive 的理解
 
-`toPrimitive` 是 JavaScript 中一个重要的内部操作，用于将对象转换为原始值
+`toPrimitive` 是 JavaScript 中一个重要的内部操作，用于**将对象转换为原始值**
 
 ### 12.1. 基本概念
 
@@ -439,7 +416,7 @@ Generator 函数通过巧妙的状态管理和闭包机制，实现了函数执�
 2. **"string"** - 期望得到一个字符串
 3. **"default"** - 没有明确期望，由对象自行决定
 
-### 12.3. 实现示例
+如下代码：
 
 ```javascript
 // 自定义对象的 toPrimitive 行为
@@ -624,9 +601,10 @@ Reflect 提供了一套统一的方法来执行 JavaScript 对象的常见操作
 
 ### 14.2. 简化代理（Proxy）的创建
 
-Reflect 的方法与 Proxy 的处理程序（handler）方法一一对应，使得在实现代理时更加方便和直观。
+Reflect 的方法与 Proxy 的处理程序（handler）方法**一一对应**，使得在实现代理时更加方便和直观。
 
 ### 14.3. 提供函数式编程风格的对象操作
+
 Reflect 的方法都是函数，可以作为参数传递，有利于函数式编程。
 
 ### 14.4. 替代一些 Object 的方法
@@ -682,7 +660,7 @@ console.log(obj.w); // 4
 
 ### 14.6. 其他
 
-1. Reflect 主要用于操作普通对象，不直接支持 Map、Set 等集合类型
+1. **Reflect 主要用于操作普通对象，不直接支持 Map、Set 等集合类型**
 2. Map 等集合类型有自己的实例方法进行操作
 3. 如果需要使用 Reflect 操作 Map，可以：
     - 通过 Reflect.apply 调用 `Map 的原型方法`
@@ -731,7 +709,7 @@ console.log(getByteLength('🌞')); // 4
 
 ### 17.2. 使用 TextEncoder（现代浏览器推荐）
 
-```javascript
+```javascript hl:2
 function getByteLength(str) {
     return new TextEncoder().encode(str).length;
 }
@@ -807,8 +785,8 @@ compareByteLength();
    - 以上方法都是基于 UTF-8 编码计算字节长度
    - UTF-8 是一种变长编码：
      - ASCII 字符占 1 字节
-     - 中文字符通常占 3 字节
-     - emoji 可能占 4 字节或更多
+     - 中文字符**通常占 3 字节**
+     - emoji 可能**占 4 字节或更多**
 
 #### 17.5.2. **方法选择建议**
 
@@ -845,7 +823,10 @@ compareByteLength();
 
 - dom - canvas - image
 - dom - svg - canvas  - image
-- nodejs 调用 pupper 无头浏览器
+- nodejs 调用 pupper **无头浏览器**
+	- 即通过编程的方式，操作 Chrome 浏览器
+		- 比如调用 print pdf 
+		- 比如调取浏览器的截屏
 
 ## 21. 如何顺序执行 10 个任务
 
@@ -921,9 +902,9 @@ console.log(parseInt("19", 8)); // 1 (八进制，9不是有效的八进制数�
 - ajax
 	- 基于  XHR 对象
 - fetch 
-	- 没有基于 XHR，不是对 XHR的进一步封装
+	- 没有基于 XHR，**不是对 XHR 的进一步封装**
 	- 使用的原生的 js 
-	- 基于 Promise
+	- 基于 `Promise`
 -  axios
 	- 浏览器：基于 XHR
 	- nodejs：基于 http 模块
@@ -967,6 +948,10 @@ const str3_2 = new Array(3).fill("abc").join("");
 
 ## 32. 实现 mergePromise 函数，把传进去的数组按顺序先后执行，并且把返回的数据先后放到数组 data 中
 
+> 好像之前面试碰到过
+
+区别于 Promise.all，Promise.all 是并行执行，而这里需要**串行执行**，注意下面使用 `promise.resolve` 包装了
+
 ```javascript hl:10,17,25
 // mergePromise 函数，把传进去的数组按顺序先后执行，并且把返回的数据先后放到数组 data 中
 mergePromise([ajax1, ajax2, ajax3]).then((data) => {
@@ -992,13 +977,120 @@ function mergePromise(arr) {
   });
 }
 
-// 区别于 Promise.all，Promise.all 是并行执行，而这里需要串行执行
+```
 
+使用 `for - of`
+
+```javascript
+/**
+ * 串行执行 Promise 任务的函数
+ * @param {Array<() => Promise>} tasks - Promise 任务数组
+ * @returns {Promise<Array>} 所有任务的结果数组
+ */
+async function serialPromise(tasks) {
+  const results = [];
+
+  for (const task of tasks) {
+    try {
+      const result = await task();
+      results.push(result);
+    } catch (error) {
+      console.error("Task failed:", error);
+      throw error;
+    }
+  }
+
+  return results;
+}
+
+const tasks = [
+  () => new Promise(...),
+  () => new Promise(...),
+  () => new Promise(...)
+];
+
+const results = await serialPromise(tasks);
+```
+
+## promise中 then 的返回值情况分析
+
+所以上面那题，**foreach 串行执行的道理了吗**？
+
+```javascript hl:6,17,28,45,61,65
+// 1. 返回普通值
+console.log('=== 示例1: 返回普通值 ===');
+Promise.resolve(1)
+  .then(value => {
+    console.log('第一个then:', value); // 1
+    return 2; // 返回普通值
+  })
+  .then(value => {
+    console.log('第二个then:', value); // 2
+  });
+
+// 2. 返回 Promise
+console.log('\n=== 示例2: 返回 Promise ===');
+Promise.resolve('开始')
+  .then(value => {
+    console.log('第一个then:', value); // "开始"
+    return Promise.resolve('Promise的结果');
+  })
+  .then(value => {
+    console.log('第二个then:', value); // "Promise的结果"
+  });
+
+// 3. 返回 thenable 对象
+console.log('\n=== 示例3: 返回 thenable 对象 ===');
+Promise.resolve('开始')
+  .then(value => {
+    console.log('第一个then:', value); // "开始"
+    return {
+      then: function(resolve) {
+        setTimeout(() => {
+          resolve('thenable对象的结果');
+        }, 1000);
+      }
+    };
+  })
+  .then(value => {
+    console.log('第二个then:', value); // "thenable对象的结果"
+  });
+
+// 4. 抛出错误
+console.log('\n=== 示例4: 抛出错误 ===');
+Promise.resolve('开始')
+  .then(value => {
+    console.log('第一个then:', value); // "开始"
+    throw new Error('发生错误');
+  })
+  .then(
+    value => {
+      console.log('第二个then:', value); // 不会执行
+    },
+    error => {
+      console.log('错误处理:', error.message); // "发生错误"
+    }
+  );
+
+// 5. 链式调用中的值传递
+console.log('\n=== 示例5: 链式调用中的值传递 ===');
+Promise.resolve('初始值')
+  .then(value => {
+    console.log('第一个then:', value); // "初始值"
+    return value + ' -> 追加1';
+  })
+  .then(value => {
+    console.log('第二个then:', value); // "初始值 -> 追加1"
+    return value + ' -> 追加2';
+  })
+  .then(value => {
+    console.log('第三个then:', value); // "初始值 -> 追加1 -> 追加2"
+  });
 ```
 
 ## 33. Promise 相关问题
 
-### 33.1. finnaly：无论失败或者成功都会执行，且接受不到结果
+### 33.1. finnaly：无论失败或者成功都会执行，且**不接受结果**
 
 ### 33.2. 注意顺序
 
@@ -1030,9 +1122,9 @@ asyncl();
 
 ![图片&文件](./files/20241112-18.png)
 
-因为 如果 async 函数没有显式的返回值，它仍然会返回一个 Promise，具体行为如下：
-
-```javascript
+因为 如果 **async 函数没有显式的返回值，它仍然会返回一个 Promise**，具体行为如下：
+ 
+```javascript hl:5,8,13,18
 // 没有 return 语句
 async function noReturn() {
     console.log("Hello");
@@ -1110,21 +1202,17 @@ console.log(bigNum.toPrecision(4));  // "1235"
 ### 36.3. 主要区别
 
 1. 精度范围：
-   - `toFixed()` 只处理小数部分
-   - `toPrecision()` 考虑整个数字的位数
-
+   - `toFixed()` 只处理**小数部分**
+   - `toPrecision()` 考虑**整个数字的位数**
 2. 结果格式：
    - `toFixed()` 始终返回固定小数点格式
-   - `toPrecision()` 可能返回科学记数法格式
-
+   - `toPrecision()` 可能返回**科学记数法**格式
 3. 参数含义：
    - `toFixed(n)` 中的 n 表示小数点后的位数
    - `toPrecision(n)` 中的 n 表示总的有效数字位数
-
 4. 对整数的处理：
    - `toFixed()` 会在整数后添加小数点和指定数量的零
    - `toPrecision()` 可能会将整数转换为科学记数法
-
 5. 大数处理：
    - `toFixed()` 对于非常大的数字可能会返回指数形式
    - `toPrecision()` 更容易对大数使用科学记数法
@@ -1156,8 +1244,8 @@ console.log(bigNum.toPrecision(2));   // "1.2e+6"
 
 注意事项：
 1. 两种方法都可能因为四舍五入导致精度损失。
-2. 返回的都是字符串，如果需要进行数学运算，要先转换回数字。
-3. 在处理金融数据时，要特别注意 JavaScript 的浮点数精度问题，可能需要使用专门的库来处理高精度计算。
+2. **返回的都是字符串，如果需要进行数学运算，要先转换回数字**。
+3. 在处理金融数据时，要特别注意 JavaScript 的**浮点数精度问题**，可能需要使用专门的库来处理高精度计算。
 
 ## 37. JS 如何组阻止事件冒泡
 
@@ -1166,18 +1254,19 @@ console.log(bigNum.toPrecision(2));   // "1.2e+6"
 
 ## 38. `123['toString'].length + 123` 的输出值为多少？
 
-- `123['toString'] ` 是个 toString 函数
+- `123['toString'] ` 是个 **toString 函数**
 -  fn.length 代表`第一个具有默认值之前`的参数个数
 	- ![图片&文件](./files/20241112-20.png)
 	- ![图片&文件](./files/20241112-21.png)
 
 ![图片&文件](./files/20241112-22.png)
 
-说明 `toString` 方法的形参个数为 1 
+说明 `toString` 方法的**形参个数为 1** 
 
 ## 39. 如何延迟脚本执行
 
-- defer：js 下载和文档解析同步，文档解析好了后再执行脚本
+- defer：js 下载和文档解析同步，**文档解析好了后再执行脚本**
+	- defer 即延迟的意思，等文档解析好后执行，但不延迟下载
 - async：异步下载脚本，不阻塞文档解析，但脚本下载好了后，暂停解析文档，执行脚本
 - 动态 DOM 插入脚本
 - setTimeout
@@ -1207,9 +1296,9 @@ console.log(bigNum.toPrecision(2));   // "1.2e+6"
 ## 44. 如何中断 promise
 
 promise一旦创建，是无法终止，但以下几种方式可以中断
-- then中抛错
-- then 返回一个新的 Promise，且已知是 pending 状态，也算是中断了
-- 总之：在合适的时候，把 pending的状态给 reject 也就中断了
+- then 中抛错
+- then 返回一个**新的 Promise，且已知是 pending 状态**，也算是中断了
+- 总之：在合适的时候，把 pending 的状态给 reject 也就中断了
 
 ## 45. 箭头函数
 
@@ -1222,15 +1311,24 @@ promise一旦创建，是无法终止，但以下几种方式可以中断
 ## 46. 如何判断一个对象是空对象
 
 - `keys`
-- JSON
+- JSON 解析的方式
 
 ## 47. Object.is 与 == 、=== 的区别
 
+- Object.is 特点：
+    - NaN 等于 NaN
+    - +0 不等于 -0
+    - **其他情况与 === 相同**
+    - 使用场景：
+        - 需要区分 +0 和 -0 时
+        - 需要正确处理 NaN 比较时
+        - 需要最严格的相等性检查时
+
 ## 48. + 0.2 !== 0.3 
 
-在计算机中，数字都是以二进制形式存储的。某些十进制小数在转换成二进制时会产生无限循环小数。
+在计算机中，数字都是以**二进制形式存储的。某些十进制小数在转换成二进制时会产生无限循环小数**。
 
-由于存储位数有限，这些无限循环的二进制数必须在某个位置截断，这就导致了**精度损失**。
+由于存储位数有限，**这些无限循环的二进制数必须在某个位置截断**，这就导致了**精度损失**。
 
 ```javascript
 0.1 + 0.2 = 0.30000000000000004
@@ -1239,6 +1337,7 @@ promise一旦创建，是无法终止，但以下几种方式可以中断
 ### 48.1. 解决方案
 
 #### 48.1.1. 使用 toFixed() 进行显示
+
 ```javascript
 (0.1 + 0.2).toFixed(1) === '0.3' // true
 ```
@@ -1269,12 +1368,12 @@ Math.abs((0.1 + 0.2) - 0.3) < epsilon // true
 	   - 这意味着，如果一个元素有子元素，移动到子元素上也会触发父元素的 mouseover 事件。
    - mouseenter：
 	   - 只有当鼠标从元素外部首次进入元素时才会触发。
-	   - 移动到其子元素上不会重复触发该事件。
+	   - 移动到其子元素上不会重复触发该事件，**因为子元素上不会再冒泡了**
 
 ### 49.3. 相应的离开事件
 
-   - mouseover 对应的离开事件是 `mouseout`
-   - mouseenter 对应的离开事件是 `mouseleave`
+   - `mouseover` 对应的离开事件是 `mouseout`
+   - `mouseenter` 对应的离开事件是 `mouseleave`
 
 ### 49.4. 性能影响
 
@@ -1310,14 +1409,46 @@ Math.abs((0.1 + 0.2) - 0.3) < epsilon // true
 
 ![图片&文件](./files/20241111-22.png)
 
-## 54. 如何实现 Tab 之间通讯，不能 websocket
-
-![图片&文件](./files/20241111-23.png)
-
 ## 55. e.target 和 e.currentTarget 的区别？
+
+需要，反过来理解的
+- 正在处理的冒泡或者捕获，是 `target`
+- source target：`currentTarget`
 
 ![图片&文件](./files/20241111-24.png)
 
 ## 56. 如何确保你的构造函数只能被 `new` 调用
 
 ![图片&文件](./files/20241111-25.png)
+
+```javascript hl:2,10,18
+function Person(name) {
+  if (!new.target) {
+    throw new Error("必须使用 new 关键字调用");
+  }
+  this.name = name;
+}
+
+
+function Person(name) {
+  if (!(this instanceof Person)) {
+    throw new Error('必须使用 new 关键字调用');
+  }
+  this.name = name;
+}
+// or 直接创建
+function Person(name) {
+  if (!(this instanceof Person)) {
+    return new Person(name);
+  }
+  this.name = name;
+}
+
+
+// 最佳方式
+class Person {
+  constructor(name) {
+    this.name = name;
+  }
+}
+```
