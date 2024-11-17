@@ -1,25 +1,9 @@
 # liguwe's Books
 
 [前言](post/9faAtEDx.md)
-[更新日志](post/4bG9oEcQ.md)
-[目录](post/LK91qbmF.md)
 
 
-# 第一卷 博客
-
-
-  - [2024](post/xYI8vSEr.md)
-
-
-    - [播客：AI 时代的频率跃迁背景下个人的选择-高频的卷或低频的定](post/vSSgMQo5.md)
-
-    - [播客：张云帆的芒格之道](post/8cNs62dj.md)
-
-    - [播客：人生危机不是崩溃而是瓦解](post/DS6HBAHi.md)
-
-    - [个人常用工具及技巧分享](post/cyoKD6IK.md)
-
-# 第二卷 AGI
+# 第一卷 AGI
 
 
   - [前言](post/GAQouxss.md)
@@ -45,7 +29,7 @@
 
     - [Dify notes](post/y2s8RSvZ.md)
 
-# 第三卷 前端
+# 第二卷 前端
 
 
   - [前言](post/cipzcsUT.md)
@@ -561,7 +545,7 @@
 
     - [前端开发与 AI 大模型的集成](post/09yTyJUt.md)
 
-# 第四卷 算法
+# 第三卷 算法
 
 
   - [前言](post/Giei5JpV.md)
@@ -948,7 +932,7 @@
 
     - [确定两个字符串是否接近](post/SL4eQtMU.md)
 
-# 第五卷 计算机科学
+# 第四卷 计算机科学
 
 
   - [前言](post/daIm7SIB.md)
