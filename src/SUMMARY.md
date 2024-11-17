@@ -788,164 +788,166 @@
 
     - [其他技巧总结](post/VGNGYCT0.md)
 
-  - [刷题篇一](post/KSwjush8.md)
+  - [刷题篇（一）](post/aQ2psYzJ.md)
 
 
-    - [刷题篇](post/yi3ld4Hh.md)
+    - [刷题篇](post/ta5gd28P.md)
 
-    - [买卖股票的最佳时机 IV](post/gitSxoW9.md)
+    - [买卖股票的最佳时机 IV](post/AeKdPgcF.md)
 
-    - [两数之和](post/VNw6EBKY.md)
+    - [两数之和](post/bFQCFtt4.md)
 
-    - [合并两个有序数组](post/YPqlHPVO.md)
+    - [合并两个有序数组](post/vqbd8LLy.md)
 
-    - [确定两个字符串是否接近](post/6gpezc2J.md)
+    - [确定两个字符串是否接近](post/RIOMSipH.md)
 
-    - [字母异位词分组](post/A6DQNBbq.md)
+    - [字母异位词分组](post/KVEuuVcj.md)
 
-    - [相等行列对](post/Phg38kWq.md)
+    - [相等行列对](post/2VH8YWuU.md)
 
-    - [移除元素](post/DlJTDIKd.md)
+    - [移除元素](post/TMwtJyn6.md)
 
-    - [从字符串中移除星号](post/V5vU0IGP.md)
+    - [从字符串中移除星号](post/w0sXk0aj.md)
 
-    - [删除有序数组中的重复项](post/FrRQPRWy.md)
+    - [删除有序数组中的重复项](post/ucyLPQLA.md)
 
-    - [最长连续序列](post/gLCzfSsw.md)
+    - [最长连续序列](post/XneWaRBr.md)
 
-    - [三数之和](post/f21zlfbo.md)
+    - [三数之和](post/RSmOOnkw.md)
 
-    - [删除有序数组中的重复项 II](post/oMopTOwK.md)
+    - [删除有序数组中的重复项 II](post/DkxvPZZ5.md)
 
-    - [小行星碰撞](post/fgCAyEun.md)
+    - [小行星碰撞](post/HtTLv8bv.md)
 
-    - [多数元素](post/qaE5NXgM.md)
+    - [多数元素](post/o5qn5Gev.md)
 
-    - [字符串解码](post/06T9dWKN.md)
+    - [字符串解码](post/qpnLtPkw.md)
 
-    - [接雨水](post/eFcl17KJ.md)
+    - [接雨水](post/7LXRCBR8.md)
 
-    - [轮转数组](post/nw6qFXTG.md)
+    - [轮转数组](post/mHa7oPSC.md)
 
-    - [无重复字符的最长子串](post/SmvSmhgf.md)
+    - [无重复字符的最长子串](post/ocN94QLr.md)
 
-    - [最近的请求次数](post/GXbAbMqm.md)
+    - [最近的请求次数](post/tcDyf5z7.md)
 
-    - [买卖股票的最佳时机](post/1bB57Auk.md)
+    - [买卖股票的最佳时机](post/D8qbzAUR.md)
 
-    - [找到字符串中所有字母异位词](post/OlxTnzkB.md)
+    - [找到字符串中所有字母异位词](post/B2zlQR6s.md)
 
-    - [Dota2 参议院](post/zgXTLBxt.md)
+    - [Dota2 参议院](post/SilS9cKZ.md)
 
-    - [和为 K 的子数组](post/v5ClcnBs.md)
+    - [和为 K 的子数组](post/dcuA3z2N.md)
 
-    - [买卖股票的最佳时机 II](post/vZqwKUYY.md)
+    - [买卖股票的最佳时机 II](post/PsI2vXrH.md)
 
-    - [除自身以外数组的乘积](post/3VHZh3zS.md)
+    - [除自身以外数组的乘积](post/ntJVDF1q.md)
 
-    - [滑动窗口最大值](post/SQquwT2c.md)
+    - [滑动窗口最大值](post/zFA80VUq.md)
 
-    - [跳跃游戏](post/2uQEWRZS.md)
+    - [跳跃游戏](post/gzwROqNI.md)
 
-    - [递增的三元子序列](post/MENRSFCi.md)
+    - [递增的三元子序列](post/c2FkLfgS.md)
 
-    - [最小覆盖子串](post/QXa5qGSB.md)
+    - [最小覆盖子串](post/EOABmb2v.md)
 
-    - [定长子串中元音的最大数目](post/CojimyRe.md)
+    - [定长子串中元音的最大数目](post/CVr5ODs0.md)
 
-    - [跳跃游戏 II](post/9YFeg54s.md)
+    - [跳跃游戏 II](post/PEZzs6R3.md)
 
-    - [H 指数](post/1vQtJl5N.md)
+    - [H 指数](post/6LY3GrL2.md)
 
-    - [最大子数组和](post/FJ56zfrp.md)
+    - [最大子数组和](post/AHl2aYov.md)
 
-    - [独一无二的出现次数](post/MtOwdhBJ.md)
+    - [独一无二的出现次数](post/uYhdvBdQ.md)
 
-    - [合并区间](post/GXccdSlh.md)
+    - [合并区间](post/QWmbFqtJ.md)
 
-    - [反转字符串中的单词](post/24c18Kmg.md)
+    - [反转字符串中的单词](post/DhFgf2p9.md)
 
-    - [反转字符串中的元音字母](post/89EviQ2M.md)
+    - [反转字符串中的元音字母](post/j2Eixi8S.md)
 
-    - [轮转数组](post/5NZQOOnK.md)
+    - [轮转数组](post/BXdj6gOH.md)
 
-    - [除自身以外数组的乘积](post/GxaGYZ8s.md)
+    - [除自身以外数组的乘积](post/s7KcRcJJ.md)
 
-    - [交替合并字符串](post/lnT9mtHD.md)
+    - [交替合并字符串](post/eOjcWUDP.md)
 
-    - [缺失的第一个正数](post/wsb4RIeL.md)
+    - [缺失的第一个正数](post/2oMhs3Qn.md)
 
-    - [判断子序列](post/90h2tuoy.md)
+    - [判断子序列](post/KKTkm7FL.md)
 
-    - [矩阵置零](post/jWxzF7zm.md)
+    - [矩阵置零](post/UwlrLnaX.md)
 
-    - [删掉一个元素以后全为 1 的最长子数组](post/BrfE7PoZ.md)
+    - [删掉一个元素以后全为 1 的最长子数组](post/Z01QERqG.md)
 
-    - [盛最多水的容器](post/qWxt4P1d.md)
+    - [盛最多水的容器](post/WeYi0O8A.md)
 
-    - [寻找数组的中心下标](post/p99ln5Aq.md)
+    - [寻找数组的中心下标](post/OpbBPfj4.md)
 
-    - [压缩字符串](post/UKKZIt1M.md)
+    - [压缩字符串](post/8nAwouzf.md)
 
-    - [移动零](post/cqSoE6Ho.md)
+    - [移动零](post/T0dyBQlv.md)
 
-    - [拥有最多糖果的孩子](post/t6c24GcE.md)
+    - [拥有最多糖果的孩子](post/idOUcFpD.md)
 
-    - [找出两数组的不同](post/gBoHwiW6.md)
+    - [找出两数组的不同](post/hqROvJd5.md)
 
-    - [找到最高海拔](post/6cWmokms.md)
+    - [找到最高海拔](post/TsFeVhIw.md)
 
-    - [种花问题](post/rCwGlwO9.md)
+    - [种花问题](post/qp3mOYAr.md)
 
-    - [字符串的最大公因子](post/V9D5o6In.md)
+    - [字符串的最大公因子](post/jo50vuMz.md)
 
-    - [子数组最大平均数 I](post/S48Nep1s.md)
+    - [子数组最大平均数 I](post/ZWr0pKqE.md)
 
-    - [最大连续 1 的个数 III](post/xfKCS8by.md)
+    - [最大连续 1 的个数 III](post/8bj6OJmn.md)
 
-    - [K 和数对的最大数目](post/pJ4RUnDp.md)
+    - [K 和数对的最大数目](post/S0tUsSU8.md)
 
-    - [删除链表的中间节点](post/OgBJWanV.md)
+    - [删除链表的中间节点](post/joqcbw32.md)
 
-    - [奇偶链表](post/sJ5kzYHL.md)
+    - [奇偶链表](post/bmDBayux.md)
 
-    - [反转链表](post/dVZmDKeN.md)
+    - [反转链表](post/spdteN4L.md)
 
-    - [链表最大孪生和](post/JcpuzC06.md)
+    - [链表最大孪生和](post/mvZc9atu.md)
 
-    - [二叉树的最大深度](post/X754vJ4I.md)
+    - [二叉树的最大深度](post/gVM4cfP1.md)
 
-    - [叶子相似的树](post/dSFAuY1T.md)
+    - [叶子相似的树](post/kaRJ9nkq.md)
 
-    - [统计二叉树中好节点的数目](post/ZpxF2U6W.md)
+    - [统计二叉树中好节点的数目](post/oTYV03mW.md)
 
-    - [路径总和 III](post/EPpkhtJQ.md)
+    - [路径总和 III](post/efq8OqJB.md)
 
-    - [二叉树中的最长交错路径](post/9ofEXJPa.md)
+    - [二叉树中的最长交错路径](post/sqsiLovQ.md)
 
-    - [二叉树的最近公共祖先](post/niwRiWHl.md)
+    - [二叉树的最近公共祖先](post/qumxKUtp.md)
 
-    - [二叉树的右视图](post/Rpu973Zq.md)
+    - [二叉树的右视图](post/a1czU3Qz.md)
 
-    - [最大层内元素和](post/G36AfQHz.md)
+    - [最大层内元素和](post/gsaRNeyr.md)
 
-    - [二叉搜索树中的搜索](post/Swz5qFjp.md)
+    - [二叉搜索树中的搜索](post/NW4m8Xvx.md)
 
-    - [删除二叉搜索树中的节点](post/bZXq0xQM.md)
+    - [删除二叉搜索树中的节点](post/lwg3XLjA.md)
 
-    - [钥匙和房间](post/KBl03EcB.md)
+    - [钥匙和房间](post/PB9ySoIp.md)
 
-    - [省份数量](post/Bd0QMEKu.md)
+    - [省份数量](post/hEGRhYtd.md)
 
-    - [重新规划路线](post/rXAn6Ueb.md)
+    - [重新规划路线](post/Xm2Vgqme.md)
 
-    - [除法求值](post/PypHXbbx.md)
+    - [除法求值](post/3pCEphvF.md)
 
-    - [迷宫中离入口最近的出口](post/QgRpxnDw.md)
+    - [迷宫中离入口最近的出口](post/OlVDWkwo.md)
 
-    - [腐烂的橘子](post/243dZa8i.md)
+    - [腐烂的橘子](post/vQIjMHZA.md)
 
-    - [数组中的第K个最大元素](post/9U8fj4eR.md)
+    - [数组中的第K个最大元素](post/dLnPDklh.md)
+
+  - [刷题篇（二）]()
 
 # 第五卷 计算机科学
 
