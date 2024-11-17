@@ -772,12 +772,8 @@
 
     - [其他技巧总结](post/VGNGYCT0.md)
 
-  - [刷题篇（一）](post/aQ2psYzJ.md)
+  - [刷题篇（一）](post/ta5gd28P.md)
 
-
-    - [刷题篇](post/ta5gd28P.md)
-
-    - [买卖股票的最佳时机 IV](post/AeKdPgcF.md)
 
     - [两数之和](post/bFQCFtt4.md)
 
@@ -930,6 +926,8 @@
     - [腐烂的橘子](post/vQIjMHZA.md)
 
     - [数组中的第K个最大元素](post/dLnPDklh.md)
+
+    - [买卖股票的最佳时机 IV](post/wW2ePsUF.md)
 
 # 第四卷 计算机科学
 
