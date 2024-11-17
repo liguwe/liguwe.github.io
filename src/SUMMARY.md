@@ -779,6 +779,12 @@
 
     - [买卖股票的最佳时机 IV](post/AeKdPgcF.md)
 
+    - [两数之和](post/bFQCFtt4.md)
+
+    - [合并两个有序数组](post/vqbd8LLy.md)
+
+    - [确定两个字符串是否接近](post/RIOMSipH.md)
+
     - [字母异位词分组](post/KVEuuVcj.md)
 
     - [相等行列对](post/2VH8YWuU.md)
@@ -924,13 +930,6 @@
     - [腐烂的橘子](post/vQIjMHZA.md)
 
     - [数组中的第K个最大元素](post/dLnPDklh.md)
-
-  - [刷题篇（二）](post/h2IcYvTs.md)
-
-
-    - [合并两个有序数组](post/bCuJl1FX.md)
-
-    - [确定两个字符串是否接近](post/SL4eQtMU.md)
 
 # 第四卷 计算机科学
 
