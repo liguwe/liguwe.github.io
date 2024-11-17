@@ -48,7 +48,7 @@ Vue 的组件可以按两种不同的风格书写：选项式 API 和 组合式 
 
 - Vue 2 在 2023 年底将到达它的截止维护日期
 - vue3 仅支持 IE11及以上。Vue 3 用到了一些 IE11 不支持的现代 JavaScript 特性
-- vue3 只支持 [原生支持 ES2015 的浏览器](https://caniuse.com/es6) ，即es6
+- vue3 只支持 [原生支持 ES2015 的浏览器](https://caniuse.com/es6) ，即 es6
 
 ## 2. 应用
 
@@ -96,7 +96,8 @@ Vue 的组件可以按两种不同的风格书写：选项式 API 和 组合式 
 
 5、受限的全局访问，可以通过 [app.config.globalProperties](https://cn.vuejs.org/api/application.html#app-config-globalproperties) 配置
 
-模板中的表达式将被沙盒化，仅能够访问到[有限的全局对象列表](https://github.com/vuejs/core/blob/main/packages/shared/src/globalsWhitelist.ts#L3)。该列表中会暴露常用的内置全局对象，比如 `Math` 和 `Date`。
+- 模板中的表达式将被沙盒化，仅能够访问到[有限的全局对象列表](https://github.com/vuejs/core/blob/main/packages/shared/src/globalsWhitelist.ts#L3)。
+- 该列表中会暴露常用的内置全局对象，比如 `Math` 和 `Date`。
 
 ```javascript
 import { makeMap } from './makeMap'

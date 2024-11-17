@@ -1,7 +1,7 @@
 
 # React 中获取 DOM 引用的方式有哪些？
 
-
+`#react` 
 
 
 ## 目录
@@ -48,7 +48,7 @@ class MyComponent extends React.Component {
 }
 ```
 
-## 2. useRef Hook
+## 2. useRef  Hook
 
 在函数组件中使用的 Hook 方式：
 
@@ -261,14 +261,7 @@ function VideoPlayer({ src }) {
 1. 优先使用 `useRef` 和 `createRef`
 2. 需要更细粒度控制时使用回调 `refs`
 3. 需要跨组件传递 ref 时使用 `forwardRef`
-4. 避免使用字符串 refs 和 `findDOMNode`
+4. 避免使用`字符串 refs` 和 `findDOMNode`
 5. 只在必要时使用 refs（如焦点管理、动画、第三方 DOM 库集成等）
 6. 不要过度使用 refs 来操作 DOM，尽量通过 React 的声明式更新来管理 UI
 
-记住，refs 主要用于：
-- 管理焦点、文本选择或媒体播放
-- 触发强制动画
-- 集成第三方 DOM 库
-- 直接访问 DOM 元素的特定属性或方法
-
-应避免使用 refs 来做任何可以通过声明式实现的事情。

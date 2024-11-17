@@ -86,7 +86,7 @@ const timeoutForPriorityLevel = {
 };
 ```
 
-### 3.2. B. 任务饥饿检测
+### 3.2. 任务饥饿检测
 
 ```javascript
 function shouldYieldToHost() {

@@ -43,7 +43,7 @@ interface TeleportProps {
 
 下面是 patch 函数：
 
-![|544](https://832-1310531898.cos.ap-beijing.myqcloud.com/157ea664c2294a84c81ee0dba0120952.png)
+![|608](https://832-1310531898.cos.ap-beijing.myqcloud.com/157ea664c2294a84c81ee0dba0120952.png)
 
 ## 3. 以下面模板为示例
 

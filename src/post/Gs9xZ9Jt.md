@@ -11,15 +11,15 @@
 - 应用实例需要一个`根组件`来渲染内容
 - 使用 `.mount() `方法挂载应用实例到` DOM 元素`上
 - 可以配置应用实例的全局选项和资源，比如
-   - 应用级别错误处理器：`app.config.errorHandler = (err) => {})`
-   - 注册一个全局组件： `app.component('TodoDeleteButton', TodoDeleteButton)`
+	- 应用级别错误处理器：`app.config.errorHandler = (err) => {})`
+	- 注册一个全局组件： `app.component('TodoDeleteButton', TodoDeleteButton)`
 - 一个页面可以创建多个共存的 Vue 应用实例。
 
 ## 2. Vue 模板
 
 1、Vue 使用基于 `HTML` 的模板语法, 将组件实例的数据绑定到呈现的 DOM 上。
 
-2、`文本插值`使用双大括号语法,可以将组件属性显示为纯文本 
+2、`文本插值`使用双大括号语法，可以将组件属性显示为纯文本 
 
 3、使用 `v-html 指令`可以将属性插入为`原始 HTML`, 但要注意安全风险。
 
@@ -60,8 +60,6 @@
 
 ```javascript
 import { reactive } from 'vue'
-
-const state = reactive({ count: 0 })
 
 // 只有代理对象是响应式的，更改原始对象不会触发更新
 const raw = {}
@@ -126,7 +124,7 @@ state = reactive({ count: 1 })
 	- 注意 `v-if ` `v-else-if` `v-else` 三个的配对关系。
 - `v-if` 与 `v-show`
 	- `v-if` 是真实的按条件渲染，切换时**销毁与重建事件监听器和子组件**；
-	- `v-show `则简单切换 CSS 属性（即始终保留在 DOM 中，仅切换 display 属性）
+	- `v-show `则简单切换 CSS 属性（即始终保留在 DOM 中，**仅切换 display 属性**）
 	- `v-if` 有**更高的切换开销**
 	- 而 `v-show` 有**更高的初始渲染开销**
 	- ` v-if` 优先级高于  `v-for`， 不推荐同时使用。
@@ -147,7 +145,7 @@ state = reactive({ count: 1 })
 ## 8. 事件处理
 
 - 使用 `v-on` 指令监听 DOM 事件，并在事件触发时执行对应的 JavaScript。
-- 内联事件 与 方法事件
+- 内联事件与方法事件
 	- `内联事件`处理器适用于简单场景，
 	- 而`方法事件`处理器适用于复杂逻辑。
 - 如何传入参数？
@@ -199,7 +197,7 @@ window.addEventListener('scroll', function(event) {
 
 ### 11.1. watch 
 
-```javascript hl:6,13,32,33
+```javascript hl:6,13,32,33,18
 // 侦听单个来源
 function watch<T>(
   source: WatchSource<T>,
@@ -263,15 +261,84 @@ type StopHandle = () => void
 2、注意 `watch`  的 `第二个参数` 有 `once` 、`immediate` ， `deep`
 - 但需要注意 `deep = true 时`  可能会引起性能问题
 
-3、 [watchEffect函数](https://cn.vuejs.org/api/reactivity-core.html#watcheffect)  会**自动收集并追踪**函数内所依赖的响应式数据，省得手动维护所需要监听的数据，他不需要像 `watch` 一样 递归地跟踪所有的属性，比较适合侦听一个嵌套数据结构中的`几个属性`。
+3、 [watchEffect函数](https://cn.vuejs.org/api/reactivity-core.html#watcheffect)  会**自动收集并追踪**函数内所依赖的响应式数据，省得手动维护所需要监听的数据，他不需要像 `watch` 一样递归地跟踪所有的属性，比较适合侦听一个嵌套数据结构中的`几个属性`。
 
 4、回调的触发时机
 
-（1）默认情况下，侦听器回调会在`父组件更新之后、所属组件的 DOM 更新之前`被调用，这意味着如果你尝试在侦听器回调中访问所属组件的 DOM，那么 DOM 将处于更新前的状态
+（1）`flush：pre`默认情况下，侦听器回调会在`父组件更新之后、所属组件的 DOM 更新之前`被调用，这意味着如果你尝试在侦听器回调中访问所属组件的 DOM，那么 DOM 将处于更新前的状态
+
+- 能够避免不必要的渲染
+- 大多数情况下这是最优选择
+- 考虑使用 `pre` 模式配合 `nextTick`
+
+```javascript
+const count = ref(0)
+
+// 在组件更新前触发
+watch(count, (newValue, oldValue) => {
+  console.log('count changed:', newValue)
+}, { flush: 'pre' })
+
+function update() {
+  count.value++
+}
+
+// 执行顺序：
+// 1. count 值更新
+// 2. 触发 watch 回调
+// 3. 组件重新渲染
+
+```
 
 （2）可以通过设置`flush: 'post'`选项在侦听器回调中访问被 Vue 更新之后的 DOM。
 
+- 需要访问更新后的 DOM
+- 需要确保某些 DOM 操作在渲染后执行
+
+```javascript
+const count = ref(0)
+
+// 在组件更新后触发
+watch(count, (newValue, oldValue) => {
+  // 此时可以访问更新后的 DOM
+  console.log('DOM updated, count is:', newValue)
+}, { flush: 'post' })
+
+function update() {
+  count.value++
+}
+
+// 执行顺序：
+// 1. count 值更新
+// 2. 组件重新渲染
+// 3. 触发 watch 回调
+
+```
+
 （3）可以设置 `flush: 'sync'` 创建一个`同步触发的侦听器`，它会在 Vue 进行任何更新之前触发
+
+- 可能影响性能
+- 只在特定场景下使用（如调试）
+- 处理高频更新时要特别注意
+
+```javascript
+const count = ref(0)
+
+// 同步触发，立即执行
+watch(count, (newValue, oldValue) => {
+  console.log('count immediately changed:', newValue)
+}, { flush: 'sync' })
+
+function update() {
+  count.value++
+  count.value++
+  count.value++
+  // 每次改变都会立即触发 watch
+}
+
+// 执行顺序：
+// 值改变立即触发 watch，不等待下一个 tick
+```
 
 （4）同步侦听器不会进行**批处理**，每当检测到响应式数据发生变化时就会触发。可以使用它来监视简单的布尔值，但应避免在可能多次同步修改的数据源 (如数组) 上使用
 

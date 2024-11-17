@@ -16,5 +16,5 @@ Vue3 相关基础、原理、及源码设计
 	- [7. Vue3 中 effect 的调度选项（scheduler）使用示例](/post/AF0KU415.html)
 	- [8. vue3 watch 如何取消监听、恢复监听及清理副作用](/post/GYJGMNul.html)
 	- [9. Vue3 的非原始值响应式方案（Map、WeakMap 、Set 、WeakSet ）](/post/jKi9dCol.html)
-	- [10. 原始值的响应方案](/post/pXekAFId.html)
+	- [10. Vue3 中原始值的响应方案](/post/rGeEUNXV.html)
 

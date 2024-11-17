@@ -11,32 +11,34 @@
 
 ## 目录
 <!-- toc -->
- ## 1. 本文总结 
+ ## 1. 总结 
 
 ### 1.1. 基本原理
 
 - Vue 的响应式数据是基于 Proxy 实现的
-	- Proxy 可以为其他对象创建一个代理对象。
+	- Proxy 可以为其他对象创建一个代理对象
 	- 在实现代理的过程中，我们遇到了访问器属性的 `this 指向`问题，这需要使用 `Reflect.* 方法`并指定正确的 receiver 来解决。
 - 在 ECMAScript 规范中，JavaScript 中有两种对象，
 	- 其中一叫作`常规对象`
 	- 另一种叫作`异质对象`。
 - 代理 `Object对象` 的本质， 就是**查阅规范**并找到可拦截的基本操作的方法。
-	- 有一些操作并不是基本操作，而是复合操作，这需要我们查阅规范了解它们都依赖哪些基本操作，从而通过基本操作的拦截方法**间接**地处理复合操作。
+	- 有一些操作并不是基本操作，而是**复合操作**
+	- 这需要我们查阅规范了解它们都依赖哪些基本操作，从而通过基本操作的拦截方法**间接**地处理复合操作。
 - 添加、修改、删除属性对 `for...in` 操作的影响
 	- `添加和删除`属性都会影响 `for...in` 循环的`执行次数`，所以当这些操作发生时，需要触发与 `ITERATE_KEY` 相关联的副作用函数重新执行。
 	-  `修改`属性值则不影响 `for...in` 循环的执行次数，因此无须处理。
 -  如何合理地触发副作用函数重新执行，包括
 	- 对 `NaN` 的处理，
 		- 对于 `NaN`，我们主要注意的是`NaN === NaN`永远等于false
-	- 访问原型链上的属性导致的副作用函数重新执行两次的问题
+	- 访问**原型链上的属性导致的副作用函数**重新执行两次的问题
 		-  对于原型链属性问题，需要我们查阅规范定位问题的原因。
 	- 由此可见，想要基于 Proxy 实现一个相对完善的响应系统，**免不了去了解 ECMAScript 规范**。
 - 深响应与浅响应，以及深只读与浅只读。
-	- 这里的深和浅指的是对象的层级，
-	- 浅响应(或只读)代表仅代理一个对象的第一层属性，即只有对象的第一层属性值是响应(或只读)的。
-	- 深响应(或只读)则恰恰相反，
-	- 为了实现深响应(或只读)，我们需要在返回属性值之前，对值做一层包装，将其包装为响应式(或只读) 数据后再返回。
+	- 这里的深和浅指的是对象的层级
+	- 浅响应(或只读)
+		- 代表**仅代理一个对象的第一层属性**，即只有对象的第一层属性值是响应(或只读)的
+	- 深响应(或只读)则恰恰相反
+		- 为了实现深响应(或只读)，我们需要在返回属性值之前，对值做一层包装，将其包装为响应式(或只读) 数据后再返回
 
 ### 1.2. 数组的代理
 
@@ -44,28 +46,33 @@
 - 很多隐式对象的属性，触发响应的时候需要额外注意，比如
 	- 通过`索引`为数组设置新的元素，可能会隐式地改变数组 `length` 属性的值。
 	- 对应地，修改数组 `length` 属性的值，也可能会间接影响数组中的已有元素。
-- 如何拦截 `for...in` 和 `for...of` 对数组的遍历操作
+- 如何拦截 `for...in` 和 `for...of` 对数组的遍历操作：**只需要跟踪拦截数组的 length** ，下面是原因
 	- 使用 `for...in` 循环遍历数组与遍历普通对象区别不大，唯一需要注意的 是，当追踪 for...in 操作时，应该使用`数组的 length` 作为追踪的 key。
 	- `for...of` 基于迭代协议工作，数组内建了 `Symbol.iterator` 方法。
 		- 数组迭代器执行时，会读取数组的 length 属性或数组的索引。因此，我们不需要做其他额外的处理，就能够实现对 for...of 迭代的响应式支持。
 - 数组的查找方法。如 includes、indexOf 以及 lastIndexOf 等
-	- 对于数组元素的查找，需要注意的一点是，用户既可能使用代理对象进行查找，也可能使用原始对象进行查找。
-	- 为了支持这两种形式，我们需要重写数组的查找方法。原理很简单，当用户使用这些方法查找元素时，我们可以先去代理对象中查找，如果找不到，再去原始数组中查找。
+	- 对于数组元素的查找，需要注意的一点是**，用户既可能使用代理对象进行查找，也可能使用原始对象进行查找。**
+	- 为了支持这两种形式，我们需要**重写数组的查找方法**。
+	- 原理很简单，当用户使用这些方法查找元素时，我们可以先去代理对象中查找，如果找不到，再去原始数组中查找。
 - 栈溢出问题
-	- 即 push、pop、 shift、unshift 以及 splice 等方法。调用这些方法会间接地读取 和设置数组的 length 属性，因此，在不同的副作用函数内对同一个 数组执行上述方法，会导致多个副作用函数之间循环调用，最终导致调用**栈溢出**。
-	- 为了解决这个问题，我们使用一个标记变量 `shouldTrack` 来代表是否允许进行追踪，然后重写了上述这些方法， 目的是，当这些方法间接读取 length 属性值时，我们会先将 shouldTrack 的值设置为 false，即禁止追踪。
-	- 这样就可以断开 length 属性与副作用函数之间的响应联系，从而避免循环调用导致的调用栈溢出。
+	- 即 push、pop、 shift、unshift 以及 splice 等方法。
+		- 调用这些方法会间接地读取 和设置数组的 length 属性
+		- 因此，在不同的副作用函数内对同一个 数组执行上述方法，会导致多个副作用函数之间循环调用，最终导致调用**栈溢出**。
+	- 为了解决这个问题，我们使用一个标记变量 `shouldTrack` 来代表是否允许进行追踪，
+		- 然后重写了上述这些方法， 目的是，当这些方法间接读取 length 属性值时，我们会先将 shouldTrack 的值设置为 false，即禁止追踪。
+	- 这样就可以断开 length 属性与副作用函数之间的响应联系，从而避免循环调用导致的调用栈溢出
 
 ### 1.3. 集合类型的响应式方案
 
 - 集合类型指 Set、Map、WeakSet 以及 WeakMap
-	- 例如，集合类型的 size 属性是一个访问器属性，当通过代理 对象访问 size 属性时，由于代理对象本身并没有部署 `[SetData](/post/jKi9dCol.html#SetData)` 这样的**内部槽**，所以会发生错误。
-	- 另外，通过代理对象执行集合类型 的操作方法时，要注意这些方法执行时的 this 指向，我们需要在 get 拦截函数内通过 .bind 函数为这些方法绑定正确的 `this 值`。
-- 集合类型响应式数据的实现。
+	- 例如，集合类型的 size 属性是一个**访问器属性**，当通过代理 对象访问 size 属性时，由于代理对象本身并没有部署 `[SetData](/post/jKi9dCol.html#SetData)` 这样的**内部槽**，所以会发生错误。
+	- 另外，通过代理对象执行集合类型 的操作方法时，要注意这些方法执行时的 this 指向，我们需要在 **get 拦截函数内通过 .bind 函数**为这些方法绑定正确的 `this 值`。
+- 集合类型响应式数据的实现
 	- 我们需要通过“**重写**”集合方法的方式来实现自定义的能力，
-	- 当 Set 集合的 add 方法执行时，需要调用 trigger 函数触发响应。
+	- 当 Set 集合的 add 方法执行时，需要调用 trigger 函数触发响应
 - 数据污染
-	- 指的是不小心将响应式数据添加到原始数据中，它导致用户 可以通过原始数据执行响应式相关操作，这不是我们所期望的。为了避免这类问题发生，我们通过响应式数据对象的 `raw 属`性来访问对应 的原始数据对象，后续操作使用原始数据对象就可以了。
+	- 指的是不小心将响应式数据添加到原始数据中，它导致用户 可以通过原始数据执行响应式相关操作，这不是我们所期望的。
+	- 为了避免这类问题发生，我们通过响应式数据对象的 `raw 属`性来访问对应的原始数据对象，后续操作使用原始数据对象就可以了。
 - 集合的 forEach 方法与对象的 for...in 遍历类似，最大的不同体现在在于
 	- 当使用 for...in 遍历对象时，我们只关心对象的键是否变化，而不关心值;
 	- 但使用 forEach 遍历集合时，我们既关心键的变化，也关心值的变化。
@@ -117,7 +124,8 @@ const p2 = new Proxy(fn, {
 
 `Reflect` 还接受`第三个参数`，如下：
 
-![](https://832-1310531898.cos.ap-beijing.myqcloud.com/6f6465918bdc361e993206a4b58d401d.png)
+![|728](https://832-1310531898.cos.ap-beijing.myqcloud.com/6f6465918bdc361e993206a4b58d401d.png)
+
 前文 [6. Vue3 的响应式原理（effect、computed、watch 的实现原理 ）](/post/rMLcAXU9.html) 的` Effect` 函数，如果对于下面的数据结构有问题，`无法正常收集响应信息`。这时候就需要用到 `Reflect 的第三个参数了`
 
 ```javascript hl:3
@@ -136,13 +144,14 @@ const obj = {
 JS 中一切都是对象，函数也是对象，那么如何区分呢？
 - 对象真正语义由`内部方法`实现，即对对象进行某个操作时，`引擎内部`实际调用的方法，对用户是不可见的
 
-![|576](https://832-1310531898.cos.ap-beijing.myqcloud.com/facf27b921187c6c77f36e11511f2d2d.png)
+![|808](https://832-1310531898.cos.ap-beijing.myqcloud.com/facf27b921187c6c77f36e11511f2d2d.png)
 
-如上图，是 常规对象 的 `内部方法`，下面是`函数对象的内部方法`
+如上图，是常规对象 的 `内部方法`，下面是`函数对象的内部方法`
 
-![|608](https://832-1310531898.cos.ap-beijing.myqcloud.com/5ffa20e66f443a16309655b8ae9201c4.png)
+![|800](https://832-1310531898.cos.ap-beijing.myqcloud.com/5ffa20e66f443a16309655b8ae9201c4.png)
 
 所以，根据是否部署 `[Call](/post/jKi9dCol.html#Call)`  方法，就可以判断是 `普通对象` 还是`函数对象` 
+
 > [https://262.ecma-international.org/#sec-ordinary-and-exotic-objects-behaviours](https://262.ecma-international.org/#sec-ordinary-and-exotic-objects-behaviours)
 
 ### 3.2. `常规对象` 与 `异质对象`
@@ -156,6 +165,7 @@ ES 规范，JS 中有`两种对象`：
 
 - `[Call](/post/jKi9dCol.html#Call)` 和 `[construct](/post/jKi9dCol.html#construct)` 两个内部方法**只有被代理对象是函数和构造函数时**才会调用
 - 内部方法的`多态性` 即 普通对象 和 Proxy 都有 `[Get](/post/jKi9dCol.html#Get)`  ，但规范定义是完全不同的。
+
 > [https://262.ecma-international.org/#sec-proxy-object-internal-methods-and-internal-slots](https://262.ecma-international.org/#sec-proxy-object-internal-methods-and-internal-slots)
 
 ### 3.3. 示例：代理 `delete` 操作
@@ -168,19 +178,19 @@ ES 规范，JS 中有`两种对象`：
 注意：需要删除被 `proxy` 的对象，才会拦截，如下图，下面的方式就不会
 **自己丢到坑里了，搞了一会，才发现都写错了**
 
-![](https://832-1310531898.cos.ap-beijing.myqcloud.com/b125b5237dd8ce6ea39f9e95e472d7fa.png)
+![|720](https://832-1310531898.cos.ap-beijing.myqcloud.com/b125b5237dd8ce6ea39f9e95e472d7fa.png)
 
 ## 4. 如何代理 Object
 
 如何拦截对象的`一切读取操作`，比如
 - 访问属性：`obj.foo`  ， `obj['foo']`
-   - `Proxy get`
+	- `Proxy get`
 - `in`操作符：`foo in obj`
-   - 根据 ECMA-262 中，in 操作符运算时的逻辑，通过 `Proxy has` 拦截
+	- 根据 ECMA-262 中，in 操作符运算时的逻辑，通过 `Proxy has` 拦截
 - 遍历：`for(const key in obj)`
-   - 还是通过规范可知，使用` Proxy ownKeys 操作` 可拦截
+	- 还是通过规范可知，使用` Proxy ownKeys 操作` 可拦截
 - 删除某个属性： `delete p.foo`
-   - 通过看规范可知，可通过拦截 `Proxy deleteProperty ` 拦截
+	- 通过看规范可知，可通过拦截 `Proxy deleteProperty ` 拦截
 - 等等。。。
 
 所以，结论就是：首先需要`查阅规范`，找到可拦截的方法，另外一些`复合操作`，依赖于一些基本操作，我们需要分析，通过拦截`基本操作`，达到`间接拦截复合操作`的目的。
@@ -242,17 +252,22 @@ child.bar = 2;
 
 如下图：修改嵌套内层的 `bar属性`，也应该触发副作用函数
 
-![|524](https://832-1310531898.cos.ap-beijing.myqcloud.com/53a08f4b30bc2b6d8a8d9247b6de2c82.png)
+![|644](https://832-1310531898.cos.ap-beijing.myqcloud.com/53a08f4b30bc2b6d8a8d9247b6de2c82.png)
+
 所以，我们需要再递归再返回属性值，如下图：
-![|568](https://832-1310531898.cos.ap-beijing.myqcloud.com/009b93436fd03c02c033d8c930b0f27f.png)
+
+![|656](https://832-1310531898.cos.ap-beijing.myqcloud.com/009b93436fd03c02c033d8c930b0f27f.png)
 
 如下代码：
+
 ```javascript
 import {createApp, reactive, effect,readonly} from 'vue'
 const obj = readonly({ text1: 'text1', text2: 'text2' });
 obj.text2 = 1; // [Vue warn] Set operation on key "text2" failed: target is readonly
 ```
+
 执行会警告：如下图
+
 ![](https://832-1310531898.cos.ap-beijing.myqcloud.com/37944aa17e10affab4b6854774631b0e.png)
 再者，`只读数据`不应该和副作用函数`建立响应关系`。如何实现呢？
 
@@ -279,14 +294,17 @@ obj.text2 = 1; // [Vue warn] Set operation on key "text2" failed: target is read
 
 - `arr[0]=1`
 - `length=0`
-- 栈方法：push pop 等等，它还会`隐式`修改 `length`
-- 改变原数组的方法：如 `spice 、sort  、fill` 等
+- 栈方法：
+	- push pop 等等，它还会`隐式`修改 `length`
+- 改变原数组的方法：
+	- 如 `spice 、sort  、fill` 等
 
 然后，去查文档，看看每个操作后面的调用逻辑是什么？再有针对性的去跟踪建立响应。
 为什么我们要重写` includes` 、 `indexOf` 和 `lastIndexof` 呢？
 
 - 以 includes 为例，查阅语言规范，我们发现
-   - 这个方法的执行流程中使用了`数组的对象属性的一面`去查找属性，所以 `this` 指向这个`对象`，所以 `reacttive(obj)` 每次都很返回一个新的对象，所以 this 指向肯定有问题。所以我们需要重写 `includes`, 如何重写呢，即 拦截` arr 对象`的 `includes 属性` ，及看 `includes` 是否存在于`arrayInstrumentations`中，如下代码截图
+   - 这个方法的执行流程中使用了`数组的对象属性的一面`去查找属性，所以 `this` 指向这个`对象`，所以 `reacttive(obj)` 每次都很返回一个新的对象，所以 this 指向肯定有问题。所以我们需要重写 `includes`,
+      - 如何重写呢，即拦截` arr 对象`的 `includes 属性` ，及看 `includes` 是否存在于`arrayInstrumentations`中，如下代码
 
 ```javascript
 const arrayInstrumentations = {}
@@ -307,7 +325,7 @@ const arrayInstrumentations = {}
 })
 ```
 
-下面看看为什么重写 栈方法：如 `push`，看下面示例：
+下面看看为什么重写栈方法：如 `push`，看下面示例：
 
 > 你可以想想，语言规范里，调用 `push`  肯定有一步是修改 `length` 的
 
@@ -340,7 +358,9 @@ let shouldTrack = true
   }
 })
 ```
+
 以下代码实现`不追踪`：
+
 ```javascript
 function track(target, key) {
   if (!activeEffect || !shouldTrack) return
@@ -355,12 +375,14 @@ function track(target, key) {
 
 - size clear keys  values()  entries()  等等
 
-同样的你还是需要去查语言规范，比如 `size` 是一个访问器属性，语言规范里规范有 `this` 执行的步骤，所以直接通过代理对象访问，会导致报错，这时候你需要去兼容，如去拦截 `get()` ，然后`bind` 正确的 `this 值`
+同样的你还是需要去查语言规范
+- 比如 `size` 是一个访问器属性，语言规范里规范有 `this` 执行的步骤，所以直接通过代理对象访问，会导致报错，这时候你需要去兼容，如去拦截 `get()` ，然后`bind` 正确的 `this 值`
 
 其实 `delete()` 也是同样的道理
+
 很多思路类似，比如代理迭代器属性和方法，比如 `for in`  和 `foreach` ，又比如 需要去看看文档规范里 `entries keys 和 values` 是如何定义的
 
 另外需要避免数据污染的问题，即把`响应式数据`设置到`原始数据`上的行为。我们可以通过响应式对象的 `row`属性来访问`原始对象`
 
-OK，就到这儿吧，其实已经有一个很现成的库供我们使用了，如果某一天真正需要用到，或者需要仔细研究，那么去看看 `@vue/reactivity` 或者看看本书的附件源码吧
+OK，就到这儿吧，其实已经有一个很现成的库供我们使用了，如果某一天真正需要用到，或者需要仔细研究，那么去看看 `@vue/reactivity` 
 

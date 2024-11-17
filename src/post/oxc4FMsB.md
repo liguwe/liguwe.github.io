@@ -23,7 +23,7 @@ useInsertionEffect(setup, dependencies?)
 2. useLayoutEffect
 3. useEffect
 
-这个顺序设计使得它**特别适合在 DOM 变更之前插入样式**，避免了布局抖动的问题
+这个顺序设计使得它**特别适合在 DOM 变更之前插入样式，避免了布局抖动的问题**
 
 ## 3. 主要使用场景
 

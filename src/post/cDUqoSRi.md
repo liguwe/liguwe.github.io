@@ -9,7 +9,7 @@
 
 Immer.js 是一个让我们能够以更简单的方式处理`不可变数据`的库。
 
-它的核心理念是通过创建一个"草稿状态"(draft)来修改数据，而不是直接修改原始状态。
+它的**核心理念是通过创建一个草稿状态(draft)来修改数据，而不是直接修改原始状态**。
 
 ## 2. 基本使用方法
 
@@ -70,7 +70,7 @@ function UserProfile() {
 
 ## 4. 主要作用和优势
 
-### 4.1.1. 简化复杂状态更新
+### 4.1. 简化复杂状态更新
 
 - 不需要手动创建对象的深拷贝
 - 避免了展开运算符的多层嵌套
@@ -146,6 +146,7 @@ setState(produce(draft => {
 ```
 
 ### 6.3. 异步操作
+
 ```jsx
 // 在异步操作中使用
 const handleAsync = async () => {
@@ -204,10 +205,10 @@ const todosReducer = produce((draft, action) => {
 - 在性能关键的场景中谨慎使用
 - 保持状态结构的扁平化，即使使用 Immer 也应避免过深的嵌套
 
-## 与 Immutable.js 的比较
+## 9. 与 Immutable.js 的比较
 
 - 如果你的项目不是特别依赖性能，并且希望保持代码的可读性和维护性，Immer.js 是更好的选择。
-- 如果你的项目规模较大，对性能要求极高，并且团队成员都熟悉函数式编程概念，那么 Immutable.js 可能更适合。
-- 在现代 React 开发中，Immer.js 的使用更为普遍，这也是为什么 Redux Toolkit 选择了集成 Immer.js 而不是 Immutable.js。
-
+- 如果你的项目规模较大，对性能要求极高，并且团队成员都熟悉**函数式编程概念**，那么 Immutable.js 可能更适合。
+- 在现代 React 开发中，Immer.js 的使用更为普遍，
+	- 这也是为什么 Redux Toolkit 选择了集成 Immer.js 而不是 Immutable.js。
 

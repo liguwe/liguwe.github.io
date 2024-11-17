@@ -351,10 +351,10 @@ function MyApp() {
 
 ## 8. 其他优化建议
 
-1. **合理使用 Context**
-   - 避免将频繁变化的值放在 Context 中
-   - 考虑拆分 Context 以减少不必要的重渲染
-2. **使用 Web Workers 处理复杂计算**
+- **合理使用 Context**
+	- 避免将频繁变化的值放在 Context 中
+	- 考虑拆分 Context 以减少不必要的重渲染
+- **使用 Web Workers 处理复杂计算**
    ```javascript
    const worker = new Worker('worker.js');
    
@@ -364,20 +364,16 @@ function MyApp() {
    };
    ```
 
-3. **优化依赖包大小**
-   - 使用 `import` 语法进行按需加载
-   - 使用较小的替代包
-   - 定期审查和更新依赖
-
-4. **服务端渲染 (SSR)**
-   - 考虑使用 Next.js 或其他 SSR 框架
-   - 实现首屏快速加载
-   - 优化 SEO
-
-5. **使用性能监控工具**
-   - React DevTools
-   - Chrome Performance 面板
-   - Lighthouse
-   - 自定义性能指标监控
-
-记住，性能优化应该是渐进式的，先找出真正的性能瓶颈，再有针对性地进行优化。不要过早优化，也不要过度优化。
+- **优化依赖包大小**
+	- 使用 `import` 语法进行按需加载
+	- 使用较小的替代包
+	- 定期审查和更新依赖
+- **服务端渲染 (SSR)**
+	- 考虑使用 Next.js 或其他 SSR 框架
+	- 实现首屏快速加载
+	- 优化 SEO
+- **使用性能监控工具**
+	- React DevTools
+	- Chrome Performance 面板
+	- Lighthouse
+	- 自定义性能指标监控

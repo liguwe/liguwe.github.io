@@ -127,7 +127,7 @@ function c() {
 
 ![图片&文件](./files/20241111-45.png)
 
-## 7. promise.finnly 实现
+## 7. promise.finally 实现
 
 ![图片&文件](./files/20241111-46.png)
 
@@ -441,11 +441,11 @@ console.log(`${obj}`);      // "hello" (string hint)
 console.log(obj + '');      // "default" (default hint)
 ```
 
-### 12.4. 默认转换过程
+### 12.3. 默认转换过程
 
 如果没有实现 `Symbol.toPrimitive`，JavaScript 会按照以下顺序尝试转换：
 
-#### 12.4.1. 对于 hint "string"
+#### 12.3.1. 对于 hint "string"
 
 1. 先调用 `toString()`
 2. 如果返回的不是原始值，则调用 `valueOf()`
@@ -464,7 +464,7 @@ const obj = {
 console.log(String(obj)); // "Custom String"
 ```
 
-#### 12.4.2. 对于 hint "number" 或 "default"
+#### 12.3.2. 对于 hint "number" 或 "default"
 
 1. 先调用 `valueOf()`
 2. 如果返回的不是原始值，则调用 `toString()`
@@ -483,9 +483,9 @@ const obj = {
 console.log(Number(obj)); // 100
 ```
 
-### 12.5. 常见使用场景
+### 12.4. 常见使用场景
 
-#### 12.5.1. 数学运算
+#### 12.4.1. 数学运算
 
 ```javascript
 const obj = {
@@ -501,7 +501,7 @@ const obj = {
 console.log(obj * 2); // 84
 ```
 
-#### 12.5.2. 字符串拼接
+#### 12.4.2. 字符串拼接
 
 ```javascript
 const obj = {
@@ -518,7 +518,7 @@ const obj = {
 console.log(`Name: ${obj}`); // "Name: John Doe"
 ```
 
-### 12.6. 日期对象示例
+### 12.5. 日期对象示例
 
 Date 对象是一个很好的内置 toPrimitive 实现示例：
 
@@ -535,7 +535,7 @@ console.log(+date); // 时间戳
 console.log(date + ''); // 当前日期的字符串表示
 ```
 
-### 12.7. 总结
+### 12.6. 总结
 
 ![图片&文件](./files/20241111-49.png)
 
@@ -1012,7 +1012,7 @@ const tasks = [
 const results = await serialPromise(tasks);
 ```
 
-## promise中 then 的返回值情况分析
+## 33. promise中 then 的返回值情况分析
 
 所以上面那题，**foreach 串行执行的道理了吗**？
 
@@ -1088,15 +1088,15 @@ Promise.resolve('初始值')
   });
 ```
 
-## 33. Promise 相关问题
+## 34. Promise 相关问题
 
-### 33.1. finnaly：无论失败或者成功都会执行，且**不接受结果**
+### 34.1. finnaly：无论失败或者成功都会执行，且**不接受结果**
 
-### 33.2. 注意顺序
+### 34.2. 注意顺序
 
 ![图片&文件](./files/20241112-14.png)
 
-### 33.3. reject 包在 try 里面也会被捕获到
+### 34.3. reject 包在 try 里面也会被捕获到
 
 ```javascript hl:3,5
 async function asyncl() {
@@ -1110,15 +1110,15 @@ async function asyncl() {
 asyncl();
 ```
 
-#### 33.3.1. 没有捕获会报错
+#### 34.3.1. 没有捕获会报错
 
 ![图片&文件](./files/20241112-15.png)
 
-### 33.4. then 和 .catch 返回的值不能使 promise 对象本身，否则会死循环
+### 34.4. then 和 .catch 返回的值不能使 promise 对象本身，否则会死循环
 
 ![图片&文件](./files/20241112-16.png)
 
-## 34. await 没报错就会往下走，别和 promise 搞混了
+## 35. await 没报错就会往下走，别和 promise 搞混了
 
 ![图片&文件](./files/20241112-18.png)
 
@@ -1145,16 +1145,16 @@ async function empty() {}
 console.log(empty()); // Promise {<fulfilled>: undefined}
 ```
 
-### 34.1. 下面的代码就一直会 pengding 住了
+### 35.1. 下面的代码就一直会 pengding 住了
 
 ![图片&文件](./files/20241112-19.png)
-## 35. PC端通过二维码扫描登录
+## 36. PC端通过二维码扫描登录
 
 - pc 展示展示二维码后，会一直**轮询**，请求二维码扫描的状态
 
-## 36. `toFixed()` 和 `toPrecision()` 的区别
+## 37. `toFixed()` 和 `toPrecision()` 的区别
 
-### 36.1. toFixed()
+### 37.1. toFixed()
 
 `toFixed()` 方法用于指定小数点后的位数。
 
@@ -1176,7 +1176,7 @@ let bigNum = 1234.5;
 console.log(bigNum.toFixed(2));  // "1234.50"
 ```
 
-### 36.2. toPrecision()
+### 37.2. toPrecision()
 
 `toPrecision()` 方法用于指定数字的总位数（包括整数部分和小数部分）。
 
@@ -1199,7 +1199,7 @@ console.log(bigNum.toPrecision(2));  // "1.2e+3"
 console.log(bigNum.toPrecision(4));  // "1235"
 ```
 
-### 36.3. 主要区别
+### 37.3. 主要区别
 
 1. 精度范围：
    - `toFixed()` 只处理**小数部分**
@@ -1247,12 +1247,12 @@ console.log(bigNum.toPrecision(2));   // "1.2e+6"
 2. **返回的都是字符串，如果需要进行数学运算，要先转换回数字**。
 3. 在处理金融数据时，要特别注意 JavaScript 的**浮点数精度问题**，可能需要使用专门的库来处理高精度计算。
 
-## 37. JS 如何组阻止事件冒泡
+## 38. JS 如何组阻止事件冒泡
 
 - `return false`
 	- 代表同时调用了 `e.stopPropagation` 和 `e.preventDefault`
 
-## 38. `123['toString'].length + 123` 的输出值为多少？
+## 39. `123['toString'].length + 123` 的输出值为多少？
 
 - `123['toString'] ` 是个 **toString 函数**
 -  fn.length 代表`第一个具有默认值之前`的参数个数
@@ -1263,7 +1263,7 @@ console.log(bigNum.toPrecision(2));   // "1.2e+6"
 
 说明 `toString` 方法的**形参个数为 1** 
 
-## 39. 如何延迟脚本执行
+## 40. 如何延迟脚本执行
 
 - defer：js 下载和文档解析同步，**文档解析好了后再执行脚本**
 	- defer 即延迟的意思，等文档解析好后执行，但不延迟下载
@@ -1272,19 +1272,19 @@ console.log(bigNum.toPrecision(2));   // "1.2e+6"
 - setTimeout
 - 脚本放最后
 
-## 40. 构造函数属性
+## 41. 构造函数属性
 
 ![图片&文件](./files/20241112-23.png)
 
-## 41. 再说说 Reflect 
+## 42. 再说说 Reflect 
 
 ![图片&文件](./files/20241112-24.png)
 
-## 42. 尾递归优化
+## 43. 尾递归优化
 
 ![图片&文件](./files/20241112-25.png)
 
-## 43. 简述 Iterator
+## 44. 简述 Iterator
 
 ![图片&文件](./files/20241112-26.png)
 
@@ -1293,14 +1293,14 @@ console.log(bigNum.toPrecision(2));   // "1.2e+6"
 	- {done,value}
 - for-of
 
-## 44. 如何中断 promise
+## 45. 如何中断 promise
 
 promise一旦创建，是无法终止，但以下几种方式可以中断
 - then 中抛错
 - then 返回一个**新的 Promise，且已知是 pending 状态**，也算是中断了
 - 总之：在合适的时候，把 pending 的状态给 reject 也就中断了
 
-## 45. 箭头函数
+## 46. 箭头函数
 
 - 不能用作 generator 函数，不用使用 yield 关键字
 - 没有原型
@@ -1308,12 +1308,12 @@ promise一旦创建，是无法终止，但以下几种方式可以中断
 - 不能使用构造函数使用
 - 不会创建自己的 `this`
 
-## 46. 如何判断一个对象是空对象
+## 47. 如何判断一个对象是空对象
 
 - `keys`
 - JSON 解析的方式
 
-## 47. Object.is 与 == 、=== 的区别
+## 48. Object.is 与 == 、=== 的区别
 
 - Object.is 特点：
     - NaN 等于 NaN
@@ -1324,7 +1324,7 @@ promise一旦创建，是无法终止，但以下几种方式可以中断
         - 需要正确处理 NaN 比较时
         - 需要最严格的相等性检查时
 
-## 48. + 0.2 !== 0.3 
+## 49. + 0.2 !== 0.3 
 
 在计算机中，数字都是以**二进制形式存储的。某些十进制小数在转换成二进制时会产生无限循环小数**。
 
@@ -1334,35 +1334,35 @@ promise一旦创建，是无法终止，但以下几种方式可以中断
 0.1 + 0.2 = 0.30000000000000004
 ```
 
-### 48.1. 解决方案
+### 49.1. 解决方案
 
-#### 48.1.1. 使用 toFixed() 进行显示
+#### 49.1.1. 使用 toFixed() 进行显示
 
 ```javascript
 (0.1 + 0.2).toFixed(1) === '0.3' // true
 ```
 
-#### 48.1.2. 使用一个极小的误差范围（epsilon）来比较
+#### 49.1.2. 使用一个极小的误差范围（epsilon）来比较
 
 ```javascript
 const epsilon = 0.00000000001;
 Math.abs((0.1 + 0.2) - 0.3) < epsilon // true
 ```
 
-#### 48.1.3. 使用专门的库
+#### 49.1.3. 使用专门的库
 
 - decimal.js
 - big.js
 - bignumber.js
 
-## 49. mouseenter 与 mouseover 的区别
+## 50. mouseenter 与 mouseover 的区别
 
-### 49.1. 事件冒泡行为
+### 50.1. 事件冒泡行为
 
    - mouseover：会冒泡
    - mouseenter：不会冒泡。它只在鼠标指针进入绑定事件的元素时触发，不会在进入其子元素时重复触发。
 
-### 49.2. 触发频率
+### 50.2. 触发频率
 
    - mouseover：当鼠标移动到元素或其子元素上时都会触发。
 	   - 这意味着，如果一个元素有子元素，移动到子元素上也会触发父元素的 mouseover 事件。
@@ -1370,42 +1370,42 @@ Math.abs((0.1 + 0.2) - 0.3) < epsilon // true
 	   - 只有当鼠标从元素外部首次进入元素时才会触发。
 	   - 移动到其子元素上不会重复触发该事件，**因为子元素上不会再冒泡了**
 
-### 49.3. 相应的离开事件
+### 50.3. 相应的离开事件
 
    - `mouseover` 对应的离开事件是 `mouseout`
    - `mouseenter` 对应的离开事件是 `mouseleave`
 
-### 49.4. 性能影响
+### 50.4. 性能影响
 
    - mouseover：由于其冒泡特性和频繁触发的性质，在复杂的 DOM 结构中可能会导致性能问题。
    - mouseenter：通常具有更好的性能，因为它不会在子元素间移动时重复触发。
 
-### 49.5. 使用场景
+### 50.5. 使用场景
 
    - mouseover：
 	   - 适用于**需要精确跟踪鼠标在元素内部移动的情况**，
 	   - 或者当你需要利用事件冒泡来处理大量元素的情况。
    - mouseenter：适用于只需要知道鼠标是否进入了整个元素区域的情况，而不关心内部的移动。
 
-## 50. 如何使得`var [a,b] = {a:1,b:2}` 解构成功
+## 51. 如何使得`var [a,b] = {a:1,b:2}` 解构成功
 
 ![图片&文件](./files/20241111-14.png)
 
-## 51. 实现一个压缩算法，比如 aabcccccaaa会变为a2b1c5a3
+## 52. 实现一个压缩算法，比如 aabcccccaaa会变为a2b1c5a3
 
-### 51.1. 方法一：分割成数组遍历
+### 52.1. 方法一：分割成数组遍历
 
-### 51.2. 方法二：直接遍历字符串
+### 52.2. 方法二：直接遍历字符串
 
 ![图片&文件](./files/20241111-19.png)
 
-## 52. new 操作具体干了什么
+## 53. new 操作具体干了什么
 
 如下图：发生了 4 件事情
 
 ![图片&文件](./files/20241111-20.png)
 
-## 53. try-catch不能捕获异步错误
+## 54. try-catch不能捕获异步错误
 
 ![图片&文件](./files/20241111-22.png)
 

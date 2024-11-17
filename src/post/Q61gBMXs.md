@@ -115,7 +115,7 @@ const store = createStore(reducer)
    }
    ```
 
-## 4. 二、基本使用流程
+## 4. 基本使用流程
 
 ### 4.1. 创建 Store
 
@@ -139,7 +139,7 @@ const store = createStore(reducer)
    store.dispatch(addTodo('学习 Redux'));
    ```
 
-## 5. 三、Redux 工具链
+## 5. Redux 工具链
 
 ### 5.1. Redux Toolkit（推荐使用）
 

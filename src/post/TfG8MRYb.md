@@ -2,7 +2,6 @@
 # React.memo 和 useMemo 的区别是什么？React.useCallback 和 useCallback 呢？
 
 
-让我详细解释这些 React hooks 和方法的区别：
 
 
 ## 目录
@@ -50,7 +49,7 @@ const MyComponent = React.memo(function MyComponent(props) {
 });
 ```
 
-主要特点：
+#### 2.1.1. 主要特点
 
 - 用于优化函数组件的重渲染
 - 对比 props 变化，决定是否重新渲染组件

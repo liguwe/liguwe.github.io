@@ -3,16 +3,18 @@
 
 `#React` 
 
+
 ## 目录
 <!-- toc -->
  ## 1. useRef  
+
 ### 1.1. useRef 的作用
 
 - 获取 DOM 引用
 - 创建元素对象，只要函数组件未被销毁，原始对象就一直存在，故可以用它来`保存数据`
 - 保存前一次的值
 - 记得都存在 `.current` 里，有点类似于 vue 的 `.value`
-	- 即`let domRef = useRef()` 始终是同一个对象引用，只有 ref.current 可以改变
+	- 即`let domRef = useRef()` 始终是同一个对象引用，只有 `ref.current` 可以改变
 - 可以用来存储定时器，方便 clear
 - 缓存不需要触发重新染的值
 - 同样，只能在顶层使用
@@ -20,9 +22,11 @@
 ### 1.2. 注意点
 
 - 不要在渲染时，修改 ref
-- 不要过渡使用，需要区分哪些使用 `state` 来管理
+- 不要过度使用，需要区分哪些使用 `state` 来管理
 
 ### 1.3. useRef vs useState 的区别
+
+区别在于**是否会触发重现渲染**
 
 ```javascript hl:10
 function ComparisonExample() {
@@ -54,7 +58,7 @@ function ComparisonExample() {
 
 **React 不允许组件访问其他组件的 DOM 节点**。甚至自己的子组件也不行，使用 `forwardRef` 可以
 
-```javascript hl:3
+```javascript hl:3,19
 import { forwardRef, useRef } from 'react';
 
 // 子组件使用 forwardRef 
@@ -106,11 +110,11 @@ function SearchResults() {
 
 ## 4. useRef 的实现原理
 
-本质上是维护了一个包含 `current` 属性的对象，这个对象**在组件的整个生命周期中保持不变**。
+本质上是维护了**一个包含 `current` 属性的对象**，这个对象**在组件的整个生命周期中保持不变**。
 
-### 4.1. 数据结构与
+### 4.1. 数据结构
 
-```typescript
+```typescript hl:2,10
 type Hook = {
   memoizedState: any; // 保存 ref 对象
   next: Hook | null; // 指向下一个 Hook
@@ -157,7 +161,7 @@ function Component() {
 
 ### 4.3. 初始阶段
 
-```typescript
+```typescript hl:2,20
 function createRef(initialValue) {
   const refObject = {
     current: initialValue,

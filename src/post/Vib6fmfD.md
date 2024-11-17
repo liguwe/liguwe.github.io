@@ -11,8 +11,8 @@
 <!-- toc -->
  ## 1. 为什么？ 
 
-- Pinia抛弃了Mutation，这意味着你可以直接更新状态，不用再注册 Commit
-- 语法上更加贴近Composition Api
+- Pinia 抛弃了 Mutation，这意味着你可以直接更新状态，**不用再注册 Commit**
+- 语法上更加贴近 Composition Api
 - 数据持久化使用： `pinia-plugin-persistedstate`
 - 允许构建工具自动进行**代码分割**以及 **TypeScript 推断**
 
@@ -110,7 +110,6 @@ store.$reset()
 ```
 
 选项式中
-
 - 你可以使用 `mapState` 来辅助管理状态，将 state 属性映射为**只读的计算属性**
 - 可以使用 `mapWritableState()` 来修改 state 属性
 
@@ -476,3 +475,206 @@ pinia.use(({ store }) => {
 在单页面应用程序中，只需在创建pinia实例之后调用`useStore()`函数即可正常工作。确保在pinia安装后才调用`useStore()`函数即可。
 
 例如，在Vue Router的导航守卫中使用 `store` 时，应将 useStore() 的调用放在`beforeEach()`函数中
+
+## 8. Pinia 不太需要类似 immer.js 这样的库
+
+### 8.1. **Vue 的响应式系统本身已经很完善**
+
+```js
+// Pinia store 示例
+import { defineStore } from 'pinia'
+
+export const useUserStore = defineStore('user', {
+  state: () => ({
+    user: {
+      name: 'John',
+      profile: {
+        age: 25,
+        address: {
+          city: 'New York'
+        }
+      }
+    }
+  }),
+  
+  actions: {
+    // Vue 的响应式系统可以直接修改嵌套对象
+    updateCity(newCity) {
+      this.user.profile.address.city = newCity // 直接修改即可
+    }
+  }
+})
+```
+
+### 8.2. **Pinia 的状态更新是可变的**
+
+```js
+// Pinia 中直接修改状态
+const store = useUserStore()
+
+// 直接修改
+store.user.name = 'Jane'
+
+// 批量修改
+store.$patch({
+  user: {
+    name: 'Jane',
+    profile: {
+      age: 26
+    }
+  }
+})
+
+// 使用函数式修改
+store.$patch((state) => {
+  state.user.name = 'Jane'
+  state.user.profile.age += 1
+})
+```
+
+### 8.3. **对比 React + Redux 的情况**
+
+```js
+// React + Redux 需要 immer.js
+const reducer = (state, action) => {
+  switch (action.type) {
+    case 'UPDATE_USER':
+      // 不使用 immer 时需要手动处理不可变更新
+      return {
+        ...state,
+        user: {
+          ...state.user,
+          profile: {
+            ...state.user.profile,
+            address: {
+              ...state.user.profile.address,
+              city: action.payload
+            }
+          }
+        }
+      }
+  }
+}
+
+// 使用 immer 后
+import produce from 'immer'
+
+const reducer = produce((draft, action) => {
+  switch (action.type) {
+    case 'UPDATE_USER':
+      draft.user.profile.address.city = action.payload
+      break
+  }
+})
+```
+
+### 8.4. **Pinia 的内置功能**
+
+```js
+// Pinia 提供了多种状态管理方式
+const store = useUserStore()
+
+// 1. 直接修改
+store.count++
+
+// 2. $patch 方法
+store.$patch({
+  count: store.count + 1,
+  name: 'Jane'
+})
+
+// 3. 使用 actions
+store.increment()
+
+// 4. 重置状态
+store.$reset()
+
+// 5. 批量修改状态
+store.$patch((state) => {
+  // 可以进行任意修改
+  state.items.push({ name: 'new item' })
+  state.count++
+})
+```
+
+### 8.5. **为什么 Pinia 不需要 immer.js**
+
+```js
+// Pinia store
+const useStore = defineStore('main', {
+  state: () => ({
+    nested: {
+      data: {
+        count: 0
+      }
+    }
+  }),
+  
+  actions: {
+    // 1. 直接修改嵌套数据
+    updateCount() {
+      this.nested.data.count++ // Vue 响应式系统会自动处理
+    },
+    
+    // 2. 批量修改
+    batchUpdate() {
+      this.$patch((state) => {
+        state.nested.data.count++
+        state.nested.data.newField = 'value'
+      })
+    },
+    
+    // 3. 替换整个对象
+    replaceNested() {
+      this.nested = {
+        data: {
+          count: 100
+        }
+      }
+    }
+  }
+})
+```
+
+### 8.6. **性能考虑**
+
+```js
+// Pinia 已经优化了性能
+const store = useStore()
+
+// 1. 组件中使用 storeToRefs 来保持响应性
+import { storeToRefs } from 'pinia'
+const { nested } = storeToRefs(store)
+
+// 2. 计算属性自动追踪依赖
+const doubleCount = computed(() => store.nested.data.count * 2)
+
+// 3. 监听状态变化
+watch(
+  () => store.nested.data.count,
+  (newValue) => {
+    console.log('Count changed:', newValue)
+  }
+)
+```
+
+### 8.7. 总结
+
+- **不必要性**：
+	- Vue 的响应式系统已经很好地处理了状态更新
+	- Pinia 支持直接修改状态
+	- 提供了多种状态管理方式
+- **性能影响**：
+	- 添加 immer.js 会增加包体积
+	- 可能会引入额外的性能开销
+	- Vue 的响应式系统已经很高效
+- **开发体验**：
+	- Pinia 的 API 设计已经很友好
+	- 不需要考虑不可变更新
+	- 代码更简洁直观
+- **特殊情况**：
+	- 如果你的项目同时使用 React 和 Vue，并且已经使用了 immer.js
+	- 如果你需要特别复杂的状态更新逻辑
+	- 这些情况下可以考虑使用 immer.js，但大多数情况下是不必要的
+
+因此，在一般的 Vue + Pinia 项目中，没有必要使用 immer.js，Vue 的响应式系统和 Pinia 的 API 已经足够优秀和便捷。

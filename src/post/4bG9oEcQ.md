@@ -12,15 +12,15 @@
 
 - 前端面试题相关
 	-  [3.  常见面试题：篇三](/post/UNBspX6e.html)
-	- [5. 常见编程题](/post/tZroX5mh.html)
+	- [5. 常见面试题：篇五](/post/an1YEfXq.html)
 	- [6. 前端/99. 前端面试篇/3. 常见面试题三|3. 常见面试题三](/post/4bG9oEcQ.html#6-前端/99-前端面试篇/3-常见面试题三|3-常见面试题三)
 	- [6. 前端/99. 前端面试篇/4. 常见面试题四|4. 常见面试题四](/post/4bG9oEcQ.html#6-前端/99-前端面试篇/4-常见面试题四|4-常见面试题四)
 	- [13. JavaScript 对象的一些注意点](/post/aDpk3aqB.html)
 	- [6. 前端/99. 前端面试篇/6. 异步编程|6. 异步编程](/post/4bG9oEcQ.html#6-前端/99-前端面试篇/6-异步编程|6-异步编程)
-	- [1. 关于HTTP 的一些常见问题汇总](/post/afwisV4b.html)
+	- [1. 关于HTTP 的一些常见问题汇总](/post/mh0VAQAP.html)
 	- [5. Nodejs 的单线程与多核](/post/GLwNQwLb.html)
 	- [10. 前端基础建设路线参考](/post/NsvO68xD.html)
-	- [6.  React 原理篇（一）](/post/TqGR2e1u.html)
+	- [6.  React 的架构设计演变](/post/jli0LDSX.html)
 	- [6. 前端/99. 前端面试篇/13. 面试题|13. 面试题](/post/4bG9oEcQ.html#6-前端/99-前端面试篇/13-面试题|13-面试题)
 
 ###  2024-10-23 星期三
@@ -56,23 +56,23 @@
 
 - [x] 算法
 	- [x] [2. 快速排序算法的原理及运用](/post/xlWQaaiQ.html)
-	- [x] [49.  数组中的第K个最大元素](/post/F4aPdAPw.html)
+	- [x] [49.  数组中的第K个最大元素](/post/9U8fj4eR.html)
 - [x] 计算机科学
-	- [x] [2. Python 函数与模块](/post/HMk5bhFZ.html)
-	- [x] [3. Python 类](/post/49HYVK9u.html)
-	- [x] [4. Python 文件与异常处理](/post/PWtQEr1Z.html)
+	- [x] [2. Python 函数与模块](/post/d2ODbFLg.html)
+	- [x] [3. Python 类](/post/RpWPjiDH.html)
+	- [x] [4. Python 文件与异常处理](/post/shcetXOs.html)
 ### 2024-09-16 星期一
 
 - [x] AGI
 	- [ ] [41. LangChain 概述](/post/tLAmqnjA.html)
 - [x] 算法
-	- [x] [47.  迷宫中离入口最近的出口](/post/BcR6fJ42.html)
-	- [x] [48.  腐烂的橘子](/post/I1n6aUfz.html)
+	- [x] [47.  迷宫中离入口最近的出口](/post/QgRpxnDw.html)
+	- [x] [48.  腐烂的橘子](/post/243dZa8i.html)
 	- [ ] [2. 快速排序算法的原理及运用](/post/xlWQaaiQ.html)
 - [x] 前端
 	- [x] [4. JavaScript 异步编程简介](/post/x45wL9Jh.html)
 - [x] 计算机科学
-	- [x] [1.  Python 语言基础](/post/n5wax2jm.html)
+	- [x] [1.  Python 语言基础](/post/t9yAwurF.html)
 
 ### 2024-09-15 星期日
 
@@ -90,7 +90,7 @@
 - [x] AGI
 	- [ ] [41. LangChain 概述](/post/tLAmqnjA.html)  
 - [x] 算法
-	- [x] [46.  除法求值](/post/8L7hEHg6.html) 
+	- [x] [46.  除法求值](/post/PypHXbbx.html) 
 - [x] 前端
 	- [ ] [4. JavaScript 异步编程简介](/post/x45wL9Jh.html)
 
@@ -99,12 +99,12 @@
 - [x] AGI
 	- [x] [41. LangChain 概述](/post/tLAmqnjA.html)
 - [x] 算法
-	- [x] [45. 重新规划路线](/post/Nel6GvF8.html)
+	- [x] [45. 重新规划路线](/post/rXAn6Ueb.html)
 
 ### 2024-09-12 星期四
 
 - [x] 算法
-	- [x] [44. 省份数量](/post/ejL9PhON.html)
+	- [x] [44. 省份数量](/post/Bd0QMEKu.html)
 - [x] 前端
 	- [ ] [4. JavaScript 异步编程简介](/post/x45wL9Jh.html)
 
@@ -112,7 +112,7 @@
 ### 2024-09-11 星期三
 
 - [x] 算法
-	- [x] [43. 钥匙和房间](/post/r1iISwPO.html)
+	- [x] [43. 钥匙和房间](/post/KBl03EcB.html)
 - [x] 前端
 	- [ ] [4. JavaScript 异步编程简介](/post/x45wL9Jh.html)
 
@@ -135,10 +135,10 @@
 	- [3. 大模型是如何训练的？](/post/ICpScz8J.html)
 	- [40.  LangChain（篇一：基础入门篇）](/post/7R3JOmn3.html)
 - 算法
-	- [39.  二叉树的右视图](/post/Sd4HqPC7.html)
-	- [41.  二叉搜索树中的搜索](/post/CZX2S23x.html)
-	- [42.  删除二叉搜索树中的节点](/post/Q7yHRNGO.html)
-	- [40. 最大层内元素和](/post/lOkYTTJF.html)
+	- [39.  二叉树的右视图](/post/Rpu973Zq.html)
+	- [41.  二叉搜索树中的搜索](/post/Swz5qFjp.html)
+	- [42.  删除二叉搜索树中的节点](/post/bZXq0xQM.html)
+	- [40. 最大层内元素和](/post/G36AfQHz.html)
 	- [2. 二叉搜索树（篇一：二叉树的特性）](/post/b6SGjWeW.html)
 	- [3. 二叉搜索树（篇二：BST 的增删改查）](/post/WtnxJExL.html)
 	- [4. 二叉搜索树（篇三：BST 的构造）](/post/KWc7uS6u.html)
@@ -150,19 +150,19 @@
 	- [2. chatGPT 是什么（篇二）](/post/VaYiwlse.html)
 - 算法
 	- [1. 一个方法秒杀 5 道最近公共祖先问题](/post/HSCj0VVG.html)
-	- [38.  二叉树的最近公共祖先](/post/5DpuQYYi.html)
+	- [38.  二叉树的最近公共祖先](/post/niwRiWHl.html)
 
 ### 2024-09-06 星期五
 
 - 算法
-	- [37.  二叉树中的最长交错路径](/post/RrFLxZyt.html)
+	- [37.  二叉树中的最长交错路径](/post/9ofEXJPa.html)
 
 ## 2024-08
 
 ### 2024-08-26 星期一
 
 - 算法
-	- [16.  矩阵置零](/post/RIyNXs1a.html)
+	- [16.  矩阵置零](/post/jWxzF7zm.html)
 
 ### 2024-08-25 星期日
 
@@ -172,9 +172,9 @@
 	- [31.  Agent 工程架构图](/post/U5tfNeeS.html)
 	- [33. Agent 的进化之路](/post/BVpvooHc.html)
 - 算法
-	- [15.  缺失的第一个正数](/post/I6jDRVEN.html)
-	- [14.  除自身以外数组的乘积](/post/5UNo1WIR.html)
-	- [13. 轮转数组](/post/aRhmxKyl.html)
+	- [15.  缺失的第一个正数](/post/wsb4RIeL.html)
+	- [14.  除自身以外数组的乘积](/post/GxaGYZ8s.html)
+	- [13. 轮转数组](/post/5NZQOOnK.html)
 
 ### 2024-08-19 星期一
 

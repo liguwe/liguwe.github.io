@@ -97,8 +97,11 @@ function renderer(vnode,container){
 
 ## 4. 组件的本质
 
-组件**本质**是`一组虚拟DOM元素`的封装，他可以是一个返回虚拟 DOM 的`函数`，也可以是一个`对象`，然后再用 `渲染器` 进行渲染。
-所以，渲染时需要判断 `vnode.tag = function | object | string ? `  分别处理。
+组件**本质**是`一组虚拟DOM元素`的封装
+- 他可以是一个返回虚拟 DOM 的`函数`
+- 也可以是一个`对象`，然后再用 `渲染器` 进行渲染。
+
+所以，渲染时需要判断 `vnode.tag = function | object | string ? `  分别处理
 
 ## 5. 模板编译器
 
@@ -109,7 +112,6 @@ function renderer(vnode,container){
 ```html
 <template>
     <div @click="fn"></div>
-
 </template>
 
 <script>

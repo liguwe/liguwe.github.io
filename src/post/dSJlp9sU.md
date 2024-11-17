@@ -58,7 +58,7 @@ function App() {
 
 ## 2. 路由级别的代码分割
 
-在 React Router 中使用异步组件：
+### 2.1. 基础路由懒加载
 
 ```jsx
 // 1. 基础路由懒加载
@@ -82,7 +82,11 @@ function App() {
     </Router>
   );
 }
+```
 
+### 2.2. 创建可重用的异步路由组件
+
+```tsx
 // 2. 创建可重用的异步路由组件
 const AsyncRoute = ({ component: Component, ...rest }) => (
   <Route
@@ -153,7 +157,7 @@ const AsyncHome = props => (
 
 ### 3.2. 基于 Hooks 的实现
 
-```javascript
+```jsx
 
 // 2. 基于 Hooks 的实现
 function useAsync(loader) {
@@ -232,7 +236,7 @@ function RetryableAsyncComponent({ loader, maxRetries = 3, ...props }) {
       if (retries < maxRetries) {
         setTimeout(() => {
           setRetries(r => r + 1);
-          loadComponent();
+          loadComponent(); // 递归调用
         }, Math.pow(2, retries) * 1000); // 指数退避
       }
     }
@@ -276,6 +280,7 @@ function RetryableComponent({ retries = 3 }) {
 ## 5. 性能优化
 
 ### 5.1. 在需要时预加载
+
 ```jsx
 // 1. 预加载组件
 const LazyComponent = React.lazy(() => import('./LazyComponent'));
@@ -403,25 +408,16 @@ function App() {
 }
 ```
 
-## 7. 总结
-
-这些实现方式让我们能够：
-
-- 实现代码分割和按需加载
-- 优化首次加载性能
-- 提供良好的加载体验
-- 处理加载错误
-- 实现数据预加载
-
-## 8. 建议
+## 7. 建议
 
 在实际应用中，建议：
-
 1. 优先使用 React.lazy 和 Suspense
 2. 在路由层面实现代码分割
+	1. 实现代码分割和按需加载
 3. 实现适当的错误处理
 4. 添加加载状态反馈
+	1. 提供良好的加载体验
 5. 考虑预加载策略
+	1. 实现数据预加载
 6. 优化加载体验
 
-这样可以在保持代码可维护性的同时，提供良好的用户体验。

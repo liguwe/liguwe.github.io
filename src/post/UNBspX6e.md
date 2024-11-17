@@ -451,124 +451,7 @@ class DataFetcher1 {
 4. 在需要保持 this 上下文的场景（如**回调、事件处理器**）中，**箭头函数**很有用
 5. 在需要动态 this 的场景（如**对象方法、原型方法**）中，使用**普通函数**更合适
 
-## 10. js 实现继承的方式有哪些？
-
-### 10.1. es6
-
-```javascript
-class Parent {
-  constructor(name) {
-    this.name = name;
-    this.colors = ["red", "blue"];
-  }
-
-  getName() {
-    return this.name;
-  }
-}
-
-class Child extends Parent {
-  constructor(name, age) {
-    super(name);
-    this.age = age;
-  }
-
-  getAge() {
-    return this.age;
-  }
-}
-
-```
-### 10.2. es5：原型链继承
-
-```javascript
-// 缺点：引用类型属性被所有示例共享
-Child.prototype = new Parent();
-```
-
-### 10.3. es5：借用构造函数继承
-
-```javascript
-/*********************************************
- // 832: 借用构造函数继承
- 优点1：避免引用类型属性被所有示例共享
- 优点2：可以在 Child 中向 Parent 传参
- 缺点：每次创建实例都会创建一遍方法
- *********************************************/
-function Child(name) {
-    // 832: 使用call函数
-    Parent.call(this, name);
-}
-```
-
-### 10.4. es5：原型链继承 + 借用构造函数
-
-```javascript
-/*********************************************
- // 832: 原型链继承 + 借用构造函数
- 优点1：避免引用类型属性被所有示例共享
- 优点2：可以在 Child 中向 Parent 传参
- 优点3：方法不用重新创建，在原型链上
- *********************************************/
-// 关键点1：
-function Child(name) {
-    Parent.call(this, name);
-}
-
-// 关键点2：
-Child.prototype = new Parent();
-Child.prototype.constructor = Child;
-```
-
-### 10.5. ES5： Object.create
-
-```javascript
-/*********************************************
- // 832: 即ES5 Object.create ， 将传入的对象作为创建的对象的原型
- 缺点：引用类型属性被所有示例共享，和原型链一样
- *********************************************/
-function myCreate(o) {
-    function F() {
-    }
-
-    F.prototype = o;
-    return new F();
-}
-```
-
-### 10.6. es5：寄生式继承
-
-```javascript
-/*********************************************
- // 832: 寄生式继承
- 缺点：每次创建实例都会创建一遍方法
- *********************************************/
-function createObj(o) {
-    let clone = Object.create(o);
-    clone.sayName = function () {
-        console.log('hi');
-    }
-    return clone;
-}
-```
-
-### 10.7. es5：寄生组合式继承：最佳方式
-
-```javascript
-/*********************************************
- // 832: 寄生组合式继承
- 优点1：这种方式的高效率体现它只调用了一次 Parent 构造函数，
- 优点2：并且因此避免了在 Parent.prototype 上面创建不必要的、多余的属性。
- 优点3：与此同时，原型链还能保持不变；因此，还能够正常使用 instanceof 和 isPrototypeOf。
- *********************************************/
-function prototype(child, parent) {
-    let p = Object.create(parent.prototype);
-    p.constructor = child;
-    child.prototype = p;
-}
-```
-
-## 11. 手写 promise.all 、race 、retry
+## 10. 手写 promise.all 、race 、retry
 
 ```javascript hl:4,26,53,22
 Promise._race = (tasks) => {
@@ -633,54 +516,11 @@ Promise._all = (tasks) => {
     }
   });
 };
-
 ```
 
-## 13. 遍历对象的方式都有哪些？
+## 11. 柯里化
 
-- 使用 `Object.keys()` 当：
-    - 只需要`可枚举`属性
-    - 不返回继承的属性
-    - 不需要 Symbol 属性
-    - 性能是主要考虑因素
-        - `Object.keys()` 通常性能更好，因为它只处理可枚举属性
-- 使用 `Reflect.ownKeys()` 当：
-    -  返回对象的**所有有属性键的数组** ，包括：
-        - 所有字符串键（可枚举和不可枚举）
-        - 所有 Symbol 键（可枚举和不可枚举）
-        - 不返回继承的属性
-    - 返回顺序：
-        1. 数字键（按升序）
-        2. 字符串键（按添加顺序）
-        3. Symbol 键（按添加顺序）
-- **for...in 循环**
-	- 返回**所有可枚举**属性，包括**继承**的
-	- 不返回 Symbol 属性
-- 在开发工具、框架或需要完整反射功能的场景中，`Reflect.ownKeys()` 是更好的选择
-
-### 13.1. 选择指南
-
-1. **需要遍历继承的属性**
-    - 使用 `for...in`
-2. **只需要自身可枚举属性**
-    - 使用 `Object.keys()`
-3. **需要所有属性（包括不可枚举）**
-    - 使用 `Object.getOwnPropertyNames()`
-4. **需要 Symbol 属性**
-    - 使用 `Object.getOwnPropertySymbols()`
-    - 只返回对象的 Symbol 类型的
-        - 包括可枚举和不可枚举的 Symbol
-        - 不包含字符串键
-5. **需要所有类型的属性**
-    - 使用 `Reflect.ownKeys()`
-6. **需要键值对**
-    - 使用 `Object.entries()`
-7. **只需要值**
-    - 使用 `Object.values()`
-
-## 14. 柯里化
-
-### 14.1. 参数固定场景
+### 11.1. 参数固定场景
 
 实现 add(1)(2)(3) 或者 add(1,2)(3) 等等都相等
 
@@ -726,7 +566,7 @@ console.log(curryAdd2(1)(2, 3, 4)); // 10
 
 ```
 
-### 14.2. 参数不固定场景
+### 11.2. 参数不固定场景
 
 闭包函数中实现真正的逻辑
 
@@ -773,7 +613,7 @@ console.log(add(1)(2)(3)(4)(5)(6).product()); // 720
 
 ```
 
-### 14.3. 总结
+### 11.3. 总结
 
 柯里化是将一个多参数函数转换为一系列单参数函数的过程，使用场景为：
 - 参数复用
@@ -787,9 +627,9 @@ console.log(add(1)(2)(3)(4)(5)(6).product()); // 720
 - 柯里化会创建多个闭包，可能影响性能
 - 调试困难
 
-## 15. 实现一个简单的classname
+## 12. 实现一个简单的classname
 
-### 15.1. 使用示例
+### 12.1. 使用示例
 
 ```javascript
 // 使用示例
@@ -808,7 +648,7 @@ console.log(
 ); // 'button btn-primary btn-large active nested multiple spaces error
 ```
 
-### 15.2. 实现一个classname
+### 12.2. 实现一个classname
 
 ```javascript hl:4,9,15,18
 function classNames(...args) {
@@ -839,7 +679,7 @@ function classNames(...args) {
 }
 ```
 
-## 16. 实现一个 Array.map
+## 13. 实现一个 Array.map
 
 ```javascript hl:1,15
 // 不指定指定上下文参数
@@ -873,9 +713,9 @@ Array.prototype._map1 = function (fn, context) {
 
 ```
 
-## 17. 实现一个双向绑定
+## 14. 实现一个双向绑定
 
-### 17.1. 使用 proxy 
+### 14.1. 使用 proxy 
 
 ```javascript
 `<input id="input" type="text"/>
@@ -910,7 +750,7 @@ input.onkeyup = function (e) {
 
 ```
 
-### 17.2. 使用 `Object.defineProperty`
+### 14.2. 使用 `Object.defineProperty`
 
 ```javascript
 `
@@ -939,9 +779,9 @@ input.onkeyup = function (e) {
 
 ```
 
-## 18. 如何判断一个对象中是否循环引用了
+## 15. 如何判断一个对象中是否循环引用了
 
-### 18.1. 方法1：直接遍历，借助一个 `weakSet` 对象，如果已经命中了，则说明循环引用了
+### 15.1. 方法1：直接遍历，借助一个 `weakSet` 对象，如果已经命中了，则说明循环引用了
 
 ```javascript
 function hasCircularReference(obj) {
@@ -1006,9 +846,9 @@ console.log(hasCircularReference(obj3));  // false
 
 ```
 
-### 18.2. 方法二：借助`JSON.toString()` 捕获报错信息
+### 15.2. 方法二：借助`JSON.toString()` 捕获报错信息
 
-## 19. 手写一个 new
+## 16. 手写一个 new
 
 ```javascript
 function _new(fn, ...args) {
@@ -1018,9 +858,9 @@ function _new(fn, ...args) {
 }
 ```
 
-## 20. 实现一个拖拽会话框
+## 17. 实现一个拖拽会话框
 
-### 20.1. 轮廓代码
+### 17.1. 轮廓代码
 
 ```javascript
 class Dialog {
@@ -1050,7 +890,7 @@ dialog.open();
 
 ```
 
-### 20.2. 具体实现和使用
+### 17.2. 具体实现和使用
 
 ```javascript
 class Dialog {
@@ -1117,7 +957,7 @@ let dialog = new Dialog("Hello");
 dialog.open();
 
 ```
-## 21. 说出下面代码的执行顺序
+## 18. 说出下面代码的执行顺序
 
 ```javascript hl:14,15
 setTimeout(() => {
@@ -1137,7 +977,7 @@ setTimeout(() => {
 // nodejs 12 以上 和 浏览器一样
 ```
 
-## 22. 下面代码的执行顺序
+## 19. 下面代码的执行顺序
 
 setTimeout 和 setImmediate 都是宏任务
 - setTimeout **通常**会先于 setImmediate 执行
@@ -1209,9 +1049,9 @@ fs.readFile('test.js', () => {
 // 2 1 
 ```
 
-## 23. promise的兼容性：es6
+## 20. promise的兼容性：es6
 
-## 24. Vue 的 nextTick 如何实现的？
+## 21. Vue 的 nextTick 如何实现的？
 
 由于 Vue 的异步更新策略，如果我们在修改数据后立即操作 DOM，可能会得到更新前的旧 DOM。nextTick 提供了一种机制，确保我们的代码在 DOM 更新后执行
 
@@ -1259,7 +1099,7 @@ console.log("这是同步代码");
 
 ```
 
-## 25. `async`和`await`的串行并行问题
+## 22. `async`和`await`的串行并行问题
 
 ```javascript hl:2,7,10
 async function main() {
@@ -1280,7 +1120,7 @@ async function main() {
 
 ```
 
-## 26. 假设本地机器无法做加减乘除法，需要通过远程请求让服务端来实现
+## 23. 假设本地机器无法做加减乘除法，需要通过远程请求让服务端来实现
 
 - 并行请求
 - 记得云端缓存结果
@@ -1357,7 +1197,7 @@ async function add(...args) {
 
 ```
 
-## 27. 在循环中使用 async、await 的注意事项
+## 24. 在循环中使用 async、await 的注意事项
 
 - `forEach` 不能很好地与 `async/await` 配合使用，因为它不会等待异步操作完成；
 	- 如果一定使用，注意使用**立即执行函数**包装
@@ -1368,7 +1208,7 @@ async function add(...args) {
 - 传统的 `for 循环`也可以与 async/await 一起使用
 - 使用`filter`，完全没用，因为回调返回 `都是promise对象，都为true`
 
-## 28. 一个经典的循环与闭包的问题
+## 25. 一个经典的循环与闭包的问题
 
 ```javascript hl:8
 // 可能出现问题的代码
@@ -1387,7 +1227,7 @@ for (let i = 0; i < 5; i++) {
 
 ```
 
-## 29. 最后来一段代码的执行顺序
+## 26. 最后来一段代码的执行顺序
 
 ```javascript
 async function async1() {
@@ -1439,7 +1279,7 @@ console.log("6");
 13
 ```
 
-## 30. 同级的先清空，然后再到下一级
+## 27. 同级的先清空，然后再到下一级
 
 ```javascript
 // 111
@@ -1488,17 +1328,17 @@ new Promise(resolve => {
 
 ```
 
-## 31. 如何实现吸顶效果
+## 28. 如何实现吸顶效果
 
 ![图片&文件](./files/20241028-21.png)
 
-## 32. `Element.getBoundingClientRect()` 的 6 个属性
+## 29. `Element.getBoundingClientRect()` 的 6 个属性
 
 返回相对视口的 6 个属性，如下图：
 
 ![图片&文件](./files/20241028-20.png)
 
-## 33. 实现模糊搜索结果的关键词高亮显示
+## 30. 实现模糊搜索结果的关键词高亮显示
 
 ```javascript hl:3,5
 let value = "北京";
@@ -1512,7 +1352,7 @@ console.log(s);
 
 ```
 
-## 34. 如何实现 `(5).add(3).minus(2)`
+## 31. 如何实现 `(5).add(3).minus(2)`
 
 ```javascript hl:5,11
 Number.prototype.add = function (i) {
@@ -1534,7 +1374,7 @@ console.log(s);
 
 ```
 
-## 35. 实现下面的诉求（`==`）
+## 32. 实现下面的诉求（`==`）
 
 ```javascript
 /**
@@ -1547,7 +1387,7 @@ console.log(s);
 
 ```
 
-### 35.1. 使用 valueOf 方法
+### 32.1. 使用 valueOf 方法
 
 ```javascript
 var a = {
@@ -1562,7 +1402,7 @@ if(a == 1 && a == 2 && a == 3) {
 }
 ```
 
-### 35.2. 使用 toString 方法
+### 32.2. 使用 toString 方法
 
 ```javascript
 var a = {
@@ -1577,7 +1417,7 @@ if(a == 1 && a == 2 && a == 3) {
 }
 ```
 
-### 35.3. 使用 getter (Object.defineProperty)
+### 32.3. 使用 getter (Object.defineProperty)
 
 ```javascript hl:2
 var value = 0;
@@ -1592,7 +1432,7 @@ if(a == 1 && a == 2 && a == 3) {
 }
 ```
 
-### 35.4. 使用数组和 toString
+### 32.4. 使用数组和 toString
 
 ```javascript hl:2
 var a = [1,2,3];
@@ -1603,7 +1443,7 @@ if(a == 1 && a == 2 && a == 3) {
 }
 ```
 
-### 35.5. 使用 Symbol.toPrimitive
+### 32.5. 使用 Symbol.toPrimitive
 
 ```javascript
 var a = {
@@ -1620,7 +1460,7 @@ if(a == 1 && a == 2 && a == 3) {
 }
 ```
 
-### 35.6. 使用 Proxy
+### 32.6. 使用 Proxy
 
 ```javascript
 let value = 0;
@@ -1646,13 +1486,13 @@ if(a == 1 && a == 2 && a == 3) {
 4. getter 方法的实现利用了属性访问时会调用 get 方法的特性。
 5. Proxy 方案利用了代理对象可以拦截各种操作的特性。
 
-### 35.7. 注意事项
+### 32.7. 注意事项
 
 - 这些实现都是一些技巧性的代码，在实际开发中**应该避免使用**
 - 这类代码可能会导致代码难以理解和维护
 - 主要用于理解 JavaScript 的`类型转换机制`和对象属性访问机制
 
-## 36. 实现下面的诉求（`===`）
+## 33. 实现下面的诉求（`===`）
 
 ```javascript
 /**
@@ -1667,7 +1507,7 @@ if(a == 1 && a == 2 && a == 3) {
 
 如果使用严格相等 `===`，情况会更加受限，因为 `===` 不会进行类型转换，它要求类型和值都相等。不过仍然有几种方法可以实现：
 
-### 36.1. 使用 Object.defineProperty 定义 getter
+### 33.1. 使用 Object.defineProperty 定义 getter
 
 ```javascript
 let value = 0;
@@ -1682,7 +1522,7 @@ if(a === 1 && a === 2 && a === 3) {
 }
 ```
 
-### 36.2. 使用全局变量和 Proxy
+### 33.2. 使用全局变量和 Proxy
 
 ```javascript
 let value = 0;
@@ -1697,7 +1537,7 @@ if(a === 1 && a === 2 && a === 3) {
 }
 ```
 
-### 36.3. 使用类的 getter
+### 33.3. 使用类的 getter
 
 ```javascript
 class NumberClass {
@@ -1716,7 +1556,7 @@ if(obj.a === 1 && obj.a === 2 && obj.a === 3) {
 }
 ```
 
-### 36.4. 使用闭包
+### 33.4. 使用闭包
 
 ```javascript
 let getA = (function() {
@@ -1731,7 +1571,7 @@ if(getA() === 1 && getA() === 2 && getA() === 3) {
 }
 ```
 
-## 37. 说说 `Symbol.toPrimitive`
+## 34. 说说 `Symbol.toPrimitive`
 
 `Symbol.toPrimitive` 从字面意思拆解来看：
 
@@ -1818,7 +1658,7 @@ console.log(date + '');     // "1/12/2024"
 3. 这个名字直观地表明了其功能：将对象转换（to）为原始值（primitive）
 4. 它是 JavaScript 类型转换系统中的一个重要部分
 
-## 38. 编程题：请实现一个函数，输入为数据 data 和 id，输出为从根节点到 id 的完整路径
+## 35. 编程题：请实现一个函数，输入为数据 data 和 id，输出为从根节点到 id 的完整路径
 
 本质是`多叉树`的遍历，找到一条路径即可
 
@@ -1862,9 +1702,9 @@ const data = [
 
 ```
 
-### 38.1. 实现
+### 35.1. 实现
 
-注意点：
+关键点：
 - 三个参数：`dfs(data, id, path)`
 - 选择与取消选择
 
@@ -1898,7 +1738,7 @@ console.log(findPath(data, "122")); // ["1", "12", "122"]
 console.log(findPath(data, "111")); // ["1", "11", "111"]
 ```
 
-## 39. 关于异步的一些细节点
+## 36. 关于异步的一些细节点
 
 - `then(console.log(1))` ， 表达式会同步执行
 - 如果没有 `resolve`，永远不会往下执行
@@ -1912,11 +1752,11 @@ console.log(findPath(data, "111")); // ["1", "11", "111"]
 - 上面 `7` 不打印，是因为这个参数多余
 - `8` 不打印，是因为已经在上面 `catch` 了 
 
-## 40. Promise 的 then 方法接受两个参数
+## 37. Promise 的 then 方法接受两个参数
 
 ![图片&文件](./files/20241028-24.png)
 
-## 41. promise 里 `return 2` 相等于 `resolve(2)`
+## 38. promise 里 `return 2` 相等于 `resolve(2)`
 
 ```javascript hl:4
 Promise.resolve(1)
@@ -1934,7 +1774,7 @@ Promise.resolve(1)
 
 ```
 
-## 42. 再看一段代码
+## 39. 再看一段代码
 
 ```javascript hl:4,26
 console.log(1);
@@ -1979,7 +1819,7 @@ setTimeout(() => {
 
 ```
 
-## 43. 自己实现 Promise：setTimeout 模拟
+## 40. 自己实现 Promise：setTimeout 模拟
 
 ```javascript hl:5,34,56
 const PENDING = "pending";
@@ -2173,7 +2013,7 @@ MyPromise.race = function (promises) {
 
 ```
 
-## 44. 自己实现 Promise ： class
+## 41. 自己实现 Promise ： class
 
 核心特性：
 1. 三种状态（PENDING、FULFILLED、REJECTED）
@@ -2290,7 +2130,7 @@ class MyPromise {
 
 ```
 
-### 44.1. 待完善
+### 41.1. 待完善
 
 1. 实现 Promise 的 resolve 和 reject 静态方法
 2. 实现 catch 方法
@@ -2300,7 +2140,7 @@ class MyPromise {
 5. 完善 Promise 解决过程（Promise Resolution Procedure）
 6. 处理 thenable 对象
 
-## 45. 包装请求图片为 Promise
+## 42. 包装请求图片为 Promise
 
 ```javascript hl:2
 function loadImageAsync(url) {
@@ -2330,7 +2170,7 @@ const preloadImage = function (url) {
 
 ```
 
-## 46. 包装 XHR 为 Promise
+## 43. 包装 XHR 为 Promise
 
 ```javascript hl:2
 const getJSON = function (url) {
@@ -2367,13 +2207,13 @@ getJSON("/posts.json").then(
 
 ```
 
-## 47. 伪类与伪元素
+## 44. 伪类与伪元素
 
 - **伪类**使用单冒号 `:`
 - **伪元素**使用双冒号 `::`（CSS3 规范）
     - 注：为了兼容旧浏览器，一些伪元素也可以使用单冒号，比如 `:after` 和 `::after` 都行
 
-### 47.1. 常见伪类
+### 44.1. 常见伪类
 
 ```less
 /* 未访问的链接 */
@@ -2418,7 +2258,7 @@ tr:nth-child(odd) {
 
 ```
 
-### 47.2. 常见伪元素
+### 44.2. 常见伪元素
 
 ```less
 /* 在元素内容之前插入 */
@@ -2453,12 +2293,12 @@ p::selection {
 
 ```
 
-## 48. `行内元素`的 padding 和 margin 是否有效
+## 45. `行内元素`的 padding 和 margin 是否有效
 
 - 水平有效
 - 垂直无效
 
-## 49. `link` 和 `@import` 有什么区别
+## 46. `link` 和 `@import` 有什么区别
 
 - `@import` 只能引入样式，并且页面加载完成才会加载
 - `link` 可引入样式、rss、`rel`，网站图标等；
@@ -2467,22 +2307,22 @@ p::selection {
 	- CSS 文件会**并行下载**，不会阻塞其他 CSS 文件的下载
 	- 但会阻塞页面渲染（render-blocking）
 
-## 50. min-width > max-width > width 
+## 47. min-width > max-width > width 
 
 即使设置了 important
 
-## 51. CSS 中哪些属性可以继承
+## 48. CSS 中哪些属性可以继承
 
 ![图片&文件](./files/20241024-20.png)
 
-## 52. 常见的浏览器内核
+## 49. 常见的浏览器内核
 
 - safari：webkit
 - chrome： blink ，webkit 的一个分支
 - edge 也使用  webkit 了
 - firfox: Gecko 内核
 
-## 53. 如何判断浏览器是否支持 webp 格式
+## 50. 如何判断浏览器是否支持 webp 格式
 
 `image.src = 'xxx.wep'` ，如果能获取到宽高，则支持
 

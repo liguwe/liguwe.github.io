@@ -124,7 +124,7 @@ const withLogger = (WrappedComponent) => {
 }
 ```
 
-### 2.5. 性能优化
+### 2.5. 性能优化：React.memo
 
 ```jsx
 // 添加性能优化
@@ -288,6 +288,7 @@ function withExample(WrappedComponent) {
 ```
 
 ### 4.3. **命名约定**
+
 ```javascript
 // 为 HOC 添加显示名称以便调试
 function withExample(WrappedComponent) {
@@ -411,7 +412,9 @@ const enhance = compose(
 - 组件的复杂度
 - 团队的开发习惯
 
-HOC 是一个强大的模式，但不是唯一的解决方案。在现代 React 开发中，Hooks 通常是更简单和灵活的选择。
+HOC 是一个强大的模式，但不是唯一的解决方案。
+
+在现代 React 开发中，**Hooks 通常是更简单和灵活的选择**。
 
 ## 8. 性能考虑
 

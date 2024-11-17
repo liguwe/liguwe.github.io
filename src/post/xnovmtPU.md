@@ -3,7 +3,7 @@
 
 
 
-diff算法的本质就是，对比 `current Filber` 与 JSX 生成 `workInProgress Fiber`
+diff 算法的本质就是，对比 `current Filber` 与 JSX 生成 `workInProgress Fiber`
 
 
 ## 目录
@@ -83,7 +83,7 @@ patch(root, patches);
             - 否则，不需要移动，更新 `lastIndex = 1`
         - 所以，'B' 位置变化：不需要移动（lastIndex = 1）
     - 'C' 位置变化：不需要移动（lastIndex = 2）
-    - 'A' 发现需要移动：因为它的原始位置(0)小于 lastIndex(2)
+    - 'A' 发现需要移动：因为它的原始位置(0) 小于 lastIndex(2)
     - 'D' 位置不变：保持不动
 
 #### 2.3.2. 完整代码如下
@@ -138,13 +138,13 @@ function updateChildren(oldList, newList) {
 
 #### 2.3.3. 算法分析
 
-- 通过限制移动方向，简化了算法复杂度
+- 通过**限制移动方**向，简化了算法复杂度，即**仅右移**
 - 虽然可能不是最优解，但是在大多数情况下都能得到不错的性能
 
 #### 2.3.4. 注意点
 
 1. 始终为列表项提供稳定的 key
-2. 避免使用数组索引作为 key
+2. 避免使用数组索引作为 key 
 
 ## 3. 源码中 Diff 算法位置
 
@@ -182,6 +182,7 @@ function diff(oldVNode, newVNode) {
   }
   // 比较属性
   const propDiff = diffProps(oldVNode.props, newVNode.props);
+  
   // 递归比较子节点
   const childrenDiff = diffChildren(oldVNode.children, newVNode.children);
 
@@ -222,8 +223,8 @@ function diffChildren(oldChildren, newChildren) {
 
 ## 6. 总结
 
-- 完全对比 O(n³) 无法接受，故降级为同层对比的 O(n) 方案
+- 完全对比 `O(n³)` 无法接受，故降级为同层对比的 O(n) 方案
 	- 为什么降级可行？因为跨层级很少发生，可以忽略
 - 同层级也不简单，难点是如何高效位移，即最小步数完成位移
+	- React 采用`仅右移`方案，在大部分从左往右移的业务场景中，得到了较好的性能
 - vue 为了尽量不移动，先左右夹击跳过不变的，再找到最长连续子串保持不动，移动其他元素
-- React 采用`仅右移`方案，在大部分从左往右移的业务场景中，得到了较好的性能。

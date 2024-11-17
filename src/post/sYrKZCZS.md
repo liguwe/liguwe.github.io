@@ -37,6 +37,8 @@
 
 Vue 有两种主要的 API 风格：`选项式 API` 和`组合式 API`，开发者可以根据喜好和项目需求选择使用。
 
+### 3.1. 选项式 
+
 ```vue
 <script>
 export default {
@@ -68,6 +70,7 @@ export default {
   <button @click="increment">Count is: {{ count }}</button>
 </template>
 ```
+### 3.2. 组合式 + setup
 
 ```vue
 <script setup>

@@ -8,7 +8,7 @@
 <!-- toc -->
  ## 1. 基本作用 
 
-- react-dom 是 React 的配套库，主要负责将 React 组件渲染到浏览器的 DOM 中
+- react-dom 是 React 的配套库，**主要负责将 React 组件渲染到浏览器的 DOM 中**
 - 它是连接 React `虚拟 DOM` 和 `实际浏览器 DOM` 的桥梁
 - 从 React 16 开始，React 被拆分为 `react 核心库` 和 `react-dom` 两个包
 
@@ -22,7 +22,7 @@ ReactDOM.render(element, container[, callback])
 
 - 用于将 React 元素渲染到指定的 DOM 容器中
 - 返回对组件的引用
-- 这是最基础也是最常用的方法 [2]
+- 这是最基础也是最常用的方法 
 
 ### 2.2. ReactDOM.createRoot()
 
@@ -70,21 +70,9 @@ ReactDOM.createPortal(child, container)
 
 - react-dom 是专门用于 Web 平台的包
 - 移动端开发需要使用 react-native 而不是 react-dom
-- 在现代 React 应用中，推荐使用 createRoot API 而不是传统的 render 方法
+- 在现代 React 应用中，**推荐使用 createRoot API 而不是传统的 render 方法**
 
-## 6. 使用场景
-
-- 创建新的 React 应用时必须安装
-- 用于构建浏览器端的 React 应用
-- 在测试环境中用于渲染组件
-
-## 7. 与其他库的关系
-
-- react-dom 是 React 生态系统中的核心库之一
-- 通常与 react-router、redux 等其他库一起使用
-- 在 Next.js 等框架中也是必需的依赖 
-
-## 8. 使用示例
+## 6. 使用示例
 
 ```jsx
 // 传统方式

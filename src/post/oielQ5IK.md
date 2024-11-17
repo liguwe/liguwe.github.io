@@ -2,12 +2,14 @@
 # 使用 useTransition 进行非阻塞渲染
 
 
-useTransition 是 React 18 引入的一个强大的性能优化 Hook，它允许我们将某些更新标记为非紧急的过渡更新。让我详细解释它的各个方面：
+
 
 
 ## 目录
 <!-- toc -->
  ## 1. 基本概念 
+
+useTransition 是 React 18 引入的一个强大的性能优化 Hook，它允许我们**将某些更新标记为非紧急的过渡更新**。
 
 ```typescript
 const [isPending, startTransition] = useTransition();
@@ -17,7 +19,9 @@ const [isPending, startTransition] = useTransition();
 - `startTransition`: 
 	- 当你希望启动一个新的过渡状态时调用它
 	- 用于包装需要标记为过渡更新的状态更新函数 
-	- 当你使用`startTransition`函数进行状态更新时，你实际上告诉 React：**这个更新不是非常紧急的**，如果有更重要的更新要处理，你可以中断或延后这个次要更新
+	- 当你使用`startTransition`函数进行状态更新时
+		- 你实际上告诉 React：**这个更新不是非常紧急的**
+		- 如果有更重要的更新要处理，你可以中断或延后这个次要更新
 
 ## 2. 主要用途
 
@@ -45,7 +49,7 @@ const [isPending, startTransition] = useTransition();
 	- 提供 pending 状态
 - **useDeferredValue**
 	- 延迟值的更新
-	- 适用于接收值的地方
+	- **适用于接收值**的地方
 	- 不提供 pending 状态
 
 ## 4. 注意事项
@@ -60,9 +64,9 @@ ReactDOM.render(<app />, rootNode) // ❌ 无法开启useTransition
 ReactDOM.createRoot(rootNode).render(<app />) // ✅ 开启useTransition
 ```
 
-- 只有当你能访问某个状态的`set`函数时，你才能将更新包装进`useTransition`中
+- 只有当你能访问某个状态的`set函数`时，你才能将更新包装进`useTransition`中
 
-- 传递给`startTransition`的函数必须是同步的，而不能是异步的。
+- 传递给`startTransition`的函数**必须是同步的，而不能是异步的**。
 
 ```javascript
 startTransition(async () => {
@@ -144,7 +148,7 @@ function Tabs() {
 
 ### 5.2. 示例 2：输入框优先级高于搜索结果，立即更新
 
-```typescript
+```typescript hl:6,9
 function SearchResults() {
   const [query, setQuery] = useState('');
   const [isPending, startTransition] = useTransition();

@@ -37,9 +37,9 @@ React.createElement(type, props, ...children)
 ```
 
 参数说明：
-- type: 元素类型（字符串或 React 组件）
-- props: 属性对象
-- children: 子元素
+- type:  元素类型（字符串或 React 组件）
+- props:  属性对象
+- children:  子元素
 
 ### 2.2. createElement 的简化实现
 
@@ -69,7 +69,7 @@ function createTextElement(text) {
 
 ## 3. 虚拟 DOM 的生成
 
-createElement 函数返回的对象就是虚拟 DOM（Virtual DOM）节点，它的基本结构如下：
+`createElement 函数`返回的对象就是虚拟 DOM（Virtual DOM）节点，它的基本结构如下：
 
 ```javascript
 {
@@ -166,39 +166,7 @@ items.map(item =>
 )
 ```
 
-## 7. 性能优化原理
-
-### 7.1. React.memo 的工作原理
-
-```javascript
-// React.memo 的简化实现
-function memo(Component) {
-  return class Memoized extends React.Component {
-    shouldComponentUpdate(nextProps) {
-      return !shallowEqual(this.props, nextProps);
-    }
-
-    render() {
-      return <Component {...this.props} />;
-    }
-  };
-}
-```
-
-### 7.2. 批量更新
-
-React 会将多个 setState 调用合并成一个更新，以提高性能：
-
-```javascript
-// 在一个事件处理函数中的多个 setState
-function handleClick() {
-  setCount(c => c + 1); // 不会立即更新
-  setFlag(f => !f);     // 不会立即更新
-  // React 会在这里批量处理上述更新
-}
-```
-
-## 8. 总结
+## 7. 总结
 
 JSX 的原理可以概括为以下几个关键点：
 
@@ -206,4 +174,4 @@ JSX 的原理可以概括为以下几个关键点：
 2. 转换过程通过 Babel 等工具完成，包含词法分析、语法分析和代码生成
 3. createElement 函数创建虚拟 DOM 对象
 4. 虚拟 DOM 对象描述了真实 DOM 的结构
-5. React 使用虚拟 DOM 进行高效的 DOM 更新
+5. React 使用**虚拟 DOM** 进行高效的 DOM 更新

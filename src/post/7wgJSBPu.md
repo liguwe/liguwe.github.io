@@ -148,28 +148,28 @@ export default {
 
 ## 6. 主要区别总结
 
-1. 执行时机：
-   - created：在组件实例创建完成后立即执行
-   - mounted：在组件挂载到 DOM 后执行
-2. DOM 访问：
-   - created：无法访问 DOM，因为组件还未挂载
-   - mounted：可以访问 DOM，组件已经挂载完成
-3. 适用场景：
-   - created：
-     * 初始化数据
-     * 数据请求
-     * 设置事件监听（不涉及 DOM）
-   - mounted：
-     * DOM 操作
-     * 第三方库初始化（需要 DOM）
-     * 需要访问子组件
-     * 需要元素尺寸计算
-4. Composition API 中：
-   - created 钩子对应 setup 函数本身
-   - mounted 钩子对应 onMounted 函数
-5. 注意事项：
-   - 在 created 中进行的数据请求可能导致**页面闪烁**
-   - mounted 不保证**所有子组件都已挂载完成**，如需要可以使用 nextTick
+- 执行时机：
+	- created：在组件实例创建完成后立即执行
+	- mounted：在组件挂载到 DOM 后执行
+- DOM 访问：
+	- created：无法访问 DOM，因为组件还未挂载
+	- mounted：可以访问 DOM，组件已经挂载完成
+- 适用场景：
+	- created：
+		 - 初始化数据
+		 - 数据请求
+		 - 设置事件监听（不涉及 DOM）
+	- mounted：
+		 - DOM 操作
+		 - 第三方库初始化（需要 DOM）
+		 - 需要访问子组件
+		 - 需要元素尺寸计算
+- Composition API 中：
+	- created 钩子对应 setup 函数本身
+	- mounted 钩子对应 onMounted 函数
+- 注意事项：
+	- 在 created 中进行的数据请求可能导致**页面闪烁**
+	- mounted 不保证**所有子组件都已挂载完成**，如需要可以使用 nextTick
 
 ## 7. 使用建议
 

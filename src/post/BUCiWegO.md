@@ -48,13 +48,13 @@ type MatchPattern = string | RegExp | (string | RegExp)[]
 
 ## 4. 具体的代码架子
 
-![|528](https://832-1310531898.cos.ap-beijing.myqcloud.com/13dc59a8d535136931adcb1d8e17fa18.png)
+![|848](https://832-1310531898.cos.ap-beijing.myqcloud.com/13dc59a8d535136931adcb1d8e17fa18.png)
 
 >  当然，比如卸载时，需要看这个组件是否是`内部组件`，是的话会对特殊处理。
 
 下面是 `move` 的一些具体逻辑：
 
-![|552](https://832-1310531898.cos.ap-beijing.myqcloud.com/6dc62342e395740c11f4a21257e00a46.png)
+![|816](https://832-1310531898.cos.ap-beijing.myqcloud.com/6dc62342e395740c11f4a21257e00a46.png)
 
 ## 5. include 和 exclude
 
@@ -77,7 +77,7 @@ type MatchPattern = string | RegExp | (string | RegExp)[]
 - KeepAlive 组件的作用类似于 HTTP 中的持久链接。它可以避免组件实例不断地被销毁和重建。
 - KeepAlive 的基本实现并不复杂。
 	- 当被 KeepAlive 的组件“卸载”时，渲染器并不会真的将其卸载掉，而是会将该组件搬运到一个隐藏容器中，从而使得组件可以维持当前状态。
-	- 当被 KeepAlive 的组件“挂载”时，渲染器也不会真的挂载它，而是将它从隐藏容器搬运到原容器。
+	- 当被 KeepAlive 的组件“挂载”时，渲染器也不会真的挂载它，而是将它从**隐藏容器**搬运到原容器。
 -  KeepAlive 的其他能力，如匹配策略和缓存策略。
 	-  include 和 exclude 这两个选项用来指定哪些组件需要被 KeepAlive，哪些组件不需要被 KeepAlive。默认情况下，include 和 exclude 会匹配组件的 `name 选项`。但是在具体实现中，我们可以扩展匹配能力。
 	- 对于缓存策略，Vue.js 默认采用“最新一次访问”。为了让用户能`自行实现缓存策略`

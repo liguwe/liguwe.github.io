@@ -115,12 +115,14 @@ watch(
 )
 ```
 
-## 4. 清理副作用
+## 4. 清理时机
 
 1. 在侦听器**下一次执行前**清理上一次的副作用
 2. 在**组件卸载时**清理副作用
 
-- 如果取消监听，那么需要取消请求
+## 5. 清理副作用示例
+
+### 5.1. 示例：取消请求防止竞态
 
 ```javascript hl:21
 <script setup>
@@ -150,9 +152,9 @@ watchEffect((onCleanup) => {
 
 ```
 
-### 4.1. **基本示例 - 防止重复请求**
+### 5.2. 示例：防止重复请求
 
-```vue
+```vue hl:20
 <template>
   <div>
     <input v-model="searchQuery" placeholder="搜索...">
@@ -201,7 +203,8 @@ function mockSearch(query) {
 </script>
 ```
 
-### 4.2. **定时器清理示例**
+### 5.3. 示例：定时器清理示例
+
 ```vue hl:24
 <template>
   <div>
@@ -234,7 +237,7 @@ watch(isRunning, (newValue, oldValue, onCleanup) => {
 </script>
 ```
 
-### 4.3. **处理多个异步请求示例**
+### 5.4. 示例：处理多个异步请求示例
 
 ```vue hl:25
 <template>
@@ -267,7 +270,6 @@ watch(selectedId, async (newId, oldId, onCleanup) => {
   try {
     // 模拟获取用户信息
     const info = await fetchUserInfo(newId)
-    
     if (!cancelled) {
       userInfo.value = info
     }
@@ -288,8 +290,8 @@ function fetchUserInfo(id) {
 </script>
 ```
 
-### 4.4. **处理WebSocket连接示例**
-```vue
+### 5.5. 示例：处理WebSocket连接示例，比如关闭 ws
+```vue hl:28,29
 <template>
   <div>
     <div>连接状态: {{ isConnected ? '已连接' : '未连接' }}</div>
@@ -340,8 +342,14 @@ class MockWebSocket {
 </script>
 ```
 
-### 4.5. **防抖搜索示例**
-```vue
+### 5.6. 示例：防抖搜索示例
+
+和 React 自定义防抖函数 Hooks 一样，没必要一定要使用 loadsh 的防抖函数，因为清理函数会在特定时机执行，我们只需要在特定时机做特殊处理即可
+- 特定事件
+	- 组件销毁时
+	- watch 重新执行之前，开始下个 watch 时
+
+```vue hl:27
 <template>
   <div>
     <input v-model="searchQuery" placeholder="输入搜索内容">
@@ -386,26 +394,26 @@ function fetchSuggestions(query) {
 </script>
 ```
 
-### 4.6. `onCleanup` 的主要作用是
+## 6. 总结：`onCleanup` 的主要作用是
 
-1. **防止竞态条件**：当多个异步操作同时进行时，确保只有最新的操作结果会被使用。
-2. **资源清理**：
-   - 清理定时器
-   - 关闭网络连接
-   - 取消未完成的请求
-   - 重置状态
-3. **性能优化**：防止不必要的操作和内存泄漏。
+- **防止竞态条件**：
+	- 当多个异步操作同时进行时，确保只有最新的操作结果会被使用。
+- **资源清理**：
+	- 清理定时器
+	- 关闭网络连接
+	- 取消未完成的请求
+	- 重置状态
+- **性能优化**：
+	- 防止不必要的操作和内存泄漏
 
-### 4.7. 使用建议
+## 7. 使用建议
 
 1. 在处理异步操作时，始终考虑使用 `onCleanup`
 2. 在清理函数中要清理所有相关的副作用
-3. 确保清理函数是同步的
-4. 使用标志变量来控制异步操作的结果是否应该被使用
+3. 确保**清理函数是同步的**
+4. 使用**标志变量**来控制异步操作的结果是否应该被使用
 
-这样可以确保你的应用程序更加稳定和可靠，避免常见的竞态条件和内存泄漏问题。
-
-## 5. 暂停/恢复侦听器： `v3.5`
+## 8. 暂停/恢复侦听器： `v3.5`
 
 ```js
 const { stop, pause, resume } = watchEffect(() => {})
@@ -419,7 +427,8 @@ resume()
 // 停止
 stop()
 ```
-## 6. 最佳实践和注意事项
+
+## 9. 最佳实践和注意事项
 
 ```javascript hl:1,8,15,27
 // 1. 避免在监听回调中直接修改被监听的值

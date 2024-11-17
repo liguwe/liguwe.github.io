@@ -20,21 +20,23 @@
 - `computed` 计算属性的原理
 - `watch` 函数的实现
 
-文章通过循序渐进的方式，展示了Vue3响应式系统从简单到复杂的演进过程，并提供了大量代码示例来解释各个概念和实现细节。
-
 ### 1.2. 要点
 
 - 响应式数据的基本实现依赖于 Proxy 和 副作用函数
-- 使用 WeakMap、Map和Set组合的数据结构来存储依赖关系
-- 通过 cleanup函数 解决分支切换问题
-- 使用 effectStack 来处理effect函数的嵌套问题
-- 实现 `调度系统` 来控制副作用函数的执行时机和次数
-- 计算属性的实现基于 lazy执行 和 缓存机制
-- watch函数 的实现涉及递归遍历对象属性和处理竞态问题
+- 使用 WeakMap、Map 和Set 组合的数据结构来存储**依赖关系**
+- 通过 `cleanup函数` 解决分支切换问题
+- 使用 `effectStack` 来处理effect函数的**嵌套问题**
+- 实现 `调度系统` 来控制**副作用函数的执行时机和次数**
+- 计算属性的实现基于 **lazy执行 和 缓存机制**
+- `watch函数` 的实现涉及
+	- 递归遍历对象属性
+	- 处理竞态问题
 
 ## 2. 何为副作用函数？
 
 如修改了全局变量等
+
+> 在 React useEffect 会有详细介绍副作用的概念
 
 ## 3. 为何响应式数据？
 
@@ -43,17 +45,19 @@
 ```js
 // 原始数据
 const data = { text: 'hello world' }
+
 function effect() {
   document.body.innerText = obj.text
 }
 effect()
+
 ```
 
 ## 4. 响应式数据最简单的实现
 
 借助 `Proxy` ，
 - 每次`读取`时，将 effect 函数存储到`桶：bucket` 中，
-- 每次`set 时`，从`桶`中取出并执行，
+- 每次`set 时`，从`桶`中**取出并执行**
 
 如下代码：
 
@@ -91,10 +95,11 @@ effect()
 
 ## 5. 解决 硬编码 `effect` 函数的问题
 
-思路是，`effect(fn)` 传入一个函数，标识注册副作用函数 `fn` ,
+思路是，`effect(fn)` 传入一个函数，标识注册副作用函数 `fn` 
+
 - 并使用全局变量 `activeEffect` 来存储 `当前激活的 effect 函数`
 
-```js hl:25
+```js hl:25,10
 // 存储副作用函数的桶
 const bucket = new Set()
 
@@ -140,11 +145,11 @@ setTimeout(() => {
 
 但是，上面代码如果我们设置不存在的属性时，如 `obj.noExist = 'hello '` , `传入的effect` 中的 `fn` 会**执行两次**
 
-所以，`副作用函数`需要与`目标字段` 建立映射，所以我们需要重新设计数据结构
+所以，`副作用函数`需要与`目标字段` 建立映射，所以我们**需要重新设计数据结构**
 
 ## 6. 重新设计数据结构
 
-解决上面设置不存在的属性时也执行问题，可以**重新设计数据结构**
+**解决上面设置不存在的属性时也执行问题**，可以**重新设计数据结构**
 
 如下代码：
 
@@ -216,7 +221,7 @@ effect(function fn2() {
 
 如下图：
 
-![](https://od-1310531898.cos.ap-beijing.myqcloud.com/202304081112785.png)
+![|736](https://od-1310531898.cos.ap-beijing.myqcloud.com/202304081112785.png)
 
 ### 6.1. 为什么要使用 WeakMap？
 
@@ -249,13 +254,14 @@ setTimeout(() => {
 
 最终打印打印结果如下：
 
-![|512](https://od-1310531898.cos.ap-beijing.myqcloud.com/202304081151462.png)
+![|464](https://od-1310531898.cos.ap-beijing.myqcloud.com/202304081151462.png)
 
 所以，结论就是：使用 `WeakMap` 能够保证 `GC`，不会像 `Map` 那个强引用导致`内存溢出`
 
 ### 6.2. 最终代码
 
-**最终代码如下**：封装 `track(targe,key)` 和 `trigger(targe,key)`
+**最终代码如下**：
+- 并封装 `track(targe,key)` 和 `trigger(targe,key)`
 
 ```js
 // 存储副作用函数的桶
@@ -318,7 +324,7 @@ setTimeout(() => {
 ```
 
 >[!tip]  
-其实如何能够梳理清楚这个数据结构，那能那么容易写出代码，所以也不用抠代码细节，真正需要自己使用即可！
+其实如何能够梳理清楚这个数据结构，那能那么容易写出代码，所以也**不用抠代码细节，推导的思想更有借鉴意义**，真正需要自己使用即可！
 
 ## 7. 分支切换问题
 
@@ -341,7 +347,8 @@ effect(() => {
 - text
 	- fn
 
-所以，当 `text` 值改变时，必然会导致 `fn` 重新执行 ，但其实当`ok` 为 `false` 时，无论 `text` 如何变化，我们不希望 `fn` 重新执行。如何解决呢？
+所以，当 `text` 值改变时，必然会导致 `fn` 重新执行 
+- 但其实当`ok` 为 `false` 时，无论 `text` 如何变化，我们不希望 `fn` 重新执行。如何解决呢？
 
 解决方案是 **每次副作用函数执行之前，清除上一次建立的关系**。
 
@@ -440,6 +447,7 @@ const Foo = {
 
 const Bar = {
     render() {
+        // 引用 Foo
         return h(Foo, 'bar')
     }
 }
@@ -449,9 +457,10 @@ const Bar = {
 
 如下代码：
 
-```js
+```js hl:3
 let temp1, temp2
 
+// 嵌套 effect 里面还有 effect 函数
 effect(function effectFn1() {
   console.log('1')
   effect(function effectFn2() {
@@ -518,7 +527,7 @@ effect(() => {
 
 因为读取和操作是在同一个副作用函数中，进行的。所以可以增加`守卫条件`： **trigger 触发的副作用函数和当前执行的副作用函数，是一个函数，则不执行。**
 
-```js
+```js hl:7,6
 function trigger(target, key) {
   const depsMap = bucket.get(target)
   if (!depsMap) return
@@ -557,7 +566,9 @@ console.log('end...');
 
 如果我们希望顺序变成了：`1 ，end... ，2` 呢？？？
 
-**解法方法是**：给 `effect` 函数添加一个 `options` 参数
+**解法方法是**：
+- 给 `effect` 函数添加一个 `options` 参数
+	- 即 给在批量执行副作用函数的地方，即 trigger 函数中，添加特定的判断，即调度逻辑，如下代码
 
 ```js hl:13,15
 function trigger(target, key) {
@@ -584,7 +595,10 @@ function trigger(target, key) {
 
 修改上面例子代码如下：
 
-```js
+> **options 的 scheduler 选项是一个函数**
+
+
+```js hl:9
 const data = {foo: 1};
 const obj = new Proxy(data, {});
 
@@ -627,15 +641,17 @@ obj.foo++;
 // ::::顺序： 1 2 3 4 5 
 ```
 
-如果我只打印 `初始值` 和 `最终值`呢？其实就有点类似于 **React 中的 setState 多次或者 Vue 中的连续改变响应式数据。**
+如果我只打印 `初始值` 和 `最终值`呢？
+
+>  其实就有点类似于 **React 中的 setState 多次或者 Vue 中的连续改变响应式数据。**
 
 #### 10.2.1. 微任务队列
 
-所以，关键是 需要`实现一个微任务队列，并去重，并且如何保证一个微任务队列里，只执行一次`，如下代码：
+所以，关键是 需要 **实现一个微任务队列，并去重，并且如何保证一个微任务队列里，只执行一次**，如下代码：
 
-```js hl:12,4
+```js hl:12,4,1,22
+// 任务队列，使用 Set 方便去重
 const jobQueue = new Set()
-const p = Promise.resolve()
 // 标识是否正在刷新微任务队列，
 // 如果正在刷新，则不再执行 flushJob，所以一个事件循环中只会执行一次 flushJob
 let isFlushing = false
@@ -645,6 +661,7 @@ function flushJob() {
   isFlushing = true;
   // 将一个函数添加到微任务队列中
   Promise.resolve().then(() => {
+    // 这个时候，取出来的 job 是已经去重过的了，所以不会重复执行了
     jobQueue.forEach(job => job())
   }).finally(() => {
     isFlushing = false
@@ -654,6 +671,7 @@ function flushJob() {
 effect(() => {
   console.log(obj.foo)
 }, {
+  // 使用 scheduler 选项，去重任务后，再刷新执行微任务队列的函数
   scheduler(fn) {
     // 使用 Set 来去重
     jobQueue.add(fn);
@@ -667,7 +685,7 @@ effect(() => {
 
 > [7. Vue3 中 effect 的调度选项（scheduler）使用示例](/post/AF0KU415.html)
 
-## 11. 计算属性 `computed` 实现原理 与 `lazy`
+## 11. 计算属性 `computed` 实现原理与 `lazy`
 
 ### 11.1. 懒执行
 
@@ -699,9 +717,11 @@ effect(
 
 ![|496](https://od-1310531898.cos.ap-beijing.myqcloud.com/202304091113904.png)
 
+> **延迟执行，往往都是返回一个函数，这和柯里化函数很像**
+
 但是，上面的代码，仅仅能够`手动执行` ，如下代码：
 
-![|464](https://od-1310531898.cos.ap-beijing.myqcloud.com/202304091118724.png)
+![|360](https://od-1310531898.cos.ap-beijing.myqcloud.com/202304091118724.png)
 
 如果 `fn` 为 `getter函数`呢？ 如下：
 
@@ -712,8 +732,10 @@ effect(
 ### 11.2. `computed` 计算属性
 
 - 计算属性的 `懒计算`，即 `只有读取时，才会计算`
-- 另外，多次读取一个属性时，还需要做到 `缓存`，避免`多次计算`，通过脏变量 `dirty`来标识，类似于 Angular 的概念。
-- 类似于 Vue ， 如果`计算属性发生变化会重新触发渲染` ， 但是如果一个计算属性依赖另外一个计算属性时，会发生 `effect 嵌套`，所以，每次读取计算属性时，需要`手动触发 trigger 追踪`
+- 多次读取一个属性时，还需要做到 `缓存`，避免`多次计算`
+	- 通过脏变量 `dirty`来标识，类似于 Angular 的概念。
+- 如果`计算属性发生变化会重新触发渲染` ， 但是如果一个计算属性依赖另外一个计算属性时，会发生 `effect 嵌套`
+	- 所以，每次读取计算属性时，需要`手动触发 trigger 追踪` 
 
 ![|576](https://od-1310531898.cos.ap-beijing.myqcloud.com/202304091154769.png)
 
@@ -731,6 +753,10 @@ effect(
 >[!tip]  
 所以，**这里基本思路掌握即可，不用装牛角尖**，也不可能让你段时间内徒手写出来，需要的话就去自己看代码。
 
+### 为什么使用 computed 时，具体值都需要使用`.value`来包装
+
+仔细看上面的截图代码的第 2 行，就知道了
+
 ## 12. `watch函数` 的实现原理
 
 ### 12.1. 简单实现
@@ -740,6 +766,7 @@ effect(
 ![|576](https://od-1310531898.cos.ap-beijing.myqcloud.com/202304091223151.png)
 
 上面代码硬编码了 `source.foo` 的读取操作，更通用的解法：`递归读取对象的所有属性`
+
 
 ### 12.2. 相对完善的实现
 
@@ -752,7 +779,7 @@ effect(
 
 下面是 `watch 函数`的代码  
 
-![|616](https://od-1310531898.cos.ap-beijing.myqcloud.com/202304091242677.png)
+![|840](https://od-1310531898.cos.ap-beijing.myqcloud.com/202304091242677.png)
 
 > [!tip]  
 注意，上面代码**高亮的部分** ，另外 `flush` 的值 `pre` 和 `post` 代表**组件更新前和更新后**，后面会涉及到具体原理，这里不深究。
@@ -770,7 +797,7 @@ type WatchCallback<T> = (
 
 先看一个例子，如果 `watch` 一个 `obj 对象`，改变了就发请求，如下：
 
-![|648](https://od-1310531898.cos.ap-beijing.myqcloud.com/202304091258200.png)
+![|696](https://od-1310531898.cos.ap-beijing.myqcloud.com/202304091258200.png)
 
 所以，会存在`过期的副作用函数`，`第三个参数`就是解决这种`竞态问题`的 ，以下是代码实现：
 

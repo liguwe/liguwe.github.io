@@ -8,12 +8,14 @@
 <!-- toc -->
  ## 1. `useTransition`和`useDeferredValue`的差异 
 
-- `useTransition`主要关注点是**状态的过渡**。它允许开发者控制某个更新的延迟更新，还提供了过渡标识，让开发者能够添加过渡反馈。
-- `useDeferredValue`主要关注点是**单个值的延迟更新**。它允许你把特定状态的更新标记为`低优先级`。
+- `useTransition`主要关注点是**状态的过渡**。
+	- 它允许开发者控制某个更新的延迟更新，还提供了过渡标识，让开发者能够添加过渡反馈。
+- `useDeferredValue`主要关注点是**单个值的延迟更新**。
+	- 它允许你把特定状态的更新标记为`低优先级`。
 
 ## 2. 定义和基本概念
 
-useDeferredValue 是 React 18 引入的一个 Hook，它允许我们延迟更新 UI 的某些部分。这个 Hook 接收一个值并返回该值的延迟版本：
+useDeferredValue 是 React 18 引入的一个 Hook，它允许我们**延迟更新 UI 的某些部分**。这个 Hook 接收一个值并返回该值的延迟版本：
 
 ```javascript
 const deferredValue = useDeferredValue(value);
@@ -152,7 +154,9 @@ function MarkdownPreview({ text }) {
    
 ## 7. 使用的好处、与防抖与节流的区别
 
-- 它与React深度集成，可以适应用户的设备。如果设备性能好，延迟的重新渲染会很快完成；如果设备性能差，重新渲染会相应地延迟。
+- 它与React深度集成，可以适应用户的设备。
+	- 如果设备性能好，延迟的重新渲染会很快完成；
+	- 如果设备性能差，重新渲染会相应地延迟。
 - 它不需要选择固定的延迟，与防抖和节流不同。
 	- **防抖与节流的局限性**：
 		- 这两种方法都是为了控制函数的执行频率，但它们是阻塞的，可能会导致不流畅的用户体验。
@@ -167,5 +171,8 @@ function MarkdownPreview({ text }) {
 	- useTransition：`主动`控制 
 - **应用方式**
 	- useDeferredValue：直接应用于`值`
-	- useTransition：包装`状态更新函数` 
+		- 具体的 state 比如 `xxx`
+	- useTransition：
+		- 包装`状态更新函数` 
+			- 包装具体的状态更新函数，比如 `setXxx`
 

@@ -1,7 +1,8 @@
 
 # React 的 Render Props是什么？
 
-Render Props 是 React 中一种复用组件逻辑的高级技巧。让我详细解释一下：
+
+Render Props 是 React 中一种复用组件逻辑的高级技巧
 
 
 ## 目录
@@ -15,7 +16,9 @@ Render Props 是 React 中一种复用组件逻辑的高级技巧。让我详细
 )}/>
 ```
 
-这是一种组件**通过一个函数 prop 来传递需要渲染的内容的技术**。这个 prop 通常命名为 render，但不是必须的。
+这是一种组件**通过一个函数 prop 来传递需要渲染的内容的技术**。
+
+>  这个 prop **通常命名为 render，但不是必须的**。
 
 ## 2. 具体示例：以一个鼠标追踪器为例
 
@@ -50,6 +53,7 @@ class MouseTracker extends React.Component {
 ```
 
 ## 3. children prop 方式
+
 ```javascript hl:8
 // 也可以使用 children 作为函数
 class MouseTracker extends React.Component {
@@ -73,6 +77,7 @@ class MouseTracker extends React.Component {
 ```
 
 ## 4. 现代替代方案现：在更推荐使用 Hooks 来实现类似功能
+
 ```javascript
 function useMousePosition() {
   const [position, setPosition] = useState({ x: 0, y: 0 });
@@ -98,9 +103,10 @@ function App() {
 
 ## 5. Vue 的解决方案
 
-Vue 的作用域插槽和 React 的 Render Props 是解决相同问题的不同方案
+`Vue 的作用域插槽`和 `React 的 Render Props` 是解决相同问题的不同方案
 
 ## 6. 最后
 
-Render Props 是 React 早期一个重要的代码复用模式，虽然现在有了 Hooks 这样更现代的解决方案，但理解 Render Props 对于理解 React 的组件复用思想仍然很有帮助。而且在一些特定场景下，Render Props 仍然是一个有效的解决方案。
+- Render Props 是 React **早期**一个重要的代码复用模式
+- 现在有了 Hooks 这样更**现代**的解决方案
 

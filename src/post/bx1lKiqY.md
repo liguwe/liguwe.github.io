@@ -72,7 +72,6 @@ function ClientComponent() {
   const [count, setCount] = useState(0);
   return <button onClick={() => setCount(count + 1)}>{count}</button>;
 }
-
 ```
 
 ### 3.3. 共享组件
@@ -101,9 +100,9 @@ function SharedComponent({ children }) {
 - 服务器组件无权访问浏览器 API；客户端有完整的浏览器 API 权限；
 - 服务端有权限直接访问服务端程序和 API；而客户端组件只能通过请求访问部分程序。
 - `UI = f(data, state)`
-	- 客户端组件的工作是 UI = f(state)，
-	- 服务端组件的工作是 UI = f(data)，
-	- React 希望组合二者的优势，实现 UI = f(data, state)
+	- 客户端组件的工作是 `UI = f(state)`
+	- 服务端组件的工作是 `UI = f(data)`
+	- React 希望组合二者的优势，实现 `UI = f(data, state)`
 
 ## 4. CSS 处理
 
@@ -120,7 +119,7 @@ function SharedComponent({ children }) {
 
 ## 5. Remix 与 Next.js
 
-- 当前 React 更新缓慢，反而是两个上层框架Remix（由 Shopify 资助）和 Next.js（由 Vercel 资助）在激烈竞争。
+- 当前 React 更新缓慢，反而是两个上层框架 Remix（由 Shopify 资助）和 Next.js（由 Vercel 资助）在激烈竞争。
 
 ## 6. 简单示例
 

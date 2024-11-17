@@ -118,7 +118,7 @@ app
 
 ### 2.2. 局部注册
 
-（1）使用 `<script setup>`，导入的组件可以直接在模板中使用，无需注册
+（1）使用 `<script setup>`，**导入的组件可以直接在模板中使用，无需注册**
 
 （2）不使用`<script setup>`， 则需要使用` components 选项` 来`显式注册
 `
@@ -128,7 +128,8 @@ app
 
 `组件定义命名`和`组件使用命名`：比如 `MyComponent` 为名注册的组件，在模板中可以通过 `<MyComponent>` 或 `<my-component>` 
 - `PascalCase` 这样的组件定义在 IDE 中友好
-- `PascalCase` 格式的一看就是 `Vue 组件`，很容易和`自定义元素 (web components)` 区分开来
+- `PascalCase` 格式的一看就是 `Vue 组件`，
+	- 很容易和`自定义元素 (web components)` 区分开来
 
 ## 3. Props 定义
 
@@ -176,7 +177,7 @@ const counter = ref(props.initialCounter)
 
 （2）需要对传入的` prop 值`做进一步的转换，建议使用 `computed`
 
-（3）更改`对象 / 数组类型`的 `props`，仅在父子组件在设计上本来就需要`紧密耦合`，不然子组件不允许直接修改，否则都推荐子组件抛出一个`事件`来通知父组件做出改变，即都回到父组件修改
+（3）更改`对象 / 数组类型`的 `props`，仅在父子组件在设计上本来就需要`紧密耦合`，不然**子组件不允许直接修改**，否则都推荐子组件抛出一个`事件`来通知父组件做出改变，即都回到父组件修改
 
 > 因为是引用类型，阻止这种更改不现实
 
@@ -241,6 +242,7 @@ defineProps({
 ## 4. 组件事件
 
 1、`<script setup>` 中 定义：`const emit = defineEmits(['inFocus', 'submit'])`
+
 > 非`<script setup>` 中，参考官方文档
 
 2、`defineEmits()宏`还支持对象语法，比如
@@ -453,7 +455,7 @@ function inc() {
 
 10、关于``v-model:title="bookTitle"`` 和 `v-model="title"` 究竟什么区别？
 
-- `v-model="title" `默认`绑定到 `modelValue prop`，并通过 `update:modelValue 事件`更新
+- `v-model="title" `默认`绑定到 `modelValue prop`，并通过 update:modelValue 事件`更新
 - `v-model:title="bookTitle"` 绑定到` title prop`，并通过` update:title 事件`更新
 
 所以，其实`v-model="title"` 是`v-model:modelValue="title"` 一种`简写方式`
@@ -673,7 +675,7 @@ const { data } = await useAsyncData()
 
 ### 6.8. 使用 Suspense 的注意事项
 
-1. Suspense 只处理其直接子组件的异步依赖，只处理以下异步情况：
+1. **Suspense 只处理其直接子组件的异步依赖**，只处理以下异步情况：
 	- 带有异步 setup() 的组件
 	- 带有 async setup() 的组件
 	- 使用 defineAsyncComponent 定义的组件
