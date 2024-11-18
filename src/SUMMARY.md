@@ -3,7 +3,7 @@
 [前言](post/9faAtEDx.md)
 
 
-# AGI
+# 第一卷 AGI
 
 
   - [前言](post/GAQouxss.md)
@@ -29,7 +29,7 @@
 
     - [Dify notes](post/y2s8RSvZ.md)
 
-# 前端
+# 第二卷 前端
 
 
   - [前言](post/cipzcsUT.md)
@@ -545,7 +545,7 @@
 
     - [前端开发与 AI 大模型的集成](post/09yTyJUt.md)
 
-# 算法
+# 第三卷 算法
 
 
   - [前言](post/Giei5JpV.md)
@@ -757,20 +757,20 @@
 
     - [搜索算法总结](post/dmjjSw0s.md)
 
-  - [其他](post/E7Vj5SkP.md)
+  - [其他算法](post/f1QPjkZB.md)
 
 
-    - [区间问题](post/etTWaGXn.md)
+    - [区间问题](post/SHEAIuID.md)
 
-    - [快速排序算法的原理及运用](post/xlWQaaiQ.md)
+    - [快速排序算法的原理及运用](post/BXBCERD6.md)
 
-    - [二维数组的遍历技巧](post/QhPN0fa9.md)
+    - [二维数组的遍历技巧](post/9d7nMm97.md)
 
-    - [判断一个数是否是素数](post/I2vs2zbD.md)
+    - [判断一个数是否是素数](post/pzNZ7le8.md)
 
-    - [位运算技巧](post/y2ZyMJD7.md)
+    - [位运算技巧](post/D8WKdK9R.md)
 
-    - [其他技巧总结](post/VGNGYCT0.md)
+    - [其他技巧总结](post/uIg7WSJK.md)
 
   - [LeetCode 刷题篇](post/JCj9K3Am.md)
 
@@ -929,7 +929,7 @@
 
     - [从字符串中移除星号](post/WBTbXreF.md)
 
-# 计算机科学
+# 第四卷 计算机科学
 
 
   - [前言](post/daIm7SIB.md)

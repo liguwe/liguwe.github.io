@@ -346,8 +346,7 @@ const part = tree.children.slice(1, -1);
 
 // 第一层级加上序号，第几卷，看起来像卷书的目录
 part.forEach((item, index) => {
-  // item.title = `${indexMap[index]} ${item.title}`;
-  item.title = `${item.title}`;
+  item.title = `${indexMap[index]} ${item.title}`;
   item.isPart = true;
 });
 
