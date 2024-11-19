@@ -35,7 +35,7 @@
 
 流程图如下：
 
-![cos-blog-832-34-20241012](https://blog-1310531898.cos.ap-beijing.myqcloud.com/832-34-20241012/Algorithm Flowchart.svg|354)
+![cos-blog-832-34-20241012|250](https://blog-1310531898.cos.ap-beijing.myqcloud.com/832-34-20241012/Algorithm%20Flowchart.svg)
 
 ## 3. 代码实现
 

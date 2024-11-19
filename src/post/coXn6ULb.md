@@ -67,6 +67,12 @@ var trap = function(height) {
 时间复杂度为 `O(n)`，空间复杂度为 `O(1)`
 
 ```javascript
+water[i] = min(
+    # 左边最高的柱子
+    max(height[0..i]),  
+    # 右边最高的柱子
+    max(height[i..end]) 
+) - height[i]
 /**  
  * @param {number[]} height  
  * @return {number}  

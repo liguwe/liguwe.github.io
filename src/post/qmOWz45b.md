@@ -9,13 +9,13 @@
 <!-- toc -->
  ## 题目及理解 
 
-![image.png600](https://832-1310531898.cos.ap-beijing.myqcloud.com/202407281632176.png?imageSlim)
+![image.png600|696](https://832-1310531898.cos.ap-beijing.myqcloud.com/202407281632176.png?imageSlim)
 
 ## 解题思路
 
 - 双指针
-   - `count = 0/1/2` ，计算重复次数
-   - 记得需要重置为 0  ，当 `nums[fast] !== nums[fast - 1]`
+	- `count = 0/1/2` ，计算重复次数
+	- 记得需要重置为 0  ，当 `nums[fast] !== nums[fast - 1]`
 
 ## 代码实现
 

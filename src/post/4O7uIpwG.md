@@ -93,7 +93,7 @@ class MonotonicQueue {
 
 关于 `push(item)` 的逻辑，可以参考下图
 
-![cos-blog-832-34-20241012](https://blog-1310531898.cos.ap-beijing.myqcloud.com/832-34-20241012/Pasted%20image%2020240811093920.png)
+![cos-blog-832-34-20241012|544](https://blog-1310531898.cos.ap-beijing.myqcloud.com/832-34-20241012/Pasted%20image%2020240811093920.png)
 
 > [!danger]
 >  会有疑问❓，都 `pop` 删除了，那岂不是队列里没值了，不是因为每次都会 push ，长度都会`+1` ，即使把前面的元素都干掉了，长度还是持续增加
@@ -102,17 +102,20 @@ class MonotonicQueue {
 
 删除队首，需要传一个参数，如果它是队首元素才需要删除
 
-![cos-blog-832-34-20241012](https://blog-1310531898.cos.ap-beijing.myqcloud.com/832-34-20241012/Pasted%20image%2020240811095429.png)
+![cos-blog-832-34-20241012|552](https://blog-1310531898.cos.ap-beijing.myqcloud.com/832-34-20241012/Pasted%20image%2020240811095429.png)
 
-## 4. 示例：滑动窗口最大值
+## 4. LeetCode：滑动窗口最大值
+
+> 第 239 题「[滑动窗口最大值](https://leetcode.cn/problems/sliding-window-maximum)」
+
 
 ### 4.1. 题目
 
-![cos-blog-832-34-20241012](https://blog-1310531898.cos.ap-beijing.myqcloud.com/832-34-20241012/Pasted%20image%2020240811080541.png)
+![cos-blog-832-34-20241012|560](https://blog-1310531898.cos.ap-beijing.myqcloud.com/832-34-20241012/Pasted%20image%2020240811080541.png)
 
 ### 4.2. 使用单调列队来解
 
-![cos-blog-832-34-20241012](https://blog-1310531898.cos.ap-beijing.myqcloud.com/832-34-20241012/Pasted%20image%2020240811101243.png)
+![cos-blog-832-34-20241012|552](https://blog-1310531898.cos.ap-beijing.myqcloud.com/832-34-20241012/Pasted%20image%2020240811101243.png)
 
 - 解题思路
 	- ① 初始化一个单调队列，用于维护**移动窗口**
