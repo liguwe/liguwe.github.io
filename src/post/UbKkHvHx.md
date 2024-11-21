@@ -12,7 +12,7 @@
 https://leetcode.cn/problems/first-missing-positive/
 
 
-![cos-blog-832-34-20241012|744](https://blog-1310531898.cos.ap-beijing.myqcloud.com/832-34-20241012/Pasted%20image%2020240825101102.png)
+![cos-blog-832-34-20241012|984](https://blog-1310531898.cos.ap-beijing.myqcloud.com/832-34-20241012/Pasted%20image%2020240825101102.png)
 
 ## 思路一
 

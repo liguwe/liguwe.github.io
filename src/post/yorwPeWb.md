@@ -267,7 +267,6 @@ var longestPalindrome = function (s) {
     return res;
 };
 
-
 /**
  * @desc 找下标以l,r 为中心的回文字符串，在 s 中寻找以 s[l] 和 s[r] 为中心的最长回文串
  * @param s 字符串

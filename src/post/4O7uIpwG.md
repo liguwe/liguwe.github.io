@@ -133,7 +133,6 @@ class MonotonicQueue {
     // 维护其中的元素自尾部到头部单调递增
     this.maxq = [];
   }
-
   // 在队尾添加元素 item
   // 在尾部添加一个元素 item，维护 maxq 的单调性质
   // 将前面小于自己的元素都删
@@ -144,7 +143,6 @@ class MonotonicQueue {
     }
     this.maxq.push(item);
   }
-
   // 返回队头元素, 即 maxq 队首元素
   // 队头的元素肯定是最大的
   max() {

@@ -9,7 +9,7 @@
 <!-- toc -->
  ## 题目及理解 
 
-![image.png](https://832-1310531898.cos.ap-beijing.myqcloud.com/b269dbb6ca9b010349e814b8bfbfb370.png)
+![image.png|568](https://832-1310531898.cos.ap-beijing.myqcloud.com/b269dbb6ca9b010349e814b8bfbfb370.png)
 
 ## 解题思路
 

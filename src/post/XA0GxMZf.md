@@ -4,7 +4,6 @@
 
 `#leetcode`   `#2024/08/05`   
 
-另外见 [12. 算法/3. 刷题篇/2. LeetCode 热题 100 题/13. 轮转数组|13. 轮转数组](/post/XA0GxMZf.html#12-算法/3-刷题篇/2-LeetCode-热题-100-题/13-轮转数组|13-轮转数组) 
 
 ## 目录
 <!-- toc -->
@@ -21,7 +20,7 @@
  * @param {number[]} nums  
  * @param {number} k  
  * @return {void} Do not return anything, modify nums in-place instead.  
- *// 数组分割  
+ */ 数组分割  
 var rotate = function (nums, k) {  
     const n = nums.length;  
     // base 1: 处理 k 大于数组长度的情况  

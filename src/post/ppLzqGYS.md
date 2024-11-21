@@ -54,7 +54,7 @@ let enqueue = (node) => {
 }
 ```
 
-> 当然，还是因为 `JavaScript` 没有对应的公共数据结构库。对应 Java 就有 `PriorityQueue`
+> 当然，还是因为 `JavaScript` 没有对应的公共数据结构库，**Leetcode 专门提供了专门的库，记得使用，别自己实现**。对应 Java 就有 `PriorityQueue`
 
 ## 3. 总结
 

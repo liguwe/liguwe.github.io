@@ -340,6 +340,7 @@ function quadraticRecur(n) {
 ![](https://832-1310531898.cos.ap-beijing.myqcloud.com/4f6e32f2f25b2223ae034964af127da9.png)
 
 #### 5、对数阶：O(log n)
+
 ![](https://832-1310531898.cos.ap-beijing.myqcloud.com/1061ba6d1caec553eef45ce34c47290b.png)
 > [!question]
  最后，数字转成字符串的表述，其实没太理解。

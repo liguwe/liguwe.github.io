@@ -550,7 +550,7 @@
 
   - [前言](post/Giei5JpV.md)
 
-  - [数据结构及算法基础](post/PvKMac5Z.md)
+  - [数据结构及算法基础](post/BuihSt0M.md)
 
 
     - [计算机算法的框架思维](post/9tpNOyei.md)
@@ -567,6 +567,8 @@
     - [数组与链表：JavaScript 描述](post/F9KXXAYE.md)
 
     - [链表：Python 描述](post/Xz1XYUYQ.md)
+
+    - [二维数组的遍历技巧](post/6kvWei9x.md)
 
     - [列表：Python 描述](post/qDxIH4HS.md)
 
@@ -588,6 +590,10 @@
     - [列队：Python 描述](post/Qz1pMS5p.md)
 
     - [双向队列：Python 描述](post/FoFMxfNa.md)
+
+    - [优先级队列及 TopK问题](post/mdiOnmX5.md)
+
+    - [优先级队列：Leetcode 中提供的数据结构介绍](post/hJhrbEBB.md)
 
   - [哈希表及相关算法](post/NVBk25aM.md)
 
@@ -648,8 +654,6 @@
 
     - [二叉堆](post/cC66K44w.md)
 
-    - [优先级队列及 TopK问题](post/1R45INHk.md)
-
     - [数据结构中的堆和内存中的堆的区别](post/vKZfB79M.md)
 
     - [堆内存和栈内存的区别](post/TQUm2607.md)
@@ -667,12 +671,18 @@
 
     - [图数据结构](post/VP30teBT.md)
 
+    - [并查集原理](post/hCuHw4O9.md)
+
   - [其他数据结构算法](post/DWo9ioaQ.md)
 
 
     - [单调列队算法](post/4O7uIpwG.md)
 
     - [常数时间删除、查找数组中的任意元素](post/9OlVUFIC.md)
+
+    - [LRU 算法](post/cQAIHb4U.md)
+
+    - [LFU 缓存](post/nmEEcx2O.md)
 
   - [回溯算法与 DFS 算法](post/aCEe3zgs.md)
 
@@ -739,16 +749,22 @@
 
     - [贪心算法：区间调度问题](post/ShN36uS1.md)
 
-  - [排序算法](post/bJijSn5m.md)
+  - [排序算法](post/suOLnYY5.md)
 
 
     - [归并排序](post/R7y1YqWN.md)
 
-    - [排序算法（高级）](post/4qAtmrLg.md)
+    - [排序算法基础](post/eW1K979T.md)
+
+    - [快速排序算法的原理及运用](post/Eu1dKB34.md)
+
+    - [排序算法（高级）](post/lPTNhyn5.md)
 
     - [深入理解快速排序](post/BVAbiP9r.md)
 
     - [深入理解归并排序](post/NtKD1Sk9.md)
+
+    - [煎饼排序](post/LOrcdAwY.md)
 
   - [搜索算法](post/FealC1L5.md)
 
@@ -762,9 +778,27 @@
 
     - [区间问题](post/SHEAIuID.md)
 
-    - [快速排序算法的原理及运用](post/BXBCERD6.md)
+    - [阶乘算法题](post/vHqoJIrm.md)
 
-    - [二维数组的遍历技巧](post/9d7nMm97.md)
+    - [一行代码就能解决的算法题](post/xIirOX6q.md)
+
+    - [完美矩阵](post/IAHsrleQ.md)
+
+    - [分割数组为连续子序列：斗地主的顺子](post/dgQYGpKx.md)
+
+    - [字符串乘法计算](post/2LLECEpC.md)
+
+    - [为运算表达式设计优先级](post/i6FEyoET.md)
+
+    - [丑数问题](post/5PhjFk3D.md)
+
+    - [常见的随机算法](post/KqRM7ZD7.md)
+
+    - [如何同时寻找缺失和重复的元素](post/ZUF3X9xf.md)
+
+    - [反直觉的概率问题](post/Detd2Q2t.md)
+
+    - [数学运算相关的题目](post/bRciQXIB.md)
 
     - [判断一个数是否是素数](post/pzNZ7le8.md)
 
@@ -793,17 +827,7 @@
 
     - [跳跃游戏 II](post/68avHDuU.md)
 
-    - [除法求值](post/ayjRpTle.md)
-
-    - [迷宫中离入口最近的出口](post/jY22PWrg.md)
-
-    - [腐烂的橘子](post/2YGpLYaP.md)
-
-    - [数组中的第K个最大元素](post/gJ8dAlZc.md)
-
     - [字母异位词分组](post/nIDWU1tn.md)
-
-    - [买卖股票的最佳时机 IV](post/WENfVWe6.md)
 
     - [最大子数组和](post/m73iaeSF.md)
 
@@ -831,6 +855,8 @@
 
     - [多数元素](post/JvB6s4Qe.md)
 
+    - [买卖股票的最佳时机 IV](post/0Yl4ImEk.md)
+
     - [轮转数组](post/XA0GxMZf.md)
 
     - [二叉树的右视图](post/5DLPkj4S.md)
@@ -854,6 +880,8 @@
     - [判断子序列](post/BtRBsp1A.md)
 
     - [字符串解码](post/cEScrVAg.md)
+
+    - [除法求值](post/dahCkntI.md)
 
     - [路径总和 III](post/HvihJENr.md)
 
@@ -880,6 +908,8 @@
     - [叶子相似的树](post/fisDyATh.md)
 
     - [最近的请求次数](post/VvTA99Ye.md)
+
+    - [腐烂的橘子](post/FAoyRw2S.md)
 
     - [最大连续 1 的个数 III](post/zDECDF0L.md)
 
@@ -908,6 +938,8 @@
     - [找到最高海拔](post/7yWWDxo5.md)
 
     - [交替合并字符串](post/ZKFcbnz2.md)
+
+    - [迷宫中离入口最近的出口](post/FPyCQLm9.md)
 
     - [链表最大孪生和](post/tNCdvO9i.md)
 

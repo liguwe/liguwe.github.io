@@ -292,6 +292,7 @@ console.log(heapObj.findMinimum());
 ![|568](https://832-1310531898.cos.ap-beijing.myqcloud.com/ac3f6d93656aceb38de5dfe7f1e81277.png)
 
 ### 7.3. 代码部分
+
 ```javascript
 // node节点类
 class Node {

@@ -9,7 +9,7 @@
 
 > [力扣（LeetCode）](https://leetcode.cn/problems/partition-equal-subset-sum/description/)
 
-![image.png|704](https://832-1310531898.cos.ap-beijing.myqcloud.com/04774a23f90d397bbb8af286c8b1cde9.png)
+![image.png|656](https://832-1310531898.cos.ap-beijing.myqcloud.com/04774a23f90d397bbb8af286c8b1cde9.png)
 
 ## 题解
 

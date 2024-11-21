@@ -9,7 +9,7 @@
 <!-- toc -->
  ## 1. 题目 
 
-![image.png](https://832-1310531898.cos.ap-beijing.myqcloud.com/3f1ea7b209fa83f23540a2c340ecfa50.png)
+![image.png|648](https://832-1310531898.cos.ap-beijing.myqcloud.com/3f1ea7b209fa83f23540a2c340ecfa50.png)
 
 ### 1.1. 重点
 
