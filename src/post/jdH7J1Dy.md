@@ -114,7 +114,7 @@ function Child() {
 
 ### 3.1. 事件委托机制
 
-- React事件是委托到 root节点 统一管理
+- React事件是委托到 `root节点` 统一管理
 - 原生事件是直接绑定到DOM元素上
 
 ### 3.2. 事件对象
@@ -209,3 +209,104 @@ useEffect(() => {
 - 优先使用React的合成事件系统
 - 只在特殊情况下使用原生事件（如需要捕获特定的键盘事件）
 
+## 9. React 的事件系统实现原理
+
+### 9.1. 事件委托（Event Delegation）
+
+React 实现了一个统一的事件系统，采用事件委托的方式：
+- 所有事件都绑定到 document 上（在 React 17 之后改为绑定到 root 容器上）
+- 当事件触发时，React 会找到对应的组件，然后执行相应的事件处理函数
+- 这种方式可以提高性能，减少内存占用
+
+### 9.2. 合成事件（SyntheticEvent）
+
+React 自己实现了一套事件机制，叫做 `SyntheticEvent`（合成事件）：
+
+```javascript
+// React 事件示例
+const Button = () => {
+  const handleClick = (e) => {
+    // e 是 SyntheticEvent 对象，而不是原生的 event
+    console.log(e);
+  }
+  
+  return <button onClick={handleClick}>点击</button>
+}
+```
+
+合成事件的特点：
+- 抹平了浏览器之间的兼容性差异
+- 对事件进行统一的处理和优化
+- 符合 W3C 规范
+- 可以通过 `e.nativeEvent` 访问原生事件对象
+
+### 9.3. 事件注册和触发流程
+
+#### 9.3.1. **事件注册阶段**
+
+   - React 在初始化时，会在 root 容器上注册所有需要的事件（如 click、change 等）
+	   - 所有事件都会被存储在一个 Map 中进行统一管理
+   - 通过 JSX 中声明的事件，会存储在组件的 fiber 节点中
+
+#### 9.3.2. **事件触发阶段**
+
+- 事件触发时，首先**生成合成事件对象**
+- 按照事件传播的特性（捕获 -> 目标 -> 冒泡）遍历节点
+- 调用对应的事件处理函数
+
+### 9.4. 事件池（Event Pool）
+
+在 React 17 之前：
+
+- React 维护了一个**事件池**，用于存放事件对象
+- 事件处理完成后，事件对象会被清空并放回池中重用
+- 这就是为什么在异步操作中无法访问事件对象
+
+```javascript
+// React 16 及之前版本
+function handleClick(e) {
+  // ❌ 这样无法工作
+  setTimeout(() => {
+    console.log(e.target.value);  // 此时 e 已被清空
+  }, 100);
+  
+  // ✅ 需要手动持久化
+  e.persist();
+  setTimeout(() => {
+    console.log(e.target.value);  // 现在可以工作了
+  }, 100);
+}
+```
+
+React 17 之后：
+
+- 移除了事件池机制
+- 事件对象可以在异步操作中被访问
+- 提升了开发体验
+
+### 9.5. 执行顺序
+
+React 事件和原生事件的执行顺序：
+
+1. 原生事件捕获阶段
+2. React 事件捕获阶段
+3. React 事件冒泡阶段
+4. 原生事件冒泡阶段
+
+```javascript hl:6
+// 事件执行顺序示例
+<div onClick={e => console.log('原生事件：冒泡')} 
+     onClickCapture={e => console.log('原生事件：捕获')}>
+  <button 
+    onClick={e => console.log('React事件：冒泡')}
+    onClickCapture={e => console.log('React事件：捕获')}>
+    点击
+  </button>
+</div>
+```
+
+### 9.6. React 的合成事件与原生事件之间存在一些重要的交互特性
+
+- 当同一个 DOM 同时绑定了原生事件和合成事件时，原生事件会先触发
+- 在原生事件中调用 stopPropagation() 会**阻止合成事件的执行**
+	- 这是因为合成事件依赖事件冒泡到 document（或 root）节点来实现事件委托

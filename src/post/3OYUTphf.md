@@ -26,8 +26,8 @@
 下面是详细使用示例：
 1. constructor
 2. static getDerivedStateFromProps
- 1. render
-3. componentDidMount
+3. render
+4. componentDidMount
 
 ```jsx hl:2,15,34,44
 class MyComponent extends React.Component {
@@ -94,7 +94,7 @@ class MyComponent extends React.Component {
 	-  `性能优化的点`
 - `render`，如上
 - `getSnapshotBeforeUpdate(prevProps, prevState)`
-	- 在 `render` 之后，`componentDidUpdate` 之前调用，
+	- 在 `render` 之后，`componentDidUpdate` 之前调用
 	- 最近一次渲染输出（提交到 DOM 节点）之前调用。即` React更新DOM或Refs之前调用 `
 	- 返回值作为第三个参数传给`componentDidUpdate`
 - `componentDidUpdate(prevProps, prevState, snapshot){}` ，更新后立即被调用，通常做以下操作
@@ -188,10 +188,10 @@ class MyComponent extends React.Component {
 
 ### 1.4. 第四阶段：错误处理阶段
 
-- `componentDidCatch(error, info)`，后代组件抛出错误后被调用，**发生在渲染阶段**
+- `componentDidCatch(error, info)`，**后代组件抛出错误后被调用**，**发生在渲染阶段**
 	- 返回值：返回一个对象来更新 state
 	- 用途：
-		- 在渲染错误页面之前更新 state
+		- **在渲染错误页面之前更新 state** ，==用于容错==
 		- 不应该产生副作用
 - getDerivedStateFromError 
 	- 参数：
@@ -203,7 +203,7 @@ class MyComponent extends React.Component {
 
 #### 1.4.1. 代码详细示例
 
-```jsx
+```jsx hl:10
 class MyComponent extends React.Component {
   // static getDerivedStateFromError
   static getDerivedStateFromError(error) {
@@ -359,7 +359,7 @@ class CompleteLifecycleComponent extends React.Component {
 	- 遵循单一职责原则
 	- 适当使用错误边界
 	- 正确处理异步操作
-- 还是多使用 Hooks 吧
+- 最后，还是多使用 Hooks 吧
 
 ## 2. React16 废弃了那些生命周期函数
 
@@ -369,13 +369,15 @@ class CompleteLifecycleComponent extends React.Component {
 	- 增加组件重回次数
 	- 使用静态方法代替：`getDerivedStateFromProps`，不使用 `this`，纯函数，不会写出副作用代码
 - `componentWillUpdate`：
-	- 在`fiber`中，render可被打断，**可能在wilMount中获取到的元素状态很可能与实际需要的不同**
+	- 在`fiber`中，==render 可被打断==，**可能在wilMount中获取到的元素状态很可能与实际需要的不同**
 	- 会触发多次
 		- 比如，在这个生命周期中，`调用setState会造成死循环`，导致程序崩溃。
 
-React 为什么要废弃 componentwillMount、componentWillReceiveProps、componentWillUpdate 这三个生命周期钩子？，它们有哪些问题呢？ React 又是如何解决的呢？
+React 为什么要废弃 `componentwillMount`、`componentWillReceiveProps`、`componentWillUpdate` 这三个生命周期钩子？，它们有哪些问题呢？ React 又是如何解决的呢？
 
 ![图片&文件](./files/20241111-16.png)
+
+==一句话就是，Render 阶段可能会被打断，那么 willxxx 就可以执行多次==
 
 ## 3. getDerivedStateFromError vs componentDidCatch 以及 Hooks 中的错误处理
 
@@ -412,6 +414,7 @@ class ErrorBoundary extends React.Component {
 
 主要区别：
 - getDerivedStateFromError 在`渲染阶段`调用，是同步的
+	- 用于==降级 UI，容错==
 - componentDidCatch 在`提交阶段`调用，可以执行副作用
 - `getDerivedStateFromError` 必须返回一个`状态对象`
 - `getDerivedStateFromError` 支持**服务端渲染**，而 `componentDidCatch` 不支持 
@@ -649,7 +652,7 @@ class MyComponent extends React.Component {
 
 #### 4.2.2. Hooks 方式：空依赖数组表示仅在挂载时执行
 
-```javascript
+```javascript hl:14
 function MyComponent() {
   useEffect(() => {
     console.log('组件已挂载');
@@ -737,7 +740,7 @@ function MyComponent() {
 
 #### 4.5.1. Class 组件
 
-```javascript
+```javascript hl:2,6
 class MyComponent extends React.Component {
   componentDidCatch(error, errorInfo) {
     logErrorToService(error, errorInfo);
@@ -836,7 +839,7 @@ const MemoizedComponent = React.memo(MyComponent);
 
 ### 4.8. 自定义生命周期 Hook
 
-```javascript
+```javascript hl:12
 // 组合多个生命周期的自定义 Hook
 function useLifecycle(props) {
   // 模拟 componentDidMount

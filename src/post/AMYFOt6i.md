@@ -24,13 +24,14 @@
 	- 使用 useMemo 缓存 Context 值
 - 列表渲染优化
 	- 使用稳定的 key
-	- 虚拟列表： 虚拟列表（react-window 或 react-virtualized）
+	- 虚拟列表： 
+		- 虚拟列表（react-window 或 react-virtualized）
 	- 分页或无限滚动
 - 事件处理函数优化，每次渲染都创建新的函数
 	- 使用 useCallback
 	-  使用 ref 存储函数，这是静态的，就不会每次都创建新函数
 - 异步操作和副作用优化
-	- 使用 AbortController 取消请求
+	- 使用 `AbortController` 取消请求
 	- 使用缓存
 	- 考虑使用 React Query 或 SWR 等数据管理库
 - 强制重新渲染：

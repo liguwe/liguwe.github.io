@@ -10,7 +10,7 @@
 
 最新推荐的创建 ref 的方式：
 
-```jsx
+```jsx hl:5
 // 1.1 在类组件中使用
 class MyComponent extends React.Component {
   constructor(props) {
@@ -97,7 +97,7 @@ function MultipleRefs() {
 
 通过回调函数的方式设置 ref：
 
-```jsx hl:1,22
+```jsx hl:1,22,15,36
 // 3.1 基本用法
 class CallbackRefComponent extends React.Component {
   setTextInputRef = (element) => {
@@ -260,7 +260,7 @@ function VideoPlayer({ src }) {
 
 1. 优先使用 `useRef` 和 `createRef`
 2. 需要更细粒度控制时使用回调 `refs`
-3. 需要跨组件传递 ref 时使用 `forwardRef`
+3. 需要**跨组件传递 ref 时**使用 `forwardRef`
 4. 避免使用`字符串 refs` 和 `findDOMNode`
 5. 只在必要时使用 refs（如焦点管理、动画、第三方 DOM 库集成等）
 6. 不要过度使用 refs 来操作 DOM，尽量通过 React 的声明式更新来管理 UI

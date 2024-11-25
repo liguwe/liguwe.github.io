@@ -37,9 +37,9 @@ React.createElement(type, props, ...children)
 ```
 
 参数说明：
-- type:  元素类型（字符串或 React 组件）
-- props:  属性对象
-- children:  子元素
+- `type`:  元素类型（字符串 或  React 组件）
+- `props`:  属性对象
+- `children`:  子元素
 
 ### 2.2. createElement 的简化实现
 
@@ -170,7 +170,7 @@ items.map(item =>
 
 JSX 的原理可以概括为以下几个关键点：
 
-1. JSX 是一种语法糖，最终会被转换为 React.createElement() 调用
+1. JSX 是一种语法糖，最终会被转换为 `React.createElement()` 调用
 2. 转换过程通过 Babel 等工具完成，包含词法分析、语法分析和代码生成
 3. createElement 函数创建虚拟 DOM 对象
 4. 虚拟 DOM 对象描述了真实 DOM 的结构

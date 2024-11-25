@@ -20,7 +20,6 @@ const withExample = (WrappedComponent) => {
     }
   }
 }
-
 // 使用 HOC
 const EnhancedComponent = withExample(OriginalComponent);
 ```
@@ -85,11 +84,9 @@ const withState = (WrappedComponent) => {
     state = {
       count: 0
     };
-
     increment = () => {
       this.setState(prev => ({ count: prev.count + 1 }));
     };
-
     render() {
       return (
         <WrappedComponent
@@ -442,3 +439,108 @@ const memoizedHOC = (WrappedComponent) => {
   });
 };
 ```
+
+## 9. 高阶组件，为什么静态方法会丢失？
+
+### 9.1. **组件包装的本质**
+
+高阶组件本质上是一个函数，它接受一个组件作为参数，然后返回一个新的组件。这个新组件通常会包装原始组件。例如：
+
+```javascript
+function withExampleHOC(WrappedComponent) {
+  return class extends React.Component {
+    render() {
+      return <WrappedComponent {...this.props} />;
+    }
+  }
+}
+```
+
+在这个过程中，**返回的是一个全新的组件类，而不是原始组件的修改版本**
+
+### 9.2. **静态方法不会被继承**
+
+JavaScript 中，静态方法是定义在类本身上，而不是类的原型上。当我们创建一个新的组件类来包装原始组件时，这个新类并不会自动继承原始组件的静态方法 
+
+### 9.3. **React 的组件模型**
+
+React 的组件模型主要关注实例方法和生命周期，而不是静态方法。
+当 React 处理组件时，它主要关注组件的 render 方法和生命周期方法，而不会特别处理静态方法
+
+### 9.4. 示例说明
+
+考虑以下例子：
+
+```javascript hl:2
+class OriginalComponent extends React.Component {
+  static staticMethod() {
+    console.log('This is a static method');
+  }
+
+  render() {
+    return <div>Original Component</div>;
+  }
+}
+
+function withHOC(WrappedComponent) {
+  return class extends React.Component {
+    render() {
+      return <WrappedComponent {...this.props} />;
+    }
+  }
+}
+
+const EnhancedComponent = withHOC(OriginalComponent);
+
+// 这会导致错误，因为 staticMethod 不存在于 EnhancedComponent 上
+EnhancedComponent.staticMethod();
+```
+
+在这个例子中，`EnhancedComponent` 是一个全新的类，它不包含 `OriginalComponent` 的静态方法。
+
+### 9.5. 解决方案
+
+#### 9.5.1. **手动复制静态方法**
+
+你可以在 HOC 中手动复制静态方法：
+
+```javascript hl:8
+function withHOC(WrappedComponent) {
+  class HOC extends React.Component {
+    render() {
+      return <WrappedComponent {...this.props} />;
+    }
+  }
+  
+  HOC.staticMethod = WrappedComponent.staticMethod;
+  return HOC;
+}
+```
+
+### 9.6. **使用 hoist-non-react-statics**
+
+这就是为什么 `hoist-non-react-statics` 库变得有用。它自动处理静态方法的复制：
+
+```javascript
+import hoistNonReactStatics from 'hoist-non-react-statics';
+
+function withHOC(WrappedComponent) {
+  class HOC extends React.Component {
+    render() {
+      return <WrappedComponent {...this.props} />;
+    }
+  }
+  
+  return hoistNonReactStatics(HOC, WrappedComponent);
+}
+```
+
+这个库会自动复制所有非 React 特定的静态方法，同时避免覆盖 React 特定的静态属性（如 `displayName`、`propTypes` 等）
+
+### 9.7. **使用组合而不是继承**
+
+React 推荐使用组合而不是继承。在某些情况下，你可以通过组合来避免使用 HOC，从而避免静态方法丢失的问题
+
+### 9.8. 结论
+
+高阶组件中静态方法丢失是由于 JavaScript 的类继承机制和 React 的组件模型共同导致的。理解这一点有助于我们更好地设计组件和使用 HOC。虽然有多种方法可以解决这个问题，但 `hoist-non-react-statics` 提供了一个简洁和自动化的解决方案，特别是在处理复杂组件或第三方库时。

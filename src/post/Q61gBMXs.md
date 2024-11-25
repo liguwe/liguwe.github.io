@@ -83,17 +83,17 @@ const store = createStore(reducer)
 - 可以携带额外数据
 
    ```javascript
-   // 普通 action
-   const addTodo = {
-     type: 'ADD_TODO',
-     payload: { text: '学习 Redux' }
-   }
-   
-   // action creator
-   const addTodo = (text) => ({
-     type: 'ADD_TODO',
-     payload: { text }
-   })
+// 普通 action
+const addTodo = {
+ type: 'ADD_TODO',
+ payload: { text: '学习 Redux' }
+}
+
+// action creator
+const addTodo = (text) => ({
+ type: 'ADD_TODO',
+ payload: { text }
+})
    ```
 
 ### 3.4. Reducer
@@ -102,18 +102,18 @@ const store = createStore(reducer)
 - 接收旧状态和 action，返回新状态
 - 不应直接修改旧状态
 
-   ```javascript
-   const todoReducer = (state = [], action) => {
-     switch (action.type) {
-       case 'ADD_TODO':
-         return [...state, action.payload];
-       case 'REMOVE_TODO':
-         return state.filter(todo => todo.id !== action.payload.id);
-       default:
-         return state;
-     }
-   }
-   ```
+```javascript
+const todoReducer = (state = [], action) => {
+ switch (action.type) {
+   case 'ADD_TODO':
+	 return [...state, action.payload];
+   case 'REMOVE_TODO':
+	 return state.filter(todo => todo.id !== action.payload.id);
+   default:
+	 return state;
+ }
+}
+```
 
 ## 4. 基本使用流程
 
@@ -184,26 +184,23 @@ const store = createStore(
   reducer,
   applyMiddleware(thunk)
 )
-
 ```
 
 #### 5.2.1. 比如日志中间件
 
    ```javascript
-   // 日志中间件示例
-   const logger = store => next => action => {
-     console.log('dispatching', action);
-     let result = next(action);
-     console.log('next state', store.getState());
-     return result;
-   };
+// 日志中间件示例
+const logger = store => next => action => {
+	 console.log('dispatching', action);
+	 let result = next(action);
+	 console.log('next state', store.getState());
+	 return result;
+};
    ```
 
 ## 6. 最佳实践
 
-2. Action 使用注意点：
 
-3. Reducer 注意点：
 
 ### 6.1. State 结构设计
 
@@ -291,28 +288,28 @@ Action -> Dispatcher -> Store -> View
 - 确保状态同步更新
 
    ```javascript
-   function createStore(reducer) {
-     let state;
-     let listeners = [];
-     
-     const getState = () => state;
-     
-     const dispatch = (action) => {
-       state = reducer(state, action);
-       listeners.forEach(listener => listener());
-     };
-     
-     const subscribe = (listener) => {
-       listeners.push(listener);
-       return () => {
-         listeners = listeners.filter(l => l !== listener);
-       };
-     };
-     
-     dispatch({}); // 初始化 state
-     
-     return { getState, dispatch, subscribe };
-   }
+function createStore(reducer) {
+	 let state;
+	 let listeners = [];
+	 
+	 const getState = () => state;
+	 
+	 const dispatch = (action) => {
+	   state = reducer(state, action);
+	   listeners.forEach(listener => listener());
+	 };
+	 
+	 const subscribe = (listener) => {
+	   listeners.push(listener);
+	   return () => {
+		 listeners = listeners.filter(l => l !== listener);
+	   };
+	 };
+	 
+	 dispatch({}); // 初始化 state
+	 
+	 return { getState, dispatch, subscribe };
+}
    ```
 
 ### 7.3. 中间件实现原理
@@ -457,7 +454,7 @@ Action -> Dispatcher -> Store -> View
 4. 发出去的 action 需要用 reducer 来处理，传入 state 和 action，返回新的 state
 5. subscribe 方法可以注册回调方法，当 dispatch action 的时候会执行里面的回调
 6. Redux 其实是一个`发布订阅模式`
-7. Redux 支持 enhancer，enhancer 其实就是一个装饰器函数，传入当前的 createStore，返回一个增强的 createStore
+7. Redux 支持 `enhancer`，enhancer 其实就是一个装饰器函数，传入当前的 createStore，返回一个增强的 createStore
 8. Redux 使用 `applyMiddleware` 函数支持中间件，它的返回值其实就是一个 enhancer
 9. Redux 的中间件也是一个装饰器模式，传入当前的 dispatch，返回一个增强了的 dispatch
 10. 单纯的 Redux 是没有 View 层的

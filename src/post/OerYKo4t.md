@@ -133,7 +133,7 @@ useLayoutEffect(() => {
 
 ### 6.2. 性能问题
 
-```jsx
+```jsx hl:6
 // 避免在 useLayoutEffect 中进行耗时操作
 useLayoutEffect(() => {
   // 不推荐
@@ -177,7 +177,7 @@ useEffect(() => {
 
 - 默认使用 useEffect
 - 当**出现以下情况时考虑使用 useLayoutEffect**：
-	- 需要同步测量 DOM
-	- 需要在视觉更新之前修改 DOM
-	- 出现闪烁问题需要解决
+	- 需要同**步测量 DOM**
+	- 需要**在视觉更新之前修改 DOM**
+	- 出现**闪烁**问题需要解决
 - 在使用 useLayoutEffect 时注意性能影响

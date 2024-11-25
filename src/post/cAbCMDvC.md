@@ -32,7 +32,7 @@ useEffect(() => {
 
 ## 3. 详细示例
 
-让我通过几个具体的例子来说明 `useEffect` 的不同使用场景：
+通过几个具体的例子来说明 `useEffect` 的不同使用场景：
 
 1. 基础效果：每次 count 改变时执行
 2. 模拟数据获取
@@ -83,7 +83,7 @@ const EffectExamples = () => {
     return () => {
       window.removeEventListener("resize", handleResize);
     };
-  }, []); // 空依赖数组，但包含清理函数
+  }, []); // 空依赖数组，但包含清理函数，只在组件挂载时执行一次
 
   // 4. 定时器示例
   useEffect(() => {
@@ -95,7 +95,7 @@ const EffectExamples = () => {
     return () => {
       clearInterval(intervalId);
     };
-  }, []); // 空依赖数组，但包含清理函数
+  }, []); // 空依赖数组，但包含清理函数，只在组件挂载时执行一次
 
   return (
     <div className="p-4 space-y-4">
@@ -127,9 +127,7 @@ const EffectExamples = () => {
     </div>
   );
 };
-
 export default EffectExamples;
-
 ````
 
 ## 4. 依赖数组的使用规则
@@ -138,31 +136,30 @@ export default EffectExamples;
 
 - 效果**只在组件挂载时执行一次**
 
-
    ```jsx
-   useEffect(() => {
-     console.log('组件挂载');
-   }, []);
+useEffect(() => {
+ console.log('组件挂载');
+}, []);
    ```
 
 ### 4.2. **有依赖的数组 `[dep1, dep2]`**
 
    - 当依赖项改变时执行
    ```jsx
-   useEffect(() => {
-     console.log('依赖项改变');
-   }, [dep1, dep2]);
+useEffect(() => {
+	console.log('依赖项改变');
+}, [dep1, dep2]);
    ```
 
 #### 4.2.1. **没有依赖数组**
 
 - **每次渲染都执行**
 
-   ```jsx
-   useEffect(() => {
-     console.log('每次渲染');
-   });
-   ```
+```jsx
+useEffect(() => {
+	console.log('每次渲染');
+});
+```
 
 ## 5. 清理函数（Cleanup）
 
@@ -198,7 +195,7 @@ useEffect(() => {
 
 1. 首次渲染：执行 effect
 2. count 更新时：
-   - 先执行上一次的清理函数
+   - **先执行**上一次的清理函数
    - 然后执行新的 effect
 
 > 和  Vue 的 watch 是不是很像
@@ -341,7 +338,7 @@ useEffect(() => {
 
 #### 5.6.2. **清理函数的返回值**
 
-```jsx
+```jsx hl:2,6
 useEffect(() => {
   // 清理函数必须返回 undefined
   return () => {
@@ -385,7 +382,7 @@ useEffect(() => {
 
 ### 6.3. **依赖项处理**
 
-需要包含所有使用的外部变量，如下：
+需要**包含所有使用的外部变量**，如下：
 
 ```jsx
 // 正确的依赖项处理
@@ -500,7 +497,7 @@ useEffect(() => {
 ```
 
 这个方案的优点：
-- 可以真正取消进行中的请求
+- 可以**真正取消进行中**的请求
 - 更好的错误处理
 - 更完整的状态管理（loading、error 状态）
 
@@ -510,15 +507,12 @@ useEffect(() => {
 
 ```jsx
 import { debounce } from 'lodash';
-
 useEffect(() => {
   const debouncedFetch = debounce(async () => {
     const data = await fetchUserData(userId);
     setUserData(data);
   }, 300);
-
   debouncedFetch();
-
   return () => {
     debouncedFetch.cancel();
   };
@@ -540,8 +534,8 @@ const { data, isLoading } = useQuery(
 - 始终实现清理函数
 - **始终返回清理函数来防止内存泄漏**
 - 确保清理函数清理了所有副作用
-- 在开发时使用 React DevTools 检查是否有遗漏的清理
-- 使用 `ESLint` 的 exhaustive-deps 规则确保依赖项正确
+- 在开发时使用 **React DevTools** 检查是否有遗漏的清理
+- 使用 `ESLint` 的 `exhaustive-deps 规则`确保依赖项正确
 - 测试组件的挂载、更新和卸载场景
 - 考虑使用 `AbortController` 取消请求
 - 适当的错误处理

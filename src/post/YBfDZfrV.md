@@ -10,7 +10,7 @@
 <!-- toc -->
  ## 1. 定义和基本概念 
 
-useImperativeHandle 是 React 提供的一个高级 Hook，**它可以让你自定义通过 ref 暴露给父组件的实例值。它通常与 forwardRef 一起使用，用于向父组件暴露特定的方法或属性**
+`useImperativeHandle` 是 React 提供的一个高级 Hook，**它可以让你自定义通过 ref 暴露给父组件的实例值。它通常与 forwardRef 一起使用，用于向父组件暴露特定的方法或属性**
 
 useImperativeHandle 是一个强大但应谨慎使用的 Hook。它主要用于需要精确控制组件对外暴露的实例值的场景。
 - 在大多数情况下，我们应该**优先考虑使用 props 和状态管理来处理组件间的通信**。

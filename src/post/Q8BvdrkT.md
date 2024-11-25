@@ -409,11 +409,10 @@ function FiberNode(
 - 构建 Fiber 树：
 	-  workInProgress tree
 - Diff 算法
-- 收集副作用：
-	- 生成 effects list
-
+- **收集副作用**：
+	- 生成 `effects list`
 - **目标**: 确定哪些部分的UI需要更新
-- **原理**: 这是React构建`工作进度树`的阶段，会比较新的props 和 旧的Fiber树来确定哪些部分需要更新
+- **原理**: 这是React构建`工作进度树`的阶段，会比较新的 props 和 旧的Fiber树来确定哪些部分需要更新
 
 ### 6.1. `react-reconciler`包
 
@@ -516,11 +515,11 @@ ReactDOM.render(<App />, document.getElementById("root"));
 
 ## 7. 渲染阶段（Renderer） ：commit 阶段
 
-- Render 阶段可能被打断，但 `commit`   
+- Render 阶段可能被打断，但 `commit`   不能
 - 目标：更新DOM并**执行副作用** 
 - 遍历在`Reconciliation阶段（render 阶段）`创建的副作用列表进行更新
 
-```javascript
+```javascript hl:2,5,8
 function commitRoot(root: FiberRoot) {
   // 1. 执行前置操作：执行`DOM`操作前）
   commitBeforeMutationEffects(root);
@@ -534,7 +533,7 @@ function commitRoot(root: FiberRoot) {
 
 ```
 
-- `before mutation阶段`，会遍历`effectList`，依次执行：
+- `before mutation 阶段`，会遍历`effectList`，依次执行：
 	- 处理`DOM节点`渲染/删除后的 `autoFocus`、`blur`逻辑
 	- 调用`getSnapshotBeforeUpdate`生命周期钩子
 	- 调度`useEffect`

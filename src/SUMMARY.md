@@ -329,6 +329,8 @@
 
     - [React 重新渲染的场景以及对应的优化方案](post/AMYFOt6i.md)
 
+    - [强制重新渲染有哪些方式？](post/MHLW7rSj.md)
+
     - [React.memo 和 useMemo 的区别是什么？React.useCallback 和 useCallback 呢？](post/TfG8MRYb.md)
 
     - [PureComponent](post/zSeYNzez.md)
@@ -367,11 +369,11 @@
 
     - [对比 Next.js 与 Nuxt.js](post/7Bsj1m0V.md)
 
-    - [请介绍一下 remix 框架](post/SC5mM2Jj.md)
+    - [请介绍一下 Remix 框架](post/bF4GfSnS.md)
 
     - [React 整体架构介绍](post/Q8BvdrkT.md)
 
-    - [聊聊 React 的源码结构](post/FMywxqCg.md)
+    - [React 的源码结构](post/cG4feQ0B.md)
 
     - [使用 useTransition 进行非阻塞渲染](post/oielQ5IK.md)
 

@@ -10,6 +10,8 @@
 
 PureComponent 是 React 提供的一个基础组件类，它自动实现了 `shouldComponentUpdate` 生命周期方法，通`过浅比较（shallow comparison）props 和 state` 来决定是否需要重新渲染组件
 
+PureComponent **完全支持所有常规的 React 生命周期方法**。它主要通过自动实现 `shouldComponentUpdate()` 来优化性能，但不会限制你使用其他生命周期钩子。
+
 ## 2. PureComponent vs Component
 
 ```javascript

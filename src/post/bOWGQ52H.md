@@ -1391,7 +1391,7 @@ Math.abs((0.1 + 0.2) - 0.3) < epsilon // true
 
 ![图片&文件](./files/20241111-14.png)
 
-## 52. 实现一个压缩算法，比如 aabcccccaaa会变为a2b1c5a3
+## 52. 实现一个压缩算法，比如 aabcccccaaa 会变为 a2b1c5a3
 
 ### 52.1. 方法一：分割成数组遍历
 

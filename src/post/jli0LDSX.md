@@ -103,6 +103,8 @@ ReactDOM.render(
 
 这是向并发模式过渡的中间模式。
 
+`createBlockingRoot`
+
 ```javascript hl:4
 // Blocking 模式
 import ReactDOM from 'react-dom';
@@ -121,6 +123,8 @@ ReactDOM.createBlockingRoot(
 ### 2.5. Concurrent 模式（React 18+）
 
 最新的渲染模式，支持所有新特性
+
+`createRoot`
 
 ```javascript hl:5
 // Concurrent 模式

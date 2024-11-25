@@ -265,7 +265,7 @@ function App() {
 - 需要复用逻辑的
 	- 使用高阶组件或自定义 Hooks
 - 需要性能优化的
-	- 使用 React.memo 或 PureComponent
+	- 使用 `React.memo` 或 `PureComponent`
 - 需要代码分割的
-	- 使用 lazy 和 Suspense
+	- 使用 `lazy` 和 `Suspense`
 

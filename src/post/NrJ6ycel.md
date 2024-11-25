@@ -74,8 +74,8 @@ function OptimizedComponent() {
 	- 副作用使用 `watch/watchEffect`
 	- 副作用使用 useEffect，然后修改状态值，再将状态值作为 useMemo 的依赖项
 - 计算时机
-	- vue 只有依赖变化时重新计算
-	- react 每次渲染都会检查依赖数组，依赖未变化时使用缓存值
+	- vue **只有依赖变化时重新计算**
+	- react **每次渲染都会检查依赖数组**，依赖未变化时使用缓存值
 
 Vue 的组合式 API 中的 computed 更符合`响应式编程范式`
 而 React 的 useMemo 则更符合`函数式编程思维`。
@@ -217,9 +217,9 @@ function ParentComponent() {
 		- 复杂的数据处理
 		- 需要缓存引用的对象
 	- useCallback：
-		- 传递给子组件的回调函数
+		- **传递给子组件的回调函数**
 		- 防止不必要的重渲染
-		- 需要保持函数引用稳定的场景
+		- 需要保持**函数引用稳定**的场景
 - 性能考虑：
 	- 不是所有值都需要 useMemo
 	- 不是所有函数都需要 useCallback
@@ -228,10 +228,11 @@ function ParentComponent() {
 ### 6.5. 使用建议
 
 1. 优先考虑代码的可读性和维护性，而不是过早优化
+	1. **过早优化是万恶之源**
 2. 在以下情况使用 useMemo：
 	- 计算成本高的操作
 	- 需要保持引用相等的对象
-3. 在以下情况使用 useCallback：
+3. 在以下情况使用 `useCallback`：
 	- **传递给使用 React.memo 的子组件的函数**
 	- 函数作为其他 Hook 的依赖项
 4. 避免过度使用：
@@ -580,7 +581,7 @@ function ComplexForm() {
 	- 组件内部使用的函数通常不需要 useCallback
 	- 只渲染一次的组件不需要 useCallback
 - 性能优化原则：
-	- 先测量，后优化
+	- **先测量，后优化**
 	- 使用 React DevTools Profiler 检测性能问题
 	- 关注实际用户体验而不是理论优化
 - 结合其他优化技术：
