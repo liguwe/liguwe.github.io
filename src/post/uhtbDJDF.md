@@ -81,8 +81,7 @@ var lengthOfLIS = function(nums) {
 
 这种解法应用于 [俄罗斯套娃：二维最长递增子序列](https://www.yuque.com/liguwe/agorithms/xh82rz1hu7r84xl4 "俄罗斯套娃：二维最长递增子序列") ，这样才能通过 leetcode 测试
 
-
-## 扩展到二维 - 俄罗斯套娃
+## 6. 扩展到二维 - 俄罗斯套娃
 
 - [https://leetcode.cn/problems/russian-doll-envelopes/](https://leetcode.cn/problems/russian-doll-envelopes/)
 
@@ -144,5 +143,4 @@ function lengthOfLIS(nums) {
 
 > [!danger]
 注意：以上方式不能通过 LeetCode 的所有用例，需要使用二分法才能通过
-
 

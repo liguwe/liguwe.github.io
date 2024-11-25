@@ -38,7 +38,7 @@ function myNonEssentialWork(deadline) {
 - 复杂计算的分割执行
 - 非关键数据的处理和分析
 - 大量 DOM 操作：
-	- 例如，动态插入大量 DOM 元素时，可以使用 requestIdleCallback 分批处理，避免长时间阻塞主线程。
+	- 例如，动态插入大量 DOM 元素时，可以使用 `requestIdleCallback` 分批处理，避免长时间阻塞主线程。
 - 数据处理：
 	- 处理大量数据或执行复杂计算时，可以将任务分割并在空闲时执行。
 - 预加载：

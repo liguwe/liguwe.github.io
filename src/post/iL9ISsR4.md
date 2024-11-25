@@ -86,7 +86,8 @@
 
 ### 4.4. 总结
 
-- 对于已经脱离文档流的元素（如 position: absolute 或 fixed），仅修改 left 和 right 的值通常不会导致其他元素的回流，但可能会导致该元素本身的重绘。
+- 对于已经脱离文档流的元素（如 position: absolute 或 fixed）
+	- 仅修改 left 和 right 的值通常不会导致其他元素的回流，但可能会导致该元素本身的重绘。
 - 对于` position: relative` 来说，会导致
 - 对于 `position: sticky` 看属于那个阶段
 
@@ -162,8 +163,8 @@ function animate() {
 requestAnimationFrame(animate);
 ```
 
-- 使用 `requestAnimationFrame` 来控制动画。
-- 使用 CSS3 动画和 `transforms` 替代 JavaScript 动画。
+- 使用 `requestAnimationFrame` 来控制动画
+- 使用 CSS3 动画和 `transforms` 替代 JavaScript 动画
 
 ### 5.8. 使用 CSS3 硬件加速
 
@@ -193,15 +194,16 @@ el.style.display = 'none';
 // 进行大量 DOM 操作
 el.style.display = 'block';
 ```
+
 > 当元素设为 `display: none` 时，对其进行的操作不会引发重排和重绘。
 
 ### 5.12. 使用虚拟 DOM
 
-- 像 React、Vue 这样的框架使用虚拟 DOM 来优化实际 DOM 操作。
+- 像 React、Vue 这样的框架使用虚拟 DOM 来优化实际 DOM 操作
 
 ### 5.13. 使用防抖(Debounce)和节流(Throttle)
 
-对于频繁触发的事件（如滚动、调整窗口大小等），使用这些技术来限制处理函数的执行频率。
+对于频繁触发的事件（如滚动、调整窗口大小等），使用这些技术来限制处理函数的执行频率
 
 ### 5.14. 分离读写操作
 
@@ -219,7 +221,7 @@ element1.style.height = `${h1 * 2}px`;
 element2.style.height = `${h2 * 2}px`;
 ```
 
-先进行所有的读操作，然后再进行写操作，避免读写交叉导致多次重排。
+先进行所有的读操作，然后再进行写操作，避免读写交叉导致多次重排
 
 > 在实际应用中，应根据具体情况选择合适的优化方法。
 

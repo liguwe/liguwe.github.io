@@ -432,6 +432,7 @@ console.log(sort(graph));
 ## 最小生成树
 
 ### Dijkstra 算法 - 贪心算法
+
 贪心算法遵循一种近似解决问题的技术，期盼通过每个阶段的局部最优选择(当前最好的解)，从而达到全局的最优(全局最优解)。
 
 ![image.png](https://832-1310531898.cos.ap-beijing.myqcloud.com/edd2c601a2a984e6d244e7115d7e4f31.png)
@@ -542,16 +543,12 @@ console.log(dist);
 
 ## 题目
 看力扣第 797 题「 [所有可能路径](https://leetcode.cn/problems/all-paths-from-source-to-target/)」,
-![image.png](https://832-1310531898.cos.ap-beijing.myqcloud.com/3886b417d7691307389f24eb44eaef4f.png)
-![image.png](https://832-1310531898.cos.ap-beijing.myqcloud.com/7b3ee33913d2a43127b74ece5e54e8ce.png)
+![image.png|504](https://832-1310531898.cos.ap-beijing.myqcloud.com/3886b417d7691307389f24eb44eaef4f.png)
+![image.png|568](https://832-1310531898.cos.ap-beijing.myqcloud.com/7b3ee33913d2a43127b74ece5e54e8ce.png)
 
 
 ## 分析
 以 `0` 为起点遍历图，`同时记录遍历过的路径`，当遍历到终点时将路径记录下来即可 ，既然输入的图是`无环`的，我们就不需要 `visited` 数组辅助了，直接套用图的遍历框架：
-
-
-
-
 
 
 ## DFS解法
@@ -621,8 +618,9 @@ console.log(allPathsSourceTarget(graph));
 ```
 
 ## 深度遍历
-![image.png](https://832-1310531898.cos.ap-beijing.myqcloud.com/50134014891f5dee4d35bdd9d80779bc.png)
-![image.png](https://832-1310531898.cos.ap-beijing.myqcloud.com/c5f57e1baa4c4188140dff78896d42bd.png)
+
+![image.png|600](https://832-1310531898.cos.ap-beijing.myqcloud.com/50134014891f5dee4d35bdd9d80779bc.png)
+![image.png|536](https://832-1310531898.cos.ap-beijing.myqcloud.com/c5f57e1baa4c4188140dff78896d42bd.png)
 ```javascript
 function dfs(graph) {
     // 记录被遍历过的节点
@@ -673,7 +671,7 @@ dfs(g, 0);
 
 # 拓扑排序详解及运用
 先来看看力扣第 207 题「 [课程表](https://leetcode.cn/problems/course-schedule/)」：
-![image.png](https://832-1310531898.cos.ap-beijing.myqcloud.com/c7f78bb6f5498a3137d585140c26ed64.png)
+![image.png|576](https://832-1310531898.cos.ap-beijing.myqcloud.com/c7f78bb6f5498a3137d585140c26ed64.png)
 
 
 ## 先构建图
@@ -684,6 +682,7 @@ dfs(g, 0);
 
 
 # BFS
+ 
  BFS 出现的常见场景好吧，**问题的本质就是让你在一幅「图」中找到从起点 **`**start**`** 到终点 **`**target**`** 的最近距离，这个例子听起来很枯燥，但是 BFS 算法问题其实都是在干这个事儿**
 
 ## 框架

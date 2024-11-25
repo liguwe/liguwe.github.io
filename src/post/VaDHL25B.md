@@ -53,7 +53,7 @@
 
 ## 3. **设备类型查询**
 
-```css
+```css hl:8
 /* 屏幕设备 */
 @media screen {
     .print-only {

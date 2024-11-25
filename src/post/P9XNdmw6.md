@@ -3,7 +3,7 @@
 
 
 # Javascript 的组成
-![image.png](https://832-1310531898.cos.ap-beijing.myqcloud.com/yuque/a9104fded4d48d2d613eecce29dc3a26.png)
+![image.png|632](https://832-1310531898.cos.ap-beijing.myqcloud.com/yuque/a9104fded4d48d2d613eecce29dc3a26.png)
 
 - ECMAScript：由 ECMA-262 定义并提供核心功能
 - 文档对象模型(DOM)：提供与`网页内容`交互的方法和接口

@@ -93,7 +93,7 @@ co(function* () {
 ## 5. 协程 vs 其他概念
 
 - 协程是一个更广泛的概念，生成器是JavaScript中协程的一种实现。
-- async/await、Thunk、co 函数都可以看作是基于协程思想的不同层次的抽象和实现。
+- async/await、Thunk、co 函数都可以看作是**基于协程思想的不同层次的抽象和实现**。
 
 ## 6. co 函数的最简实现
 

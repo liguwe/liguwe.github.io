@@ -164,20 +164,20 @@ export default memo(Component);
     - 可访问性优化
 ### 6.2. **优化清单**
 
-  加载优化
-  - [ ] 路由懒加载
-  - [ ] 图片懒加载
-  - [ ] 代码分割
-  - [ ] 资源预加载
-  渲染优化
-  - [ ] 虚拟列表
-  - [ ] 防抖节流
-  - [ ] 组件缓存
-构建优化
-  - [ ] Tree Shaking
-  - [ ] 压缩资源
-  - [ ] 缓存策略
-  - [ ] CDN 部署
+  - 加载优化
+	  - 路由懒加载
+	  - 图片懒加载
+	  - 代码分割
+	  - 资源预加载
+  - 渲染优化
+	  - 虚拟列表
+	  - 防抖节流
+	  - 组件缓存
+- 构建优化
+	- Tree Shaking
+	- 压缩资源
+	- 缓存策略
+	- CDN 部署
 
 ## 7. 文档规范
 
@@ -200,6 +200,7 @@ export default memo(Component);
 ## 8. 监控与日志规范（质量保证体系）
 
 ### 8.1. **错误监控**
+
 ```typescript
 // 错误监控配置
 window.onerror = function(message, source, lineno, colno, error) {

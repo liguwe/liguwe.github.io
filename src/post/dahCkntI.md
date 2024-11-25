@@ -9,7 +9,7 @@
 <!-- toc -->
  ## 1. 题目及理解 
 
-![cos-blog-832-34-20241012](https://blog-1310531898.cos.ap-beijing.myqcloud.com/832-34-20241012/Pasted%20image%2020240914213736.png)
+![cos-blog-832-34-20241012|1064](https://blog-1310531898.cos.ap-beijing.myqcloud.com/832-34-20241012/Pasted%20image%2020240914213736.png)
 
 ## 2. 思路：使用 DFS
 

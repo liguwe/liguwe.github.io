@@ -19,7 +19,7 @@
 
 ### 2.1. 题意
 
-![cos-blog-832-34-20241012](https://blog-1310531898.cos.ap-beijing.myqcloud.com/832-34-20241012/Pasted%20image%2020240908112644.png)
+![cos-blog-832-34-20241012|552](https://blog-1310531898.cos.ap-beijing.myqcloud.com/832-34-20241012/Pasted%20image%2020240908112644.png)
 
 ### 2.2. 代码实现
 
@@ -84,7 +84,7 @@ var kthSmallest = function (root, k) {
 
 ### 3.1. 题目
 
-![cos-blog-832-34-20241012](https://blog-1310531898.cos.ap-beijing.myqcloud.com/832-34-20241012/Pasted%20image%2020240908115150.png)
+![cos-blog-832-34-20241012|592](https://blog-1310531898.cos.ap-beijing.myqcloud.com/832-34-20241012/Pasted%20image%2020240908115150.png)
 
 ```javascript
 /**

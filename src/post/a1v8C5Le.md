@@ -56,7 +56,6 @@ var findTargetSumWays = function (nums, target) {
       }
       return;
     }
-
     /******** 给 nums[i] 选择 - 号 ********/
     // 选择 - , 做加法，
     // 因为目标是凑出 target，所以 remain 需要加上当前的 nums[i]
@@ -65,7 +64,6 @@ var findTargetSumWays = function (nums, target) {
     backtrack(nums, i + 1, remain);
     // 撤销选择
     remain -= nums[i];
-
     /******** 给 nums[i] 选择 + 号 ********/
     remain -= nums[i];
     // 穷举 nums[i + 1]
@@ -73,11 +71,9 @@ var findTargetSumWays = function (nums, target) {
     // 撤销选择
     remain += nums[i];
   }
-
   backtrack(nums, 0, target);
   return result;
 };
-
 ```
 
 ## 3. 动态规划思路

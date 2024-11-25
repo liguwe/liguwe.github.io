@@ -47,6 +47,9 @@ let target = {};
 let wr = new WeakRef(target);
 ```
 
+- WeakRef：用于直接创建对象的弱引用
+- FinalizationRegistry：垃圾回收时回调函数
+
 ## 3. Set 与 WeakSet
 
 - 在 Set 内部，两个 `NaN` 是相等的
@@ -54,7 +57,8 @@ let wr = new WeakRef(target);
 	- 成员**只能是对象**，而不能是其他类型的值
 	- WeakSet 中的对象都是**弱引用**，即垃圾回收机制不考虑 WeakSet 对该对象的引用
 	- **只有三个方法**  add、delete、has 
-	- WeakSet 的一个用处，是**储存 DOM 节点**，而不用担心这些节点从文档移除时，会引发内存泄漏
+	- 使用场景案例：
+		- WeakSet 的一个用处，是**储存 DOM 节点**，而不用担心这些节点从文档移除时，会引发内存泄漏
 
 ## 4. 自己实现一个 isObject
 
@@ -219,6 +223,8 @@ Array.prototype.slice.call(document.querySelectorAll("div"));
 Array.prototype.slice.call(arguments);
 ```
 
+>  简写 `[].slice.call`
+
 ## 14. sort 方法是原地的
 
 ```javascript hl:3,14,23,26
@@ -268,7 +274,7 @@ Array.prototype.slice.call(arguments);
     - 返回值是布尔值转换后的数字（==0 或 1==）
     - 返回 false (0)：当 a-b ≤ 0 时
     - 返回 true (1)：当 a-b > 0 时
-    - 结果：==降序排列==
+    - 结果：
         - **也不一定，自己的理解的那种，比如**
             - ![图片&文件](./files/20241115-7.png)
             - 例如：当 a=3, b=1 时，返回 true（转为数字就是 1）
@@ -444,6 +450,8 @@ let arr = [...obj]; // TypeError: Cannot spread non-iterable object
 
 ## 20. `Array.of()` 方法用于`将一组值`，转换为数组
 
+>  **array  of xxx ：xxx 的数组形式， 这样好理解**
+
 ```javascript hl:5
 Array.of(3, 11, 8); // [3,11,8]
 Array.of(3); // [3]
@@ -498,7 +506,6 @@ let arr = new Array(3).fill({name: "Mike"});
 arr[0].name = "Ben";
 arr
 // [{name: "Ben"}, {name: "Ben"}, {name: "Ben"}]
-
 ```
 
 ## 24. JSON.stringify 和 JSON.parse 可接受额外参数
@@ -589,7 +596,7 @@ template.replace(
 
 ### 29.3. 自己不熟的
 
-```javascript hl:5,11
+```javascript hl:5,11,35
 /cat|dog/.test('cat') // true
 
 // 字符串bbc news包含a、b、c以外的其他字符，所以返回true

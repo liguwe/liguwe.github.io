@@ -104,7 +104,6 @@ function fn(N, W, wt, val) {
             dp[i][j] = 0;
         }
     }
-
     // ::::2、base case
     for (let i = 0; i <= N; i++) {
         dp[i][0] = 0;
@@ -112,7 +111,6 @@ function fn(N, W, wt, val) {
     for (let i = 0; i <= W; i++) {
         dp[0][i] = 0;
     }
-
     // ::::3、动态规划框架，根据状态个数，决定嵌套层数
     for (let i = 1; i <= N; i++) {
         for (let w = 1; w <= W; w++) {
@@ -130,9 +128,7 @@ function fn(N, W, wt, val) {
             }
         }
     }
-
     console.log(dp)
-
     return dp[N][W];
 }
 

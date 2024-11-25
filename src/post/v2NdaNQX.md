@@ -22,6 +22,7 @@
 	- 开发者：微软
 	- 用于：曾用于 Internet Explorer 和 Microsoft Edge (旧版，EdgeHTML)
 	- 特色：拥有一个强大的 JIT 编译器，支持优化的执行和垃圾回收。
+		- 转向webkit，反映了微软的务实态度，通过采用主流的开源解决方案，他们可以提供更好的用户体验，**同时将资源集中在差异化功能的开发上**
 4. **JavaScriptCore (苹果)**:
 	- 开发者：苹果
 	- 用于：Safari 浏览器
@@ -249,7 +250,7 @@ function add(a, b) {
 
 ### 5.3. 使用数组时预分配空间
 
-```javascript
+```javascript hl:9
 // 2. 使用数组时预分配空间
 const arr = new Array(1000); // 好的做法
 const arr = []; // 动态增长，可能导致多次重新分配
@@ -299,7 +300,7 @@ console.memory;
 
 ### 8.1. 新的性能 API 和调试工具
 
-```javascript
+```javascript hl:8
 // 1. 性能监控 API
 performance.mark('start');
 // 执行代码

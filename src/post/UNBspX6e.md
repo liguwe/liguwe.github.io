@@ -313,8 +313,6 @@ const obj = {
 
 obj.normalMethod(); // 'object'
 obj.arrowMethod();  // undefined
-
-
 ```
 
 #### 9.2.1. 不能通过 call/apply/bind 改变 this

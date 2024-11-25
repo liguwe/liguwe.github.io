@@ -4,6 +4,11 @@
 `#算法/动态规划`  `#回溯算法` 
 
 
+| LeetCode                                                           | 力扣                                                          | 难度  |
+| ------------------------------------------------------------------ | ----------------------------------------------------------- | --- |
+| [140. Word Break II](https://leetcode.com/problems/word-break-ii/) | [140. 单词拆分 II](https://leetcode.cn/problems/word-break-ii/) | 🔴  |
+| [139. Word Break](https://leetcode.com/problems/word-break/)       | [139. 单词拆分](https://leetcode.cn/problems/word-break/)       | 🟠  |
+
 ## 目录
 <!-- toc -->
  ## 1. 单词拆分 
@@ -226,7 +231,6 @@ var wordBreak = function (s, wordDict) {
   backtrack(0);
   return res;
 };
-
 ```
 
 ### 2.2. 不能利用后续位置优化：剪枝

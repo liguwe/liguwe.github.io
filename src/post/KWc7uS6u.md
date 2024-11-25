@@ -61,7 +61,6 @@ function count(lo, hi) {
     // 为什么 i + 1 而不是 i？
     // 因为 i 代表的是根节点的值，所以右子树的范围是 [i + 1, hi]
     let right = count(i + 1, hi);
-
     // 以 i 为根节点时，左右子树的组合数量的乘积
     // 就是以 i 为根节点时，BST 的数量
     // 为什么要乘积？
@@ -123,7 +122,6 @@ var numTrees = function (n) {
   // dp[0] = 1, dp[1] = 1 代表空树和一个节点的 BST 个数都是 1
   dp[0] = 1;
   dp[1] = 1;
-
   // 从 2 开始计算
   for (let i = 2; i <= n; i++) {
     for (let j = 1; j <= i; j++) {
@@ -137,7 +135,6 @@ var numTrees = function (n) {
   }
   return dp[n];
 };
-
 ```
 
 ![cos-blog-832-34-20241012](https://blog-1310531898.cos.ap-beijing.myqcloud.com/832-34-20241012/Pasted%20image%2020240908163823.png)
@@ -196,10 +193,8 @@ function build(lo, hi) {
       }
     }
   }
-
   return res;
 }
-
 ```
 
 ## 3. 相关题目

@@ -26,7 +26,7 @@
 13. WebSockets：用于实时双向通信
 14. 跨文档消息传递：postMessage API
 15. 内容安全策略（CSP）：用于防止XSS攻击
-16. 自定义数据属性：data-*属性
+16. 自定义数据属性：`data-*属性`
 17. 模板：template标签
 18. **图片响应式：srcset和sizes属性**
 19. 延迟加载：使用loading="lazy"属性

@@ -73,7 +73,6 @@ LRUCache.prototype.makeRecently = function (key) {
   // 重新插入到 Map 末尾,这样就变成最近使用的了
   this.cache.set(key, val);
 };
-
 ```
 
 

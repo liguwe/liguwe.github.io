@@ -210,7 +210,6 @@ class Singleton {
   getItems() {
     return this.data;
   }
-  
   // 静态方法：惰性单例的实现关键点
   static getInstance() {
     // 如果没有实例，则创建实例
@@ -486,7 +485,6 @@ class Login {
   constructor() {
     this.init();
   }
-
   //初始化方法
   init() {
     //新建div

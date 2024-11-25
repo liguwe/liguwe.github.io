@@ -8,7 +8,7 @@
 <!-- toc -->
  ## 题目及理解 
 
-![cos-blog-832-34-20241012](https://blog-1310531898.cos.ap-beijing.myqcloud.com/832-34-20241012/Pasted%20image%2020240916080248.png)
+![cos-blog-832-34-20241012|600](https://blog-1310531898.cos.ap-beijing.myqcloud.com/832-34-20241012/Pasted%20image%2020240916080248.png)
 
 > [!danger]
 >  上面的 maza 不是邻接矩阵，m 都不等于 n，邻接矩阵一定是 n*n

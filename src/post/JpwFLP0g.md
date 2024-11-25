@@ -78,7 +78,6 @@ let bar: foo;
 
 ```
 
-
 ## TS 模块
 
 ### 全局模块
@@ -202,6 +201,8 @@ const z:object = (n:number) => n + 1;
 
 举例：
 
+- 大写是小写的超集
+
 ```typescript hl:2,11
 
 ① 即大写是小写形式的超集 
@@ -222,12 +223,12 @@ const n2:Number = 1;
 Math.abs(n1) // 1
 Math.abs(n2) // 报错
 ```
-（3）`Object` 类型与 `object` 类型 
 
+（3）`Object` 类型与 `object` 类型 
 
 先看 **大写的 Object** 
 
-```typescript
+```typescript hl:3
 
 ①  大写的Object类型代表 JavaScript 语言里面的广义对象。
     所有可以转成对象的值，都是Object类型，这囊括了几乎所有的值
@@ -260,17 +261,14 @@ obj = { foo: 123 };
 obj = [1, 2];
 obj = (a:number) => a + 1;
 
-④ 显然，无所不包的Object类型既不符合直觉，也不方便使用，所以不建议使用
+④ 显然，无所不包的 Object类型 既不符合直觉，也不方便使用，所以不建议使用
 
 ```
-
 
 > [!danger]
  **无所不包的Object类型既不符合直觉，也不方便使用，所以不建议使用**
 
-
 再看 **小写的 object**  ,  ==只包含对象、数组和函数==， 不包括原始类型的值，比如下面代码
-
 
 ```typescript
 let obj:object;
@@ -300,10 +298,9 @@ o2.foo // 报错
 
 > 如下图，都报警告了，这个值得注意，即 object 其实不常用，最好直接定义 interface 类型
 > 
->  ![](https://832-1310531898.cos.ap-beijing.myqcloud.com/yuque/b4674d165a9a0fa7a4faf5501b8ac303.png)
+>  ![|608](https://832-1310531898.cos.ap-beijing.myqcloud.com/yuque/b4674d165a9a0fa7a4faf5501b8ac303.png)
 
 ### 数组类型
-
 
 #### 基本用法
 
@@ -327,7 +324,6 @@ type Name = Names[number]; // string
 
 ③ 那么这种写法是可以的吗？
 type Name = Names[99999]
-
 ```
 
 #### 数组的类型推断
@@ -548,7 +544,6 @@ function fail(message: string): never {
 1、使用 `any` 有很多弊端 ，参考如上，这就引出了 `unknown`
 
 2、`any` 和 `unknown` 的 **本质区别**：
-
 
  - unknown 是 `top type` (任何类型都是它的 subtype) 
  - 而  **any 即是 top type, 又是 bottom type** (它是任何类型的 `subtype` ) ，这导致 any 基本上就是放弃了任何类型检查。
@@ -796,7 +791,6 @@ a = b; // 报错
 ```
 
 ### 元组
-
 
 #### 基本示例
 

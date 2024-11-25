@@ -36,7 +36,7 @@
 
 ### 分析
 
-![image.png|632](https://832-1310531898.cos.ap-beijing.myqcloud.com/69f0e33219ff2fb885298f5dc6ec9591.png)
+![image.png|744](https://832-1310531898.cos.ap-beijing.myqcloud.com/69f0e33219ff2fb885298f5dc6ec9591.png)
 
 > 二叉树题目的递归解法可以分`两类思路`
 > - 第一类：遍历一遍二叉树得出答案
@@ -130,7 +130,7 @@ var maxDepth = function (root) {
 
 ## 应用：[路径总和](https://leetcode.cn/problems/path-sum/)
 
-![image.png|472](https://832-1310531898.cos.ap-beijing.myqcloud.com/20ba40f7bf10bc1a3d8b33b3b69096ba.png)
+![image.png|608](https://832-1310531898.cos.ap-beijing.myqcloud.com/20ba40f7bf10bc1a3d8b33b3b69096ba.png)
 
 ### 解法一：`遍历一遍二叉树` 的思路
 
@@ -160,12 +160,9 @@ var hasPathSum = function (root, targetSum) {
         // ::::后序位置
         sum -= root.val;
     }
-
     traverse(root);
-
     return hasSum;
 };
-
 ```
 
 > - **这里可以优化，只要找到了，存在了，就没必要继续遍历了**

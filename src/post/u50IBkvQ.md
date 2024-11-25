@@ -272,7 +272,6 @@ var maxDepth = function (root) {
     var res = Math.max(leftMax, rightMax) + 1;
     return res;
 };
-
 ```
 
 ## 6. 问：如何通过`前序遍历`打印是所有节点

@@ -55,12 +55,10 @@ var dp = function (s1, i, s2, j) {
     // :::: 即 s2 = '' ,所以 s1 变成 s2 的最小编辑距离就是 s1 的长度，
     //  即一直删除
     if (j === -1) return i + 1;
-    
     // skip, 所以 i-1, j-1
     if (s1[i] === s2[j]) {
         return dp(s1, i - 1, s2, j - 1);
     }
-    
     return Math.min(
         // 插入, s1[i] 插入到 s2[j] 前面, 所以 j-1
         dp(s1, i, s2, j - 1) + 1,
@@ -104,10 +102,8 @@ var dp = function (s1, i, s2, j, memo) {
     // :::: 即 s2 = '' ,所以 s1 变成 s2 的最小编辑距离就是 s1 的长度，
     //  即一直删除
     if (j === -1) return i + 1;
-
     // memo[i][j] 已经计算过
     if (memo[i][j] !== -1) return memo[i][j];
-
     // skip, 所以 i-1, j-1
     if (s1[i] === s2[j]) {
         return memo[i][j] = dp(s1, i - 1, s2, j - 1, memo);
@@ -178,7 +174,7 @@ console.log(minDistance('intention', 'execution'));
 
 ## 至底向上的 dp table 解法
 
-![|584](https://832-1310531898.cos.ap-beijing.myqcloud.com/07695c5c20b4168dbaa64e0a984c3eb9.png)
+![|632](https://832-1310531898.cos.ap-beijing.myqcloud.com/07695c5c20b4168dbaa64e0a984c3eb9.png)
 > 
 > [!warning]
 `dp 函数`的 base case 是 i, j 等于 `-1`，而 **dp数组索引至少是 0**，所以 dp 数组会偏移一位。

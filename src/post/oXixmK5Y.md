@@ -25,33 +25,31 @@
 
 ### 1.4. 简单请求的条件
 
-一个请求必须同时满足以下所有条件才是简单请求：
+一个请求必须**同时满足以下所有条件才是简单请求**：
 
-1. 请求方法仅限于：
-   - GET
-   - POST
-   - HEAD
-
-2. 允许的请求头：
-   - Accept
-   - Accept-Language
-   - Content-Language
-   - Content-Type（仅限于以下三种）：
-     - text/plain
-     - multipart/form-data
-     - application/x-www-form-urlencoded
-   - DPR
-   - Downlink
-   - Save-Data
-   - Viewport-Width
-   - Width
-
-3. 请求中没有注册任何事件监听器
-4. 请求中没有使用 ReadableStream 对象
+- 请求方法仅限于：
+	- GET
+	- POST
+	- HEAD
+- 允许的请求头：
+	- Accept
+	- Accept-Language
+	- Content-Language
+	- Content-Type（仅限于以下三种）：
+		 - text/plain
+		 - multipart/form-data
+		 - application/x-www-form-urlencoded
+	- DPR
+	- Downlink
+	- Save-Data
+	- Viewport-Width
+	- Width
+- 请求中没有自定义头部
+- 请求中没有使用 `ReadableStream` 对象
 
 ### 1.5. 为什么需要预检请求？
 
-预检请求（Preflight）的主要目的是为了**保护服务器**。原因如下：
+**预检请求（Preflight）**  的主要目的是为了**保护服务器**。原因如下：
 
 #### 1.5.1. **向后兼容**
 
@@ -344,7 +342,7 @@ self.onconnect = function(e) {
 
 ### 5.5. 总结
 
-WebSocket 协议本身不受浏览器同源策略的限制，可以自由地进行跨域通信。但为了安全性，服务器端应该实现适当的验证机制来控制连接权限。
+**WebSocket 协议本身不受浏览器同源策略的限制**，可以自由地进行跨域通信。但为了安全性，服务器端应该实现适当的验证机制来控制连接权限。
 
 ## 6. 如何在 Canvas 获取跨域的图片
 
@@ -370,12 +368,12 @@ WebSocket 协议本身不受浏览器同源策略的限制，可以自由地进�
 
 ### 7.2. 安全策略
 
-- 如果你不需要接受其他网站的message，请不要监听 message 事件
+- 如果你不需要接受其他网站的 message，请不要监听 message 事件
 - 即使监听，请务必备注 origin 和 source 来验证发件人的身份
 
 ### 7.3. 有一些特殊情况和解决方案
 
-1. **opener 关系**：如果一个标签页是由另一个标签页打开的（使用 window.open()），则它们之间可以通过 opener 和 postMessage 进行通信。
+1. **opener 关系**：如果一个标签页是由另一个标签页打开的（使用 window.open()  ），则它们之间可以通过 opener 和 postMessage 进行通信。
 2. **共享存储**：可以使用 localStorage 或 IndexedDB 等共享存储方式，配合 storage 事件来实现跨标签页通信。
 3. **Broadcast Channel API**：这是一个较新的 API，允许**同源的不同上下文**（如不同的标签页）之间进行通信。
 4. **Service Worker**：可以使用 Service Worker 作为中间人来协调不同标签页之间的通信。

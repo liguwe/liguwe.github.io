@@ -19,7 +19,7 @@ CSS 选择器的优先级由四个数值组成，用来计算选择器的`特异
 	- 特异性（Specificity）：10
 - 元素选择器 和`伪元素`选择器：例如 `div`、`p`、`::before`
 	- 特异性（Specificity）：1
-- 通配符选择器（*）
+- 通配符选择器（`*`）
 	- 特异性（Specificity）：0
 
 > 特异性（Specificity） 即 优先级

@@ -42,7 +42,7 @@
 - `max()` 返回最大值。
 - `clamp()` 返回一个==在指定范围内的值==。
 
-```css
+```css hl:3
 .element {
   width: min(50vw, 500px); /* 取 50vw 和 500px 中的最小值 */
   height: max(100px, 10vh); /* 取 100px 和 10vh 中的最大值 */
@@ -62,7 +62,7 @@
 
 ## 5. `env()`
 
-`env()` 函数用于`访问环境变量`，例如安全区域（safe area）内边距。
+`env()` 函数用于`访问环境变量`，例如**安全区域（safe area）内边距**。
 
 ```css
 .element {
@@ -136,6 +136,7 @@
 ## 12. `conic-gradient()` 
 
 `conic-gradient()` 函数用于创建圆锥渐变。
+
 ```css
 .element {
   background: conic-gradient(from 0deg at 50% 50%, red, yellow, green, blue);

@@ -3,6 +3,11 @@
 
 `#算法/动态规划` 
 
+|LeetCode|力扣|难度|
+|---|---|---|
+|[583. Delete Operation for Two Strings](https://leetcode.com/problems/delete-operation-for-two-strings/)|[583. 两个字符串的删除操作](https://leetcode.cn/problems/delete-operation-for-two-strings/)|🟠|
+|[712. Minimum ASCII Delete Sum for Two Strings](https://leetcode.com/problems/minimum-ascii-delete-sum-for-two-strings/)|[712. 两个字符串的最小ASCII删除和](https://leetcode.cn/problems/minimum-ascii-delete-sum-for-two-strings/)|🟠|
+|[1143. Longest Common Subsequence](https://leetcode.com/problems/longest-common-subsequence/)|[1143. 最长公共子序列](https://leetcode.cn/problems/longest-common-subsequence/)|🟠|
 
 ## 目录
 <!-- toc -->
@@ -146,12 +151,10 @@ var minimumDeleteSum = function (s1, s2) {
   let memo = [];
   const m = s1.length,
     n = s2.length;
-
   // 备忘录值为 -1 代表未曾计算
   for (let i = 0; i < m; i++) {
     memo.push(new Array(n).fill(-1));
   }
-
   // 定义：将 s1[i..] 和 s2[j..] 删除成相同字符串，
   // 最小的 ASCII 码之和为 dp(s1, i, s2, j)。
   function dp(s1, i, s2, j) {
@@ -174,11 +177,9 @@ var minimumDeleteSum = function (s1, s2) {
       return res;
     }
     // base case end
-
     if (memo[i][j] !== -1) {
       return memo[i][j];
     }
-
     if (s1.charAt(i) === s2.charAt(j)) {
       // s1[i] 和 s2[j] 都是在 lcs 中的，不用删除
       memo[i][j] = dp(s1, i + 1, s2, j + 1);
@@ -191,9 +192,7 @@ var minimumDeleteSum = function (s1, s2) {
     }
     return memo[i][j];
   }
-
   return dp(s1, 0, s2, 0);
 };
-
 ```
 

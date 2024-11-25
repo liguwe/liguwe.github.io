@@ -39,7 +39,6 @@ var minDepth = function(root) {
     traverse(root.left);
     // ::::中序位置
     traverse(root.right);
-
     // ::::后序位置
     depth--;
   }
@@ -228,7 +227,6 @@ var preorder = function(root) {
 /**
  * @description 根据输入的数字 n，返回所有小于这个数 n 的 二进制数
  * */
-
 function generateBinaray(n) {
     // ::::结果集
     const res = [];

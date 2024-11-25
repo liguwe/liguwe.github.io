@@ -11,7 +11,7 @@
 
 > https://leetcode.cn/problems/number-of-provinces/description 
 
-![cos-blog-832-34-20241012|1008](https://blog-1310531898.cos.ap-beijing.myqcloud.com/832-34-20241012/Pasted%20image%2020240912044955.png)
+![cos-blog-832-34-20241012|1128](https://blog-1310531898.cos.ap-beijing.myqcloud.com/832-34-20241012/Pasted%20image%2020240912044955.png)
 
 > **省份是一组间接或直接连接的城市**
 ## 2. 思路一：DFS

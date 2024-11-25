@@ -126,7 +126,6 @@ var findMinArrowShots = function(points) {
     }
     return count
 };
-
 ```
 
 或者也行：

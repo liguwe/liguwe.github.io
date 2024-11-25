@@ -87,7 +87,6 @@ var change = function (amount, coins) {
   var n = coins.length;
   // 初始化 dp 及base case
   var dp = [];
-
   for (var i = 0; i <= n; i++) {
     dp[i] = [];
     for (var w = 0; w <= amount; w++) {
@@ -99,7 +98,6 @@ var change = function (amount, coins) {
       }
     }
   }
-
   // 状态决定 for 循环嵌套层数
   for (var i = 1; i <= n; i++) {
     for (var w = 1; w <= amount; w++) {

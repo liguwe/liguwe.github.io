@@ -173,10 +173,8 @@ var partition = function (nums, lo, hi) {
   }
   // 最后将 pivot 放到合适的位置，即 pivot 左边元素较小，右边元素较大
   [nums[lo], nums[j]] = [nums[j], nums[lo]];
-
   return j;
 };
-
 ```
 
 ## 2. 快速选择算法

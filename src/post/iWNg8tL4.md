@@ -187,7 +187,7 @@ function deepCopy(obj, hash = new WeakMap()) {
 
 ```
 
-也可使用 Reflect.ownKeys 来遍历对象，它包含 Object.keys的属性 和 symbals 属性，如下代码
+也可使用 Reflect.ownKeys 来遍历对象，它包含 Object.keys 的属性 和 symbals 属性，如下代码
 
 >  没考虑 函数、正则、日期、Math 等等
 
@@ -199,15 +199,12 @@ function deepCopy(obj, weakMap = new WeakweakMap()) {
   ) {
     return obj;
   }
-
   // 如果是对象
   if (weakMap.get(obj)) {
     return obj;
   }
-
   let target = Array.isArray(obj) ? [] : {};
   weakMap.set(obj, target);
-
   // TODO 这个不会检测出symbol
   // 1、可以使用 Reflect.keys 全部能检测出全部 keys ，包括 symbol keys
   // 2、可以使用 Object.getOwnPropertySymbols(obj) 检测出 symbol keys
@@ -219,10 +216,8 @@ function deepCopy(obj, weakMap = new WeakweakMap()) {
       target[key] = obj[key];
     }
   });
-
   return target;
 }
-
 ```
 
 ## 6. JSON 的方式实现

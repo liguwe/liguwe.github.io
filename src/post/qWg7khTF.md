@@ -11,19 +11,22 @@
 - `Promise`的状态一经改变就不能再改变
 - `.then`和`.catch`都会返回一个新的`Promise`
 - `catch`不管被连接到哪里，都能**捕获上层的错误**
+	- 也有可能被它上面的 then 的第二个参数捕获
 - 在`Promise`中，返回任意一个非 `promise` 的值都会被包裹成 `promise` 对象
 	- 例如`return 2`会被包装为`return Promise.resolve(2)`。
 - `Promise` 的 `.then` 或者 `.catch` **可以被调用多次**,
 	- 但如果`Promise`内部的状态一经改变，并且有了一个值，那么后续每次调用`.then`或者`.catch`的时候都会直接拿到该值
+		- 注意，状态改变了，后面仍然可以调用 then 和 catch，一直调用
 - `.then` 或者 `.catch` 中 `return` 一个 `error` 对象并不会抛出错误，所以不会被后续的 `.catch` 捕获 
 - `.then` 或 `.catch` 返回的值不能是 **promise 本身**，否则会造成**死循环**
 - `.then` 或者 `.catch` 的参数期望是函数，传入非函数则会发生**值透传**。
 - `.then`方法是能接收两个参数的，
 	- 第一个是处理成功的函数
 	- 第二个是处理失败的函数
-	- 再某些时候你可以认为`catch`是`.then`第二个参数的简便写法。
+	- 在某些时候你可以认为`catch`是`.then`第二个参数的简便写法。
 - `.finally`方法也是返回一个`Promise`
 	- 他在`Promise`结束的时候，无论结果为`resolved`还是`rejected`，都会执行里面的回调函数
+	- 它**不接受任何参数**
 
 ## 2. 打印 new Promise 的效果
 
@@ -51,7 +54,6 @@ console.log(4);
 //
 // 3 不会被输出，因为 Promise 里面没有 resolve
 //**************************************
-
 ```
 
 ## 4. resolve 后会执行 then
@@ -127,6 +129,31 @@ promise
 // then3:  undefined
 ```
 
+```javascript hl:14,21
+const promise = new Promise((resolve, reject) => {
+  reject("error");
+  resolve("success2");
+});
+promise
+  .then((res) => {
+    console.log("then1: ", res);
+  })
+  .then((res) => {
+    console.log("then2: ", res);
+  })
+  .catch((err) => {
+    console.log("catch: ", err);
+    return "return catch";
+  })
+  .then((res) => {
+    console.log("then3: ", res);
+  });
+// Output:
+// catch:  error
+// then3:  return catch
+
+```
+
 ## 7. `return 2` 会被包装成`resolve(2)`
 
 ```javascript
@@ -146,11 +173,12 @@ Promise.resolve(1)
 
 ```
 
-## 8. resolve 后每个 then 和 catch 能被调用多次
+## 8. resolve 后每个 then 和 catch **能被调用多次**
 
 - `Promise` 的 `.then` 或者 `.catch` 可以被调用多次
-- 但这里 `Promise` 构造函数只执行一次。
-- 或者说 `promise` 内部状态一经改变，并且有了一个值，那么后续每次调用 `.then` 或者 `.catch` 都会直接拿到该值。
+- 但这里 `Promise` 构造函数只执行一次
+- 或者说 `promise` 内部状态一经改变，并且有了一个值
+	- 那么后续每次调用 `.then` 或者 `.catch` 都会直接拿到该值。
 
 ```javascript
 const promise = new Promise((resolve, reject) => {
@@ -274,7 +302,7 @@ Promise.reject("err!!!")
 
 ```
 
-## 14. finally 虽然一定会执行，但还是有顺序的 
+## 14. finally 虽然一定会执行，但还**是有顺序的** 
 
 ```javascript hl:13,20,3,7
 Promise.resolve("2")

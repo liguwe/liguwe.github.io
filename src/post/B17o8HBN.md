@@ -58,7 +58,6 @@ var calculateMinimumHP = function (grid) {
   const n = grid[0].length;
   // 备忘录中都初始化为 -1
   const memo = new Array(m).fill(0).map(() => new Array(n).fill(-1));
-
   return dp(grid, 0, 0, memo);
 };
 
@@ -85,8 +84,6 @@ var dp = function (grid, i, j, memo) {
       dp(grid, i + 1, j, memo), // 从 (i+1, j) 出发，到达右下角，需要的最小初始血量
     ) - grid[i][j];
   memo[i][j] = res <= 0 ? 1 : res;
-
   return memo[i][j];
 };
-
 ```

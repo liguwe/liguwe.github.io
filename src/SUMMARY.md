@@ -15,13 +15,13 @@
 
     - [chatGPT 是什么（篇二）](post/VaYiwlse.md)
 
-    - [大模型是如何训练的？](post/ICpScz8J.md)
-
     - [Agent 是什么？](post/upLuHbmO.md)
 
     - [Agent 工程架构图](post/U5tfNeeS.md)
 
     - [Agent 的进化之路](post/BVpvooHc.md)
+
+    - [大模型是如何训练的？](post/w8u3Ua9q.md)
 
     - [LangChain（篇一：基础入门篇）](post/7R3JOmn3.md)
 
@@ -60,13 +60,13 @@
 
     - [HTML 技术关键词](post/Y9N13bSV.md)
 
-    - [请列举你认为最重要 HTML 技术清单？](post/ctSI9TJj.md)
+    - [HTML 技术清单](post/wCioUwdB.md)
 
     - [如何判断你自己对 HTML 标签了解是否全面？](post/QyazaTqW.md)
 
     - [什么是 Web Components？](post/gs6LiEI2.md)
 
-    - [说说 HTML 标准规范都有哪些？](post/No6t1hYT.md)
+    - [HTML 标准规范都有哪些？](post/KICA0gyF.md)
 
     - [什么是响应式图片](post/toQ4H8vV.md)
 
@@ -123,8 +123,6 @@
     - [JavaScript 异步编程简介](post/x45wL9Jh.md)
 
     - [JavaScript 异步编程：Promise 专题篇一](post/qWg7khTF.md)
-
-    - [JavaScript 异步编程：Promise 专题篇二](post/RKPz2G1A.md)
 
     - [JavaScript 异步编程：async、await 的实现原理](post/ONxVttwC.md)
 
@@ -471,8 +469,6 @@
 
     - [前端构建提速的体系化思路](post/3gP3yrA2.md)
 
-    - [vite 的架构设计](post/j4Ce6dxz.md)
-
     - [Babel  的原理（篇一）](post/mNeZyJfC.md)
 
     - [Babel  的原理（篇二）](post/MzWa8Spk.md)
@@ -518,7 +514,7 @@
 
     - [XSS](post/NC1Y33e9.md)
 
-    - [CSRF](post/WHS0K14E.md)
+    - [CSRF：跨站请求伪造](post/iJNXa7VN.md)
 
     - [SSRF（服务器端请求伪造）攻击](post/M54aWMZx.md)
 
@@ -701,7 +697,7 @@
 
     - [回溯算法解括号生成](post/dvVYEYya.md)
 
-    - [回溯算法解括号生成](post/2JDOdMki.md)
+    - [划分为 k 个相等的子集](post/tdce7xNo.md)
 
   - [BFS 算法](post/zCZPk3zH.md)
 
@@ -713,7 +709,7 @@
 
     - [斐波那契数列](post/jDmwmQfC.md)
 
-    - [动态规划解题套路框架（最小零钱）](post/kk34BwrT.md)
+    - [动态规划解题套路框架：以最小零钱为例说明](post/RvEXlnlo.md)
 
     - [如何查找状态转移方程（最长递增子序列与俄罗斯套娃）](post/uhtbDJDF.md)
 
@@ -797,8 +793,6 @@
     - [如何同时寻找缺失和重复的元素](post/ZUF3X9xf.md)
 
     - [反直觉的概率问题](post/Detd2Q2t.md)
-
-    - [数学运算相关的题目](post/bRciQXIB.md)
 
     - [判断一个数是否是素数](post/pzNZ7le8.md)
 

@@ -6,7 +6,8 @@
 <!-- toc -->
  ## 1. src、href区别 
 
-- `src` ，资源引用，如script、image、video、audio等
+- `src` ，资源引用，如 
+- script、image、video、audio等
 - `href`，超文本引用，可`并行下载请求`，`link/a` 等标签
 
 ## 2. label 的作用
@@ -534,7 +535,7 @@ let tagCloseNoContent = /<[a-zA-Z]+[\s\S]*\/>/
 	- ejs
 	- 等等
 
-所以，这个别浪费时间了，pass 吧，真遇到 那么就说说思路，除非做小抄，不然很难段时间写出来的
+所以，这个别浪费时间了，pass 吧，真遇到 那么就说说思路，很难段时间写出来的
 
 ## 30. 函数声明会被提升到作用域的顶部
 

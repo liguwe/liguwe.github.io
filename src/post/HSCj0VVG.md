@@ -104,7 +104,6 @@ var find2 = function (root, val1, val2) {
 var lowestCommonAncestor = function (root, p, q) {
   return find(root, p.val, q.val);
 };
-
 var find = function (root, val1, val2) {
   if (root == null) {
     return null;
@@ -125,7 +124,6 @@ var find = function (root, val1, val2) {
   // 因为题设说了 p 和 q 一定存在于二叉树中，所以这里不用考虑两个都没找到的情况
   return left || right;
 };
-
 ```
 
 ## 二叉树中多个节点的最近公共祖先
@@ -312,7 +310,6 @@ var lowestCommonAncestor = function (p, q) {
     } else {
       p1 = p1.parent;
     }
-
     // 如果 p2 为空，移动到 p 的父节点
     // 如果 p2 不为空，向根节点方向移动，指针向指向 p2 的父节点
     if (p2 === null) {
@@ -322,7 +319,6 @@ var lowestCommonAncestor = function (p, q) {
     }
   }
 };
-
 ```
 ## 参考
 

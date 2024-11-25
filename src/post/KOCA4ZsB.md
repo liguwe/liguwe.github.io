@@ -96,7 +96,7 @@ store.dispatch(fetchPosts('reactjs'));
 
 - Thunk 函数是一种`延迟执行`的函数。
 - 在异步编程中，thunk 可以帮助管理复杂的异步流程。
-- 在 Redux 等状态管理库中，thunk 用于处理异步 action。
+- 在 Redux 等状态管理库中，thunk 用于**处理异步 action**。
 - `Thunk` 提供了一种方式来封装复杂的逻辑，使代码更加模块化和可测试。
 
 通过使用 thunk，我们可以更灵活地控制函数的执行时机，特别是在处理异步操作或需要访问 Redux store 的情况下。

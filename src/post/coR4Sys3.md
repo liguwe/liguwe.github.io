@@ -195,7 +195,7 @@ document.querySelectorAll('input').forEach(input => {
 
 ## 6. 检测事件是否冒泡
 
-```javascript hl:7
+```javascript hl:7,11
 // 检测事件是否冒泡
 function isEventBubbling(eventName) {
     const element = document.createElement('div');

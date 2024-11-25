@@ -11,7 +11,7 @@
 
 > https://leetcode.cn/problems/maximum-level-sum-of-a-binary-tree/description/
 
-![cos-blog-832-34-20241012](https://blog-1310531898.cos.ap-beijing.myqcloud.com/832-34-20241012/Pasted%20image%2020240908091200.png)
+![cos-blog-832-34-20241012|632](https://blog-1310531898.cos.ap-beijing.myqcloud.com/832-34-20241012/Pasted%20image%2020240908091200.png)
 
 ## 2. 思路一：BFS
 

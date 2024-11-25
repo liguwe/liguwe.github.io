@@ -47,21 +47,17 @@ var fib = function (n) {
   // 进行带备忘录的递归
   return dp(memo, n);
 };
-
 // 带着备忘录进行递归
 // 两个参数，传入 memo 数组，添加一个参数
 var dp = function (memo, n) {
-
   // base case
   if (n === 0 || n === 1) return n;
   // 已经计算过，不用再计算了
   if (memo[n] !== 0) return memo[n];
   // 否则，重新计算，并且存到memo中
-  
   // 这里利用了闭包，把memo传入
   memo[n] = dp(memo, n - 1) + dp(memo, n - 2);
   return memo[n];
-  
 };
 ```
 
@@ -84,14 +80,11 @@ var dp = function (memo, n) {
  * 算法的时间复杂度是 O(n) ，空间复杂度O(n)
  ************************************************/
 function fib (N) {
-  // init var
   if (N === 0) return 0;
   let dp = new Array(N + 1).fill(0);
-  
   // base case
   dp[0] = 0;
   dp[1] = 1;
-  
   //// 状态转移方程
   for (let i = 2; i <= N; i++) {
     dp[i] = dp[i - 1] + dp[i - 2];

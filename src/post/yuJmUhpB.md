@@ -26,9 +26,9 @@
 
 题目会给你输入一棵二叉树，请你找到**节点之和最大的**那棵二叉搜索树，并返回它的节点值之和。
 
-![cos-blog-832-34-20241012](https://blog-1310531898.cos.ap-beijing.myqcloud.com/832-34-20241012/Pasted%20image%2020240910082418.png)
+![cos-blog-832-34-20241012|568](https://blog-1310531898.cos.ap-beijing.myqcloud.com/832-34-20241012/Pasted%20image%2020240910082418.png)
 
-![cos-blog-832-34-20241012](https://blog-1310531898.cos.ap-beijing.myqcloud.com/832-34-20241012/Pasted%20image%2020240910082555.png)
+![cos-blog-832-34-20241012|464](https://blog-1310531898.cos.ap-beijing.myqcloud.com/832-34-20241012/Pasted%20image%2020240910082555.png)
 
 ## 3. 思路
 
@@ -65,8 +65,6 @@ var maxSumBST = function () {
         maxSum = Math.max(maxSum, rootSum);
       }
     }
-    // **************************
-
     // 二叉树遍历框架，遍历子树节点
     traverse(root.left);
     traverse(root.right);
@@ -150,11 +148,9 @@ var maxSumBST = function (root) {
     }
     return res;
   };
-
   findMaxMinSum(root);
   return maxSum;
 };
-
 ```
 
 ### 5.1. 复杂度分析

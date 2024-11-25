@@ -8,7 +8,7 @@
  ## 1. Chrome 多进程架构：浏览器的 6 个主要进程 
 
 1. 浏览器主进程/ UI 进程（Browser Process）：负责管理用户界面、地址栏、书签栏等，以及协调其他进程
-2. 渲染进程（Renderer Process）：负责将HTML、CSS和JavaScript转换为用户可以交互的网页
+2. **渲染进程（Renderer Process）**：负责将HTML、CSS和JavaScript转换为用户可以交互的网页
 	- 渲染进程负责站点的渲染，其中也包括 `JavaScript 代码的运行`，`web worker` 的管理等。
 	- 核心任务是将 ` HTML、CSS 和 JavaScript` 转换为用户可以与之交互的网页，排版引擎Blink和JavaScript引擎V8都是运行在该进程
 3. 插件进程：运行网页插件，如Flash
@@ -44,11 +44,11 @@ Chrome会根据系统的资源情况**动态调整**进程的分配：
 
 Chrome 允许用户或管理员通过**命令行参数**来选择不同的进程模型
 
-## 4. Chrome 常见的线程
+## 4. Chrome 常见的**线程**
 
 Chrome 采用**多进程多线程架构**，每个进程内部都有多个线程协同工作。以下是一些主要的线程：
 
-- 主线程（Main thread）：
+- **主线程（Main thread）**：
 	- 负责处理大部分的渲染工作，包括 DOM 树的构建、样式计算、布局计算等。
 	- 执行 JavaScript 代码。
 	- 处理用户交互事件。
@@ -99,7 +99,7 @@ Chrome 采用**多进程多线程架构**，每个进程内部都有多个线程
 
 - JavaScript 引擎与渲染进程：
 	- JavaScript 引擎（V8）运行在浏览器的**渲染进程（Renderer Process）中**。
-	- 渲染进程是负责将 HTML、CSS 和 JavaScript 转换为用户可以与之交互的网页的核心进程。
+	- **渲染进程**是负责将 HTML、CSS 和 JavaScript 转换为用户可以与之交互的网页的核心进程。
 	- 在同一个渲染进程中，除了 JavaScript 引擎，还包括排版引擎（如 Blink）。
 - JavaScript 引擎线程：
 	- JavaScript 引擎在渲染进程中运行在一个**专门的线程**上，通常被称为 **JS 引擎线程或主线程**。

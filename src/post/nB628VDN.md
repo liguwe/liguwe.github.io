@@ -2,6 +2,10 @@
 # 子序列： 动态规划之子序列问题解题模板（最长回文子序列）
 
 
+| LeetCode                                                                                                                                        | 力扣                                                                                                          | 难度  |
+| ----------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------- | --- |
+| [1312. Minimum Insertion Steps to Make a String Palindrome](https://leetcode.com/problems/minimum-insertion-steps-to-make-a-string-palindrome/) | [1312. 让字符串成为回文串的最少插入次数](https://leetcode.cn/problems/minimum-insertion-steps-to-make-a-string-palindrome/) | 🔴  |
+| [516. Longest Palindromic Subsequence](https://leetcode.com/problems/longest-palindromic-subsequence/)                                          | [516. 最长回文子序列](https://leetcode.cn/problems/longest-palindromic-subsequence/)                               | 🟠  |
 
 ## 目录
 <!-- toc -->
@@ -106,7 +110,6 @@ var longestPalindromeSubseq = function (s) {
   // 整个 s 的最长回文子串长度
   return dp[0][n - 1];
 };
-
 ```
 
 ## 4. 让字符串成为回文串的最少插入次数

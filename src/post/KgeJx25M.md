@@ -12,7 +12,7 @@
 
 ## 2. [构造最大二叉树](https://labuladong.github.io/algo/2/19/35/#构造最大二叉树)
 
-![image.png|480](https://832-1310531898.cos.ap-beijing.myqcloud.com/0c9189f5fbd177020598c0b65abf50fb.png)
+![image.png|520](https://832-1310531898.cos.ap-beijing.myqcloud.com/0c9189f5fbd177020598c0b65abf50fb.png)
 
 如下：
 
@@ -37,17 +37,12 @@
 var constructMaximumBinaryTree = function(nums) {
     return build(nums, 0, nums.length - 1);
 };
-
-
-
 // 定义：将 nums[lo..hi] 构造成符合条件的树，返回根节点
 function build(nums,  lo,  hi) {
     // base case
     if (lo > hi) {
         return null;
     }
-
-
     // 找到数组中的最大值和对应的索引
     let index = -1, maxVal = -1;
     for (let i = lo; i <= hi; i++) {
@@ -56,14 +51,11 @@ function build(nums,  lo,  hi) {
             maxVal = nums[i];
         }
     }
-    console.log(index,maxVal);
-
     // 先构造出根节点
     let root = new TreeNode(maxVal,null,null);
     // 递归调用构造左右子树
     root.left = build(nums, lo, index - 1);
     root.right = build(nums, index + 1, hi);
-    
     return root;
 }
 ```
@@ -206,7 +198,6 @@ function build(inorder,  inStart,  inEnd,
  */
 
 let valToIndex = new Map();
-
 var constructFromPrePost = function(preorder, postorder) {
     for (let i = 0; i < postorder.length; i++) {
         valToIndex.set(postorder[i], i);
@@ -214,17 +205,14 @@ var constructFromPrePost = function(preorder, postorder) {
     return build(preorder, 0, preorder.length - 1,
                  postorder, 0, postorder.length - 1);
 };
-
 function build( preorder,preStart,preEnd,
                 postorder,postStart,postEnd){
         if (preStart > preEnd) {
             return null;
         }
-
         if (preStart === preEnd) {
             return new TreeNode(preorder[preStart]);
         }
-
         // root 节点对应的值就是前序遍历数组的第一个元素
         let rootVal = preorder[preStart];
         // root.left 的值是前序遍历第二个元素
@@ -235,10 +223,8 @@ function build( preorder,preStart,preEnd,
         let index = valToIndex.get(leftRootVal);
         // 左子树的元素个数
         let leftSize = index - postStart + 1;
-
         // 先构造出当前根节点
         let root = new TreeNode(rootVal,null,null);
-
         // 递归构造左右子树
         // 根据左子树的根节点索引和元素个数推导左右子树的索引边界
         root.left = build(preorder, preStart + 1, preStart + leftSize,

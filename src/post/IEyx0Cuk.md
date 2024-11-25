@@ -50,7 +50,7 @@
 
 ```
 
-> 打印的样式肯定需要后置
+> 打印的样式肯定需要后置 ` media="print"`
 
 ## 7. 使用 CSS 预处理器和后处理器
 
@@ -87,7 +87,7 @@
 }
 ```
 
-- 使用现代布局和功能：如 CSS Grid、Flexbox、`clamp()`、`min()`、`max()` 等，减少依赖 JavaScript 实现复杂布局和功能。
+- 使用现代布局和功能：如 CSS Grid、Flexbox、`clamp()`、`min()`、`max()` 等，**减少依赖 JavaScript 实现复杂布局和功能**。
 
 ## 11. 提前加载关键 CSS
 
