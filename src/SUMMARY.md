@@ -543,7 +543,18 @@
 
     - [前端开发与 AI 大模型的集成](post/09yTyJUt.md)
 
-# 第三部分 算法
+# 第三部分 技术管理
+
+
+  - [前言](post/c7HtNOjr.md)
+
+  - [如何提高前端研发效能](post/Ip0u3k3R.md)
+
+  - [如何前端脚手架 "泼出去的水" 的问题](post/DNmHKyWs.md)
+
+  - [如何建立团队影响力](post/2sRTYWJB.md)
+
+# 第四部分 算法
 
 
   - [前言](post/Giei5JpV.md)
@@ -947,7 +958,7 @@
 
     - [删除链表的中间节点](post/FRdsrtrv.md)
 
-# 第四部分 计算机科学
+# 第五部分 计算机科学
 
 
   - [前言](post/daIm7SIB.md)
