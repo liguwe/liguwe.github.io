@@ -77,7 +77,6 @@
     <!-- 渲染路由对应的 UI -->
     <div id="app"></div>
 </body>
-
 <script type="text/javascript">
     // 页面加载完不会触发 hashchange
     // 这里主动触发一次 hashchange 事件
@@ -103,7 +102,6 @@
             }),
         );
     }
-
     // 路由变化时，根据路由渲染对应 UI
     function onPopState() {
         switch (location.pathname) {

@@ -81,6 +81,7 @@
 - 模板，即声明式描述 UI  
 	- 代表 
 		- HTML
+		- `.vue` SFC
 		- php smarty
 		- jsp 等等
 		- ejs

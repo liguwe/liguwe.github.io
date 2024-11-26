@@ -47,7 +47,6 @@ function shuffle(arr, size) {
   }
   return result;
 }
-
 ```
 
 ## 3. 数组洗牌

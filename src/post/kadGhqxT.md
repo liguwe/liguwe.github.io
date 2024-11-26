@@ -18,7 +18,7 @@
 - Vue
 - Svelte
 	- 新兴的编译时框架
-	- **无虚拟 DOM**，直接编译为原生JavaScript
+	- **无虚拟 DOM**，直接编译为原生 JavaScript
 	- 性能优秀，包体积小
 
 ## 2. 未来趋势
@@ -38,7 +38,7 @@
 ### 2.3. 元框架兴起
 
 - Next.js(React)、Nuxt(Vue)、umi(React) 等成为标配
-- 同时支持SSR、SSG等多种渲染模式
+- 同时支持SSR、SSG 等多种渲染模式
 - 开箱即用的完整解决方案
 
 ### 2.4. 去 JavaScript 化

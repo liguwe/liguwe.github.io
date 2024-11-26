@@ -19,7 +19,7 @@
 	- 增量静态再生成 (ISR)
 - 提供更多**开箱即用**的功能
 	- 文件系统路由
-	- API路由处理
+	- API 路由处理
 	- 自动代码分割
 	- 图片优化
 	- 开发环境优化
@@ -45,7 +45,7 @@
 
 - Vue.js的通用框架
 - 自动路由配置
-- 支持  SSR和SSG
+- 支持  SSR 和 SSG
 - 模块化架构
 - SEO 优化
 - 静态站点生成
@@ -131,7 +131,7 @@
 - 需要SSR/SSG → Next.js/Nuxt.js
 - 全栈应用 → Remix
 - 静态网站 → Astro
-- 文档站点 → VitePress/Docusaurus
+- 文档站点 → VitePress / Docusaurus
 
 ### 根据技术栈
 

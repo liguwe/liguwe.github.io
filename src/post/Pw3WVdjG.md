@@ -28,13 +28,13 @@
 
 ### 3.1. 纯运行时，即直接`Render`即可  
 
-![图片|624](https://blog-1310531898.cos.ap-beijing.myqcloud.com/832-34-20241012/Pasted%20image%2020240810211504.png)
+![图片|496](https://blog-1310531898.cos.ap-beijing.myqcloud.com/832-34-20241012/Pasted%20image%2020240810211504.png)
 
 ### 3.2. 运行时 + 编译时  
   
 如下图，常用的 Vue/Angular/React 都属于这类框架 
 
-![图片|544](https://blog-1310531898.cos.ap-beijing.myqcloud.com/832-34-20241012/Pasted%20image%2020240810211529.png)
+![图片|496](https://blog-1310531898.cos.ap-beijing.myqcloud.com/832-34-20241012/Pasted%20image%2020240810211529.png)
 
 >  如果定义 Vue 的一个组件模板使用 template: `<div>....</div>` 来指定，必然要`运行时编译`
 
