@@ -528,7 +528,7 @@ let tagCloseNoContent = /<[a-zA-Z]+[\s\S]*\/>/
 - 模板正则匹配
 - 可使用 `with` 注入变量，改变作用域
 - 可使用 `new Function` 执行特定规则后的代码
-- 使用 replace ，可能需要嵌套使用 replace 等等
+- 使用 replace ，可能需要嵌套使用 replace 等
 - 可以参考的：
 	- vue template
 	- handlebar 
@@ -604,7 +604,7 @@ console.log((foo.bar, foo.bar)()); // 1
 ## 33. 自己实现 isMyInstanceof
 
 ```javascript hl:3,5
-function **myInstanceof**(left, right) {
+function myInstanceof(left, right) {
 
   // 获取对象的原型，使用 Object.getPrototypeOf()
   let proto = Object.getPrototypeOf(left); 
@@ -684,7 +684,7 @@ function **myInstanceof**(left, right) {
 
 ## 42. 防抖和节流的实现
 
-- 防抖：即 `只执行最后一次` ， 比如 resize 和 sug ，按钮提交、表单验证、
+- 防抖：即 `只执行最后一次` ， 比如 resize 和 sug ，按钮提交、表单验证
 - 节流：即`单位时间只执行一次`，比如滚动加载更多，拖拽移动事件
 
 ```javascript hl:3,15

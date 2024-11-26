@@ -1,8 +1,9 @@
 
 # 再聊聊跨端（PC、移动端、小程序、Web 等）
 
-> 源于个人的某次分享
 
+
+> 源于个人的某次分享
 
 `#跨端` 
 
@@ -58,14 +59,14 @@
 		- 比如 npm 依赖包 就很大啊
 	- 所有依赖都需要打包进应用中
 - tauri
-	- 使用系统原生的 WebView
+	- 使用**系统原生的 WebView**
 	    - Windows：使用 Edge WebView2
 	    - macOS：使用 WebKit
 	    - Linux：使用 WebKitGTK
 	- 核心使用 Rust 编写，体积小且高效
 	- 不包含额外的运行时环境
 	- 所以
-		- 1. 不需要打包 Chromium（节省约 150MB）
+		- 不需要打包 Chromium（节省约 150MB）
 		- 不需要 Node.js 运行时（节省约 20MB）
 		- 更高效的资源打包方式（节省约 5-10MB）
 
@@ -174,7 +175,8 @@
 #### 4.1.4. 接入特点
 
 - 业务分离
-- 平台分离：只需要会 dart 和 flutter  api
+- 平台分离：
+	- 只需要会 dart 和 flutter  api
 - 支持热重载
 - 集成无感
 

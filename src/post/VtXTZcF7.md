@@ -246,7 +246,7 @@ const monitor = {
 
 ### 8.2. **性能监控**
 
-```typescript
+```typescript hl:2
 // 性能监控实现
 const performanceObserver = new PerformanceObserver((list) => {
   const entries = list.getEntries();
@@ -374,4 +374,4 @@ npm run deploy
 
 先梳理好我们自己的东西，比如`整个研发生命周期流程`链路；然后在流程里`找可优化的点`，并去调研或者看社区有没有能借力的，看是否需要二次开发
 
-![528](#)
+![680](#)

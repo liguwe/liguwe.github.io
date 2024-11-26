@@ -21,11 +21,13 @@
 - 通信机制：在主应用和子应用之间建立通信渠道
 	- 基于事件总线
 	- 基于 Props 传递
-	- 基于全局状态管理
+	- 基于**全局状态管理**
 	- 基于自定义事件
-- 路由分发：统一的路由管理，将不同路由分发到对应的子应用
+- 路由分发：统一的路由管理，**将不同路由分发到对应的子应用**
 
 ## 2. 常见的 JavaScript 沙箱实现方案及其代码实现
+
+**主要解决子应用，污染了主应用的 window 对象**
 
 ### 2.1. 快照沙箱 (Snapshot Sandbox)
 
@@ -282,12 +284,14 @@ console.log(proxyWindow.newVar); // "test"
 sandbox.inactive();
 ```
 
-## 3. 样式隔离方案
+## 3. 样式隔离方案与 JS 隔离
+
+![图片&文件](./files/20241127.png)
 ### 3.1.  Shadow DOM 隔离
 
 - 完全隔离，最彻底的方案
 - 浏览器原生支持
-- 弹窗类组件需要特殊处理
+- **弹窗类组件**需要特殊处理
 ### 3.2. 动态样式表切换
 
 在应用切换时动态切换样式表，常用于 qiankun 等方案中， 性能开销较大，可能出现样式闪烁
@@ -322,8 +326,11 @@ sandbox.inactive();
 | JS 沙箱   | iframe + Proxy        | Proxy/Snapshot                 | iframe Proxy       | 无          | 天然隔离        | 无                 |
 | CSP 策略  | 友好                    | 不友好                            | 较友好                | 友好         | 友好          | 友好                |
 | 子应用调试   | 便捷                    | 一般                             | 便捷                 | 一般         | 便捷          | 便捷                |
+|         |                       |                                |                    |            |             |                   |
 
 ## 5. 实现一个主应用和子应用之间的通信系统
+
+![图片&文件](./files/20241127-1.png)
 
 这个`通信系统`提供了三种主要的通信方式：
 
@@ -679,23 +686,45 @@ export default SubApp;
 
 基座应用，需要做以下事情
 - ① **负责注册子应用**，示例如下
+	- entry 子应用 HTML 的入口去哪儿拿
+	- container：渲染到哪儿
+	- activeRule：路由匹配规则
 	- ![图片&文件](./files/20241101-32.png)
 - ② **基座里，需要监听全局路由，然后找到匹配子应用，然后加载子应用，再然后卸载或切换等**
-	- fetch 子应用的入口文件 `index.html` ，然后需要抽取 js , eval 执行它
+	- fetch 子应用的入口文件 `index.html` ，然后需要**抽取 js , eval** 执行它
 	- 所以，需要处理成兼容的 umd 格式，故需要修改 webpack
 	- fetch 所以要求同域
-	- 执行完子应用的脚本后，需要挂载 `#app` 上，但可能会直接覆盖丢主应用；所以才会要求子应用有 自己的 `container` 属性，这也是为什么建议子应用 name/id 唯一；
+	- 执行完子应用的脚本后，需要挂载 `#app` 上，但可能会直接覆盖丢主应用；
+		- 所以才会要求子应用有自己的 `container` 属性，这也是为什么建议子应用 name/id 唯一；
 	- 图片路径可能 404，所以需要注入正确的子应用 public path
 	- 两个子应用相互跳转时，如果不及时卸载，可能会出现两个子应用**同时展示**的情况
 	- 关于**样式隔离**，两种方案
-		- 命名空间，类似于vue style scopt
+		- 命名空间，类似于 vue style scopt
 		- webcomponet 方案
 
 ## 7. 路由分发原理
 
 ![图片&文件](./files/20241101-30.png)
 
+
+## 其他微前端框架和实现原理
+
+### iframe 
+
+![图片&文件](./files/20241127-3.png)
+
+
+
+### systemjs
+
+![图片&文件](./files/20241127-2.png)
+
+### micro-app
+
+![图片&文件](./files/20241127-4.png)
 ## 8. 更多
 
->  再把之前整理的草稿流程图看看，详见 [figjam](https://www.figma.com/board/9ykLrmg5xwkZvY8cxFinog/0022.%E5%B8%B8%E8%A7%81%E7%9A%84%E5%BE%AE%E5%89%8D%E7%AB%AF%E6%96%B9%E6%A1%88%E5%8F%8A%E5%BE%AE%E5%89%8D%E7%AB%AF%E7%9A%84%E5%8E%9F%E7%90%86%E8%A7%A3%E6%9E%90?node-id=0-1&node-type=canvas&t=4hrfzhAvEhnaDpVF-0)
+- 再把之前整理的草稿流程图看看，详见 [figjam](https://www.figma.com/board/9ykLrmg5xwkZvY8cxFinog/0022.%E5%B8%B8%E8%A7%81%E7%9A%84%E5%BE%AE%E5%89%8D%E7%AB%AF%E6%96%B9%E6%A1%88%E5%8F%8A%E5%BE%AE%E5%89%8D%E7%AB%AF%E7%9A%84%E5%8E%9F%E7%90%86%E8%A7%A3%E6%9E%90?node-id=0-1&node-type=canvas&t=4hrfzhAvEhnaDpVF-0)
+- https://www.garfishjs.org/blog/architecture.html
+- https://juejin.cn/post/7113503219904430111
 

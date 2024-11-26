@@ -11,7 +11,7 @@ JAMstack 是一种现代 Web 开发架构，强调使用 JavaScript、API 和 Ma
 
 ![image.png|632](https://832-1310531898.cos.ap-beijing.myqcloud.com/yuque/ff6bf70189d55690f74889441c4f9ca2.png)
 
-![image.png|616](https://832-1310531898.cos.ap-beijing.myqcloud.com/yuque/20b4de6008f7cfc8c07f1d11772e1573.png)
+![image.png|688](https://832-1310531898.cos.ap-beijing.myqcloud.com/yuque/20b4de6008f7cfc8c07f1d11772e1573.png)
 ## 2. 产生背景
 
 > **传统的网站架构 ： 无论如何都需要一个实时的在线服务，它在处理这些不怎么变动的内容时，很鸡肋：计算量很小，但是依旧需要大量后端和运维人员维护网站的安全性、稳定性、可伸缩性……**

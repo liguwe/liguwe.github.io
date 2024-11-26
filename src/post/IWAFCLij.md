@@ -25,7 +25,7 @@ module: {
 
 ### 1.2. 使用 cache-loader
 
-- 在一些性能开销较大的 loader 之前添加 cache-loader，将结果缓存到磁盘里
+- 在一些性能开销较大的 loader 之前添加 `cache-loader`，将结果缓存到磁盘里
 
 ```javascript
 module: {
@@ -42,7 +42,7 @@ module: {
 
 ### 1.4. 开启多进程打包
 
-- 使用 thread-loader 或 parallel-webpack 实现多进程打包
+- 使用 thread-loader 或 parallel-webpack 实现**多进程打包**
 
 ```javascript
 module: {

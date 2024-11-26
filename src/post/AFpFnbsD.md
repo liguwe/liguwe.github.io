@@ -219,17 +219,14 @@ module.exports = {
    - 持久化缓存提升构建速度
    - 改进的 Tree Shaking
    - 更优的长期缓存策略
-
 2. 开发体验：
    - 内置资源模块处理
    - 更好的错误提示
    - 更严格的配置验证
-
 3. 新功能：
    - 模块联邦支持微前端架构
-   - 原生支持 WebAssembly
-   - 支持顶层 await
-
+   - 原生支持 `WebAssembly`
+   - 支持`顶层 await`
 4. 包体积优化：
    - 移除自动的 Node.js polyfills
    - 优化内部结构

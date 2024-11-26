@@ -15,7 +15,6 @@
 
 ```javascript hl:9
 let str = "1234";
-
 function fn(str) {
   // base case
   if (str === "") {
@@ -23,9 +22,7 @@ function fn(str) {
   }
   return fn(str.slice(1)) + str[0];
 }
-
 console.log(fn(str));
-
 ```
 
 ## 2. 实现一个 Object.create(null)
@@ -157,7 +154,6 @@ function fn(array, rootId) {
   });
   return res;
 }
-
 console.log(JSON.stringify(fn(arr, 0)));
 ```
 
@@ -179,7 +175,6 @@ Array.prototype.splice =
     if (typeof deleteCount === "undefined") {
       deleteCount = this.length - start;
     }
-
     // 处理，移除的
     const removeList = this.slice(start, start + deleteCount);
 
@@ -191,9 +186,7 @@ Array.prototype.splice =
       this[addIndex] = item;
       addIndex++;
     });
-
     this.length = addIndex;
-
     return removeList;
   };
 
@@ -308,13 +301,10 @@ class LazyManClass {
         fn && fn();
     }
 }
-
 function LazyMan(name) {
     return new LazyManClass(name);
 }
-
 LazyMan('Tony').eat('lunch').eat('dinner').sleepFirst(5).sleep(4).eat('junk food');
-
 ```
 
 ## 8. `[abc[bcd[def]]]` 转成对象
@@ -523,4 +513,94 @@ const add = (...args) => {
 
 console.log(add(1)(2)(3, 4).sumof())
 console.log(add(1)(2)(3, 4)(7, 8).sumof())
+```
+
+
+## 封装一个支持请求超时和重试机制的请求函数
+
+
+```javascript
+/**
+ * 延迟函数
+ * @param {number} ms 延迟时间（毫秒）
+ * @returns {Promise<void>}
+ */
+const delay = (ms) => new Promise(resolve => setTimeout(resolve, ms));
+/**
+ * 带有超时和重试机制的请求函数
+ * @param {Function} fetchFn - 实际的请求函数
+ * @param {Object} options - 配置选项
+ * @param {number} options.timeout - 超时时间（毫秒）
+ * @param {number} options.retries - 重试次数
+ * @param {number} options.retryDelay - 重试间隔（毫秒）
+ * @param {Function} options.retryCondition - 重试条件函数
+ * @param {AbortSignal} options.signal - 取消信号
+ * @returns {Promise}
+ */
+async function fetchWithRetry(fetchFn, {
+  timeout = 5000,
+  retries = 3,
+  retryDelay = 1000,
+  retryCondition = (error) => true, // 默认所有错误都重试
+  signal = null
+} = {}) {
+  let lastError;
+  // 创建超时 Promise
+  const timeoutPromise = (ms) => new Promise((_, reject) => {
+    setTimeout(() => {
+      reject(new Error(`Request timeout after ${ms}ms`));
+    }, ms);
+  });
+
+  // 重试循环
+  for (let i = 0; i <= retries; i++) {
+    try {
+      // 如果已经被取消，直接抛出错误
+      if (signal?.aborted) {
+        throw new Error('Request aborted');
+      }
+
+      // 创建实际的请求 Promise
+      const fetchPromise = fetchFn();
+
+      // 使用 Promise.race 实现超时控制
+      const result = await Promise.race([
+        fetchPromise,
+        timeoutPromise(timeout)
+      ]);
+
+      return result; // 如果成功，直接返回结果
+    } catch (error) {
+      lastError = error;
+      // 如果是最后一次重试，或者不满足重试条件，直接抛出错误
+      if (i === retries || !retryCondition(error)) {
+        throw error;
+      }
+      // 如果需要重试，等待指定时间
+      console.log(`Retry attempt ${i + 1} of ${retries} after ${retryDelay}ms`);
+      await delay(retryDelay);
+    }
+  }
+  throw lastError;
+}
+// 使用示例：
+async function example4() {
+  try {
+    const result = await fetchWithRetry(
+      () => axios.get('https://api.example.com/data'),
+      {
+        timeout: 3000,
+        retries: 3,
+        retryCondition: (error) => {
+          // axios 特定的错误处理
+          return axios.isAxiosError(error) && 
+                 (!error.response || error.response.status >= 500);
+        }
+      }
+    );
+    console.log(result.data);
+  } catch (error) {
+    console.error('Final error:', error);
+  }
+}
 ```

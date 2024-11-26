@@ -168,7 +168,6 @@ let ss = [
 // 打平一个树形结构
 function flatTree(tree) {
   let res = [];
-
   function traverse(tree) {
     for (let i = 0; i < tree.length; i++) {
       let item = tree[i];
@@ -178,15 +177,10 @@ function flatTree(tree) {
       }
     }
   }
-
   traverse(tree);
-
   return res;
 }
-
 console.log(flatTree(ss));
-
-
 ```
 
 ## 6. 判断一个数是否是 `素数` ，列举出 `n` 以内的`素数` 的个数
@@ -235,12 +229,11 @@ function listPrimes(n) {
   }
   return res;
 }
-
 ```
 
 ## 7. 实现 `子元素宽度`永远是`父元素的一半`，且`宽高比`永远为 `2 :1`
 
-原理：**如果 paading/left 为百分比时，都是以父元素的 width 为参考的**
+原理：**如果 padding/margin 为百分比时，都是以父元素的 width 为参考的**
 
 ![图片&文件](./files/20241028-18.png)
 
@@ -625,7 +618,7 @@ console.log(add(1)(2)(3)(4)(5)(6).product()); // 720
 - 柯里化会创建多个闭包，可能影响性能
 - 调试困难
 
-## 12. 实现一个简单的classname
+## 12. 实现一个简单的 classname
 
 ### 12.1. 使用示例
 
@@ -708,7 +701,6 @@ Array.prototype._map1 = function (fn, context) {
   }
   return res;
 };
-
 ```
 
 ## 14. 实现一个双向绑定
@@ -953,7 +945,6 @@ class Dialog {
 }
 let dialog = new Dialog("Hello");
 dialog.open();
-
 ```
 ## 18. 说出下面代码的执行顺序
 
@@ -1055,7 +1046,11 @@ fs.readFile('test.js', () => {
 
 所以当数据发生变化时，Vue 不会立即更新 DOM，而是将更新操作推入一个队列中，这种做法可以提高性能
 
-Vue会尝试使用原生的 Promise.then、MutationObserver 和 setImmediate，如果执行环境不支持，则会采用`setTimeout(fn, 0)` 代替
+- 当响应式数据发生变化时，Vue 会将更新操作放入异步队列
+- nextTick 会创建一个 Promise，确保回调在 DOM 更新后执行
+- 多个 nextTick 会被合并到同一个 Promise 中
+
+Vue会尝试使用`原生的 Promise.then、MutationObserver 和 setImmediate`，如果执行环境不支持，则会采用`setTimeout(fn, 0)` 代替
 
 nextTick 的**核心思想**：利用 JavaScript 的事件循环，将回调推迟到 `下一个"tick"`执行
 
@@ -1486,7 +1481,7 @@ if(a == 1 && a == 2 && a == 3) {
 
 ### 32.7. 注意事项
 
-- 这些实现都是一些技巧性的代码，在实际开发中**应该避免使用**
+- 这些实现都是一些`技巧性`的代码，在实际开发中**应该避免使用**
 - 这类代码可能会导致代码难以理解和维护
 - 主要用于理解 JavaScript 的`类型转换机制`和对象属性访问机制
 
@@ -2298,10 +2293,10 @@ p::selection {
 
 ## 46. `link` 和 `@import` 有什么区别
 
-- `@import` 只能引入样式，并且页面加载完成才会加载
+- `@import` 只能引入样式，并且**页面加载完成才会加载**
 - `link` 可引入样式、rss、`rel`，网站图标等；
 	- 比如 `<link rel="preload" href="critical.css" as="style"> `
-	- rel 还可以为 icon  modulepreload  manifest next/prev   preconnect   dns-prefetch   prefetch 等等
+	- ==rel== 还可以为 `icon  modulepreload  manifest next/prev   preconnect   dns-prefetch   prefetch` 等等
 	- CSS 文件会**并行下载**，不会阻塞其他 CSS 文件的下载
 	- 但会阻塞页面渲染（render-blocking）
 
