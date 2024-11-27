@@ -9,7 +9,7 @@ RESTful（Representational State Transfer）是一种设计 Web 服务的架构�
 <!-- toc -->
  ## 1. 资源（Resources） 
 
-RESTful API 的核心概念是**资源**。每个资源都应该有一个唯一的 URI（统一资源标识符）。
+RESTful API 的核心概念是**资源**。**每个资源都应该有一个唯一的 URI（统一资源标识符）**。
 
 **系统中所有事务都是资源**
 

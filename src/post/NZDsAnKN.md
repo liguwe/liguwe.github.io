@@ -10,7 +10,7 @@
 
 前端工程化的本质是通过工程手段解决**前端开发中的效率、规范、质量、性能等问题**。它不仅仅是工具的堆砌，而是一套完整的**系统工程方法论**
 
-它涉及开发、构建、部署、运维等多个环节
+它涉及**开发、构建、部署、运维**等多个环节
 
 ## 2. 核心目标
 
@@ -237,6 +237,9 @@ interface TestingStrategy {
    - TypeScript 类型检查
    - Prettier 格式化
    - Code Review 机制
+	   - 主动发起
+	   - Code review
+	   - 定期一起 review 代码
 
 ## 6. 性能优化体系
 
@@ -245,14 +248,18 @@ interface TestingStrategy {
 核心性能指标
 
 加载性能
+
   - FCP (First Contentful Paint) < 1.8s
   - LCP (Largest Contentful Paint) < 2.5s
   - TTI (Time to Interactive) < 3.8s
+
 交互性能
+
   - FID (First Input Delay) < 100ms
   - TBT (Total Blocking Time) < 200ms
   - CLS (Cumulative Layout Shift) < 0.1
 ### 6.2. 资源性能
+
   - 首屏JS资源 < 300KB
   - 首屏CSS资源 < 100KB
   - 图片资源优化率 > 70%

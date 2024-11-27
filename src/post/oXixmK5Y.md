@@ -229,7 +229,7 @@ navigator.serviceWorker.addEventListener('message', function (e) {
 
 #### 2.1.4. Shared Worker
 
-Shared Worker 是 Web Workers API 的一种特殊类型，它允许多个浏览器上下文（如窗口、标签页或 iframe）共享同一个 worker 实例。这使得不同的页面可以通过这个共享的 worker 进行通信和数据共享
+Shared Worker 是 Web Workers API 的一种特殊类型，**它允许多个浏览器上下文（如窗口、标签页或 iframe）共享同一个 worker 实例**。这使得不同的页面可以通过这个共享的 worker 进行通信和数据共享
 
 ```javascript
 // 在页面中创建 Shared Worker
