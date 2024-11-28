@@ -4,7 +4,6 @@
 
 `#前端` 
 
-以下是一些主要的新兴技术和标准的详细介绍：
 
 
 ## 目录
@@ -68,7 +67,7 @@ WebXR 是一种用于构建虚拟现实（VR）和增强现实（AR）体验的�
 
 ### 4.1. 定义
 
-HTTP/3 是 HTTP 协议的最新版本，基于 QUIC 协议（Quick UDP Internet Connections）。它旨在提高 Web 的传输效率和可靠性。
+HTTP/3 是 HTTP 协议的最新版本，基于 `QUIC` 协议（Quick UDP Internet Connections）。它旨在提高 Web 的传输效率和可靠性。
 
 ### 4.2. 特点
 
@@ -122,6 +121,7 @@ WebRTC（Web Real-Time Communication）是一个支持浏览器和移动应用�
 
 ## 7. JAM stack 架构
 
+>  更多见 [8. JAMstack 架构](/post/5tFmjfyQ.html)
 
 ### 7.1. 定义
 
@@ -148,3 +148,6 @@ JAMstack 是一种现代 Web 开发架构，强调客户端 JavaScript、可重�
 	- 由于 JAMstack 前端速度快且后端轻量化，因此 JAMstack 应用程序通常具有极强的可扩展性。
 
 这些新兴技术和标准正在推动 Web 开发的不断进步，提供了更高的性能、更好的用户体验和更强的开发灵活性。了解和掌握这些技术对于现代 Web 开发者来说至关重要。
+
+
+

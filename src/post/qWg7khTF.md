@@ -105,7 +105,9 @@ console.log("2", promise2);
 
 ## 6. `catch`不管被连接到哪里，都能捕获上层的错误，并且`catch()`也会返回一个`Promise`
 
-```javascript
+### 6.1. catch函数里没有返回值
+
+```javascript hl:13
 const promise = new Promise((resolve, reject) => {
   reject("error");
   resolve("success2");
@@ -128,6 +130,8 @@ promise
 // catch:  error
 // then3:  undefined
 ```
+
+### 6.2. catch函数里有返回值
 
 ```javascript hl:14,21
 const promise = new Promise((resolve, reject) => {
@@ -168,14 +172,12 @@ Promise.resolve(1)
   .then((res) => {
     console.log(res);
   });
-
 // output: 1 2
-
 ```
 
 ## 8. resolve 后每个 then 和 catch **能被调用多次**
 
-- `Promise` 的 `.then` 或者 `.catch` 可以被调用多次
+- `Promise` 的 `.then` 或者 `.catch` **可以被调用多次**
 - 但这里 `Promise` 构造函数只执行一次
 - 或者说 `promise` 内部状态一经改变，并且有了一个值
 	- 那么后续每次调用 `.then` 或者 `.catch` 都会直接拿到该值。
@@ -240,7 +242,30 @@ Promise.resolve()
 // catch:  Error: error!!!
 ```
 
-## 11. 死循环
+## 11. 没有catch ，也不会导致同步代码中断
+
+```javascript
+console.log(1);
+
+setTimeout(() => console.log(2));
+
+Promise.resolve().then(() => console.log(3));
+
+Promise.resolve().then(() => setTimeout(() => console.log(4)));
+
+Promise.resolve().then(() => {
+  throw Error();
+  console.log(5); // 不打印，但是 Promise 的错误会被 window.on('')
+});
+
+setTimeout(() => console.log(6));
+
+console.log(7);
+```
+
+> 关于 Promise 的错误捕获，更多参考，[22. window.onerror 和 window.addEventListener 的区别？](/post/49pCkp80.html)
+
+## 12. 死循环
 
 ```javascript hl:2
 const promise = Promise.resolve().then(() => {
@@ -250,7 +275,7 @@ const promise = Promise.resolve().then(() => {
 promise.catch(console.err)
 ```
 
-## 12. 值穿透 
+## 13. 值穿透 
 
 ```javascript
 // 发生了 值穿透
@@ -279,7 +304,7 @@ Promise.resolve(1)
 // 打印结果 4
 ```
 
-## 13. 需要注意是否有 reject 函数
+## 14. 需要注意是否有 reject 函数
 
 > `.then()`方法的第二个参数`reject`也是可以捕获错误
 
@@ -302,7 +327,7 @@ Promise.reject("err!!!")
 
 ```
 
-## 14. finally 虽然一定会执行，但还**是有顺序的** 
+## 15. finally 虽然一定会执行，但还**是有顺序的** 
 
 ```javascript hl:13,20,3,7
 Promise.resolve("2")
@@ -335,7 +360,7 @@ Promise.resolve("1")
 
 ```
 
-## 15. `finally()`也是微任务队列
+## 16. `finally()`也是微任务队列
 
 ```javascript 
 function promise1() {
@@ -365,7 +390,7 @@ promise2()
 
 ```
 
-## 16. `.catch()`函数能够捕获到`.all()`里**最先**的那个异常，并且**只执行一次**
+## 17. `.catch()`函数能够捕获到`.all()`里**最先**的那个异常，并且**只执行一次**
 
 > [!danger]
 > - 并不是只要有异常就完事了，每个都会执行
@@ -445,7 +470,7 @@ reject Error: 2; // 2s 后输出 Error: 2
 
 > 总结就是：Promise.all 只处理一个异常，其他的都被吞了
 
-## 17. race会获取最新有结论的任务，然后走后面then或者 catch，其他的**正常执行**，但不走后面的then和 catch 了,执行结果会被抛弃
+## 18. race会获取最新有结论的任务，然后走后面then或者 catch，其他的**正常执行**，但不走后面的then和 catch 了,执行结果会被抛弃
 
 ```javascript
 function runAsync(x) {
@@ -466,7 +491,7 @@ Promise.race([runAsync(1), runAsync(2), runAsync(3)])
 
 ```
 
-## 18. `await async2()` 会立即同步执行 `async2`
+## 19. `await async2()` 会立即同步执行 `async2`
 
 ```javascript hl:3
 async function async1() {
@@ -485,7 +510,7 @@ console.log("4");
 
 ```
 
-## 19. 并不需要 sync 一定返回一个 promise，然后才执行下面的东西
+## 20. 并不需要 sync 一定返回一个 promise，然后才执行下面的东西
 
 ```javascript
 async function async1() {
@@ -514,7 +539,7 @@ console.log("5");
 3;
 ```
 
-## 20. 注意 setTimeout(fn,0) 的第一次解析的顺序
+## 21. 注意 setTimeout(fn,0) 的第一次解析的顺序
 
 ```javascript hl:18,5
 async function async1() {
@@ -545,7 +570,7 @@ console.log("7");
 
 ```
 
-## 21. async 的返回值
+## 22. async 的返回值
 
 ```javascript
 async function fn() {
@@ -556,7 +581,7 @@ async function fn() {
 fn().then((res) => console.log(res));
 ```
 
-## 22. await new Promise() 注意有没有 resolve 或者 reject 
+## 23. await new Promise() 注意有没有 resolve 或者 reject 
 
 ```javascript
 async function async1() {
@@ -579,7 +604,7 @@ console.log("6");
 
 ```
 
-## 23. 如果在`async函数`中抛出了错误，则终止**错误结果**，不会继续向下执行
+## 24. 如果在`async函数`中抛出了错误，则终止**错误结果**，不会继续向下执行
 
 ```javascript hl:3
 async function async1() {

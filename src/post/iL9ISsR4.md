@@ -2,7 +2,7 @@
 # 回流和重绘
 
 
-`#2024/07/30`  `#前端/CSS`  
+`#2024/07/30` `#前端/CSS`  
 
 
 ## 目录
@@ -10,9 +10,10 @@
  ## 1. 先看定义 
 
 - `回流（或重排）`：布局引擎会根据各种样式计算每个盒子在页面上的`大小与位置`
-   - 重排（也称为回流）是浏览器重新计算页面中`**元素位置和几何形状**`的过程
-- `重绘`：当计算好盒模型的`位置、大小及其他属性`后，浏览器根据每个盒子特性进行绘制
-- `重绘`不一定导致`重排`，但`重排`一定会导致`重绘`  ，如下图：
+	- 重排（也称为回流）是浏览器重新计算页面中`元素位置和几何形状`的过程
+- `重绘`：
+	- 当计算好盒模型的`位置、大小及其他属性`后，浏览器根据每个盒子特性进行绘制
+- `重绘`不一定导致`重排`，但`重排`一定会导致`重绘` ，如下图：
 
 ![](https://832-1310531898.cos.ap-beijing.myqcloud.com/yuque/0e89990a6d49095e5a717c3af1edeb53.png)
 
@@ -25,32 +26,35 @@
 - 元素`字体大小`变化
 - `添加或者删除`可见的DOM元素
 - 激活CSS伪类（例如：`:hover`）
-- `calc()` 本身不会引起 `回流`，但是因为需要重新计算布局的属性，比如父元素的宽度改变了，那必然会导致子元素的一个 `回流`
+- `calc()` 本身不会引起 `回流`，
+	- 但是因为需要重新计算布局的属性，比如父元素的宽度改变了，那必然会导致子元素的一个 `回流`
 - `查询某些属性`或`调用某些方法`
    - `dom.style.width/height` ，只能取`行内样式的宽和高`，`style` 中 `link` 外链取不到。可写，修改时会导致`重排`
    - `window.getComputedStyle(dom).width/height`，指定`第二参数`指定一个要匹配的伪元素的字符串。必须对普通元素省略（`或null`） ，
       - 读取的样式是`最终样式`，包括了内联样式、嵌入样式和外部样式
       - 比如`getComputedStyle(h3, '::after').content` 
       - 会导致`回流` 因为它需要获取祖先节点的一些信息进行计算（譬如宽高等），为求一个`“即时性”`和`“准确性”`。
-   - `dom.getBoundingClientRect().width/height 、top/left/right/bottom`  得到`渲染后的宽和高`，及`相对于视窗的上下左右`的距离
-   - 获取`布局信息`时，会导致`重排`。相关的方法属性如 `offsetTop`   `getComputedStyle` 等
+   - `dom.getBoundingClientRect().width/height 、top/left/right/bottom` 得到`渲染后的宽和高`，及`相对于视窗的上下左右`的距离
+   - 获取`布局信息`时，会导致`重排`。相关的方法属性如 `offsetTop` `getComputedStyle` 等
    - `scrollIntoView()`、`scrollIntoViewIfNeeded()` 、 `scrollTo()` 滚动时，会导致`重排`
 
->  总之， `查询某些属性`或`调用某些方法` 是否会导致重排，关键需要看  `只读了` ，还是有`写入`操作
 
->  另外一些容易被忽略的操作：如 getComputedStyle，  offsetTop、offsetLeft、 offsetWidth、offsetHeight、scrollTop、scrollLeft、scrollWidth、scrollHeight、clientTop、clientLeft、clientWidth、clientHeight 这些属性有一个共性，就是需要通过`即时计算`得到。因此浏览器为了获取这些值，也会进行`回流`
+总之， `查询某些属性`或`调用某些方法` 是否会导致重排，关键需要看 `只读了` ，还是有`写入`操作
+
+是否`即时计算`
+- 另外一些容易被忽略的操作：如 getComputedStyle， offsetTop、offsetLeft、 offsetWidth、offsetHeight、scrollTop、scrollLeft、scrollWidth、scrollHeight、clientTop、clientLeft、clientWidth、clientHeight 这些属性有一个共性，就是需要通过`即时计算`得到。因此浏览器为了获取这些值，也会进行`回流`
 
 ## 3. opacity、display 和 visibility
 
 - 修改 `opacity` 和 `visibility` 属性通常只会触发`重绘`，而不会触发`回流`
 - 而修改 `display` 属性则可能会触发`回流和重绘`
 
-![](https://832-1310531898.cos.ap-beijing.myqcloud.com/yuque/d416ea83c9a78c5f5445f7568c9de8ba.png)
+![|600](https://832-1310531898.cos.ap-beijing.myqcloud.com/yuque/d416ea83c9a78c5f5445f7568c9de8ba.png)
 
 > - `opacity`为 0 ，可以点击
 > - visibility 为 hidden时，不能点击
 
-## 4. 修改  `left` 和 `right` 的影响
+## 4. 修改 `left` 和 `right` 的影响
 
 ### 4.1. 对于绝对定位 (`position: absolute`) 和 固定定位 (`position: fixed`)的元素
 
@@ -58,8 +62,9 @@
 >  > **结论： 对于脱离文档流的元素：一般不会引起文档流的重排，但会导致该元素的重绘。**
 
 - 这些元素脱离正常文档流，它们的布局不再影响和被其他元素影响
-- 对于脱离文档流的元素（如`position: absolute`或`position: fixed`），修改`left`和`right`属性通常直接影响该元素本身的位置，而不会影响到其他元素的布局，因此**不会引起整体布局的重排**。
-- 然而，依然会 **导致该元素的重绘（repaint），但不涉及到重排（reflow）**
+- 对于脱离文档流的元素（如`position: absolute`或`position: fixed`）
+	- 修改`left`和`right`属性通常直接影响该元素本身的位置，而不会影响到其他元素的布局，因此**不会引起整体布局的重排**
+	- 然而，依然会 **导致该元素的重绘（repaint），但不涉及到重排（reflow）**
 
 ### 4.2. 对于对于未脱离文档流的元素（如`position: relative`）
 
@@ -75,7 +80,7 @@
 
 #### 4.3.2. 相对定位阶段（在容器视口内）
 
-- 元素还未达到指定的偏移位置，此时与普通的`**相对定位**`元素非常相似。
+- 元素还未达到指定的偏移位置，此时与普通的`相对定位`元素非常相似。
 - 修改 `left` 和 `right` 会影响元素的位置，因此可能会引发重排（reflow）。
 
 #### 4.3.3. 固定定位阶段（到达偏移位置）
@@ -87,7 +92,7 @@
 ### 4.4. 总结
 
 - 对于已经脱离文档流的元素（如 position: absolute 或 fixed）
-	- 仅修改 left 和 right 的值通常不会导致其他元素的回流，但可能会导致该元素本身的重绘。
+	- 仅修改 `left` 和 `right` 的值通常不会导致其他元素的回流，但可能会导致该元素本身的重绘。
 - 对于` position: relative` 来说，会导致
 - 对于 `position: sticky` 看属于那个阶段
 
@@ -109,11 +114,11 @@ for (let i = 0; i < 10; i++) {
 document.getElementById('myList').appendChild(fragment);
 ```
 
-   - 使用文档片段(DocumentFragment)或者先将元素设为不可见，进行多次修改后再显示。
+   - 使用文档片段(`DocumentFragment`) 或者 **先将元素设为不可见**，进行多次修改后再显示。
 
 ### 5.4. 避免频繁操作样式
 
-```javascript
+```javascript hl:8
 // 不推荐
 const el = document.getElementById('myElement');
 el.style.borderLeft = '1px';
@@ -126,14 +131,14 @@ el.style.cssText = 'border-left: 1px; border-right: 2px; padding: 5px;';
 el.classList.add('my-class');
 ```
 
-- 合并多次样式修改，一次性修改。
+- 合并多次样式修改**，一次性修改**。
 - 使用类名替代多次样式修改。
 - `classList.add/remove/toggle` 来切换样式，而不是直接修改` style 属性`
 
 ### 5.5. 缓存布局信息：批量修改
 
-```javascript
-// 不推荐
+```javascript hl:1,7
+// 不推荐： 获取了 100 次 element.offsetLeft 
 for (let i = 0; i < 100; i++) {
   element.style.left = `${element.offsetLeft + 1}px`;
 }
@@ -146,12 +151,12 @@ for (let i = 0; i < 100; i++) {
 }
 ```
 
-- 避免多次读取会引发重排的属性。
+- **避免多次读取会引发重排的属性**
 
 ### 5.6. 使用绝对定位使元素脱离文档流
 
 - 对于频繁重排的元素，可以使用绝对定位使其脱离文档流。
-- `position: absolute、fixed `  脱离文档流，以避免对其他元素布局的影响。
+- `position: absolute、fixed ` 脱离文档流，以避免对其他元素布局的影响。
 
 ### 5.7. 优化动画
 
@@ -221,7 +226,7 @@ element1.style.height = `${h1 * 2}px`;
 element2.style.height = `${h2 * 2}px`;
 ```
 
-先进行所有的读操作，然后再进行写操作，避免读写交叉导致多次重排
+先进行**所有的读操作**，然后再进行**写操作**，避免读写交叉导致多次重排
 
 > 在实际应用中，应根据具体情况选择合适的优化方法。
 

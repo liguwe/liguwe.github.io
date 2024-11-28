@@ -26,15 +26,15 @@
 - **Svelte 在编译时将组件转换为高效的命令式代码，而不是在运行时解释代码**。
 	- Svelte 是一种全新的构建用户界面的方法。
 		- 传统框架如 React 和 Vue 在浏览器中需要做大量的工作
-		- 而 Svelte 将这些工作放到构建应用程序的编译阶段来处理。
-	- Svelte 在 `构建/编译阶段` 将你的应用程序转换为理想的 JavaScript 应用，
-		- 而不是在`运行阶段` 解释应用程序的代码。
-		- 这意味着你不需要为框架所消耗的性能付出成本，并且在应用程序首次加载时没有额外损失。
-- `SvelteKit`：一个用于构建 Svelte 应用的全栈框架，支持服务器端渲染、静态站点生成等功能
+		- 而 Svelte 将这些工作放到构建应用程序的编译阶段来处理
+	- Svelte 在 `构建/编译阶段` 将你的应用程序转换为理想的 JavaScript 应用
+		- 而不是在`运行阶段` 解释应用程序的代码
+		- 这意味着你不需要为框架所消耗的性能付出成本，并且在应用程序首次加载时没有额外损失
+- `SvelteKit`：一个用于构建 `Svelte` 应用的全栈框架，支持服务器端渲染、静态站点生成等功能
 
 ## 4. Next.js 和 Nuxt.js
 
-- **Next.js**：一个基于 `React` 的框架，支持服务器端渲染（SSR）、静态站点生成（SSG）和增量静态再生（ISR）。
+- **Next.js**：一个基于 `React` 的框架，支持服务器端渲染（SSR）、静态站点生成（`SSG`）和增量静态再生（`ISR`）。
 - **Nuxt.js**：一个基于 `Vue.js` 的框架，提供类似的功能，如 SSR 和 SSG。
 
 ## 5. JAMstack
@@ -90,12 +90,13 @@
 ## 13. Web Components
 
 - **Web Components**：
-	- 一组标准技术，允许开发者创建可重用的自定义 HTML 元素。
-	- 包括 Custom Elements、Shadow DOM 和 HTML Templates。
+	- 一组标准技术，允许开发者创建可重用的自定义 HTML 元素
+	- 包括 Custom Elements、Shadow DOM 和 HTML Templates
 
-## 14. Server-side Rendering (SSR) 和 Static Site Generation (SSG)
+## 14. Server-side Rendering (SSR) 和  Static Site Generation (SSG)
 
-- **SSR** 和 **SSG**：通过在服务器端生成 HTML，提高了页面加载速度和 SEO 性能。Next.js 和 Nuxt.js 都支持这些功能。
+- **SSR** 和 **SSG**：通过在服务器端生成 HTML，提高了页面加载速度和 SEO 性能。
+	- Next.js 和 Nuxt.js 都支持这些功能
 
 ## 15. Modern Build Tools
 
@@ -123,8 +124,8 @@
 ## 19. Single Page Applications (SPA)
 
 - **SPA**：
-	- 单页应用，通过动态加载内容和更新 URL 实现不重新加载整个页面的用户体验。
-	- 常用框架包括 React、Vue.js 和 Angular。
+	- 单页应用，通过动态加载内容和更新 URL 实现不重新加载整个页面的用户体验 
+	- 常用框架包括 React、Vue.js 和 Angular 
 
 ## 20. Microservices Architecture：微服务架构
 
@@ -145,7 +146,8 @@
 用于数据流管理的！
 - **Redux**：一个流行的 JavaScript 状态管理库，常与 React 一起使用。
 - **MobX**：另一种状态管理库，基于`响应式编程`，适用于需要更灵活状态管理的应用。
-- **Recoil**：Facebook 开发的状态管理库，专为 React 设计，提供更好的性能和开发体验。
+- **Recoil**：
+	- Facebook 开发的状态管理库，专为 React 设计，提供更好的性能和开发体验。
 - vuex
 - pinia
 - umi/dva
@@ -154,7 +156,6 @@
 
 - **Material-UI**：基于 Google 的 Material Design 规范的 React 组件库。
 - **Ant Design**：一个企业级的 UI 设计语言和 React 组件库。
-- **Chakra UI**：一个简单、模块化且可访问的 React 组件库。
 
 ## 24. Serverless Architecture
 
@@ -170,10 +171,12 @@ SSG 是一种将模板和数据转换为静态 HTML 网站的工具。它在**�
 ![图片&文件](./files/20241115-3.png)
 
 常见的
-- vitepress：自己常用的
+- vitepress：**自己常用的**
 	- ![图片&文件](./files/20241115-5.png)
 - **Gatsby**：基于 React 的静态站点生成器，支持 GraphQL 数据层。
-- **Hugo**：一个用 Go 语言编写的静态站点生成器，构建速度非常快。
+- **Hugo**：
+	- 一个用 Go 语言编写的静态站点生成器，构建速度非常快。
+	- 听过，没用过，一些网站都是用它来搭建的
 - **Eleventy**：一个简单灵活的静态站点生成器，支持多种模板语言。
 
 ## 26. CSS-in-JS
@@ -187,7 +190,7 @@ SSG 是一种将模板和数据转换为静态 HTML 网站的工具。它在**�
 
 1. **命名空间隔离**
     - 通过生成唯一的类名或前缀
-    - 使用哈希算法确保唯一性
+    - 使用**哈希算法**确保唯一性
     - 组件级别的样式封装
 2. **运行时隔离**
     - 动态创建 style 标签
@@ -219,20 +222,25 @@ SSG 是一种将模板和数据转换为静态 HTML 网站的工具。它在**�
 - **Stencil**：
 	- 一个用于构建高性能 Web Components 的编译器，支持 TypeScript 和 JSX。
 
+> 都没用过，现在市面完全使用 Web Components 还是较少
+
 ## 30. Testing Frameworks and Tools
 
 - **Jest**：
-	- 一个由 Facebook 开发的 JavaScript 测试框架，支持快照测试和并行测试。
+	- 一个由 Facebook 开发的 JavaScript 测试框架，支持快照测试和并行测试
 - **Cypress**：
-	- 一个用于端到端测试的现代 JavaScript 测试框架，提供了直观的 API 和强大的调试功能。
+	- 一个用于端到端测试的现代 JavaScript 测试框架，提供了直观的 API 和强大的调试功能
 - **Playwright**：
-	- 一个用于端到端测试的工具，由 Microsoft 开发，支持多种浏览器。
+	- 一个用于端到端测试的工具，由 Microsoft 开发，支持多种浏览器
 
 ## 31. Web Vitals
 
 - **Web Vitals**：
 	- 一组由 Google 定义的指标，用于衡量和优化 Web 性能，
-	- 包括 Largest Contentful Paint (LCP)、First Input Delay (FID) 和 Cumulative Layout Shift (CLS)。
+	- 包括
+		-  Largest Contentful Paint (LCP)
+		- First Input Delay (FID) 
+		-  Cumulative Layout Shift (CLS)。
 
 ## 32. 边缘计算：Edge Computing
 
@@ -244,7 +252,7 @@ SSG 是一种将模板和数据转换为静态 HTML 网站的工具。它在**�
 
 - **Low-Code/No-Code**：
 	- 一种通过图形化界面和拖放组件来构建应用的开发方式，降低了开发门槛。
-	- 常见平台包括 OutSystems、Mendix 和 Webflow。
+	- 常见平台包括 `Mendix` 和 Webflow
 	- 国内各大云平台都有自己的低代码产品
 
 ## 34. Remote Procedure Calls (RPC)
@@ -260,27 +268,28 @@ SSG 是一种将模板和数据转换为静态 HTML 网站的工具。它在**�
 	- **高效性**：通常比 REST API 更高效
 	- **强类型**：通过 IDL 定义接口，提供类型安全
 	- **双向通信**：支持请求-响应模式
--  **主流 RPC 框架**
+- **主流 RPC 框架**
 	- gRPC (Google)
 	- Dubbo (Apache/Alibaba)
-	- Thrift (Apache)
+	- `Thrift` (Apache) 
 	- Spring Cloud (VMware)
 
 ## 35. Module Federation：模块联邦
 
 - Module Federation：
-	- Webpack 5 的新特性，支持在不同应用之间动态加载模块，适用于微前端架构。
+	- Webpack 5 的新特性，支持在不同应用之间动态加载模块，适用于微前端架构
 
 ## 36. 增量静态再生（Incremental Static Regeneration, ISR）
 
 - 增量静态再生（Incremental Static Regeneration, ISR）是 Next.js 提供的一种功能，
 - 结合了静态站点生成（Static Site Generation, SSG）和服务器端渲染（Server-Side Rendering, SSR）的优点。
-	- 它允许开发者在`构建时`生成静态页面，并在`运行时`按需更新这些页面，从而实现高性能和最新数据的平衡。
+	- 它允许开发者在`构建时`生成静态页面
+	- 并在`运行时`**按需更新**这些页面，从而实现高性能和最新数据的平衡。
 
 ## 37. Storybook
 
-- 介绍：用于开发和测试UI组件的工具。
-- 特点：独立环境、组件文档、交互测试。
+- 介绍：用于开发和测试UI组件的工具
+- 特点：独立环境、组件文档、交互测试
 
 ## 38. 参考
 

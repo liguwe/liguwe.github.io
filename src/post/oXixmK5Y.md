@@ -2,12 +2,12 @@
 # 跨域与跨页面通讯问题汇总
 
 
-
 ## 目录
 <!-- toc -->
  ## 1. 跨域问题 
 
 ### 1.1. 列举下跨页面通讯的方式
+
 ![图片&文件](./files/20241028-15.png)
 
 ### 1.2. 跨域的表现、如何跨域？
@@ -44,12 +44,12 @@
 	- Save-Data
 	- Viewport-Width
 	- Width
-- 请求中没有自定义头部
+- 请求中**没有自定义头部**
 - 请求中没有使用 `ReadableStream` 对象
 
 ### 1.5. 为什么需要预检请求？
 
-**预检请求（Preflight）**  的主要目的是为了**保护服务器**。原因如下：
+**预检请求（Preflight）** 的主要目的是为了**保护服务器**。原因如下：
 
 #### 1.5.1. **向后兼容**
 
@@ -373,10 +373,10 @@ self.onconnect = function(e) {
 
 ### 7.3. 有一些特殊情况和解决方案
 
-1. **opener 关系**：如果一个标签页是由另一个标签页打开的（使用 window.open()  ），则它们之间可以通过 opener 和 postMessage 进行通信。
+1. **opener 关系**：如果一个标签页是由另一个标签页打开的（使用 window.open() ），则它们之间可以通过 opener 和 postMessage 进行通信。
 2. **共享存储**：可以使用 localStorage 或 IndexedDB 等共享存储方式，配合 storage 事件来实现跨标签页通信。
 3. **Broadcast Channel API**：这是一个较新的 API，允许**同源的不同上下文**（如不同的标签页）之间进行通信。
-4. **Service Worker**：可以使用 Service Worker 作为中间人来协调不同标签页之间的通信。
+4. **Service Worker**：可以使用 Service Worker 作为**中间人**来协调不同标签页之间的通信。
 5. **WebSocket**：可以通过服务器端的 WebSocket 连接来协调不同标签页之间的通信。
 
 ## 8. 前端页面通讯的方式有哪些？

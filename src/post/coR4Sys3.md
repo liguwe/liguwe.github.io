@@ -45,8 +45,8 @@ document.addEventListener('click', function(e) {
 	- abort
 	- error
 - c) 鼠标事件：
-	- mouseenter
-	- mouseleave
+	- `mouseenter`
+	- `mouseleave`
 - d) 媒体事件：
 	- pause
 	- play

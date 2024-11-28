@@ -4,7 +4,7 @@
 
 
 MessageChannel 是 HTML5 中的一个 API，它提供了一种在**不同的浏览器上下文（如窗口、标签页、iframe）之间**建立双向通信通道的方法。
-- 每个 MessageChannel 都有两个 **MessagePort 对象**，它们分别代表通道的两个端点。
+- 每个 MessageChannel 都有两个 **MessagePort 对象**，它们分别代表通道的**两个端点**。
 
 
 ## 目录

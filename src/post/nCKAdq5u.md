@@ -100,7 +100,7 @@ function captureElementWithHtml2canvas(element) {
 
 ## 4. 浏览器扩展 API
 
-如果是开发浏览器扩展，可以使用浏览器提供的截图 API：
+如果是**开发浏览器扩展**，可以使用**浏览器提供的截图 API**：
 
 ```javascript
 // Chrome 扩展示例
@@ -169,4 +169,6 @@ requestAnimationFrame(() => {
 - MediaDevices API 捕获屏幕内容
 - 第三方库提供的功能
 - 浏览器扩展 API
+	- 利用浏览器本身提供的能力
+		- 类似的还有很多能力，比如截图，离线渲染、生成 PDF 等等
 

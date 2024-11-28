@@ -139,8 +139,8 @@ function co(gen) {
 
 ### 6.1. 使用建议
 
-- 在现代JavaScript中，推荐使用 async/await 而不是 co
-	- async/await 可以看作是这种模式的语言级实现
+- 在现代JavaScript中，**推荐使用 async/await 而不是 co**
+	- async/await 可以看作是这种模式的**语言级实现**
 - 理解 co 的实现有助于深入理解 async/await 的工作原理
 - 在需要支持旧版本环境时，co 仍然是一个有用的工具
 

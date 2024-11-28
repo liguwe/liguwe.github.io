@@ -39,7 +39,7 @@
 
     - [什么是互联网？](post/g3Ojrffu.md)
 
-    - [什么是万维网（World Wide Web）？](post/3YTmWp4m.md)
+    - [万维网（World Wide Web）](post/9UpMS8xz.md)
 
     - [什么是 Web 应用（Web Application）？](post/65SYHnFf.md)
 
@@ -47,7 +47,7 @@
 
     - [现代 Web 技术有哪些变化和趋势？](post/qrEGCawg.md)
 
-    - [Web 技术都有哪些？](post/5KJdw8dC.md)
+    - [Web 技术概述](post/FqbwTpiV.md)
 
     - [Web 技术新兴技术和标准](post/BDo4taJm.md)
 
@@ -62,11 +62,11 @@
 
     - [HTML 技术清单](post/wCioUwdB.md)
 
-    - [如何判断你自己对 HTML 标签了解是否全面？](post/QyazaTqW.md)
+    - [HTML 标签](post/4ZHvghU6.md)
 
-    - [什么是 Web Components？](post/gs6LiEI2.md)
+    - [Web Components](post/vdR2PGuV.md)
 
-    - [HTML 标准规范都有哪些？](post/KICA0gyF.md)
+    - [HTML 标准规范](post/zYsMKVYW.md)
 
     - [什么是响应式图片](post/toQ4H8vV.md)
 
@@ -79,7 +79,7 @@
 
     - [媒体查询](post/VaDHL25B.md)
 
-    - [请列举 CSS 兼容性相关的知识点](post/F2iSLmI3.md)
+    - [CSS 兼容性相关的知识点](post/ksr6BFRe.md)
 
     - [回流和重绘](post/iL9ISsR4.md)
 
@@ -161,9 +161,9 @@
 
     - [type 和 interface 的区别？](post/yR8vz9aS.md)
 
-    - [TS的常见问题](post/Z7Z4vJAp.md)
+    - [TS 常见问题](post/V3pEa02i.md)
 
-    - [interface](post/kh6hthMf.md)
+    - [interface 概述](post/BfFYCZ6i.md)
 
     - [Interface 中的运算符操作](post/GxHTkz7P.md)
 
@@ -190,7 +190,13 @@
 
     - [WebAssembly (Wasm) 及其应用场景](post/Ug5FEab2.md)
 
+    - [堆叠上下文 与 z-index 的关系](post/EMLLYket.md)
+
     - [浏览器的渲染原理](post/MLGEykBV.md)
+
+    - [渲染层（Paint Layer）和合成层（Composite Layer）的区别](post/0vwzdUTu.md)
+
+    - [渲染层（Paint Layer）和层叠上下文（Stacking Context）的关系](post/5vwwyEqQ.md)
 
     - [浏览器中如何查找内存泄漏](post/xyGXILev.md)
 
@@ -201,6 +207,8 @@
     - [shadow dom 与 Web Component](post/dG6UWvZW.md)
 
     - [跨域与跨页面通讯问题汇总](post/oXixmK5Y.md)
+
+    - [跨域请求的实际发送情况](post/5hGRTSc4.md)
 
     - [前端浏览器实现截图功能主要有几种实现方式](post/nCKAdq5u.md)
 

@@ -52,8 +52,8 @@ type Bear = Animal & {
 
 ### 2.2. interface
 
-- 可以使用 `extends` 关键字扩展其他接口或类型
-- 可以被类实现（`implements`）或继承（`extends`）
+- 可以使用 `extends` 关键字==扩展==其他接口或类型
+- 可以被==**类**==实现（`implements`）或继承（`extends`）
 
 ```typescript
 interface Animal {
@@ -151,6 +151,6 @@ interface StringNumberPair {
 ## 7. 使用建议
 
 - 如果定义的类型可能需要扩展或者实现，使用 `interface`
-- 如果需要使用联合类型、交叉类型、元组等，或者需要利用映射类型等高级类型操作，使用 `type`
+- 如果需要使用**联合类型、交叉类型、元组**等，或者需要利用映射类型等高级类型操作，使用 `type`
 - 在**创建第三方库或公共 API 时**，推荐使用 `interface`，因为它更容易扩展和兼容
 

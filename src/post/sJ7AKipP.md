@@ -4,7 +4,7 @@
 
 `#前端/CSS`  `#2024/07/30` 
 
-![image.png](https://832-1310531898.cos.ap-beijing.myqcloud.com/yuque/c792c133990e2818a06482c7117b141c.png)
+![image.png|632](https://832-1310531898.cos.ap-beijing.myqcloud.com/yuque/c792c133990e2818a06482c7117b141c.png)
 
 > 这里可以对应 JS 获取某个元素的各种位置信息：比如 clientX pageX 、width 、offesetLeft 等等等等
 > 
@@ -155,5 +155,4 @@ CSS 中的“参考坐标系”或“参考系”是指为定位、对齐或变�
 4. **边框框、内边距框和内容框**：用于`盒模型`计算。
 5. **变换参考系**：用于应用 CSS 变换。
 
-这些参考坐标系在实际布局和定位中常常结合使用，因此理解它们如何协同工作是掌握 CSS 布局的关键。
 

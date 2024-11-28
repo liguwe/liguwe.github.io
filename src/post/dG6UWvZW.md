@@ -23,7 +23,7 @@ Shadow DOM 是 Web Components标准的一个重要部分，它提供了一种封
 
 - 样式隔离
 - 性能优化，因为浏览器可以独立渲染更新他们
-- 安全性：比如  `dom.attachShadow({mode: 'closed'})` ，外部 js 无法访问他们
+- 安全性：比如 `dom.attachShadow({mode: 'closed'})` ，外部 js 无法访问他们
 - 封装性与可维护性
 
 ## 2. 聊聊 Web Component
@@ -33,7 +33,7 @@ Shadow DOM 是 Web Components标准的一个重要部分，它提供了一种封
 - `window.customElements.define()` 方法来自定义 `组件` ，下面是一个简单实现 `<user-card>`
 	- ![图片&文件](./files/20241024-11.png)
 		- 要点 1：`<template id="userCardTemplate"/>`
-		- 要点 2：定义  `window.customElements.define('user-card',UserCard)`
+		- 要点 2：定义 `window.customElements.define('user-card',UserCard)`
 		- 要点 3：定义 `UserCard`
 
 Web Components 的核心特性：
@@ -41,7 +41,7 @@ Web Components 的核心特性：
 - Shadow DOM：封装组件的内部结构和样式
 - HTML 模板：定义组件的结构
 
-### 2.1. 实现一个  custom-counter 
+### 2.1. 实现一个 custom-counter 
 
 ![图片&文件](./files/20241024-13.png)
 

@@ -2,29 +2,34 @@
 # 现代 Chrome 浏览器架构设计
 
 
-
 ## 目录
 <!-- toc -->
  ## 1. Chrome 多进程架构：浏览器的 6 个主要进程 
 
-1. 浏览器主进程/ UI 进程（Browser Process）：负责管理用户界面、地址栏、书签栏等，以及协调其他进程
+1. 浏览器主进程/ UI 进程（Browser Process）：
+	1. 负责管理用户界面、地址栏、书签栏等，以及协调其他进程
 2. **渲染进程（Renderer Process）**：负责将HTML、CSS和JavaScript转换为用户可以交互的网页
 	- 渲染进程负责站点的渲染，其中也包括 `JavaScript 代码的运行`，`web worker` 的管理等。
 	- 核心任务是将 ` HTML、CSS 和 JavaScript` 转换为用户可以与之交互的网页，排版引擎Blink和JavaScript引擎V8都是运行在该进程
 3. 插件进程：运行网页插件，如Flash
-4. GPU 进程：处理GPU相关的任务，加速网页渲染
+4. GPU 进程：
+	1. 处理GPU相关的任务，加速网页渲染
 5. 网络进程（Network Process）：处理网络请求
 	- Chrome有个机制，**同一个域名同时**`最多只能建立6个TCP连接`，
 		- 如果在同一个域名下同时有10个请求发生，那么其中 4个请求会进入排队等待状态，直至进行中的请求完成
-6. 扩展进程（Extension Process）：运行浏览器扩展
+6. 扩展进程（Extension Process）：
+	1. 运行浏览器扩展
 
 ## 2. 在每个渲染进程中，又包含多个线程
 
 - 主线程：执行 JavaScript，处理 DOM、CSS等
 	- JavaScript主要在渲染进程的**主线程**上执行，所以长时间运行的JavaScript会阻塞页面渲染
-- 工作线程（Worker Thread）：执行 Web Worker 或 Service Worker。 
-- 合成线程（Compositor Thread）：负责将页面各个部分合成为最终显示的图像。 
-- 光栅线程（Raster Thread）：将页面元素转换为位图
+- 工作线程（Worker Thread）：
+	- 执行 Web Worker 或 Service Worker。 
+- 合成线程（Compositor Thread）：
+	- 负责将页面各个部分合成为最终显示的图像。 
+- 光栅线程（Raster Thread）：
+	- 将页面元素转换为位图
 
 ## 3. Chrome 的 4 种进程模型
 
@@ -71,13 +76,13 @@ Chrome 采用**多进程多线程架构**，每个进程内部都有多个线程
 - 网络线程：
    - 在网络进程中，处理所有的网络请求和响应。
       - 比如`Ajax`请求、Fetch等都是
-- 定时器线程：
+- **定时器线程**：
 	- 记住，浏览器的`setInterval`和`setTimeout`不是js引擎里的，而`是浏览器自己开了个线程来处理`
 	- 负责处理 setTimeout 和 setInterval 等计时器功能。
 - **事件触发线程**：
     - 管理事件队列，当事件被触发时，将其添加到队列中等待主线程处理。
-        - JS引擎自己忙不过来，需要浏览器另开线程协助
-- 垃圾回收线程：
+        - JS 引擎自己忙不过来，需要浏览器另开线程协助
+- **垃圾回收线程**：
     - 负责 JavaScript 的内存垃圾回收，以释放不再使用的内存。
 - 插件线程：
     - 用于运行浏览器插件，每个插件可能在自己的线程中运行。
@@ -87,7 +92,8 @@ Chrome 采用**多进程多线程架构**，每个进程内部都有多个线程
 需要注意的是，虽然 Chrome 是多线程的，
 - 但 JavaScript 在浏览器中仍然是**单线程**执行的（除非使用 Web Workers）。
 - 这种设计是为了简化编程模型，避免复杂的线程同步问题
-- 同时也与 JavaScript 的主要用途——处理用户交互和操作 DOM——相符合。
+- 同时也与 JavaScript 的主要用途
+	- 处理用户交互和操作 DOM 相符合。
 
 ## 5. JavaScript 引擎 与 Chrome 其他线程的关系
 
@@ -100,7 +106,7 @@ Chrome 采用**多进程多线程架构**，每个进程内部都有多个线程
 - JavaScript 引擎与渲染进程：
 	- JavaScript 引擎（V8）运行在浏览器的**渲染进程（Renderer Process）中**。
 	- **渲染进程**是负责将 HTML、CSS 和 JavaScript 转换为用户可以与之交互的网页的核心进程。
-	- 在同一个渲染进程中，除了 JavaScript 引擎，还包括排版引擎（如 Blink）。
+	- 在同一个渲染进程中，除了 JavaScript 引擎，还包括==排版引擎==（如 Blink）。
 - JavaScript 引擎线程：
 	- JavaScript 引擎在渲染进程中运行在一个**专门的线程**上，通常被称为 **JS 引擎线程或主线程**。
 	- 这个线程负责解析和执行 JavaScript 代码。
@@ -108,12 +114,13 @@ Chrome 采用**多进程多线程架构**，每个进程内部都有多个线程
 	- JavaScript 引擎线程和 GUI 渲染线程是**互斥**的。
 		- 这意味着当 JS 引擎执行时，GUI 渲染线程会被挂起。
 		- 这种设计是为了防止渲染出现不可预期的结果。
-		- 当 JavaScript 执行时间过长，可能会导致页面渲染的卡顿。
-- 事件循环和消息队列：
+		- 所以，当 JavaScript 执行时间过长，可能会导致页面渲染的卡顿。
+- 事件循环和**消息队列**：
 	- JavaScript 是单线程的，但通过**事件循环（Event Loop）和消息队列**来处理异步操作。
-	- **事件循环和消息队列的机制**允许 JavaScript 在不阻塞主线程的情况下处理 I/O 操作、定时器等异步任务。
+		- **事件循环和消息队列的机制**
+			- 允许 JavaScript 在不阻塞主线程的情况下处理 I/O 操作、定时器等异步任务。
 - 与其他进程的交互：
-	-  JavaScript 引擎运行在渲染进程中
+	- JavaScript 引擎运行在渲染进程中
 		- 但它可以通过进程间通信（IPC）与其他进程（如浏览器主进程、网络进程等）进行交互。
 		- 这种交互允许 JavaScript 执行网络请求、访问本地存储等操作。
 - Web Workers：

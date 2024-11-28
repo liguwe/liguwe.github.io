@@ -78,7 +78,7 @@ type Readonly<T> = {
 };
 ```
 
-## 6. 类型组合
+## 6. 类型组合：联合类型 和 交叉类型
 
 ```typescript
 // 联合类型
@@ -141,6 +141,7 @@ const street = user?.address?.street;
 ### 9.1. extends 条件类型
 
 用于创建基于条件的类型：
+
 ```typescript
 type IsString<T> = T extends string ? true : false;
 type Result1 = IsString<"hello">; // true

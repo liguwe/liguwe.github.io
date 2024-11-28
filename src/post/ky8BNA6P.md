@@ -2,7 +2,6 @@
 # 如何检测页面是否在前台运行（检测页面的可见性）
 
 
-
 ## 目录
 <!-- toc -->
  ## 1. 首先说说为什么需要检测 
@@ -15,7 +14,7 @@
 
 2、document.visibilityState 检测页面可见性，返回只读属性
 
-3、visibilitychange 事件
+3、`visibilitychange` 事件
 
 4、`window.addEventListener()`方法监听 `blur` 和 `focus` 事件来检测页面是否在前台或后台。
 - 当**页面**失去焦点时触发 `blur` 事件
@@ -30,10 +29,12 @@
 - `unload` 
 - `pageshow`
 
-## 3. 最后
+## 3. 总结
 
-注意兼容性，另外整体可以分为两类 
+整体可以分为两类 
 
 - document上的`属性值`或者`具体方法` 
 - 监听特定事件
+
+另外需要关注兼容性
 

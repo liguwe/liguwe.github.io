@@ -29,7 +29,7 @@
 }
 ```
 
-## 2. 通过 reference 引用
+## 2. 通过 **reference** 引用
 
 在项目中创建类型声明文件（`.d.ts`），然后通过 `reference` 引用：
 
@@ -246,4 +246,3 @@ import type { SomeType } from 'some-library';
 type Config = typeof import('./config').default;
 ```
 
-通过以上方式，你可以有效地组织和使用 node_modules 中的类型定义，同时也可以根据需要扩展这些类型。记住要保持类型定义的清晰和模块化，这样可以更好地维护代码。

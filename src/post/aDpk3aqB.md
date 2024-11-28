@@ -47,8 +47,8 @@ let target = {};
 let wr = new WeakRef(target);
 ```
 
-- WeakRef：用于直接创建对象的弱引用
-- FinalizationRegistry：垃圾回收时回调函数
+- `WeakRef`：用于直接创建对象的弱引用
+- `FinalizationRegistry`：垃圾回收时回调函数
 
 ## 3. Set 与 WeakSet
 
@@ -345,7 +345,7 @@ console.log(arr);
 - `a - b > 0` 有问题，很大的问题
 - 在实际开发中
 	- 使用 `a - b` 的写法
-	- 不要使用 `a>b`
+	- 不要使用 `a > b`
 
 ## 16. map()方法还可以接受第二个参数
 

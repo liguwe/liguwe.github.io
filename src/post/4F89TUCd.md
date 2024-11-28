@@ -60,6 +60,7 @@ JavaScript 是一种高层次的、解释型的编程语言。它在当今的信
 ### 3.3. 全栈开发
 
 - **MEAN/MERN 栈**：MongoDB, Express, Angular/React, Node.js。
+	- 很早以前还用过
 - 基于 React 和 Vue.js 的服务端渲染框架: Next.js 和 Nuxt.js。
 
 ### 3.4. 移动应用开发

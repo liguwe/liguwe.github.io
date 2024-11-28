@@ -7,9 +7,7 @@
 
 ## 目录
 <!-- toc -->
- ## 1. 列举一些HTML 技术关键词（Sonnet） 
-
-关于HTML技术，以下是一些关键词和概念：
+ ## 1. 列举一些HTML 技术关键词 
 
 1. 语义化标签：如header, nav, main, article, section, aside, footer等
 2. 表单元素：input, select, textarea, button等
@@ -37,16 +35,12 @@
 24. 语言声明：lang属性
 25. 链接关系：rel属性，如stylesheet, icon等
 26. 跨域资源共享（CORS）：通过HTTP头部控制
-27. 内容可编辑：contenteditable属性
-28. 自动完成：autocomplete属性
+27. 内容可编辑：contenteditable 属性
+28. 自动完成：autocomplete 属性
 29. 页面可见性API：用于检测页面是否可见
 30. 历史API：用于操作浏览历史
 
-这些关键词涵盖了HTML的基本结构、新特性、API以及与Web开发相关的重要概念。它们反映了现代HTML的功能和最佳实践。
-
-## 2. 列举一些HTML 技术关键词（GPT-4o）
-
-关于HTML技术的关键词，可以涵盖HTML的基础知识、标签、属性、功能以及相关的技术和概念。以下是一些重要的HTML技术关键词：
+## 2. 列举一些HTML 技术关键词
 
 ### 2.1. 基础知识
 
@@ -109,8 +103,8 @@
 ### 2.5. 图形和绘图
 
 - `<canvas>`: 用于绘制图形
-   - 2d
-   - 3d
+	- 2d
+	- 3d
 - **SVG (Scalable Vector Graphics)**: 可缩放矢量图形
 
 ### 2.6. 响应式设计
@@ -148,4 +142,4 @@
 - **DOM (Document Object Model)**: 文档对象模型
 - **SEO (Search Engine Optimization)**: 搜索引擎优化
 
-这些关键词涵盖了HTML技术的各个方面，从基础知识到高级功能，帮助开发者更好地理解和使用HTML来构建现代Web应用。
+

@@ -2,10 +2,9 @@
 # JavaScript 内存泄漏场景及其解决方案
 
 
-
 ## 目录
 <!-- toc -->
- ## 1. 闭包导致的内存泄漏 
+ ## 1. 闭包导致的内存泄漏 →  cleanup 
 
 ```javascript hl:2
 function createClosure() {
@@ -49,7 +48,6 @@ closure.cleanup();
 ```javascript
 function addHandler() {
   const element = document.getElementById('button');
-  
   element.addEventListener('click', () => {
     // 处理点击事件
     doSomething();

@@ -170,6 +170,9 @@ array.findLastIndex()
 ```javascript
 // 1. Promise.withResolvers
 const {promise, resolve, reject} = Promise.withResolvers()
+// 更优雅的方式来处理 Promise 的创建和控制,不用包在  Promise里面了
+// 看起来更线性了
+
 
 // 2. 新增 RegExp v flag
 /foo/v.test('foo')

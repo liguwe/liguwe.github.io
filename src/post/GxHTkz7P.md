@@ -4,7 +4,7 @@
 
 ## 目录
 <!-- toc -->
- ## 1. 交叉类型运算符 (&) ，需要配合 type 的 `&` 
+ ## 1. `交叉类型`运算符 (&) ，需要配合 type 的 `&` 
 
 交叉类型运算符 `&` 用于**组合多个类型为一个类型**，包含了所有类型的特性：
 
@@ -38,7 +38,7 @@ const employee: Employee = {
 };
 ```
 
-## 2. 联合类型运算符 (|)
+## 2. `联合类型`运算符 (|)
 
 联合类型运算符 `|` 表示一个值可以是几种类型之一：
 
@@ -67,7 +67,7 @@ function getPet(): Pet {
 
 ## 3. 类型映射运算符
 
-### 3.1. `Partial<T>`
+### 3.1. `Partial<T>` ，包装过的泛型
 
 使所有属性变为可选：
 
@@ -88,7 +88,7 @@ type PartialUser = Partial<User>;
 // }
 ```
 
-### 3.2. `Required<T>`
+### 3.2. `Required<T>`，包装过的泛型
 
 使所有属性变为必需：
 
@@ -107,7 +107,7 @@ type RequiredConfig = Required<Config>;
 // }
 ```
 
-### 3.3. `Readonly<T>`
+### 3.3. `Readonly<T>`，包装过的泛型
 
 使所有属性只读：
 
@@ -162,7 +162,7 @@ function getProperty<T, K extends keyof T>(obj: T, key: K): T[K] {
 
 ### 5.2. `Pick<T, K>`
 
-从类型中选择部分属性：
+从类型中**选择部分属性**：
 
 ```typescript
 interface Todo {
@@ -182,7 +182,7 @@ type TodoPreview = Pick<Todo, "title" | "completed">;
 
 ### 5.3. `Omit<T, K>`
 
-从类型中排除某些属性：
+从类型中**排除某些属性**：
 
 ```typescript
 interface User {
@@ -224,7 +224,7 @@ type PartialPublicUser = Partial<Omit<User, "password">>;
 
 ## 7. `Record<K, T>`
 
-创建具有指定键类型和值类型的对象类型：
+创建具有指定**键类型和值类型**的对象类型：
 
 ```typescript
 type PageInfo = {

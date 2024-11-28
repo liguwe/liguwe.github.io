@@ -1,7 +1,7 @@
 
 # 媒体查询
 
-`#2024/07/30`   `#前端/CSS`  
+`#2024/07/30` `#前端/CSS`  
 
 常见的媒体查询语句如下
 
@@ -28,6 +28,7 @@
 ```
 
 ## 2. **屏幕宽度查询（最常用）**
+
 ```css
 /* 最小宽度 */
 @media (min-width: 768px) {
@@ -137,7 +138,7 @@
 
 ## 7. **特性查询**
 
-```css
+```css hl:1,8,16
 /* 悬停功能查询 */
 @media (hover: hover) {
     .button:hover {
@@ -191,7 +192,7 @@
 }
 ```
 
-## 10. **常用的Bootstrap断点**
+## 10. **常用的 Bootstrap 断点**
 
 ```css
 /* Extra small devices (phones, less than 576px) */

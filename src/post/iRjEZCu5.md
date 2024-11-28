@@ -6,9 +6,11 @@
 <!-- toc -->
  ## 1. 泛型基础 
 
-泛型是一种**在定义函数、接口或类时不预先指定具体类型，而在使用时再指定类型的特性**。它可以让我们编写更加灵活和可重用的代码。
+泛型是一种**在定义函数、接口或类时不预先指定具体类型，而在使用时再指定类型的特性**。
 
-### 基本语法
+> 个人理解是：类比一个函数，可以传入参数，来确定这个接口、函数、或类的具体类型
+
+### 1.1. 基本语法
 
 泛型使用尖括号 `<T>` 来定义，其中 `T` 是一个类型变量：
 
@@ -18,17 +20,17 @@ function identity<T>(arg: T): T {
     return arg;
 }
 
-// 使用方式
+// 使用方式 1
 let output1 = identity<string>("hello");  // 显式指定类型
 let output2 = identity("hello");          // 类型推断
 
 
-// 使用方式
+// 使用方式 2
 let output1 = identity<string>("myString");
 let output2 = identity(123); // 类型推断为 number
 ```
 
-### 泛型接口
+### 1.2. 泛型接口
 
 ```typescript
 interface GenericIdentityFn<T> {
@@ -67,7 +69,7 @@ const strCalculator = new GenericNumber<string>('', (x, y) => x + y);
 
 ## 3. 泛型约束
 
-### 使用 `extends` 关键字
+### 3.1. 使用 `extends` 关键字来约束泛型
 
 ```typescript
 interface Lengthwise {
@@ -80,14 +82,14 @@ function logLength<T extends Lengthwise>(arg: T): void {
 
 // 正确
 logLength("hello");           // 字符串有 length 属性
-logLength([1, 2, 3]);        // 数组有 length 属性
-logLength({ length: 10 });   // 对象有 length 属性
+logLength([1, 2, 3]);         // 数组有 length 属性
+logLength({ length: 10 });    // 对象有 length 属性
 
 // 错误
-// logLength(3);             // 数字没有 length 属性
+// logLength(3);              // 数字没有 length 属性
 ```
 
-### 在泛型约束中使用类型参数
+### 3.2. 在泛型约束中使用类型参数
 
 ```typescript
 function getProperty<T, K extends keyof T>(obj: T, key: K): T[K] {
@@ -124,7 +126,7 @@ class KeyValuePair<TKey, TValue> {
 }
 ```
 
-## 5. 泛型工具类型
+## 5. 常用的泛型工具类型
 
 TypeScript 提供了几个**常用的泛型工具类型**
 
@@ -150,11 +152,12 @@ type Record<K extends keyof any, T> = {
 };
 ```
 
-下面会分开介绍
+下面分开介绍
 
-### `Partial<T>`
+### 5.1. `Partial<T>`
 
-将类型的所有属性变为可选：
+将类型的所有属性变为**可选**：
+
 ```typescript
 interface Todo {
     title: string;
@@ -169,7 +172,7 @@ type PartialTodo = Partial<Todo>;
 // }
 ```
 
-### `Record<K,T>`
+### 5.2. `Record<K,T>`
 
 创建一个键类型为 K，值类型为 T 的对象类型：
 
@@ -187,7 +190,7 @@ const nav: Record<Page, PageInfo> = {
 };
 ```
 
-### `Pick<T,K>` 和 `Omit<T,K>`
+### 5.3. `Pick<T,K>` 和 `Omit<T,K>`
 
 ```typescript
 interface Todo {
@@ -205,7 +208,7 @@ type TodoInfo = Omit<Todo, "completed">;
 
 ## 6. 实际应用示例
 
-### 泛型组件（React 示例）
+### 6.1. 泛型组件（React 示例）
 
 ```typescript
 interface ListProps<T> {
@@ -226,7 +229,7 @@ function List<T>(props: ListProps<T>) {
 }
 ```
 
-### 泛型 API 请求
+### 6.2. 泛型 API 请求
 
 ```typescript
 async function fetchData<T>(url: string): Promise<T> {
@@ -245,7 +248,7 @@ const user = await fetchData<User>('/api/user');
 
 ## 7. 最佳实践
 
-### 1. **命名约定**
+### 7.1. **命名约定**
 
 - T 用于表示第一个类型参数
 - K 通常用于表示对象的键类型
@@ -263,7 +266,7 @@ function map<TInput, TOutput>(
 }
 ```
 
-### 2. **默认类型参数**
+### 7.2. **默认类型参数**
 
 ```typescript
 interface DefaultGeneric<T = string> {
@@ -274,7 +277,7 @@ const stringValue: DefaultGeneric = { value: "hello" };
 const numberValue: DefaultGeneric<number> = { value: 42 };
 ```
 
-### 3. **泛型约束的组合**
+### 7.3. **泛型约束的组合**
 
 ```typescript
 interface HasId {
@@ -294,9 +297,9 @@ function findById<T extends HasId>(items: T[], id: number): T | undefined {
 }
 ```
 
-## 7. 高级用法
+## 8. 高级用法
 
-### 条件类型与泛型
+### 8.1. 条件类型与泛型
 
 ```typescript
 type NonNullable<T> = T extends null | undefined ? never : T;
@@ -308,7 +311,7 @@ type ExtractType<T> = T extends string
     : 'other';
 ```
 
-### 映射类型与泛型
+### 8.2. 映射类型与泛型
 
 ```typescript
 type Optional<T> = {
@@ -320,7 +323,7 @@ type Nullable<T> = {
 };
 ```
 
-## 最后
+## 9. 最后
 
 泛型是 TypeScript 中最强大的特性之一，它可以：
 
@@ -335,4 +338,3 @@ type Nullable<T> = {
 - API 请求的类型定义
 - UI 组件的属性定义
 
-理解和掌握泛型对于编写高质量的 TypeScript 代码至关重要。
