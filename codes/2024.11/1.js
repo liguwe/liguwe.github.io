@@ -1,24 +1,16 @@
-// 创建模板
-const greetTpl = template("Hello <%= name %>!");
-console.log(greetTpl({ name: "World" })); // 输出: Hello World!
+console.log(1);
 
-// 带循环的模板
-const listTpl = template(`
-  <ul>
-    <% items.forEach(function(item) { %>
-      <li><%= item %></li>
-    <% }); %>
-  </ul>
-`);
+setTimeout(() => console.log(2));
 
-console.log(
-  listTpl({
-    items: ["apple", "banana", "orange"],
-  }),
-);
-// 输出:
-// <ul>
-//   <li>apple</li>
-//   <li>banana</li>
-//   <li>orange</li>
-// </ul>
+Promise.resolve().then(() => console.log(3));
+
+Promise.resolve().then(() => setTimeout(() => console.log(4)));
+
+Promise.resolve().then(() => {
+  throw Error();
+  console.log(5);
+});
+
+setTimeout(() => console.log(6));
+
+console.log(7);

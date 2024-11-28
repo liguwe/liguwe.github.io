@@ -50,7 +50,7 @@ const increment = () => {
 
 ## 3. **列表渲染中的使用**
 
-```vue
+```vue hl:13
 <script setup>
 import { ref } from 'vue'
 

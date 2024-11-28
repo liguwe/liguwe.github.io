@@ -2,7 +2,6 @@
 # Typescript 基础篇
 
 
-
 ## 目录
 <!-- toc -->
  ## 编译 
@@ -44,8 +43,9 @@ ts-node script.ts
 在 TypeScript 里存在两种声明空间：`类型声明空间`与`变量声明空间`
 
 1. `变量声明空间`可以直接当做变量赋值使用
-	- 但如`const foo = 123;` 中的 `foo`不能当做**类型注解**使用
-		- 下面有代码说明
+	- 但如`const foo = 123;` 
+		- 中的 `foo`不能当做**类型注解**使用
+			- 下面有代码说明
 2. `类型声明空间` 可以当做`类型注解`
 	- 但不能当做`类型注解` 使用
 
@@ -53,7 +53,8 @@ ts-node script.ts
 
 ![|696](https://832-1310531898.cos.ap-beijing.myqcloud.com/yuque/76e5d299da3f92d03fa51b2e9528079d.png)
 
-即 `interface B{}`  只是一个`类型申明`，不能当做`变量`使用
+即 `interface B{}` 只是一个`类型申明`，不能当做`变量`使用
+
 >  看上图，`b1` 和 `c1` 都飘红警告了
 
 ### 变量声明空间
@@ -108,7 +109,7 @@ import * as foo from './foo';
 
 使用 `namespace` 关键词，如下：
 
-```typescript
+```typescript hl:1
 namespace Utility {
   export function log(msg) {
     console.log(msg);
@@ -121,7 +122,6 @@ namespace Utility {
 // usage
 Utility.log('Call me');
 Utility.error('maybe');
-
 ```
 
 以上 `ts` 最终转成 `js` 的样子如下，是的，是不是很类似之前` JQuery` 的实现方式。
@@ -130,12 +130,11 @@ Utility.error('maybe');
 (function (Utility) {
   // 添加属性至 Utility
 })(Utility || Utility = {});
-
 ```
 
 ## 动态导入表达式
 
-其实就类似于 Webpack 的 `import()` （首选，ECMAScript 的提案）和 `require.ensure()` ，这样就能实现**代码分割能力** ，即`Code Splitting`  ，举个例子，比如我们需要懒加载 `mement`
+其实就类似于 Webpack 的 `import()` （首选，ECMAScript 的提案）和 `require.ensure()` ，这样就能实现**代码分割能力** ，即`Code Splitting` ，举个例子，比如我们需要懒加载 `mement` 
 
 ```typescript
 import(/* webpackChunkName: "momentjs" */ 'moment')
@@ -182,17 +181,17 @@ const z:object = (n:number) => n + 1;
 
 4、包装类型：5 种
 
-（1）`Symbol()`** 和 **`BigInt()`** 不能作为构造函数使用** ，即他俩无法直接获取它们的**包装对象** 
+（1）`Symbol()`   和  **`BigInt()`** 不能作为构造函数使用，即他俩无法直接获取它们的**包装对象** 
 
 - boolean：`Boolean()`
-- string    `String()`
-- number   `Number()`
+- string `String()`
+- number `Number()`
 - bigint  
 - symbol
 
 （2）包装对象类型与字面量类型：**大写类型同时包含包装对象和字面量两种情况，小写类型只包含字面量，不包含包装对象。**
 
-- **包装对象** 和 **字面量**   ： 对应关系如下
+- **包装对象** 和 **字面量** ： 对应关系如下
 - Boolean 和 boolean
 - String 和 string
 - Number 和 number
@@ -268,7 +267,7 @@ obj = (a:number) => a + 1;
 > [!danger]
  **无所不包的Object类型既不符合直觉，也不方便使用，所以不建议使用**
 
-再看 **小写的 object**  ,  ==只包含对象、数组和函数==， 不包括原始类型的值，比如下面代码
+再看 **小写的 object** ,  ==只包含对象、数组和函数==， 不包括原始类型的值，比如下面代码
 
 ```typescript
 let obj:object;
@@ -319,7 +318,7 @@ TypeScript 允许使用方括号读取数组成员的类型。如下：
 type Names = string[];
 type Name = Names[0]; // string
 
-② 由于数组成员的索引类型都是number，所以读取成员类型也可以写成下面这样
+② 由于数组成员的索引类型都是 number，所以读取成员类型也可以写成下面这样
 type Name = Names[number]; // string
 
 ③ 那么这种写法是可以的吗？
@@ -430,9 +429,9 @@ arr[0] = [2]; // 报错
 var multi:number[][] = [1,2,3], [23,24,25](/post/JpwFLP0g.html#1,2,3],-[23,24,25);
 ```
 
-###  any 、null 、 undefined 、void
+### any 、null 、 undefined 、void
 
-1、`any`  告诉 **TypeScript 编译器**不要进行任何的类型检查，失去了类型检查的意义，另外会造成**类型污染** ，如下：
+1、`any` 告诉 **TypeScript 编译器**不要进行任何的类型检查，失去了类型检查的意义，另外会造成**类型污染** ，如下：
 
 ```typescript
 let user: any = {
@@ -451,7 +450,7 @@ let url = avatar.url; // any
 
 另外，可通过 `tsc --noImplicitAny app.ts` 启动 `any` 检查
 
-2、`null` 、 `undefined`  : 任何类型，都能再赋值为  `null`  和 `undefined` ，如下代码
+2、`null` 、 `undefined` : 任何类型，都能再赋值为 `null` 和 `undefined` ，如下代码
 
 ```typescript
 // strictNullChecks: false
@@ -498,7 +497,7 @@ let x:any     = undefined;
 let y:unknown = null;
 ```
 
-3、`void`  标识 函数没有返回值，即**空值** ，其实可以理解为 `null | undefined` 
+3、`void` 标识 函数没有返回值，即**空值** ，其实可以理解为 `null | undefined` 
 
 ### never
 
@@ -546,9 +545,9 @@ function fail(message: string): never {
 2、`any` 和 `unknown` 的 **本质区别**：
 
  - unknown 是 `top type` (任何类型都是它的 subtype) 
- - 而  **any 即是 top type, 又是 bottom type** (它是任何类型的 `subtype` ) ，这导致 any 基本上就是放弃了任何类型检查。
+ - 而 **any 即是 top type, 又是 bottom type** (它是任何类型的 `subtype` ) ，这导致 any 基本上就是放弃了任何类型检查。
 
-所以， **`any`** 和 **`unknown`**  的 交集 和 并集都是 `any` , 如下代码：
+所以， **`any`** 和 **`unknown`** 的 交集 和 并集都是 `any` , 如下代码：
 
 ```typescript
 type U6 = unknown | any; // any
@@ -599,7 +598,7 @@ const x:5 = (4 + 1) as 5; // 正确
 
 > 单个值的值类型，用处不大，更多是配合 **联合类型** 使用
 
-###  联合类型
+### 联合类型
 
 ```typescript
 
@@ -661,7 +660,7 @@ function getPort(
 
 >  实际上，联合类型本身可以看成是一种“**类型放大**”（type widening），处理时就需要“**类型缩小**”（type narrowing）
 
-###  交叉类型
+### 交叉类型
 
 交叉类型 `A&B` 表示，任何一个类型必须同时属于 `A` 和`B`，才属于交叉类型 `A&B`，即交叉类型同时满足`A`和`B`的特征。下面是示例
 
@@ -730,7 +729,7 @@ typeof Symbol(); // "symbol"
 typeof 127n // "bigint"
 ```
 
-2、TypeScript   `typeof` 运算符将返回 该值的 **TypeScript 类型**
+2、TypeScript `typeof` 运算符将返回 该值的 **TypeScript 类型**
 
 ```typescript
 const a = { x: 0 };
@@ -838,20 +837,20 @@ type t3 = [...boolean[], string, number];
 #### 成员或者元素名
 
 元组的成员可以添加成员名，这个**成员名**是说明性的
+
 ```typescript
 type Color = [
   red: number,
   green: number,
   blue: number
 ];
-
 const c:Color = [255, 255, 255];
-
 ```
 
 #### 读取成员类型
 
-元组可以通过方括号，**读取成员类型**
+元组可以通过方括号，**读取成员类型** 
+
 ```typescript
 type Tuple = [string, number];
 type Age = Tuple[1]; // number
@@ -943,8 +942,6 @@ add(...arr) // 正确
 ③ 因为console.log()可以接受任意数量的参数
 const arr = [1, 2, 3];
 console.log(...arr) // 正确
-
-
 ```
 
 ### symbol

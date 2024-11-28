@@ -11,10 +11,10 @@ TypeScript 中的 `type` 和 `interface` 都用于定义类型
 
 ### 1.1. type
 
-- 可以用于定义任何类型的别名，包括`原始类型、联合类型、交叉类型`等
+- **可以用于定义任何类型的别名**，包括`原始类型、联合类型、交叉类型`等
 - 语法更灵活
 
-```typescript
+```typescript hl:4
 type Name = string;
 type NameOrAge = string | number;
 type Point = { x: number; y: number };
@@ -37,8 +37,8 @@ interface Person {
 
 ### 2.1. type
 
-- 使用交叉类型（&）来扩展
-- 不能被类实现（implements）或继承（extends）
+- 使用交叉类型（`&`）来**扩展**
+- 不能被类实现（`implements`）或继承（`extends`）
 
 ```typescript
 type Animal = {
@@ -152,5 +152,5 @@ interface StringNumberPair {
 
 - 如果定义的类型可能需要扩展或者实现，使用 `interface`
 - 如果需要使用联合类型、交叉类型、元组等，或者需要利用映射类型等高级类型操作，使用 `type`
-- 在创建第三方库或公共 API 时，推荐使用 `interface`，因为它更容易扩展和兼容
+- 在**创建第三方库或公共 API 时**，推荐使用 `interface`，因为它更容易扩展和兼容
 

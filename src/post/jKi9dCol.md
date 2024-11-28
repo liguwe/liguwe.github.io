@@ -2,7 +2,7 @@
 # Vue3 的非原始值响应式方案（Map、WeakMap 、Set 、WeakSet ）
 
 
-前文 [6. Vue3 的响应式原理（effect、computed、watch 的实现原理 ）](/post/rMLcAXU9.html) 注意讲了基本的响应式方案
+前文 [8. Vue3 的响应式原理（effect、computed、watch 的实现原理 ）](/post/8Z19YD2S.html) 注意讲了基本的响应式方案
 
 本文，主要讲解更复杂场景 ，比如
 - 如何拦截 `for-in` ?
@@ -126,7 +126,7 @@ const p2 = new Proxy(fn, {
 
 ![|728](https://832-1310531898.cos.ap-beijing.myqcloud.com/6f6465918bdc361e993206a4b58d401d.png)
 
-前文 [6. Vue3 的响应式原理（effect、computed、watch 的实现原理 ）](/post/rMLcAXU9.html) 的` Effect` 函数，如果对于下面的数据结构有问题，`无法正常收集响应信息`。这时候就需要用到 `Reflect 的第三个参数了`
+前文 [8. Vue3 的响应式原理（effect、computed、watch 的实现原理 ）](/post/8Z19YD2S.html) 的` Effect` 函数，如果对于下面的数据结构有问题，`无法正常收集响应信息`。这时候就需要用到 `Reflect 的第三个参数了`
 
 ```javascript hl:3
 const obj = {

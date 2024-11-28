@@ -2,6 +2,7 @@
 # LCP 、 白屏时间、首屏时间
 
 
+
 ## 目录
 <!-- toc -->
  ## 1. LCP (Largest Contentful Paint) 和白屏时间 

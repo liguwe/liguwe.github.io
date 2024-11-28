@@ -81,9 +81,9 @@ const app = createApp({
 })
 ```
 
-## 6. **特殊场景**
+## 6. **特殊场景**：动态模板 和 动态渲染
 
-```js
+```js hl:7
 // 1. 动态模板（需要运行时编译）
 const DynamicComponent = {
   props: ['template'],

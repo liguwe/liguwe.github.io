@@ -10,9 +10,9 @@
 
 - Vue 是一个用于构建用户界面的 JavaScript 框架，提供了`声明式渲染`和`响应式更新`等核心功能
 - Vue 是一个`渐进式框架`，可以根据需求灵活地选择使用方式，适用于简单到复杂的各种 Web 开发场景
-	- 比如 HTML → Web Components   → SPA → SSR → SSG  →   桌面端、移动端、WebGL 等
+	- 比如 HTML → Web Components   → SPA → SSR → **SSG**  →   桌面端、移动端、WebGL 等
 
-## 2. 单文件组件
+## 2. 单文件组件 SFC
 
 即 Vue 的单文件组件会将一个组件的逻辑 (JavaScript)，模板 (HTML) 和样式 (CSS) 封装在同一个文件里，如下示例：
 
@@ -70,6 +70,13 @@ export default {
   <button @click="increment">Count is: {{ count }}</button>
 </template>
 ```
+
+
+#### 为什么使用函数返回对象？
+
+![图片&文件](./files/20241127-6.png)
+
+
 ### 3.2. 组合式 + setup
 
 ```vue

@@ -215,8 +215,8 @@ const Component = defineComponent({
 
 #### 6.4.3. 属性处理
 
-- React 将所有属性都统一处理为 props
-- Vue 区分了props、attrs、events等不同类型的属性
+- React **将所有属性都统一处理为 props**
+- Vue **区分了props、attrs、events等不同类型的属性**
 
 #### 6.4.4. 特有功能支持
 

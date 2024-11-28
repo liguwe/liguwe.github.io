@@ -8,7 +8,7 @@
 
 点击劫持是一种视觉欺骗攻击，攻击者通过将**目标网站嵌入到恶意网站中的透明 iframe 中**，诱导用户在不知情的情况下点击看似正常但实际是隐藏的恶意内容。
 
-### 基本步骤：
+### 1.1. 基本步骤：
 
 1. 攻击者创建一个诱饵页面
 2. 将目标网站通过 iframe 嵌入到诱饵页面
@@ -18,7 +18,7 @@
 
 ## 2. 攻击示例
 
-### 2.1 基础攻击示例
+### 2.1. 基础攻击示例
 
 ```html
   <!DOCTYPE html>
@@ -80,7 +80,7 @@
 
 ````
 
-### 2.2 更复杂的攻击示例
+### 2.2. 更复杂的攻击示例
 
 ```html
 
@@ -162,9 +162,9 @@
 
 ## 3. 防御措施
 
-### 3.1 服务器端防御
+### 3.1. 服务器端防御
 
-#### 设置 X-Frame-Options 响应头
+#### 3.1.1. 设置 X-Frame-Options 响应头
 
 ```javascript hl:6,9,3
 // Express.js 示例
@@ -182,7 +182,7 @@ app.use((req, res, next) => {
 });
 ```
 
-#### 使用 Content Security Policy (CSP)
+#### 3.1.2. 使用 Content Security Policy (CSP)
 
 ```javascript hl:3,6,9
 // Express.js 示例
@@ -200,9 +200,9 @@ app.use((req, res, next) => {
 });
 ```
 
-### 3.2 客户端防御
+### 3.2. 客户端防御
 
-#### JavaScript 框架检测
+#### 3.2.1. JavaScript 框架检测
 
 ```javascript
 // 检测页面是否被嵌入框架
@@ -217,14 +217,14 @@ function detectFraming() {
 window.onload = detectFraming;
 ```
 
-#### 使用 SameSite Cookie 属性
+#### 3.2.2. 使用 SameSite Cookie 属性
 
 ```javascript
 // 设置 Cookie
 document.cookie = "session=value; SameSite=Strict";
 ```
 
-### 3.3 Frame Busting 代码
+### 3.3. Frame Busting 代码
 
 ```javascript
 // 基础版本

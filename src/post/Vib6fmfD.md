@@ -2,7 +2,7 @@
 # Pinia 状态管理库文档笔记
 
 
-`#pinia` `#vue`  `#2024/01/07`
+`#pinia` `#vue` `#2023/01/07`
 
 >  文档地址： https://pinia.vuejs.org/zh/core-concepts/getters.html
 
@@ -129,7 +129,9 @@ export const useCounterStore = defineStore('counter', () => {
 })
 ```
 
-### 3.4. 变更 state
+### 3.4. 变更 state ： 使用 `store.$patch` 在同一时间更改多个属性
+
+`store.$patch` ： 同一时间更改多个属性
 
 ```typescript
 ① 同一时间更改多个属性
@@ -167,7 +169,6 @@ cartStore.$subscribe((mutation, state) => {
   mutation.storeId // 'cart'
   // 只有 mutation.type === 'patch object'的情况下才可用
   mutation.payload // 传递给 cartStore.$patch() 的补丁对象。
-
   // 每当状态发生变化时，将整个 state 持久化到本地存储。
   localStorage.setItem('cart', JSON.stringify(state))
 })
@@ -677,4 +678,4 @@ watch(
 	- 如果你需要特别复杂的状态更新逻辑
 	- 这些情况下可以考虑使用 immer.js，但大多数情况下是不必要的
 
-因此，在一般的 Vue + Pinia 项目中，没有必要使用 immer.js，Vue 的响应式系统和 Pinia 的 API 已经足够优秀和便捷。
+因此，在一般的 Vue + Pinia 项目中，没有必要使用 immer.js，**Vue 的响应式系统和 Pinia 的 API 已经足够优秀和便捷**。

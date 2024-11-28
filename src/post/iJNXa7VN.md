@@ -10,7 +10,9 @@
 <!-- toc -->
  ## 1. CSRF 的基本概念 
 
-CSRF 是一种网络攻击方式，攻击者诱导已登录用户在不知情的情况下，向服务器发送非预期的请求。攻击者利用用户已登录的身份，以用户的名义执行某些操作。
+CSRF 是一种网络攻击方式
+- 攻击者诱导已登录用户在不知情的情况下，向服务器发送非预期的请求。
+- 攻击者利用用户已登录的身份，以用户的名义执行某些操作。
 
 ## 2. CSRF 攻击原理
 
@@ -123,33 +125,6 @@ app.get('/form', (req, res) => {
 });
 ```
 
-### 5.2. Spring Security
-
-```java
-@Configuration
-@EnableWebSecurity
-public class SecurityConfig extends WebSecurityConfigurerAdapter {
-    @Override
-    protected void configure(HttpSecurity http) throws Exception {
-        http
-            .csrf()
-                .csrfTokenRepository(CookieCsrfTokenRepository.withHttpOnlyFalse());
-    }
-}
-```
-
-### 5.3. Django
-
-```python
-# settings.py
-MIDDLEWARE = [
-    'django.middleware.csrf.CsrfViewMiddleware',
-]
-
-# template
-{% csrf_token %}
-```
-
 ## 6. 最佳实践建议
 
 ### 6.1. **分层防御**
@@ -187,25 +162,22 @@ async function performCriticalOperation() {
 
 ## 7. CSRF 防护检查清单
 
-1. **基础防护**
-   - [ ] 使用 CSRF Token
-   - [ ] 设置 SameSite Cookie
-   - [ ] 验证 Origin/Referer
-
-2. **Cookie 安全**
-   - [ ] 设置 HttpOnly
-   - [ ] 设置 Secure
-   - [ ] 合理设置过期时间
-
-3. **请求验证**
-   - [ ] 验证 Content-Type
-   - [ ] 检查请求方法
-   - [ ] 验证 Token 有效性
-
-4. **额外安全措施**
-   - [ ] 重要操作二次验证
-   - [ ] 监控异常请求
-   - [ ] 日志记录
+- **基础防护**
+	- [ ] 使用 CSRF Token
+	- [ ] 设置 SameSite Cookie
+	- [ ] 验证 Origin/Referer
+- **Cookie 安全**
+	- [ ] 设置 HttpOnly
+	- [ ] 设置 Secure
+	- [ ] 合理设置过期时间
+- **请求验证**
+	- [ ] 验证 Content-Type
+	- [ ] 检查请求方法
+	- [ ] 验证 Token 有效性
+- **额外安全措施**
+	- [ ] 重要操作二次验证
+	- [ ] 监控异常请求
+	- [ ] 日志记录
 
 ## 8. 常见问题和解决方案
 

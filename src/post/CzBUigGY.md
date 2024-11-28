@@ -9,9 +9,9 @@
 <!-- toc -->
  ## 1. 定义 
 
-X-XSS-Protection 头部和 Subresource Integrity (SRI) 都是增强 Web 应用程序安全性的重要工具。
-- X-XSS-Protection 主要针对**旧版浏览器**，提供了一个**额外的 XSS 防护层**。
-- 而 SRI 则是一种更现代的安全特性，它通过验证资源的完整性来**防止资源被篡改**。
+X-XSS-Protection 头部和 Subresource Integrity (SRI) 都是增强 Web 应用程序安全性的重要工具
+- X-XSS-Protection 主要针对**旧版浏览器**，提供了一个**额外的 XSS 防护层**
+- 而 SRI 则是一种更现代的安全特性，它通过验证资源的完整性来**防止资源被篡改**
 
 ## 2. X-XSS-Protection 头部
 
