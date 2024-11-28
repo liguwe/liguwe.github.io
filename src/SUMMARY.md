@@ -567,11 +567,17 @@
   - [前端职业篇](post/9lV0fkZl.md)
 
 
+    - [如何提高前端研发效能](post/kARWCfQk.md)
+
     - [常见面试题：篇一](post/pzcDahon.md)
+
+    - [如何前端脚手架 "泼出去的水" 的问题](post/HEaGbhCv.md)
 
     - [常见面试题：篇二](post/bOWGQ52H.md)
 
     - [常见面试题：篇三](post/UNBspX6e.md)
+
+    - [如何建立团队影响力](post/beIk43qC.md)
 
     - [常见面试题：篇四](post/AGzyrNeA.md)
 
@@ -1019,17 +1025,6 @@
 
 
     - [最常见的开源协议](post/sPzvAS5O.md)
-
-# 第五部分 技术管理随记
-
-
-  - [前言](post/L0l4Z7CB.md)
-
-  - [如何提高前端研发效能](post/BilvsQfZ.md)
-
-  - [如何前端脚手架 "泼出去的水" 的问题](post/MY2xWoLQ.md)
-
-  - [如何建立团队影响力](post/bs2ayV1G.md)
 
 -----------
 [关于](post/XbGMQ0Fa.md)
