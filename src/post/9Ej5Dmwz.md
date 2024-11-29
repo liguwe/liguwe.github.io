@@ -48,7 +48,7 @@ class MyComponent extends React.Component {
 }
 ```
 
-## 2. useRef  Hook
+## 2. useRef Hook
 
 在函数组件中使用的 Hook 方式：
 

@@ -1,12 +1,16 @@
 
 # Eslint 代码检查的原理
 
-让我用简单的方式解释 ESLint 的工作原理：
+`#前端工程化` 
 
 
 ## 目录
 <!-- toc -->
- ## 1. ESLint 工作流程 
+ ## 1. ESLint 的工作原理 
+
+**将代码解析成 AST，然后使用==访问者模式==遍历 AST 节点，对每个节点应用配置的规则进行检查**。这种方式既保证了检查的准确性，也提供了足够的灵活性来自定义规则。
+
+## 2. ESLint 工作流程
 
 ESLint 的代码检查主要分为以下几个步骤：
 
@@ -18,9 +22,9 @@ graph LR
     D --> E[问题报告]
 ```
 
-## 2. 详细步骤解释
+## 3. 详细步骤解释
 
-### 2.1. 解析（Parsing）
+### 3.1. 解析（Parsing）
 
 ```javascript
 // 示例代码
@@ -46,7 +50,7 @@ function hello() {
 ]
 ```
 
-### 2.2. AST（抽象语法树）生成
+### 3.2. AST（抽象语法树）生成
 
 ```javascript
 // AST 结构示例（简化版）
@@ -77,7 +81,7 @@ function hello() {
 }
 ```
 
-### 2.3. 规则校验
+### 3.3. 规则校验
 
 ```javascript
 // ESLint 规则示例
@@ -103,9 +107,9 @@ module.exports = {
 };
 ```
 
-## 3. 自定义规则示例
+## 4. 自定义规则示例
 
-```javascript
+```javascript hl:10
 // 创建一个禁止使用特定变量名的规则
 module.exports = {
     create: function(context) {
@@ -124,7 +128,7 @@ module.exports = {
 };
 ```
 
-## 4. 配置文件示例
+## 5. 配置文件示例
 
 ```javascript
 // .eslintrc.js
@@ -148,9 +152,9 @@ module.exports = {
 };
 ```
 
-## 5. 工作流集成
+## 6. 工作流集成
 
-```javascript
+```javascript hl:9
 // package.json
 {
     "scripts": {
@@ -168,16 +172,16 @@ module.exports = {
 }
 ```
 
-## 6. 性能优化建议
+## 7. 性能优化建议
 
-### 6.1. **使用缓存**
+### 7.1. **使用缓存**
 
 ```bash
 # 使用 eslint 的缓存功能
 eslint --cache src/
 ```
 
-### 6.2. **忽略不需要检查的文件**
+### 7.2. **忽略不需要检查的文件**
 
 ```javascript
 // .eslintignore
@@ -186,16 +190,17 @@ dist/
 build/
 ```
 
-### 6.3. **并行处理**
+### 7.3. **并行处理**
 
 ```bash
 # 使用 eslint-parallel 进行并行检查
 eslint-parallel src/
 ```
 
-## 7. 常见问题处理
+## 8. 常见问题处理
 
-### 7.1. **规则冲突**
+### 8.1. **规则冲突**
+
 ```javascript
 // .eslintrc.js
 module.exports = {
@@ -208,7 +213,7 @@ module.exports = {
 };
 ```
 
-### 7.2. **自定义处理器**
+### 8.2. **自定义处理器**
 
 ```javascript
 // 处理非 JavaScript 文件
@@ -219,5 +224,5 @@ module.exports = {
 };
 ```
 
-ESLint 的工作原理就是通过**将代码解析成 AST，然后使用访问者模式遍历 AST 节点，对每个节点应用配置的规则进行检查**。这种方式既保证了检查的准确性，也提供了足够的灵活性来自定义规则。
+
 

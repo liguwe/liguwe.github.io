@@ -103,7 +103,7 @@ function App() {
 
 ## 5. Vue 的解决方案
 
-`Vue 的作用域插槽`和 `React 的 Render Props` 是解决相同问题的不同方案
+`Vue 的作用域插槽`和 `React 的 Render Props` 是**解决相同问题的不同方案**
 
 ## 6. 最后
 

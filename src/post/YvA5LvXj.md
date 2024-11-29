@@ -53,7 +53,7 @@ class ErrorBoundary extends React.Component {
 
 ## 2. 全局错误处理
 
-```jsx
+```jsx hl:10
 // 在应用入口处设置
 window.onerror = function(message, source, lineno, colno, error) {
   // 处理全局错误

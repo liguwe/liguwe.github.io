@@ -28,9 +28,9 @@ useLayoutEffect(() => {
 执行顺序：
 
 1. React 更新 DOM
-2. useLayoutEffect 执行
+2. `useLayoutEffect` 执行
 3. 浏览器绘制屏幕
-4. useEffect 执行
+4. `useEffect` 执行
 
 ## 2. 性能影响
 

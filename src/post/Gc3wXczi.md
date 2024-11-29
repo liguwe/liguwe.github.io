@@ -189,7 +189,7 @@ function Component() {
 }
 ```
 
-### 3.6. 使用 useCallback 或 useMemo  来处理 Capture Value
+### 3.6. 使用 useCallback 或 useMemo 来处理 Capture Value
 
 ```javascript hl:4
 function Example() {

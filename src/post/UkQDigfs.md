@@ -1,38 +1,173 @@
 
 # 前端常见的架构思路
 
+`#前端架构` 
+
 
 ## 目录
 <!-- toc -->
- ## 1. 分层 
+ ## 1. 分层架构 
 
 核心思想：关注点分离，每层只负责特定功能。
 
 没有什么问题是分层解决不了，如果解决不了, 就再加一层
-
 - 比如`网络协议`，越来高层面向`人类`，底层面向`机器`
 - 又比如现在所谓的 `后台、中台、前台`
 - 又比如，语言抽象的层次越高，一般运行效率可能会有所衰减，看`js/ts/c/汇编/机器码`等等等
-- 又比如，mvc 分层
+- 又比如，mvc 、MVVM 等等
 
 回到，前端：
-- `V-dom`，就是之前DOM上的一个分层 ，开发方式由之前`jQuery方式` 变成了`view=f(state)` 方式
+- `V-dom`，就是之前DOM上的一个分层 
+	- 开发方式由之前`jQuery方式` 变成了`view=f(state)` 方式
 
-## 2. 管道和过滤器
+### 1.1. 示例：MVC 架构
+
+- **Model (模型)**: 数据和业务逻辑
+- **View (视图)**: 用户界面
+- **Controller (控制器)**: 处理用户输入，协调 Model 和 View
+
+```javascript
+// Model
+class UserModel {
+    constructor(name, age) {
+        this.name = name;
+        this.age = age;
+    }
+    
+    updateName(name) {
+        this.name = name;
+    }
+}
+
+// View
+class UserView {
+    render(user) {
+        return `<div>
+            <h1>${user.name}</h1>
+            <p>Age: ${user.age}</p>
+        </div>`;
+    }
+}
+
+// Controller
+class UserController {
+    constructor(model, view) {
+        this.model = model;
+        this.view = view;
+    }
+    
+    updateUserName(name) {
+        this.model.updateName(name);
+        this.refreshView();
+    }
+    
+    refreshView() {
+        const html = this.view.render(this.model);
+        document.body.innerHTML = html;
+    }
+}
+```
+
+### 1.2. 示例 2：MVVM
+
+- **Model**: 数据模型
+- **View**: 视图层
+- **ViewModel**: 视图模型，处理视图逻辑
+
+Vue.js 示例
+
+```javascript
+// MVVM 实现示例 (Vue)
+const app = new Vue({
+    // View Model
+    data: {
+        message: 'Hello MVVM'
+    },
+    methods: {
+        updateMessage(newValue) {
+            this.message = newValue;
+        }
+    },
+    // View
+    template: `
+        <div>
+            <h1>{{message}}</h1>
+            <input v-model="message">
+        </div>
+    `
+});
+```
+
+### 1.3. 示例 3：前端框架的分层
+
+- **表现层**
+	- 用户界面
+	- 路由管理
+- **业务层**
+	- 业务逻辑
+	- 状态管理
+- **数据层**
+	- API 调用
+	- 数据持久化
+
+```javascript
+// 分层架构示例
+// API 层
+class UserAPI {
+    static async getUser(id) {
+        return await fetch(`/api/users/${id}`);
+    }
+}
+
+// 服务层
+class UserService {
+    static async getUserInfo(id) {
+        const user = await UserAPI.getUser(id);
+        return this.formatUserData(user);
+    }
+    
+    static formatUserData(user) {
+        // 数据处理逻辑
+        return {
+            ...user,
+            fullName: `${user.firstName} ${user.lastName}`
+        };
+    }
+}
+
+// 视图层
+class UserComponent extends React.Component {
+    async componentDidMount() {
+        const user = await UserService.getUserInfo(this.props.id);
+        this.setState({ user });
+    }
+    
+    render() {
+        // 渲染逻辑
+    }
+}
+```
+
+## 2. 模块化结构
+
+- ES Modules
+- CommonJS
+- AMD/RequireJS
+
+## 3. 管道和过滤器
 
 核心思想：数据流处理，每个处理单元独立且可组合。
-
 - 比如在`Angular`里就有`管道`概念
 - gulp的 `pipe`
 - 甚至`koa`里的洋葱模型也有`管道`的影子（中间件）
 - `vue`的`filter` 如 `{{ message | capitalize }}`
 - Node 中 `流` 的概念
 
-## 3. 事件驱动/发布-订阅
+## 4. 事件驱动/发布-订阅
 
 核心思想：通过事件的发布和订阅实现**松耦合**。
 
-## 4. 复制：fork 风格
+## 5. 复制：fork 风格
 
 Fork 风格是一种通过复制共享状态或资源来实现并行处理的架构模式。在前端中，主要用于：
 
@@ -41,12 +176,12 @@ Fork 风格是一种通过复制共享状态或资源来实现并行处理的架
 - 数据隔离
 - 多线程处理
 
-## 5. Web Worker 中的 Fork
+### 5.1. Web Worker 中的 Fork
 
-### 5.1. 比如`nodeJS`的 `Cluster模块` 
+### 5.2. 比如`nodeJS`的 `Cluster模块` 
 
 - Node.js 中的**集群模块**，允许创建`多个工作进程`来处理并发请求
-- 'Cluster' 这个词在计算机科学中通常指的是一组计算机或服务器，它们一起工作以提供更高的性能和可用性
+- '`Cluster`' 这个词在计算机科学中通常指的是一组计算机或服务器，它们一起工作以提供更高的性能和可用性
 
 ```javascript hl:5,16
 const cluster = require('cluster');
@@ -80,6 +215,11 @@ if (cluster.isMaster) {
 
 核心思想：将UI和功能封装成独立、可重用的组件。
 
+- 设计原则
+	- 单一职责
+	- 高内聚、低耦合
+	- 可复用性
+
 ## 7. 模块化架构（Modular Architecture）
 
 核心思想：将应用分解为独立的功能模块。
@@ -88,7 +228,16 @@ if (cluster.isMaster) {
 
 核心思想：将前端应用分解为多个独立的微前端应用。
 
-## 9. 单向数据流
+- 应用独立开发、部署
+- 技术栈无关
+- 独立运行时
+
+## 9. 单向数据流：Flux/Redux 架构
+
+- **Store**: 状态容器
+- **Action**: 动作描述
+- **Reducer**: 状态计算
+- **Dispatcher**: 分发器
 
 ## 10. 微内核架构，又称为”插件架构”
 
@@ -98,8 +247,10 @@ if (cluster.isMaster) {
 1. 核心系统（Microkernel）：提供最基本的功能
 2. 插件模块（Plugins）：提供扩展功能
 
-- 微内核结构的难点在于建立一套粒度合适的**插件协议**、以及对插件之间进行适当的`隔离和解耦`。从而才能保证良好的扩展性、灵活性和可迁移性。
-- 前端领域比较典型的例子是`Webpack、Babel、PostCSS`以及`ESLint`, 这些应用需要应对复杂的定制需求，而且这些需求时刻在变，只有微内核架构才能保证灵活和可扩展性。
+- 微内核结构的难点在于建立一套粒度合适的**插件协议**、以及对插件之间进行适当的`隔离和解耦`。
+	- 从而才能保证良好的扩展性、灵活性和可迁移性。
+- 前端领域比较典型的例子是`Webpack、Babel、PostCSS`以及`ESLint`,
+	- 这些应用需要应对复杂的定制需求，而且这些需求时刻在变，只有微内核架构才能保证灵活和可扩展性。
 - 比如`jQuery`插件：简单说就是`jQuery.prototype.extend`用于扩展插件
 
 ```javascript
@@ -130,7 +281,7 @@ jQuery.init = init;
 $ = jQuery;
 ```
 
-下面详细介绍前端微内核架构（Plugin Architecture）的设计思路和实现方式：
+下面介绍前端微内核架构（Plugin Architecture）的设计思路和实现方式：
 
 ### 10.2. 基础微内核系统实现
 
@@ -487,13 +638,11 @@ class UIPlugin {
 3. 核心功能精简
 4. 插件按需加载
 5. 维护成本低
-
 使用场景：
 1. 构建工具（Webpack、Rollup）
 2. 框架（UmiJS、VuePress）
 3. 编辑器插件系统
 4. 应用扩展系统
-
 需要注意的问题：
 1. 插件依赖管理
 2. 插件加载顺序

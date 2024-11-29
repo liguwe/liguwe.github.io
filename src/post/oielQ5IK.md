@@ -2,9 +2,6 @@
 # 使用 useTransition 进行非阻塞渲染
 
 
-
-
-
 ## 目录
 <!-- toc -->
  ## 1. 基本概念 
@@ -41,6 +38,7 @@ const [isPending, startTransition] = useTransition();
 	- 保持输入响应性
 	- 防止 UI 冻结
 	- 改善用户体验
+
 ## 3. 与 useDeferredValue 的比较
 
 - **useTransition**

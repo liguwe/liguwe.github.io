@@ -229,7 +229,7 @@ const MemoizedComponent = React.memo(
 );
 ```
 
-## 7. 动态组件
+## 7. 动态组件 & 异步组件
 
 ```jsx hl:1,13
 // 7.1 使用条件渲染创建动态组件
@@ -267,5 +267,5 @@ function App() {
 - 需要性能优化的
 	- 使用 `React.memo` 或 `PureComponent`
 - 需要代码分割的
-	- 使用 `lazy` 和 `Suspense`
+	- 使用 `React.lazy` 和 `Suspense`
 

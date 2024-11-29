@@ -2,6 +2,7 @@
 # Webpack 5 的主要更新和新特性
 
 
+`#webpack` 
 
 
 ## 目录
@@ -48,6 +49,8 @@ module.exports = {
 
 ## 3. 模块联邦（Module Federation） 
 
+>  更多参考：[10. Webpack 5 的 Module Federation（模块联邦）](/post/3ChRsUhe.html)
+
 允许多个独立的构建可以组成一个应用程序：
 
 ```javascript
@@ -79,7 +82,7 @@ module.exports = {
 }
 ```
 
-### 3.1. Tree Shaking 优化
+## 4. Tree Shaking 优化
 
 改进了 Tree Shaking 机制，支持更多场景：
 
@@ -101,7 +104,7 @@ module.exports = {
 }
 ```
 
-## 4. 更好的代码生成
+## 5. 更好的代码生成
 
 支持 ECMAScript 模块的输出：
 
@@ -118,7 +121,7 @@ module.exports = {
 }
 ```
 
-## 5. Node.js Polyfills 自动加载被移除
+## 6. Node.js Polyfills 自动加载被移除
 
 不再自动引入 Node.js polyfills：
 
@@ -135,7 +138,7 @@ module.exports = {
 }
 ```
 
-## 6. 顶层 await 支持
+## 7. 顶层 await 支持
 
 支持在异步模块中使用顶层 await：
 
@@ -145,7 +148,7 @@ const data = await fetch('https://api.example.com/data');
 export { data };
 ```
 
-## 7. 改进的开发体验
+## 8. 改进的开发体验
 
 更好的错误提示和开发工具支持：
 
@@ -157,7 +160,7 @@ module.exports = {
 }
 ```
 
-## 8. 新的 WebAssembly 支持
+## 9. 新的 WebAssembly 支持
 
 改进了对 WebAssembly 的支持：
 
@@ -170,7 +173,7 @@ module.exports = {
 }
 ```
 
-## 9. 改进的长期缓存
+## 10. 改进的长期缓存
 
 通过确定性的模块 ID 和 chunk ID 生成算法：
 
@@ -183,7 +186,7 @@ module.exports = {
 }
 ```
 
-## 10. 更新的配置验证
+## 11. 更新的配置验证
 
 更严格的配置验证：
 
@@ -197,7 +200,7 @@ module.exports = {
 }
 ```
 
-## 11. 改进的打包体积
+## 12. 改进的打包体积
 
 优化了打包体积，移除了一些内部结构：
 
@@ -213,22 +216,22 @@ module.exports = {
 }
 ```
 
-## 12. 主要优势总结
+## 13. 主要优势总结
 
-1. 性能提升：
-   - 持久化缓存提升构建速度
-   - 改进的 Tree Shaking
-   - 更优的长期缓存策略
-2. 开发体验：
-   - 内置资源模块处理
-   - 更好的错误提示
-   - 更严格的配置验证
-3. 新功能：
-   - 模块联邦支持微前端架构
-   - 原生支持 `WebAssembly`
-   - 支持`顶层 await`
-4. 包体积优化：
-   - 移除自动的 Node.js polyfills
-   - 优化内部结构
-   - 更好的代码生成
+- 性能提升：
+	- 持久化缓存提升构建速度
+	- 改进的 Tree Shaking
+	- 更优的长期缓存策略
+- 开发体验：
+	- 内置资源模块处理
+	- 更好的错误提示
+	- 更严格的配置验证
+- 新功能：
+	- 模块联邦支持微前端架构
+	- 原生支持 `WebAssembly`
+	- 支持`顶层 await`
+- 包体积优化：
+	- 移除自动的 Node.js polyfills
+	- 优化内部结构
+	- 更好的代码生成
 

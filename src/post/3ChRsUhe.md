@@ -3,14 +3,17 @@
 
 `#webpack` 
 
+> 关于 vite 如何使用模块联邦，可见 [13. vite 中如何使用 Module Federation（模块联邦）](/post/u7b430Xd.html)
+
 
 ## 目录
 <!-- toc -->
  ## 1. Module Federation 基本概念 
 
-Module Federation 允许一个 JavaScript 应用动态地加载另一个应用的代码和依赖。它是实现微前端的一种方式，使得不同的构建可以在运行时共享代码。
+- Module Federation 允许一个 **JavaScript 应用动态地加载另一个应用的代码和依赖**。
+- 它是实现微前端的一种方式，使得不同的构建可以**在运行时共享代码**。
 
-## 2. 使用示例
+## 2. 使用配置说明
 
 ### 2.1. 主应用配置
 
@@ -100,11 +103,9 @@ function App() {
 import('./bootstrap').catch(err => console.error(err));
 ```
 
-我来给您展示几个 Webpack 5 Module Federation 的实际应用场景和示例。
+## 3. 示例 1：主应用和远程组件
 
-## 3. 基础示例：主应用和远程组件
-
-### 3.1. Host Application (主应用)
+### 3.1. 主应用：3001 端口
 
 ```javascript hl:14,26
 // webpack.config.js (主应用)
@@ -146,7 +147,7 @@ function App() {
 }
 ```
 
-### 3.2. Remote Application (远程应用) 的 Button 组件
+### 3.2. Remote Application (远程应用) 的 Button 组件，需要 exposes
 
 ```javascript hl:14
 // webpack.config.js (远程应用)
@@ -185,7 +186,9 @@ const Button = () => (
 export default Button;
 ```
 
-## 4. 动态远程加载示例
+## 4. 示例 2：动态远程加载示例
+
+### 4.1. 主应用
 
 ```javascript hl:10
 // webpack.config.js (主应用)
@@ -221,7 +224,7 @@ const loadComponent = async () => {
 };
 ```
 
-## 5. 共享状态管理示例
+## 5. 示例 3：共享状态管理
 
 ```javascript hl:7
 /// store-app/webpack.config.js
@@ -283,11 +286,11 @@ export default function App() {
 
 ```
 
-## 6. 路由集成示例（React Router）
+## 6. 示例 4：路由集成示例（React Router）
 
 - 多个远程应用
 
-```javascript hl:5,6
+```jsx hl:5,6
 // webpack.config.js (主应用)
 new ModuleFederationPlugin({
   name: "host",
@@ -321,7 +324,7 @@ function App() {
 }
 ```
 
-## 7. 带版本控制的共享依赖示例
+## 7. 示例 5：带版本控制的共享依赖示例
 
 ```javascript hl:10
 // webpack.config.js
@@ -347,7 +350,7 @@ new ModuleFederationPlugin({
 });
 ```
 
-## 8. 错误边界处理示例一
+## 8. 示例 6：错误边界
 
 ```javascript
 // 主应用配置
@@ -393,7 +396,8 @@ const RemoteComponent = React.lazy(() => {
 });
 
 ```
-## 9. 错误边界处理示例二
+
+## 9. 示例 7：错误边界
 
 ```javascript
 // ErrorBoundary.js
@@ -429,7 +433,7 @@ function App() {
 }
 ```
 
-## 10. 带认证的模块联邦示例
+## 10. 示例 8：带认证的模块联邦示例
 
 ```javascript hl:9
 // webpack.config.js
@@ -456,3 +460,135 @@ new ModuleFederationPlugin({
 });
 ```
 
+## 11. 常见问题
+
+### 11.1. 为什么都叫 remoteEntry.js ?
+
+`remoteEntry.js` 是 Module Federation 中的一个约定俗成的命名，但这个名称实际上是可以自定义的，建议可以根据需要自定义入口文件名：
+- 版本管理
+- 缓存控制
+- 环境区分
+
+```javascript
+ // ① 根据环境使用不同的文件名
+// webpack.config.js
+module.exports = {
+  plugins: [
+    new ModuleFederationPlugin({
+      name: 'app1',
+      // 根据环境使用不同的文件名
+      filename: process.env.NODE_ENV === 'production'
+        ? 'remoteEntry.prod.js'
+        : 'remoteEntry.dev.js',
+      exposes: {
+        './Component': './src/Component'
+      }
+    })
+  ]
+};
+
+// ② 添加 hash 以处理缓存
+// webpack.config.js
+module.exports = {
+  plugins: [
+    new ModuleFederationPlugin({
+      name: 'app1',
+      // 添加 hash 以处理缓存
+      filename: 'remoteEntry.[contenthash].js',
+      exposes: {
+        './Component': './src/Component'
+      }
+    })
+  ]
+};
+
+
+// ③ 用版本号作为文件名的一部分
+// webpack.config.js
+const package = require('./package.json');
+
+module.exports = {
+  plugins: [
+    new ModuleFederationPlugin({
+      name: 'app1',
+      // 使用版本号作为文件名的一部分
+      filename: `remoteEntry.${package.version}.js`,
+      exposes: {
+        './Component': './src/Component'
+      }
+    })
+  ]
+};
+
+```
+
+### 11.2. 端口配置有什么要求？
+
+建议提取成变量，如下代码
+
+```javascript
+// ports.config.js
+module.exports = {
+  host: 3000,
+  remotes: {
+    app1: 3001,
+    app2: 3002,
+    app3: 3003
+  }
+};
+
+// 示例端口分配方案
+const ports = {
+  host: 3000,      // 主应用
+  auth: 3001,      // 认证应用
+  dashboard: 3002, // 仪表盘应用
+  users: 3003,     // 用户管理应用
+  orders: 3004     // 订单管理应用
+};
+
+
+// 不同环境的端口范围示例
+const portRanges = {
+  development: {
+    start: 3000,
+    end: 3999
+  },
+  testing: {
+    start: 4000,
+    end: 4999
+  },
+  staging: {
+    start: 5000,
+    end: 5999
+  }
+};
+```
+
+### 11.3. `app1@` ？
+
+- 作用
+	- 标识远程模块的来源
+	- 确保模块正确加载
+	- 维护模块间的依赖关系
+- 规则：
+	- `app1`: 远程应用的名称
+	- `@`: 分隔符
+	- `http://localhost:3001/remoteEntry.js`: 远程入口文件的URL
+
+```javascript
+// webpack.config.js
+module.exports = {
+  plugins: [
+    new ModuleFederationPlugin({
+      name: 'host',
+      remotes: {
+        // 格式: [远程应用名称]@[远程入口文件URL]
+        app1: 'app1@http://localhost:3001/remoteEntry.js',
+        // 等价于
+        app1: `${remoteName}@${remoteUrl}`
+      }
+    })
+  ]
+};
+
+```

@@ -29,21 +29,21 @@
 
 比如，如何描述一个人现实中的人了，如下图：
 
-![图片](https://blog-1310531898.cos.ap-beijing.myqcloud.com/832-34-20241012/Pasted%20image%2020240907160925.png)
+![图片|600](https://blog-1310531898.cos.ap-beijing.myqcloud.com/832-34-20241012/Pasted%20image%2020240907160925.png)
 
 ### 2.2. 方便寻找规律
 
 比如看两个人的相似度，如下图
 
-![图片](https://blog-1310531898.cos.ap-beijing.myqcloud.com/832-34-20241012/Pasted%20image%2020240907161243.png)
+![图片|488](https://blog-1310531898.cos.ap-beijing.myqcloud.com/832-34-20241012/Pasted%20image%2020240907161243.png)
 
 ### 2.3. 更高维度
 
-![图片](https://blog-1310531898.cos.ap-beijing.myqcloud.com/832-34-20241012/Pasted%20image%2020240907161423.png)
+![图片|544](https://blog-1310531898.cos.ap-beijing.myqcloud.com/832-34-20241012/Pasted%20image%2020240907161423.png)
 
 ### 2.4. 初始化维度
 
-![图片](https://blog-1310531898.cos.ap-beijing.myqcloud.com/832-34-20241012/Pasted%20image%2020240907161549.png)
+![图片|520](https://blog-1310531898.cos.ap-beijing.myqcloud.com/832-34-20241012/Pasted%20image%2020240907161549.png)
 
 ### 2.5. 如何训练修改维度值呢？
 

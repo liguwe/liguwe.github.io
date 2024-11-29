@@ -12,9 +12,9 @@
 - 较多生命周期，且划分并不符合“**内聚性**”原则，
 	- 例如 `setInterval` 和 `clearInterval` 这种具有强关联的逻辑被拆分在不同的生命周期方法中
 - 复用问题：
-	- 数据共享或功能复用，从最早之前的 mixin / 高阶组件 、或者到 Render Props
+	- 数据共享或功能复用，从最早之前的 `mixin / 高阶组件` 、或者到 `Render Props`
 - 解决数据共享或功能复用
-	- 从最早之前的mixin / 高阶组件 、或者到 Render Props
+	- 从最早之前的 mixin / 高阶组件 、或者到 Render Props
 
 ## 2. 类组件的问题
 
