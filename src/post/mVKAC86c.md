@@ -1,7 +1,7 @@
 
 # Node.js 中异常捕获和容错的常见处理方式
 
-
+`#nodejs` 
 
 ## 目录
 <!-- toc -->
@@ -75,7 +75,7 @@ async function multipleAsyncOperations() {
 
 ## 3. 全局未捕获异常处理：process
 
-```javascript hl:2,17
+```javascript hl:2,17,16
 // 未捕获的异常处理
 process.on('uncaughtException', (error) => {
     console.error('未捕获的异常:', {

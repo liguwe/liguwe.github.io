@@ -2,7 +2,6 @@
 # socket hang up
 
 
-
 ## 目录
 <!-- toc -->
  ## 1. 主要原因 
@@ -88,7 +87,7 @@ async function fetchWithRetry(url, retries = 3) {
 
 ### 3.4. 使用 keep-alive
 
-```javascript
+```javascript hl:3
 const agent = new http.Agent({
     keepAlive: true,
     keepAliveMsecs: 3000

@@ -1,12 +1,33 @@
 
 # Node.js 中的通信方式都有哪些？
 
-
+`#nodejs` 
 
 
 ## 目录
 <!-- toc -->
- ## 1. child_process 子进程通信 
+ ## 1. 总结 
+
+- child_process：
+	- 适用于`父子进程`通信
+- cluster：
+	- 适用于`主从架构的多进程应用`
+- Socket：
+	- 适用于`跨机器`的进程通信 
+- 消息队列：
+	- 适用于解耦的异步通信 （redis）
+- 共享内存：
+	- 适用于高性能数据共享（worker_threads）
+- HTTP/HTTPS：
+	- 适用于 RESTful 服务通信
+- WebSocket：
+	- 适用于实时双向通信
+- 进程管理：
+	- 适用于复杂的多进程应用
+
+下面展开聊
+
+## 2. child_process 子进程通信
 
 ```javascript
 // 1.1 spawn 方式
@@ -49,9 +70,9 @@ process.on('message', (message) => {
 });
 ```
 
-## 2. cluster 集群模式通信
+## 3. cluster 集群模式通信
 
-```javascript
+```javascript hl:34,39
 const cluster = require('cluster');
 const http = require('http');
 const numCPUs = require('os').cpus().length;
@@ -94,7 +115,7 @@ if (cluster.isMaster) {
 }
 ```
 
-## 3. Socket 通信
+## 4. Socket 通信
 
 ```javascript
 // 3.1 TCP Socket
@@ -128,7 +149,7 @@ const server = net.createServer((socket) => {
 server.listen('/tmp/node.sock');
 ```
 
-## 4. 消息队列（使用 Redis）
+## 5. 消息队列（使用 Redis）
 
 ```javascript
 const Redis = require('ioredis');
@@ -177,7 +198,7 @@ subscriber.subscribe('news', (channel, message) => {
 publisher.publish('news', { title: '重要通知', content: '系统更新' });
 ```
 
-## 5. 共享内存（使用 Node.js worker_threads）
+## 6. 共享内存（使用 Node.js worker_threads）
 
 ```javascript
 const { Worker, isMainThread, parentPort, workerData, SharedArrayBuffer } = require('worker_threads');
@@ -214,7 +235,7 @@ if (isMainThread) {
 }
 ```
 
-## 6. HTTP/HTTPS 通信
+## 7. HTTP/HTTPS 通信
 
 ```javascript
 const http = require('http');
@@ -252,7 +273,7 @@ async function sendRequest() {
 }
 ```
 
-## 7. WebSocket 通信
+## 8. WebSocket 通信
 
 ```javascript
 const WebSocket = require('ws');
@@ -286,7 +307,7 @@ ws.on('message', (data) => {
 });
 ```
 
-## 8. 进程管理和监控
+## 9. 进程管理和监控
 
 ```javascript
 class ProcessManager {
@@ -346,17 +367,3 @@ for (let i = 0; i < require('os').cpus().length; i++) {
 manager.broadcastMessage({ type: 'config', data: { port: 8000 } });
 ```
 
-## 9. 总结
-
-这些是 Node.js 中主要的进程通信方式，每种方式都有其适用场景：
-
---- 
-
-1. child_process：适用于`父子进程`通信
-2. cluster：适用于`主从架构的多进程应用`
-3. Socket：适用于`跨机器`的进程通信 
-4. 消息队列：适用于解耦的异步通信 （redis）
-5. 共享内存：适用于高性能数据共享（worker_threads）
-6. HTTP/HTTPS：适用于RESTful服务通信
-7. WebSocket：适用于实时双向通信
-8. 进程管理：适用于复杂的多进程应用

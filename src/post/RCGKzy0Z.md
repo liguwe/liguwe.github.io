@@ -1,19 +1,19 @@
 
 # RESTful 接口规范
 
-
-RESTful（Representational State Transfer）是一种设计 Web 服务的架构风格，它提供了一套规则来创建可扩展的 Web API。以下是 RESTful 接口规范的主要方面：
+`#nodejs` 
 
 
 ## 目录
 <!-- toc -->
  ## 1. 资源（Resources） 
 
-RESTful API 的核心概念是**资源**。**每个资源都应该有一个唯一的 URI（统一资源标识符）**。
-
-**系统中所有事务都是资源**
+RESTful（Representational State Transfer）API 的核心概念是**资源**。
+- **每个资源都应该有一个唯一的 URI（统一资源标识符）**。
+- **系统中所有事务都是资源**
 
 例如：
+
 ```
 /users         // 用户集合
 /users/123     // 特定用户
@@ -115,7 +115,7 @@ API 应该有一个一致的接口，这包括：
 
 ## 10. 安全性（Security）
 
-使用 HTTPS 来加密所有通信。对于需要认证的端点，使用 token 或 OAuth 等机制。
+使用 HTTPS 来加密所有通信。对于需要认证的端点，使用 `token` 或 `OAuth` 等机制。
 
 ## 11. 文档（Documentation）
 
@@ -136,5 +136,4 @@ GET /api/v1/posts/789/comments  // 获取特定文章的评论
 POST /api/v1/posts/789/comments // 为特定文章添加评论
 ```
 
-遵循这些 RESTful 接口规范可以使你的 API 更加一致、可预测和易于使用，从而提高开发效率和系统的可维护性。
 

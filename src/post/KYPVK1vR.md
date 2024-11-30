@@ -1,7 +1,7 @@
 
 # Koa 的核心原理
 
-`#koa` 
+`#koa` `#nodejs` 
 
 Koa 是一个轻量级的 Node.js Web 框架
 
@@ -18,7 +18,7 @@ Koa 最核心的特性是其`中间件机制`，采用洋葱模型（Onion Model
 
 ### 1.1. 中间件的核心实现原理
 
-```javascript hl:4,12
+```javascript hl:4,12,17,28
 // 简化版的中间件实现原理
 class Koa {
   constructor() {
@@ -129,7 +129,7 @@ app.use(async (ctx, next) => {
 
 ## 4. 异步流程控制
 
-Koa 2.x 版本利用 async/await 来处理异步流程：
+Koa 2.x 版本利用 `async/await` 来处理异步流程：
 
 ```javascript
 app.use(async (ctx, next) => {
@@ -187,10 +187,16 @@ class Response {
 
 ## 7. 主要特点总结
 
-- 轻量级：核心代码量很小，但扩展性强
-- 中间件机制：基于洋葱模型的优雅中间件机制
-- 异步流程：完美支持 async/await
-- 上下文封装：将 request 和 response 封装为单一的 context 对象
-- 错误处理：统一的错误处理机制
-- 无回调地狱：通过 async/await 彻底解决回调问题
+- 轻量级：
+	- 核心代码量很小，但扩展性强
+- 中间件机制：
+	- 基于洋葱模型的优雅中间件机制
+- 异步流程：
+	- 完美支持 async/await
+- 上下文封装：
+	- 将 request 和 response 封装为单一的 context 对象
+- 错误处理：
+	- 统一的错误处理机制
+- 无回调地狱：
+	- 通过 async/await 彻底解决回调问题
 

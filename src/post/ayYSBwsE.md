@@ -2,10 +2,24 @@
 # Node.js 中提高网络传输速度的主要方法
 
 
+`#nodejs` 
+
 
 ## 目录
 <!-- toc -->
- ## 1. 启用 Gzip 压缩 
+ ## 1. 总结 
+
+- 启用压缩
+- 使用 HTTP/2
+- 实现合适的缓存策略
+- 使用流式传输
+- 保持长连接
+- 负载均衡
+- 使用内存缓存
+
+根据具体场景选择合适的优化方案，通常需要**多种方案组合使用**才能达到最佳效果。
+
+## 2. 启用 Gzip 压缩
 
 ```javascript
 const express = require('express');
@@ -28,7 +42,7 @@ app.use(compression({
 }));
 ```
 
-## 2. 使用 HTTP/2
+## 3. 使用 HTTP/2
 
 ```javascript
 const http2 = require('http2');
@@ -49,7 +63,7 @@ server.on('stream', (stream, headers) => {
 });
 ```
 
-## 3. 实现缓存策略
+## 4. 实现缓存策略
 
 ```javascript
 const express = require('express');
@@ -76,7 +90,7 @@ app.get('/api/data', (req, res) => {
 });
 ```
 
-## 4. 使用流式传输
+## 5. 使用流式传输
 
 ```javascript
 const fs = require('fs');
@@ -102,7 +116,7 @@ app.get('/large-data', (req, res) => {
 });
 ```
 
-## 5. 启用 Keep-Alive
+## 6. 启用 Keep-Alive
 
 ```javascript
 const http = require('http');
@@ -120,7 +134,7 @@ const agent = new http.Agent({
 });
 ```
 
-## 6. 使用负载均衡
+## 7. 使用负载均衡
 
 ```javascript
 const cluster = require('cluster');
@@ -139,7 +153,7 @@ if (cluster.isMaster) {
 }
 ```
 
-## 7. 使用内存缓存
+## 8. 使用**内存缓存**
 
 ```javascript hl:1
 const NodeCache = require('node-cache');
@@ -158,15 +172,3 @@ app.get('/api/data', async (req, res) => {
     res.json(data);
 });
 ```
-
-## 8. 总结
-
-- 启用压缩
-- 使用 HTTP/2
-- 实现合适的缓存策略
-- 使用流式传输
-- 保持长连接
-- 负载均衡
-- 使用内存缓存
-
-根据具体场景选择合适的优化方案，通常需要**多种方案组合使用**才能达到最佳效果。

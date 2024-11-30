@@ -229,7 +229,7 @@
 
     - [Nodejs 的单线程与多核](post/GLwNQwLb.md)
 
-    - [流 与 pipe](post/e9Y7eJR4.md)
+    - [流与pipe](post/KsztARZW.md)
 
     - [Node.js 中常见的内存泄漏场景及解决方案](post/ih56iVRv.md)
 

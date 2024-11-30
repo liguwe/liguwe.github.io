@@ -1,6 +1,7 @@
 
 # Koa 与 express  对比
 
+`#nodejs` `#koa` `#express`
 
 
 ## 目录
@@ -13,25 +14,31 @@
 
 ## 2. 核心理念
 
-Express:
-- "**增强** Node.js"的理念
-- 提供了完整的应用程序功能
-- 包含了路由、模板等功能在框架内
-- 更像是一个全能型的框架
-Koa:
-- "**修复并替代** Node.js"的理念
-- 极简主义，核心功能非常精简
-- 通过中间件扩展功能
-- 更像是一个中间件框架
+- Express:
+	- "**增强** Node.js"的理念
+	- 提供了完整的应用程序功能
+	- 包含了**路由、模板**等功能在框架内
+	- 更像是一个全能型的框架
+- Koa:
+	- "**修复并替代** Node.js"的理念
+	- 极简主义，核心功能非常精简
+	- 通过中间件扩展功能
+	- 更像是一个中间件框架
 
 ## 3. 中间件系统
 
 ### 3.1. Express
 
 - 基于`回调`函数（Callback）
-- 中间件按线性方式执行
-- 错误处理需要特殊的错误处理中间件
-```javascript
+- 中间件**按线性方式**执行
+	- 三个参数
+		- req
+		- res
+		- next
+- 错误处理需要特殊的**错误处理中间件**
+
+
+```javascript hl:2
 // Express 中间件示例
 app.use((req, res, next) => {
     console.log('Start');
@@ -44,8 +51,12 @@ app.use((req, res, next) => {
 
 - 基于 async/await
 - 洋葱模型（Onion model）中间件
+	- 两个参数
+		- ctx 
+		- next
 - 更优雅的错误处理机制
-```javascript
+
+```javascript hl:2
 // Koa 中间件示例
 app.use(async (ctx, next) => {
     console.log('Start');
@@ -76,6 +87,7 @@ app.get('/users', (req, res, next) => {
 - 原生支持 async/await
 - 更清晰的异步流程
 - 统一的错误处理
+
 ```javascript
 // Koa 异步处理
 app.use(async ctx => {
@@ -102,6 +114,7 @@ app.use((req, res) => {
 
 - 统一的 context 对象
 - 封装了 request 和 response
+
 ```javascript
 // Koa
 app.use(ctx => {
@@ -116,6 +129,7 @@ app.use(ctx => {
 - 更多的内置功能意味着更大的开销
 - 处理简单请求的性能很好
 - 大量中间件可能影响性能
+
 ### 7.2. Koa
 
 - 更轻量级

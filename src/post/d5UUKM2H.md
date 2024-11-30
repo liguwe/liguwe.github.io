@@ -1,6 +1,7 @@
 
 # 常用的 package.json 字段说明
 
+`#nodejs` 
 
 
 ## 目录
@@ -10,7 +11,6 @@
 ```json hl:5,9
 {
   // 基础信息：忽略
-
   // 入口文件配置
   "main": "./dist/index.js",  // CommonJS 入口
   "module": "./dist/index.mjs",// ES Module 入口
@@ -60,22 +60,25 @@
 
 常见场景：
 
-1. 开发库/框架时，重点关注：`main`、`module`、`types`、`exports`、`peerDependencies`
-2. 开发应用时，重点关注：`scripts`、`dependencies`、`devDependencies`
-3. 发布 npm 包时，重点关注：`name`、`version`、`files`、`keywords`
+- 开发库/框架时
+	- 重点关注：`main`、`module`、`types`、`exports`、`peerDependencies`
+- 开发应用时
+	- 重点关注：`scripts`、`dependencies`、`devDependencies`
+- 发布 npm 包时
+	- 重点关注：`name`、`version`、`files`、`keywords`
 
 ## 2. devDependencies 和 dependencies 区别
 
 ### 2.1. 主要区别
 
 - dependencies：
-  * **运行时**必需的依赖
-  * 会被打包到生产环境
-  * 项目运行必须的包
+	* **运行时**必需的依赖
+	* **会被打包到生产环境**
+	* 项目运行必须的包
 - devDependencies：
-  * **开发时**需要的依赖
-  * 不会被打包到生产环境
-  * 仅在开发过程中使用的包
+	* **开发时**需要的依赖
+	* **不会被打包到生产环境**
+	* 仅在开发过程中使用的包
 
 ### 2.2. 安装命令的区别
 
@@ -121,6 +124,7 @@ dependencies 适用于：
 ```
 
 devDependencies 适用于：
+
 ```json
 {
   "devDependencies": {
@@ -152,6 +156,7 @@ devDependencies 适用于：
 ### 2.4. 环境影响
 
 开发环境：
+
 ```bash
 # 安装所有依赖
 npm install
@@ -159,6 +164,7 @@ npm install
 ```
 
 生产环境：
+
 ```bash
 # 只安装 dependencies
 npm install --production

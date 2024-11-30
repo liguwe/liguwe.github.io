@@ -1,42 +1,48 @@
 
 # Nodejs 的单线程与多核
 
+`#nodejs` 
 
 
 ## 目录
 <!-- toc -->
- ## 总结 
+ ## 1. 总结 
 
-- IO 密集型：使用异步 I/O 即可，不需要多进程/多线程
-- CPU 密集型应用：使用 Worker Threads
-- Web 服务器：通过 cluster 模块实现**多进程、多核**
-	- "多核 = 多线程"
-	- 适合任务是**隔离**的
+- IO 密集型：
+	- 使用异步 I/O 即可，不需要多进程/多线程
+- CPU 密集型应用：
+	- 使用 Worker Threads
+- Web 服务器：
+	- 通过 cluster 模块实现**多进程、多核**
+		- 多核 = 多线程
+		- 适合任务是**隔离的** ，比如 HTTP 服务器
 
-## 1. Node.js 中的进程和线程机制
+## 2. Node.js 中的进程和线程机制
 
-### 1.1. 基本概念
+### 2.1. 基本概念
 
-- 进程（Process）：是操作系统分配资源的最小单位，每个进程都有自己**独立的内存空间**
-- 线程（Thread）：是 CPU 调度的最小单位，同一进程内的线程**共享内存空间**
+- 进程（Process）：
+	- 是操作系统分配资源的最小单位，每个进程都有自己**独立的内存空间**
+- 线程（Thread）：
+	- 是 CPU 调度的最小单位，同一进程内的线程**共享内存空间**
 
-### 1.2. Node.js 的单线程特性
+### 2.2. Node.js 的单线程特性
 
 - Node.js 默认运行在`单线程环境`中，这个主线程被称为"事件循环"（Event Loop）
 - 虽然是单线程
 	- 使用**事件驱动**和非阻塞 I/O 模型来处理并发
 	- 但通过**事件循环**可以高效处理大量并发连接
 
-### 1.3. 多进程支持：child_process 模块
+### 2.3. 多进程支持：child_process 模块
 
 - Node.js 提供了 `child_process` 模块，允许`创建子进程`
 	- 常用的方法包括：
 		- `fork()`: 专门用于创建 Node.js 进程
 		- `spawn()`: 启动一个子进程来执行命令
 		- `exec()`: 启动一个 shell 并在 shell 中执行命令
-- 通过 `cluster` 模块可以创建共享服务器端口的子进程 
+- 通过 `cluster` 模块可以**创建共享服务器端口的子进程** 
 
-### 1.4. 多线程支持：Worker Threads（工作线程） 
+### 2.4. 多线程支持：Worker Threads（工作线程） 
 
 - Node.js 从版本 10.5.0 开始引入了 `worker_threads` 模块
 - 允许在 Node.js 中运行**真正的多线程代码**
@@ -45,7 +51,7 @@
 		- 通过消息传递进行通信
 		- 每个工作线程都有自己的事件循环
 
-### 1.5. 进程 vs 工作线程
+### 2.5. 进程 vs 工作线程
 
 - 进程：
 	- 独立的内存空间
@@ -58,7 +64,7 @@
 	- 适合并行计算
 	- 通过 `postMessage()` 进行通信 
 
-### 1.6. 最佳实践
+### 2.6. 最佳实践
 
 - CPU 密集型任务：
 	- 使用 Worker Threads
@@ -69,7 +75,7 @@
 - 需要扩展到多核：
 	- 使用 cluster 模块
 
-#### 1.6.1. 创建工作线程
+#### 2.6.1. 创建工作线程
 
 ````javascript  hl:14,6
 const { Worker, isMainThread, parentPort } = require('worker_threads');
@@ -90,7 +96,7 @@ if (isMainThread) {
 }
 ````
 
-#### 1.6.2. 创建子进程
+#### 2.6.2. 创建子进程
 
 ````javascript hl:7,10
 const { fork } = require('child_process');
@@ -107,18 +113,18 @@ child.on('message', (msg) => {
 });
 ````
 
-### 1.7. 注意事项
+### 2.7. 注意事项
 
 1. 不要为了使用多线程而使用多线程，Node.js 的单线程模型在大多数情况下已经足够高效
 2. 在使用 Worker Threads 时要注意**内存管理**，避免过度创建线程
 3. 进程间通信会有性能开销，需要根据实际场景选择合适的方案
 4. 在使用**集群模式**时，要注意**状态同步问题**
 
-## 2. nodejs是单线程的， 那么它是如何利用现代计算机的多核能力的
+## 3. nodejs是单线程的， 那么它是如何利用现代计算机的多核能力的
 
 虽然 Node.js 的主线程是单线程的，但它提供了**多种方式**来利用多核处理器：
 
-### 2.1. Node.js 的单线程本质
+### 3.1. Node.js 的单线程本质
 
 Node.js 的单线程主要体现在：
 
@@ -136,9 +142,9 @@ console.log('3');
 // 即使setTimeout为0，也会在主线程执行完后才执行
 ```
 
-### 2.2. 利用多核的主要方式
+### 3.2. 利用多核的主要方式
 
-#### 2.2.1. 使用 Cluster 模块来实现多进程
+#### 3.2.1. 使用 Cluster 模块来实现多进程
 
 ```javascript hl:6
 const cluster = require('cluster');
@@ -168,7 +174,7 @@ if (cluster.isMaster) {
 }
 ```
 
-#### 2.2.2. 使用 Worker Threads 模块来实现工作线程
+#### 3.2.2. 使用 Worker Threads 模块来实现工作线程
 
 ```javascript hl:3
 const { Worker, isMainThread, parentPort } = require('worker_threads');
@@ -203,7 +209,7 @@ if (isMainThread) {
 }
 ```
 
-### 2.3. 内置的异步并行处理
+### 3.3. 内置的异步并行处理
 
 Node.js 通过 `libuv 库`提供的`线程池`来处理某些异步操作
 - 比如`文件操作`、`加密操作`，他们都会在**另外的线程池**中操作，从而不会影响主线程
@@ -228,9 +234,9 @@ crypto.pbkdf2('密码', '盐值', 100000, 512, 'sha512', (err, key) => {
 console.log('主线程继续执行');
 ```
 
-### 2.4. 实际应用示例
+### 3.4. 实际应用示例
 
-#### 2.4.1. 使用 worker_threads 来处理 CPU密集型任务处理（多线程池）
+#### 3.4.1. 使用 worker_threads 来处理 CPU密集型任务处理（多线程池）
 
 ```javascript
 const { Worker } = require('worker_threads');
@@ -275,9 +281,9 @@ pool.runTask({ type: 'compute', data: [1,2,3,4] })
     .catch(err => console.error('错误:', err));
 ```
 
-#### 2.4.2. 使用 cluster 模块 来处理  Web服务器负载均衡
+#### 3.4.2. 使用 cluster 模块 来处理 Web服务器负载均衡
 
-示例：利用计算机的多核能力 启动多个 HTTP 服务器，以实现负载均衡，如下代码：
+示例：利用计算机的多核能力启动多个 HTTP 服务器，以实现负载均衡，如下代码：
 
 ```javascript hl:33
 const cluster = require('cluster');
@@ -325,22 +331,22 @@ if (cluster.isMaster) {
 }
 ```
 
-### 2.5. 性能优化建议
+### 3.5. 性能优化建议
 
-#### 2.5.1. **合理使用进程数量**
+#### 3.5.1. **合理使用进程数量**
 
 - 一般建议与 CPU 核心数相当
 - 考虑预留一些系统资源
 - 注意内存使用情况
 
-#### 2.5.2. **选择合适的并行策略**
+#### 3.5.2. **选择合适的并行策略**
 
 - I/O密集型任务：使用异步操作即可
 - CPU密集型任务：使用 Worker Threads
 - **需要隔离**的任务：
 	- 使用 Cluster
 
-#### 2.5.3. **监控和管理**
+#### 3.5.3. **监控和管理**
 
 ```javascript hl:7
 // 进程监控示例
@@ -366,18 +372,18 @@ if (cluster.isMaster) {
 - 计算密集型应用：结合使用 Cluster 和 Worker Threads
 - I/O密集型应用：使用内置的异步机制即可
 
-## 3. 再详细介绍下 Cluster 模块
+## 4. 再详细介绍下 Cluster 模块
 
-### 3.1. Cluster 模块基本概念
+### 4.1. Cluster 模块基本概念
 
 Cluster 模块允许我们**创建共享服务器端口的子进程**。它主要用于：
 
 - 利用多核 CPU
 - 提高应用程序性能
-- 实现负载均衡
+- 实现**负载均衡**
 - 提高应用可用性
 
-### 3.2. 基本工作原理
+### 4.2. 基本工作原理
 
 ```javascript
 const cluster = require('cluster');
@@ -406,9 +412,9 @@ if (cluster.isPrimary) {
 }
 ```
 
-### 3.3. 进程间通信（IPC）
+### 4.3. 进程间通信（IPC）
 
-#### 3.3.1. 主进程与工作进程通信
+#### 4.3.1. 主进程与工作进程通信
 
 ```javascript
 if (cluster.isPrimary) {
@@ -431,7 +437,7 @@ if (cluster.isPrimary) {
 }
 ```
 
-#### 3.3.2. 工作进程之间通信
+#### 4.3.2. 工作进程之间通信
 
 ```javascript
 if (cluster.isPrimary) {
@@ -460,9 +466,9 @@ if (cluster.isPrimary) {
 }
 ```
 
-### 3.4. 负载均衡
+### 4.4. 负载均衡
 
-#### 3.4.1. 内置的轮询调度
+#### 4.4.1. 内置的轮询调度
 
 ```javascript
 // Node.js 默认使用轮询调度
@@ -477,7 +483,7 @@ if (cluster.isPrimary) {
 }
 ```
 
-#### 3.4.2. 自定义负载均衡
+#### 4.4.2. 自定义负载均衡
 
 ```javascript
 if (cluster.isPrimary) {
@@ -516,7 +522,7 @@ if (cluster.isPrimary) {
 }
 ```
 
-### 3.5. 优雅退出和零停机重启
+### 4.5. 优雅退出和零停机重启
 
 ```javascript hl:15
 if (cluster.isPrimary) {
@@ -579,7 +585,7 @@ if (cluster.isPrimary) {
 }
 ```
 
-### 3.6. 监控和日志
+### 4.6. 监控和日志
 
 ```javascript
 if (cluster.isPrimary) {
@@ -640,9 +646,9 @@ if (cluster.isPrimary) {
 }
 ```
 
-### 3.7. 最佳实践
+### 4.7. 最佳实践
 
-#### 3.7.1. **进程数量管理**
+#### 4.7.1. **进程数量管理**
 
 ```javascript
 const WORKERS = process.env.NODE_ENV === 'production' 
@@ -650,7 +656,7 @@ const WORKERS = process.env.NODE_ENV === 'production'
     : Math.min(2, numCPUs);
 ```
 
-#### 3.7.2. **错误处理**
+#### 4.7.2. **错误处理**
 
 ```javascript hl:7
 if (cluster.isPrimary) {
@@ -665,7 +671,7 @@ if (cluster.isPrimary) {
 }
 ```
 
-#### 3.7.3. **健康检查**
+#### 4.7.3. **健康检查**
 
 ```javascript
 if (cluster.isPrimary) {
@@ -692,9 +698,9 @@ if (cluster.isPrimary) {
 
 通过这些机制和最佳实践，Cluster 模块能够帮助我们构建高可用、可伸缩的 Node.js 应用。它是利用多核系统、提高应用性能的重要工具。
 
-## 4. Node.js 应用中多核、多 CPU、多进程和多线程的区别和关系
+## 5. Node.js 应用中多核、多 CPU、多进程和多线程的区别和关系
 
-### 4.1. 多核（Multi-Core）
+### 5.1. 多核（Multi-Core）
 
 多核指的是在**单个 CPU** 物理芯片上集成多个完整的计算核心。
 
@@ -719,7 +725,7 @@ CPU 详细信息: [
 */
 ```
 
-### 4.2. 多 CPU（Multi-CPU）
+### 5.2. 多 CPU（Multi-CPU）
 
 多 CPU 指系统中安装了**多个物理 CPU 芯片**。每个 CPU 可能包含多个核心。
 
@@ -734,7 +740,7 @@ console.log('空闲内存:', os.freemem() / 1024 / 1024 / 1024, 'GB');
 
 ```
 
-### 4.3. 多进程（Multi-Process）
+### 5.3. 多进程（Multi-Process）
 
 进程是程序的一个独立实例，拥有独立的内存空间。**Node.js 通过 cluster 模块实现多进程**。
 
@@ -792,7 +798,7 @@ if (cluster.isPrimary) {
 }
 ```
 
-### 4.4. 多线程（Multi-Thread）
+### 5.4. 多线程（Multi-Thread）
 
 线程是进程中的执行单元，共享进程的内存空间。**Node.js 通过 worker_threads 模块实现多线程**。
 
@@ -937,9 +943,9 @@ if (isMainThread) {
 }
 ```
 
-### 4.5. 各种模型的对比
+### 5.5. 各种模型的对比
 
-#### 4.5.1. **资源占用**
+#### 5.5.1. **资源占用**
 
 ```javascript
 // 内存使用对比示例
@@ -956,7 +962,7 @@ function showMemoryUsage() {
 }
 ```
 
-#### 4.5.2. **通信成本**
+#### 5.5.2. **通信成本**
 
 ```javascript
 // 进程间通信示例
@@ -996,9 +1002,9 @@ if (isMainThread) {
 }
 ```
 
-### 4.6. 选择建议
+### 5.6. 选择建议
 
-#### 4.6.1. **I/O 密集型应用**
+#### 5.6.1. **I/O 密集型应用**
 
 ```javascript
 // 使用异步 I/O 即可，不需要多进程/多线程
@@ -1012,7 +1018,7 @@ async function handleIO() {
 }
 ```
 
-#### 4.6.2. **CPU 密集型应用**
+#### 5.6.2. **CPU 密集型应用**
 
 ```javascript
 // 使用 Worker Threads
@@ -1032,7 +1038,7 @@ function runWorker(workerData) {
 }
 ```
 
-#### 4.6.3. **Web 服务器**
+#### 5.6.3. **Web 服务器**
 
 ```javascript hl:1
 // 使用 Cluster
@@ -1049,11 +1055,11 @@ if (cluster.isPrimary) {
 }
 ```
 
-#### 4.6.4. 总结
+#### 5.6.4. 总结
 
 - 多核和多 CPU 是硬件层面的概念
 - **多进程 = 多核** ：适合需要隔离的场景，如 Web 服务器
-- 多线程适合 CPU 密集型任务
+- 多线程适合 CPU 密集型任务≤
 - Node.js 的事件循环适合 I/O 密集型任务
 
 
