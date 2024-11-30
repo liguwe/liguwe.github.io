@@ -2,7 +2,6 @@
 # LCP 、 白屏时间、首屏时间
 
 
-
 ## 目录
 <!-- toc -->
  ## 1. LCP (Largest Contentful Paint) 和白屏时间 
@@ -16,7 +15,7 @@
 - **白屏时间 (First Paint, FP)**：
 	- 从页面开始加载到**第一个像素**绘制到屏幕上的时间
 	- 代表用户**第一次看到页面有内容的时刻**
-	- 可能只是背景颜色或简单的元素
+	- 可能**只是背景颜色或简单的元素**
 - **LCP (Largest Contentful Paint)**：
 	- 视口内可见的**最大图像或文本块完成渲染**的时间点
 	- 代表页面主要内容加载完成的时刻
@@ -33,7 +32,7 @@
 
 #### 1.2.1. 白屏时间测量
 
-```javascript
+```javascript hl:1,12,4
 // 方法一：Performance API
 const observer = new PerformanceObserver((list) => {
     for (const entry of list.getEntries()) {
@@ -55,7 +54,7 @@ window.addEventListener('load', () => {
 
 #### 1.2.2. LCP 测量：largest-contentful-paint
 
-```javascript
+```javascript hl:7
 // 使用 PerformanceObserver 测量 LCP
 new PerformanceObserver((entryList) => {
     const entries = entryList.getEntries();
@@ -142,7 +141,7 @@ Cache-Control: max-age=31536000
 
 ### 1.6. 监控代码示例
 
-```javascript
+```javascript hl:21,28
 class PerformanceMonitor {
     constructor() {
         this.metrics = {
@@ -188,7 +187,7 @@ const monitor = new PerformanceMonitor();
 
 LCP 和白屏时间是两个不同的性能指标：
 1. 白屏时间反映的是**页面开始有内容**的时间点
-2. LCP 反映的是页面主要内容加载完成的时间点
+2. LCP 反映的是**页面主要内容加载完成**的时间点
 3. LCP 通常会大于白屏时间
 4. 两者都是重要的性能指标，但衡量的维度不同
 5. 优化策略也有所不同，需要根据具体场景选择关注点
@@ -201,7 +200,7 @@ LCP 和白屏时间是两个不同的性能指标：
 
 #### 2.1.1. LCP (Largest Contentful Paint)
 
-- 定义：视口内最大内容元素呈现的时间点
+- 定义：==视口内最大内容元素呈现的时间点==
 - 计算：由**浏览器自动计算最大内容元素的渲染时间**
 - 特点：**是一个清晰的、可量化的指标**
 
@@ -214,12 +213,11 @@ LCP 和白屏时间是两个不同的性能指标：
 ### 2.2. 关系分析
 
 1. **相似点**
-- 都关注用户可见内容的加载
-- 都是衡量页面性能的重要指标
-- 都与用户体验密切相关
-
+	- 都关注用户可见内容的加载
+	- 都是衡量页面性能的重要指标
+	- 都与用户体验密切相关
 2. **区别**
-```javascript
+```javascript hl:27
 // LCP 示例
 new PerformanceObserver((entryList) => {
     const entries = entryList.getEntries();
@@ -305,7 +303,7 @@ class ProductDetailPerformance {
 
 #### 2.3.2. 首屏时间适用场景
 
-```javascript
+```javascript hl:17
 // 新闻列表页面
 class NewsListPerformance {
     constructor() {
@@ -423,7 +421,8 @@ class PerformanceMonitor {
 
 ### 2.5. 性能优化建议
 
-1. **共同优化点**
+#### 2.5.1. **共同优化点**
+
 ```javascript
 // 1. 资源预加载
 <link rel="preload" href="critical.js" as="script">
@@ -447,7 +446,11 @@ class PerformanceMonitor {
 </style>
 ```
 
-2. **差异化优化**
+#### 2.5.2. **差异化优化**
+
+- LCP优化：关注最大内容元素
+- 首屏优化：关注视口内所有内容
+
 ```javascript
 // LCP优化：关注最大内容元素
 const optimizeLCP = () => {
@@ -509,5 +512,5 @@ const optimizeFirstScreen = () => {
 	- 在实际应用中，两者结合使用能更好地评估页面性能
 - **监控建议**：
 	- LCP：使用标准的 PerformanceObserver API
-	- 首屏时间：根据业务场景自定义计算方法
-	- 建议同时监控多个指标，全面评估页面性能
+	- 首屏时间：根据**业务场景自定义计算方法**
+	- **建议同时监控多个指标，全面评估页面性能**

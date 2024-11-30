@@ -2,14 +2,11 @@
 # 内容安全策略（Content Security Policy，简称 CSP）
 
 
-
 ## 目录
 <!-- toc -->
  ## 1. 定义 
 
-CSP 是一种额外的安全层，用于检测和缓解某些类型的攻击，包括跨站脚本（XSS）和数据注入攻击。
-
-这些攻击可用于实现从数据窃取到网站破坏或恶意软件分发等目的。
+CSP 是一种额外的安全层，用于**检测和缓解某些类型的攻击**，包括跨站脚本（XSS）和数据注入攻击。
 
 ## 2. CSP 的工作原理
 
@@ -78,15 +75,13 @@ Content-Security-Policy-Report-Only: default-src 'self'; report-uri /csp-violati
 - 可能影响**某些遗留代码或第三方脚本**
 - 需要持续维护和更新
 
-
 ## 11. CSP 与其他安全措施的结合
 
 - 结合 HTTPS 使用以确保策略的完整性
 - 与 `X-XSS-Protection 头部`一起使用
 - 配合 `Subresource Integrity (SRI)` 使用，进一步验证外部资源
 
-后文有介绍
-
+> 后文有介绍
 
 ## 12. CSP 3 的新特性
 

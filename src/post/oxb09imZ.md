@@ -7,11 +7,12 @@
  ## 1. PerformanceObserver 概述 
 
 - PerformanceObserver 是 Performance API 的一部分，用于观察和响应性能相关的事件。
-- 它允许我们**以异步的方式监听性能度量事件，而不会阻塞主线程**。
+	- 通过 PerformanceObserver，我们可以**全面监控网页性能，收集各种性能指标，为性能优化提供数据支持**。
+- 允许我们**以异步的方式监听性能度量事件，而不会阻塞主线程**。
 
 ## 2. 基本使用方法
 
-```javascript
+```javascript hl:13
 // 创建性能观察器
 const observer = new PerformanceObserver((list, observer) => {
     // 获取所有性能条目
@@ -238,4 +239,3 @@ class PerformanceCollector {
 const collector = new PerformanceCollector();
 ```
 
-通过 PerformanceObserver，我们可以全面监控网页性能，收集各种性能指标，为性能优化提供数据支持。它是现代网页性能监控的重要工具。

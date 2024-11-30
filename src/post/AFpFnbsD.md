@@ -7,9 +7,12 @@
 
 ## 目录
 <!-- toc -->
- ## 1. 持久化缓存（Persistent Caching） 
+ ## 1. 性能优化：持久化缓存（Persistent Caching） 
 
 Webpack 5 引入了更好的**持久化缓存机制**，可以显著提升构建性能：
+
+ - 改进了持久化缓存机制，默认启用
+- 通过`文件系统缓存`提高重复构建性能
 
 ```javascript hl:4
 // webpack.config.js
@@ -26,7 +29,13 @@ module.exports = {
 
 ## 2. 资源模块（Asset Modules）
 
-取代了 file-loader、url-loader 和 raw-loader，直接内置支持资源文件：
+取代了 `file-loader、url-loader 和 raw-loader`，直接**内置支持资源文件**：
+- 内置了资源模块类型，不再需要额外的loader
+- 支持四种新的模块类型：
+	- asset/source
+	- asset
+	- asset/inline
+	- asset/resource
 
 ```javascript hl:7
 // webpack.config.js
@@ -50,6 +59,11 @@ module.exports = {
 ## 3. 模块联邦（Module Federation） 
 
 >  更多参考：[10. Webpack 5 的 Module Federation（模块联邦）](/post/3ChRsUhe.html)
+
+- 允许多个独立的构建可以组成一个应用
+- 支持运行时动态加载远程模块
+- **实现真正的微前端架构**
+- 可以共享依赖，减少重复加载
 
 允许多个独立的构建可以组成一个应用程序：
 
@@ -82,9 +96,12 @@ module.exports = {
 }
 ```
 
-## 4. Tree Shaking 优化
+## 4. 性能优化：Tree Shaking 优化
 
-改进了 Tree Shaking 机制，支持更多场景：
+ - 改进了Tree Shaking算法
+- 能够处理更多的模块类型
+- 支持嵌套的树摇，提高打包效率
+- 改进了 Tree Shaking 机制，支持更多场景：
 
 ```javascript
 // package.json
@@ -123,7 +140,12 @@ module.exports = {
 
 ## 6. Node.js Polyfills 自动加载被移除
 
-不再自动引入 Node.js polyfills：
+- 不再自动引入 Node.js polyfills
+- 减小了打包体积
+- 需要显式引入所需的polyfills 
+- 更好的Node.js支
+	- 改进了对Node.js模块的处理
+	- 提供了更好的CommonJS支持
 
 ```javascript
 // webpack.config.js
@@ -140,7 +162,8 @@ module.exports = {
 
 ## 7. 顶层 await 支持
 
-支持在异步模块中使用顶层 await：
+- 支持在模块顶层使用await
+- 无需包装在async函数中
 
 ```javascript
 // 支持直接在模块顶层使用 await
@@ -163,6 +186,9 @@ module.exports = {
 ## 9. 新的 WebAssembly 支持
 
 改进了对 WebAssembly 的支持：
+- 异步导入WebAssembly
+- 支持WebAssembly as ESM
+- 改进的WebAssembly集成
 
 ```javascript
 module.exports = {

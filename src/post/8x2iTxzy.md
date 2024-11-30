@@ -1,6 +1,8 @@
 
 # 前端安全相关
 
+`#前端安全` 
+
 
 ## 目录
 <!-- toc -->
@@ -18,31 +20,34 @@
 2. 输出转义：对输出内容进行HTML实体编码
 3. 使用CSP（Content Security Policy）内容安全策略
 4. 避免使用`eval()`、`innerHTML`等危险函数
-5. 对Cookie设置HttpOnly属性
+5. 对 Cookie 设置 HttpOnly 属性
 
 ## 2. CSRF（跨站请求伪造）
 
 ### 2.1. 攻击类型
 
-- **GET类型CSRF**：利用GET请求进行攻击
-- **POST类型CSRF**：通过自动提交表单进行攻击
-- **链接类型CSRF**：诱导用户点击恶意链接
+- **GET类型CSRF**：
+	- 利用GET请求进行攻击
+- **POST类型CSRF**：
+	- 通过**自动提交表单**进行攻击
+- **链接类型CSRF**：
+	- 诱导用户点击恶意链接
 
 ### 2.2. 防范措施
 
 1. 使用CSRF Token验证
-2. 验证请求来源（Referer）
-3. 设置SameSite Cookie属性
-4. 使用双重Cookie验证
-5. 在请求头中加入自定义字段
+2. 验证请求来源（`Referer`）
+3. 设置 SameSite Cookie 属性
+4. 使用 `双重Cookie`验证
+5. 在**请求头中加入自定义字段**
 
 ## 3. 点击劫持（Clickjacking）
 
 ### 3.1. 防范措施
 
-1. 设置X-Frame-Options响应头
-2. 使用frame-ancestors CSP指令
-3. JavaScript框架防御
+1. 设置 `X-Frame-Options` 响应头
+2. 使用 `frame-ancestors` CSP 指令
+3. JavaScript 框架防御
 4. 实现页面重定向保护 
 
 ```bash
@@ -55,7 +60,7 @@
 
 ```
 
-> 更多见 [7. 点击劫持(Clickjacking)的原理、攻击示例以及防御措施](/post/JiutDIRm.html)
+> 更多见 [7. 点击劫持 ( Clickjacking )](/post/wSPBPHTq.html)
 
 ## 4. SQL注入
 
@@ -91,7 +96,9 @@ const user = await User.findOne({
 localStorage.setItem('token', 'sensitive_token');
 
 // 2. 使用 HTTPS
+
 // 3. 设置正确的响应头
+
 // Cache-Control: no-store
 // Strict-Transport-Security: max-age=31536000
 ```
@@ -100,20 +107,18 @@ localStorage.setItem('token', 'sensitive_token');
 
 ### 6.1. 开发规范
 
-1. **密码安全**
-   - 使用HTTPS传输
-   - 密码加密存储
-   - 实施密码强度要求
-
-2. **文件上传安全**
-   - 限制文件类型和大小
-   - 文件名随机化
-   - 存储路径安全配置
-
-3. **API安全**
-   - 实施请求频率限制
-   - 接口权限控制
-   - 数据加密传输
+- **密码安全**
+	- 使用 HTTPS 传输
+	- 密码加密存储
+	- 实施密码强度要求
+- **文件上传安全**
+	- 限制文件类型和大小
+	- 文件名随机化
+	- 存储路径安全配置
+- **API安全**
+	- 实施请求频率限制
+	- 接口权限控制
+	- 数据加密传输
 
 ### 6.2. 最佳实践
 
@@ -148,15 +153,15 @@ const encryptPassword = (password) => {
 ## 7. 预防措施总结
 
 1. **代码层面**
-   - 遵循安全编码规范
-   - 使用成熟的安全库
-   - 实施输入验证和输出转义
+	- 遵循安全编码规范
+	- 使用成熟的安全库
+	- 实施输入验证和输出转义
 2. **配置层面**
-   - 启用安全响应头
-   - 配置合适的Cookie属性
-   - 实施访问控制策略
+	- 启用安全响应头
+	- 配置合适的Cookie属性
+	- 实施访问控制策略
 3. **运维层面**
-   - 定期安全测试
-   - 监控异常访问
-   - 及时修复漏洞
+	- 定期安全测试
+	- 监控异常访问
+	- 及时修复漏洞
 

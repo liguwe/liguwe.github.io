@@ -2,16 +2,15 @@
 # 实现一个简易版本的前端路由
 
 
-
 ## 目录
 <!-- toc -->
  ## 1. 哈希路由简易实现 
 
 - 关键点
 	- 监听两个事件
-		- DOMContentLoaded ->  onLoad
+		- DOMContentLoaded -> onLoad
 			- 主动触发一次 onHashChange
-		- hashchange  ->  onHashChange
+		- hashchange -> onHashChange
 			- 每次更新直接修改 `#app` 的 `innerHtml`
 
 ```html
@@ -61,9 +60,9 @@
 
 - 关键点
 	- 监听两个事件
-		- DOMContentLoaded ->  onLoad
+		- DOMContentLoaded -> onLoad
 			- 主动触发一次 onPopState
-		- popstate  ->  onPopState
+		- popstate -> onPopState
 			- 每次更新直接修改 `#app` 的 `innerHtml`
 			- 拦截 a 标签的默认行为
 
@@ -229,6 +228,7 @@ const router = new Router(routes);
 > 使用最新的 Hooks 的方式实现
 
 `#todo` 
+
 
 很多细节需要慢慢实现，比如
 - 嵌套路由等

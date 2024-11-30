@@ -1,16 +1,6 @@
-console.log(1);
+console.profile("P1"); // 开始性能分析
+for (let i = 0; i < 10000; i++) {
+  document.createElement("div");
+}
 
-setTimeout(() => console.log(2));
-
-Promise.resolve().then(() => console.log(3));
-
-Promise.resolve().then(() => setTimeout(() => console.log(4)));
-
-Promise.resolve().then(() => {
-  throw Error();
-  console.log(5);
-});
-
-setTimeout(() => console.log(6));
-
-console.log(7);
+console.profileEnd("P1"); // 结束性能分析
