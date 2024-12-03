@@ -1,6 +1,7 @@
 
 # 微前端原理（篇二：无界）
 
+`#微前端` `#R1` 
 
 >  源于无界官网，技术选型介绍说的特别好，对微前端技术原理理解有帮助！
 
@@ -70,7 +71,8 @@
 ### 5.1. 优点
 
 - 监听路由自动的加载、卸载当前路由对应的子应用
-- 完备的沙箱方案，`js`沙箱做了`SnapshotSandbox`、`LegacySandbox`、`ProxySandbox`三套渐进增强方案
+- 完备的沙箱方案
+	- `js`沙箱做了`SnapshotSandbox`、`LegacySandbox`、`ProxySandbox`三套渐进增强方案
 - `css`沙箱做了两套`strictStyleIsolation`、`experimentalStyleIsolation`两套适用不同场景的方案
 - 路由保持，浏览器刷新、前进、后退，都可以作用到子应用
 - 应用间通信简单，全局注入

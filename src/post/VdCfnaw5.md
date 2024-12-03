@@ -1,6 +1,7 @@
 
 # 前端性能排查手段（篇一： 先用好 Chrome DevTools ）
 
+`#前端性能` `#R1` 
 
 ## 目录
 <!-- toc -->
@@ -178,7 +179,6 @@
 ## 17. 开发者实验
 
 - Protocol Monitor:
-	- 这个很有用
 - Network Console
 - WebAssembly 调试
 - CSS 概览

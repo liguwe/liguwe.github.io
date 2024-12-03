@@ -2,16 +2,16 @@
 # X-XSS-Protection 头部、 Subresource Integrity (SRI)
 
 
-`#前端安全`
+`#前端安全`  `#R1` 
 
 
 ## 目录
 <!-- toc -->
  ## 1. 定义 
 
-X-XSS-Protection 头部和 Subresource Integrity (SRI) 都是增强 Web 应用程序安全性的重要工具
+`X-XSS-Protection 头部`和 `Subresource Integrity (SRI)` 都是增强 Web 应用程序安全性的重要工具
 - X-XSS-Protection 主要针对**旧版浏览器**，提供了一个**额外的 XSS 防护层**
-- 而 SRI 则是一种更现代的安全特性，它通过验证资源的完整性来**防止资源被篡改**
+- 而 `SRI` 则是一种更现代的安全特性，它通过验证资源的完整性来**防止资源被篡改**
 
 ## 2. X-XSS-Protection 头部
 
@@ -118,7 +118,7 @@ cat FILENAME.js | openssl dgst -sha384 -binary | openssl base64 -A
 
 ### 3.6. 注意事项
 
-- 只适用于通过 HTTPS 提供的资源
+- **只适用**于通过 `HTTPS` 提供的资源
 - 如果资源经常更新，可能需要频繁更新完整性哈希
 - 不是所有浏览器都支持 SRI
 

@@ -1,6 +1,7 @@
 
 # LCP 、 白屏时间、首屏时间
 
+`#前端性能` 
 
 ## 目录
 <!-- toc -->
@@ -31,6 +32,11 @@
 ### 1.2. 测量方法对比
 
 #### 1.2.1. 白屏时间测量
+
+- 方法一：Performance API
+	- PerformanceObserver API
+		- paint
+- 方法二：手动测量 
 
 ```javascript hl:1,12,4
 // 方法一：Performance API
@@ -122,6 +128,9 @@ img.sizes = '(max-width: 500px) 300px, 1000px';
 // 服务端设置缓存头
 Cache-Control: max-age=31536000
 ```
+
+>  fetchpriority 属性
+
 
 ### 1.5. 实际应用场景
 
@@ -448,8 +457,10 @@ class PerformanceMonitor {
 
 #### 2.5.2. **差异化优化**
 
-- LCP优化：关注最大内容元素
-- 首屏优化：关注视口内所有内容
+- LCP优化：
+	- 关注**最大**内容元素
+- 首屏优化：
+	- 关注视口内**所有**内容
 
 ```javascript
 // LCP优化：关注最大内容元素

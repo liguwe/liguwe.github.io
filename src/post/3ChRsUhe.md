@@ -1,7 +1,7 @@
 
 # Webpack 5 的 Module Federation（模块联邦）
 
-`#webpack` 
+`#webpack` `#R1` 
 
 > 关于 vite 如何使用模块联邦，可见 [13. vite 中如何使用 Module Federation（模块联邦）](/post/u7b430Xd.html)
 
@@ -53,7 +53,7 @@ module.exports = {
 
 ### 2.2. 子应用配置
 
-```javascript
+```javascript hl:7
 // webpack.config.js - 子应用配置示例
 module.exports = {
   plugins: [

@@ -1,7 +1,7 @@
 
 # JAMstack 架构
 
-`#前端` 
+`#前端` `#R1`
 
 
 ## 目录
@@ -10,9 +10,9 @@
 
 JAMstack 是一种现代 Web 开发架构，强调使用 JavaScript、API 和 Markup（标记）来构建高性能和高安全性的 Web 应用。
 
-![image.png|632](https://832-1310531898.cos.ap-beijing.myqcloud.com/yuque/ff6bf70189d55690f74889441c4f9ca2.png)
+![image.png|776](https://832-1310531898.cos.ap-beijing.myqcloud.com/yuque/ff6bf70189d55690f74889441c4f9ca2.png)
 
-![image.png|256](https://832-1310531898.cos.ap-beijing.myqcloud.com/yuque/20b4de6008f7cfc8c07f1d11772e1573.png)
+![image.png|560](https://832-1310531898.cos.ap-beijing.myqcloud.com/yuque/20b4de6008f7cfc8c07f1d11772e1573.png)
 
 ## 2. 产生背景
 

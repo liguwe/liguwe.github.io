@@ -1,12 +1,16 @@
 
 # 内容安全策略（Content Security Policy，简称 CSP）
 
+`#前端安全` `#R1` 
+
 
 ## 目录
 <!-- toc -->
  ## 1. 定义 
 
 CSP 是一种额外的安全层，用于**检测和缓解某些类型的攻击**，包括跨站脚本（XSS）和数据注入攻击。
+
+> - CSP 对 CSRF 的防护能力有限
 
 ## 2. CSP 的工作原理
 
@@ -23,19 +27,30 @@ CSP 通过声明一系列内容限制来告诉**浏览器从哪些源加载内�
 
 CSP 使用多种指令来控制不同类型的资源。以下是一些常见的指令：
 
-- `default-src`: 为其他 CSP 指令提供一个默认值
-- `script-src`: 控制 JavaScript 源
-- `style-src`: 控制 CSS 源
-- `img-src`: 控制图片源
-- `connect-src`: 控制可以通过脚本接口加载的 URL
-- `font-src`: 控制字体文件源
-- `object-src`: 控制插件源（如 Flash）
-- `media-src`: 控制音频和视频源
-- `frame-src`: 控制框架源
+- `default-src`: 
+	- 为其他 CSP 指令提供一个默认值
+- `script-src`:
+	- 控制 JavaScript 源
+- `style-src`: 
+	- 控制 CSS 源
+- `img-src`: 
+	- 控制图片源
+- `connect-src`: 
+	- 控制可以通过脚本接口加载的 URL
+- `font-src`: 
+	- 控制字体文件源
+- `object-src`: 
+	- 控制插件源（如 Flash）
+- `media-src`:
+	- 控制音频和视频源
+- `frame-src`:
+	- 控制框架源
 
 ## 5. CSP 实现示例
 
 ### 5.1. 通过 HTTP 头部
+
+>  使用 `;` 分隔开了
 
 ```http
 Content-Security-Policy: default-src 'self'; script-src 'self' https://trusted.cdn.com; img-src 'self' https://img.example.com; style-src 'self' 'unsafe-inline';
@@ -49,10 +64,14 @@ Content-Security-Policy: default-src 'self'; script-src 'self' https://trusted.c
 
 ## 6. CSP 的特殊关键字
 
-- `'self'`: 允许来自同一源的内容
-- `'unsafe-inline'`: 允许内联脚本和样式
-- `'unsafe-eval'`: 允许使用 `eval()` 等动态代码执行方法
-- `'none'`: 不允许任何内容
+- `'self'`: 
+	- 允许来自同一源的内容
+- `'unsafe-inline'`: 
+	- **允许内联脚本和样式**
+- `'unsafe-eval'`: 
+	- 允许使用 `eval()` 等动态代码执行方法
+- `'none'`: 
+	- 不允许任何内容
 
 ## 7. CSP 报告
 
@@ -75,7 +94,7 @@ Content-Security-Policy-Report-Only: default-src 'self'; report-uri /csp-violati
 - 可能影响**某些遗留代码或第三方脚本**
 - 需要持续维护和更新
 
-## 11. CSP 与其他安全措施的结合
+## 10. CSP 与其他安全措施的结合
 
 - 结合 HTTPS 使用以确保策略的完整性
 - 与 `X-XSS-Protection 头部`一起使用
@@ -83,11 +102,13 @@ Content-Security-Policy-Report-Only: default-src 'self'; report-uri /csp-violati
 
 > 后文有介绍
 
-## 12. CSP 3 的新特性
+## 11. CSP 3 的新特性
 
 - 严格动态代码执行：`'strict-dynamic'`
-- 外部脚本散列：允许特定的外部脚本
-- Worker 支持：控制 Web Worker 的行为
+- 外部脚本散列：
+	- 允许特定的外部脚本
+- Worker 支持：
+	- 控制 Web Worker 的行为
 
 示例代码（使用 Express.js 设置 CSP）：
 

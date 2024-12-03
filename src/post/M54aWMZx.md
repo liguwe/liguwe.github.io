@@ -90,7 +90,7 @@ if not is_valid_url(user_url):
 
 ### 6.4. **禁用不必要的协议**
 
-- 只允许 HTTP/HTTPS，禁用 file://, gopher://, etc.
+- **只允许 HTTP/HTTPS，禁用 file://, gopher://, etc.**
 
 ### 6.5. 使用 DNS 解析白名单
 
@@ -136,4 +136,5 @@ if not is_allowed_host(parsed_url.hostname):
 
 - SSRF 是一种复杂的攻击，可能导致严重的安全问题。
 - 防范 SSRF 需要多层次的安全措施，包括严格的输入验证、网络限制和持续的安全监控。
-- **随着云服务和微服务架构的普及，SSRF 的风险可能会增加**，因此了解和防范 SSRF 对于现代 web 应用程序的安全至关重要。
+- **随着云服务和微服务架构的普及，SSRF 的风险可能会增加**，
+	- 因此了解和防范 SSRF 对于现代 web 应用程序的安全至关重要。

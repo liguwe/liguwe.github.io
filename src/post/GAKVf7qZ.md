@@ -1,6 +1,8 @@
 
 # 微前端原理（篇三：乾坤）
 
+`#微前端` `#R1` 
+
 
 ## 目录
 <!-- toc -->
@@ -169,6 +171,8 @@ window.addEventListener('app1-event', () => {});
 ## 6. 样式隔离
 
 乾坤提供两种样式隔离方案：
+- 使用 Shadow DOM ：严格隔离
+- experimentalStyleIsolation：特定前缀
 
 ```javascript
 // 1. 严格隔离：使用 Shadow DOM
@@ -188,9 +192,214 @@ registerMicroApps([{
 }]);
 ```
 
-### 6.1. 实现原理：
+## 7. qiankun 中这两种样式隔离方式的区别和各自的问题：
 
-#### 6.1.1. Shadow DOM 隔离：
+### 7.1. strictStyleIsolation（严格隔离）
+
+这种方式使用 Shadow DOM 实现样式隔离：
+
+```javascript
+// qiankun 内部实现原理
+function createShadowDOM(container) {
+  return container.attachShadow({ mode: 'open' });
+}
+
+// 子应用挂载
+const shadowRoot = createShadowDOM(container);
+shadowRoot.appendChild(subAppRoot);
+```
+
+#### 7.1.1. 存在的问题：
+
+1. **第三方组件库兼容性问题**
+```javascript
+// 某些组件库会在 document.body 上挂载元素
+// 比如 antd 的 Modal、Drawer、Message 等
+const Modal = () => {
+  // 这些组件会被挂载到 body 上
+  // 而不是 Shadow DOM 内部，导致样式失效
+  return ReactDOM.createPortal(
+    <div className="ant-modal">...</div>,
+    document.body
+  );
+};
+```
+
+2. **弹窗层级问题**
+```css
+/* Shadow DOM 内部的元素 z-index 无法超过 Shadow DOM 的边界 */
+.modal {
+  z-index: 9999; /* 在 Shadow DOM 中不会生效 */
+}
+```
+
+3. **一些特殊 CSS 特性的限制**
+```css
+/* 例如 position: fixed 相对于 Shadow DOM 根节点定位，而不是 viewport */
+.fixed-element {
+  position: fixed;
+  top: 0;
+  /* 会相对于 Shadow DOM 定位，而不是浏览器窗口 */
+}
+```
+
+### 7.2. experimentalStyleIsolation（实验性隔离）
+
+这种方式通过给样式添加前缀选择器来实现隔离：
+
+```javascript
+// 原始样式
+.title { color: red; }
+
+// 转换后
+div[data-qiankun="app1"] .title { color: red; }
+```
+
+#### 7.2.1. 工作原理：
+
+```javascript
+// qiankun 内部实现示意
+function processCSSRule(rule, appName) {
+  const prefix = `[data-qiankun="${appName}"]`;
+  
+  // 处理选择器
+  if (rule.selectorText) {
+    rule.selectorText = rule.selectorText
+      .split(',')
+      .map(selector => `${prefix} ${selector}`)
+      .join(',');
+  }
+}
+```
+
+#### 7.2.2. 优点：
+
+1. **更好的兼容性**
+```javascript
+// 弹窗组件可以正常工作
+const Modal = () => {
+  return ReactDOM.createPortal(
+    <div className="modal">...</div>,
+    document.body
+  );
+};
+```
+
+2. **支持完整的 CSS 特性**
+```css
+/* position: fixed 可以正常工作 */
+.fixed-element {
+  position: fixed;
+  top: 0;
+  /* 会相对于视口定位 */
+}
+```
+
+#### 7.2.3. 但也存在一些问题：
+
+1. **动态生成的样式可能逃逸**
+```javascript
+// 动态插入的样式可能没有被正确处理
+const style = document.createElement('style');
+style.textContent = '.dynamic { color: blue; }';
+document.head.appendChild(style);
+```
+
+2. **性能开销**
+```javascript
+// 需要实时处理样式规则
+const observer = new MutationObserver((mutations) => {
+  mutations.forEach((mutation) => {
+    // 处理新增的样式节点
+    processNewStyleNodes(mutation.addedNodes);
+  });
+});
+```
+
+### 7.3. 最佳实践建议
+
+#### 7.3.1. 选择建议
+
+```javascript
+// 1. 如果应用比较简单，推荐使用 experimentalStyleIsolation
+{
+  name: 'app1',
+  entry: '//localhost:8081',
+  container: '#container',
+  props: {
+    experimentalStyleIsolation: true
+  }
+}
+
+// 2. 如果需要完全隔离且不依赖第三方组件库，可以使用 strictStyleIsolation
+{
+  name: 'app2',
+  entry: '//localhost:8082',
+  container: '#container',
+  props: {
+    strictStyleIsolation: true
+  }
+}
+```
+
+#### 7.3.2. 混合使用策略
+
+```javascript
+// 可以针对不同子应用采用不同的隔离策略
+const apps = [
+  {
+    name: 'simple-app',
+    // 简单应用使用实验性隔离
+    props: { experimentalStyleIsolation: true }
+  },
+  {
+    name: 'complex-app',
+    // 复杂应用使用自定义隔离方案
+    props: {
+      sandbox: {
+        experimentalStyleIsolation: true,
+        // 添加额外的样式处理
+        stylePatching: (styles, appName) => {
+          // 自定义样式处理逻辑
+        }
+      }
+    }
+  }
+];
+```
+
+#### 7.3.3. 处理特殊场景
+
+```javascript
+// 对于需要全局生效的样式，可以在主应用中设置
+const globalStyles = `
+  /* 这些样式将对所有应用生效 */
+  :root {
+    --primary-color: `#1890ff;`
+  }
+  
+  /* 弹窗层级管理 */
+  .global-modal {
+    z-index: 1000;
+  }
+`;
+
+// 在主应用中注入
+const style = document.createElement('style');
+style.textContent = globalStyles;
+document.head.appendChild(style);
+```
+
+### 7.4. 总结：
+
+- `strictStyleIsolation` 隔离更彻底，但兼容性问题多
+- `experimentalStyleIsolation` 兼容性更好，但隔离不够彻底
+- 建议根据应用场景选择合适的方案，或混合使用
+- 对于复杂场景，可能需要自定义隔离方案
+
+### 7.5. 实现原理：
+
+#### 7.5.1. Shadow DOM 隔离：
 
 ```javascript
 class ShadowDOM {
@@ -205,7 +414,7 @@ class ShadowDOM {
 }
 ```
 
-#### 6.1.2. 作用域隔离：
+#### 7.5.2. 作用域隔离：
 
 ```javascript
 function scopedCSS(styleSheet, appName) {
@@ -216,7 +425,7 @@ function scopedCSS(styleSheet, appName) {
 }
 ```
 
-## 7. 性能优化
+## 8. 性能优化
 
 乾坤采用多种优化策略：
 
@@ -251,7 +460,7 @@ async function loadResources(resources) {
 3. 并行加载优化
 4. 按需加载策略
 
-## 8. 错误处理
+## 9. 错误处理
 
 乾坤提供完整的错误处理机制：
 
@@ -281,9 +490,9 @@ addGlobalUncaughtErrorHandler((event) => {
 3. 生命周期错误
 4. 资源加载错误 
 
-## 9. 弹框问题常见解决方案：
+## 10. 弹框问题常见解决方案：
 
-### 9.1. 常见弹框问题
+### 10.1. 常见弹框问题
 
 1. **样式丢失问题**
 	- 当弹框设置了`append-to-body`时，会脱离子应用的样式作用域
@@ -293,9 +502,9 @@ addGlobalUncaughtErrorHandler((event) => {
 	- 使用fixed定位的弹框可能出现位置偏移
 	- 依赖popper.js的组件（如Select下拉框）在弹框中位置错误 
 
-### 9.2. 解决方案
+### 10.2. 解决方案
 
-#### 9.2.1. 样式隔离方案
+#### 10.2.1. 样式隔离方案
 
 ```javascript
 // 方案一：重写append方法
@@ -321,7 +530,7 @@ HTMLElement.prototype.append = function(...args) {
 }
 ```
 
-#### 9.2.2. 容器挂载方案
+#### 10.2.2. 容器挂载方案
 
 ```javascript
 // 方案三：指定挂载容器
@@ -336,7 +545,7 @@ document.body.appendChild(modalContainer);
 }
 ```
 
-#### 9.2.3. Element UI 弹框解决方案
+#### 10.2.3. Element UI 弹框解决方案
 
 ```javascript
 // 方案四：修改弹框配置
@@ -360,7 +569,7 @@ export default {
 }
 ```
 
-#### 9.2.4. 全局样式处理
+#### 10.2.4. 全局样式处理
 
 ```javascript
 // 方案五：全局样式处理
@@ -384,7 +593,7 @@ registerMicroApps([
 ]);
 ```
 
-### 9.3. 最佳实践建议
+### 10.3. 最佳实践建议
 
 1. **避免使用append-to-body**
 ```javascript

@@ -1,6 +1,7 @@
 
 # 前端性能排查手段（篇二： Chrome DevTools  使用技巧总结）
 
+`#前端性能` `#R1` 
 
 ## 目录
 <!-- toc -->
@@ -43,7 +44,7 @@ document.querySelector('.my-class').addEventListener('click', () => {
 - CSS Grid 和 Flexbox 调试工具
 - CSS 选择器统计功能 
 - 使用 `Computed` 查看计算后的样式
-- 使用 `Layout` 查看盒模型
+- 使用 `Layout` 查看==盒模型==
 - CSS Grid 和 Flexbox 可视化工具
 
 ## 3. Console 面板技巧
@@ -95,6 +96,7 @@ larger-than:100kb // 大于100kb的请求
 - 请求阻止（Request blocking）
 - 请求重放（Replay XHR）
 - 带宽限制（Throttling）
+	- CPU 也可以限流
 - Early Hints 头部信息查看
 - 使用 `Waterfall` 分析加载顺序
 - 检查资源压缩状态
@@ -119,7 +121,7 @@ performance.measure('taskDuration', 'startTask', 'endTask');
 - 主线程活动
 - 帧率监控
 - 内存使用分析
-- 识别长任务（Long Tasks）
+- 识别**长任务（Long Tasks）**
 - 分析帧率（FPS）
 - 查看 CPU 和内存使用情况
 - 分析事件监听器影响

@@ -2,7 +2,7 @@
 # 微前端原理（篇一）
 
 
-`#微前端`
+`#微前端` `#R1` 
 
 
 ## 目录
@@ -252,6 +252,8 @@ sandbox.run(`
 `);
 ```
 
+> 无论是 Go 或者其他语言其实都有 JS 沙箱的实现，因为要基于它来做很多其他事情
+
 ### 2.6. 组合沙箱 (Composite Sandbox)
 
 在实际应用中，我们可能需要组合多种沙箱技术来实现更完善的隔离。
@@ -411,7 +413,585 @@ sandbox.inactive();
 
 ![图片&文件](./files/20241127-4.png)
 
-## 9. 更多
+## 9. 微前端中JS沙箱具体使用场景
+
+### 9.1. JS沙箱启动时机
+
+#### 9.1.1. 常见的启动时机
+
+```javascript
+// 1. 子应用加载时启动沙箱
+class MicroApp {
+  async loadApp(appConfig) {
+    // 创建沙箱实例
+    const sandbox = new Sandbox(appConfig.name);
+    // 启动沙箱
+    sandbox.start();
+    
+    try {
+      // 加载子应用资源
+      await loadScript(appConfig.entry);
+    } catch (error) {
+      console.error('Load app failed:', error);
+    }
+  }
+}
+
+// 2. 子应用挂载时启动沙箱
+class Sandbox {
+  async mount() {
+    // 记录当前快照
+    this.snapshotBefore = this.takeSnapshot();
+    
+    // 激活沙箱
+    this.active = true;
+    
+    // 执行子应用的 mount 钩子
+    await this.app.mount();
+  }
+  
+  async unmount() {
+    // 执行子应用的 unmount 钩子
+    await this.app.unmount();
+    
+    // 关闭沙箱
+    this.active = false;
+    
+    // 还原环境
+    this.restoreSnapshot(this.snapshotBefore);
+  }
+}
+```
+
+### 9.2. 混合页面场景处理
+
+#### 9.2.1. 基于路由的隔离：**匹配到路由了，启动**
+
+```javascript hl:6,11
+// 路由配置
+const routes = [
+  {
+    path: '/main/*',  // 主应用路由
+    component: MainApp,
+    sandbox: false    // 不启用沙箱
+  },
+  {
+    path: '/sub/*',   // 子应用路由
+    component: SubApp,
+    sandbox: true     // 启用沙箱
+  }
+];
+
+// 路由守卫
+router.beforeEach((to, from, next) => {
+  const needSandbox = to.matched.some(record => record.sandbox);
+  if (needSandbox) {
+    // 启动沙箱
+    sandbox.start();
+  } else {
+    // 关闭沙箱
+    sandbox.stop();
+  }
+  next();
+});
+```
+
+#### 9.2.2. 基于DOM节点的隔离：子应用使用容器沙箱
+
+```javascript hl:19
+class DomSandbox {
+  constructor(container) {
+    this.container = container;
+    this.shadowRoot = container.attachShadow({ mode: 'closed' });
+  }
+  
+  mount(component) {
+    // 在 Shadow DOM 中渲染子应用
+    this.shadowRoot.innerHTML = '';
+    this.shadowRoot.appendChild(component);
+  }
+}
+
+// 使用示例
+const mainApp = document.querySelector('#main-app');
+const subApp = document.querySelector('#sub-app');
+
+// 子应用容器使用沙箱
+const sandbox = new DomSandbox(subApp);
+sandbox.mount(subAppComponent);
+```
+
+### 9.3. 不同类型的沙箱实现
+
+#### 9.3.1. 快照沙箱（适用于单个子应用）
+
+```javascript
+class SnapshotSandbox {
+  constructor() {
+    this.snapshot = {};
+    this.modifyPropsMap = {};
+  }
+  
+  start() {
+    // 记录当前window对象快照
+    for (const prop in window) {
+      this.snapshot[prop] = window[prop];
+    }
+  }
+  
+  stop() {
+    // 还原window对象
+    for (const prop in this.modifyPropsMap) {
+      if (this.snapshot[prop] === undefined) {
+        delete window[prop];
+      } else {
+        window[prop] = this.snapshot[prop];
+      }
+    }
+  }
+}
+```
+
+#### 9.3.2. 代理沙箱（适用于多个子应用）
+
+```javascript
+class ProxySandbox {
+  constructor() {
+    const fakeWindow = {};
+    const proxy = new Proxy(fakeWindow, {
+      get: (target, prop) => {
+        // 优先从自己的环境中取值
+        if (prop in target) {
+          return target[prop];
+        }
+        // 否则从全局取值
+        return window[prop];
+      },
+      set: (target, prop, value) => {
+        target[prop] = value;
+        return true;
+      }
+    });
+    
+    this.proxy = proxy;
+  }
+  
+  start() {
+    // 将代理对象作为子应用的全局对象
+    window.__PROXY__ = this.proxy;
+  }
+  
+  stop() {
+    // 清理代理对象
+    window.__PROXY__ = undefined;
+  }
+}
+```
+
+#### 9.3.3. 组合沙箱（更完整的隔离）
+
+```javascript
+class CompositeSandbox {
+  constructor() {
+    this.proxySandbox = new ProxySandbox();
+    this.domSandbox = new DomSandbox();
+    this.eventSandbox = new EventSandbox();
+  }
+  
+  async start() {
+    // 启动所有沙箱
+    this.proxySandbox.start();
+    this.domSandbox.start();
+    this.eventSandbox.start();
+  }
+  
+  async stop() {
+    // 停止所有沙箱
+    this.eventSandbox.stop();
+    this.domSandbox.stop();
+    this.proxySandbox.stop();
+  }
+}
+```
+
+### 9.4. 特殊场景处理
+
+#### 9.4.1. 共享依赖处理
+
+```javascript
+class SharedDependencySandbox {
+  constructor(shared = {}) {
+    this.shared = shared;
+  }
+  
+  start() {
+    // 注入共享依赖
+    Object.keys(this.shared).forEach(key => {
+      window[key] = this.shared[key];
+    });
+  }
+}
+
+// 使用示例
+const sandbox = new SharedDependencySandbox({
+  React: window.React,
+  ReactDOM: window.ReactDOM
+});
+```
+
+#### 9.4.2. 通信机制
+
+```javascript
+class MessageSandbox {
+  constructor() {
+    this.listeners = new Map();
+  }
+  
+  // 发送消息
+  postMessage(type, data) {
+    const event = new CustomEvent('micro-app-message', {
+      detail: { type, data }
+    });
+    window.dispatchEvent(event);
+  }
+  
+  // 监听消息
+  addEventListener(type, callback) {
+    const listener = (event) => {
+      if (event.detail.type === type) {
+        callback(event.detail.data);
+      }
+    };
+    
+    this.listeners.set(callback, listener);
+    window.addEventListener('micro-app-message', listener);
+  }
+  
+  // 移除监听
+  removeEventListener(callback) {
+    const listener = this.listeners.get(callback);
+    if (listener) {
+      window.removeEventListener('micro-app-message', listener);
+      this.listeners.delete(callback);
+    }
+  }
+}
+```
+
+### 9.5. 最佳实践建议
+
+#### 9.5.1. 性能优化
+
+```javascript
+class OptimizedSandbox {
+  constructor() {
+    // 使用 WeakMap 存储状态，避免内存泄漏
+    this.state = new WeakMap();
+    
+    // 使用 requestIdleCallback 进行初始化
+    requestIdleCallback(() => {
+      this.init();
+    });
+  }
+  
+  init() {
+    // 初始化沙箱环境
+  }
+}
+```
+
+#### 9.5.2. 错误处理
+
+```javascript
+class ErrorBoundarySandbox {
+  async executeInSandbox(code) {
+    try {
+      // 在沙箱中执行代码
+      const result = await this.proxy.eval(code);
+      return result;
+    } catch (error) {
+      // 错误处理
+      console.error('Sandbox execution error:', error);
+      // 通知主应用
+      this.reportError(error);
+      // 尝试恢复
+      this.recover();
+    }
+  }
+}
+```
+
+#### 9.5.3. 生命周期管理
+
+```javascript
+class LifecycleSandbox {
+  constructor() {
+    this.status = 'inactive';
+    this.hooks = new Map();
+  }
+  
+  registerHook(name, fn) {
+    this.hooks.set(name, fn);
+  }
+  
+  async start() {
+    this.status = 'starting';
+    await this.executeHook('beforeStart');
+    // 启动沙箱逻辑
+    this.status = 'active';
+    await this.executeHook('afterStart');
+  }
+  
+  async stop() {
+    this.status = 'stopping';
+    await this.executeHook('beforeStop');
+    // 停止沙箱逻辑
+    this.status = 'inactive';
+    await this.executeHook('afterStop');
+  }
+}
+```
+
+使用建议：
+1. 根据应用场景选择合适的沙箱类型
+2. 注意性能影响，避免频繁创建销毁沙箱
+3. 合理处理共享资源和通信机制
+4. 实现完善的错误处理和恢复机制
+5. 做好沙箱的生命周期管理
+6. 考虑浏览器兼容性问题
+
+## 10. 主应用和多个子应用并存时的沙箱处理方案：
+
+### 10.1. 基于路由的沙箱管理（最常用）
+
+关键点：
+- 找到要进入的路由对应的应用名
+- 果离开的是子应用，关闭其沙箱
+- 如果进入的是子应用，启动其沙箱
+
+```javascript
+// 路由监听
+router.beforeEach((to, from, next) => {
+  // 找到要进入的路由对应的应用名
+  const toAppName = to.matched[0]?.appName;
+  // 找到要离开的路由对应的应用名
+  const fromAppName = from.matched[0]?.appName;
+
+  // 如果离开的是子应用，关闭其沙箱
+  if (fromAppName) {
+    sandboxManager.stopSandbox(fromAppName);
+  }
+
+  // 如果进入的是子应用，启动其沙箱
+  if (toAppName) {
+    sandboxManager.startSandbox(toAppName);
+  }
+
+  next();
+});
+```
+
+#### 10.1.1. 简单的沙箱管理类
+
+```javascript
+// 简单的沙箱管理类
+class SandboxManager {
+  constructor() {
+    // 存储所有子应用的沙箱实例
+    this.sandboxes = new Map();
+  }
+
+  // 启动某个子应用的沙箱
+  startSandbox(appName) {
+    const sandbox = this.sandboxes.get(appName);
+    if (sandbox) {
+      sandbox.active = true;
+    }
+  }
+
+  // 关闭某个子应用的沙箱
+  stopSandbox(appName) {
+    const sandbox = this.sandboxes.get(appName);
+    if (sandbox) {
+      sandbox.active = false;
+    }
+  }
+}
+
+// 路由配置示例
+const routes = [
+  {
+    path: '/',              // 主应用路由
+    component: MainApp,     // 不需要沙箱
+  },
+  {
+    path: '/app1/*',        // 子应用1
+    component: MicroApp1,
+    appName: 'app1'         // 需要沙箱
+  },
+  {
+    path: '/app2/*',        // 子应用2
+    component: MicroApp2,
+    appName: 'app2'         // 需要沙箱
+  }
+];
+
+
+```
+
+### 10.2. 基于 DOM 结构的沙箱管理（混合页面场景）
+
+```javascript hl:7,8
+// HTML 结构
+<div id="main-app">
+  <!-- 主应用内容 -->
+  <header>主应用的头部</header>
+  
+  <!-- 子应用容器 -->
+  <div id="sub-app1"></div>
+  <div id="sub-app2"></div>
+</div>
+
+// JavaScript 代码
+class SimpleSandbox {
+  constructor(appName, container) {
+    this.appName = appName;
+    this.container = container;
+  }
+
+  // 启动沙箱
+  start() {
+    console.log(`${this.appName} sandbox started`);
+    // 这里添加沙箱隔离逻辑
+  }
+
+  // 关闭沙箱
+  stop() {
+    console.log(`${this.appName} sandbox stopped`);
+    // 这里添加清理逻辑
+  }
+}
+
+
+```
+
+#### 10.2.1. 当容器进入视口时启动沙箱：IntersectionObserver 为了性能优化
+
+```javascript
+// 初始化子应用
+function initSubApp(appName, containerId) {
+  const container = document.getElementById(containerId);
+  const sandbox = new SimpleSandbox(appName, container);
+  
+  // 当容器进入视口时启动沙箱
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        sandbox.start();
+      } else {
+        sandbox.stop();
+      }
+    });
+  });
+  
+  observer.observe(container);
+}
+
+// 初始化所有子应用
+initSubApp('app1', 'sub-app1');
+initSubApp('app2', 'sub-app2');
+```
+
+### 10.3. 主子应用通信场景
+
+```javascript
+// 简单的消息通道
+class MessageChannel {
+  constructor() {
+    this.listeners = new Map();
+  }
+
+  // 发送消息
+  send(from, to, message) {
+    const event = new CustomEvent('micro-app-message', {
+      detail: { from, to, message }
+    });
+    window.dispatchEvent(event);
+  }
+
+  // 接收消息
+  listen(appName, callback) {
+    const handler = (event) => {
+      const { from, to, message } = event.detail;
+      if (to === appName || to === '*') {
+        callback(message, from);
+      }
+    };
+
+    window.addEventListener('micro-app-message', handler);
+    this.listeners.set(appName, handler);
+  }
+}
+
+// 使用示例
+const messageChannel = new MessageChannel();
+
+// 主应用发送消息给子应用
+messageChannel.send('main', 'app1', { type: 'update', data: {...} });
+
+// 子应用监听消息
+messageChannel.listen('app1', (message, from) => {
+  console.log(`收到来自 ${from} 的消息:`, message);
+});
+```
+
+### 10.4. 实际应用建议
+
+#### 10.4.1. **按需启动**
+
+```javascript
+// 只在必要时启动沙箱
+if (isSubApp(appName)) {
+  sandbox.start();
+}
+```
+
+#### 10.4.2. **资源共享**
+
+```javascript hl:2
+// 可以设置一些公共资源不进入沙箱
+const globalVars = ['React', 'Vue', 'jQuery'];
+sandbox.setGlobalVariables(globalVars);
+```
+
+#### 10.4.3. **性能优化**
+
+```javascript
+// 使用延迟加载
+const sandbox = new Proxy({}, {
+  get(target, property) {
+    // 只在实际使用时初始化
+    if (!target.instance) {
+      target.instance = new Sandbox();
+    }
+    return target.instance[property];
+  }
+});
+```
+
+这样的实现方式更加清晰和实用，主要关注点在于：
+- 何时启动沙箱（进入子应用时）
+- 何时关闭沙箱（离开子应用时）
+- 如何处理多个子应用（每个子应用独立的沙箱实例）
+- 主子应用如何通信（消息通道）
+
+这种方式可以确保：
+1. 主应用正常运行不受影响
+2. 子应用间相互隔离
+3. 资源可以按需加载和释放
+4. 维护成本相对较低
+
+## 11. 更多
 
 - 再把之前整理的草稿流程图看看，详见 [figjam](https://www.figma.com/board/9ykLrmg5xwkZvY8cxFinog/0022.%E5%B8%B8%E8%A7%81%E7%9A%84%E5%BE%AE%E5%89%8D%E7%AB%AF%E6%96%B9%E6%A1%88%E5%8F%8A%E5%BE%AE%E5%89%8D%E7%AB%AF%E7%9A%84%E5%8E%9F%E7%90%86%E8%A7%A3%E6%9E%90?node-id=0-1&node-type=canvas&t=4hrfzhAvEhnaDpVF-0)
 - https://www.garfishjs.org/blog/architecture.html
