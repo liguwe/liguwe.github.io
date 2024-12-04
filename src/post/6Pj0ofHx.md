@@ -1,7 +1,7 @@
 
 # 前端框架的岛屿架构（Island Architecture）
 
-`#前端架构` 
+`#前端架构` `#R1` 
 
 
 ## 目录
@@ -51,6 +51,7 @@
 
 ### 6.1. React Server Component
 
+- RSC 算是岛屿架构了
 - 划分服务端组件和客户端组件，服务端组件仅在服务端运行，客户端只会看到它的渲染结果，JavaScript 执行代码自然也仅存于服务端。
 
 ### 6.2. Astro
@@ -59,7 +60,7 @@ Astro 是最早实现岛屿架构的框架之一。
 
 示例：
 
-```vue
+```vue hl:8
 ---
 import MyReactComponent from './MyReactComponent.jsx';
 ---

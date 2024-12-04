@@ -12,7 +12,7 @@ Vue3 相关基础、原理、及源码设计
 	- [5. Vue3 组件](/post/6kXxwVKQ.html)
 	- [40. 请介绍下  Vue3  生态最新动态](/post/9W9OzwxP.html)
 - 原理
-	- [8. Vue3 的响应式原理（effect、computed、watch 的实现原理 ）](/post/8Z19YD2S.html)
+	- [8. Vue3 的响应式原理：effect、computed、watch 的实现原理](/post/RID6FvlT.html)
 	- [9. Vue3 中 effect 的调度选项（scheduler）使用示例](/post/bZBkBVeg.html)
 	- [10. vue3 watch 的详细用法（取消监听、恢复监听及清理副作用等）](/post/WIAVz2p1.html)
 	- [9. Vue3 的非原始值响应式方案（Map、WeakMap 、Set 、WeakSet ）](/post/jKi9dCol.html)

@@ -1,7 +1,7 @@
 
 # Vue3 组件
 
-`#vue3`  `#前端框架/vue`  
+`#vue3`  `#前端框架/vue`   `#R1` 
 
 
 ## 目录
@@ -13,7 +13,7 @@
 
 定义：使用 `SFC` 或者 `特定JavaScript 对象`
 
-![image.png|776](https://832-1310531898.cos.ap-beijing.myqcloud.com/yuque/b3751bcb2ed0be8d12f1ebf08cf1fc8e.png)
+![image.png|736](https://832-1310531898.cos.ap-beijing.myqcloud.com/yuque/b3751bcb2ed0be8d12f1ebf08cf1fc8e.png)
 
 > 内联模板字符串时，必须这样：`<script type="text/x-template">`
 
@@ -66,7 +66,7 @@ export default {
 
 ### 1.7. `:is` 的用法
 
-> 更多详见 [4. Vue3 中 `is` 属性的使用方法和应用场景](/post/RFaTHVUz.html)
+> 更多详见 [4. Vue3 中 is 属性的使用方法和应用场景](/post/OZt8zyjK.html)
 
 元素位置限制如何解决？  比如 `li` 必须在 `ul` 里，`tr` 必须在 `table`里
 
@@ -89,7 +89,7 @@ export default {
 --- 
 又比如，保证 `tr/td` 一定包裹在 `tbody`  里面
 
-```vue
+```vue hl:3
 <template>
   <table>
     <component :is="'tbody'">
@@ -288,7 +288,7 @@ defineProps({
 
 5、事件校验，如下代码
 
-```vue
+```vue hl:6
 <script setup>
 const emit = defineEmits({
   // 没有校验
@@ -432,7 +432,8 @@ const title = defineModel('title', { required: true })
 8、处理 `v-model` 修饰符 
 
 - [内置的修饰符](https://cn.vuejs.org/guide/essentials/forms.html#modifiers)，例如 `.trim`，`.number` 和 `.lazy`。
-- 自定义的修饰符呢？比如自定义的修饰符 `capitalize`，它会自动将 `v-model` 绑定输入的字符串值第一个字母转为大写：
+- 自定义的修饰符呢？
+	- 比如自定义的修饰符 `capitalize`，它会自动将 `v-model` 绑定输入的字符串值第一个字母转为大写：
 
 ```vue
 <script setup>
@@ -480,8 +481,8 @@ function inc() {
 
 10、关于``v-model:title="bookTitle"`` 和 `v-model="title"` 究竟什么区别？
 
-- `v-model="title" `默认`绑定到 `modelValue prop`，并通过 update:modelValue 事件`更新
-- `v-model:title="bookTitle"` 绑定到` title prop`，并通过` update:title 事件`更新
+- `v-model="title" `默认`绑定到 `modelValue prop`，并通过 update:modelValue事件`更新
+- `v-model:title="bookTitle"` 绑定到` title prop`，并通过` update:title事件`更新
 
 所以，其实`v-model="title"` 是`v-model:modelValue="title"` 一种`简写方式`
 
@@ -579,7 +580,7 @@ const AsyncComponent3 = defineAsyncComponent(() =>
 
 ### 6.4. 错误处理
 
-```vue hl:15
+```vue hl:15,13
 <template>
   <Suspense @pending="onPending" @resolve="onResolve" @fallback="onFallback">
     <template `#default>`
@@ -703,7 +704,7 @@ const { data } = await useAsyncData()
 1. **Suspense 只处理其直接子组件的异步依赖**，只处理以下异步情况：
 	- 带有 `async setup()` 的组件
 	- 使用 `defineAsyncComponent` 定义的组件
-2. 异步组件必须使用 await 或返回 Promise
+2. 异步组件**必须使用** await 或返回 Promise
 3. 确保正确处理错误情况
 4. 考虑使用 `transition` 来优化加载状态的视觉效果
 5. 在服务器端渲染（SSR）场景中要特别注意使用方式

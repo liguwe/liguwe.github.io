@@ -54,6 +54,7 @@ interface TeleportProps {
 ![|536](https://832-1310531898.cos.ap-beijing.myqcloud.com/f25fb6a62f4fc44e773d798c7cc4227b.png)
 
 ## 4. 最终代码
+
 ```javascript
 const Teleport = {
   __isTeleport: true,

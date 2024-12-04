@@ -1,7 +1,9 @@
 
 # vue3 watch 的详细用法（取消监听、恢复监听及清理副作用等）
 
-`#vue3` 
+`#vue3` `#R1` 
+
+> 记得那会看 Vue源码时，只看到为了 watch 的竞态问题，当时没太理解，再看时，才真正的理解，所以**重复是很重要的**
 
 
 ## 目录
@@ -125,7 +127,7 @@ watch(
 
 ### 5.1. 示例：取消请求防止竞态
 
-```javascript hl:21
+```javascript hl:21,9
 <script setup>
 import { ref, watchEffect } from 'vue'
 
@@ -346,7 +348,7 @@ class MockWebSocket {
 
 ### 5.6. 示例：防抖搜索示例
 
-和 React 自定义防抖函数 Hooks 一样，没必要一定要使用 loadsh 的防抖函数，因为清理函数会在特定时机执行，我们只需要在特定时机做特殊处理即可
+和 React 自定义防抖函数 Hooks 一样，没必要一定要使用 `loadsh` 的防抖函数，因为清理函数会在特定时机执行，我们只需要在特定时机做特殊处理即可
 - 特定事件
 	- 组件销毁时
 	- watch 重新执行之前，开始下个 watch 时

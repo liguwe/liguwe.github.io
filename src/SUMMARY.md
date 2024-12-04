@@ -272,13 +272,13 @@
 
     - [Vue3 基础：篇三](post/Gs9xZ9Jt.md)
 
-    - [Vue3 中 `is` 属性的使用方法和应用场景](post/RFaTHVUz.md)
+    - [Vue3 中 is 属性的使用方法和应用场景](post/OZt8zyjK.md)
 
     - [Vue3 组件](post/6kXxwVKQ.md)
 
     - [Vue 的整体设计思路](post/XdPTfcHC.md)
 
-    - [Vue3 的响应式原理（effect、computed、watch 的实现原理 ）](post/8Z19YD2S.md)
+    - [Vue3 的响应式原理：effect、computed、watch 的实现原理](post/RID6FvlT.md)
 
     - [Vue3 中 effect 的调度选项（scheduler）使用示例](post/bZBkBVeg.md)
 

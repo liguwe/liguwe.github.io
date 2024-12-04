@@ -2,7 +2,7 @@
 # Vue3 渲染器的原理和实现
 
 
-`#vue` `#2023/05/19`  `#vue3` 
+`#vue` `#2023/05/19` `#vue3` `#R1` 
 
 
 ## 目录
@@ -21,7 +21,7 @@
 - 渲染器的作用是将 `虚拟DOM对象` 渲染为 `真实DOM元素`
 	- 其核心在于更新时的 Diff算法
 - 实现跨平台渲染器的关键是 **将渲染操作抽象为可配置的对象**。
-- 属性处理需要区分 HTML Attributes  和 DOM Properties，并正确处理特殊属性如 class 和 style。
+- 属性处理需要区分 HTML Attributes 和 DOM Properties，并正确处理特殊属性如 class 和 style。
 - 事件处理采用**特殊的设计**来优化性能并解决事件冒泡和更新时机的问题
 - 子节点更新涉及多种情况，需要正确处理新旧节点的变化 
 - 特殊节点如文本节点、注释节点和 Fragment 需要特殊处理。
@@ -43,7 +43,7 @@ renderer(`<h1>hello app</h1>`, document.getElementById('app'));
 ```
 
 - 渲染器的作用是，把**虚拟DOM 对象渲染为真实 DOM元素**
-- 它的**工作原理**是，**递归地遍历虛拟DOM对象，并调用原生  DOM  API 来完成真实 DOM 的创建**
+- 它的**工作原理**是，**递归地遍历虛拟DOM对象，并调用原生 DOM API 来完成真实 DOM 的创建**
 - 渲染器的**精髓**在于后续的更新
 	- 它会通过Diff算法我出变更点，并且只会更新需要更新的内容
 
@@ -572,7 +572,7 @@ setTimeout(() => {
 我们发现 `vnode` 的 `type` 值都发生变化了，由 `p` 变成 `div` ，这个时候，还需要`打补丁`吗？
 - 是的
 	- ① 应该先把 `p 挂载` 
-	- ②  然后再将 `div 挂载`
+	- ② 然后再将 `div 挂载`
 - 如下代码：
 
 ```js hl:2,7,15 
@@ -623,6 +623,8 @@ function patchElement(n1, n2) {
 ```
 
 ## 10. 事件的处理
+
+> 事件只是 DOM 上的一个属性，所以当做特殊的 `props` 来处理
 
 如何给 `vnode` 绑定事件呢？比如如 `虚拟节点`
 
@@ -685,7 +687,7 @@ patchProps(el, key, prevValue, nextValue) {
 - `on` 开头的属性才需要处理
 	- `invokers：事件处理函数` 用于处理事件回调函数
 	- `真正的事件 callback` 存在 `invokers.value` 中
-- 问：为什么要这样，
+- 问：为什么要这样
 	- 解决性能问题，比如更新事件时，直接更新 `invokers.value` 即可，没必要每次都调用 `removeEventListener` 来移除上一次绑定的事件？
 	- `el._vei[key]` 中存储着**所有事件信息**，它的数据结构可能是一个**数组**，比如同一事件如 `click` 有多个回调callback，所以才有 `invoker.value.forEach(fn => fn(e))`
 	- 它还能解决`事件冒泡`和`更新相互冲突`的问题，见下面：

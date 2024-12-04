@@ -2,7 +2,7 @@
 # Vue3 基础：篇二
 
 
-`#2024/08/18` `#vue3`  `#前端框架/vue`  
+`#2023/08/18` `#vue3` `#前端框架/vue`  
 
 
 ## 目录
@@ -11,8 +11,10 @@
 
 ### 1.1. Vue 的两个核心功能
 
-- `声明式渲染`：Vue 基于标准 HTML 拓展了一套模板语法，使得我们可以声明式地描述最终输出的 HTML 和 JavaScript 状态之间的关系。
-- 响应性：Vue 会自动跟踪 JavaScript 状态并在其发生变化时响应式地更新 DOM。
+- `声明式渲染`：
+	- Vue 基于标准 HTML 拓展了一套模板语法，使得我们可以声明式地描述最终输出的 HTML 和 JavaScript 状态之间的关系。
+- 响应性：
+	- Vue 会自动跟踪 JavaScript 状态并在其发生变化时响应式地更新 DOM。
 
 ### 1.2. 单文件组件
 
@@ -35,20 +37,20 @@ Vue 的组件可以按两种不同的风格书写：选项式 API 和 组合式 
 
 > 很重要，重要功能或者feature 可以直接在线体验
 
-- 想要快速体验 Vue，你可以直接试试我们的  [演练场](https://sfc.vuejs.org/#eNo9j01qAzEMha+iapMWOjbdDm6gu96gG2/cjJJM8B+2nBaGuXvlpBMwtj4/JL234EfO6toIRzT1UObMexvpN6fCMNHRNc+w2AgwOXbPL/caoBC3EjcCCPU0wu6TvE/wlYqfnnZ3ae2PXHKMfiwQYArZOyYhAHN+2y9LnwLrarTQ7XeOuTFch5Am8u8WRbcoktGPbnzFOXS3Q3BZXWqKkuRmy/4L1eK4GbUoUTtbPDPnOmpdj4ee/1JVKictlSot8hxIUQ3Dd0k/lYoMtrglwfUPkXdoJg==)。
+- 想要快速体验 Vue，你可以直接试试我们的 [演练场](https://sfc.vuejs.org/#eNo9j01qAzEMha+iapMWOjbdDm6gu96gG2/cjJJM8B+2nBaGuXvlpBMwtj4/JL234EfO6toIRzT1UObMexvpN6fCMNHRNc+w2AgwOXbPL/caoBC3EjcCCPU0wu6TvE/wlYqfnnZ3ae2PXHKMfiwQYArZOyYhAHN+2y9LnwLrarTQ7XeOuTFch5Am8u8WRbcoktGPbnzFOXS3Q3BZXWqKkuRmy/4L1eK4GbUoUTtbPDPnOmpdj4ee/1JVKictlSot8hxIUQ3Dd0k/lYoMtrglwfUPkXdoJg==)。
 - 如果你更喜欢不用任何构建的原始 HTML，可以使用 [JSFiddle](https://jsfiddle.net/yyx990803/2ke1ab0z/) 入门。
 - 如果你已经比较熟悉 Node.js 和构建工具等概念，还可以直接在浏览器中打开 [StackBlitz](https://vite.new/vue) 来尝试完整的构建设置。
 
 ### 1.5. 类似于 unpkg 的东西
 
--  [unpkg](https://unpkg.com/)
--  [jsdelivr](https://www.jsdelivr.com/package/npm/vue) 或 [cdnjs](https://cdnjs.com/libraries/vue)
+- [unpkg](https://unpkg.com/)
+- [jsdelivr](https://www.jsdelivr.com/package/npm/vue) 或 [cdnjs](https://cdnjs.com/libraries/vue)
 
 ### 1.6. Vue2 与 Vue3 的区别
 
 - Vue 2 在 2023 年底将到达它的截止维护日期
 - vue3 仅支持 IE11及以上。Vue 3 用到了一些 IE11 不支持的现代 JavaScript 特性
-- vue3 只支持 [原生支持 ES2015 的浏览器](https://caniuse.com/es6) ，即 es6
+- vue3 只支持 [原生支持 ES2015 的浏览器](https://caniuse.com/es6) ，即 `es6`
 
 ## 2. 应用
 
@@ -80,7 +82,7 @@ Vue 的组件可以按两种不同的风格书写：选项式 API 和 组合式 
 
 ![image.png|520](https://832-1310531898.cos.ap-beijing.myqcloud.com/yuque/5968a47d4e873e246b2520f15634070f.png)
 
-3、`v-bind:attrName` 与  简写`:attrName`  或 `v-bind:obj` 动态绑定多个值
+3、`v-bind:attrName` 与 简写`:attrName` 或 `v-bind:obj` 动态绑定多个值
 
 ![image.png|496](https://832-1310531898.cos.ap-beijing.myqcloud.com/yuque/26f05e6dfe25ed256f0eee99069f2010.png)
 
@@ -112,13 +114,13 @@ export const isGloballyWhitelisted = /*#__PURE__*/ makeMap(GLOBALS_WHITE_LISTED)
 
 没有显式包含在列表中的全局对象将不能在模板内表达式中访问，例如用户附加在 window 上的属性。
 
-然而，你也可以自行在 [app.config.globalProperties](https://cn.vuejs.org/api/application.html#app-config-globalproperties) 上 显式地添加它们，供所有的 Vue 表达式使用。
+> 你也可以自行在 [app.config.globalProperties](https://cn.vuejs.org/api/application.html#app-config-globalproperties) 上 显式地添加它们，供所有的 Vue 表达式使用。
 
 ## 4. 指令 Directives
 
 1、`v-on` 有一个相应的缩写，即 `@` 字符 ， 如 `@click <=> v-on:click`
 
-2、`v-bind:href`  等价于  `:href` 
+2、`v-bind:href` 等价于 `:href` 
 
 3、动态参数的说明如下
 - 动态属性

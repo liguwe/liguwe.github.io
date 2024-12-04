@@ -141,7 +141,7 @@ export function render(_ctx, _cache) {
 	- 允许更多的编译时优化
 - **不同版本**：
 	- runtime-only：仅包含运行时，体积更小
-	- runtime + compiler：包含编译器，体积更大
+	- runtime + compiler：包含**编译器**，体积更大
 - **最佳实践**：
 	- 尽可能使用单文件组件（.vue）
 	- 避免运行时编译

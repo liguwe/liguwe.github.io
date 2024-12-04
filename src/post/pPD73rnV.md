@@ -1,7 +1,7 @@
 
 # 前端框架现状及未来趋势
 
-`#前端框架` 
+`#前端框架` `#R1` 
 
 
 ## 目录
@@ -34,6 +34,8 @@
 - React Server Components（RSC） 的推广
 - 服务端渲染(SSR)和静态生成(SSG) 的进一步融合
 - 更好的性能和SEO支持 
+- 包括 JAMStack 架构
+	- [8. JAMstack 架构](/post/5tFmjfyQ.html)
 
 ### 3.3. 元框架兴起
 
@@ -67,14 +69,62 @@
 
 - Web Assembly 整合
 - 跨框架：
-	- 微前端深化
+	- **微前端**深化
 - Serverless 架构 、BFF
-	- 云原生开发模式
+	- **云原生开发模式**
 - AI 驱动开发
-- 开发范式：函数式开发（Hooks）
+	- 比如 Vercel 集成了不少 AI 功能
+- 开发范式：
+	- 函数式开发（Hooks）
 - `卷`编译时
 	- 完全编译时框架
 - 增量更新
 - 流式更新
 - 跨平台场景考虑
-- 新兴场景: 元宇宙、AR/VR、大模型场景
+- 新兴场景: 
+	- 元宇宙、AR/VR、大模型场景
+
+## 6. 附：Vercel AI SDK
+
+- 与 Next.js、Svelte 等主流框架的原生集成
+- 提供开箱即用的组件和 hooks
+- 简化 AI 功能的开发流程
+	- 支持 AI 响应的实时流式传输
+	- 优化用户体验，实现打字机效果
+	- 支持多种主流 LLM 模型
+
+```javascript
+// 1. 基础流式对话实现
+import { OpenAIStream, StreamingTextResponse } from '@vercel/ai';
+
+export async function POST(req: Request) {
+  const { messages } = await req.json();
+  const response = await OpenAIStream({
+    model: 'gpt-4',
+    messages,
+  });
+  return new StreamingTextResponse(response);
+}
+
+// 2. 使用 React Hooks
+import { useChat } from 'ai/react';
+
+export default function Chat() {
+  const { messages, input, handleInputChange, handleSubmit } = useChat();
+  return (
+    <div>
+      {messages.map(m => (
+        <div key={m.id}>{m.content}</div>
+      ))}
+      <form onSubmit={handleSubmit}>
+        <input
+          value={input}
+          onChange={handleInputChange}
+          placeholder="Say something..."
+        />
+      </form>
+    </div>
+  );
+}
+
+```

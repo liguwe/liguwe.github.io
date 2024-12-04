@@ -2,7 +2,10 @@
 # Vue3 的非原始值响应式方案（Map、WeakMap 、Set 、WeakSet ）
 
 
-前文 [8. Vue3 的响应式原理（effect、computed、watch 的实现原理 ）](/post/8Z19YD2S.html) 注意讲了基本的响应式方案
+`#vue原理` `#R1` `#vue原理` 
+
+
+前文 [8. Vue3 的响应式原理：effect、computed、watch 的实现原理](/post/RID6FvlT.html) 注意讲了基本的响应式方案
 
 本文，主要讲解更复杂场景 ，比如
 - 如何拦截 `for-in` ?
@@ -26,12 +29,12 @@
 	- 这需要我们查阅规范了解它们都依赖哪些基本操作，从而通过基本操作的拦截方法**间接**地处理复合操作。
 - 添加、修改、删除属性对 `for...in` 操作的影响
 	- `添加和删除`属性都会影响 `for...in` 循环的`执行次数`，所以当这些操作发生时，需要触发与 `ITERATE_KEY` 相关联的副作用函数重新执行。
-	-  `修改`属性值则不影响 `for...in` 循环的执行次数，因此无须处理。
--  如何合理地触发副作用函数重新执行，包括
+	- `修改`属性值则不影响 `for...in` 循环的执行次数，因此无须处理。
+- 如何合理地触发副作用函数重新执行，包括
 	- 对 `NaN` 的处理，
 		- 对于 `NaN`，我们主要注意的是`NaN === NaN`永远等于false
 	- 访问**原型链上的属性导致的副作用函数**重新执行两次的问题
-		-  对于原型链属性问题，需要我们查阅规范定位问题的原因。
+		- 对于原型链属性问题，需要我们查阅规范定位问题的原因。
 	- 由此可见，想要基于 Proxy 实现一个相对完善的响应系统，**免不了去了解 ECMAScript 规范**。
 - 深响应与浅响应，以及深只读与浅只读。
 	- 这里的深和浅指的是对象的层级
@@ -51,7 +54,8 @@
 	- `for...of` 基于迭代协议工作，数组内建了 `Symbol.iterator` 方法。
 		- 数组迭代器执行时，会读取数组的 length 属性或数组的索引。因此，我们不需要做其他额外的处理，就能够实现对 for...of 迭代的响应式支持。
 - 数组的查找方法。如 includes、indexOf 以及 lastIndexOf 等
-	- 对于数组元素的查找，需要注意的一点是**，用户既可能使用代理对象进行查找，也可能使用原始对象进行查找。**
+	- 对于数组元素的查找，需要注意的一点是：
+		- **用户既可能使用代理对象进行查找，也可能使用原始对象进行查找。**
 	- 为了支持这两种形式，我们需要**重写数组的查找方法**。
 	- 原理很简单，当用户使用这些方法查找元素时，我们可以先去代理对象中查找，如果找不到，再去原始数组中查找。
 - 栈溢出问题
@@ -120,13 +124,13 @@ const p2 = new Proxy(fn, {
 
 ![|496](https://832-1310531898.cos.ap-beijing.myqcloud.com/89f6df0dbb53ae4746460d060a860c99.png)
 
-> `Reflect` 与 `Proxy` 的 API  一一对应，比如 `get / set / apply` 等
+> `Reflect` 与 `Proxy` 的 API 一一对应，比如 `get / set / apply` 等
 
 `Reflect` 还接受`第三个参数`，如下：
 
 ![|728](https://832-1310531898.cos.ap-beijing.myqcloud.com/6f6465918bdc361e993206a4b58d401d.png)
 
-前文 [8. Vue3 的响应式原理（effect、computed、watch 的实现原理 ）](/post/8Z19YD2S.html) 的` Effect` 函数，如果对于下面的数据结构有问题，`无法正常收集响应信息`。这时候就需要用到 `Reflect 的第三个参数了`
+前文 [8. Vue3 的响应式原理：effect、computed、watch 的实现原理](/post/RID6FvlT.html) 的` Effect` 函数，如果对于下面的数据结构有问题，`无法正常收集响应信息`。这时候就需要用到 `Reflect 的第三个参数了`
 
 ```javascript hl:3
 const obj = {
@@ -150,7 +154,7 @@ JS 中一切都是对象，函数也是对象，那么如何区分呢？
 
 ![|800](https://832-1310531898.cos.ap-beijing.myqcloud.com/5ffa20e66f443a16309655b8ae9201c4.png)
 
-所以，根据是否部署 `[Call](/post/jKi9dCol.html#Call)`  方法，就可以判断是 `普通对象` 还是`函数对象` 
+所以，根据是否部署 `[Call](/post/jKi9dCol.html#Call)` 方法，就可以判断是 `普通对象` 还是`函数对象` 
 
 > [https://262.ecma-international.org/#sec-ordinary-and-exotic-objects-behaviours](https://262.ecma-international.org/#sec-ordinary-and-exotic-objects-behaviours)
 
@@ -159,12 +163,13 @@ JS 中一切都是对象，函数也是对象，那么如何区分呢？
 ES 规范，JS 中有`两种对象`：
 
 - `常规对象`
-- `异质对象`： 如 Proxy 对象，如下图：
+- `异质对象`： 
+	- 如 Proxy 对象，如下图：
 
 ![](https://832-1310531898.cos.ap-beijing.myqcloud.com/a519e54f6ddf360657463d503143b1ca.png)
 
 - `[Call](/post/jKi9dCol.html#Call)` 和 `[construct](/post/jKi9dCol.html#construct)` 两个内部方法**只有被代理对象是函数和构造函数时**才会调用
-- 内部方法的`多态性` 即 普通对象 和 Proxy 都有 `[Get](/post/jKi9dCol.html#Get)`  ，但规范定义是完全不同的。
+- 内部方法的`多态性` 即 普通对象 和 Proxy 都有 `[Get](/post/jKi9dCol.html#Get)` ，但规范定义是完全不同的。
 
 > [https://262.ecma-international.org/#sec-proxy-object-internal-methods-and-internal-slots](https://262.ecma-international.org/#sec-proxy-object-internal-methods-and-internal-slots)
 
@@ -176,14 +181,15 @@ ES 规范，JS 中有`两种对象`：
 ``
 > [!bug]
 注意：需要删除被 `proxy` 的对象，才会拦截，如下图，下面的方式就不会
-**自己丢到坑里了，搞了一会，才发现都写错了**
+**自己丢到坑里了，搞了一会，才发现都写错了** ， `delete.p` 才行
+
 
 ![|720](https://832-1310531898.cos.ap-beijing.myqcloud.com/b125b5237dd8ce6ea39f9e95e472d7fa.png)
 
 ## 4. 如何代理 Object
 
 如何拦截对象的`一切读取操作`，比如
-- 访问属性：`obj.foo`  ， `obj['foo']`
+- 访问属性：`obj.foo` ， `obj['foo']`
 	- `Proxy get`
 - `in`操作符：`foo in obj`
 	- 根据 ECMA-262 中，in 操作符运算时的逻辑，通过 `Proxy has` 拦截
@@ -195,7 +201,7 @@ ES 规范，JS 中有`两种对象`：
 
 所以，结论就是：首先需要`查阅规范`，找到可拦截的方法，另外一些`复合操作`，依赖于一些基本操作，我们需要分析，通过拦截`基本操作`，达到`间接拦截复合操作`的目的。
 
-另外，比如 添加、删除属性时对 `for-in`  的`执行次数`有影响，需要定义 `const ITERATE_KEY = Symbol()`，即`遍历key` 与 副作用函数相关联，避免重复执行。
+另外，比如 添加、删除属性时对 `for-in` 的`执行次数`有影响，需要定义 `const ITERATE_KEY = Symbol()`，即`遍历key` 与 副作用函数相关联，避免重复执行。
 
 > [!info]
  更多的参考代码，不展开了，真正需要的时候再说吧！
@@ -278,17 +284,18 @@ obj.text2 = 1; // [Vue warn] Set operation on key "text2" failed: target is read
 - 修改 `length` 值，也可能会影响 `已有元素`
 - `for-in`遍历对象与普通对象区别不大，可使用 `length` 作为追踪的 `key`
 - 使用 `for-of` 时，会读取数组的 `Symbol.iterator` 的方法。
-- 另外对于数组的查找方法：用户可能会对`代理数组对象`进行查找，当然也可能对`原始对象`进行查找，所以我们`重写了`数组的查找方法。
+- 另外对于数组的查找方法：
+	- 用户可能会对`代理数组对象`进行查找，当然也可能对`原始对象`进行查找，所以我们`重写了`数组的查找方法。
 
 所以，首先，我需要知道 `读取` 和 `写入` 操作都有哪些？
 
 对于数组所有可能的`读取操作`有哪些？
-
 - `arr[0]`
 - length
 - for-in 
 - for-of
-- 不改变原数组的方法：如 some /find 、includes 等等
+- 不改变原数组的方法：
+	- 如 some /find 、includes 等等
 
 对于数组所有可能的`设置操作`有哪些？
 
@@ -327,7 +334,7 @@ const arrayInstrumentations = {}
 
 下面看看为什么重写栈方法：如 `push`，看下面示例：
 
-> 你可以想想，语言规范里，调用 `push`  肯定有一步是修改 `length` 的
+> 你可以想想，语言规范里，调用 `push` 肯定有一步是修改 `length` 的
 
 ```javascript
 const arr = reactive([]);
@@ -371,18 +378,257 @@ function track(target, key) {
 
 ## 7. 对于 Set 和 Map 的代理
 
-可以想想 `Set` 和  `Map` 对应的属性和方法有哪些？
+可以想想 `Set` 和 `Map` 对应的属性和方法有哪些？
 
-- size clear keys  values()  entries()  等等
+- size clear keys values() entries() 等等
 
 同样的你还是需要去查语言规范
 - 比如 `size` 是一个访问器属性，语言规范里规范有 `this` 执行的步骤，所以直接通过代理对象访问，会导致报错，这时候你需要去兼容，如去拦截 `get()` ，然后`bind` 正确的 `this 值`
 
 其实 `delete()` 也是同样的道理
 
-很多思路类似，比如代理迭代器属性和方法，比如 `for in`  和 `foreach` ，又比如 需要去看看文档规范里 `entries keys 和 values` 是如何定义的
+很多思路类似，比如代理迭代器属性和方法，比如 `for in` 和 `foreach` ，又比如 需要去看看文档规范里 `entries keys 和 values` 是如何定义的
 
 另外需要避免数据污染的问题，即把`响应式数据`设置到`原始数据`上的行为。我们可以通过响应式对象的 `row`属性来访问`原始对象`
+
+## 8. 对于 Proxy 对象
+
+### 8.1. Vue 3 对 Proxy 的处理原则
+
+Vue 3 在处理 Proxy 对象时遵循以下原则：
+
+1. 如果检测到目标对象已经是 Proxy，则直接返回该对象
+2. 避免重复代理
+3. 保持原始 Proxy 的行为
+
+### 8.2. 源码实现分析
+
+Vue 3 中的关键实现（简化版）：
+
+```javascript
+// reactive.js
+function reactive(target) {
+  // 如果不是对象，直接返回
+  if (!isObject(target)) {
+    return target
+  }
+
+  // 关键点：如果目标已经是响应式对象（Proxy），直接返回
+  if (target.__v_raw && !(target instanceof Proxy)) {
+    return target
+  }
+  
+  // 防止同一对象被重复代理
+  const existingProxy = proxyMap.get(target)
+  if (existingProxy) {
+    return existingProxy
+  }
+
+  // 创建代理
+  const proxy = new Proxy(target, baseHandlers)
+  proxyMap.set(target, proxy)
+  return proxy
+}
+```
+
+### 8.3. 实际使用示例
+
+#### 8.3.1. 基本 Proxy 对象
+
+```javascript
+// 1. 普通 Proxy
+const originalProxy = new Proxy({}, {
+  get(target, key) {
+    console.log('原始 Proxy get:', key)
+    return target[key]
+  }
+})
+
+// 2. Vue reactive
+const reactiveProxy = reactive(originalProxy)
+
+// 3. 验证是否是同一个对象
+console.log(reactiveProxy === originalProxy) // true
+```
+
+#### 8.3.2. 嵌套 Proxy 情况
+
+```javascript
+// 嵌套的 Proxy 对象
+const nestedProxy = new Proxy({
+  nested: new Proxy({}, {
+    get(target, key) {
+      console.log('嵌套 Proxy get:', key)
+      return target[key]
+    }
+  })
+}, {
+  get(target, key) {
+    console.log('外层 Proxy get:', key)
+    return target[key]
+  }
+})
+
+// Vue reactive 会保持原有的 Proxy 行为
+const reactiveNested = reactive(nestedProxy)
+```
+
+### 8.4. 特殊场景处理
+
+#### 8.4.1. 自定义 Proxy 行为保持
+
+```javascript
+const customProxy = new Proxy({}, {
+  get(target, key) {
+    console.log('自定义 get')
+    return target[key]
+  },
+  set(target, key, value) {
+    console.log('自定义 set')
+    target[key] = value
+    return true
+  }
+})
+
+// Vue reactive 会保持原有的自定义行为
+const reactiveCustom = reactive(customProxy)
+```
+
+#### 8.4.2. 带有内部状态的 Proxy
+
+```javascript
+let internalState = {}
+
+const stateProxy = new Proxy({}, {
+  get(target, key) {
+    // 访问内部状态
+    return internalState[key] || target[key]
+  },
+  set(target, key, value) {
+    // 更新内部状态
+    internalState[key] = value
+    target[key] = value
+    return true
+  }
+})
+
+// Vue reactive 处理时会保持内部状态
+const reactiveState = reactive(stateProxy)
+```
+
+### 8.5. 实现原理解析
+
+#### 8.5.1. 检测机制
+
+```javascript
+// Vue 3 内部实现（简化版）
+function isReactive(value) {
+  return !!(value && value.__v_isReactive)
+}
+
+function reactive(target) {
+  // 已经是响应式对象
+  if (isReactive(target)) {
+    return target
+  }
+
+  // 创建新的响应式对象
+  return createReactiveObject(
+    target,
+    false,
+    mutableHandlers,
+    mutableCollectionHandlers
+  )
+}
+```
+
+#### 8.5.2. Proxy 处理器
+
+```javascript hl:15,23
+// 基础处理器
+const baseHandlers = {
+  get(target, key, receiver) {
+    // 如果访问特殊标记，返回true
+    if (key === '__v_isReactive') {
+      return true
+    }
+    
+    // 如果目标自身是 Proxy，保持其行为
+    if (target instanceof Proxy) {
+      return Reflect.get(target, key, receiver)
+    }
+    
+    const res = Reflect.get(target, key, receiver)
+    track(target, 'get', key)
+    return res
+  },
+  
+  set(target, key, value, receiver) {
+    const oldValue = target[key]
+    const result = Reflect.set(target, key, value, receiver)
+    if (hasChanged(value, oldValue)) {
+      trigger(target, 'set', key, value, oldValue)
+    }
+    return result
+  }
+}
+```
+
+### 8.6. 最佳实践
+
+#### 8.6.1. 避免重复代理
+
+```javascript
+// ❌ 不好的做法
+const proxy1 = new Proxy({}, {/*...*/})
+const proxy2 = reactive(proxy1)
+const proxy3 = reactive(proxy2)
+
+// ✅ 好的做法
+const proxy = reactive(new Proxy({}, {/*...*/}))
+```
+
+#### 8.6.2. 保持代理一致性
+
+```javascript
+// 推荐的做法
+const state = reactive({
+  data: new Proxy({}, {
+    get(target, key) {
+      // 自定义获取逻辑
+      return target[key]
+    }
+  })
+})
+
+// 使用时保持引用一致性
+const { data } = state
+```
+
+#### 8.6.3. 处理复杂代理场景
+
+```javascript
+// 创建复杂的响应式状态
+const complexState = reactive({
+  proxy: new Proxy({}, {
+    get(target, key) {
+      // 复杂的获取逻辑
+      return target[key]
+    }
+  }),
+  data: {
+    value: 1
+  }
+})
+
+// 访问和修改
+console.log(complexState.proxy.someKey)
+complexState.data.value = 2
+```
+
+记住，Vue 3 的响应式系统设计考虑了 Proxy 对象的特殊情况，会智能地处理已经是 Proxy 的对象，避免重复代理，同时保持原有的代理行为。在实际开发中，我们应该避免创建不必要的多层代理，保持代码的简洁性和可维护性。
+
+## 9. 最后
 
 OK，就到这儿吧，其实已经有一个很现成的库供我们使用了，如果某一天真正需要用到，或者需要仔细研究，那么去看看 `@vue/reactivity` 
 

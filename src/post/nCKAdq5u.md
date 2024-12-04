@@ -165,8 +165,8 @@ requestAnimationFrame(() => {
 ## 7. 总结
 
 前端实现截图功能主要依赖：
-- Canvas API 进行图像处理
-- MediaDevices API 捕获屏幕内容
+- `Canvas API` 进行图像处理
+- `MediaDevices API` 捕获屏幕内容
 - 第三方库提供的功能
 - 浏览器扩展 API
 	- 利用浏览器本身提供的能力

@@ -1,7 +1,7 @@
 
 # 编译时框架 vs 运行时框架
 
-`#前端框架` 
+`#前端框架` `#R1` 
 
 
 ## 目录
@@ -10,14 +10,16 @@
 
 - 编译时框架（Compile-time Framework）：
 	- 在`构建阶段`完成大部分工作
-	- 将框架代码转换为优化后的原生 JavaScript
+	- 将框架代码转换为优化后的**原生 JavaScript**
 	- 最小化运行时开销
 	- 代表框架：
 		- Svelte、Solid
 - 运行时框架（Runtime Framework）：
 	- 在浏览器中需要完整的框架运行时
 	- 使用`虚拟 DOM` 进行差异化更新
-	- 运行时进行组件渲染和状态管理
+	- 运行时进行
+		- 组件渲染
+		- 状态管理
 	- 代表框架：
 		- React、Vue、Angular
 
@@ -44,7 +46,7 @@ function Counter() {
 - 状态更新触发组件重新渲染
 - 打包后包含框架代码
 
-> 当然也有编译动作，比如 JSX 的编译
+> 当然也有编译动作，比如 JSX 的编译，各类打包动作等等
 
 ### 2.2. Svelte（编译时框架）
 
@@ -61,7 +63,8 @@ function Counter() {
 ```
 
 
-- 编译后生成原生 JavaScript
+- 编译后生成
+	- **→ 原生 JavaScript**
 - 无虚拟 DOM
 - 精确更新 DOM
 - 最小化运行时代码
@@ -113,9 +116,10 @@ export default {
 
 让我们通过代码示例来看一个**简单计数器**在不同框架下的**构建产物差异**：
 
-```javascript hl:2,13,8,16
+```javascript hl:1,13,8,16,4
 // React 构建产物（简化示意）
 import { useState } from 'react';
+
 // React 运行时代码...
 function Counter() {
   const [count, setCount] = useState(0);
@@ -173,7 +177,7 @@ button.addEventListener('click', () => {
 
 - **混合方案**的兴起：
 	- 结合编译时优化和运行时灵活性
-- 更智能的编译优化
+- 更智能的编译优化选择
 - 更小的运行时
 - 更好的开发体验
 - 更强的类型支持

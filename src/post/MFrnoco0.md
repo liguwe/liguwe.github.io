@@ -1,7 +1,7 @@
 
 # 前端框架设计的核心要素
 
-`#前端` `#前端框架`  `#vue`
+`#前端` `#前端框架`  `#vue` `#R1` 
 
 对于开发一个前端框架来说，有哪些`核心要素`呢？ 如下：
 
@@ -10,7 +10,8 @@
 <!-- toc -->
  ## 1. 开发体验 
 
-- **工具链**: 开发、调试、构建
+- **工具链**: 
+	- 开发、调试、构建
 - **报错警告提示，是否能够让开发者立马定位到问题**
 	- 比如 如何提示 `App.mount('#app')` 中 `#app` 节点 不存在
 - **开发调试是否直观？**
@@ -25,24 +26,25 @@
 - 需要使用 `roolup 插件` 或者 `webpack 插件` 的 `__DEV__常量`  来做到这一点，生成环境下形成  `dead code` , 在使用打包工具 `tree-shaking` 的能力，进行移除
 
 > [!info]
-`dead code` 即 永远不会执行的代码，如 `if(true)` 或者 `import 后没使用的模块`等
+`dead code` 即 永远不会执行的代码，如 `if(false)` 或者 `import 后没使用的模块`等
 
 ## 3. 良好的 `tree-shaking` 机制
 
-- 上面说的`dead code` 很容易被 `tree-shaking`掉，但是`副作用` 呢，因为 `proxy` 能力`只读每个属性`也可能引起`副作用`。
-	- 答案是：`/*#__PURE__*/`   
-		- `rollup` 和 `webpack` 、`terser` 都可以识别它 ，它告诉打包工具，`放心 tree-shaking 掉吧`
+- 上面说的`dead code` 很容易被 `tree-shaking`掉
+	- 但是`副作用` 呢，因为 `proxy` 能力`只读每个属性`也可能引起`副作用`。
+		- 答案是：`/*#__PURE__*/`   
+			- `rollup` 和 `webpack` 、`terser` 都可以识别它 ，它告诉打包工具，`放心 tree-shaking 掉吧` 
 
 ## 4. 多种环境下的构建产物不一样
 
 比如：
 - `rollup` 下，设置 `format` 为 `iife` 给 `script` 标签直接使用
 - `rollup` 下，设置 `format` 为 `esm` 给 `<script type="module">` 直接使用
-- `rollup` 下，设置 `format` 为 `cjs` 给 nodejs 环境使用 ，为了 SSR
+- `rollup` 下，设置 `format` 为 `cjs` 给 nodejs 环境使用 ，为了 `SSR`
 
-另外，如何打包给 `rollup` 或者 `webpack` 工具使用呢？
-- 答案是 `esm` , 但又如何 与   `<script type="module">` 区别呢？
-- 看 package.json  , 如下 `代码` 和 `图片`
+另外，如何打包给 `rollup` 或者 `webpack` 工具使用呢 ？
+- 答案是 `esm` , 但又如何 与   `<script type="module">` 区别呢 ？
+- 看 package.json  , 如下 `代码` 和 `图片` 
 
 ```json
 {

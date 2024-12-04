@@ -1,7 +1,8 @@
 
 # Vue3 基础：篇三
 
-`#vue3` 
+`#vue3` `#R1` 
+
 
 ## 目录
 <!-- toc -->
@@ -36,13 +37,13 @@
 7、JavaScript 表达式可以被使用在如下场景上
 
 - 在文本插值中 (双大括号)
-- 在任何 Vue 指令 (以 v- 开头的特殊 attribute) attribute 的值中
+- 在任何 Vue 指令 (以 `v- 开头`的特殊 attribute) attribute 的值中
 
 ## 3. 响应式基础
 
-1、建议使用 `<script setup>`，来简化暴露大量的状态和方法的繁琐
+1、建议使用 `<script setup>`，**来简化暴露大量的状态和方法的繁琐**
 
-2、`ref`可以包装`任何类型`的值并保持`深层响应性` ，即 改变嵌套对象或数组时，变化也会被检测到
+2、`ref`可以包装`任何类型`的值并保持`深层响应性` ，即改变嵌套对象或数组时，变化也会被检测到
 
 - 在`模板`渲染上下文中，只有`顶级的 ref` 属性才会被解包
 - DOM 更新不适合 ref 变化同步的，`nextTick()` 后可以保证更新
@@ -127,13 +128,13 @@ state = reactive({ count: 1 })
 	- `v-show `则简单切换 CSS 属性（即始终保留在 DOM 中，**仅切换 display 属性**）
 	- `v-if` 有**更高的切换开销**
 	- 而 `v-show` 有**更高的初始渲染开销**
-	- ` v-if` 优先级高于  `v-for`， 不推荐同时使用。
+	- ` v-if` 优先级高于 `v-for`， 不推荐同时使用。
 
 ## 7. 列表渲染
 
 - 循环范围： `v-for="n in 10"`
 - 循环列表：`v-for="item in items"`
-- 使用 `of` ：  `v-for="item of items"`
+- 使用 `of` ： `v-for="item of items"`
 - 使用 `key` 优化性能
 - 在`计算属性`中使用 `reverse()` 和 `sort()` 会修改原数组，务必小心
 
@@ -154,7 +155,7 @@ state = reactive({ count: 1 })
 	- 如 `.stop.prevent.self.capture.once.passive` ，以简化事件处理
 	- `按键修饰符`和`系统按键修饰符`用于处理特定按键事件
 		- 按键修饰符： `.enter .tab .delete  .esc .space .up .down .left .right`
-		- 系统按键修饰符：  `.ctrl .alt .shift .meta` 
+		- 系统按键修饰符： `.ctrl .alt .shift .meta` 
 		- `.exact` 修饰符允许精确控制触发事件所需的系统修饰符组合
 		- `鼠标按键修饰符`用于处理特定鼠标按键触发的事件
 		   - 比如 `.left.right.middle` 
@@ -176,7 +177,7 @@ window.addEventListener('scroll', function(event) {
 	- `<select> `会绑定 `value property `并侦听 `change` 事件
 	- `v-model` 会忽略任何表单元素上初始的 `value`、`checked` 或 `selected` attribute
 	- `v-model` 可以与`修饰符`一起使用，如` .lazy、.number 和 .trim`，以实现不同的输入管理方式
-	- `.lazy`：在  `change` 事件后同步更新而不是 `input`
+	- `.lazy`：在 `change` 事件后同步更新而不是 `input`
 	- 除了`内置表单`外，可以在组件中使用 `v-model` 来创建具有`自定义行为`的可复用输入组件
 
 相对小众的一个用法：
@@ -258,10 +259,10 @@ type StopHandle = () => void
 
 1、`watch` 的 `第一个参数` 都建议写成`箭头函数`
 
-2、注意 `watch`  的 `第二个参数` 有 `once` 、`immediate` ， `deep`
-- 但需要注意 `deep = true 时`  可能会引起性能问题
+2、注意 `watch` 的 `第二个参数` 有 `once` 、`immediate` ， `deep`
+- 但需要注意 `deep = true 时` 可能会引起性能问题
 
-3、 [watchEffect函数](https://cn.vuejs.org/api/reactivity-core.html#watcheffect)  会**自动收集并追踪**函数内所依赖的响应式数据，省得手动维护所需要监听的数据，他不需要像 `watch` 一样递归地跟踪所有的属性，比较适合侦听一个嵌套数据结构中的`几个属性`。
+3、 [watchEffect函数](https://cn.vuejs.org/api/reactivity-core.html#watcheffect) 会**自动收集并追踪**函数内所依赖的响应式数据，省得手动维护所需要监听的数据，他不需要像 `watch` 一样递归地跟踪所有的属性，比较适合侦听一个嵌套数据结构中的`几个属性`。
 
 4、回调的触发时机
 
@@ -346,7 +347,7 @@ function update() {
 
 （1）宿主组件卸载时自动停止，但异步回调里则不会
 
-```javascript
+```javascript hl:9
 <script setup>
 import { watchEffect } from 'vue'
 
@@ -383,5 +384,6 @@ unwatch()
 
 5、组件上的 `ref` ： `<Child ref="child" />`，而后就可以通过 `child` 获取组件 `Child` 的实例，但访问`组件实例`的属性或方法需要通过 `defineExpose` 暴露出来，原因如下：
 
-> 使用了 `<script setup>` 的组件是默认私有的：一个父组件无法访问到一个使用了 `<script setup> `的子组件中的任何东西，除非子组件在其中通过 `defineExpose 宏` **显式暴露**
+6、使用了 `<script setup>` 的组件是默认私有的：一个父组件无法访问到一个使用了 `<script setup> `的子组件中的任何东西，除非子组件在其中通过 `defineExpose 宏` **显式暴露**
 
+>  这个和 React 也很像
