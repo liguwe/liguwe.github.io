@@ -849,6 +849,8 @@ show && {
 
 ### 4.12. 一个异步串行场景
 
+> vue中的做法是，`setEventData` 可以 通过它来设置 `setGlocal` `setPageDate` 等等来修改 vue pinia的数据
+
 ```json hl:6,12,19
 {
   "onEvent": {
@@ -884,9 +886,8 @@ show && {
 
 - 通过配置`actionType: 'custom'`实现自定义 JS。
 	- JS 中可以访问以下对象和方法：
-
 - context，渲染器上下文
-- doAction() 动作执行方法，用于调用任何 actionType 指定的动作
+- doAction() 动作执行方法，用于调用任何 `actionType` 指定的动作
 - event，事件对象，可以调用 setData()、stopPropagation()、preventDefault()分别实现事件上下文设置、动作干预、事件干预，可以通过 event.data 获取事件上下文
 
 自定义函数签名： `script:(context,doAction,event)=>{}`
@@ -998,11 +999,11 @@ let result = await (scriptFunc as any)?.call(
 
 ```
 
-#### 4.14.4. 切换 到具体 Tab
+#### 4.14.4. 切换到具体 Tab
 
 ![图片&文件](./files/20241107-6.png)
 
-### 4.15. 注册自定义动作
+### 4.15. 注册自定义动作：`RendererAction` 中注册
 
 除了以上内置动作，你还可以注册自己的动作。通过对`RendererAction`的`run`方法的实现可以定制自己的动作逻辑，最后通过`registerAction`注册到 amis 事件动作中。
 
@@ -1046,6 +1047,8 @@ registerAction('my-action', new MyAction());
 ![图片&文件](./files/20241107-7.png)
 
 ### 4.17. 编排事件&动作
+
+>  events 和 actions 需要作区分
 
 #### 4.17.1. 条件与循环
 
@@ -1100,13 +1103,20 @@ registerAction('my-action', new MyAction());
 	- children `子动作`
 	- 比如 同时发送两个ajax请求，并显示请求返回
 
+> 所以本质是一棵树，里面有 `children` 等属性，但要注意的是，action 上下文数据是有连贯性的
+
 ### 4.18. 动作间的事件传递
 
-1、事件触发开始，整个数据流包含事件本身产生的事件数据和动作产生的动作数据，事件源头产生的数据在 AMIS 事件动作机制底层已经自动加入渲染器数据域，可以通过`xxx`直接获取
+1、事件触发开始，整个数据流包含事件本身产生的事件数据和动作产生的动作数据，事件源头产生的数据在 AMIS 事件动作机制底层已经自动加入**渲染器数据域**，可以通过`xxx`直接获取
 
 比如
 
 ![图片&文件](./files/20241107-8.png)
+
+>  events → click → `actions:[] （可编排）` 
+
+
+
 
 2、部分动作产生的数据如何流动需要**交互设计者进行介入**，对于数据流动可以通过数据映射，将上一个动作产生的数据作为动作参数写入下一个动作。
 
@@ -1118,6 +1128,8 @@ registerAction('my-action', new MyAction());
 |path|数据路径，即数据变量的路径|
 
 ![图片&文件](./files/20241107-9.png)
+
+> 同样的，vue 是可以直接拿到全局数据的，从这种模板里面
 
 ### 4.19. 干预动作执行
 
@@ -1203,7 +1215,7 @@ registerAction('my-action', new MyAction());
 
 #### 4.19.3. 忽略动作报错继续执行
 
-可以通过`ignoreError: true`来忽略动作报错继续执行后面的动作
+>  可以通过`ignoreError: true`来忽略动作报错继续执行后面的动作
 
 ## 5. Amis 行为
 

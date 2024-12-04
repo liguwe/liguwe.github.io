@@ -40,9 +40,9 @@ interface ActionConfig {
 }
 ```
 
-### 1.2 事件管理器实现
+### 1.2 事件管理器实现：registerAction
 
-```typescript
+```typescript hl:17,25,43
 // 事件管理器
 import { reactive, ref } from 'vue';
 
@@ -175,7 +175,7 @@ export class ExpressionEngine {
 
 ### 2.1 事件混入
 
-```typescript
+```typescript hl:30
 // 事件混入
 import { inject } from 'vue';
 
