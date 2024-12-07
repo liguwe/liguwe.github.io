@@ -2,17 +2,17 @@
 # Node.js 中提高网络传输速度的主要方法
 
 
-`#nodejs` 
+`#nodejs` `#R1` 
 
 
 ## 目录
 <!-- toc -->
  ## 1. 总结 
 
-- 启用压缩
+- 启用`压缩`
 - 使用 HTTP/2
-- 实现合适的缓存策略
-- 使用流式传输
+- 实现合适的`缓存`策略
+- 使用`流式`传输
 - 保持长连接
 - 负载均衡
 - 使用内存缓存
@@ -118,7 +118,7 @@ app.get('/large-data', (req, res) => {
 
 ## 6. 启用 Keep-Alive
 
-```javascript
+```javascript hl:5,4
 const http = require('http');
 
 const server = http.createServer((req, res) => {
@@ -155,7 +155,7 @@ if (cluster.isMaster) {
 
 ## 8. 使用**内存缓存**
 
-```javascript hl:1
+```javascript hl:1,2
 const NodeCache = require('node-cache');
 const myCache = new NodeCache({ stdTTL: 100 });
 

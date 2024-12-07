@@ -1,7 +1,7 @@
 
 # nodejs server端如何清除  cookie
 
-`#nodejs` 
+`#nodejs` `#R1` 
 
 1. Express: `res.clearCookie(name)`
 2. Koa: `ctx.cookies.set(name, null)`

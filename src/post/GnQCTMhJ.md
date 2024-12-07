@@ -88,5 +88,5 @@ pnpm 使用 `pnpm-lock.yaml` 文件来锁定依赖版本，确保团队成员和
 
 ## 9. 性能对比
 
-在大多数情况下，pnpm 的安装速度比 npm 和 Yarn 快，尤其是在处理大型项目或 monorepo 时。
+在大多数情况下，pnpm 的安装速度比 npm 和 Yarn 快，**尤其是在处理大型项目或 monorepo 时**。
 

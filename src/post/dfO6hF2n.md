@@ -1,15 +1,15 @@
 
 # Koa 与 express  对比
 
-`#nodejs` `#koa` `#express`
+`#nodejs` `#koa` `#express` `#R1` 
 
 
 ## 目录
 <!-- toc -->
  ## 1. 先说主要区别 
 
-- 是否集成了 router/static 中间件
-- 中间件实现基于回调还是 promise
+- 是否集成了 `router/static` 中间件
+- 中间件实现基于回调还是 `promise`
 	- 导致捕获错误的的方式不一致
 
 ## 2. 核心理念

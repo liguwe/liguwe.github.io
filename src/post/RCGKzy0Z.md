@@ -1,7 +1,7 @@
 
 # RESTful 接口规范
 
-`#nodejs` 
+`#nodejs` `#R1` 
 
 
 ## 目录
@@ -26,10 +26,10 @@ RESTful（Representational State Transfer）API 的核心概念是**资源**。
 使用标准的 HTTP 方法来对资源进行操作：
 
 - GET：获取资源
-- POST：创建新资源
+- `POST`：创建新资源
 - PUT：更新资源（全量更新）
-- PATCH：部分更新资源
-- DELETE：删除资源
+- `PATCH`：部分更新资源
+- `DELETE`：删除资源
 
 例如：
 
