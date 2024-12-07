@@ -1,6 +1,7 @@
 
 # JavaScript 的组成
 
+`#javascript` `#R2` 
 
 ## 目录
 <!-- toc -->
@@ -9,8 +10,10 @@
 ![image.png|632](https://832-1310531898.cos.ap-beijing.myqcloud.com/yuque/a9104fded4d48d2d613eecce29dc3a26.png)
 
 - ECMAScript：由 ECMA-262 定义并提供核心功能
-- 文档对象模型(DOM)：提供与`网页内容`交互的方法和接口
-- 浏览器对象模型(BOM)：提供与`浏览器`交互的方法和接口
+- 文档对象模型(DOM)：
+	- 提供与`网页内容`交互的方法和接口
+- 浏览器对象模型(BOM)：
+	- 提供与`浏览器`交互的方法和接口
 
 > - ECMA-262：ECMA-262 是由欧洲计算机制造商协会（ECMA）发布的一项标准，正式名称为“ECMAScript 语言规范” 
 >    - 至于 262 没有什么特别的含义，就是一个代号
@@ -25,10 +28,11 @@
 ## 3. 浏览器上的 Javascript 能做什么 和 不能做什么？
 
 - JavaScript 的能力很大程度上取决于它`运行的环境`。
-   - 例如，[Node.js](https://wikipedia.org/wiki/Node.js) 支持允许 JavaScript 读取/写入任意文件，执行网络请求等的函数
-   - 浏览器上的 Javascript 的能力都是浏览器提供的
-   - app webview 上 JavaScript 的能力都是`嵌入的 APP` 提供的
-      - 比如 `webview` 组件提供了很多配置项，用于是否开启一些能力
+	- 例如，[Node.js](https://wikipedia.org/wiki/Node.js) 支持允许 JavaScript 读取/写入任意文件，执行网络请求等的函数
+	- 浏览器上的 Javascript 的能力都是浏览器提供的
+		- app webview 上 JavaScript 的能力都是`嵌入的 APP` 提供
+			- 比如 `webview` 组件提供了很多配置项，用于是否开启一些能力
+				- 比如是否开启 Locastarage , iframe 的一些配置等等
 
 ### 3.1. 能做什么
 

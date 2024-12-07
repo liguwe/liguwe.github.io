@@ -1,6 +1,8 @@
 
 # TypeScript 的泛型（Generics）
 
+`#typescript` `#R1` 
+
 
 ## 目录
 <!-- toc -->
@@ -245,6 +247,8 @@ interface User {
 // 使用
 const user = await fetchData<User>('/api/user');
 ```
+
+>  这个很常用！！！
 
 ## 7. 最佳实践
 

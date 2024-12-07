@@ -2,7 +2,7 @@
 # CSS 定位或布局相关的参考坐标系都有哪些？
 
 
-`#前端/CSS`  `#2024/07/30` 
+`#前端/CSS` `#R2` 
 
 ![image.png|632](https://832-1310531898.cos.ap-beijing.myqcloud.com/yuque/c792c133990e2818a06482c7117b141c.png)
 
@@ -39,7 +39,7 @@ CSS 中的“参考坐标系”或“参考系”是指为定位、对齐或变�
 
 ## 4. **边框框（Border Box）**
 
-边框框是包含元素的内容、内边距和边框的区域。
+边框框是包含元素的内容、**内边距和边框**的区域。
 
 - **盒模型**：用于计算元素的总计宽度和高度。
 
@@ -57,15 +57,15 @@ CSS 中的“参考坐标系”或“参考系”是指为定位、对齐或变�
 
 ## 7. **变换参考系（Transform Reference）**
 
-当你对元素应用 CSS 变换（比如`transform`属性）时，使用的是变换参考系。
+当你对元素应用 CSS 变换（比如`transform`属性）时，使用的是变换参考系
 
 - **变换中心点**：默认情况下，**变换中心点为元素的中心**。
-- 创建一个新的坐标系,不影响其他元素
+- 创建一个新的坐标系，不影响其他元素
 - 变换后的元素成为其子元素的`包含块`
 
 ```css
 .transform {  
-  transform: rotate(45deg) translateX(100px);  
+   transform: rotate(45deg) translateX(100px);  
 }
 ```
 
@@ -78,13 +78,17 @@ CSS 中的“参考坐标系”或“参考系”是指为定位、对齐或变�
 
 这些布局模型创建了自己的坐标系:
 
-- Flexbox 坐标系: 主轴(main axis)和交叉轴(cross axis)
-- Grid 坐标系:  行和列定义的`网格坐标系`
-- Multi-Column Layout：用于将文本分为多列
+- Flexbox 坐标系: 
+	- 主轴(main axis)和交叉轴(cross axis)
+- Grid 坐标系: 
+	- 行和列定义的`网格坐标系`
+- Multi-Column Layout：
+	- 用于==将文本分为多列==
 
 ## 10. 示例
 
 下面示例展示了几种不同的坐标系的使用：
+
 ```html
 <!DOCTYPE html>
 <html lang="en">

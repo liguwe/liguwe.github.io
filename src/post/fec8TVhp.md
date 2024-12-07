@@ -1,10 +1,12 @@
 
 # JavaScript 内存泄漏场景及其解决方案
 
+`#javascript` `#R2` 
+
 
 ## 目录
 <!-- toc -->
- ## 1. 闭包导致的内存泄漏 →  cleanup 
+ ## 1. 闭包导致的内存泄漏 → cleanup 
 
 ```javascript hl:2
 function createClosure() {
@@ -43,7 +45,9 @@ const closure = createClosure();
 closure.cleanup();
 ```
 
-## 2. 事件监听器未移除
+>  其实在函数式编程里，cleanup 使用场景很多，比如 Vue watch 的 cleanup 、React 的 useEffect 的返回值（clearup）
+
+## 2. 事件监听器未移除：==一般都是再返回一个函数==
 
 ```javascript
 function addHandler() {
@@ -81,7 +85,7 @@ const removeHandler = addHandler();
 removeHandler();
 ```
 
-## 3. 定时器未清除
+## 3. 定时器未清除：→ 返回回清理函数
 
 ```javascript
 function startTimer() {
@@ -182,7 +186,7 @@ window.globalVar = { /* 大量数据 */ };
 window.globalVar = null;
 ```
 
-## 6. 缓存未清理
+## 6. 缓存未清理：→ 设置缓存时间
 
 ```javascript
 const cache = new Map();
@@ -240,15 +244,18 @@ function process(obj) {
 }
 ```
 
-## 8. 防止内存泄漏的最佳实践
+## 8. 最佳实践
 
-- **使用严格模式**：避免意外创建全局变量
+- **使用严格模式**：
+	- 避免意外创建全局变量
 - **及时清理**：
 	- 清除定时器
 	- 移除事件监听器
 	- 解除 DOM 引用
-- **使用 WeakMap/WeakSet**：存储对象引用
-- **实现清理机制**：为长期运行的程序实现缓存清理
+- **使用 WeakMap/WeakSet**：
+	- 存储对象引用
+- **实现清理机制**：
+	- 为长期运行的程序实现缓存清理
 - **开发工具**：
    - 使用 Chrome DevTools 的 Memory 面板
    - 使用内存分析工具定期检查

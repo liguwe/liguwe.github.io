@@ -1,6 +1,8 @@
 
 # JavaScript 的核心语法
 
+`#javascript` `#R2` 
+
 
 ## 目录
 <!-- toc -->
@@ -23,8 +25,10 @@ ES5 规范增加了新的语言特性并且修改了一些已经存在的特性�
 
 ## 2. 原始类型 + 1 种复杂数据类型			
 
-- 原始类型：Undefined、Null、Boolean、Number、String 和 Symbol  
-- 复杂类型：Object
+- 原始类型：
+	- Undefined、Null、Boolean、Number、String 和 Symbol  
+- 复杂类型：
+	- Object
 
 ## 3. 变量、作用域与内存
 
@@ -32,11 +36,11 @@ ES5 规范增加了新的语言特性并且修改了一些已经存在的特性�
 
 #### 3.1.1. 原始类型
 
-![image.png|544](https://832-1310531898.cos.ap-beijing.myqcloud.com/yuque/e3768b3af18a23c8cdeccb85e280c323.png)
+![image.png|712](https://832-1310531898.cos.ap-beijing.myqcloud.com/yuque/e3768b3af18a23c8cdeccb85e280c323.png)
 
 #### 3.1.2. 引用类型
 
-![image.png|568](https://832-1310531898.cos.ap-beijing.myqcloud.com/yuque/bb555ee9faabf851d1d0d40946117804.png)
+![image.png|672](https://832-1310531898.cos.ap-beijing.myqcloud.com/yuque/bb555ee9faabf851d1d0d40946117804.png)
 
 ### 3.2. let、var、const 申明选择建议
 

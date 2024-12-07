@@ -1,7 +1,8 @@
 
 # commonjs 的 require 机制
 
-`#nodejs` 
+`#nodejs` `#R1` 
+
 
 ## 目录
 <!-- toc -->
@@ -139,7 +140,7 @@ function loadPlugin(name) {
 }
 ```
 
-## 7. 性能优化：比如 fs/path等
+## 7. 性能优化：比如 fs/path 等
 
 ```javascript hl:5,12
 // 1. 使用路径缓存
@@ -176,7 +177,7 @@ module.exports = {
 exports.method1 = function() {};
 exports.method2 = function() {};
 
-// 3. 注意: 直接赋值 exports 无效
+// ❌  3. 注意: 直接赋值 exports 无效 
 exports = { method: () => {} };  // 这样做是错误的
 ```
 
@@ -241,7 +242,7 @@ console.log(module);
 
 ## 13. 核心模块是二进制和缓存，所以很快
 
-- `require('fs')`  核心模块很快，因为是编译好的`二进制可执行文件` 
+- `require('fs')` 核心模块很快，因为是编译好的`二进制可执行文件` 
 	- 缓存：导致很快
 
 ## 14. Node.js 中对不同扩展名文件的处理机制
@@ -353,8 +354,7 @@ NODE_MODULE(NODE_GYP_MODULE_NAME, Initialize)
 
 ### 14.5. 目录模块处理：查找顺序
 
-
-总结：`pageage.json 的 main 字段` → `.js` →  `.json` →  `.node`
+总结：`pageage.json 的 main 字段` → `.js` → `.json` → `.node`
 
 ```javascript hl:17,18,19,20
 // 1. package.json 方式

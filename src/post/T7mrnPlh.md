@@ -2,10 +2,13 @@
 # CSS 布局都有了哪些？
 
 
-`#前端/CSS`  `#2024/07/30` 
+`#前端/CSS` 
 
-- CSS Grid Layout：二维布局系统
-- CSS Flexbox：维布局模型
-- 多列布局：column-count、column-gap 等
+- CSS Grid Layout：
+	- 二维布局系统
+- CSS Flexbox：
+	- 一维布局模型
+- 多列布局：
+	- column-count、column-gap 等
 - 浮动布局：
 	- 不展开了，不建议使用了

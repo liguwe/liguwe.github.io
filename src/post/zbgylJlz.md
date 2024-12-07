@@ -7,7 +7,7 @@
 
 ## 目录
 <!-- toc -->
- ## 1. 先说说 `setInterval`  的问题 
+ ## 1. 先说说 `setInterval` 的问题 
 
 `setInterval(fn, N)`;  
 - 即`fn()` 将会在 `N` 秒之后被推入`任务队列`
@@ -34,7 +34,7 @@ for (var i = 0; i < 5; i++) {
 
 而且它是`一次性`的，或者换个思路，`setInterval` 循环执行，链路长，不好控制，而 `setTimeout` 只是延时`一次` ，方便控制。
 
-## 3. 使用 `setTimeout`  来模拟  `setInterval`
+## 3. 使用 `setTimeout` 来模拟 `setInterval`
 
 ```javascript
 function mySetInterval(fn, timeout) {

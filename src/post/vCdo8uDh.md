@@ -1,6 +1,8 @@
 
 # 使用 requestAnimationFrame 批量处理操作的原理
 
+`#bom` `#R1` 
+
 
 ## 目录
 <!-- toc -->
@@ -56,7 +58,7 @@ function updateElement(element, value) {
 
 ## 3. 实际应用场景
 
-### 3.1. DOM 批量更新：使用上面👆🏻定义的  `scheduleUpdate`
+### 3.1. DOM 批量更新：使用上面👆🏻定义的 `scheduleUpdate`
 
 ```javascript hl:5
 // 批量更新多个元素

@@ -1,8 +1,7 @@
 
 # JavaScript 简介
 
-
-JavaScript 是一种高层次的、解释型的编程语言。它在当今的信息技术领域中扮演着重要角色，尤其在Web开发方面。以下是关于JavaScript的全面介绍：
+`#javascript` 
 
 
 ## 目录
@@ -16,9 +15,12 @@ JavaScript 是一种高层次的、解释型的编程语言。它在当今的信
 
 ### 1.2. 历史
 
-- **诞生**：由 Brendan Eich 在 1995 年开发，并首次应用于 Netscape Navigator 浏览器。
-- **标准化**：ECMAScript 是由 ECMA International 管理的 JavaScript 标准化规范，ECMAScript 31999 年）和 ECMAScript 5（2009 年）是重要的里程碑。
-- **现代化**：ECMAScript 6（2015 年），又称 ES6 或 ES2015，引入了许多新特性类，模块，箭头函数等。
+- **诞生**：
+	- 由 Brendan Eich 在 1995 年开发，并首次应用于 Netscape Navigator 浏览器。
+- **标准化**：
+	- ECMAScript 是由 ECMA International 管理的 JavaScript 标准化规范，ECMAScript 31999 年）和 ECMAScript 5（2009 年）是重要的里程碑。
+- **现代化**：
+	- ECMAScript 6（2015 年），又称 ES6 或 ES2015，引入了许多新特性类，模块，箭头函数等。
 
 ## 2. JavaScript 的核心特性
 
@@ -60,22 +62,26 @@ JavaScript 是一种高层次的、解释型的编程语言。它在当今的信
 ### 3.3. 全栈开发
 
 - **MEAN/MERN 栈**：MongoDB, Express, Angular/React, Node.js。
-	- 很早以前还用过
-- 基于 React 和 Vue.js 的服务端渲染框架: Next.js 和 Nuxt.js。
+	- ==很早以前还用过==
+- 基于 React 和 Vue.js 的服务端渲染框架: 
+	- Next.js 和 Nuxt.js。
 
 ### 3.4. 移动应用开发
 
-- **React Native**：使用 JavaScript 构建原生移动应用。
-- **Ionic、PhoneGap/Cordova**：建跨平台移动应用。
+- **React Native**：
+	- 使用 JavaScript 构建原生移动应用。
+- **Ionic、PhoneGap/Cordova**：
+	- 建跨平台移动应用。
 
 ### 3.5. 桌面应用开发
 
-- **Electron、NW.js**：使用 Web 技术构建跨平台桌面应用。
+- **Electron、NW.js**：
+	- 使用 Web 技术构建跨平台桌面应用。
 
 ### 3.6. 游戏开发
 
 - **Three.js**：创建3D图形动画。
-- **Phaser**：2D游戏框架。
+- **Phaser**：2D 游戏框架。
 
 ### 3.7. 数据可视化
 
@@ -106,13 +112,16 @@ JavaScript 是一种高层次的、解释型的编程语言。它在当今的信
 
 ### 4.3. 事件循环
 
-- 事件循环是 JavaScript 处理异步操作的机制，检测调用栈是否为空，并从任务队列中取任务执行。
+- 事件循环是 JavaScript 处理异步操作的机制，检测**调用栈**是否为空，并从任务队列中取任务执行。
 
 ### 4.4. 异步编程
 
-- **回调函数**：基本的异步处理方式，但会导致“回调地狱”。
-- **Promise**：链式解决异步调用，避免回调地狱。
-- **async/await**：于 Promise 的语法糖，让异步代码看起来像同步代码。
+- **回调函数**：
+	- 基本的异步处理方式，但会导致“回调地狱”。
+- **Promise**：
+	- 链式解决异步调用，避免回调地狱。
+- **async/await**：
+	- Promise 的语法糖，让异步代码看起来像同步代码。
 
 ### 4.5. this 关键字
 
@@ -136,6 +145,6 @@ JavaScript 是一种高层次的、解释型的编程语言。它在当今的信
 ## 6. JavaScript 的局限性
 
 - 单线程模型在进行 CPU 密集型任务时效率较低。
-- 隐式类型转换可能导致一些预期之外的行为。
+- **隐式类型转换**可能导致一些预期之外的行为。
 - 动态类型系统可能在大型项目中引入类型相关的缺陷。
 

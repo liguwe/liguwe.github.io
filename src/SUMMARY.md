@@ -111,6 +111,8 @@
 
     - [CSS 性能优化有哪些思路？](post/IEyx0Cuk.md)
 
+    - [rem 和 vw、vh 方案对比](post/lnn3GQEA.md)
+
   - [JavaScript 篇](post/MApTMxad.md)
 
 
@@ -136,7 +138,7 @@
 
     - [JavaScript 对象的一些注意点](post/aDpk3aqB.md)
 
-    - [如何理解 JavaScript 的单线程](post/2CJopjFE.md)
+    - [JavaScript 的单线程](post/SkcUTZLY.md)
 
     - [JavaScript 内存泄漏场景及其解决方案](post/fec8TVhp.md)
 
@@ -154,9 +156,11 @@
 
     - [window.onerror 和 window.addEventListener 的区别？](post/49pCkp80.md)
 
-    - [JavaScript class 中各种方法定义的区别](post/CZJBxKOw.md)
+    - [前端错误的分类、优先级管理以及处理策略](post/WjSOGqjh.md)
 
-    - [rem 和 vw、vh 方案对比](post/xUdA3O2v.md)
+    - [前端错误的分类和优先级管理建议](post/800WyJFR.md)
+
+    - [class 中各种方法定义的区别](post/2Rg1HL2H.md)
 
   - [TypeScript 篇](post/rHFbrCfc.md)
 
@@ -180,7 +184,7 @@
   - [浏览器篇](post/w3RIJnoc.md)
 
 
-    - [JavaScript 中有哪些不会冒泡的事件，以及为什么不支持冒泡？](post/coR4Sys3.md)
+    - [哪些事件不会冒泡的事件，以及为什么不支持冒泡？](post/7cRlGnSu.md)
 
     - [使用 requestAnimationFrame 批量处理操作的原理](post/vCdo8uDh.md)
 
@@ -209,6 +213,8 @@
     - [requestIdleCallback 的应用场景](post/Pmp06AG3.md)
 
     - [shadow dom 与 Web Component](post/dG6UWvZW.md)
+
+    - [BroadcastChannel 和 MessageChannel](post/W5u14ZGE.md)
 
     - [跨域与跨页面通讯问题汇总](post/oXixmK5Y.md)
 

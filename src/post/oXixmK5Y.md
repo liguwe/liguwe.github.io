@@ -1,6 +1,8 @@
 
 # 跨域与跨页面通讯问题汇总
 
+`#跨域` `#bom` `#R1` 
+
 
 ## 目录
 <!-- toc -->
@@ -160,9 +162,9 @@ fetch('api.example.com/data', {
 });
 ```
 
-### 1.8. 最佳实践： **缓存预检请求**
+### 1.8. 最佳实践： **缓存预检请求** →  设置更久一些也行
 
-```javascript
+```javascript hl:3
 // 服务器端设置预检请求的缓存时间
 app.options('/api', (req, res) => {
     res.header('Access-Control-Max-Age', '86400'); // 24小时
@@ -364,7 +366,7 @@ self.onconnect = function(e) {
  原因如下：
 1. **窗口引用问题**：postMessage 需要一个目标窗口的引用。不同 Tab 之间默认是没有这种引用的。比如使用 `window.open`
 2. **域名不同**：**即使有窗口引用**，不同域名之间的通信也需要明确指定目标源。
-3. **事件传播范围**：message 事件通常只在目标窗口内传播，不会跨越到其他未相关的标签页。
+3. **事件传播范围**：`message` 事件通常只在目标窗口内传播，不会跨越到其他未相关的标签页。
 
 ### 7.2. 安全策略
 
@@ -373,11 +375,16 @@ self.onconnect = function(e) {
 
 ### 7.3. 有一些特殊情况和解决方案
 
-1. **opener 关系**：如果一个标签页是由另一个标签页打开的（使用 window.open() ），则它们之间可以通过 opener 和 postMessage 进行通信。
-2. **共享存储**：可以使用 localStorage 或 IndexedDB 等共享存储方式，配合 storage 事件来实现跨标签页通信。
-3. **Broadcast Channel API**：这是一个较新的 API，允许**同源的不同上下文**（如不同的标签页）之间进行通信。
-4. **Service Worker**：可以使用 Service Worker 作为**中间人**来协调不同标签页之间的通信。
-5. **WebSocket**：可以通过服务器端的 WebSocket 连接来协调不同标签页之间的通信。
+1. **opener 关系**：
+	1. 如果一个标签页是由另一个标签页打开的（使用 window.open() ），则它们之间可以通过 opener 和 postMessage 进行通信。
+2. **共享存储**：
+	1. 可以使用 localStorage 或 IndexedDB 等共享存储方式，配合 storage 事件来实现跨标签页通信。
+3. **Broadcast Channel API**：
+	1. 这是一个较新的 API，允许**同源的不同上下文**（如不同的标签页）之间进行通信。
+4. **Service Worker**：
+	1. 可以使用 Service Worker 作为**中间人**来协调不同标签页之间的通信。
+5. **WebSocket**：
+	1. 可以通过服务器端的 WebSocket 连接来协调不同标签页之间的通信。
 
 ## 8. 前端页面通讯的方式有哪些？
 

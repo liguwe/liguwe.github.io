@@ -1,11 +1,13 @@
 
 # JavaScript 异步编程：async、await 的实现原理
 
+`#javascript` 
 
 
 ## 目录
 <!-- toc -->
  ## 1. 预备知识 
+
 ### 1.1. 回调函数
 
 略
@@ -69,11 +71,9 @@ co(function* () {
     const result = yield Promise.resolve(1);
     return result;
 }).then(value => console.log(value));
-
 ```
 
 ## 2. 生成器 vs async/await
-
 
 - 生成器是更底层的机制，需要手动迭代或使用执行器。
 - async/await 是建立在**生成器和 Promise 之上**的高级语法，提供了更简洁的异步编程方式。
@@ -81,23 +81,22 @@ co(function* () {
 
 ## 3. Thunk vs Promise
 
-
 - Thunk 主要用于将回调风格的函数转换为更易于操作的形式。
 - Promise 提供了一种标准的异步操作表示方法，具有更丰富的功能（如 .then()、.catch() 等）。
 
 ## 4. co 函数 vs async/await
-    
+
 - co 函数是 async/await 出现之前的一种解决方案，用于简化生成器的使用。
-- async/await 可以看作是 co 函数的`语言级实现`，提供了更原生和简洁的语法。
+- async/await 可以看作是 `co 函数`的`语言级实现`，提供了更原生和简洁的语法。
 
 ## 5. 协程 vs 其他概念
 
-- 协程是一个更广泛的概念，生成器是JavaScript中协程的一种实现。
-- async/await、Thunk、co 函数都可以看作是**基于协程思想的不同层次的抽象和实现**。
+- `协程`是一个更广泛的概念，生成器是 JavaScript 中`协程`的一种实现。
+- `async/await、Thunk、co 函数`都可以看作是**基于协程思想的不同层次的抽象和实现**。
 
 ## 6. co 函数的最简实现
 
-co 函数的核心功能是自动执行生成器函数，将 yield 的值转换为 Promise，并处理异步流程。
+co 函数的核心功能是自动执行生成器函数，将 `yield` 的值转换为 Promise，并处理异步流程。
 
 以下是一个最简单的 `co 函数`实现：
 

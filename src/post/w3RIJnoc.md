@@ -9,7 +9,7 @@
 <!-- toc -->
  ## BOM 篇 
 
-- [1. JavaScript 中有哪些不会冒泡的事件，以及为什么不支持冒泡？](/post/coR4Sys3.html)
+- [1. 哪些事件不会冒泡的事件，以及为什么不支持冒泡？](/post/7cRlGnSu.html)
 - [2. 使用 requestAnimationFrame 批量处理操作的原理](/post/vCdo8uDh.html)
 - [3. MessageChannel 及其应用场景](/post/MWBihAEm.html)
 - [4. 如何检测页面是否在前台运行（检测页面的可见性）](/post/ky8BNA6P.html)

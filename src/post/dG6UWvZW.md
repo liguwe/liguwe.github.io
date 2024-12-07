@@ -1,7 +1,7 @@
 
 # shadow dom 与 Web Component
 
-`#前端面试` 
+`#bom` `#R1` 
 
 
 ## 目录

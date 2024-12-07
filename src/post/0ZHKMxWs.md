@@ -1,7 +1,7 @@
 
 # TypeScript 中与类型相关的运算符
 
-`#typescript`
+`#typescript` `#R1` 
 
 
 ## 目录
@@ -92,7 +92,7 @@ type C = A & B; // { name: string; age: number }
 
 ## 7. 类型断言
 
-```typescript
+```typescript hl:7
 // as 断言
 let value: any = "string";
 let length = (value as string).length;
@@ -111,7 +111,7 @@ let length2: number = (<string>value).length;
 
 ### 7.1. 非空断言运算符 (!)
 
-```typescript
+```typescript hl:4
 function getValue(): string | undefined {
     return "hello";
 }

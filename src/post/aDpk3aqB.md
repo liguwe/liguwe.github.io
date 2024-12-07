@@ -1,6 +1,7 @@
 
 # JavaScript 对象的一些注意点
 
+`#JavaScript` `#R2` 
 
 
 ## 目录
@@ -56,7 +57,7 @@ let wr = new WeakRef(target);
 - WeakSet 
 	- 成员**只能是对象**，而不能是其他类型的值
 	- WeakSet 中的对象都是**弱引用**，即垃圾回收机制不考虑 WeakSet 对该对象的引用
-	- **只有三个方法**  add、delete、has 
+	- **只有三个方法** add、delete、has 
 	- 使用场景案例：
 		- WeakSet 的一个用处，是**储存 DOM 节点**，而不用担心这些节点从文档移除时，会引发内存泄漏
 
@@ -110,8 +111,10 @@ Object.prototype.toString.call([]) // "[object Array]"
 
 常用方法：
 - Object.getOwnPropertyDescriptor
--  Object.defineProperties
--  Object.definePropertie
+- Object.defineProperties
+- Object.definePropertie
+
+>  更多见 [19. 遍历对象的方式都有哪些？](/post/KZy5msy3.html)
 
 ## 7. 存取器
 
@@ -260,7 +263,7 @@ Array.prototype.slice.call(arguments);
 
 ![图片&文件](./files/20241115-7.png)
 
-## 15. sort((a, b) => a - b > 0) 和 sort((a, b) => a - b) 的区别  ？
+## 15. sort((a, b) => a - b > 0) 和 sort((a, b) => a - b) 的区别 ？
 
 这两种写法有**很大的区**别：
 1. `sort((a, b) => a - b)`：
@@ -352,7 +355,7 @@ console.log(arr);
 ```javascript hl:3
 // map()方法还可以接受第二个参数
 var arr = ['a', 'b', 'c'];
-// map()方法的第二个参数，将回调函数内部的this对象，指向arr数组。
+// map()方法的第二个参数，将回调函数内部的this对象，指向 arr 数组
 [1, 2].map(function (e) {
   return this[e];
 }, arr)
@@ -438,7 +441,7 @@ let arr = [...obj]; // TypeError: Cannot spread non-iterable object
 ```
 
 > [!danger]
-> 扩展运算符还可以将字符串转为真正的数组，`[...'hello']`  或者 `Array.from('hello')`，所以也可以不使用 `split`
+> 扩展运算符还可以将字符串转为真正的数组，`[...'hello']` 或者 `Array.from('hello')`，所以也可以不使用 `split`
 
 ## 19. `Array.from()`方法用于将两类对象转为真正的数组
 
@@ -450,7 +453,7 @@ let arr = [...obj]; // TypeError: Cannot spread non-iterable object
 
 ## 20. `Array.of()` 方法用于`将一组值`，转换为数组
 
->  **array  of xxx ：xxx 的数组形式， 这样好理解**
+>  **array of xxx ：xxx 的数组形式， 这样好理解**
 
 ```javascript hl:5
 Array.of(3, 11, 8); // [3,11,8]
@@ -488,6 +491,8 @@ function ArrayOf(){
 // [1, 2, 3, 4, 5]
 ```
 
+>  `arr.flat(Infinity)` 彻底打平
+
 ## 23. Array.fill
 
 ```javascript hl:5,10
@@ -495,7 +500,7 @@ function ArrayOf(){
 
 new Array(3).fill(7)   // [7, 7, 7]
 
-fill方法还可以接受第二个和第三个参数，用于指定填充的起始位置和结束位置。
+fill方法：还可以接受第二个和第三个参数，用于指定填充的起始位置和结束位置。
 
 ['a', 'b', 'c'].fill(7, 1, 2)
 // ['a', 7, 'c']
@@ -513,7 +518,7 @@ arr
 ## 25. String对象
 
 - `'a'.concat('b', 'c') // "abc"`
-- `split方法`还可以接受第二个参数，限定返回数组的最大成员数
+- `split方法`还可以接受**第二个参数**，限定返回数组的最大成员数
 - `indexOf方法`还可以接受第二个参数，表示从该位置开始向后匹配
 - `at()`方法接受一个整数作为参数，返回参数指定位置的字符，支持负索引（即倒数的位置）
 
@@ -629,9 +634,9 @@ template.replace(
 /t*est/.test('tttest') // true
 /t*est/.test('tttttttttttttttttest') // true
 
-+?：表示某个模式出现1次或多次，匹配时采用非贪婪模式。
-*?：表示某个模式出现0次或多次，匹配时采用非贪婪模式。
-??：表格某个模式出现0次或1次，匹配时采用非贪婪模式。
++?：表示某个模式出现1次或多次，匹配时采用非贪婪模式
+*?：表示某个模式出现0次或多次，匹配时采用非贪婪模式
+??：表格某个模式出现0次或1次，匹配时采用非贪婪模式
 
 (?:x)称为 非捕获组
 

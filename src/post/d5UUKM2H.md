@@ -1,7 +1,7 @@
 
 # 常用的 package.json 字段说明
 
-`#nodejs` 
+`#nodejs` `#R1` 
 
 
 ## 目录

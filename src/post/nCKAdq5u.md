@@ -1,6 +1,7 @@
 
 # 前端浏览器实现截图功能主要有几种实现方式
 
+`#bom` `#R1` 
 
 
 ## 目录
@@ -147,6 +148,7 @@ async function waitForImages(element) {
 ```
 
 ### 5.4. 性能优化
+
 ```javascript
 // 使用 requestAnimationFrame 优化性能
 requestAnimationFrame(() => {

@@ -1,6 +1,8 @@
 
 # TS 常见问题
 
+`#typescript` `#R1` 
+
 
 ## 目录
 <!-- toc -->
@@ -46,7 +48,7 @@
 
 ![图片&文件](./files/20241114-23.png)
 
- 
+>   类不能继承接口，只能实现`接口` ，但`接口`可以继承`接口`
 
 ### 3.1. extends（继承）
 
@@ -384,24 +386,24 @@ class PayPalPayment implements PaymentStrategy {
 
 ### 3.13. 关键区别总结
 
-1. **继承与实现**
-   - `extends` 用于继承类的实现
-   - `implements` 只用于实现接口的类型检查
-2. **代码复用**
-   - `extends` 可以复用父类的代码
-   - `implements` 不提供代码复用
-3. **多重使用**
-   - 类只能 `extends` 一个类
-   - 类可以 `implements` 多个接口
-4. **访问修饰符**
-   - `extends` 继承所有访问修饰符
-   - `implements` 只关注公共接口
-5. **构造函数**
-   - `extends` 可以使用 `super()`
-   - `implements` 不涉及构造函数继承
-6. **使用场景**
-   - `extends` 用于代码复用和类型继承
-   - `implements` 用于确保类型一致性
+- **继承与实现**
+	- `extends` 用于继承类的实现
+	- `implements` 只用于实现接口的类型检查
+- **代码复用**
+	- `extends` 可以复用父类的代码
+	- `implements` 不提供代码复用
+- **多重使用**
+	- 类只能 `extends` 一个类
+	- 类可以 `implements` 多个接口
+- **访问修饰符**
+	- `extends` 继承所有访问修饰符
+	- `implements` 只关注公共接口
+- **构造函数**
+	- `extends` 可以使用 `super()`
+	- `implements` 不涉及构造函数继承
+- **使用场景**
+	- `extends` 用于代码复用和类型继承
+	- `implements` 用于确保类型一致性
 
 ## 4. TypeScript 中 Interface 与 Type 的区别
 

@@ -1,6 +1,7 @@
 
 # 列举 ES6（ES2015） 到 ES2024 的主要特性
 
+`#R2` `#javascript` 
 
 
 ## 目录
@@ -82,10 +83,12 @@ promise.finally()
 ```
 
 ## ES2019
+
 ```javascript hl:3
 // 1. Array.flat/flatMap
 [1, [2]].flat()
-array.flatMap()
+// 它结合了 `map()` 和 `flat()` 的功能，可以同时完成映射和扁平化操作
+array.flatMap()  
 
 // 2. Object.fromEntries
 Object.fromEntries(['a', 1](/post/h1YvpuVA.html#'a',-1))
@@ -132,9 +135,10 @@ Promise.any([p1, p2])
 ![图片&文件](./files/20241111-37.png)
 
 ![图片&文件](./files/20241111-38.png)
+
 ## ES2022
 
-```javascript
+```javascript hl:4
 // 1. Class 字段
 class A {
     x = 1;

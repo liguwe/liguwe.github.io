@@ -1,6 +1,7 @@
 
 # 深拷贝与浅拷贝的实现
 
+`#R2` `#javascript` 
 
 
 ## 目录
@@ -42,7 +43,7 @@ function deepCopy(obj) {
 }
 ```
 
-## 3. 如何解决循环引用问题：WeakMap
+## 3. 如何解决循环引用问题：`WeakMap`
 
 ```javascript hl:5,9,2
 function deepCopy(obj, hash = new WeakMap()) {
@@ -224,7 +225,7 @@ function deepCopy(obj, weakMap = new WeakweakMap()) {
 
 `json`的方式会丢失很多内容，比如 map、regexp、set、date、set、函数以及循环引用的问题
 
-## 7. 最后
+## 7. 最后：建议
 
-还是使用 loadsh 、Ramda 等库吧 ，细节还有很多需要考虑的 
+还是使用 loadsh 、Ramda 等库吧 ，细节还有很多需要考虑的，别自己造轮子
 

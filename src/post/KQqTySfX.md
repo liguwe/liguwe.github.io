@@ -2,7 +2,7 @@
 # 前端技术关键词列举
 
 
-`#前端` 
+`#前端` `#R2`
 
 > 以下是一些`相对不过时的前端技术关键词`及其简要介绍
 
@@ -11,7 +11,8 @@
 <!-- toc -->
  ## 1. React 和 React Hooks 
 
-- **React**：一个由 Facebook 开发的用于构建用户界面的 JavaScript 库。它的虚拟 DOM 和组件化设计使其非常受欢迎。
+- **React**：
+	- 一个由 Facebook 开发的用于构建用户界面的 JavaScript 库。它的虚拟 DOM 和组件化设计使其非常受欢迎。
 - **React Hooks**：
 	- React 16.8 引入的一组新特性，允许在函数组件中使用状态和其他 React 特性，如 `useState`、`useEffect` 等。
 
@@ -26,28 +27,33 @@
 - **Svelte 在编译时将组件转换为高效的命令式代码，而不是在运行时解释代码**。
 	- Svelte 是一种全新的构建用户界面的方法。
 		- 传统框架如 React 和 Vue 在浏览器中需要做大量的工作
-		- 而 Svelte 将这些工作放到构建应用程序的编译阶段来处理
+		- 而 Svelte 将这些工作放到构建应用程序的**编译阶段**来处理
 	- Svelte 在 `构建/编译阶段` 将你的应用程序转换为理想的 JavaScript 应用
 		- 而不是在`运行阶段` 解释应用程序的代码
 		- 这意味着你不需要为框架所消耗的性能付出成本，并且在应用程序首次加载时没有额外损失
-- `SvelteKit`：一个用于构建 `Svelte` 应用的全栈框架，支持服务器端渲染、静态站点生成等功能
+- `SvelteKit`：
+	- 一个用于构建 `Svelte` 应用的全栈框架，支持服务器端渲染、静态站点生成等功能
 
 ## 4. Next.js 和 Nuxt.js
 
-- **Next.js**：一个基于 `React` 的框架，支持服务器端渲染（SSR）、静态站点生成（`SSG`）和增量静态再生（`ISR`）。
-- **Nuxt.js**：一个基于 `Vue.js` 的框架，提供类似的功能，如 SSR 和 SSG。
+- **Next.js**：
+	- 一个基于 `React` 的框架（元框架），支持服务器端渲染（SSR）、静态站点生成（`SSG`）和增量静态再生（`ISR`）。
+- **Nuxt.js**：
+	- 一个基于 `Vue.js` 的框架，提供类似的功能，如 SSR 和 SSG。
 
 ## 5. JAMstack
 
 - **JAMstack**：
 	- 一种现代 Web 开发架构，强调使用 JavaScript、API 和 Markup。
-	- 常用工具包括静态站点生成器（如 Gatsby、Next.js）和无服务器函数（如 Netlify Functions）。
+	- 常用工具包括**静态站点生成器**（如 Gatsby、Next.js）和无服务器函数（如 Netlify Functions）。
 
 > 后文会详细说明
 
 ## 6. WebAssembly (Wasm)
 
-- **WebAssembly**：一种新的二进制指令格式，设计用于在浏览器中实现高性能应用。它允许开发者使用多种编程语言（如 C、C++、Rust）编写代码，并在浏览器中运行。
+- **WebAssembly**：
+	- 一种新的二进制指令格式，设计用于在浏览器中实现高性能应用。
+	- 它允许开发者使用多种编程语言（如 C、C++、Rust）编写代码，并在浏览器中运行。
 
 ## 7. TypeScript
 
@@ -67,12 +73,13 @@
 	- 它的灵活性和可定制性使其在前端开发中越来越受欢迎。
 
 > 有点类似于之前的 `bootstrap`
+> 基于大模型要求 token 限制，其实大模型 与 Tailwind CSS 友好度更好
 
 ## 10. Headless CMS
 
 - **Headless CMS**：
 	- Headless CMS 是一个后端内容管理系统，它将内容管理（"后端"）与内容展示（"前端"）完全分离。
-	- 与传统的 CMS 不同，Headless CMS 只负责内容的存储和管理，不负责内容的展示方式。
+	- 与传统的 CMS 不同，Headless CMS **只负责内容的存储和管理，不负责内容的展示方式**。
 	- 常见的 Headless CMS 有 Contentful、Strapi 和 Sanity。
 
 ![图片&文件](./files/20241115-1.png)
@@ -85,7 +92,8 @@
 ## 12. 微前端：Micro Frontends 
 
 - **Micro Frontends**：
-	- 一种将前端应用拆分为多个小型、独立的模块的架构，每个模块可以独立开发、部署和运行。
+	- 一种将前端应用拆分为多个小型、独立的模块的架构
+	- 每个模块可以独立开发、部署和运行。
 
 ## 13. Web Components
 
@@ -144,8 +152,10 @@
 ## 22. 状态管理库：State Management Libraries
 
 用于数据流管理的！
-- **Redux**：一个流行的 JavaScript 状态管理库，常与 React 一起使用。
-- **MobX**：另一种状态管理库，基于`响应式编程`，适用于需要更灵活状态管理的应用。
+- **Redux**：
+	- 一个流行的 JavaScript 状态管理库，常与 React 一起使用。
+- **MobX**：
+	- 另一种状态管理库，基于`响应式编程`，适用于需要更灵活状态管理的应用。
 - **Recoil**：
 	- Facebook 开发的状态管理库，专为 React 设计，提供更好的性能和开发体验。
 - vuex
@@ -154,15 +164,18 @@
 
 ## 23. Component Libraries and Design Systems：组件库&设计系统
 
-- **Material-UI**：基于 Google 的 Material Design 规范的 React 组件库。
-- **Ant Design**：一个企业级的 UI 设计语言和 React 组件库。
+- **Material-UI**：
+	- 基于 Google 的 Material Design 规范的 React 组件库。
+- **Ant Design**：
+	- 一个企业级的 UI 设计语言和 React 组件库。
 
 ## 24. Serverless Architecture
 
 - **Serverless**：
-	- 一种云计算模型，开发者只需编写代码而无需管理服务器。
+	- 一种云计算模型，开发者只需编写代码而**无需管理服务器**。
 	- 常用的服务包括 AWS Lambda、Azure Functions 和 Google Cloud Functions。
 - 国内各个云商也都有提供，比如腾讯云和阿里云
+	- 个人用过的 亚马逊、腾讯云
 
 ## 25. Static Site Generators (SSG)
 
@@ -173,11 +186,13 @@ SSG 是一种将模板和数据转换为静态 HTML 网站的工具。它在**�
 常见的
 - vitepress：**自己常用的**
 	- ![图片&文件](./files/20241115-5.png)
-- **Gatsby**：基于 React 的静态站点生成器，支持 GraphQL 数据层。
+- **Gatsby**：
+	- 基于 React 的静态站点生成器，支持 GraphQL 数据层。
 - **Hugo**：
 	- 一个用 Go 语言编写的静态站点生成器，构建速度非常快。
 	- 听过，没用过，一些网站都是用它来搭建的
-- **Eleventy**：一个简单灵活的静态站点生成器，支持多种模板语言。
+- **Eleventy**：
+	- 一个简单灵活的静态站点生成器，支持多种模板语言。
 
 ## 26. CSS-in-JS
 
@@ -252,7 +267,7 @@ SSG 是一种将模板和数据转换为静态 HTML 网站的工具。它在**�
 
 - **Low-Code/No-Code**：
 	- 一种通过图形化界面和拖放组件来构建应用的开发方式，降低了开发门槛。
-	- 常见平台包括 `Mendix` 和 Webflow
+	- 常见平台包括 `Mendix` 和 `Webflow`
 	- 国内各大云平台都有自己的低代码产品
 
 ## 34. Remote Procedure Calls (RPC)
@@ -277,7 +292,7 @@ SSG 是一种将模板和数据转换为静态 HTML 网站的工具。它在**�
 ## 35. Module Federation：模块联邦
 
 - Module Federation：
-	- Webpack 5 的新特性，支持在不同应用之间动态加载模块，适用于微前端架构
+	- Webpack 5 的新特性，支持在不同应用之间动态加载模块，**适用于微前端架构**
 
 ## 36. 增量静态再生（Incremental Static Regeneration, ISR）
 

@@ -1,11 +1,12 @@
 
 # js 中实现继承的方式有哪些？
 
+`#R2` `#javascript` 
 
 
 ## 目录
 <!-- toc -->
- ## 1. es6 extend 
+ ## 1. es6： extend 
 
 ```javascript
 class Parent {
@@ -31,6 +32,7 @@ class Child extends Parent {
 }
 
 ```
+
 ## 2. es5：原型链继承
 
 ```javascript
@@ -119,3 +121,4 @@ function prototype(child, parent) {
     child.prototype = p;
 }
 ```
+

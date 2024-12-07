@@ -2,7 +2,7 @@
 # 盒模型
 
 
-`#前端/CSS`  `#2024/07/30` 
+`#前端/CSS` `#R2` 
 
 
 ## 目录
@@ -14,7 +14,7 @@
 
 如下图所示：
 
-![image.png](https://832-1310531898.cos.ap-beijing.myqcloud.com/yuque/3193f0e277d0e85d83a2451b624006f3.png)
+![image.png|504](https://832-1310531898.cos.ap-beijing.myqcloud.com/yuque/3193f0e277d0e85d83a2451b624006f3.png)
 
 ## 2. box-sizing 可以设置装两种模型
 

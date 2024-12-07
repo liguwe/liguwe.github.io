@@ -1,6 +1,8 @@
 
 # queueMicrotask 介绍
 
+`#R1` `#bom` `#异步`
+
 
 ## 目录
 <!-- toc -->
@@ -15,7 +17,7 @@ queueMicrotask(() => {
 
 - `queueMicrotask` 是一个用于将回调函数作为**微任务（microtask）** 添加到微任务队列中的全局函数
 - **nodejs 环境和浏览器环境都可用**
-- `queueMicrotask` 可用于批量处理状态更新，确保 DOM 只更新一次，而不是每次状态变化都更新，如下代码
+- `queueMicrotask` 可用于批量处理状态更新，**确保 DOM 只更新一次**，而不是每次状态变化都更新，如下代码
 
 ```javascript hl:9,22,23,24
 let state = { count: 0 };
@@ -126,7 +128,7 @@ function processArray(array) {
 
 ### 4.3. 错误处理：顶层使用
 
-```javascript
+```javascript hl:11
 // 错误的方式
 try {
     queueMicrotask(() => {
@@ -212,6 +214,6 @@ requestAnimationFrame(() => console.log('动画帧'));
 ## 6. 总结
 
 - `queueMicrotask` 是处理微任务的标准方式
-- 比 Promise 更直接和轻量
+- 比 `Promise` 更直接和轻量
 - 适用于需要异步但又要保持高优先级的场景
 - 需要注意错误处理和性能影响

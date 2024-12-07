@@ -2,7 +2,7 @@
 # BFC 与外边距重叠
 
 
-`#前端/CSS`  `#2024/07/30` 
+`#前端/CSS`   `#R2` 
 
 
 ## 目录
@@ -11,7 +11,7 @@
 
 `BFC（Block Formatting Context，块级格式化上下文）`是 CSS 中一个重要的概念，它是页面布局中的一个独立渲染区域，决定了元素如何定位及与其他元素之间的关系。
 
-![image.png](https://832-1310531898.cos.ap-beijing.myqcloud.com/yuque/54562a17d3dbd31f0f89a9e125bfe2c3.png)
+![image.png|616](https://832-1310531898.cos.ap-beijing.myqcloud.com/yuque/54562a17d3dbd31f0f89a9e125bfe2c3.png)
 
 ## 2. BFC 的特性
 
@@ -38,9 +38,9 @@
 
 ## 4. 外边距重叠（Margin Collapsing）
 
-外边距重叠是指`**当两个上下相邻的块级元素的垂直外边距相遇时，它们会合并为一个外边距**`，其高度为最大的那个外边距值，而不是两者之和。
+外边距重叠是指`当两个上下相邻的块级元素的垂直外边距相遇时，它们会合并为一个外边距`，其高度为最大的那个外边距值，而不是两者之和。
 
-### 4.1. 兄弟元素的边界重叠 &  父子元素的边界重叠
+### 4.1. 兄弟元素的边界重叠 & 父子元素的边界重叠
 
 ![A792D720-3B01-4A74-B5BD-7DC9028EFE9D.png](https://832-1310531898.cos.ap-beijing.myqcloud.com/yuque/e34a6a6d31a5c93b4d342ec4a57f596b.png)
 

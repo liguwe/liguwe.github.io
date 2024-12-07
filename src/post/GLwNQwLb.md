@@ -1,7 +1,7 @@
 
 # Nodejs 的单线程与多核
 
-`#nodejs` 
+`#nodejs` `#R1` 
 
 
 ## 目录
@@ -14,7 +14,7 @@
 	- 使用 Worker Threads
 - Web 服务器：
 	- 通过 cluster 模块实现**多进程、多核**
-		- 多核 = 多线程
+		- 多核 = 多线程，对于node
 		- 适合任务是**隔离的** ，比如 HTTP 服务器
 
 ## 2. Node.js 中的进程和线程机制

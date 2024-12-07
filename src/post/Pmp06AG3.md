@@ -1,6 +1,8 @@
 
 # requestIdleCallback 的应用场景
 
+`#R1` `#bom` 
+
 
 ## 目录
 <!-- toc -->

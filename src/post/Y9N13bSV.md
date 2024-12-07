@@ -2,7 +2,7 @@
 # HTML 技术关键词
 
 
-`#前端` `#HTML` 
+`#前端` `#HTML`  `#R2`  
 
 
 ## 目录
@@ -24,17 +24,18 @@
 13. WebSockets：用于实时双向通信
 14. 跨文档消息传递：postMessage API
 15. 内容安全策略（CSP）：用于防止XSS攻击
-16. 自定义数据属性：`data-*属性`
+16. 自定义数据属性：`data-属性`
 17. 模板：template标签
 18. **图片响应式：srcset和sizes属性**
-19. 延迟加载：使用loading="lazy"属性
-20. 表单验证：使用pattern, required等属性
+19. 延迟加载：使用 loading="lazy" 属性
+	1. ==标准本来就支持==
+20. 表单验证：使用 pattern, required 等属性
 21. 输入类型：如date, time, email, url等
 22. 字符编码：使用UTF-8
 23. DOCTYPE声明：
 24. 语言声明：lang属性
-25. 链接关系：rel属性，如stylesheet, icon等
-26. 跨域资源共享（CORS）：通过HTTP头部控制
+25. 链接关系：rel 属性，如 stylesheet ,  icon 等
+26. 跨域资源共享（CORS）：通过 HTTP头部控制
 27. 内容可编辑：contenteditable 属性
 28. 自动完成：autocomplete 属性
 29. 页面可见性API：用于检测页面是否可见
@@ -90,8 +91,10 @@
 
 ### 2.3. 表单和输入类型
 
-- `<input>` 类型: `text, password, email, url, number, date, time, checkbox, radio, file, submit, reset, button, hidden, color, range, search, tel
-- **表单验证属性**: `required, pattern, min, max, minlength, maxlength, step`
+- `<input>` 类型:
+	-  `text, password, email, url, number, date, time, checkbox, radio, file, submit, reset, button, hidden, color, range, search, tel
+- **表单验证属性**:
+	-  `required, pattern, min, max, minlength, maxlength, step`
 
 ### 2.4. 多媒体标签
 
@@ -104,42 +107,60 @@
 
 - `<canvas>`: 用于绘制图形
 	- 2d
-	- 3d
+	- 3d 
+		- webGL
 - **SVG (Scalable Vector Graphics)**: 可缩放矢量图形
 
 ### 2.6. 响应式设计
 
-- `<meta name="viewport">`: 定义视口属性
-- **媒体查询 (Media Queries)**: 用于响应式设计的CSS技术
+- `<meta name="viewport">`: 
+	- 定义视口属性
+- **媒体查询 (Media Queries)**:
+	-  用于响应式设计的CSS技术
 
 ### 2.7. 本地存储
 
-- **localStorage**: 本地存储数据
-- **sessionStorage**: 会话存储数据
+- **localStorage**:
+	-  本地存储数据
+- **sessionStorage**: 
+	- 会话存储数据
 
 ### 2.8. Web Components
 
-- **自定义元素 (Custom Elements)**: 创建自定义HTML标签
-- **Shadow DOM**: 隐藏DOM树
-- **HTML模板 (HTML Templates)**: 定义可重用的HTML片段
+- **自定义元素 (Custom Elements)**:
+	-  创建==自定义 HTML 标签==
+- **Shadow DOM**:
+	-  隐藏DOM树
+- **HTML模板 (HTML Templates)**:
+	-  定义可重用的HTML片段
 
 ### 2.9. 语义化和可访问性
 
-- **语义化标签**: `<header>`, `<footer>`, `<nav>`, `<main>`, `<section>`, `<article>`, `<aside>`
-- **ARIA (Accessible Rich Internet Applications)**: 增强可访问性的属性
+- **语义化标签**: 
+	- `<header>`, `<footer>`, `<nav>`, `<main>`, `<section>`, `<article>`, `<aside>`
+- **ARIA (Accessible Rich Internet Applications)**:
+	-  增强可访问性的属性
 
 ### 2.10. 安全和性能
 
-- **内容安全策略 (CSP)**: 防止XSS攻击
-- **懒加载 (Lazy Loading)**: 延迟加载图像和其他资源
-- **预加载 (Preloading)**: 提前加载关键资源
+- **内容安全策略 (CSP)**: 
+	- 防止XSS攻击
+- **懒加载 (Lazy Loading)**:
+	-  延迟加载图像和其他资源
+- **预加载 (Preloading)**: 
+	- 提前加载关键资源
 
 ### 2.11. 其他相关技术
 
-- **HTML5**: HTML的最新版本
-- **CSS (Cascading Style Sheets)**: 层叠样式表，用于样式和布局
-- **JavaScript**: 用于交互和动态内容的编程语言
-- **DOM (Document Object Model)**: 文档对象模型
-- **SEO (Search Engine Optimization)**: 搜索引擎优化
+- **HTML5**: 
+	- HTML 的最新版本
+- **CSS (Cascading Style Sheets)**: 
+	- 层叠样式表，用于样式和布局
+- **JavaScript**: 
+	- 用于交互和动态内容的编程语言
+- **DOM (Document Object Model)**: 
+	- 文档对象模型
+- **SEO (Search Engine Optimization)**: 
+	- 搜索引擎优化
 
 

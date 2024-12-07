@@ -1,6 +1,7 @@
 
 # type 和 interface 的区别？
 
+`#typescript` `#R1` 
 
 TypeScript 中的 `type` 和 `interface` 都用于定义类型
 
@@ -50,7 +51,7 @@ type Bear = Animal & {
 }
 ```
 
-### 2.2. interface
+### 2.2. interface：可被实现和扩展
 
 - 可以使用 `extends` 关键字==扩展==其他接口或类型
 - 可以被==**类**==实现（`implements`）或继承（`extends`）
@@ -148,7 +149,7 @@ interface StringNumberPair {
 }
 ```
 
-## 7. 使用建议
+## 6. 使用建议
 
 - 如果定义的类型可能需要扩展或者实现，使用 `interface`
 - 如果需要使用**联合类型、交叉类型、元组**等，或者需要利用映射类型等高级类型操作，使用 `type`

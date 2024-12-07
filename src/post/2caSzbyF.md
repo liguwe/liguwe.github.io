@@ -63,8 +63,11 @@
 ## 5. 列举多媒体嵌入相关的标签
 
 - 常见标签为`<img> 、<video> 、<audio>、、<iframe>、<embed> 、 <object>、<track>、<param>`
-   - 可插入如图片、视频、音频、网页、字幕
-- `<embed>` 和 `<object>` : 可嵌入各类资源，如音频、视频、pdf 文件等
+	- 可插入如图片、视频、音频、网页、字幕
+- `<embed>` 和 `<object>` : 
+	- 可嵌入各类资源，如音频、视频、pdf 文件等
+
+>  多媒体标签的一些事件往往都不支持冒泡！
 
 > 更多参考：
 > [多媒体与嵌入 - 学习 Web 开发 | MDN](https://developer.mozilla.org/zh-CN/docs/Learn/HTML/Multimedia_and_embedding)

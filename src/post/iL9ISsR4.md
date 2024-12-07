@@ -2,7 +2,7 @@
 # 回流和重绘
 
 
-`#2024/07/30` `#前端/CSS`  
+`#2024/07/30` `#前端/CSS`   `#R2` 
 
 
 ## 目录
@@ -131,7 +131,7 @@ el.style.cssText = 'border-left: 1px; border-right: 2px; padding: 5px;';
 el.classList.add('my-class');
 ```
 
-- 合并多次样式修改**，一次性修改**。
+- 合并多次样式修改**一次性修改**。
 - 使用类名替代多次样式修改。
 - `classList.add/remove/toggle` 来切换样式，而不是直接修改` style 属性`
 
@@ -204,7 +204,7 @@ el.style.display = 'block';
 
 ### 5.12. 使用虚拟 DOM
 
-- 像 React、Vue 这样的框架使用虚拟 DOM 来优化实际 DOM 操作
+- 像 React、Vue 这样的框架使用`虚拟 DOM` 来优化实际 DOM 操作
 
 ### 5.13. 使用防抖(Debounce)和节流(Throttle)
 

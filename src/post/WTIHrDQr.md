@@ -1,6 +1,7 @@
 
 # apply、call、bind 的区别及简易实现
 
+`#javascript` 
 
 
 ## 目录
@@ -10,12 +11,14 @@
 1. call 和 apply 的区别主要在于参数的传递方式:
     - call 接受一系列参数：`fn.call(obj,arg1,arg2)`
     - apply 接受一个参数数组：`fn.apply(obj,[arg1,arg2])`
-2. bind 与 call/apply 的主要区别
+2. bind 与 call/apply 的主要区别 → ==是否立即执行==
     - call 和 apply 会**立即执行**函数
     - bind **返回一个新函数**,可以稍后执行
 3. 使用场景:
-    - call/apply: 当你想**立即调用函数**,并`临时`改变 this 指向时使用
-    - bind: 当你想创建一个**永久改变 this 指向**的**新函数**时使用,常用于回调函数中保持 this 指向
+    - call/apply: 
+        - 当你想**立即调用函数**,并`临时`改变 this 指向时使用
+    - bind: 
+        - 当你想创建一个**永久改变 this 指向**的**新函数**时使用,常用于回调函数中保持 this 指向
 
 ## 2. 手写 apply
 

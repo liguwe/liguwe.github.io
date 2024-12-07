@@ -2,9 +2,9 @@
 # Web 技术概述
 
 
-`#前端` 
+`#前端` `#R2`
 
-`Web 技术`是用于创建和维护 Web 应用、网站和 Web 服务的一组技术和标准。以下是一些主要的 Web 技术及其相关概念：
+`Web 技术`是用于创建和维护 Web 应用、网站和 Web 服务的一组技术和标准
 
 
 ## 目录
@@ -41,6 +41,7 @@
 1. **服务器端编程语言**：
 	- **Node.js**：基于 JavaScript 的服务器端运行环境，适用于构建高性能网络应用。
 	- **Python**：常用于 Web 开发的语言，框架如 Django 和 Flask。
+		- FastAPI
 	- **Ruby**：用于 Web 开发的语言，框架如 Ruby on Rails。
 	- **PHP**：广泛应用于 Web 开发的语言，特别是内容管理系统（如 WordPress）。
 	- Java
@@ -54,7 +55,14 @@
 	- 常见的框架如 Express (Node.js)、Django (Python)、Rails (Ruby)。
 4. **API (Application Programming Interface)**：
 	- 用于客户端和服务器之间的数据交换。
-	- 常见的 API 形式有 RESTful API 和 GraphQL。
+	- 常见的 API 形式有
+		- RESTful API 
+		- GraphQL。
+		- APIJSON
+		- RPC
+			- Thrift 
+			- gRpc
+			- 等等
 
 ## 3. 协议和标准
 
@@ -83,4 +91,3 @@
 	- **Webpack**：用于打包 JavaScript 模块和资源的构建工具。
 	- **npm/yarn/pnpm**：JavaScript 包管理器，用于管理项目依赖。
 
-综上所述，Web 技术涵盖了从前端到后端、从协议到工具的广泛领域，支持构建功能丰富、性能优异的 Web 应用。

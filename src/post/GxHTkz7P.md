@@ -1,6 +1,8 @@
 
 # Interface 中的运算符操作
 
+`#typescript` `#R1` 
+
 
 ## 目录
 <!-- toc -->

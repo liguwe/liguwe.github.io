@@ -1,6 +1,7 @@
 
 # 如何终止或取消一个请求或事件：AbortController
 
+`#bom` `#R1` 
 
 `AbortController` 接口表示一个控制器对象，允许你根据需`要中止一个或多个 Web 请求`。
 

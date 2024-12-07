@@ -1,19 +1,20 @@
 
 # WebAssembly (Wasm) 及其应用场景
 
+`#bom` `#R1` 
 
 
 ## 目录
 <!-- toc -->
  ## 1. WebAssembly 基本概念 
 
-WebAssembly 是一种低级的二进制格式，可以在现代浏览器中运行，提供接近原生的性能。主要特点：
+WebAssembly 是一种低级的**二进制格式**，可以在现代浏览器中运行，提供接近原生的性能。主要特点：
 
 - 快速执行
-- 跨平台
+- **跨平台**
 - 支持多种编程语言（C++、Rust、Go等）
-- 与JavaScript互操作
-- 安全的沙箱环境
+- 与JavaScript 互操作
+- **安全的沙箱环境**
 
 ## 2. 基本使用示例（使用Rust）：fib
 
@@ -291,8 +292,10 @@ const sharedInt32 = new Int32Array(shared);
 	- 实时图形处理
 	- 复杂的布局计算
 	- 快速的界面响应
-- Unity WebGL：游戏引擎通过 WebAssembly 部署到网页
-- Autodesk AutoCAD Web：使用 C++ 编译到 WebAssembly
+- Unity WebGL：
+	- 游戏引擎通过 WebAssembly 部署到网页
+- Autodesk AutoCAD Web：
+	- 使用 C++ 编译到 WebAssembly
 - Photoshop Web 版本使用 WebAssembly
 
 ## 7. WebAssembly 特别适合

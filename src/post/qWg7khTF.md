@@ -1,7 +1,7 @@
 
 # JavaScript 异步编程：Promise 专题篇一
 
-`#js` 
+`#js` `#javascript` `#R2` 
 
 
 ## 目录
@@ -11,19 +11,21 @@
 - `Promise`的状态一经改变就不能再改变
 - `.then`和`.catch`都会返回一个新的`Promise`
 - `catch`不管被连接到哪里，都能**捕获上层的错误**
-	- 也有可能被它上面的 then 的第二个参数捕获
+	- 但也有可能被它上面的 then 的第二个参数捕获，捕获后 catch 就捕获不到错误了
 - 在`Promise`中，返回任意一个非 `promise` 的值都会被包裹成 `promise` 对象
 	- 例如`return 2`会被包装为`return Promise.resolve(2)`。
 - `Promise` 的 `.then` 或者 `.catch` **可以被调用多次**,
-	- 但如果`Promise`内部的状态一经改变，并且有了一个值，那么后续每次调用`.then`或者`.catch`的时候都会直接拿到该值
-		- 注意，状态改变了，后面仍然可以调用 then 和 catch，一直调用
-- `.then` 或者 `.catch` 中 `return` 一个 `error` 对象并不会抛出错误，所以不会被后续的 `.catch` 捕获 
+	- 但如果`Promise`内部的状态一经改变，并且有了一个值
+		- 那么后续每次调用`.then`或者`.catch`的时候都会直接拿到该值
+			- 注意，状态改变了，后面仍然可以调用 then 和 catch，一直调用
+- `.then` 或者 `.catch` 中 `return` 一个 `error` 对象并不会抛出错误
+	- 所以不会被后续的 `.catch` 捕获 
 - `.then` 或 `.catch` 返回的值不能是 **promise 本身**，否则会造成**死循环**
 - `.then` 或者 `.catch` 的参数期望是函数，传入非函数则会发生**值透传**。
 - `.then`方法是能接收两个参数的，
 	- 第一个是处理成功的函数
 	- 第二个是处理失败的函数
-	- 在某些时候你可以认为`catch`是`.then`第二个参数的简便写法。
+	- 在某些时候你可以认为`catch`是`.then`第二个参数的简便写法
 - `.finally`方法也是返回一个`Promise`
 	- 他在`Promise`结束的时候，无论结果为`resolved`还是`rejected`，都会执行里面的回调函数
 	- 它**不接受任何参数**
@@ -242,9 +244,11 @@ Promise.resolve()
 // catch:  Error: error!!!
 ```
 
-## 11. 没有catch ，也不会导致同步代码中断
+>  `return Promise.reject(new Error("error!!!"));` 一定会走 catch ，别管 return ，因为会先执行 `Promise.reject`
 
-```javascript
+## 11. 没有 catch ，也不会导致同步代码中断
+
+```javascript hl:11
 console.log(1);
 
 setTimeout(() => console.log(2));
@@ -255,7 +259,7 @@ Promise.resolve().then(() => setTimeout(() => console.log(4)));
 
 Promise.resolve().then(() => {
   throw Error();
-  console.log(5); // 不打印，但是 Promise 的错误会被 window.on('')
+  console.log(5); // 不打印，但是 Promise 的错误会被 window unRejectError? 捕获
 });
 
 setTimeout(() => console.log(6));
@@ -291,7 +295,7 @@ Promise.resolve(1)
 - `.then` 或者 `.catch` 的参数期望是`函数`，传入非函数则会发生**值透传**
 - `.then()` 会**执行**传入的函数参数，并把参数传**递给它**
 
-下面打印出 4
+下面打印出 `4`
 
 ```javascript hl:5
 Promise.resolve(1)  
@@ -340,6 +344,9 @@ Promise.resolve("2")
   });
 // 打印结果 f2 2
 
+```
+
+```javascript
 Promise.resolve("1")
   .finally(() => {
     console.log("f1");
@@ -390,7 +397,13 @@ promise2()
 
 ```
 
-## 17. `.catch()`函数能够捕获到`.all()`里**最先**的那个异常，并且**只执行一次**
+## 17. 注意：每次碰到 then/catch/finally 都会产生一个栈，注意先后顺序，都有层级关系在的
+
+> 比如上题
+
+![图片&文件](./files/20241207-1.png)
+
+## 18. `.catch()`函数能够捕获到`.all()`里**最先**的那个异常，并且**只执行一次**
 
 > [!danger]
 > - 并不是只要有异常就完事了，每个都会执行
@@ -468,9 +481,9 @@ reject Error: 2; // 2s 后输出 Error: 2
     - ==`catch` 主要用于捕获在前面的 `then` 链中未被处理的错误。==
     - 在这个例子中，错误已经在 `then` 的第二个回调中被处理了，所以 `catch` 不会被触发
 
-> 总结就是：Promise.all 只处理一个异常，其他的都被吞了
+> 总结就是：**Promise.all 只处理一个异常，其他的都被吞了**
 
-## 18. race会获取最新有结论的任务，然后走后面then或者 catch，其他的**正常执行**，但不走后面的then和 catch 了,执行结果会被抛弃
+## 19. race **会获取最新有结论的任务**，然后走==后一个==then 或者 catch，其他的**正常执行**，==再之后==的 then和 catch 了,执行结果会被抛弃
 
 ```javascript
 function runAsync(x) {
@@ -488,10 +501,9 @@ Promise.race([runAsync(1), runAsync(2), runAsync(3)])
 // 'result: ' 1
 // 2
 // 3
-
 ```
 
-## 19. `await async2()` 会立即同步执行 `async2`
+## 20. `await async2()` 会立即同步执行 `async2`
 
 ```javascript hl:3
 async function async1() {
@@ -505,12 +517,10 @@ async function async2() {
 }
 async1();
 console.log("4");
-
 // 打印结果 1 3 4 2
-
 ```
 
-## 20. 并不需要 sync 一定返回一个 promise，然后才执行下面的东西
+## 21. 并不需要 sync 一定返回一个 promise，然后才执行下面的东西
 
 ```javascript
 async function async1() {
@@ -539,7 +549,7 @@ console.log("5");
 3;
 ```
 
-## 21. 注意 setTimeout(fn,0) 的第一次解析的顺序
+## 22. 注意 setTimeout(fn,0) 的第一次解析的顺序
 
 ```javascript hl:18,5
 async function async1() {
@@ -570,7 +580,7 @@ console.log("7");
 
 ```
 
-## 22. async 的返回值
+## 23. async 的返回值
 
 ```javascript
 async function fn() {
@@ -581,7 +591,7 @@ async function fn() {
 fn().then((res) => console.log(res));
 ```
 
-## 23. await new Promise() 注意有没有 resolve 或者 reject 
+## 24. await new Promise() 注意有没有 resolve 或者 reject 
 
 ```javascript
 async function async1() {
@@ -604,7 +614,7 @@ console.log("6");
 
 ```
 
-## 24. 如果在`async函数`中抛出了错误，则终止**错误结果**，不会继续向下执行
+## 25. 如果在`async函数`中抛出了错误，则终止**错误结果**，不会继续向下执行
 
 ```javascript hl:3
 async function async1() {

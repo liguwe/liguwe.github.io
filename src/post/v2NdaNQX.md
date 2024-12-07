@@ -1,6 +1,7 @@
 
 # JavaScript 引擎
 
+`#javascript` 
 
 
 ## 目录
@@ -12,22 +13,22 @@
 	- 用于：Chrome 浏览器、Node.js 等
 	- 特色：
 		- 使用`即时编译`（JIT，Just-In-Time compilation），
-			- 将 JavaScript 代码即时编译成与机器码，以提高执行效率。
+			- 将 JavaScript 代码即时编译成与**机器码**，以提高执行效率。
 2. **SpiderMonkey (Mozilla)**:
 	- 开发者：Mozilla
 	- 用于：Firefox 浏览器
 	- 特色：
-		- 是第一个 JavaScript 引擎，支持解释和编译两种模式，使用多层优化编译器。
+		- 是第一个 JavaScript 引擎，支持`解释和编译`两种模式，使用多层优化编译器。
 3. **Chakra (微软)**:
 	- 开发者：微软
 	- 用于：曾用于 Internet Explorer 和 Microsoft Edge (旧版，EdgeHTML)
 	- 特色：拥有一个强大的 JIT 编译器，支持优化的执行和垃圾回收。
-		- 转向webkit，反映了微软的务实态度，通过采用主流的开源解决方案，他们可以提供更好的用户体验，**同时将资源集中在差异化功能的开发上**
+		- 转向 webkit，反映了微软的务实态度，通过采用主流的开源解决方案，他们可以提供更好的用户体验，**同时将资源集中在差异化功能的开发上**
 4. **JavaScriptCore (苹果)**:
 	- 开发者：苹果
 	- 用于：Safari 浏览器
 	- 特色：
-		- 也被称为 Nitro，注重内存管理和执行性能。
+		- 也被称为 `Nitro`，注重内存管理和执行性能。
 
 ## 2. 工作原理与组成部分
 
@@ -46,7 +47,9 @@
 3. **垃圾回收 (Garbage Collection)**
 	- JavaScript 引擎会自动管理内存，自动回收不再使用的对象和变量。
 	- 这通常是通过垃圾回收器实现的，
-		- 常见的算法包括标记-清除 (mark-and-sweep)、引用计数 (reference counting) 等。
+		- 常见的算法包括：
+			- 标记-清除 (mark-and-sweep)
+			- 引用计数 (reference counting) 等。
 
 **JavaScript 引擎的组成部分**
 1. **解析器 (Parser)**:
@@ -59,7 +62,7 @@
 4. **运行时 (Runtime)**:
 	- 提供内置函数、内存管理（如垃圾回收）和执行环境。
 
-```javascript
+```javascript hl:1
 // 源代码 -> 解析 -> AST -> 字节码 -> 机器码
 const code = `
     function add(a, b) {
@@ -143,7 +146,16 @@ RETURN_VALUE
 - **垃圾回收优化**
 	- 通过分代垃圾回收、增量垃圾回收等技术，提高内存管理效率。
 - **热点代码优化**：**频繁执行的代码**会被优化
-- **去优化**：当假设不再成立时，会回退优化
+	- 比如 for 循环里面的代码
+- **去优化**：
+	- 当假设不再成立时，会回退优化
+
+==其实很多思路类似==，
+- 比如，**缓存，避免重复搞第二遍**； 
+- 比如，**内存，特定时机就得回收，别等到最后**  
+- 比如，**惰性解析**，真正需要执行的时候再执行
+- 比如，`懒加载，预加载`等等思路
+	- 其实`在 JavaScript 引擎`都有体现
 
 ### 3.1. **JIT（即时编译）**
 
@@ -323,4 +335,5 @@ console.profileEnd('DetailedProfile');
 ## 9. 参考
 
 - [https://zh.javascript.info/intro](https://zh.javascript.info/intro)
-- [https://kangax.github.io/compat-table](https://kangax.github.io/compat-table) ：一份列有语言功能以及引擎是否支持这些功能的表格。
+- [https://kangax.github.io/compat-table](https://kangax.github.io/compat-table) ：
+	- 一份列有语言功能以及引擎是否支持这些功能的表格。
