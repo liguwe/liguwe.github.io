@@ -88,7 +88,7 @@ function App() {
 
 ### 1.3. FiberNode
 
-Fiber 节点是 React 内部实现的核心数据结构，用于跟踪组件树的状态和变化。
+Fiber 节点是 `React` 内部实现的**核心数据结构**，用于**跟踪组件树的状态和变化**。
 
 ```ts
 // Fiber 节点的简化结构

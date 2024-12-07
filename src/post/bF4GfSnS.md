@@ -1,7 +1,7 @@
 
 # 请介绍一下 Remix 框架
 
-
+`#react`  `#R1` 
 Remix 是一个全栈 Web 框架，由 React Router 的创建者开发。Remix 采用`服务器端渲染（SSR）`和`客户端（Hydration）`的方式来提供出色的用户体验
 
 

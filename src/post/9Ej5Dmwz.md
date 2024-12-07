@@ -1,7 +1,7 @@
 
 # React 中获取 DOM 引用的方式有哪些？
 
-`#react` 
+`#react`  `#R1` 
 
 
 ## 目录

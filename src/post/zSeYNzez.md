@@ -1,7 +1,7 @@
 
 # PureComponent
 
-`#react` 
+`#react`  `#R1` 
 
 
 ## 目录
@@ -41,7 +41,7 @@ class PureComponentExample extends React.PureComponent {
 ### 2.2. 性能影响
 
    - Component：可能导致不必要的重渲染
-   - PureComponent：通过浅比较避免不必要的重渲染，提高性能
+   - PureComponent：通过**浅比较**避免不必要的重渲染，提高性能
 
 ## 3. 浅比较的工作原理
 
@@ -77,7 +77,7 @@ class Example extends React.PureComponent {
 
 ## 4. 使用场景和注意事项
 
-### 4.1. 适合使用 PureComponent 的场景
+### 4.1. 适合使用 `PureComponent` 的场景
 
 ```javascript
 // 展示型组件，props 是简单类型
@@ -93,7 +93,7 @@ class UserInfo extends React.PureComponent {
 }
 ```
 
-### 4.2. 不适合使用 PureComponent 的场景
+### 4.2. 不适合使用 `PureComponent` 的场景
 
 ```javascript
 // 频繁更新的组件

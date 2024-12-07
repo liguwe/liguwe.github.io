@@ -1,7 +1,7 @@
 
 # useMemo 、 useCallback、Vue 的 computed
 
-`#React`  `#vue3` 
+`#React` `#vue3`  `#R1` 
 
 
 ## 目录
@@ -21,8 +21,9 @@
 		- 因为只在依赖项改变时`创建新对象`
 - 正确的依赖项设置
 	- 比如依赖项数组为空，但使用了 `props.data`
-- 避免在 useMemo 中进行副作用操作，比如请求数据
-	- 正确的做法是：使用 `useEffect` 处理副作用，然后请求完数据后，设置 data，然后再将 data 作为依赖项
+- 避免在 `useMemo` 中进行副作用操作，比如请求数据
+	- 正确的做法是：
+		- 使用 `useEffect` 处理副作用，然后请求完数据后，设置 `data`，然后再将 `data` 作为依赖项
 
 ## 3. 注意事项
 
@@ -53,7 +54,7 @@ function OptimizedComponent() {
 
 ```
 
-## 5. 和  vue 的 computed 的异同
+## 5. 和 vue 的 computed 的异同
 
 - 响应式系统：
 	- Vue computed 基于响应式系统（ref/reactive）

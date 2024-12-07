@@ -1,6 +1,7 @@
 
 # 无状态组件（Stateless Component）概念、原理及最佳实践
 
+`#react`  `#R1` 
 
 ## 目录
 <!-- toc -->

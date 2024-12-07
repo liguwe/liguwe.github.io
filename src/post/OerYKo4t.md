@@ -2,7 +2,7 @@
 # useLayoutEffect 和 useEffect
 
 
-`#react` 
+`#react` `#R1` 
 
 >  是不是很**类似 Vue 的 watch ，并参入参数 `sync`**
 
@@ -175,9 +175,9 @@ useEffect(() => {
 
 ## 8. 选择建议
 
-- 默认使用 useEffect
+- 默认使用 `useEffect`
 - 当**出现以下情况时考虑使用 useLayoutEffect**：
 	- 需要同**步测量 DOM**
 	- 需要**在视觉更新之前修改 DOM**
 	- 出现**闪烁**问题需要解决
-- 在使用 useLayoutEffect 时注意性能影响
+- 在使用 `useLayoutEffect` 时注意性能影响

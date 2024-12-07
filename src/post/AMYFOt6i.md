@@ -11,7 +11,7 @@
 
 - State 变化触发重新渲染
 	- 合并状态更新
-	- 使用 useReducer 管理复杂状态
+	- 使用 `useReducer` 管理复杂状态
 - Props 变化触发子组件重新渲染
 	- 使用 React.memo 包装组件
 	- 使用 useMemo 缓存计算属性
