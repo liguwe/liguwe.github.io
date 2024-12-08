@@ -1,7 +1,7 @@
 
 # 为什么 React 需要 Fiber 架构，而 Vue 似乎不需要类似的机制
 
-
+`#react` `#vue` 
 
 
 ## 目录

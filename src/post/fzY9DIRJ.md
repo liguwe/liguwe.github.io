@@ -17,7 +17,7 @@
 ### 1.2. 事件委托（Event Delegation）
 
 - React 将大多数事件都委托到 document 节点上（在 React 17 之后改为 root 节点）
-	-  React 17 之前，事件都委托到 `document` 上
+	- React 17 之前，事件都委托到 `document` 上
 	- React 17 之后，事件委托到 `root 元素`上
 - 减少内存消耗，提高性能
 - 动态绑定，支持组件动态加载
@@ -207,6 +207,7 @@ function Component() {
 - 原生事件全小写（onclick, onsubmit）
 
 ### 5.3. 阻止默认行为
+
 ```jsx hl:3
 // React中阻止默认行为
 function handleSubmit(e) {

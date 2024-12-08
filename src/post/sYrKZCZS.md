@@ -1,7 +1,7 @@
 
 # Vue3 基础：篇一
 
-`#vue3`  `#前端` 
+`#vue3` `#前端` `#R1` 
 
 
 ## 目录
@@ -10,7 +10,7 @@
 
 - Vue 是一个用于构建用户界面的 JavaScript 框架，提供了`声明式渲染`和`响应式更新`等核心功能
 - Vue 是一个`渐进式框架`，可以根据需求灵活地选择使用方式，适用于简单到复杂的各种 Web 开发场景
-	- 比如 HTML → Web Components   → SPA → SSR → **SSG**  →   桌面端、移动端、WebGL 等
+	- 比如 HTML → Web Components → SPA → SSR → **SSG** →   桌面端、移动端、WebGL 等
 
 ## 2. 单文件组件 SFC
 
@@ -33,7 +33,7 @@
 </style>
 ```
 
-## 3. 组合式 API (Composition API)  vs  选项式 API (Options API)
+## 3. 组合式 API (Composition API) vs 选项式 API (Options API)
 
 Vue 有两种主要的 API 风格：`选项式 API` 和`组合式 API`，开发者可以根据喜好和项目需求选择使用。
 
@@ -71,13 +71,11 @@ export default {
 </template>
 ```
 
-
 #### 为什么使用函数返回对象？ → 保证每个组件都用独立的对象
 
 > 否则多个组件会共享数据了，因为引用类型的原因
 
 ![图片&文件](./files/20241127-6.png)
-
 
 ### 3.2. 组合式 + setup
 
@@ -104,7 +102,7 @@ onMounted(() => {
 </template>
 ```
 
-> 我们要求使用 `组合式 API (Composition API)` +  `<script setup>`
+> 我们要求使用 `组合式 API (Composition API)` + `<script setup>`
 
 ## 4. 使用 Vue3 的几种方式
 

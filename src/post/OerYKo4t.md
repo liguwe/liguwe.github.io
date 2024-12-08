@@ -2,7 +2,7 @@
 # useLayoutEffect 和 useEffect
 
 
-`#react` `#R1` 
+`#react` 
 
 >  是不是很**类似 Vue 的 watch ，并参入参数 `sync`**
 
@@ -133,7 +133,7 @@ useLayoutEffect(() => {
 
 ### 6.2. 性能问题
 
-```jsx hl:6
+```jsx hl:6,3
 // 避免在 useLayoutEffect 中进行耗时操作
 useLayoutEffect(() => {
   // 不推荐

@@ -9,7 +9,7 @@
 <!-- toc -->
  ## 1. Render 方法的基本原理 
 
-React 的 render 方法主要负责将组件转换为虚拟 DOM（Virtual DOM）：
+React 的 render 方法主要负责**将组件转换为虚拟 DOM**（Virtual DOM）：
 
 ```jsx hl:3,15
 // 类组件中的 render
@@ -245,7 +245,7 @@ class LifecycleComponent extends React.Component {
 
 ## 6. 总结
 
-1. Render 方法是 React 组件的核心，负责生成虚拟 DOM。
+1. Render 方法是 React 组件的核心，**负责生成虚拟 DOM**。
 2. 触发时机包括：
 	- 首次渲染、props 变化、state 变化、父组件重渲染。
 3. React 提供了多种优化方法来避免不必要的渲染。

@@ -1,6 +1,7 @@
 
 # created 和 mounted 这两个生命周期钩子的区别
 
+`#vue3` 
 
 
 ## 目录
@@ -165,8 +166,8 @@ export default {
 		 - 需要访问子组件
 		 - 需要元素尺寸计算
 - Composition API 中：
-	- created 钩子对应 setup 函数本身
-	- mounted 钩子对应 onMounted 函数
+	- created 钩子对应 `setup` 函数本身
+	- mounted 钩子对应 `onMounted` 函数
 - 注意事项：
 	- 在 created 中进行的数据请求可能导致**页面闪烁**
 	- mounted 不保证**所有子组件都已挂载完成**，如需要可以使用 nextTick

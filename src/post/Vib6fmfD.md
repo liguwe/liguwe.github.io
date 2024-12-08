@@ -2,7 +2,7 @@
 # Pinia 状态管理库文档笔记
 
 
-`#pinia` `#vue` `#2023/01/07`
+`#pinia` `#vue` 
 
 >  文档地址： https://pinia.vuejs.org/zh/core-concepts/getters.html
 
@@ -11,18 +11,18 @@
 <!-- toc -->
  ## 1. 为什么？ 
 
-- Pinia 抛弃了 Mutation，这意味着你可以直接更新状态，**不用再注册 Commit**
+- Pinia 抛弃了 `Mutation`，这意味着你可以直接更新状态，**不用再注册 Commit**
 - 语法上更加贴近 Composition Api
 - 数据持久化使用： `pinia-plugin-persistedstate`
 - 允许构建工具自动进行**代码分割**以及 **TypeScript 推断**
 
 ## 2. 两种定义方式
 
-约定：所有的 store 定义，都使用 **use 开头**
+>  约定：所有的 store 定义，都使用 **use 开头**
 
 ### 2.1. 方式一：Option Store
 
- Store 是用 defineStore() 定义的，它的第一个参数要求是一个独一无二的名字
+ Store 是用 `defineStore()` 定义的，它的第一个参数要求是一个独一无二的名字
 
 ```javascript
 // 第一个参数是你的应用中 Store 的唯一 ID。
@@ -184,7 +184,7 @@ someStore.$subscribe(callback, { detached: true })
 </script>
 ```
 
-当然，你可以使用 `watch` 来监听，即在 pinia 实例上使用 watch() 函数侦听整个 state
+当然，你可以使用 `watch` 来监听，即在 pinia 实例上使用 `watch()` 函数侦听整个 state
 
 ```typescript
 watch(
@@ -370,15 +370,15 @@ someStore.$onAction(callback, true)
 
 ## 5. Pinia 插件
 
-插件是通过` pinia.use() `添加到` pinia 实例`的 ，使用插件的场景有
+插件是通过`pinia.use() `添加到`pinia 实例`的 ，使用插件的场景有
 
-- 添加新的状态属性到store
-- 定义store时创建新的选项
-- 为store增加新的方法
+- 添加新的状态属性到 store
+- 定义 store时创建新的选项
+- 为 store 增加新的方法
 - 包装现有的方法
-- 改变或取消action
-- 实现副作用，比如本地存储
-- 扩展store的属性
+- 改变或取消 action
+- 实现副作用，比如 本地存储
+- 扩展 store 的属性
 
 ### 5.1. 最简单的一个示例
 
@@ -444,13 +444,13 @@ pinia.use(({ store }) => {
 })
 ```
 
-使用 `markRaw` 标记一个对象，使其在响应式系统中变为非响应式的，避免无意义的渲染
+> 使用 `markRaw` 标记一个对象，使其在响应式系统中变为非响应式的，避免无意义的渲染
 
 ### 5.5. 在插件中调用 $subscribe
 
 你也可以在插件中使用 `store.$subscribe 和 store.$onAction `。
 
-```typescript
+```typescript hl:3,6
 pinia.use(({ store }) => {
   store.$subscribe(() => {
     // 响应 store 变化
@@ -475,7 +475,8 @@ pinia.use(({ store }) => {
 
 在单页面应用程序中，只需在创建pinia实例之后调用`useStore()`函数即可正常工作。确保在pinia安装后才调用`useStore()`函数即可。
 
-例如，在Vue Router的导航守卫中使用 `store` 时，应将 useStore() 的调用放在`beforeEach()`函数中
+例如，在Vue Router的导航守卫中使用 `store` 时
+- 应将 useStore() 的调用放在`beforeEach()`函数中
 
 ## 8. Pinia 不太需要类似 immer.js 这样的库
 
@@ -679,3 +680,651 @@ watch(
 	- 这些情况下可以考虑使用 immer.js，但大多数情况下是不必要的
 
 因此，在一般的 Vue + Pinia 项目中，没有必要使用 immer.js，**Vue 的响应式系统和 Pinia 的 API 已经足够优秀和便捷**。
+
+## 9. Vue3 项目中对 Pinia 进行拆包处理：
+
+### 9.1. 基本拆包方案
+
+#### 9.1.1. **使用 Vite 的动态导入**
+
+```javascript
+// store/modules/user.js
+export const useUserStore = defineStore('user', {
+  // store 配置
+})
+
+// store/modules/product.js
+export const useProductStore = defineStore('product', {
+  // store 配置
+})
+
+// store/index.js
+// 动态导入各个 store 模块
+export const stores = {
+  user: () => import('./modules/user'),
+  product: () => import('./modules/product')
+}
+```
+
+#### 9.1.2. **配置 Vite 的分包策略**
+
+```javascript
+// vite.config.js
+export default defineConfig({
+  build: {
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          'store-user': ['./src/store/modules/user.js'],
+          'store-product': ['./src/store/modules/product.js'],
+          'vendor-pinia': ['pinia']
+        }
+      }
+    }
+  }
+})
+```
+
+### 9.2. 按功能模块拆分
+
+#### 9.2.1. **模块化组织 Store**
+
+```javascript
+// stores/modules/auth/index.js
+export const useAuthStore = defineStore('auth', {
+  state: () => ({
+    user: null,
+    token: null
+  }),
+  // ...其他配置
+})
+
+// stores/modules/cart/index.js
+export const useCartStore = defineStore('cart', {
+  state: () => ({
+    items: []
+  }),
+  // ...其他配置
+})
+```
+
+#### 9.2.2. **异步注册 Store**
+
+```javascript
+// 按需加载 store
+const loadAuthStore = async () => {
+  const module = await import('./modules/auth')
+  return module.useAuthStore
+}
+
+const loadCartStore = async () => {
+  const module = await import('./modules/cart')
+  return module.useCartStore
+}
+```
+
+### 9.3. 路由级别的拆分
+
+#### 9.3.1. **配合路由进行拆分**
+
+```javascript hl:7
+// router/index.js
+const routes = [
+  {
+    path: '/user',
+    component: () => import('../views/User.vue'),
+    // 异步加载相关 store
+    beforeEnter: async (to, from, next) => {
+      await import('../stores/modules/user')
+      next()
+    }
+  }
+]
+```
+
+#### 9.3.2. **组件内按需导入**
+
+```vue hl:2
+<script setup>
+// 组件内动态导入 store
+const initStore = async () => {
+  const { useUserStore } = await import('../stores/modules/user')
+  const userStore = useUserStore()
+  // 使用 store
+}
+
+onMounted(() => {
+  initStore()
+})
+</script>
+```
+
+### 9.4. 高级拆包配置
+
+#### 9.4.1. **使用 Rollup 的高级配置**
+
+```javascript
+// vite.config.js
+export default defineConfig({
+  build: {
+    rollupOptions: {
+      output: {
+        manualChunks(id) {
+          // 将 node_modules 中的包单独打包
+          if (id.includes('node_modules')) {
+            if (id.includes('pinia')) {
+              return 'vendor-pinia'
+            }
+            return 'vendor'
+          }
+          // 将 store 模块单独打包
+          if (id.includes('/stores/modules/')) {
+            const module = id.split('/stores/modules/')[1].split('/')[0]
+            return `store-${module}`
+          }
+        }
+      }
+    }
+  }
+})
+```
+
+#### 9.4.2. **优化分包大小**
+
+```javascript
+// vite.config.js
+export default defineConfig({
+  build: {
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          // 核心依赖单独打包
+          'vendor-core': ['vue', 'pinia'],
+          // 工具类库单独打包
+          'vendor-utils': ['lodash', 'axios'],
+          // store 按模块打包
+          'store-user': ['./src/stores/modules/user'],
+          'store-cart': ['./src/stores/modules/cart']
+        }
+      }
+    },
+    // 设置chunk大小警告阈值
+    chunkSizeWarningLimit: 1000
+  }
+})
+```
+
+### 9.5. 最佳实践建议
+
+#### 9.5.1. **合理的模块划分**
+
+```javascript
+// 按业务域划分
+stores/
+  ├── modules/
+  │   ├── user/          // 用户相关
+  │   │   ├── index.js
+  │   │   └── types.ts
+  │   ├── product/       // 产品相关
+  │   └── cart/          // 购物车相关
+  └── index.js
+```
+
+#### 9.5.2. **懒加载策略**
+
+```javascript
+// 在需要时才加载对应的 store
+const useStore = async () => {
+  const module = await import(`./modules/${moduleName}`)
+  return module.default
+}
+```
+
+#### 9.5.3. **性能优化**
+
+- 避免过度拆分
+- 合理设置 chunk 大小
+- 使用预加载提示
+```javascript
+// 预加载相关模块
+<link rel="modulepreload" href="/assets/store-user-xxx.js">
+```
+
+### 9.6. 注意事项
+
+#### 9.6.1. **避免循环依赖**
+
+- 合理组织 store 之间的依赖关系
+- 使用事件总线或其他方式解耦
+
+#### 9.6.2. **控制包大小**
+
+- 监控各个 chunk 的大小
+- 合理合并相关模块
+- 使用 tree-shaking 优化
+
+#### 9.6.3. **缓存策略**
+
+- 合理设置缓存策略
+- 考虑模块更新机制
+- 处理版本控制
+
+## 10. 性能优化点
+
+- 每个命名空间下，都应该提供`清空方法` ，避免内存暴增
+	- `store.$reset()`
+- **路由切换时清理** ? 
+- WeakMap/WeakSet
+
+```javascript
+const useStore = defineStore('cache', {
+  state: () => ({
+    // 使用 WeakMap 存储对象引用
+    cache: new WeakMap(),
+  }),
+  actions: {
+    setCache(key, value) {
+      this.cache.set(key, value)
+    }
+  }
+})
+
+```
+
+- 实现数据过期策略
+
+```javascript
+const useStore = defineStore('main', {
+  state: () => ({
+    cache: new Map(),
+    cacheTimeout: new Map()
+  }),
+  actions: {
+    setData(key, value, timeout = 5000) {
+      this.cache.set(key, value)
+      this.cacheTimeout.set(key, Date.now() + timeout)
+      
+      // 设置过期清理
+      setTimeout(() => {
+        if (this.cache.has(key)) {
+          this.cache.delete(key)
+          this.cacheTimeout.delete(key)
+        }
+      }, timeout)
+    },
+    getData(key) {
+      if (!this.cache.has(key)) return null
+      if (Date.now() > this.cacheTimeout.get(key)) {
+        this.cache.delete(key)
+        this.cacheTimeout.delete(key)
+        return null
+      }
+      return this.cache.get(key)
+    }
+  }
+})
+
+```
+
+
+- 清理超过一定时间未访问的数据
+```javascript
+const useStore = defineStore('main', {
+  state: () => ({
+    data: {}
+  }),
+  actions: {
+    clearInactiveData() {
+      // 清理超过一定时间未访问的数据
+    }
+  }
+})
+
+// 监听 store 变化
+store.$subscribe((mutation, state) => {
+  // 记录数据访问时间
+  updateAccessTime(mutation.storeId)
+})
+
+```
+
+
+- 监控 store 大小
+
+```javascript
+const useStore = defineStore('main', {
+  state: () => ({
+    data: {}
+  })
+})
+
+// 开发环境监控 store 大小
+if (process.env.NODE_ENV === 'development') {
+  store.$subscribe((mutation, state) => {
+    const size = new Blob([JSON.stringify(state)]).size
+    if (size > 1024 * 1024) { // 1MB
+      console.warn(`Store size exceeds 1MB: ${size} bytes`)
+    }
+  })
+}
+```
+
+## 11. Pinia 插件来管理数据内存
+
+>  在**大型应用或数据密集型应用**中使用可使用使用这个插件
+
+>  但是，最大内存，最大时间，可能都会影响到业务，最好的办法是，最好是**最近访问10 条？ 的 pinia 命名空间的**
+
+ 这个插件将包含数据过期、内存监控、自动清理等功能。
+ 
+
+```typescript
+// plugins/piniaMemoryManager.ts
+
+interface MemoryManagerOptions {
+  // 最大存储大小（单位：bytes）
+  maxSize?: number;
+  // 数据过期时间（单位：ms）
+  defaultExpireTime?: number;
+  // 是否开启调试日志
+  debug?: boolean;
+  // 自动清理的阈值（占 maxSize 的百分比）
+  cleanupThreshold?: number;
+  // 是否启用自动清理
+  autoCleanup?: boolean;
+}
+
+interface StoreMetadata {
+  accessTime: number;
+  size: number;
+  expireTime?: number;
+}
+
+export function createMemoryManager(options: MemoryManagerOptions = {}) {
+  const {
+    maxSize = 50 * 1024 * 1024, // 默认 50MB
+    defaultExpireTime = 30 * 60 * 1000, // 默认 30 分钟
+    debug = false,
+    cleanupThreshold = 0.8, // 当使用空间达到 80% 时触发清理
+    autoCleanup = true,
+  } = options;
+
+  // 存储元数据
+  const storeMetadata = new Map<string, Map<string, StoreMetadata>>();
+  let totalSize = 0;
+
+  // 日志函数
+  const log = (...args: any[]) => {
+    if (debug) {
+      console.log('[Pinia Memory Manager]', ...args);
+    }
+  };
+
+  // 计算对象大小
+  const calculateSize = (obj: any): number => {
+    return new Blob([JSON.stringify(obj)]).size;
+  };
+
+  // 清理过期数据
+  const cleanupExpiredData = (store: any, storeId: string) => {
+    const storeData = storeMetadata.get(storeId);
+    if (!storeData) return;
+
+    const now = Date.now();
+    let cleaned = false;
+
+    for (const [key, metadata] of storeData.entries()) {
+      if (metadata.expireTime && now > metadata.expireTime) {
+        if (key in store.$state) {
+          delete store.$state[key];
+          totalSize -= metadata.size;
+          storeData.delete(key);
+          cleaned = true;
+          log(`Cleaned expired data: ${storeId}.${key}`);
+        }
+      }
+    }
+
+    return cleaned;
+  };
+
+  // 强制清理最旧的数据
+  const forceCleanup = () => {
+    let entries: [string, Map<string, StoreMetadata>][] = Array.from(storeMetadata.entries());
+    
+    // 按最后访问时间排序
+    entries.sort((a, b) => {
+      const aTime = Math.max(...Array.from(a[1].values()).map(m => m.accessTime));
+      const bTime = Math.max(...Array.from(b[1].values()).map(m => m.accessTime));
+      return aTime - bTime;
+    });
+
+    for (const [storeId, storeData] of entries) {
+      if (totalSize < maxSize * cleanupThreshold) break;
+
+      const store = useStore(storeId);
+      if (!store) continue;
+
+      for (const [key, metadata] of storeData.entries()) {
+        delete store.$state[key];
+        totalSize -= metadata.size;
+        storeData.delete(key);
+        log(`Force cleaned: ${storeId}.${key}`);
+
+        if (totalSize < maxSize * cleanupThreshold) break;
+      }
+    }
+  };
+
+  return defineStore => {
+    return (storeId: string, options: any) => {
+      const store = defineStore(storeId, options);
+      
+      // 初始化store元数据
+      if (!storeMetadata.has(storeId)) {
+        storeMetadata.set(storeId, new Map());
+      }
+
+      // 包装 $state 的 setter
+      const originalState = store.$state;
+      Object.defineProperty(store, '$state', {
+        get() {
+          return originalState;
+        },
+        set(newState) {
+          const storeData = storeMetadata.get(storeId)!;
+          
+          // 更新元数据
+          for (const key in newState) {
+            const size = calculateSize(newState[key]);
+            storeData.set(key, {
+              accessTime: Date.now(),
+              size,
+              expireTime: Date.now() + defaultExpireTime
+            });
+            totalSize += size;
+          }
+
+          // 检查是否需要清理
+          if (autoCleanup && totalSize > maxSize * cleanupThreshold) {
+            log(`Memory threshold exceeded: ${totalSize} bytes`);
+            cleanupExpiredData(store, storeId);
+            if (totalSize > maxSize * cleanupThreshold) {
+              forceCleanup();
+            }
+          }
+
+          originalState = newState;
+        }
+      });
+
+      // 添加辅助方法
+      store.$memoryManager = {
+        // 设置数据过期时间
+        setExpireTime(key: string, time: number) {
+          const storeData = storeMetadata.get(storeId);
+          if (storeData && storeData.has(key)) {
+            storeData.get(key)!.expireTime = Date.now() + time;
+          }
+        },
+
+        // 手动清理数据
+        cleanup() {
+          cleanupExpiredData(store, storeId);
+        },
+
+        // 获取存储状态
+        getStatus() {
+          return {
+            totalSize,
+            maxSize,
+            usage: totalSize / maxSize,
+            storeSize: Array.from(storeMetadata.get(storeId)?.values() || [])
+              .reduce((acc, curr) => acc + curr.size, 0)
+          };
+        },
+
+        // 手动删除数据
+        remove(key: string) {
+          const storeData = storeMetadata.get(storeId);
+          if (storeData && storeData.has(key)) {
+            totalSize -= storeData.get(key)!.size;
+            storeData.delete(key);
+            delete store.$state[key];
+          }
+        }
+      };
+
+      // 订阅 store 变化
+      store.$subscribe((mutation, state) => {
+        const storeData = storeMetadata.get(storeId)!;
+        
+        // 更新访问时间
+        if (mutation.type === 'direct') {
+          const key = mutation.events.key;
+          if (storeData.has(key)) {
+            storeData.get(key)!.accessTime = Date.now();
+          }
+        }
+      });
+
+      return store;
+    };
+  };
+}
+```
+
+使用示例：
+
+```typescript
+// store/index.ts
+import { createPinia } from 'pinia'
+import { createMemoryManager } from './plugins/piniaMemoryManager'
+
+const pinia = createPinia()
+
+// 注册内存管理插件
+pinia.use(createMemoryManager({
+  maxSize: 100 * 1024 * 1024, // 100MB
+  defaultExpireTime: 60 * 60 * 1000, // 1小时
+  debug: true,
+  cleanupThreshold: 0.8,
+  autoCleanup: true
+}))
+
+export default pinia
+```
+
+在 Store 中使用：
+
+```typescript
+// store/userStore.ts
+import { defineStore } from 'pinia'
+
+export const useUserStore = defineStore('user', {
+  state: () => ({
+    userList: [],
+    userDetails: {},
+  }),
+  actions: {
+    async fetchUsers() {
+      const users = await api.getUsers()
+      this.userList = users
+      
+      // 设置数据过期时间
+      this.$memoryManager.setExpireTime('userList', 5 * 60 * 1000) // 5分钟后过期
+    },
+
+    async fetchUserDetails(id: string) {
+      const details = await api.getUserDetails(id)
+      this.userDetails[id] = details
+    },
+
+    cleanup() {
+      // 手动清理数据
+      this.$memoryManager.cleanup()
+    },
+
+    checkStatus() {
+      // 获取存储状态
+      const status = this.$memoryManager.getStatus()
+      console.log('Store 内存使用情况:', status)
+    }
+  }
+})
+```
+
+在组件中使用：
+
+```vue
+<template>
+  <div>
+    <button @click="checkStoreStatus">检查存储状态</button>
+    <button @click="cleanupStore">清理存储</button>
+  </div>
+</template>
+
+<script setup>
+import { useUserStore } from '@/stores/userStore'
+
+const userStore = useUserStore()
+
+const checkStoreStatus = () => {
+  const status = userStore.$memoryManager.getStatus()
+  console.log('存储状态:', status)
+}
+
+const cleanupStore = () => {
+  userStore.$memoryManager.cleanup()
+}
+</script>
+```
+
+这个插件的主要功能：
+
+1. **内存监控**
+   - 跟踪每个 store 的数据大小
+   - 监控总内存使用情况
+   - 提供内存使用状态查询
+
+2. **数据过期机制**
+   - 支持设置数据过期时间
+   - 自动清理过期数据
+   - 手动清理接口
+
+3. **自动内存管理**
+   - 当内存使用超过阈值时自动清理
+   - 优先清理过期数据
+   - 必要时清理最久未访问的数据
+
+4. **调试功能**
+   - 详细的日志输出
+   - 内存使用统计
+   - 性能监控
+
+5. **灵活的配置选项**
+   - 可配置最大内存限制
+   - 可设置默认过期时间
+   - 可调整清理阈值
+
+

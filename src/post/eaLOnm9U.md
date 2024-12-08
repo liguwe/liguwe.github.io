@@ -26,12 +26,10 @@ function HorizontalRule({ show }) {
 
 ```jsx
 import { use } from 'react';
-
 function MessageComponent({ messagePromise }) {
     const message = use(messagePromise);
     // ...
 }
-
 ```
 
 ## 2. 新指令

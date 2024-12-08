@@ -2,7 +2,7 @@
 # Vue3 基础：篇二
 
 
-`#2023/08/18` `#vue3` `#前端框架/vue`  
+ `#vue3` `#前端框架/vue` `#R1` 
 
 
 ## 目录
@@ -98,7 +98,7 @@ Vue 的组件可以按两种不同的风格书写：选项式 API 和 组合式 
 
 5、受限的全局访问，可以通过 [app.config.globalProperties](https://cn.vuejs.org/api/application.html#app-config-globalproperties) 配置
 
-- 模板中的表达式将被沙盒化，仅能够访问到[有限的全局对象列表](https://github.com/vuejs/core/blob/main/packages/shared/src/globalsWhitelist.ts#L3)。
+- 模板中的表达式将被`沙盒化`，仅能够访问到[有限的全局对象列表](https://github.com/vuejs/core/blob/main/packages/shared/src/globalsWhitelist.ts#L3)。
 - 该列表中会暴露常用的内置全局对象，比如 `Math` 和 `Date`。
 
 ```javascript
@@ -122,7 +122,7 @@ export const isGloballyWhitelisted = /*#__PURE__*/ makeMap(GLOBALS_WHITE_LISTED)
 
 2、`v-bind:href` 等价于 `:href` 
 
-3、动态参数的说明如下
+3、**动态参数**的说明如下
 - 动态属性
 - 动态事件名称
 - 动态参数值的限制：为null 或者 字符串，否则编译警告
@@ -130,7 +130,7 @@ export const isGloballyWhitelisted = /*#__PURE__*/ makeMap(GLOBALS_WHITE_LISTED)
 
 具体看下面：
 
-![image.png|640](https://832-1310531898.cos.ap-beijing.myqcloud.com/yuque/0c3f6bbe4333afb3a4d663b954c16887.png)
+![image.png|560](https://832-1310531898.cos.ap-beijing.myqcloud.com/yuque/0c3f6bbe4333afb3a4d663b954c16887.png)
 
 动态参数的语法限制：
 

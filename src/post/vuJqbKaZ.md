@@ -10,7 +10,7 @@
 
 作用：
 - 实现与平台无关的编译器核心功能。
-- 负责将模板解析为抽象语法树（AST），然后转换和优化 AST，最后生成渲染函数。
+- 负责将模板解析为抽象语法树（AST），然后转换和优化 AST，最后生成**渲染函数**。
 使用场景：
 - 作为其他编译器包的基础，如 compiler-dom 和 compiler-ssr。
 - 当需要为非浏览器环境创建自定义编译器时。
@@ -21,7 +21,7 @@
 ## 2. compiler-dom
 
 作用：
-- 基于 compiler-core，添加了浏览器 DOM 特定的编译功能。
+- 基于 compiler-core，添加了**缓存全部或部分虚拟节点**。
 - 处理 DOM 特定的指令和属性。
 使用场景：
 - 在构建过程中编译 Vue 模板。
@@ -41,13 +41,16 @@ const { code } = compile(template)
 console.log(code) // 输出编译后的渲染函数
 
 ```
+
+>  之前用过，在 markdown 中嵌入 Vue 组件时可以考虑使用
+
 ## 3. compiler-sfc
 
 作用：
 - 编译 Vue 单文件组件（.vue 文件）。
 - 处理 `<template>、<script> 和 <style> 块`。
 使用场景：
-- 在 Vue CLI 或 Vite 等构建工具中使用，用于处理 .vue 文件。
+- 在 Vue CLI 或 Vite 等构建工具中使用，用于处理 `.vue` 文件。
 注意事项：
 - 这个包通常由构建工具内部使用，开发者很少需要直接与之交互。
 - 支持 TypeScript、CSS 预处理器等功能，需要相应的插件支持。
@@ -56,13 +59,13 @@ console.log(code) // 输出编译后的渲染函数
 
 作用：
 - 实现 Vue 3 的响应式系统。
-- 提供 reactive、ref、computed 等核心 API
+- 提供 `reactive、ref、computed` 等核心 API
 使用场景：
 - 在 Vue 应用中创建响应式数据。
 - 可以独立于 Vue 使用，用于任何需要响应式数据的 JavaScript 应用。
 注意事项：
 - 理解 Vue 3 的响应式原理对于高效使用至关重要
-- 注意避免循环依赖，可能导致性能问题。
+- 注意避免循环依赖，可能导致性能问题
 
 可单独使用 
 
@@ -79,6 +82,7 @@ effect(() => {
 state.count++
 
 ```
+
 ## 5. runtime-core
 
 作用：
@@ -116,7 +120,7 @@ state.count++
 ## 8. shared
 
 作用：
-- 提供在其他 Vue 包中共享的工具函数和常量。
+- 提供在其他 Vue 包中**共享的工具函数和常量**。
 使用场景：
 - 在 Vue 的其他包中使用。
 - 可以在自定义 Vue 插件或工具中使用这些共享函数。
@@ -124,7 +128,7 @@ state.count++
 - 这个包的内容可能会随 Vue 版本更新而变化。
 - 不建议在应用代码中直接依赖这个包，因为它主要用于 Vue 内部。
 
-## 9. vue（别名：vue-runtime-dom）
+## 9. vue
 
 作用：
 - 作为 Vue 3 的主入口。

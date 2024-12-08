@@ -1,8 +1,11 @@
 
 # Vue3 的模板编译也会发生在运行时
 
+`#vue3` 
 
-Vue3 的模板编译通常是在构建时完成的，而不是运行时，但这里需要区分几种情况
+>  之前做个 markdown 嵌入 vue组件时，就使用过构建时，将 markdown → html → 特定 vdom → 特别vue组件 → 渲染
+
+Vue3 的模板编译**通常是在构建时完成的，而不是运行时**，但这里需要区分几种情况
 
 
 ## 目录
@@ -24,6 +27,7 @@ export function render(_ctx, _cache) {
 ```
 
 ## 2. **运行时编译（不推荐）**
+
 ```js
 // main.js
 import { createApp } from 'vue/dist/vue.esm-bundler.js' // 包含运行时编译器的版本
@@ -45,7 +49,7 @@ import { createApp } from 'vue/dist/vue.esm-bundler.js' // 约 23kb gzipped
 
 ## 4. **开发环境配置**
 
-```js
+```js hl:5
 // vite.config.js
 export default {
   resolve: {
@@ -58,7 +62,7 @@ export default {
 
 ## 5. **性能对比**
 
-```js
+```js hl:1,11,14
 // 1. 构建时编译（更好的性能）
 <script setup>
 import { ref } from 'vue'

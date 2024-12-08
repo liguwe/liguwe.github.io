@@ -396,11 +396,12 @@ function FiberNode(
 	- 使React能够遍历组件树并知道从哪里开始、继续或停止工作。
 - **双缓冲技术**
 - **State 和 Props**：
-	- `memoizedProps`、**`pendingProps`** 和 **`memoizedState`** 字段让React知道组件的上一个状态和即将应用的状态
+	- `memoizedProps`、**`pendingProps`** 和 **`memoizedState`** 字段
+		- 让 React 知道组件的上一个状态和即将应用的状态
 	- 通过比较这些值，React 可以决定组件是否需要更新，从而避免不必要的渲染，提高性能
 - **副作用的追踪**：
-	- `flags` 和 **`subtreeFlags`** 字段标识Fiber及其子树中需要执行的副作用
-	- 例如 DOM更新、生命周期方法调用等。
+	- `flags` 和 **`subtreeFlags`** 字段标识 Fiber 及其子树中需要执行的副作用
+	- 例如 DOM 更新、生命周期方法调用等。
 	- React 会积累这些副作用，然后在 Commit 阶段一次性执行，从而提高效率。
 
 ## 6. 协调阶段（Reconciler）：Render 阶段

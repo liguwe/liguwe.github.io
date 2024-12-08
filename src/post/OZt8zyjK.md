@@ -1,10 +1,11 @@
 
 # Vue3 中 is 属性的使用方法和应用场景
 
-`#vue3` 
+`#vue3` `#R1` 
 
 > 它为**动态组件渲染**提供了强大而灵活的支持
 >  一定需要配合 `component` 使用
+>  主要 `import` 关键词的一些用法，特别是动态的场景
 
 
 ## 目录
@@ -39,7 +40,7 @@ export default {
 
 ### 1.2. 在 `setup` 语法糖中使用
 
-```vue
+```vue hl:10
 <template>
   <component :is="activeComponent" />
 </template>
@@ -61,7 +62,7 @@ const switchComponent = () => {
 
 #### 1.2.1. 附：markRaw
 
-`markRaw` 是 Vue 3 中的一个工具函数，用于标记一个对象，使其永远不会被转换为响应式对象。使用好处是：
+`markRaw` 是 Vue 3 中的一个工具函数，**用于标记一个对象，使其永远不会被转换为响应式对象**。使用好处是：
 1. 提高应用性能
 2. 减少不必要的响应式转换
 3. 更好地处理第三方库集成
@@ -85,7 +86,7 @@ const reactiveBar = reactive(bar)
 
 ### 2.1. 动态渲染不同的 HTML 元素
 
-```vue hl:14
+```vue hl:14,18
 <template>
   <!-- 动态切换元素类型 -->
   <component 
@@ -287,6 +288,9 @@ const currentTabComponent = computed(() => {
 
 ### 6.1. **命名规范**：
 
+- 字符串 `‘div’`
+- 或者 变量 `MyComponent`
+
 ```vue hl:3,6
 <template>
   <!-- DOM 标签使用字符串 -->
@@ -380,7 +384,7 @@ onMounted(() => {
 </script>
 ```
 
-#### 7.2.2. 通过事件通信
+#### 7.2.2. 通过事件通信：自定义事件通讯
 
 父组件 
 
@@ -479,7 +483,7 @@ onUpdated(() => {
 
 #### 7.2.4. 使用组合式函数（Composables）
 
-```vue
+```js hl:1,4
 <!-- useComponentLifecycle.js -->
 import { ref } from 'vue'
 
@@ -553,3 +557,6 @@ const currentComponent = ref(ComponentA)
 </script>
 ```
 
+## 8. 需要配合 import 关键词
+
+>  更多详见 [32. vite 之 import 关键词](/post/ng4pDIV7.html)

@@ -1,8 +1,7 @@
 
 # 前端元框架
 
-`#前端框架` `#R1` 
-
+`#前端框架` 
 
 > 一句话：**最佳实践集合与工程体现**
 
@@ -136,10 +135,10 @@
 
 ### 5.1. 根据项目需求
 
-- 需要SSR/SSG →  Next.js/Nuxt.js
-- 全栈应用 →  Remix
-- 静态网站 →  Astro
-- 文档站点 →  VitePress / Docusaurus
+- 需要SSR/SSG → Next.js/Nuxt.js
+- 全栈应用 → Remix
+- 静态网站 → Astro
+- 文档站点 → VitePress / Docusaurus
 
 ### 5.2. 根据技术栈
 

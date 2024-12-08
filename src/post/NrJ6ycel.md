@@ -1,7 +1,7 @@
 
 # useMemo 、 useCallback、Vue 的 computed
 
-`#React` `#vue3`  `#R1` 
+`#React` `#vue3`  
 
 
 ## 目录
@@ -16,7 +16,7 @@
 ## 2. 最佳实践
 
 - 简单计算不需要 `useMemo`，因为
-	- useMemo 本身也有开销（创建函数、维护依赖列表等）
+	- `useMemo` 本身也有开销（创建函数、维护依赖列表等）
 	- 主要用于优化`复杂计算`或需要`保持引用稳定`的场景
 		- 因为只在依赖项改变时`创建新对象`
 - 正确的依赖项设置
@@ -63,7 +63,7 @@ function OptimizedComponent() {
 	- Vue computed `自动追踪依赖`，更符合响应式编程
 	- React useMemo 需要手`动声明依赖`，更显式
 - 是否支持写
-	- Vue computed 支持 getter/setter
+	- Vue computed 支持 `getter/setter`
 	- React useMemo 只支持 getter
 - 使用方式
 	- Vue computed 返回响应式引用（需要 `.value`）
@@ -73,13 +73,14 @@ function OptimizedComponent() {
 	- React useMemo 相对独立
 - 副作用：
 	- 副作用使用 `watch/watchEffect`
-	- 副作用使用 useEffect，然后修改状态值，再将状态值作为 useMemo 的依赖项
+	- 副作用使用 useEffect，然后修改状态值，再将状态值作为 `useMemo` 的依赖项
 - 计算时机
 	- vue **只有依赖变化时重新计算**
 	- react **每次渲染都会检查依赖数组**，依赖未变化时使用缓存值
 
-Vue 的组合式 API 中的 computed 更符合`响应式编程范式`
-而 React 的 useMemo 则更符合`函数式编程思维`。
+==编程范式不同：==
+- Vue 的组合式 API 中的 computed 更符合`响应式编程范式`
+- 而 React 的 useMemo 则更符合`函数式编程思维`。
 
 ## 6. 与 useCallback 的区别
 
@@ -237,8 +238,8 @@ function ParentComponent() {
 	- **传递给使用 React.memo 的子组件的函数**
 	- 函数作为其他 Hook 的依赖项
 4. 避免过度使用：
-	- 简单的计算不需要 useMemo
-	- 简单的事件处理函数不需要 useCallback
+	- 简单的计算不需要 `useMemo`
+	- 简单的事件处理函数不需要 `useCallback`
 5. 结合 React.memo 使用可以获得**最佳性能优化效果**
 
 ## 7. useCallback 的常见使用场景

@@ -1,6 +1,7 @@
 
 # Vue3 的页面渲染流程
 
+`#vue3` 
 
 
 ## 目录
@@ -237,6 +238,11 @@ const AsyncComponent = defineAsyncComponent({
 
 ## 9. 性能优化相关
 
+- 使用`v-memo`优化列表渲染
+- 使用`shallowRef/shallowReactive`优化大数据
+- 使用`v-once`优化静态内容
+  
+
 ```javascript hl:1,8,13
 // 1. 使用v-memo优化列表渲染
 <template>
@@ -281,8 +287,8 @@ app.config.errorHandler = (err, vm, info) => {
 	- 建立响应式联系
 - 更新
 	- 触发响应式更新
-	- diff算法比较
-	- 最小化DOM操作
+	- diff 算法比较
+	- 最小化 DOM 操作
 - 卸载
 	- 清理副作用
 	- 移除事件监听

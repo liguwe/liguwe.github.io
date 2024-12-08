@@ -54,7 +54,7 @@ function ComparisonExample() {
 
 ```
 
-## 2. forwardRef  与 useRef 配合使用
+## 2. forwardRef 与 useRef 配合使用
 
 **React 不允许组件访问其他组件的 DOM 节点**。甚至自己的子组件也不行，使用 `forwardRef` 可以
 

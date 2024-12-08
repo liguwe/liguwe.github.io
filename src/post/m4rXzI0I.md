@@ -1,6 +1,7 @@
 
 # vue3 中实现类似于 React 高阶组件的功能？
 
+`#vue3` 
 
 Vue 3确实没有直接等同于React高阶组件（HOC）的概念，但我们可以通过Vue 3的组合式API（Composition API）和其他特性来实现类似的功能。
 
@@ -11,7 +12,7 @@ Vue 3确实没有直接等同于React高阶组件（HOC）的概念，但我们�
 
 这是Vue 3中最接近React高阶组件概念的方法。组合式函数允许我们封装和重用有状态逻辑。
 
-示例：
+示例：`useLogger`
 
 ```typescript
 // useLogger.ts
@@ -44,9 +45,9 @@ export default defineComponent({
 })
 ```
 
-## 2. 渲染函数和JSX
+## 2. 渲染函数 和 JSX：withLogger
 
-Vue 3支持使用渲染函数和JSX，这让我们可以更接近React的编程方式，包括实现类似HOC的模式。
+Vue 3支持使用渲染函数和JSX，这让我们可以更接近 React的编程方式，包括实现类似HOC的模式。
 
 示例：
 
@@ -158,7 +159,7 @@ export default {
 
 ## 5. 提供/注入（Provide/Inject）
 
-对于需要在组件树中共享数据或功能的场景，我们可以使用Vue 3的provide/inject特性。
+对于需要在组件树中==共享数据或功能==的场景，我们可以使用 Vue 3的 `provide/inject` 特性。
 
 示例：
 

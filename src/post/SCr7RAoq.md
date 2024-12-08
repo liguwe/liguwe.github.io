@@ -5,7 +5,7 @@
 
 >  本文讲原始值的响应方案，比如 `Boolean String BigInt Symbol undefined null Number`
 
-> 注意：这也是，平时我尽量使用 ref 而不使用 reactive 的原因？
+> 注意：这也是，平时我建议尽量使用 ref 而不使用 reactive 的原因
 
 
 ## 目录
@@ -232,7 +232,7 @@ list.value.push(4)
 
 #### 6.3.1. 使用 ref 的场景
 
-```javascript
+```javascript hl:12
 // 1. 原始值
 const count = ref(0)
 const name = ref('John')
@@ -254,6 +254,8 @@ function useUser() {
   }
 }
 ```
+
+>  公共 hooks 请尽量使用 `ref` ，多个 `.value` 而已，约定习惯就好了
 
 #### 6.3.2. 使用 reactive 的场景
 
@@ -476,7 +478,7 @@ const { count, name } = toRefs(state) // ✅ 转换为 ref 后解构
 
 #### 7.2.3. 嵌套数据处理
 
-```javascript
+```javascript hl:11
 // ref - 嵌套对象需要额外的 .value
 const user = ref({
   profile: {

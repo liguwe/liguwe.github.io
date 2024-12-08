@@ -1,9 +1,10 @@
 
 # Vue3 异步组件的使用
 
+`#vue` `#R1` 
 
 - 使用异步组件可以有效地进行代码分割，提高应用的性能和用户体验。
-- 要合理使用 Suspense 和错误处理机制，确保应用的稳定性。
+- 要合理使用 `Suspense` 和错误处理机制，确保应用的稳定性。
 
 
 ## 目录
@@ -421,7 +422,7 @@ const router = createRouter({
 
 ### 7.2. 全局异步组件注册
 
-```html
+```html hl:4
 <script setup>
 import { defineAsyncComponent, provide } from 'vue'
 
@@ -440,7 +441,7 @@ provide('asyncComponents', {
 
 ### 7.3. 带缓存的异步数据加载
 
-```vue
+```vue hl:4
 <script setup>
 import { ref, provide } from 'vue'
 

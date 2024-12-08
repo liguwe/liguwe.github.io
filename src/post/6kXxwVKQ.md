@@ -1,25 +1,26 @@
 
 # Vue3 组件
 
-`#vue3`  `#前端框架/vue`   `#R1` 
+`#vue3` `#前端框架/vue` `#R1` 
 
 
 ## 目录
 <!-- toc -->
  ## 1. 基础 
+
 ![image.png](https://832-1310531898.cos.ap-beijing.myqcloud.com/yuque/158cdda6d2da00692729eb12f32de205.png)
 
 ### 1.1. 定义
 
 定义：使用 `SFC` 或者 `特定JavaScript 对象`
 
-![image.png|736](https://832-1310531898.cos.ap-beijing.myqcloud.com/yuque/b3751bcb2ed0be8d12f1ebf08cf1fc8e.png)
+![image.png|696](https://832-1310531898.cos.ap-beijing.myqcloud.com/yuque/b3751bcb2ed0be8d12f1ebf08cf1fc8e.png)
 
 > 内联模板字符串时，必须这样：`<script type="text/x-template">`
 
 ### 1.2. 使用组件
 
-使用组件：`<script setup>` 中，导入的组件都在模板中直接可用，或 全局注册组件都不需要导入
+使用组件：`<script setup>` 中，导入的组件都在模板中直接可用，或全局注册组件都不需要导入
 
 ### 1.3. 传递 props
 
@@ -55,7 +56,7 @@ export default {
 
 ### 1.6. 动态组件
 
-即使用  `<component>`  
+即使用 `<component>`  
 
 ```vue
 <!-- currentTab 改变时组件也改变 -->
@@ -68,7 +69,7 @@ export default {
 
 > 更多详见 [4. Vue3 中 is 属性的使用方法和应用场景](/post/OZt8zyjK.html)
 
-元素位置限制如何解决？  比如 `li` 必须在 `ul` 里，`tr` 必须在 `table`里
+元素位置限制如何解决？ 比如 `li` 必须在 `ul` 里，`tr` 必须在 `table`里
 
 举例：
 
@@ -87,7 +88,7 @@ export default {
 ```
 
 --- 
-又比如，保证 `tr/td` 一定包裹在 `tbody`  里面
+又比如，保证 `tr/td` 一定包裹在 `tbody` 里面
 
 ```vue hl:3
 <template>
@@ -100,6 +101,8 @@ export default {
   </table>
 </template>
 ```
+
+> 更多用法详见 [4. Vue3 中 is 属性的使用方法和应用场景](/post/OZt8zyjK.html)
 
 ## 2. 注册组件
 
@@ -143,14 +146,14 @@ app
 
 ### 2.3. 组件命名和使用命名
 
-`组件定义命名`和`组件使用命名`：比如 `MyComponent` 为名注册的组件，在模板中可以通过 `<MyComponent>` 或 `<my-component>` 
-- `PascalCase` 这样的组件定义在 IDE 中友好
-- `PascalCase` 格式的一看就是 `Vue 组件`，
+`组件定义命名`和`组件使用命名`：比如 `MyComponent` 为名注册的组件，在模板中可以通过 `<MyComponent>` 或 `<my-component>` ，建议使用 PascalCase 命名，因为：
+- ① `PascalCase` 这样的组件定义在 IDE 中友好
+- ② `PascalCase` 格式的一看就是 `Vue 组件`，
 	- 很容易和`自定义元素 (web components)` 区分开来
 
 ## 3. Props 定义
 
-1、`props` 可以使用  `defineProps()`  宏来声明
+1、`props` 可以使用 `defineProps()` 宏来声明
 
 （1）` <script setup>` ： `const props = defineProps(['foo'])`
 
@@ -196,7 +199,7 @@ const counter = ref(props.initialCounter)
 
 （3）更改`对象 / 数组类型`的 `props`，仅在父子组件在设计上本来就需要`紧密耦合`，不然**子组件不允许直接修改**，否则都推荐子组件抛出一个`事件`来通知父组件做出改变，即都回到父组件修改
 
-> 因为是引用类型，阻止这种更改不现实
+> 虽然：因为是引用类型，阻止这种更改不现实，但是，还是尽量按照上面的约定实践
 
 ---
 
@@ -258,7 +261,7 @@ defineProps({
 
 ## 4. 组件事件
 
-> 更多可见  [15. Vue3 事件与原生事件的关系和冒泡机制](/post/bJNA7jvD.html)
+> 更多可见 [15. Vue3 事件与原生事件的关系和冒泡机制差异](/post/tUegzEoZ.html)
 
 1、`<script setup>` 中 定义：`const emit = defineEmits(['inFocus', 'submit'])`
 
@@ -280,11 +283,13 @@ defineProps({
 
 > 如果一个原生事件的名字 (例如 `click`) 被定义在 `emits` 选项中，则监听器只会监听组件触发的 `click` 事件而不会再响应原生的 `click` 事件。
 
-==重点：@click 事件会覆盖原生的 click==
+==重点：`defineEmit(['click']) 事件`会覆盖原生的 click==
+
+>  不是说 通过 @click 定义的时间会覆盖通过 DOM 方式定义的事件，别搞混了，更多详见 [15. Vue3 事件与原生事件的关系和冒泡机制差异](/post/tUegzEoZ.html)
 
 4、和`原生 DOM 事件`不一样，**组件触发**的事件`没有冒泡机制`。你只能监听直接子组件触发的事件。平级组件或是跨越多层嵌套的组件间通信，应使用一个外部的`事件总线`，或是使用一个[全局状态管理方案](https://cn.vuejs.org/guide/scaling-up/state-management.html)。
 
-> 上面说的是 **Vue 组件触发的事件**，而不是具体元素触发的事件
+> 上面说的是 **Vue 组件触发的事件**，而不是具体元素触发的事件（即原生事件）
 
 5、事件校验，如下代码
 
@@ -489,7 +494,7 @@ function inc() {
 具体差别如下：
 
 - 默认绑定的 props 字段不同
-- 是否支持`多属性`绑定，比如 `v-model:title`   `v-model:title1` 多个，但  `v-model="title"` 只支持一个
+- 是否支持`多属性`绑定，比如 `v-model:title` `v-model:title1` 多个，但 `v-model="title"` 只支持一个
 - 支持`多属性`绑定 适合复杂组件，比如组件库里的一些组件绑定场景
 
 11、在`表单输入元素`或`组件`上创建`双向绑定`，默认表单上直接使用，但组件上还需要使用配合 `defineModel`  

@@ -1,7 +1,7 @@
 
 # useEffect
 
-`#react`  `#R1` 
+`#react` 
 
 
 ## 目录

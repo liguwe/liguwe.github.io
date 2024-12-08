@@ -1,7 +1,7 @@
 
 # 异步组件和函数式组件的实现原理
 
-`#vue` `#2023/06/20` 
+`#vue` `#R1` 
 
 
 ## 目录
@@ -245,6 +245,9 @@ const AsyncComp = defineAsyncComponent({
 
 > 关于 `is`，是`vue`内置的特殊 **Attributes** （其他的如 `key` 和 `ref`）, 用于**绑定动态组件**。 更多参考 [https://cn.vuejs.org/api/built-in-special-attributes.html#is](https://cn.vuejs.org/api/built-in-special-attributes.html#is)
 
+> 关于 `is`参考 [4. Vue3 中 is 属性的使用方法和应用场景](/post/OZt8zyjK.html)
+> 关于 `import` 参考，[32. vite 之 import 关键词](/post/ng4pDIV7.html)
+
 ### 3.2. 待完善的点
 
 - 如果组件加载失败或加载超时，是否要渲染 ==Error 组件==？
@@ -269,7 +272,7 @@ const AsyncComp = defineAsyncComponent({
 ### 4.2. 一个 Loading 的场景的优化
 
 > [!question]
-如果加载需要 `201ms`  , `delay = 200` , 那么 loading 组件就展示 `1ms`  ？
+如果加载需要 `201ms` , `delay = 200` , 那么 loading 组件就展示 `1ms` ？
 
 这个解决方案的核心思路是：
 1. 设置 `delay`（`延迟显示时间`）：在短时间加载完成的情况下，完全不显示 loading
@@ -362,12 +365,12 @@ MyFuncComp.props = {
 	- 因此，框架有必要内建异步组件的实现。
 - Vue.js 3 提供了 defineAsyncComponent 函数，用来定义`异步组件`。
 	- 异步组件的加载超时问题，以及当加载错误发生时，如何指定 Error 组件。
-	- 通过为 defineAsyncComponent 函数指定选项参数，允许用户通过 timeout 选项设置超时时长。
+	- 通过为 `defineAsyncComponent` 函数指定选项参数，允许用户通过 timeout 选项设置超时时长。
 	- 当加载超时后，会触发加载错误，这时会渲染用户通过 errorComponent 选 项指定的 Error 组件。
--  Loading 组件组件 与 delay 选项
+- Loading 组件组件 与 delay 选项
 	- 为了避免 Loading 组件导致的闪烁问 题，我们还需要设计一个接口，让用户能指定==延迟展示 Loading 组件==的时间，即 delay 选项。
 - 组件加载发生错误后的重试机制
-- 我们讨论了函数式组件。它本质上是一个函数，其内部实现逻辑可以复用有状态组件的实现逻辑。
+- 我们讨论了==函数式组件==。它本质上是一个函数，其内部实现逻辑可以复用有状态组件的实现逻辑。
 	- 为了给函数式组件**定义 props**，我们允许开发者在函数式组件的主函数上添加**静态的 props 属性**。
 	- 出于更加严谨的考虑，函数式组件没有自身状态，也没有生命周期的概念。
 	- 所以，在初始化函数式组件时，需要选择性地复用有状态组件的**初始化逻辑**。

@@ -2,7 +2,7 @@
 # Vue3 的非原始值响应式方案（Map、WeakMap 、Set 、WeakSet ）
 
 
-`#vue原理` `#R1` `#vue原理` 
+`#vue原理` `#R2` `#vue原理` 
 
 
 前文 [8. Vue3 的响应式原理：effect、computed、watch 的实现原理](/post/RID6FvlT.html) 注意讲了基本的响应式方案
