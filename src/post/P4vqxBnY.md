@@ -1,8 +1,8 @@
 
 # 长列表或大数据渲染优化的一些思路
 
-`#前端性能` `#R1` 
-`#前端` `#前端性能` `#2023/03/17`  
+
+`#前端` `#前端性能` 
 
 
 ## 目录
@@ -38,6 +38,7 @@
 5. 在滚动的时候，修改`真实渲染区域`的 `transform: translate3d(0, y, 0)`
 
 下面是一段示例代码：
+
 ```javascript
 updateVisibleData(scrollTop) {
   scrollTop = scrollTop || 0;

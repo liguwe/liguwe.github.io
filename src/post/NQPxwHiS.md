@@ -1,8 +1,7 @@
 
 # 微前端原理（篇一）
 
-
-`#微前端` `#R1` 
+`#微前端` 
 
 
 ## 目录
@@ -10,9 +9,12 @@
  ## 1. 微前端的核心原理 
 
 - 应用隔离：确保各个子应用之间的 JavaScript、CSS、DOM 互不干扰
-	- JavaScript 沙箱：确保各个子应用的 JS 运行环境相互隔离
-	- CSS 隔离：防止样式冲突
-	- 全局变量隔离：避免全局变量污染
+	- JavaScript 沙箱：
+		- 确保各个子应用的 JS 运行环境相互隔离
+	- CSS 隔离：
+		- 防止样式冲突
+	- 全局变量隔离：
+		- 避免全局变量污染
 - 生命周期管理：**主应用**统一管理各个子应用的加载、挂载、卸载等生命周期
 	- 加载（bootstrap）
 	- 挂载（mount）
@@ -33,13 +35,13 @@
 ### 2.1. 快照沙箱 (Snapshot Sandbox)
 
 快照沙箱的核心思想是在沙箱`启动时`记录全局状态，在沙箱`关闭时`恢复全局状态。
-- 比如，进入一个新的容器，那么就使用启动，否则关闭
-
+- 比如，==进入一个新的容器，那么就使用启动，否则关闭==
 - 优点：
 	- 实现简单
 - 缺点 
 	- **无法支持多个子应用同时运行**
-	- 性能：快照和恢复操作可能比较耗时
+	- 性能：
+		- 快照和恢复操作可能比较耗时
 
 ```javascript
 class SnapshotSandbox {
@@ -254,6 +256,8 @@ sandbox.run(`
 
 > 无论是 Go 或者其他语言其实都有 JS 沙箱的实现，因为要基于它来做很多其他事情
 
+>  一些低代码平台，为了增强编排的能力等，后端使用了 JS 沙箱，支持更强更灵活的配置编排能力
+
 ### 2.6. 组合沙箱 (Composite Sandbox)
 
 在实际应用中，我们可能需要组合多种沙箱技术来实现更完善的隔离。
@@ -309,12 +313,13 @@ sandbox.inactive();
 
 - 完全隔离，最彻底的方案
 - 浏览器原生支持
-- **弹窗类组件**需要特殊处理
+- **弹窗类组件**需要特殊处理 ❓
+	- 其实不用，正好可以解决弹窗问题呀？
 
 ### 3.2. 动态样式表切换
 
 在**应用切换时动态切换样式表**，
-- 常用于 qiankun 等方案中， 性能开销较大，可能出现样式闪烁
+- 常用于 `qiankun` 等方案中， 性能开销较大，可能出现样式闪烁
 
 ### 3.3. CSS Modules 方案
 
@@ -365,6 +370,7 @@ sandbox.inactive();
 - 支持事件解绑和状态取消订阅
 - 错误处理
 - 支持所有框架（框架无关）
+
 在实际使用中，可以根据需求选择合适的通信方式，并可以进一步扩展功能，如：
 - 添加通信日志
 - 实现通信加密
@@ -380,12 +386,12 @@ sandbox.inactive();
 基座应用，需要做以下事情
 - ① **负责注册子应用**，示例如下
 	- entry 子应用 HTML 的入口去哪儿拿
-	- container：渲染到哪儿
+	- container：==渲染到哪儿==
 	- activeRule：路由匹配规则
 	- ![图片&文件](./files/20241101-32.png)
 - ② **基座里，需要监听全局路由，然后找到匹配子应用，然后加载子应用，再然后卸载或切换等**
 	- fetch 子应用的入口文件 `index.html` ，然后需要**抽取 js , eval** 执行它
-	- 所以，需要处理成兼容的 umd 格式，故需要修改 webpack
+	- 所以，需要==处理成兼容的 umd 格式==，故需要修改 webpack
 	- fetch 所以要求同域
 	- 执行完子应用的脚本后，需要挂载 `#app` 上，但可能会直接覆盖丢主应用；
 		- 所以才会要求子应用有自己的 `container` 属性，这也是为什么建议子应用 name/id 唯一；
@@ -419,7 +425,10 @@ sandbox.inactive();
 
 #### 9.1.1. 常见的启动时机
 
-```javascript
+1. 子应用==加载时==启动沙箱
+2. 子应用==挂载时==启动沙箱
+
+```javascript hl:1,18
 // 1. 子应用加载时启动沙箱
 class MicroApp {
   async loadApp(appConfig) {
@@ -467,7 +476,10 @@ class Sandbox {
 
 #### 9.2.1. 基于路由的隔离：**匹配到路由了，启动**
 
-```javascript hl:6,11
+>   `router.beforeEach` 中检测是否需要启动
+
+
+```javascript hl:6,11,16
 // 路由配置
 const routes = [
   {
@@ -521,6 +533,8 @@ const sandbox = new DomSandbox(subApp);
 sandbox.mount(subAppComponent);
 ```
 
+>  关于 `{ mode: 'closed' }` ，更多参考 [8. Shadow DOM 中的 closed mode 和 open mode](/post/yhU713jl.html)
+
 ### 9.3. 不同类型的沙箱实现
 
 #### 9.3.1. 快照沙箱（适用于单个子应用）
@@ -553,6 +567,10 @@ class SnapshotSandbox {
 ```
 
 #### 9.3.2. 代理沙箱（适用于多个子应用）
+
+如何适用多个子应用的？
+- ==优先==从自己的环境中取值
+- 否则从全局取值
 
 ```javascript
 class ProxySandbox {
@@ -616,9 +634,9 @@ class CompositeSandbox {
 
 ### 9.4. 特殊场景处理
 
-#### 9.4.1. 共享依赖处理
+#### 9.4.1. 共享依赖处理 → 比如共享 React、ReactDom 等全局类库
 
-```javascript
+```javascript hl:15
 class SharedDependencySandbox {
   constructor(shared = {}) {
     this.shared = shared;
@@ -682,7 +700,10 @@ class MessageSandbox {
 
 #### 9.5.1. 性能优化
 
-```javascript
+- 使用 `WeakMap` 存储状态，避免内存泄漏
+- 使用 `requestIdleCallback` 进行初始化
+
+```javascript hl:3,6
 class OptimizedSandbox {
   constructor() {
     // 使用 WeakMap 存储状态，避免内存泄漏
@@ -766,10 +787,10 @@ class LifecycleSandbox {
 
 关键点：
 - 找到要进入的路由对应的应用名
-- 果离开的是子应用，关闭其沙箱
-- 如果进入的是子应用，启动其沙箱
+- 如果果离开的是子应用，==关闭其沙箱==
+- 如果进入的是子应用，==启动其沙箱==
 
-```javascript
+```javascript hl:8,13
 // 路由监听
 router.beforeEach((to, from, next) => {
   // 找到要进入的路由对应的应用名
@@ -793,7 +814,7 @@ router.beforeEach((to, from, next) => {
 
 #### 10.1.1. 简单的沙箱管理类
 
-```javascript
+```javascript hl:8,16
 // 简单的沙箱管理类
 class SandboxManager {
   constructor() {
@@ -875,9 +896,9 @@ class SimpleSandbox {
 
 ```
 
-#### 10.2.1. 当容器进入视口时启动沙箱：IntersectionObserver 为了性能优化
+#### 10.2.1. 当容器进入视口时启动沙箱：`IntersectionObserver` 为了性能优化
 
-```javascript
+```javascript hl:6
 // 初始化子应用
 function initSubApp(appName, containerId) {
   const container = document.getElementById(containerId);
@@ -966,7 +987,7 @@ sandbox.setGlobalVariables(globalVars);
 
 #### 10.4.3. **性能优化**
 
-```javascript
+```javascript hl:4
 // 使用延迟加载
 const sandbox = new Proxy({}, {
   get(target, property) {

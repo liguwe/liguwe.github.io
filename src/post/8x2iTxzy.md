@@ -17,10 +17,10 @@
 ### 1.2. 防范措施
 
 1. 输入过滤：对用户输入进行严格验证
-2. 输出转义：对输出内容进行HTML实体编码
-3. 使用CSP（Content Security Policy）内容安全策略
+2. 输出转义：对输出内容进行 HTML 实体编码
+3. 使用 CSP（Content Security Policy）内容安全策略
 4. 避免使用`eval()`、`innerHTML`等危险函数
-5. 对 Cookie 设置 HttpOnly 属性
+5. 对 Cookie 设置 `HttpOnly` 属性
 
 ## 2. CSRF（跨站请求伪造）
 

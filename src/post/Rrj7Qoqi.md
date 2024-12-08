@@ -8,13 +8,16 @@
  ## 1. 缓存 
 
 - 本地缓存：localStorage、sessionStorage、indexedDB
-- 内存缓存：Memory Cache
+- 内存缓存：
+	- `Memory Cache`
 - Cache API：Service Worker
 - HTTP 缓存
 	- 强缓存：
 		- 控制强制缓存的字段分别是`Expires`和`Cache-Control`，其中 `Cache-Control：max-age=xxx`优先级更高
-		- 浏览器会在`js和图片等文件`解析执行后直接存入`内存缓存`中，即 `from Memory Cache`
-		- css文件：每次渲染页面都需要从硬盘读取缓存，即 from disk cache
+		- 浏览器会在`js和图片等文件`解析执行后直接存入`内存缓存`中，
+			- 即 `from Memory Cache`
+		- ==css文件==：每次渲染页面都需要从硬盘读取缓存，
+			- 即 `from disk cache`
 	- 协商缓存：
 		- 即 问一问服务器本地资源可以用吗
 			- 200 更新了
@@ -23,6 +26,9 @@
 	- Push Cache ： HTTP2 支持，访问 index.html ，同时推送必要css 和 js 等
 		- ![图片&文件](./files/20241025-15.png)
 
+
+- 内存缓存
+- 磁盘缓存
 ## 2. 客户端请求
 
 - 避免过多多余重重定向
@@ -33,7 +39,7 @@
 
 - 流响应
 - 前端聚合与后端聚合：
-	- nodejs 局域网内聚合后端多个服务肯定快于前端聚合，另外注意**首屏数据就绪就好**
+	- nodejs ==局域网内聚合后端多个服务==肯定快于前端聚合，另外注意**首屏数据就绪就好**
 - Nodejs
 	- 能并行的并行，少串行：async await 
 	- 守护进程（pm2/supervisor）又将进程重启，频繁重启肯定会导致接口变量

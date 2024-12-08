@@ -174,7 +174,7 @@ console.log(ast);
 
 ### 6.2. @babel/traverse
 
-这个 API 用于遍历和修改 AST。
+这个 API 用于遍历和修改 AST
 
 ```javascript
 const parser = require('@babel/parser');

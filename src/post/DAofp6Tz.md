@@ -2,7 +2,7 @@
 # X-XSS-Protection 头部、 Subresource Integrity (SRI)
 
 
-`#前端安全`  `#R1` 
+`#前端安全`  
 
 
 ## 目录

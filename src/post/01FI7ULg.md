@@ -321,6 +321,8 @@ app.post('/api/order', (req, res) => {
 
 ### 12.2. 越权操作
 
+>  比如 `companyId` 为 0,1,2，我暴力遍历之
+
 ```javascript
 // 不安全的数据访问
 app.get('/api/company/:companyId/employees', (req, res) => {
@@ -479,4 +481,3 @@ function auditLog(req, res, next) {
 9. 配置适当的CORS策略
 10. 使用HTTPS传输
 
-这些安全问题都需要在开发初期就考虑并设计相应的防护措施，同时需要定期审查和更新安全策略。

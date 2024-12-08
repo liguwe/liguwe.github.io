@@ -1,7 +1,7 @@
 
 # 内容安全策略（Content Security Policy，简称 CSP）
 
-`#前端安全` `#R1` 
+`#前端安全` 
 
 
 ## 目录

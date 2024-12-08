@@ -14,7 +14,7 @@
 - `Pre-cache` **预缓存**其他资源
 - `Lazy load` **懒加载**其他路由和非关键资源
 
-它对做性能优化有指导意义
+>  它对做性能优化有指导意义
 
 ## 2. 端侧做性能优化时的注意点
 
@@ -256,8 +256,6 @@ class BundleMonitor {
 }
 ```
 
-这些就是 RN 拆包的主要原理和实现方式。好的拆包策略可以显著提升应用性能和用户体验，但需要根据具体项目特点来制定合适的拆包方案。同时要注意维护成本和版本管理的问题。
-
 ## 6. CRN (Ctrip React Native) 方案
 
 携程 React-native CRB 方案：
@@ -280,7 +278,7 @@ CRN Framework (统一接口层)
 ### 6.2. 核心特性
 
 - 统一组件体系
-- 自研离线包方案
+- 自研==离线包方案==
 - 动态化能力
 - 多业务隔离
 
@@ -296,7 +294,7 @@ CRN Framework (统一接口层)
 
 ### 6.4. 工程能力
 
-- 统一构建系统
+- 统一==构建系统==
 - 版本管理
 - 灰度发布
 - 监控体系
@@ -336,4 +334,75 @@ class BusinessContainer {
 ![图片&文件](./files/20241028-12.png)
 
 > 端侧性能优化一个思路是，直接基于 js 渲染引擎做定制
+
+## 8. 对比一下 V8 和 JavaScriptCore (JSCore) 这两个主流的 JavaScript 引擎：
+
+>  另外可参考 [12. JavaScript 引擎](/post/v2NdaNQX.html)
+
+### 8.1. 基本背景
+
+**V8:**
+- 由 Google 开发
+- 用于 Chrome 浏览器和 Node.js
+- 使用 C++ 编写
+
+**JavaScriptCore:**
+- 由 Apple 开发
+- 用于 Safari 浏览器和 WebKit
+- 也被用于 React Native
+
+### 8.2. 主要区别
+
+#### 8.2.1. 架构差异
+
+1. **编译策略**
+   - V8: 使用 JIT (Just-In-Time) 编译，包含 TurboFan 优化编译器
+   - JSCore: 使用多层编译策略，包括解释器（LLInt）、基线 JIT 和 DFG JIT
+
+2. **内存管理**
+   - V8: 使用分代垃圾回收
+   - JSCore: 使用垃圾回收和引用计数的混合系统
+
+#### 8.2.2. 性能特点
+
+1. **启动时间**
+   - JSCore: 优先考虑更快的启动时间
+   - V8: 优先考虑执行速度
+
+2. **运行性能**
+   - V8: 长期运行的应用程序性能更好
+   - JSCore: 在短期运行的脚本上表现更好
+
+1. **内存占用**
+   - JSCore: 
+      - 通常内存占用较小
+   - V8: 
+      - 为了优化执行速度，可能占用更多内存
+
+### 8.3. 使用场景
+
+**V8 适合：**
+- 服务器端应用 (Node.js)
+- 长期运行的应用
+- 计算密集型任务
+
+**JSCore 适合：**
+- 移动端应用
+- 需要快速启动的应用
+- 内存受限的环境 
+
+### 8.4. 实际应用
+
+1. **Web 开发**
+   - Chrome/Node.js 使用 V8
+   - Safari 使用 `JSCore`
+   - React Native 在 iOS 上使用 `JSCore`
+
+2. **移动开发**
+   - React Native iOS: `JSCore`
+   - Chrome Android: V8
+
+1. **服务器端**
+   - Node.js: V8
+   - Bun: JSCore 
 

@@ -51,7 +51,7 @@ const vdom = {
 
 ```
 
-> 可能还需要添加一个字段，`action`
+> 很重要的一个类型： `type=action`
 
 ### 1.2. 再看看一段 React Vdom 示例
 
@@ -158,7 +158,7 @@ function App() {
 
 ```
 
-> 是 body 不是上面 vdom 的 `children`  
+> 是 `body` 不是上面 vdom 的 `children`  
 
 #### 1.3.2. schema.ts 结构设计
 
@@ -400,11 +400,11 @@ export interface Action extends Button {
 
 ### 2.4. 渲染流程
 
-| 阶段 | AMIS JSON | Vue3 VNode | React JSX VDom |
-|------|-----------|------------|----------------|
-| **解析** | JSON 解析器 | 模板编译 | JSX 转换 |
-| **更新** | 数据驱动 | 响应式系统 | 虚拟 DOM diff |
-| **渲染** | 渲染引擎 | render 函数 | render 方法 |
+| 阶段     | AMIS JSON | Vue3 VNode | React JSX VDom |     |
+| ------ | --------- | ---------- | -------------- | --- |
+| **解析** | JSON 解析器  | 模板编译       | JSX 转换         |     |
+| **更新** | 数据驱动      | 响应式系统      | 虚拟 DOM diff    |     |
+| **渲染** | 渲染引擎      | render 函数  | render 方法      |     |
 
 ### 2.5. 数据绑定示例
 
@@ -514,7 +514,7 @@ show && {
 ## 3. Amis 基本概念&名词解释
 
 - 完全通过 `JSON 树` 配置出页面、应用
-	- 有一个组件就叫做 APP，有个字段 `pages` 来承载所有页面
+	- 有一个组件就叫做 `APP`，有个字段 `pages` 来承载所有页面
 - 数据与数据域
 	- 首先会先尝试在当前组件的数据域中寻找变量，当成功找到变量时，通过数据映射完成渲染，停止寻找过程；
 	- 当在当前数据域中没有找到变量时，则向上寻找，在父组件的数据域中，重复步骤`1`和`2`；
@@ -1095,7 +1095,7 @@ registerAction('my-action', new MyAction());
 ```
 
 - 嵌套循环，
-	- 注意配置 `childrend`
+	- 注意配置 `children`
 - 通过配置`actionType: 'loop'`和`actionType: 'break'`实现循环跳出。
 - 通过配置`actionType: 'loop'`和`actionType: 'continue'`实现循环跳过。
 - 通过配置`actionType: 'switch'`实现排他逻辑。
@@ -1114,9 +1114,6 @@ registerAction('my-action', new MyAction());
 ![图片&文件](./files/20241107-8.png)
 
 >  events → click → `actions:[] （可编排）` 
-
-
-
 
 2、部分动作产生的数据如何流动需要**交互设计者进行介入**，对于数据流动可以通过数据映射，将上一个动作产生的数据作为动作参数写入下一个动作。
 

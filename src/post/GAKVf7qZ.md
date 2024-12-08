@@ -1,7 +1,7 @@
 
 # 微前端原理（篇三：乾坤）
 
-`#微前端` `#R1` 
+`#微前端` 
 
 
 ## 目录
@@ -10,7 +10,7 @@
 
 乾坤基于 single-spa 封装，实现了以下核心功能：
 
-```javascript hl:7
+```javascript hl:7,5
 // 主应用注册微应用
 registerMicroApps([
   {
@@ -35,6 +35,10 @@ start();
 ## 2. 应用加载机制（HTML Entry）
 
 乾坤使用 HTML Entry 方式加载应用，主要步骤：
+- 获取 HTML 内容
+- 解析 HTML，提取资源
+- 加载外部脚本和样式
+- 渲染应用
 
 ```javascript hl:10
 async function loadApp(app) {

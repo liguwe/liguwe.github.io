@@ -1,7 +1,7 @@
 
 # 前端工程化 SOP
 
-`#前端工程化`  `#R1` 
+`#前端工程化`  
 
 
 ## 目录
@@ -316,7 +316,7 @@ npm run deploy
 		  - [ ] 代码风格符合规范
 		  - [ ] 命名是否合理
 		  - [ ] 是否有重复代码
-		  - [ ] TypeScript类型完整性
+		  - [ ] TypeScript 类型完整性
 	    - [ ]  单元测试覆盖率
 	    - [ ]  代码复杂度检查
 	    - [ ]  性能指标达标
@@ -325,8 +325,8 @@ npm run deploy
 		  - [ ] 资源使用是否合理
 	  - 安全性
 		  - [ ] 依赖包安全审查
-		  - [ ] XSS防护
-		  - [ ] CSRF防护
+		  - [ ] XSS 防护
+		  - [ ] CSRF 防护
 		  - [ ] 是否有安全漏洞
 		  - [ ] 敏感信息是否加密
 	  - 可维护性
@@ -363,7 +363,7 @@ npm run deploy
 1. **开发工具**
     - VS Code + 插件配置
     - Chrome DevTools
-    - Postman/Insomnia
+    - Postman /  Insomnia
 2. **自动化工具**
     - CI/CD：Jenkins/GitHub Actions
     - 自动化测试：Jest/Cypress

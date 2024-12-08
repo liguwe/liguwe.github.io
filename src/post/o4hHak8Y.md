@@ -1,7 +1,7 @@
 
 # 前端资产
 
-`#前端工程化` `#R1` 
+`#前端工程化` 
 
 
 ## 目录
@@ -220,6 +220,7 @@ devTools:
 ```
 
 > cubesonar 
+
 ### 3.3. CI/CD 配置
 
 ````artifact
@@ -334,11 +335,9 @@ interface BusinessFlow {
 
 ### 5.1. 测试资产
 
-````artifact
-id: test-assets
-name: 测试资产体系
-type: code.typescript
-content: |-
+>   mock 数据也是一种资产，之前做产品体验平台还是使用过这个 mock 资产
+
+````typescript
   // 1. 测试用例库
   @company/test-cases
   ├── unit/
@@ -453,7 +452,7 @@ module.exports = {
 ### 6.2. 安全工具
 
 - 代码扫描工具
-- 漏洞扫描工具
+- ==漏洞扫描工具==
 - 依赖检查工具
 - 代码安全审计工具
 - 安全测试套件
@@ -462,11 +461,8 @@ module.exports = {
 
 ## 7. 设计资产
 
-````artifact
-id: design-system
-name: 设计系统结构
-type: markdown
-content: |-
+````markdown
+
   # 设计系统
 
   ## 基础
@@ -531,9 +527,9 @@ const analytics = {
 - 代码审查流程
 - 测试流程
 - 发布流程
-- 事故处理流程
+- ==事故处理流程==
 
-### 9.3. 项目管理模板
+### 9.3. 项目管理==模板==
 
 ```markdown
 # 项目模板库

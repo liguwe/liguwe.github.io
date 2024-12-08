@@ -304,7 +304,7 @@ function logSuspiciousActivity() {
 	- 测试防御措施的有效性
 	- 更新安全策略
 
-点击劫持（Clickjacking）的危害非常广泛，让我详细分析：
+
 
 ## 5. 示例
 

@@ -198,6 +198,8 @@
 
     - [WebAssembly (Wasm) 及其应用场景](post/Ug5FEab2.md)
 
+    - [Shadow DOM 中的 closed mode 和 open mode](post/yhU713jl.md)
+
     - [堆叠上下文 与 z-index 的关系](post/EMLLYket.md)
 
     - [浏览器的渲染原理](post/MLGEykBV.md)
@@ -640,15 +642,6 @@
     - [关于 HTTP 请求中 Cookie 的行为](post/xuYghoaA.md)
 
     - [常见的高危Web安全漏洞](post/01FI7ULg.md)
-
-  - [前端 CI&CD](post/iM2DLe6N.md)
-
-
-    - [开源的 git 管理工具都有哪些？](post/CswZ8J5W.md)
-
-    - [DevOps 开源项目](post/qF48Jei1.md)
-
-    - [前端基础建设工作：CI&CD](post/kXXztHge.md)
 
 # 第三部分 算法
 
