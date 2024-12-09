@@ -4,7 +4,6 @@
 
 `#lowcode` 
 
-
 >  电子版地址：[https://developer.aliyun.com/ebook/7507](https://developer.aliyun.com/ebook/7507?source=5176.11533457&userCode=b3pdrgck)
 
 
@@ -49,7 +48,7 @@
 - 资产包协议
 	- 某个包，某个组件
 	- 最终的产物会变成 remote 打包到 CDN
-		- 有对应的 CSS、JS ，类似于 unpkg
+		- 有对应的 CSS、JS ，类似于 `unpkg`
 			- https://unpkg.com/@alilc/lowcode-materials@1.0.0/dist/AliAliLowcodeMaterials
 			- https://unpkg.com/@alilc/lowcode-materials@1.0.0/dist/AliAliLowcodeMaterials
 - 源码组件：
@@ -89,7 +88,7 @@
 
 ### 8.2. 预编译方案
 
-- icejs 出码:基于 React + Ice.js 框架的方案，适用于 PC 端中后台场景。
+- icejs 出码:基于 `React + Ice.js` 框架的方案，适用于 PC 端中后台场景。
 - rax 出码:基于 Rax 框架的方案，适用于移动端和小程序场景。
 - 或者基于 `create-vue` 的方法
 

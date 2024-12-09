@@ -1,12 +1,14 @@
 
 # 基于 Vue3 的事件系统和事件编排逻辑，参考 AMIS 的实现思路 @823
 
+`#lowcode` 
+
 
 ## 目录
 <!-- toc -->
  ## 1. 事件系统核心设计 
 
-### 1.1 事件定义接口
+### 1.1. 事件定义接口
 
 ```typescript
 // 事件类型定义
@@ -40,7 +42,7 @@ interface ActionConfig {
 }
 ```
 
-### 1.2 事件管理器实现：registerAction
+### 1.2. 事件管理器实现：registerAction
 
 ```typescript hl:17,25,43
 // 事件管理器
@@ -138,7 +140,7 @@ export class EventManager {
 }
 ```
 
-### 1.3 表达式引擎实现
+### 1.3. 表达式引擎实现
 
 ```typescript
 // 表达式引擎
@@ -173,7 +175,7 @@ export class ExpressionEngine {
 
 ## 2. 组件集成实现
 
-### 2.1 事件混入
+### 2.1. 事件混入
 
 ```typescript hl:30
 // 事件混入
@@ -218,7 +220,7 @@ export function useEvents() {
 }
 ```
 
-### 2.2 可视化组件示例
+### 2.2. 可视化组件示例
 
 ```vue
 <!-- EventEditor.vue -->
@@ -315,9 +317,9 @@ const getActionEditor = (actionType: string) => {
 
 ## 3. 使用示例
 
-### 3.1 JSON 配置示例
+### 3.1. JSON 配置示例
 
-```json
+```json hl:33
 {
   "type": "page",
   "body": [
@@ -369,7 +371,7 @@ const getActionEditor = (actionType: string) => {
 }
 ```
 
-### 3.2 组件中使用
+### 3.2. 组件中使用
 
 ```vue
 <!-- CustomButton.vue -->

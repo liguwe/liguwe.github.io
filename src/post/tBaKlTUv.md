@@ -70,6 +70,7 @@
 ```
 
 -  `type = free`
+	- 模块联邦的方式嵌入
 
 ### 2.3. props
 
@@ -100,7 +101,7 @@ onMount: (dom, data, onChange, props) => {
 };
 ```
 
-或者执行 `props.env.notify('success', '执行成功')` 来在右上角弹出提示等
+> 或者执行 `props.env.notify('success', '执行成功')` 来在右上角弹出提示等
 
 ### 2.4. onUpdate
 
@@ -222,6 +223,9 @@ export interface IScopedContext {
 - `env.notify` toast 某个消息 
 	- 如： `this.props.env.notify("error", "出错了")`
 - `env.jumpTo` 页面跳转。
+
+>  这些很多公用方法也可以封装 pinia 里面了
+
 
 ## 4. amis 内置了调试工具
 
