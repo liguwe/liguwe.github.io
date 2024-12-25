@@ -13,11 +13,11 @@
 
 ### 1.1. 解释 ①：RPA 
 
-![图片](https://blog-1310531898.cos.ap-beijing.myqcloud.com/832-34-20241012/Pasted%20image%2020240825205021.png)
+![图片|712](https://blog-1310531898.cos.ap-beijing.myqcloud.com/832-34-20241012/Pasted%20image%2020240825205021.png)
 
 #### 1.1.1. 关键技术
 
-![图片](https://blog-1310531898.cos.ap-beijing.myqcloud.com/832-34-20241012/Pasted%20image%2020240825205210.png)
+![图片|696](https://blog-1310531898.cos.ap-beijing.myqcloud.com/832-34-20241012/Pasted%20image%2020240825205210.png)
 
 ### 1.2. 解释 ② ： RAG
 
@@ -116,11 +116,11 @@ RAG技术通过结合检索和生成，提供了一种强大的方法来提升�
 
 ## 2. Agent 与其他模块的关系图
 
-![图片](https://blog-1310531898.cos.ap-beijing.myqcloud.com/832-34-20241012/Pasted%20image%2020240825211647.png)
+![图片|944](https://blog-1310531898.cos.ap-beijing.myqcloud.com/832-34-20241012/Pasted%20image%2020240825211647.png)
 
 ### 2.1. 更多 bot（agent）协同关系图
 
-![图片](https://blog-1310531898.cos.ap-beijing.myqcloud.com/832-34-20241012/Pasted%20image%2020240825211817.png)
+![图片|872](https://blog-1310531898.cos.ap-beijing.myqcloud.com/832-34-20241012/Pasted%20image%2020240825211817.png)
 
 如上图，这就形成了上文中（[#解释 ③：Agent 套娃](/post/U5tfNeeS.html#解释-③Agent-套娃)）的**套娃**
 

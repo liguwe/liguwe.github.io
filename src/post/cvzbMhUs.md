@@ -691,7 +691,7 @@ show && {
 ### 4.5. 请求 ajax
 
 - ` "expression": "${event.data.responseResult.responseStatus === 0}"` 仅在这个条件才显示 toast 
-- 当配置`silent: true`时，请求完成后不会弹出提示信息。
+- 当配置`silent: true`时，请求完成后不会弹出提示信息
 - 点击按钮，校验表单：
 	- 通过` "${event.data.validateResult.payload.name}"` 来校验
 
@@ -762,7 +762,8 @@ show && {
 ### 4.6. 弹窗
 
 - 通过配置`actionType: 'dialog'`实现 Dialog 弹窗
-- 通过配置`actionType: 'closeDialog'`实现关闭当前弹窗；附加配置`componentId`可以实现关闭指定弹窗。
+- 通过配置`actionType: 'closeDialog'`实现关闭当前弹窗；
+- 附加配置`componentId`可以实现关闭指定弹窗。
 
 `button->onEnvent->click->actions->actionType`
 
@@ -884,11 +885,11 @@ show && {
 
 ### 4.13. 自定义 JS
 
-- 通过配置`actionType: 'custom'`实现自定义 JS。
+- 通过配置`actionType: 'custom'`实现自定义 JS
 	- JS 中可以访问以下对象和方法：
 - context，渲染器上下文
 - doAction() 动作执行方法，用于调用任何 `actionType` 指定的动作
-- event，事件对象，可以调用 setData()、stopPropagation()、preventDefault()分别实现事件上下文设置、动作干预、事件干预，可以通过 event.data 获取事件上下文
+- event，事件对象，可以调用 setData()、stopPropagation()、preventDefault() 分别实现事件上下文设置、动作干预、事件干预，可以通过 event.data 获取事件上下文
 
 自定义函数签名： `script:(context,doAction,event)=>{}`
 
@@ -1005,7 +1006,8 @@ let result = await (scriptFunc as any)?.call(
 
 ### 4.15. 注册自定义动作：`RendererAction` 中注册
 
-除了以上内置动作，你还可以注册自己的动作。通过对`RendererAction`的`run`方法的实现可以定制自己的动作逻辑，最后通过`registerAction`注册到 amis 事件动作中。
+除了以上内置动作，你还可以注册自己的动作。
+- 通过对`RendererAction`的`run`方法的实现可以定制自己的动作逻辑，最后通过`registerAction`注册到 amis 事件动作中。
 
 ```javascript
 import {
@@ -1052,8 +1054,8 @@ registerAction('my-action', new MyAction());
 
 #### 4.17.1. 条件与循环
 
-- 通过配置`expression: 表达式或ConditionBuilder组合条件`来实现条件逻辑。
-- 通过配置`actionType: 'loop'`实现循环逻辑。
+- 通过配置`expression: 表达式或ConditionBuilder组合条件`来实现条件逻辑
+- 通过配置`actionType: 'loop'`实现循环逻辑
 
 ```json
 {
@@ -1101,7 +1103,7 @@ registerAction('my-action', new MyAction());
 - 通过配置`actionType: 'switch'`实现排他逻辑。
 - 通过配置`actionType: 'parallel'`实现并行执逻辑。
 	- children `子动作`
-	- 比如 同时发送两个ajax请求，并显示请求返回
+	- 比如同时发送两个 ajax 请求，并显示请求返回
 
 > 所以本质是一棵树，里面有 `children` 等属性，但要注意的是，action 上下文数据是有连贯性的
 
@@ -1115,14 +1117,14 @@ registerAction('my-action', new MyAction());
 
 >  events → click → `actions:[] （可编排）` 
 
-2、部分动作产生的数据如何流动需要**交互设计者进行介入**，对于数据流动可以通过数据映射，将上一个动作产生的数据作为动作参数写入下一个动作。
+2、部分动作产生的数据如何流动需要**交互设计者进行介入**，对于数据流动可以通过数据映射，将上一个动作产生的数据作为动作参数写入下一个动作
 
-3、可以通过表达式函数`GETRENDERERDATA(id, path)`和`GETRENDERERPROP(id, path)`分别获取指定组件的数据和属性。
+3、可以通过表达式函数`GETRENDERERDATA(id, path)`和`GETRENDERERPROP(id, path)`分别获取指定组件的数据和属性
 
-|参数名|说明|
-|---|---|
-|id|组件 ID，即组件的 id 属性的值|
-|path|数据路径，即数据变量的路径|
+| 参数名  | 说明                 |
+| ---- | ------------------ |
+| id   | 组件 ID，即组件的 id 属性的值 |
+| path | 数据路径，即数据变量的路径      |
 
 ![图片&文件](./files/20241107-9.png)
 
@@ -1130,7 +1132,8 @@ registerAction('my-action', new MyAction());
 
 ### 4.19. 干预动作执行
 
-事件动作干预是指执行完当前动作后，干预所监听事件默认处理逻辑和后续其他动作的执行。通过`preventDefault`、`stopPropagation`分别阻止监听事件默认行为和停止下一个动作执行。
+事件动作干预是指执行完当前动作后，干预所监听事件默认处理逻辑和后续其他动作的执行。
+- 通过`preventDefault`、`stopPropagation`分别阻止监听事件默认行为和停止下一个动作执行。
 
 #### 4.19.1. 阻止默认行为
 
@@ -1198,7 +1201,6 @@ registerAction('my-action', new MyAction());
     }
   ]
 }
-
 ```
 
 或者通过表达式

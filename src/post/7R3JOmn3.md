@@ -16,7 +16,7 @@
 ## 2. LangChain 的整体架构图
 
 
-![图片](https://blog-1310531898.cos.ap-beijing.myqcloud.com/832-34-20241012/Pasted%20image%2020240908213145.png)
+![图片|1040](https://blog-1310531898.cos.ap-beijing.myqcloud.com/832-34-20241012/Pasted%20image%2020240908213145.png)
 
 ## 3. 核心模块和工具简介
 

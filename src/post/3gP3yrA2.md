@@ -82,6 +82,7 @@
 ### 2.3. 传统提速方案：`externals`
 
 - `externals`：用于标记不用打包的库模块，如`JQuery、react-dom`等。可以直接通过script的方式加载
+	- `externals` 配置选项提供了「从输出的 bundle 中排除依赖」的方法。相当于说："==这些依赖项不需要打包，运行时从外部获取这些依赖=="。
 
 ![图片&文件](./files/20241101-54.png)
 
@@ -103,7 +104,7 @@
 
 ### 2.6. 传统生产优化思路
 
-#### 2.6.1. 1、webpack构建中tree shaking
+#### 2.6.1. webpack构建中tree shaking
 
 ![图片&文件](./files/20241101-59.png)
 

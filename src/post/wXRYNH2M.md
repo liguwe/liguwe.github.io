@@ -225,7 +225,7 @@ export const eventManager = new EventManager();
 
 ## 7. 示例：基础页面配置
 
->  需要考虑如何和数据模块结合，options 的来源如何获取
+>  需要考虑如何和数据模块结合，`options` 的来源如何获取
 
 ```typescript hl:27
 // 页面配置示例
@@ -268,7 +268,7 @@ const schema = {
 
 ## 8. 示例：组件注册示例
 
-```typescript
+```tsx
 // components/Form.vue
 import { defineComponent } from 'vue';
 
