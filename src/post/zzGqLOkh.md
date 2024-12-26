@@ -1,3 +1,9 @@
+
+# 二叉树的所有路径
+
+`#leetcode` 
+
+```javascript
 var binaryTreePaths = function (root) {
   let res = [];
 
@@ -26,3 +32,5 @@ var binaryTreePaths = function (root) {
     return item.join("->");
   });
 };
+
+```

@@ -37,13 +37,13 @@
   - [Web 技术概述篇](post/Egcuu3Gl.md)
 
 
-    - [什么是互联网？](post/g3Ojrffu.md)
+    - [互联网](post/OSspbcOk.md)
 
     - [万维网（World Wide Web）](post/9UpMS8xz.md)
 
-    - [什么是 Web 应用（Web Application）？](post/65SYHnFf.md)
+    - [Web 应用（Web Application）](post/NQvdNTqc.md)
 
-    - [前端技术关键词列举](post/KQqTySfX.md)
+    - [前端技术关键词](post/Zz9LY30E.md)
 
     - [现代 Web 技术有哪些变化和趋势？](post/qrEGCawg.md)
 
@@ -983,6 +983,8 @@
     - [除自身以外数组的乘积](post/WaUzeAfa.md)
 
     - [滑动窗口最大值](post/f0Vi9O7j.md)
+
+    - [二叉树的所有路径](post/zzGqLOkh.md)
 
     - [H 指数](post/LVuJxrc5.md)
 
