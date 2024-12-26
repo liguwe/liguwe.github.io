@@ -43,13 +43,13 @@
 
     - [Web 应用（Web Application）](post/NQvdNTqc.md)
 
-    - [前端技术关键词](post/Zz9LY30E.md)
+    - [前端相关的技术点](post/R4cZUmmJ.md)
 
-    - [现代 Web 技术有哪些变化和趋势？](post/qrEGCawg.md)
+    - [现代 Web 技术现状](post/MeuJKqMc.md)
 
     - [Web 技术概述](post/FqbwTpiV.md)
 
-    - [Web 技术新兴技术和标准](post/BDo4taJm.md)
+    - [Web 新兴技术](post/h04lgIdB.md)
 
   - [HTML 篇](post/gL5JSPSV.md)
 
@@ -68,50 +68,50 @@
 
     - [HTML 标准规范](post/zYsMKVYW.md)
 
-    - [什么是响应式图片](post/toQ4H8vV.md)
+    - [响应式图片](post/o9VWkhSv.md)
 
     - [HTML 模板语言](post/RpbiIboJ.md)
 
   - [CSS 篇](post/Cm3vzDMF.md)
 
 
-    - [CSS 是什么？](post/gv2Ofpl6.md)
+    - [CSS 简介](post/TMDSil0i.md)
 
     - [媒体查询](post/VaDHL25B.md)
 
-    - [CSS 兼容性相关的知识点](post/ksr6BFRe.md)
+    - [CSS 兼容性相关](post/wvgr9Dc5.md)
 
     - [回流和重绘](post/iL9ISsR4.md)
 
-    - [CSS  开启 GPU 硬件加速的原理](post/gql6yds5.md)
+    - [开启 GPU 硬件加速的原理](post/heukRIVH.md)
 
     - [盒模型](post/F8beBjme.md)
 
     - [BFC 与外边距重叠](post/Z9eKY6fd.md)
 
-    - [CSS 布局都有了哪些？](post/T7mrnPlh.md)
+    - [CSS 布局都有哪些](post/FVcKac0j.md)
 
-    - [CSS 定位或布局相关的参考坐标系都有哪些？](post/sJ7AKipP.md)
+    - [CSS 定位或布局相关的参考坐标系](post/o8wLmV3P.md)
 
-    - [CSS 定位都有哪些？](post/co99GTiB.md)
+    - [CSS 定位](post/jv2k0TJK.md)
 
-    - [CSS 滚动自动吸附效果与吸顶效果的区别？](post/ZcufvdCS.md)
+    - [滚动自动吸附效果与吸顶效果](post/ugKr8PgZ.md)
 
-    - [如何使用 CSS 变量？](post/DjEvwSna.md)
+    - [CSS 变量](post/4jEqoAZO.md)
 
-    - [CSS 的计算属性都有哪些？](post/Tc8IQryu.md)
+    - [CSS 的计算属性](post/x1l4aan5.md)
 
-    - [CSS 处理器都有哪些？](post/sJ00lGU8.md)
+    - [CSS 处理器](post/jI5Py5YO.md)
 
     - [CSS 选择器的优先级](post/Acgwuful.md)
 
     - [CSS Houdini API](post/k5hx7183.md)
 
-    - [Tailland CSS 的使用](post/PqcLmbZz.md)
+    - [Tailland CSS](post/gwGe3XcG.md)
 
-    - [CSS 性能优化有哪些思路？](post/IEyx0Cuk.md)
+    - [CSS 性能优化思路](post/eND72oWN.md)
 
-    - [rem 和 vw、vh 方案对比](post/lnn3GQEA.md)
+    - [rem 和 vw、vh](post/JRfZKCCO.md)
 
   - [JavaScript 篇](post/MApTMxad.md)
 

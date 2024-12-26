@@ -2,7 +2,7 @@
 # Web 技术概述
 
 
-`#前端` `#R2`
+`#前端` 
 
 `Web 技术`是用于创建和维护 Web 应用、网站和 Web 服务的一组技术和标准
 
@@ -49,7 +49,7 @@
 	- 等
 2. **数据库**：
 	- **关系型数据库**：如 MySQL、PostgreSQL，使用 SQL 进行数据查询和操作。
-	- **NoSQL 数据库**：如 MongoDB、Cassandra，适用于处理大规模和非结构化数据。
+	- **NoSQL 数据库**：如 MongoDB、Cassandra，适用于处理大规模和==非结构化数据==。
 3. **Web 框架**：
 	- 提供结构化的开发环境和工具，简化 Web 应用的开发过程。
 	- 常见的框架如 Express (Node.js)、Django (Python)、Rails (Ruby)。
@@ -78,6 +78,8 @@
 4. **GraphQL**：
 	- 由 Facebook 开发的一种查询语言，用于 API 数据查询。
 	- 允许客户端指定所需的数据结构，减少冗余数据传输。
+- RPC 
+- SSE 
 
 ## 4. 开发工具套件和环境
 
@@ -85,9 +87,13 @@
 	- **Git**：用于跟踪代码变更和协作开发的版本控制系统。
 	- **GitHub/GitLab**：基于 Git 的代码托管平台，提供协作和项目管理工具。
 2. **集成开发环境（IDE）和代码编辑器**：
-	- **WebStorm**：专为 Web 开发设计的 IDE，提供强大的代码编辑和调试功能。
-	- **Visual Studio Code**：流行的代码编辑器，支持多种编程语言和扩展。
+	- **WebStorm**：
+		- 专为 Web 开发设计的 IDE，提供强大的代码编辑和调试功能。
+	- **Visual Studio Code**：
+		- 流行的代码编辑器，支持多种编程语言和扩展。
 3. **构建工具和包管理器**：
-	- **Webpack**：用于打包 JavaScript 模块和资源的构建工具。
-	- **npm/yarn/pnpm**：JavaScript 包管理器，用于管理项目依赖。
+	- **Webpack**：
+		- 用于打包 JavaScript 模块和资源的构建工具。
+	- **npm/yarn/pnpm**：
+		- JavaScript 包管理器，用于管理项目依赖。
 

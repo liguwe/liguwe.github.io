@@ -1,21 +1,21 @@
 
 # 媒体查询
 
-`#2024/07/30` `#前端/CSS`  
+`#前端/CSS`  
 
 常见的媒体查询语句如下
 
 - min-width
 - max-width
-- orientation
-- @container
+- `orientation`
+- `@container`
 
 
 ## 目录
 <!-- toc -->
  ## 1. `Container` Queries  
 
-- **描述**：允许**根据容器的尺寸**而不是视口尺寸来应用样式。
+- **描述**：允许**根据容器的尺寸**而==不是视口尺寸==来应用样式。
 - **特点**：**更灵活的响应式设计，更灵活的媒体查询**
 - **示例**：
 
@@ -221,7 +221,7 @@
 
 ## 11. **最佳实践**
 
-```css
+```css hl:1
 /* 使用 em/rem 单位进行响应式设计 */
 @media (min-width: 48em) { /* 768px/16px = 48em */
     .container {

@@ -2,12 +2,12 @@
 # HTML 技术关键词
 
 
-`#前端` `#HTML`  `#R2`  
+`#前端` `#HTML` `#R2`  
 
 
 ## 目录
 <!-- toc -->
- ## 1. 列举一些HTML 技术关键词 
+ ## 1. HTML 技术 
 
 1. 语义化标签：如header, nav, main, article, section, aside, footer等
 2. 表单元素：input, select, textarea, button等
@@ -34,14 +34,14 @@
 22. 字符编码：使用UTF-8
 23. DOCTYPE声明：
 24. 语言声明：lang属性
-25. 链接关系：rel 属性，如 stylesheet ,  icon 等
+25. 链接关系：rel 属性，如 stylesheet , icon 等
 26. 跨域资源共享（CORS）：通过 HTTP头部控制
 27. 内容可编辑：contenteditable 属性
 28. 自动完成：autocomplete 属性
 29. 页面可见性API：用于检测页面是否可见
 30. 历史API：用于操作浏览历史
 
-## 2. 列举一些HTML 技术关键词
+## 2. HTMl 技术
 
 ### 2.1. 基础知识
 
@@ -92,9 +92,9 @@
 ### 2.3. 表单和输入类型
 
 - `<input>` 类型:
-	-  `text, password, email, url, number, date, time, checkbox, radio, file, submit, reset, button, hidden, color, range, search, tel
+	- `text, password, email, url, number, date, time, checkbox, radio, file, submit, reset, button, hidden, color, range, search, tel
 - **表单验证属性**:
-	-  `required, pattern, min, max, minlength, maxlength, step`
+	- `required, pattern, min, max, minlength, maxlength, step`
 
 ### 2.4. 多媒体标签
 
@@ -116,37 +116,37 @@
 - `<meta name="viewport">`: 
 	- 定义视口属性
 - **媒体查询 (Media Queries)**:
-	-  用于响应式设计的CSS技术
+	- 用于响应式设计的CSS技术
 
 ### 2.7. 本地存储
 
 - **localStorage**:
-	-  本地存储数据
+	- 本地存储数据
 - **sessionStorage**: 
 	- 会话存储数据
 
 ### 2.8. Web Components
 
 - **自定义元素 (Custom Elements)**:
-	-  创建==自定义 HTML 标签==
+	- 创建==自定义 HTML 标签==
 - **Shadow DOM**:
-	-  隐藏DOM树
+	- 隐藏DOM树
 - **HTML模板 (HTML Templates)**:
-	-  定义可重用的HTML片段
+	- 定义可重用的HTML片段
 
 ### 2.9. 语义化和可访问性
 
 - **语义化标签**: 
 	- `<header>`, `<footer>`, `<nav>`, `<main>`, `<section>`, `<article>`, `<aside>`
 - **ARIA (Accessible Rich Internet Applications)**:
-	-  增强可访问性的属性
+	- 增强可访问性的属性
 
 ### 2.10. 安全和性能
 
 - **内容安全策略 (CSP)**: 
 	- 防止XSS攻击
 - **懒加载 (Lazy Loading)**:
-	-  延迟加载图像和其他资源
+	- 延迟加载图像和其他资源
 - **预加载 (Preloading)**: 
 	- 提前加载关键资源
 

@@ -2,12 +2,14 @@
 # 盒模型
 
 
-`#前端/CSS` `#R2` 
+`#前端/CSS` 
 
 
 ## 目录
 <!-- toc -->
  ## 1. 标准盒模型 和 IE 盒模型 
+
+>  CSS `box-sizing` 的默认值是 `content-box`
 
 - 标准盒模型：`width = content`
 - IE 盒模型：`width = border + padding + content`

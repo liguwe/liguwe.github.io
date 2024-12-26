@@ -4,6 +4,8 @@
 
 `#HTML` `#前端/HTML`  
 
+>  what + wp
+
 - **WHATWG** 全称是 `Web Hypertext Application Technology Working Group`，即 `Web 超文本应用技术工作组`
 - WHATWG HTML 规范：
 	- 定义了 HTML 的语法和行为，涵盖了网页开发的**所有**方面，确保网页在不同浏览器中的一致性。

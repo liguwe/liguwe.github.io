@@ -46,7 +46,9 @@
 	- `importance`：下载优先级
 	- `loading`: auto / lazy / eager 
 - `table` 相关标签都有哪些
-	- 如何合并单元格 ？
+	- 如何合并单元格 
+		- 使用 `colspan` 属性来实现==水平方向==的单元格合并
+		- 使用 `rowspan` 属性来实现==垂直方向==的单元格合并。
 - `details/summary/dialog 标签`是干什么用的 ？ 
 - form 
 	- input type 有哪些 ？

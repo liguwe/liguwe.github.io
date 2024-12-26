@@ -2,7 +2,7 @@
 # HTML 技术清单
 
 
-`#前端` `#HTML` `#R2` 
+`#前端` `#HTML` 
 
 
 ## 目录
@@ -41,7 +41,9 @@
 ## 7. **本地存储**
 
 - **介绍**：HTML5 提供了两种本地存储机制：localStorage 和 sessionStorage。
-- **特点**：持久化存储（localStorage）、会话存储（sessionStorage）、简化客户端数据管理。
+- **特点**：
+	- 持久化存储（localStorage）、会话存储（sessionStorage）、简化客户端数据管理。
+	- 还有 indexDB 
 
 ## 8. **离线支持**
 
@@ -65,13 +67,15 @@
 
 ## 12. **模板元素**
 
-- **介绍**：`<template>`标签，用于定义可重用的 HTML 片段。
-- **特点**：==延迟渲染、提高性能、增强代码复用性。==
+- **介绍**：`<template>`标签，用于定义可重用的 HTML 片段
+- **特点**：
+	- ==延迟渲染、提高性能、增强代码复用性。==
 
 ## 13. **Shadow DOM**
 
 - **介绍**：Web Components 的一部分，用于封装元素的内部结构和样式。
-- **特点**：样式隔离、避免样式冲突、提高组件化开发。
+- **特点**：
+	- 样式隔离、避免样式冲突、提高组件化开发。
 
 ## 14. **自定义元素**
 
@@ -88,7 +92,8 @@
 ## 16. **微数据（Microdata）**
 
 - **介绍**：一种嵌入 HTML 的结构化数据的方式。
-- 目的:  为 HTML元素 添加机器可读的标签, 描述其含义
+- 目的: 
+	- 为 HTML元素 添加机器可读的标签, 描述其含义
 - **组成:** 主要由 `itemscope, itemtype, 和 itemprop 属性`组成。
 	- itemscope: 
 		- 创建一个新的项目,表示其中包含的标记描述了一个特定的项目。
@@ -108,6 +113,8 @@
 </div>  
 ```
 
+>  https://developer.mozilla.org/zh-CN/docs/Web/HTML/Microdata
+
 ## 17. **内容安全策略（CSP）**
 
 - **介绍**：一种Web安全策略，用于防止跨站脚本攻击（XSS）等安全威胁。
@@ -124,7 +131,7 @@ CSP是一种由`服务器`声明的安全策略，它告诉`浏览器`哪些资�
 - 防止 XSS 攻击
 - 减少数据注入风险
 - 报告违规行为
-- 强制使用 HTTPS
+- 强制使用 `HTTPS`
 
 ### 17.3. 工作原理
 
@@ -180,25 +187,12 @@ Content-Security-Policy: default-src 'self'; script-src 'self' https://trusted.c
 
 ### 17.9. 优势
 
-- 大幅降低 XSS风险
+- 大幅降低 XSS 风险
 - 控制资源加载，提高安全性
 - **强制使用 HTTPS**，保护数据传输
 - 提供违规报告，便于监控和调试
 
-### 17.10. 挑战和注意事项
-
-- 可能影响第三方脚本和插件的使用
-- 需要仔细配置以避免破坏网站功能
-- 旧版浏览器可能不支持
-
-### 17.11. 最佳实践
-
-- 从严格策略开始，逐步放宽
-- 使用报告模式进行测试
-- 定期审查和更新策略
-- 结合其他安全措施使用（如HTTPS、安全Cookie等）
-
-### 17.12. 与其他安全措施的结合
+### 17.12. 与其他安全措施的结合： → ==强制使用 HTTPS 链接==
 
 - HSTS (HTTP Strict Transport Security)
 	- HSTS 是一个重要的网络安全机制，它通过**强制 HTTPS 连接**来提供更好的安全保护
@@ -206,12 +200,6 @@ Content-Security-Policy: default-src 'self'; script-src 'self' https://trusted.c
 		- `Strict-Transport-Security: max-age=31536000; includeSubDomains; preload`
 - X-Frame-Options
 - X-XSS-Protection
-
-### 17.13. 未来发展
-
-- 更细粒度的控制
-- 更好的浏览器支持
-- 与新兴Web技术的集成
 
 ## 18. **Web Components**
 
