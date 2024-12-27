@@ -1,7 +1,15 @@
 
 # Nodejs 加载 JSON 文件
 
-`#nodejs` `#R1` 
+`#nodejs` 
+
+总结：
+- `require`
+- `readFile` 或者 `readFileSync` 
+- `require` 和 `readFileSync` 的区别？
+- 流式处理：
+	- stream 、createWriteStream 、new Readable 等
+	- fs.createReadStream
 
 
 ## 目录
@@ -11,11 +19,11 @@
 - 使用 `require` 直接简单同步写入，然后合并
 	- **同步阻塞，内存消耗大**
 - 使用 `readFile` 异步读取，并修改成 Promise 
-	- **可并发，但内存占用高**
+	- ==可并发，但内存占用高==
 - 流处理：引入 `stream` 、 `createWriteStream` 、`new Readalble`
-	- 内存占用低，可处理大文件，但串行处理，速度较慢
+	- ==内存占用低，可处理大文件，但串行处理，速度较慢==
 - 工作线程：使用 `worker_threads` 
-	- 充分利用多核CPU，并行处理
+	- 充分利用多核 CPU，并行处理
 - 优化的流处理
 	- 异步 + 流处理
 
@@ -40,11 +48,11 @@
 		- 主要原因包括路径错误、权限问题、异步操作顺序等
 - 路径解析
 	- require 使用**模块解析**规则
-	- readFileSync 使用**文件系统**路径
+	- `readFileSync` 使用**文件系统**路径
 - 实际应用场景
 	- require：
 		- 配置文件（不需要动态更新）、静态数据、模块化的 JSON 数据
-	- readFileSync：
+	- `readFileSync`：
 		- 文件监控场景、需要动态更新的配置、**大文件处理** 
 		- 但大文件建议考虑使用**流式**处理
 

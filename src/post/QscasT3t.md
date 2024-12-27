@@ -10,11 +10,13 @@
 
 ### 1.1. 引用与拷贝
 
-- ESM 输出的是`值的引用`，而 CJS 输出的是`值的拷贝`；
+- ESM 输出的是`值的引用`
+- 而 CJS 输出的是`值的拷贝`
 
 ### 1.2. 运行时与编译时
 
-- CJS 的输出是`运行时加载`，而 ESM 是 `编译时` 输出接口；
+- CJS 的输出是`运行时加载`
+- 而 ESM 是 `编译时` 输出接口
 
 ### 1.3. 同步与异步
 
@@ -39,10 +41,12 @@
 
 ![图片&文件](./files/20241027-5.png)
 
+>  ??? 如果直接在浏览器中 `console.log(this)` 打印出 `window` ？ 为什么
+
 ### 1.8. **循环引用**的处理差异
 
 - CommonJS
-	- 模块在首次 require 时会被 `缓存`
+	- 模块在首次 `require` 时会被 `缓存`
 		- 因为是`缓存` ，所以避免了 **无限循环**
 	- 如果出现循环引用，会返回未完成的导出对象
 	- 可能导致获取到部分初始化的对象
@@ -51,9 +55,52 @@
 	- 提供了`静态分析能力`，可以在`编译`时检测问题
 	- `webpack 插件`或者 `vite 插件`检测是否循环引用了
 
-### 1.9. 错误处理机制
+### 1.9. ESM 下处理循环引用的几个主要解决方案
 
-#### 1.9.1. cjs 
+#### 1.9.1. **使用函数包装**
+
+```javascript
+// a.js
+import { getB } from './b.js';
+export const a = 1;
+export function getA() { 
+    return a; 
+}
+
+// b.js
+import { getA } from './a.js';
+export const b = 2;
+export function getB() { 
+    return b; 
+}
+```
+
+#### 1.9.2. **动态导入**
+
+```javascript
+// a.js
+export const a = 1;
+// 使用动态导入替代静态导入
+const b = await import('./b.js');
+
+// b.js
+export const b = 2;
+const a = await import('./a.js');
+```
+
+#### 1.9.3. **提取共享代码**
+
+```javascript
+// shared.js
+export const shared = {};
+
+// a.js 和 b.js 都引用 shared.js
+import { shared } from './shared.js';
+```
+
+### 1.10. 错误处理机制
+
+#### 1.10.1. cjs 
 
 ![图片&文件](./files/20241027.png)
 
@@ -74,6 +121,8 @@ import './non-existent.js'
 ```
 
 ## 2. ESM 和 CJS 的混合使用
+
+>  ==只要知道可以混用，并且需要配置 package.json 支持双模式即可==，需要时再查询即可
 
 ### 2.1. ESM 中使用 CJS 模块
 
@@ -345,8 +394,8 @@ exports = { foo: 'bar' };
 
 ### 3.4. 最后
 
-- 总结：**exports 是 module.exports 的引用，exports只能通过 `.`添加属性**
-	- 因此，为避免混淆，建议统一使用 `module.exports`。
+- 总结：`exports` 是 `module.exports` 的引用，`exports` 只能通过 `.`添加属性
+	- 因此，为避免混淆，建议统一使用 `module.exports`
 
 ## 4. Node.js 在使用 ES modules 时要求加上文件扩展名有几个重要原因
 

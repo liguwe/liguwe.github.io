@@ -1,7 +1,7 @@
 
 # 实现一个简易版的 Koa
 
-`#nodejs` `#koa` `#R1` 
+`#nodejs` `#koa` 
 
 
 ## 目录

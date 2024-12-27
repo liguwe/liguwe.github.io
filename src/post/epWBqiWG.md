@@ -1,12 +1,20 @@
 
 # commonjs 的 require 机制
 
-`#nodejs` `#R1` 
+`#nodejs` 
 
 
 ## 目录
 <!-- toc -->
  ## 1. 基本加载过程：7 个步骤 
+
+1. 解析路径
+2. 检查==缓存==
+3. 创建==模块对象==
+4. 将模块放入==缓存==
+5. 加载模块
+6. 标记==模块对象== 为已加载
+7. 返回 `exports 对象`
 
 ```javascript
 // require 的基本实现原理
@@ -41,7 +49,7 @@ function require(modulePath) {
 }
 ```
 
-## 2. 模块缓存机制：查看缓存和清除缓存
+## 2. 模块缓存机制：查看缓存和清除缓存 →  `require.cache`
 
 ```javascript
 // example.js
@@ -66,6 +74,15 @@ delete require.cache[require.resolve('./example')];
 ```
 
 ## 3. 路径解析规则
+
+1. 核心模块
+2. 文件模块
+3. npm 包
+4. 文件扩展名解析路径 ==顺序如下==
+	1. `.js`
+	2. `.json`
+	3. `.node`
+	4. `mymodule/index.js
 
 ```javascript hl:14
 // 1. 核心模块
@@ -102,6 +119,10 @@ require('./myModule');
 ```
 
 ## 5. 异常处理
+
+- 比如
+	- 处理模块不存在
+	- 处理模块加载错误
 
 ```javascript
 try {
@@ -142,7 +163,11 @@ function loadPlugin(name) {
 
 ## 7. 性能优化：比如 fs/path 等
 
-```javascript hl:5,12
+- ==缓存==路径
+- ==预加载==模块
+- ==延迟==模块
+
+```javascript hl:1,5,12
 // 1. 使用路径缓存
 const modulePath = require.resolve('./myModule');
 const myModule = require(modulePath);
@@ -182,6 +207,8 @@ exports = { method: () => {} };  // 这样做是错误的
 ```
 
 ## 9. 目录作为模块
+
+> 先找 pageage.json 中的 main 字段，然后再找对应的文件
 
 ```javascript
 // myModule/index.js
@@ -229,14 +256,14 @@ console.log(module);
 
 ## 12. 最佳实践
 
-1. 总是使用 const 声明 require
-2. 将所有 require 语句放在文件顶部
+1. 总是使用 `const` 声明 `require`
+2. 将所有 `require` 语句放在文件顶部
 3. 使用明确的文件扩展名
 4. 适当使用模块缓存机制
 5. 注意循环依赖问题
 6. 正确处理异常情况
 7. 合理组织模块结构
-8. 使用 package.json 管理依赖
+8. 使用 `package.json` 管理依赖
 9. 注意模块加载性能
 10. 遵循单一职责原则
 
