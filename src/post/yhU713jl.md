@@ -3,6 +3,9 @@
 
 `#浏览器`
 
+> 另可参考 [12.  Shadow dom 与 Web Component](/post/OmI51GKU.html)
+
+
 
 ## 目录
 <!-- toc -->
@@ -26,7 +29,7 @@ element.attachShadow({ mode: 'closed' });
 
 ### 2.1. Open Mode（开放模式）
 
-- 外部可以访问 shadow root
+- 外部可以访问 `shadow root`
 - 外部可以修改内容
 
 ```javascript

@@ -188,13 +188,13 @@
 
     - [MessageChannel](post/RIOoYtCK.md)
 
-    - [如何检测页面是否在前台运行（检测页面的可见性）](post/ky8BNA6P.md)
+    - [如何检测页面是否在前台运行](post/sU2vY2Yf.md)
 
     - [为什么要用 setTimeout 模拟 setInterval ？](post/zbgylJlz.md)
 
-    - [浏览器本地如何读取并处理本地特别大的文件](post/R4sOTGQ3.md)
+    - [浏览器本地如何读取并处理本地大文件](post/lVxlSvqC.md)
 
-    - [WebAssembly (Wasm) 及其应用场景](post/Ug5FEab2.md)
+    - [WebAssembly (Wasm)](post/Ohuh7Fgf.md)
 
     - [Shadow DOM 中的 closed mode 和 open mode](post/yhU713jl.md)
 
@@ -202,23 +202,25 @@
 
     - [浏览器的渲染原理](post/MLGEykBV.md)
 
-    - [渲染层（Paint Layer）和合成层（Composite Layer）的区别](post/0vwzdUTu.md)
+    - [渲染层、复合层、层叠上下文对比](post/lmTJCvA3.md)
 
-    - [渲染层（Paint Layer）和层叠上下文（Stacking Context）的关系](post/5vwwyEqQ.md)
+    - [渲染层（Paint Layer）和合成层（Composite Layer）](post/uIdFSFIb.md)
+
+    - [渲染层（Paint Layer）和层叠上下文（Stacking Context）](post/dEQTp136.md)
 
     - [浏览器中如何查找内存泄漏](post/xyGXILev.md)
 
     - [现代 Chrome 浏览器架构设计](post/Pq0GzBjX.md)
 
-    - [requestIdleCallback 的应用场景](post/Pmp06AG3.md)
+    - [requestIdleCallback](post/cd0Ts8oL.md)
 
-    - [shadow dom 与 Web Component](post/dG6UWvZW.md)
+    - [Shadow dom 与 Web Component](post/OmI51GKU.md)
 
-    - [BroadcastChannel 和 MessageChannel](post/W5u14ZGE.md)
+    - [BroadcastChannel 和 MessageChannel 对比](post/bGMmF398.md)
 
-    - [跨域与跨页面通讯问题汇总](post/oXixmK5Y.md)
+    - [跨域与跨页面通讯](post/d02mMGxE.md)
 
-    - [跨域请求的实际发送情况](post/5hGRTSc4.md)
+    - [跨域时请求的实际发送情况分析](post/GDfxNXj6.md)
 
     - [浏览器实现截图](post/01MEelUr.md)
 

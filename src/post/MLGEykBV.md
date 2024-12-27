@@ -1,7 +1,7 @@
 
 # 浏览器的渲染原理
 
-`#bom` `#R1` 
+`#bom` 
 
 
 ## 目录
@@ -43,7 +43,7 @@
 
 ### 3.3. 渲染层
 
->  更多见 [8. 渲染层（Paint Layer）和合成层（Composite Layer）的区别](/post/0vwzdUTu.html)
+>  更多见 [8. 渲染层（Paint Layer）和合成层（Composite Layer）](/post/uIdFSFIb.html)
 
 **渲染层**的概念跟“**层叠上下文**”密切相关，简单来说，拥有z-index属性的定位元素会生成一个层叠上下文，一个生成层叠上下文的元素就生成了一个渲染层
 
