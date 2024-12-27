@@ -230,6 +230,8 @@
 
     - [BroadcastChannel](post/nrVrtgIK.md)
 
+    - [浏览器的宏任务（MacroTask）的优先级](post/OFHUIf37.md)
+
   - [Node.js 篇](post/hN6h8nAB.md)
 
 

@@ -179,7 +179,7 @@ Fork 风格是一种通过复制共享状态或资源来实现并行处理的架
 
 ### 5.1. Web Worker 中的 Fork
 
-### 5.2. 比如`nodeJS`的 `Cluster模块` 
+### 5.2. 比如`nodeJS`的 `Cluster 模块` 
 
 - Node.js 中的**集群模块**，允许创建`多个工作进程`来处理并发请求
 - '`Cluster`' 这个词在计算机科学中通常指的是一组计算机或服务器，它们一起工作以提供更高的性能和可用性
@@ -223,7 +223,7 @@ if (cluster.isMaster) {
 
 ## 7. 模块化架构（Modular Architecture）
 
-核心思想：将应用分解为独立的功能模块。
+核心思想：将应用分解为独立的功能模块
 
 ## 8. 微服务前端架构（Micro-Frontend Architecture）
 

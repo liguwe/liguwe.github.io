@@ -16,6 +16,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 ```
+
 - 必须在模块顶层
 - 不能在函数、条件语句或循环中使用
 - 路径必须是字符串字面量，不能是变量
