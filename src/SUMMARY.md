@@ -124,39 +124,37 @@
 
     - [JavaScript 异步编程简介](post/x45wL9Jh.md)
 
-    - [JavaScript 异步编程：Promise 专题篇一](post/qWg7khTF.md)
+    - [JavaScript 异步编程：Promise 专题](post/Q4CM1x9a.md)
 
     - [JavaScript 异步编程：async、await 的实现原理](post/ONxVttwC.md)
 
     - [JavaScript 异步编程：Thunk 函数](post/KOCA4ZsB.md)
 
-    - [实现批量请求并控制最大并发数](post/nhoLBNbj.md)
+    - [实现批量请求并支持控制最大并发数](post/Qr2fzyd9.md)
 
     - [JavaScript 的垃圾回收机制](post/epfFihvu.md)
 
     - [JavaScript 引擎](post/v2NdaNQX.md)
 
-    - [JavaScript 对象的一些注意点](post/aDpk3aqB.md)
+    - [JavaScript 对象](post/89ATpGaD.md)
 
     - [JavaScript 的单线程](post/SkcUTZLY.md)
 
     - [JavaScript 内存泄漏场景及其解决方案](post/fec8TVhp.md)
 
-    - [常见的设计模式](post/L9HLUeiJ.md)
-
-    - [深拷贝与浅拷贝的实现](post/iWNg8tL4.md)
+    - [深拷贝与浅拷贝](post/zE13ZZdw.md)
 
     - [apply、call、bind 的区别及简易实现](post/WTIHrDQr.md)
 
-    - [遍历对象的方式都有哪些？](post/KZy5msy3.md)
+    - [遍历对象的方式](post/RQXB8tah.md)
 
-    - [js 中实现继承的方式有哪些？](post/6JXrQOFi.md)
+    - [javascript 中实现继承的方式](post/oPFmdhlz.md)
 
-    - [列举 ES6（ES2015） 到 ES2024 的主要特性](post/h1YvpuVA.md)
+    - [ES6（ES2015） 到 ES2024 的主要特性](post/m0U6Vfdo.md)
 
     - [window.onerror 和 window.addEventListener 的区别？](post/49pCkp80.md)
 
-    - [前端错误的分类、优先级管理以及处理策略](post/WjSOGqjh.md)
+    - [前端错误的分类、优先级管理及处理策略](post/fOP9lXd1.md)
 
     - [前端错误的分类和优先级管理建议](post/800WyJFR.md)
 
@@ -188,7 +186,7 @@
 
     - [使用 requestAnimationFrame 批量处理操作的原理](post/vCdo8uDh.md)
 
-    - [MessageChannel 及其应用场景](post/MWBihAEm.md)
+    - [MessageChannel](post/RIOoYtCK.md)
 
     - [如何检测页面是否在前台运行（检测页面的可见性）](post/ky8BNA6P.md)
 
@@ -222,11 +220,13 @@
 
     - [跨域请求的实际发送情况](post/5hGRTSc4.md)
 
-    - [前端浏览器实现截图功能主要有几种实现方式](post/nCKAdq5u.md)
+    - [浏览器实现截图](post/01MEelUr.md)
 
-    - [如何终止或取消一个请求或事件：AbortController](post/xxJ4YUe1.md)
+    - [AbortController](post/FfFdzQrb.md)
 
-    - [queueMicrotask 介绍](post/MF0HHSfC.md)
+    - [queueMicrotask](post/OgDrLp8B.md)
+
+    - [BroadcastChannel](post/nrVrtgIK.md)
 
   - [Node.js 篇](post/hN6h8nAB.md)
 
@@ -522,6 +522,8 @@
     - [前端数据采集的原理及实现](post/bCE5nlQK.md)
 
     - [时光机（录制与回放）的技术原理](post/M1UUVXCa.md)
+
+    - [常见的设计模式](post/Z3W3tN5a.md)
 
     - [时光机（录制与回放）的技术原理：rrweb](post/Jje8zZcR.md)
 

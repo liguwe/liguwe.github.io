@@ -2,7 +2,7 @@
 # 前言
 
 
-主要内容包括，DOM、BOM、浏览器渲染原理、开发者工具等
+> 浏览器相关：包括DOM、BOM、浏览器渲染原理、开发者工具等
 
 
 ## 目录
@@ -11,7 +11,7 @@
 
 - [1. 哪些事件不会冒泡的事件，以及为什么不支持冒泡？](/post/7cRlGnSu.html)
 - [2. 使用 requestAnimationFrame 批量处理操作的原理](/post/vCdo8uDh.html)
-- [3. MessageChannel 及其应用场景](/post/MWBihAEm.html)
+- [3. MessageChannel](/post/RIOoYtCK.html)
 - [4. 如何检测页面是否在前台运行（检测页面的可见性）](/post/ky8BNA6P.html)
 - [5. 为什么要用 setTimeout 模拟 setInterval ？](/post/zbgylJlz.html)
 - [6. 浏览器本地如何读取并处理本地特别大的文件](/post/R4sOTGQ3.html)

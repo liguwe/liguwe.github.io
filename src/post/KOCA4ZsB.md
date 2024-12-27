@@ -6,7 +6,7 @@
 
 ## 目录
 <!-- toc -->
- ## 1. 基本定义：延迟函数执行 
+ ## 1. 基本定义：==延迟函数执行== 
 
    
 Thunk 是一个被包裹在另一个函数中的函数，通常**用于延迟一个计算或操作的执行**。
@@ -21,7 +21,7 @@ Thunk 是一个被包裹在另一个函数中的函数，通常**用于延迟一
 
 ## 3. 在异步编程中的应用
 
-Thunk 在处理异步操作时特别有用，尤其是在 `Redux` 等状态管理库中。
+Thunk 在处理异步操作时特别有用，尤其是在 `Redux` 等状态管理库中
 
 ### 3.1. 基本的 thunk 示例
 
@@ -65,7 +65,9 @@ function fetchUserData(userId) {
 store.dispatch(fetchUserData(123));
 ```
 
-在这个例子中，`fetchUserData` 返回一个函数（thunk），而不是一个普通的 action 对象。这个返回的函数接收 `dispatch` 作为参数，允许在异步操作完成后再次派发 action。
+在这个例子中，`fetchUserData` 返回一个函数（thunk），而不是一个普通的 action 对象。
+
+这个返回的函数接收 `dispatch` 作为参数，允许在异步操作完成后再次派发 action。
 
 ### 3.3. Thunk 在 Redux 中的应用
 
@@ -97,8 +99,8 @@ store.dispatch(fetchPosts('reactjs'));
 ## 4. 总结
 
 - Thunk 函数是一种`延迟执行`的函数。
-- 在异步编程中，thunk 可以帮助管理复杂的异步流程。
+- 在异步编程中，thunk 可以帮助管理复杂的异步流程
 - 在 Redux 等状态管理库中，thunk 用于**处理异步 action**。
-- `Thunk` 提供了一种方式来封装复杂的逻辑，使代码更加模块化和可测试。
+- `Thunk` 提供了一种方式来封装复杂的逻辑，使代码更加模块化和可测试
 
-通过使用 thunk，我们可以更灵活地控制函数的执行时机，特别是在处理异步操作或需要访问 Redux store 的情况下。
+通过使用 thunk，我们可以更灵活地控制函数的执行时机，特别是在处理异步操作或需要访问 Redux store 的情况下

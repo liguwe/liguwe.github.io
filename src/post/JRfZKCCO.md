@@ -1,7 +1,7 @@
 
 # rem 和 vw、vh
 
-`#R2` `#javascript` `#css` 
+`#javascript` `#css` 
 
 
 ## 目录

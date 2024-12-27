@@ -1,22 +1,31 @@
 
 # 前端错误的分类和优先级管理建议
 
-`#javascript` `#R1` 
+`#javascript` 
 
 
 ## 目录
 <!-- toc -->
- ## 1. 错误分类体系 
+ ## 总结 
 
-### 1.1. 致命错误（P0级）
+- 错误分级
+- 优先级定义
+- 错误处理体系
 
-这类错误会导致应用完全无法使用或核心功能瘫痪。
+## 1. 错误分类体系
 
-需要立即处理的场景：
-- 白屏/应用崩溃
+### 1.1. 致命错误（P0级）：白屏、崩溃、安全漏洞、业务流中断
+
+这类错误会导致应用完全无法使用或核心功能瘫痪
+==需要立即处理==的场景：
+- 白屏 & 应用崩溃
 - 核心业务流程中断
 - 数据丢失
 - 安全漏洞
+动作：
+- 立即上报并通知相关人员
+- 可能需要执行==紧急恢复措施==
+
 
 ```javascript hl:4,13,24,26
 // 错误监控示例
@@ -50,9 +59,7 @@ class CriticalErrorMonitor {
 }
 ```
 
-### 1.2. 严重错误（P1级）
-
-影响主要功能但不会导致应用完全不可用。
+### 1.2. 严重错误（P1级）： ==影响主要功能但不会导致应用完全不可用==
 
 ```javascript
 class SevereErrorHandler {
@@ -90,13 +97,15 @@ class SevereErrorHandler {
 
 主要关注场景：
 - 主要功能模块异常
-- 关键API接口错误
-- 重要资源加载失败
+- 关键 API 接口错误
+	- API_ERROR
+- ==重要资源==加载失败
+	- RESOURCE_ERROR
 - 状态管理错误
+	- STATE_ERROR
+- 评估影响范围
 
-### 1.3. 一般错误（P2级）
-
-影响用户体验但不影响核心功能。
+### 1.3. 一般错误（P2级）： 影响用户体验但不影响核心功能
 
 ```javascript
 class GeneralErrorMonitor {
@@ -127,15 +136,25 @@ class GeneralErrorMonitor {
 
 监控项目：
 - 性能问题
-- UI渲染异常
+- UI 渲染异常
 - 非核心功能异常
 - 用户体验问题
+
+### 1.4. P3：优化类问题：下次迭代优化
 
 ## 2. 错误处理最佳实践
 
 ### 2.1. 统一错误管理中心
 
-```javascript
+上报信息统一处理
+- 级别
+- 堆栈信息
+- 时间戳
+- 上下文信息
+	- url
+	- ua 信息等
+
+```javascript hl:24
 class ErrorCenter {
     private static instance: ErrorCenter;
     private errorQueue: Array<ErrorInfo> = [];
@@ -180,7 +199,7 @@ class ErrorCenter {
 }
 ```
 
-### 2.2. 错误恢复策略
+### 2.2. 错误恢复策略 → 比如 降级、重试机制
 
 ```javascript
 class ErrorRecovery {
@@ -216,6 +235,9 @@ class ErrorRecovery {
 ```
 
 ### 2.3. 错误上报策略
+
+- 立即上报，并通知拉群
+- 批量上报情况
 
 ```javascript
 class ErrorReporter {
@@ -265,33 +287,22 @@ class ErrorReporter {
 
 ### 3.2. **错误处理流程**：
 
-   ```javascript
-   class ErrorWorkflow {
-       static async process(error: ErrorInfo) {
-           // 1. 错误分类和优先级评估
-           const priority = this.assessPriority(error);
-           
-           // 2. 通知相关人员
-           await this.notifyStakeholders(error, priority);
-           
-           // 3. 错误处理和恢复
-           await ErrorRecovery.attemptRecovery(error);
-           
-           // 4. 错误上报和记录
-           await ErrorReporter.report(error);
-           
-           // 5. 后续跟踪
-           await this.createFollowUpTask(error, priority);
-       }
-   }
-   ```
+
+1. 错误分类和优先级评估
+2. 通知相关人员
+3. 错误处理和恢复：降级、重试等
+4. 错误上报和记录
+5. 后续跟踪，==关联工单==等
+
 
 ### 3.3. **监控指标设置**：
 
-   - 错误发生率
-   - 影响用户数
-   - 错误恢复率
-   - 平均处理时间
+   - ==错误发生率==
+   - 影响==用户数==
+   - 错误==恢复率==
+   - ==平均处理时间==
+	   - 比如 P0 立即处理了吗
+	   - P1 24 小时解决了吗 ？
 
 ## 4. 建议
 
@@ -304,7 +315,7 @@ class ErrorReporter {
 
 ### 4.2. **工具和平台支持**：
 
-   - 使用错误监控平台（如Sentry）
+   - 使用错误监控平台（如 Sentry ）
    - 建立错误报警机制
    - 实现自动化处理流程
    - 提供错误分析工具

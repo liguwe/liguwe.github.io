@@ -3,24 +3,32 @@
 
 `#bom` `#R1` 
 
-> `BroadcastChannel` 和 `MessageChannel` 是两种不同的通信机制，它们有很大的区别。
+
+> 另外见 [3. MessageChannel](/post/RIOoYtCK.html)
+> [17. BroadcastChannel](/post/nrVrtgIK.html)
+
+
+> `BroadcastChannel` 和 `MessageChannel` 是两种不同的通信机制，它们有==很大的区别==
+> 一个**广播**
+> 一个是**点对点**
 
 
 ## 目录
 <!-- toc -->
  ## 1. 主要区别 
 
-| 特性   | BroadcastChannel | MessageChannel    |
-| ---- | ---------------- | ----------------- |
-| 通信模式 | 一对多（广播）          | 一对一（点对点）          |
-| 端口数量 | 无限制（同一频道）        | 固定两个端口            |
-| 作用域  | 同源的所有标签页/窗口      | 任意两个上下文之间         |
-| 使用场景 | **同源页面间的消息广播**   | **两个执行上下文间**的私密通信 |
-|      |                  |                   |
+| 特性   | BroadcastChannel | MessageChannel    |     |
+| ---- | ---------------- | ----------------- | --- |
+| 通信模式 | 一对多（广播）          | 一对一（点对点）          |     |
+| 端口数量 | 无限制（同一频道）        | 固定两个端口            |     |
+| 作用域  | **同源**的所有标签页/窗口  | 任意两个**上下文**之间     |     |
+| 使用场景 | **同源页面间的消息广播**   | **两个执行上下文间**的私密通信 |     |
+|      |                  |                   |     |
+|      |                  |                   |     |
 
 ## 2. 代码示例对比
 
-### 2.1. BroadcastChannel 示例：
+### 2.1. BroadcastChannel 示例
 
 ```javascript
 // 页面 A
@@ -114,7 +122,7 @@ dataChannel.onmessage = (event) => {
 };
 ```
 
-### 3.2. MessageChannel 适用场景：
+### 3.2. MessageChannel 适用场景：==同一上下文通讯==
 
 - iframe 通信
 - Web Worker 通信
@@ -186,7 +194,7 @@ const componentB = new ComponentB(channel.port2);
 
 ## 4. 关闭和清理
 
-```javascript
+```javascript hl:1,6
 // BroadcastChannel
 const broadcastChannel = new BroadcastChannel('example');
 // 使用完毕后关闭
@@ -232,16 +240,23 @@ channel.port2.onmessageerror = (event) => {
 2. **MessageChannel**:
 	- 用于**两个执行上下文间的点对点通信**
 	- 提供更高的隔离性和安全性
-	- 适合 iframe、Web Worker 通信
+	- 适合 **iframe、Web Worker** 通信
 	- 可以跨源通信（需要正确设置）
 
 选择使用哪种通道取决于你的具体需求：
-- 需要广播消息给多个接收者？选择 BroadcastChannel
-- 需要两个执行上下文间的私密通信？选择 MessageChannel
+- 需要广播消息给多个接收者？
+	- 选择 BroadcastChannel
+- 需要两个执行上下文间的私密通信？
+	- 选择 MessageChannel
 
 ## 7. MessageChannel 是否支持跨域
 
-MessageChannel 本身不能直接跨域通信，但它可以**配合 postMessage 在已建立跨域通信的上下文之间传递端口**，从而实现跨域通信
+`MessageChannel` 本身不能直接跨域通信，但它可以**配合 postMessage 在已建立跨域通信的上下文之间传递端口**，从而实现跨域通信
 
 
 >  Iframe 的跨域场景：更多详见 [13. 跨域与跨页面通讯问题汇总](/post/oXixmK5Y.html)
+
+## 8. 更多
+
+- [3. MessageChannel](/post/RIOoYtCK.html)
+- [17. BroadcastChannel](/post/nrVrtgIK.html)

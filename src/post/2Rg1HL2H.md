@@ -1,7 +1,7 @@
 
 # class 中各种方法定义的区别
 
-`#javascript` `#R1` 
+`#javascript` 
 
 
 ## 目录
@@ -18,6 +18,7 @@ class Animal {
   // 普通函数方法,直接挂载在原型上
   speak() {
     // 当然，this都指向实例对象
+    console.log(this)
     console.log(this.name);
   }
   // 箭头函数方法，直接挂载在 Animal 上
@@ -34,7 +35,6 @@ const b = n.eat;
 b(); // cat
 // 普通方法，报错，因为 方法中的this 会指向undefined ，即普通函数中的 this 是动态绑定的，始终指向函数的执行环境，
 a(); // 报错
-
 ```
 
 ## 2. 总结： JavaScript class 中各种方法定义的区别：
@@ -327,7 +327,7 @@ console.log(temp.fahrenheit); // 77
 
 #### 2.2.8. 静态私有方法
 
-```javascript
+```javascript hl:5
 class ConfigManager {
   static `#instance` = null;
 

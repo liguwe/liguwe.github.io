@@ -1,7 +1,7 @@
 
 # JavaScript 内存泄漏场景及其解决方案
 
-`#javascript` `#R2` 
+`#javascript` 
 
 
 ## 目录
@@ -45,7 +45,7 @@ const closure = createClosure();
 closure.cleanup();
 ```
 
->  其实在函数式编程里，cleanup 使用场景很多，比如 Vue watch 的 cleanup 、React 的 useEffect 的返回值（clearup）
+>  其实在函数式编程里，`cleanup` 使用场景很多，比如 Vue watch 的 cleanup 、React 的 useEffect 的返回值（clearup）
 
 ## 2. 事件监听器未移除：==一般都是再返回一个函数==
 
@@ -188,6 +188,9 @@ window.globalVar = null;
 
 ## 6. 缓存未清理：→ 设置缓存时间
 
+> 最大缓存值
+> 最近缓存值
+
 ```javascript
 const cache = new Map();
 
@@ -226,7 +229,7 @@ const cache = new Cache(100);
 
 ## 7. 使用 Map 而未使用 WeakMap/WeakSet 的场景
 
-当需要在对象上存储额外数据时，使用 WeakMap 可以防止内存泄漏：
+当需要在对象上存储额外数据时，使用 `WeakMap` 可以防止内存泄漏：
 
 ```javascript
 // 不好的做法

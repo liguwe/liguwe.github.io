@@ -1,7 +1,7 @@
 
 # TypeScript 项目中使用 node_modules 中定义的全局类型
 
-`#typescript` `#R1` 
+`#typescript` 
 
 
 ## 目录

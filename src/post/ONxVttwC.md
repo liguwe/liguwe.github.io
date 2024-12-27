@@ -86,8 +86,8 @@ co(function* () {
 
 ## 4. co 函数 vs async/await
 
-- co 函数是 async/await 出现之前的一种解决方案，用于简化生成器的使用。
-- async/await 可以看作是 `co 函数`的`语言级实现`，提供了更原生和简洁的语法。
+- `co 函数`是 async/await 出现之前的一种解决方案，用于简化生成器的使用。
+- `async/await` 可以看作是 `co 函数`的`语言级实现`，提供了更原生和简洁的语法。
 
 ## 5. 协程 vs 其他概念
 

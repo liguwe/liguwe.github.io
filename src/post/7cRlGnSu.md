@@ -37,14 +37,16 @@ document.addEventListener('click', function(e) {
 以下事件不会冒泡：
 
 - a) 焦点事件：
-	- focus
+	- `focus`  
+		- 如果 focus 冒泡，当输入框获得焦点时，所有父元素都会收到通知
+		- ==额外的性能开销==
 	- blur
-- b) 资源事件：
+- b) 资源事件： → ==加载完了，没必要再冒泡了==
 	- load
 	- unload
 	- abort
 	- error
-- c) 鼠标事件：
+- c) 鼠标事件： ==enter 和 leave==  →  逻辑合理性，不然矛盾了
 	- `mouseenter`
 	- `mouseleave`
 - d) 媒体事件：
@@ -101,7 +103,7 @@ parent.addEventListener('mouseover', () => {
 
 ### 3.2. 逻辑合理性
 
-```javascript
+```javascript hl:7
 // 以 mouseenter 为例
 <div class="parent">
     <div class="child"></div>
@@ -114,7 +116,7 @@ parent.addEventListener('mouseover', () => {
 
 ### 3.3. 事件本身的特性
 
-```javascript
+```javascript hl:4
 // 例如 load 事件
 <img src="example.jpg" onload="handleLoad()">
 
@@ -145,7 +147,7 @@ element.addEventListener('focusin', function(e) {
 
 ### 4.3. 事件委托的替代方案
 
-#### 4.3.1. 对于不冒泡的事件，可以使用 MutationObserver 来监听
+#### 4.3.1. 对于不冒泡的事件，可以使用 `MutationObserver` 来监听
 
 ```javascript
 // 对于不冒泡的事件，可以使用 MutationObserver
@@ -167,7 +169,7 @@ observer.observe(element, {
 
 ### 5.1. 选择合适的事件
 
-```javascript
+```javascript hl:6
 // 不好的实践
 document.addEventListener('mouseenter', function(e) {
     // 试图通过事件委托处理子元素的 mouseenter
