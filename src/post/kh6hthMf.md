@@ -1,12 +1,17 @@
 
 # interface
 
+`#typescript` 
+
+>  另外可参考 [2.  type 和 interface 的区别](/post/1KBnUj7w.html)
+
 
 ## 目录
 <!-- toc -->
  ## 1. 基本概念 
 
-Interface 是 TypeScript 中一个核心概念，用于**定义对象的类型契约**。它描述了对象应该具有的属性和方法的结构。
+Interface 是 TypeScript 中一个核心概念，用于**定义对象的类型契约**。
+- 它描述了对象应该具有的属性和方法的结构。
 
 ### 1.1. 基本语法
 
@@ -86,7 +91,7 @@ class Clock implements ClockInterface {
 
 ## 6. 继承接口
 
-接口可以**相互继承**：
+接口可以**相互继承**：自己继承自己
 
 ```typescript
 interface Shape {
@@ -167,7 +172,7 @@ const box: Box = { height: 5, width: 6 };
 
 ## 10. 实用技巧
 
-### 10.1. 接口继承类：同时使用 extends 和  implements
+### 10.1. 接口继承类：**同时使用 extends 和 implements**
 
 ```typescript
 class Control {
@@ -183,7 +188,7 @@ class Button extends Control implements SelectableControl {
 }
 ```
 
-### 10.2. 可选方法：和可选属性一样
+### 10.2. ==可选方法==：和可选属性一样
 
 ```typescript
 interface EventListener {
@@ -210,7 +215,7 @@ interface ReadonlyStringArray {
 ### 11.2. **接口分离原则**：
 
    - 保持接口小而精确
-   - 一个接口只负责一个功能域
+   - **一个接口只负责一个功能域**
 
 ```typescript hl:12
 // 好的实践
@@ -254,6 +259,8 @@ const response: IResponse<IUser> = {
     message: "success"
 };
 ```
+
+> ==范型接口，很有用的==
 
 ## 12. 注意事项
 

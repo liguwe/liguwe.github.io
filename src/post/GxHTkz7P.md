@@ -1,7 +1,7 @@
 
 # Interface 中的运算符操作
 
-`#typescript` `#R1` 
+`#typescript` 
 
 
 ## 目录

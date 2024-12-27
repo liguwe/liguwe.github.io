@@ -165,11 +165,11 @@
 
     - [Typescript 基础篇](post/JpwFLP0g.md)
 
-    - [type 和 interface 的区别？](post/yR8vz9aS.md)
+    - [type 和 interface 的区别](post/1KBnUj7w.md)
 
     - [TS 常见问题](post/V3pEa02i.md)
 
-    - [interface 概述](post/BfFYCZ6i.md)
+    - [interface](post/kh6hthMf.md)
 
     - [Interface 中的运算符操作](post/GxHTkz7P.md)
 
