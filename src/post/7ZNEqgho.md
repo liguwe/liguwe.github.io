@@ -9,9 +9,10 @@
  ## 1. 定义 
 
 ECONNRESET（`Connection Reset`）错误表示连接被对方强制关闭。
-- 简单来说就是：TCP 连接中，一方突然收到了 RST 包，连接被重置
+- 简单来说就是：
+	- TCP 连接中，一方突然收到了 RST 包，连接被重置
 - `ECONNRESET`是因为TCP连接的**对端(通常是server)突然断开了连接**。
-- server 一般都设置了`keepalive`，对于不活动的连接会超时断开
+- `server` 一般都设置了`keepalive`，对于不活动的连接会超时断开
 
 ## 2. 常见原因
 

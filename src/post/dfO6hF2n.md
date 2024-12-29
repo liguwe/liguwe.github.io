@@ -1,7 +1,7 @@
 
 # Koa 与 express  对比
 
-`#nodejs` `#koa` `#express` `#R1` 
+`#nodejs` `#koa` `#express` 
 
 
 ## 目录

@@ -3,7 +3,7 @@
 
 `#koa` `#nodejs` `#R1` 
 
-Koa 是一个轻量级的 Node.js Web 框架
+> Koa 是一个轻量级的 Node.js Web 框架
 
 
 ## 目录
@@ -112,7 +112,7 @@ class Context {
 
 Koa 提供了优雅的错误处理方式：
 
-```javascript
+```javascript  hl:10
 app.use(async (ctx, next) => {
   try {
     await next();
@@ -192,9 +192,9 @@ class Response {
 - 中间件机制：
 	- 基于洋葱模型的优雅中间件机制
 - 异步流程：
-	- 完美支持 async/await
+	- 完美支持 `async/await`
 - 上下文封装：
-	- 将 request 和 response 封装为单一的 context 对象
+	- ==将 request 和 response 封装为单一的 context 对象==
 - 错误处理：
 	- 统一的错误处理机制
 - 无回调地狱：

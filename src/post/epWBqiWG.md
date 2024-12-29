@@ -124,7 +124,7 @@ require('./myModule');
 	- 处理模块不存在
 	- 处理模块加载错误
 
-```javascript
+```javascript hl:2,10
 try {
     // 处理模块不存在
     const nonExistent = require('./non-existent');
@@ -191,6 +191,9 @@ function getHeavyModule() {
 
 ## 8. 模块导出方式
 
+- `module.exports` 导出
+- `exports.xxx` 快捷方式
+
 ```javascript
 // 1. module.exports 导出
 module.exports = {
@@ -225,7 +228,7 @@ module.exports = {
 const myModule = require('./myModule');
 ```
 
-## 10. require.main 的使用
+## 10. `require.main` 的使用  →  判断该模块是否是入口文件
 
 ```javascript
 // 检查模块是否为入口文件
@@ -267,12 +270,15 @@ console.log(module);
 9. 注意模块加载性能
 10. 遵循单一职责原则
 
-## 13. 核心模块是二进制和缓存，所以很快
+## 13. 核心模块是**二进制和缓存**，所以很快
 
 - `require('fs')` 核心模块很快，因为是编译好的`二进制可执行文件` 
-	- 缓存：导致很快
+	- 缓存：所以很快
 
 ## 14. Node.js 中对不同扩展名文件的处理机制
+
+
+> `js → json → .node → 目录 → inex.js ...`
 
 ### 14.1. 扩展名解析优先级
 
@@ -348,7 +354,7 @@ config.port = 4000;  // 修改只影响内存中的副本
 // 重新 require 时会获得原始文件的内容
 ```
 
-### 14.4. .node 文件处理
+### 14.4. `.node` 文件处理
 
 ```javascript
 // .node 文件是编译好的 C++ 插件
@@ -420,7 +426,7 @@ const tsConfig = require('./tsconfig.json');
 const babelConfig = require('./.babelrc');
 ```
 
-### 14.7. 自定义扩展名处理
+### 14.7. 自定义扩展名处理 →    `require.extensions`
 
 ```javascript
 // 注册自定义扩展名处理器
@@ -434,9 +440,11 @@ require.extensions['.xyz'] = function(module, filename) {
 const xyzModule = require('./file.xyz');
 ```
 
-### 14.8. 文件缓存机制
+### 14.8. 文件缓存机制  →  r`equire.cache` 
 
-```javascript hl:15
+> require.cache 
+
+```javascript hl:15,1,6
 // 1. 不同扩展名的缓存处理
 const jsModule = require('./file.js');
 const jsonModule = require('./file.json');
@@ -483,6 +491,11 @@ const addon = safeRequire('./addon.node') || mockAddon;
 
 ### 14.10. 性能考虑
 
+- 缓存：比如使用 map 缓存
+- 大文件处理
+	- 流式读取
+- 延迟处理
+
 ```javascript hl:18
 // 1. JSON 文件缓存
 const configs = new Map();
@@ -508,16 +521,3 @@ function getHeavyModule() {
     return heavyModule;
 }
 ```
-
-### 14.11. 最佳实践建议
-
-1. 显式指定文件扩展名以提高可读性
-2. 对 JSON 文件进行验证
-3. 谨慎处理二进制模块
-4. 实现适当的错误处理
-5. 注意缓存机制
-6. 考虑性能影响
-7. 遵循模块化原则
-8. 使用适当的文件组织结构
-9. 注意跨平台兼容性
-10. 保持代码整洁和可维护性

@@ -191,7 +191,7 @@ class PollingManager {
 }
 ```
 
-## 6. Promise 链未处理
+## 6. Promise 链未处理 
 
 ```javascript hl:1,15
 // 错误示例：未处理的 Promise
@@ -331,7 +331,7 @@ const nodeData = new DomNodeData();
 
 ## 10. 最后
 
-这些是 Node.js 中常见的内存泄漏场景及其解决方案。要避免内存泄漏，关键是要：
+以上 Node.js 中常见的内存泄漏场景及其解决方案。要避免内存泄漏，关键是要：
 
 1. 及时清理不再使用的资源
 2. 限制缓存大小

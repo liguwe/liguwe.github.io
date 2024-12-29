@@ -74,7 +74,7 @@ async function multipleAsyncOperations() {
 }
 ```
 
-## 3. 全局未捕获异常处理：process
+## 3. 全局未捕获异常处理：`process.on('uncaughtException', (error) => {}`
 
 ```javascript hl:2,17,16
 // 未捕获的异常处理
@@ -220,7 +220,7 @@ async function databaseOperation() {
 }
 ```
 
-## 6. 事件触发器错误处理
+## 6. 事件触发器错误处理 →   `events`
 
 ```javascript hl:21
 const EventEmitter = require('events');
@@ -335,13 +335,12 @@ process.on('uncaughtException', error => {
 });
 ```
 
-## 9. 自己写一个koa中间件，用于捕获相关的异常
+## 9. 写一个koa中间件，用于捕获相关的异常
 
 ![图片&文件](./files/20241027-8.png)
 
 ## 10. 总结
 
-这些错误处理方式可以根据具体需求组合使用，构建一个健壮的错误处理系统。关键点是：
 1. 合理区分开发环境和生产环境的错误处理
 2. 确保错误被正确记录和监控
 3. 实现优雅的错误恢复机制

@@ -1,12 +1,17 @@
 
 # 常用的 package.json 字段说明
 
-`#nodejs` `#R1` 
+`#nodejs` 
 
 
 ## 目录
 <!-- toc -->
  ## 1. 整体介绍 
+
+- module → esm , mjs
+- main → cjs
+- types 
+- exports:{ ... }
 
 ```json hl:5,9
 {
@@ -58,14 +63,17 @@
 }
 ```
 
-常见场景：
+### 1.1. 总结
 
 - 开发库/框架时
-	- 重点关注：`main`、`module`、`types`、`exports`、`peerDependencies`
+	- 重点关注：
+		- `main`、`module`、`types`、`exports`、`peerDependencies`
 - 开发应用时
-	- 重点关注：`scripts`、`dependencies`、`devDependencies`
+	- 重点关注：
+		- `scripts`、`dependencies`、`devDependencies`
 - 发布 npm 包时
-	- 重点关注：`name`、`version`、`files`、`keywords`
+	- 重点关注：
+		- `name`、`version`、`files`、`keywords`
 
 ## 2. devDependencies 和 dependencies 区别
 
@@ -98,7 +106,8 @@ npm install webpack -D
 
 ### 2.3. 典型使用场景
 
-dependencies 适用于：
+`dependencies` 适用于：
+
 ```json
 {
   "dependencies": {
@@ -123,7 +132,7 @@ dependencies 适用于：
 }
 ```
 
-devDependencies 适用于：
+`devDependencies` 适用于：
 
 ```json
 {
@@ -183,7 +192,7 @@ NODE_ENV=production npm install
 }
 ```
 
-在部署时，通常只需要安装 dependencies，可以减少安装包的大小和时间。
+>  在部署时，通常只需要安装 `dependencies`，可以减少安装包的大小和时间
 
 ### 2.6. 依赖分类的建议
 
@@ -243,7 +252,7 @@ git add package-lock.json  # 确保将 package-lock.json 提交到版本控制
 
 ```
 
-### 2.8. 使用 npm ci 
+### 2.8. 使用 npm ci →  严格按照 `package-lock.json` 来安装
 
 ```markdown hl:7,6
 # npm install

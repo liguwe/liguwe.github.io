@@ -1,14 +1,14 @@
 
 # RESTful 接口规范
 
-`#nodejs` `#R1` 
+`#nodejs` 
 
 
 ## 目录
 <!-- toc -->
  ## 1. 资源（Resources） 
 
-RESTful（Representational State Transfer）API 的核心概念是**资源**。
+`RESTful`（Representational State Transfer）API 的核心概念是**资源**。
 - **每个资源都应该有一个唯一的 URI（统一资源标识符）**。
 - **系统中所有事务都是资源**
 
@@ -43,7 +43,9 @@ DELETE /users/123  // 删除特定用户
 
 ## 3. 无状态（Stateless）
 
-每个请求应该包含所有必要的信息，服务器不应该在不同请求之间保存客户端状态。
+每个请求应该包含所有==必要的信息==，服务器不应该在不同请求之间保存客户端状态。
+
+>  因为 HTTP 是无状态
 
 ## 4. 统一接口（Uniform Interface）
 
@@ -52,7 +54,7 @@ API 应该有一个一致的接口，这包括：
 - 资源标识
 - 通过表述来操作资源
 - 自描述消息
-- 超媒体作为应用状态引擎（HATEOAS）
+- 超媒体作为应用状态引擎（`HATEOAS`）
 
 ## 5. 响应状态码（Response Status Codes）
 
@@ -125,8 +127,8 @@ API 应该有一个一致的接口，这包括：
 
 假设我们有一个博客 API，下面是一些符合 RESTful 规范的端点设计：
 
-```
-GET /api/v1/posts           // 获取所有文章
+```js
+GET /api/v1/posts                               // 获取所有文章
 GET /api/v1/posts?author=john&sort=date_desc  // 获取 John 的文章，按日期降序排列
 POST /api/v1/posts          // 创建新文章
 GET /api/v1/posts/789       // 获取特定文章

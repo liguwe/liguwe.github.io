@@ -2,7 +2,7 @@
 # Node.js 中提高网络传输速度的主要方法
 
 
-`#nodejs` `#R1` 
+`#nodejs` 
 
 
 ## 目录
@@ -13,11 +13,11 @@
 - 使用 HTTP/2
 - 实现合适的`缓存`策略
 - 使用`流式`传输
-- 保持长连接
+- 保持`长连接`
 - 负载均衡
-- 使用内存缓存
+- 使用`内存缓存`
 
-根据具体场景选择合适的优化方案，通常需要**多种方案组合使用**才能达到最佳效果。
+> 根据具体场景选择合适的优化方案，通常需要**多种方案组合使用**才能达到最佳效果。
 
 ## 2. 启用 Gzip 压缩
 
@@ -63,7 +63,7 @@ server.on('stream', (stream, headers) => {
 });
 ```
 
-## 4. 实现缓存策略
+## 4. 实现缓存策略：HTTP 缓存： `Cache-Control/Etag`
 
 ```javascript
 const express = require('express');
@@ -90,7 +90,7 @@ app.get('/api/data', (req, res) => {
 });
 ```
 
-## 5. 使用流式传输
+## 5. 使用流式传输 ： 如`fs.createReadStream`
 
 ```javascript
 const fs = require('fs');
@@ -103,6 +103,7 @@ app.get('/download', (req, res) => {
 
 // 大数据响应使用流
 app.get('/large-data', (req, res) => {
+
     res.setHeader('Content-Type', 'application/json');
     
     const streamData = async function*() {
@@ -112,7 +113,9 @@ app.get('/large-data', (req, res) => {
     };
     
     const stream = Readable.from(streamData());
+    
     stream.pipe(res);
+    
 });
 ```
 
@@ -134,9 +137,12 @@ const agent = new http.Agent({
 });
 ```
 
-## 7. 使用负载均衡
+## 7. 使用负载均衡  →  
 
-```javascript
+> 主进程：只用于创建多个 `cluster 进程`
+> 非主进程：用于创建 `express 服务`，因为任务是隔离的
+
+```javascript hl:4,9
 const cluster = require('cluster');
 const numCPUs = require('os').cpus().length;
 
@@ -153,7 +159,7 @@ if (cluster.isMaster) {
 }
 ```
 
-## 8. 使用**内存缓存**
+## 8. 使用**内存缓存**  →  `node-cache`
 
 ```javascript hl:1,2
 const NodeCache = require('node-cache');

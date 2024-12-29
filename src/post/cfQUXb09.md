@@ -1,7 +1,7 @@
 
 # TIME_WAIT 过多的原因以及解决方案
 
-`#nodejs` `#R1` 
+`#nodejs` 
 
 
 ## 目录
@@ -42,7 +42,7 @@ client.connect(3000, '127.0.0.1', () => {
 
 ### 2.1. 启用 TCP keepalive 保持长连接
 
-```javascript
+```javascript hl:2
 // 服务端启用 keepalive
 const server = net.createServer((socket) => {
     socket.setKeepAlive(true, 60000); // 60秒
@@ -55,7 +55,7 @@ const server = http.createServer((req, res) => {
 });
 ```
 
-### 2.2. 使用连接池
+### 2.2. 使用==连接池==
 
 ```javascript
 // 使用连接池示例
@@ -96,7 +96,7 @@ sysctl -w net.ipv4.tcp_tw_reuse=1
 sysctl -w net.ipv4.tcp_tw_recycle=1  # 注意：在 Linux 4.12+ 已被移除
 ```
 
-### 2.4. 负载均衡
+### 2.4. 负载均衡 →  使用 Node.js cluster 模块做负载均衡
 
 ```javascript
 // 使用 Node.js cluster 模块做负载均衡
@@ -122,7 +122,7 @@ if (cluster.isMaster) {
 
 ### 3.1. 服务端设计
 
-   - 尽量使用长连接
+   - 尽量使用==长连接==
    - 实现**连接池**机制
    - 合理配置 keepalive 参数
 
@@ -136,7 +136,7 @@ if (cluster.isMaster) {
 
    - 适当调整系统参数
    - 配置负载均衡
-   - 监控 TIME_WAIT 状态
+   - 监控 `TIME_WAIT` 状态
 
 ### 3.4. 架构优化
 
