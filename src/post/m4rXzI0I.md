@@ -3,12 +3,18 @@
 
 `#vue3` 
 
-Vue 3确实没有直接等同于React高阶组件（HOC）的概念，但我们可以通过Vue 3的组合式API（Composition API）和其他特性来实现类似的功能。
-
 
 ## 目录
 <!-- toc -->
- ## 1. 组合式函数（Composables） 
+ ## 1. 总结 
+
+- 使用 `h 函数` 再包装一下可以实现 HOC
+- 组合式函数
+- 混入 app.mixin 等
+- 自定义指令
+- provide & inject 
+
+## 2. 组合式函数（Composables）
 
 这是Vue 3中最接近React高阶组件概念的方法。组合式函数允许我们封装和重用有状态逻辑。
 
@@ -45,7 +51,7 @@ export default defineComponent({
 })
 ```
 
-## 2. 渲染函数 和 JSX：withLogger
+## 3. 渲染函数 和 JSX：withLogger
 
 Vue 3支持使用渲染函数和JSX，这让我们可以更接近 React的编程方式，包括实现类似HOC的模式。
 
@@ -86,7 +92,7 @@ const MyComponent = defineComponent({
 export default withLogger(MyComponent)
 ```
 
-## 3. 插件和全局混入（Mixin）
+## 4. 插件和全局混入（Mixin）
 
 虽然不如组合式函数灵活，但对于某些场景，我们可以使用Vue插件或全局混入来添加跨组件的功能。
 
@@ -119,7 +125,7 @@ app.use(LoggerPlugin)
 app.mount('#app')
 ```
 
-## 4. 自定义指令
+## 5. 自定义指令
 
 对于一些特定的功能，我们可以使用Vue的自定义指令来实现类似HOC的效果。
 
@@ -157,7 +163,7 @@ export default {
 </script>
 ```
 
-## 5. 提供/注入（Provide/Inject）
+## 6. 提供/注入（Provide/Inject）
 
 对于需要在组件树中==共享数据或功能==的场景，我们可以使用 Vue 3的 `provide/inject` 特性。
 

@@ -348,7 +348,7 @@
 
     - [v-memo 介绍](post/vtfiPOVb.md)
 
-    - [Vue3 的模板编译也会发生在运行时](post/0aLsVFXC.md)
+    - [Vue3 的模板编译也可以发生在运行时](post/H7sMNdI0.md)
 
     - [Vue3  生态最新动态](post/U2k4R2gl.md)
 

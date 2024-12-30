@@ -4,12 +4,29 @@
 
 `#pinia` `#vue` 
 
->  文档地址： https://pinia.vuejs.org/zh/core-concepts/getters.html
-
 
 ## 目录
 <!-- toc -->
- ## 1. 为什么？ 
+ ## 总结 
+
+- 每个命名空间下，都应该提供`清空方法` ，避免内存暴增
+	- `store.$reset()`
+- 某些场景可以考虑使用 WeakMap/WeakSet
+- 注意 vite 拆包 pinia
+- ==大型应用或数据密集型应用==可以考虑搞个 pinia 插件来管理内存
+	- 监控内存大小
+		- `new Blob([JSON.stringify(state)]).size
+	- 过期策略：多久没有访问了？
+	- 最近访问的多少条数据
+	- **路由切换时清理** ? 
+
+---
+
+
+
+>  文档地址： https://pinia.vuejs.org/zh/core-concepts/getters.html
+
+## 1. 为什么？
 
 - Pinia 抛弃了 `Mutation`，这意味着你可以直接更新状态，**不用再注册 Commit**
 - 语法上更加贴近 Composition Api
@@ -471,7 +488,7 @@ pinia.use(({ store }) => {
 
 ## 7. 组件外部使用 Store
 
-在组件外部使用store时，情况会有所不同。
+在组件外部使用store时，情况会有所不同
 
 在单页面应用程序中，只需在创建pinia实例之后调用`useStore()`函数即可正常工作。确保在pinia安装后才调用`useStore()`函数即可。
 

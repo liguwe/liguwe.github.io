@@ -177,7 +177,8 @@ module.exports = MiniKoa;
 
 1. **错误处理**：
 	- 可以在发生错误时触发特定事件，允许用户注册错误处理器。
-	- 例如，用户可以通过 `app.on('error', (err) => { ... })` 来处理全局错误。
+	- 例如
+		- 用户可以通过 `app.on('error', (err) => { ... })` 来处理全局错误。
 2. **日志记录**：
 	- 可以在特定事件（如请求开始、请求结束）时触发事件，允许用户注册日志记录器。
 	- 例如，用户可以通过 `app.on('request', (ctx) => { ... })` 来记录请求日志。
@@ -303,7 +304,7 @@ class Application extends Emitter {
 	- 错误处理方法
 	- 状态管理
 
-```javascript
+```javascript 
 const context = {
   get url() {
     return this.request.url;
@@ -325,7 +326,7 @@ const context = {
 	- 请求头解析
 	- 查询字符串处理
 	- 请求方法判断
-	- Content-Type 处理
+	- `Content-Type` 处理
 
 ```javascript
 module.exports = {

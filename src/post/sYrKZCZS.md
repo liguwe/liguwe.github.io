@@ -157,7 +157,7 @@ import { createApp, ref } from 'https://unpkg.com/vue@3/dist/vue.esm-browser.js'
 </script>
 ```
 
-### 4.4. Import maps 方式引用
+### 4.4. Import maps 方式引用  →  `<script type="importmap">`
 
 ```vue hl:2
 <!-- 这个标签包含一个 JSON 对象，用于定义模块的映射关系。 -->

@@ -8,7 +8,7 @@
 <!-- toc -->
  ## 1. 基础 
 
-![image.png](https://832-1310531898.cos.ap-beijing.myqcloud.com/yuque/158cdda6d2da00692729eb12f32de205.png)
+![image.png|632](https://832-1310531898.cos.ap-beijing.myqcloud.com/yuque/158cdda6d2da00692729eb12f32de205.png)
 
 ### 1.1. 定义
 
@@ -583,7 +583,7 @@ const AsyncComponent3 = defineAsyncComponent(() =>
 </script>
 ```
 
-### 6.4. 错误处理
+### 6.4. 错误处理 →  `onErrorCaptured`
 
 ```vue hl:15,13
 <template>

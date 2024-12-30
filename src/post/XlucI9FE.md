@@ -6,7 +6,15 @@
 
 ## 目录
 <!-- toc -->
- ## 1. 执行时机不同 
+ ## R1 
+
+- `实例创建`完成后调用
+- `组件被挂载到 DOM` 后调用
+- 父子组件调用顺序
+	- 父依赖于子组件 `created` 和 `mounted` 都好了
+- `setup` 等价于  `created`
+
+## 1. 执行时机不同
 
 ```javascript hl:18
 // Options API 方式
@@ -170,7 +178,7 @@ export default {
 	- mounted 钩子对应 `onMounted` 函数
 - 注意事项：
 	- 在 created 中进行的数据请求可能导致**页面闪烁**
-	- mounted 不保证**所有子组件都已挂载完成**，如需要可以使用 nextTick
+	- mounted 不保证**所有子组件都已挂载完成**，如需要可以使用 `nextTick`
 
 ## 7. 使用建议
 

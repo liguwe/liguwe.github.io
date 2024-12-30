@@ -27,10 +27,10 @@
 
 ## 3. 中间件系统
 
-### 3.1. Express
+### 3.1. Express  
 
 - 基于`回调`函数（Callback）
-- 中间件**按线性方式**执行
+- 中间件==按线性方式==执行
 	- 三个参数
 		- req
 		- res
@@ -50,7 +50,7 @@ app.use((req, res, next) => {
 ## 4. Koa 2 
 
 - 基于 async/await
-- 洋葱模型（Onion model）中间件
+- ==洋葱模型==（Onion model）中间件
 	- 两个参数
 		- ctx 
 		- next
@@ -84,7 +84,7 @@ app.get('/users', (req, res, next) => {
 
 ### 5.2. Koa
 
-- 原生支持 async/await
+- 原生支持 `async/await`
 - 更清晰的异步流程
 - 统一的错误处理
 
@@ -112,7 +112,7 @@ app.use((req, res) => {
 
 ### 6.2. Koa
 
-- 统一的 context 对象
+- 统一的 ==context 对象==
 - 封装了 request 和 response
 
 ```javascript

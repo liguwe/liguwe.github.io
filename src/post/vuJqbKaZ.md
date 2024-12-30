@@ -6,7 +6,29 @@
 
 ## 目录
 <!-- toc -->
- ## 1. compiler-core 
+ ## 1. 总结 
+
+- compiler-core：
+	- 模板 → 渲染函数
+- compiler-dom
+	- ==浏览器中进行运行时编译==
+- compiler-sfc
+	- 编译 `.vue` 文件
+- reactivity
+	- 提供 `reactive、ref、computed` 等核心 API
+- runtime-core
+	- 运行时核心逻辑，包括渲染器、 diff、组件系统设计
+- runtime-dom
+	- 基于 runtime-core，添加了浏览器 DOM 特定的运行时代码。
+- server-renderer
+	- 实现 Vue 的服务器端渲染（SSR）功能
+- shared
+	- 公共
+- vue
+	- 作为 Vue 3 的主入口
+	- 整合了运行时和编译器
+
+## 2. compiler-core
 
 作用：
 - 实现与平台无关的编译器核心功能。
@@ -18,7 +40,7 @@
 - 这个包是平台无关的，不包含任何与 DOM 或 浏览器相关的代码。
 - 通常不会直接使用，而是通过 `compiler-dom` 或自定义编译器间接使用。
 
-## 2. compiler-dom
+## 3. compiler-dom
 
 作用：
 - 基于 compiler-core，添加了**缓存全部或部分虚拟节点**。
@@ -44,7 +66,7 @@ console.log(code) // 输出编译后的渲染函数
 
 >  之前用过，在 markdown 中嵌入 Vue 组件时可以考虑使用
 
-## 3. compiler-sfc
+## 4. compiler-sfc
 
 作用：
 - 编译 Vue 单文件组件（.vue 文件）。
@@ -55,7 +77,7 @@ console.log(code) // 输出编译后的渲染函数
 - 这个包通常由构建工具内部使用，开发者很少需要直接与之交互。
 - 支持 TypeScript、CSS 预处理器等功能，需要相应的插件支持。
 
-## 4. reactivity
+## 5. reactivity
 
 作用：
 - 实现 Vue 3 的响应式系统。
@@ -83,7 +105,7 @@ state.count++
 
 ```
 
-## 5. runtime-core
+## 6. runtime-core
 
 作用：
 - 实现 Vue 的核心运行时功能。
@@ -95,7 +117,7 @@ state.count++
 - 这是一个平台无关的包，不包含任何 DOM 操作。
 - 深入理解这个包有助于理解 Vue 的内部工作原理。
 
-## 6. runtime-dom
+## 7. runtime-dom
 
 作用：
 - 基于 runtime-core，添加了浏览器 DOM 特定的运行时代码。
@@ -106,7 +128,7 @@ state.count++
 - 这是大多数 Vue 应用实际使用的运行时包。
 - 确保与其他 Vue 包的版本一致。
 
-## 7. server-renderer
+## 8. server-renderer
 
 作用：
 - 实现 Vue 的服务器端渲染（SSR）功能。
@@ -117,7 +139,7 @@ state.count++
 - 使用 SSR 需要特别注意服务器端和客户端状态的同步。
 - 某些浏览器特定的 API 在服务器端不可用，需要适当处理。
 
-## 8. shared
+## 9. shared
 
 作用：
 - 提供在其他 Vue 包中**共享的工具函数和常量**。
@@ -128,7 +150,7 @@ state.count++
 - 这个包的内容可能会随 Vue 版本更新而变化。
 - 不建议在应用代码中直接依赖这个包，因为它主要用于 Vue 内部。
 
-## 9. vue
+## 10. vue
 
 作用：
 - 作为 Vue 3 的主入口。
