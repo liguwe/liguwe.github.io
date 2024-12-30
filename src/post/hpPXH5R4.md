@@ -8,11 +8,11 @@
 <!-- toc -->
  ## 总结 
 
-- ssr 简单说就是把 vdom 渲染成 HTML 字符串
-- 客户端激活原理：
+- `ssr` 简单说就是把 `vdom` 渲染成 HTML 字符串
+- 客户端激活原理：需要干==两件事情==
 	- 会==递归== 在虚拟节点与真实DOM元素之间建立联系，即 `vnode.el = el`。这样才能保证后续更新程序正确运行。  
 	- 为 DOM 元素==添加事件绑定==。
-
+- 激活完成后，整个应用程序已经完全==被 Vue.js 接管为 CSR 应用程序==
 
 ## 1. CSR、SSR、同构
 
@@ -143,7 +143,6 @@ const MyComponent = {
 	name: "App",
 	setup() {
 		const str = ref("foo");
-
 		return () => {
 			return {
 				type: "div",
@@ -367,7 +366,9 @@ function hydrateElement(el, vnode) {
 
 ### 5.1. 生命周期
 
-beforeUpdate、updated、 beforeMount、mounted、beforeUnmount、unmounted 等 生命周期钩子函数不会在服务端执行。  
+beforeUpdate、updated、 beforeMount、mounted、beforeUnmount、unmounted 等生命周期钩子函数不会在服务端执行。  
+
+- 与 DOM 相关的钩子函数都不会在服务端执行
 
 比如下面的代码node 端会出内存泄漏问题
 
