@@ -363,7 +363,7 @@
 
     - [为什么不应该在循环、条件或嵌套函数中使用 Hooks](post/EG3l3URg.md)
 
-    - [React 的 Render Props 是什么？](post/JvUfO9jd.md)
+    - [React 的 Render Props](post/But9tmZF.md)
 
     - [React 的架构设计演变](post/jli0LDSX.md)
 
