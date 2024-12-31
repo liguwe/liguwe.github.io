@@ -6,9 +6,24 @@
 
 ## 目录
 <!-- toc -->
- ## 1. useRef  
+ ## 1. 总结 
 
-### 1.1. useRef 的作用
+- useRef 的作用
+	- 获取 DOM 引用
+	- 用户获取最新数据
+	- 不会导致重新渲染
+	- `.current`
+	- 可以用来存储定时器，方便 `clear`
+- useRef vs useState 的区别：
+	- 是否会导致重新渲染
+- **React 不允许组件访问其他组件的 DOM 节点，甚至自己的子组件也不行**
+	- 但可使用 `forwardRef` 包装和可以，然后再配合 `useRef`
+- useRef 的实现原理
+	- 本质上是维护了**一个包含 `current` 属性的对象**，这个对象**在组件的整个生命周期中保持不变**
+
+## 2. useRef 
+
+### 2.1. useRef 的作用
 
 - 获取 DOM 引用
 - 创建元素对象，只要函数组件未被销毁，原始对象就一直存在，故可以用它来`保存数据`
@@ -19,12 +34,12 @@
 - 缓存不需要触发重新染的值
 - 同样，只能在顶层使用
 
-### 1.2. 注意点
+### 2.2. 注意点
 
 - 不要在渲染时，修改 ref
 - 不要过度使用，需要区分哪些使用 `state` 来管理
 
-### 1.3. useRef vs useState 的区别
+### 2.3. useRef vs useState 的区别
 
 区别在于**是否会触发重现渲染**
 
@@ -54,7 +69,7 @@ function ComparisonExample() {
 
 ```
 
-## 2. forwardRef 与 useRef 配合使用
+## 3. forwardRef 与 useRef 配合使用
 
 **React 不允许组件访问其他组件的 DOM 节点**。甚至自己的子组件也不行，使用 `forwardRef` 可以
 
@@ -86,7 +101,7 @@ export default function Form() {
 }
 ```
 
-## 3. useRef 用于性能优化
+## 4. useRef 用于性能优化
 
 ```javascript hl:7
 function SearchResults() {
@@ -108,11 +123,11 @@ function SearchResults() {
 }
 ```
 
-## 4. useRef 的实现原理
+## 5. useRef 的实现原理
 
 本质上是维护了**一个包含 `current` 属性的对象**，这个对象**在组件的整个生命周期中保持不变**。
 
-### 4.1. 数据结构
+### 5.1. 数据结构
 
 ```typescript hl:2,10
 type Hook = {
@@ -137,7 +152,7 @@ type Fiber = {
 
 ```
 
-### 4.2. 在 Fiber 中的存储
+### 5.2. 在 Fiber 中的存储
 
 ```typescript
 type Fiber = {
@@ -159,7 +174,7 @@ function Component() {
 
 ```
 
-### 4.3. 初始阶段
+### 5.3. 初始阶段
 
 ```typescript hl:2,20
 function createRef(initialValue) {
@@ -190,7 +205,7 @@ function mountRef(initialValue) {
 }
 ```
 
-### 4.4. 更新阶段
+### 5.4. 更新阶段
 
 ```typescript
 function updateRef(initialValue) {

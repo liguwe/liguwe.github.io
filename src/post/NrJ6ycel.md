@@ -6,18 +6,43 @@
 
 ## 目录
 <!-- toc -->
- ## 总结 
+ ## 1. 总结 
 
+- useMemo 、 useCallback 的 执行时机：
+	- 首次渲染时，执行一次
+	- 再之后就依赖于`依赖项数组`
+- 目的是为了优化性能，缓存==值或函数==
+- useMemo 与 useCallback 的区别
+	- 用途：
+		- useMemo：缓存**函数计算的结果**
+		- useCallback：缓存**函数引用**
+	- 返回值：
+		- useMemo：返回缓存的**值**
+		- useCallback：返回缓存的**函数**
+	- 使用场景：
+		- useMemo：
+			- 昂贵的计算操作
+			- 复杂的数据处理
+			- 需要缓存引用的对象
+		- useCallback：
+			- **传递给子组件的回调函数**
+			- 防止不必要的重渲染， ==防止子组件重渲染==
+			- 需要保持**函数引用稳定**的场景
+	- 性能考虑：
+		- 不是所有值都需要 useMemo
+		- 不是所有函数都需要 useCallback
+		- 应该在实际遇到性能问题时才使用
+- useCallback 一般配合 React.memo 使用，也可作为 `useEffect` 的依赖项的函数
+- React 的 `useEffect` ==对应类比== Vue 的 `watch 或 watchEffect`
 
-
-## 1. 执行时机
+## 2. 执行时机
 
 - 组件`首次`渲染时执行一次
 - 在之后，当且仅当`依赖项`发生变化时重新执行
 - 如果依赖项没有变化
 	- 即使组件重新渲染，也会直接使用缓存的值而不执行回调
 
-## 2. 最佳实践
+## 3. 最佳实践
 
 - 简单计算不需要 `useMemo`，因为
 	- `useMemo` 本身也有开销（创建函数、维护依赖列表等）
@@ -29,7 +54,7 @@
 	- 正确的做法是：
 		- 使用 `useEffect` 处理副作用，然后请求完数据后，设置 `data`，然后再将 `data` 作为依赖项
 
-## 3. 注意事项
+## 4. 注意事项
 
 - 别使用 `{ ...data }` ，每次都不一样，导致缓存失败
 	- 可**指定具体依赖属性值**，比如 `data.id`
@@ -39,7 +64,7 @@
 	- 建议 2：深拷贝，但不建议
 - 添加必要依赖项，否则可能会闭包陷阱（即使用了旧的变量）
 
-## 4. 配合其他 hooks 使用
+## 5. 配合其他 hooks 使用
 
 ```javascript
 function OptimizedComponent() {
@@ -58,7 +83,7 @@ function OptimizedComponent() {
 
 ```
 
-## 5. 和 vue 的 computed 的异同
+## 6. 和 vue 的 computed 的异同
 
 - 响应式系统：
 	- Vue computed 基于响应式系统（ref/reactive）
@@ -77,7 +102,7 @@ function OptimizedComponent() {
 	- React useMemo 相对独立
 - 副作用：
 	- 副作用使用 `watch/watchEffect`
-	- 副作用使用 useEffect，然后修改状态值，再将状态值作为 `useMemo` 的依赖项
+	- 副作用使用 `useEffect`，然后修改状态值，再将状态值作为 `useMemo` 的依赖项
 - 计算时机
 	- vue **只有依赖变化时重新计算**
 	- react **每次渲染都会检查依赖数组**，依赖未变化时使用缓存值
@@ -86,7 +111,7 @@ function OptimizedComponent() {
 - Vue 的组合式 API 中的 computed 更符合`响应式编程范式`
 - 而 React 的 useMemo 则更符合`函数式编程思维`。
 
-## 6. 与 useCallback 的区别
+## 7. 与 useCallback 的区别
 
 实际上，`useCallback` 是 `useMemo` 的特殊用例：
 
@@ -97,9 +122,9 @@ const callback = useCallback(fn, deps);
 const callback = useMemo(() => fn, deps);
 ```
 
-### 6.1. 性能优化场景
+### 7.1. 性能优化场景
 
-#### 6.1.1. useMemo - 昂贵计算的优化
+#### 7.1.1. useMemo - 昂贵计算的优化
 
 ```jsx
 // useMemo - 昂贵计算的优化
@@ -118,7 +143,7 @@ function DataGrid({ data, config }) {
 
 ```
 
-#### 6.1.2. useCallback - 防止子组件重渲染
+#### 7.1.2. useCallback - 防止子组件重渲染
 
 如下，`<TodoInput onAdd={handleAddTodo} /> ` 中 `handleAddTodo` 变化会导致重新渲染
 
@@ -142,7 +167,7 @@ function TodoList() {
 }
 ```
 
-### 6.2. 常见错误用法
+### 7.2. 常见错误用法
 
 ```javascript
 // ❌ 错误：不必要的 useMemo
@@ -172,7 +197,7 @@ const ExpensiveComponent = ({ data }) => {
 };
 ```
 
-### 6.3. 与 React.memo 配合使用
+### 7.3. 与 React.memo 配合使用
 
 ```javascript
 // 子组件使用 React.memo 包裹
@@ -209,7 +234,7 @@ function ParentComponent() {
 }
 ```
 
-### 6.4. 主要区别总结
+### 7.4. 主要区别总结
 
 - 用途：
 	- useMemo：缓存**函数计算的结果**
@@ -231,7 +256,7 @@ function ParentComponent() {
 	- 不是所有函数都需要 useCallback
 	- 应该在实际遇到性能问题时才使用
 
-### 6.5. 使用建议
+### 7.5. 使用建议
 
 1. 优先考虑代码的可读性和维护性，而不是过早优化
 	1. **过早优化是万恶之源**
@@ -246,9 +271,9 @@ function ParentComponent() {
 	- 简单的事件处理函数不需要 `useCallback`
 5. 结合 React.memo 使用可以获得**最佳性能优化效果**
 
-## 7. useCallback 的常见使用场景
+## 8. useCallback 的常见使用场景
 
-### 7.1. 防止子组件重复渲染（最常见场景）
+### 8.1. 防止子组件重复渲染（最常见场景）
 
 ```javascript hl:1,12,31,18
 // 子组件
@@ -287,7 +312,7 @@ function Parent() {
 }
 ```
 
-### 7.2. 在 useEffect 中使用的函数
+### 8.2. 在 useEffect 中使用的函数
 
 - query 和 handleSearch 变化时，触发请求
 	- query 变化好理解
@@ -338,7 +363,7 @@ function SearchComponent({ searchType }) {
 }
 ```
 
-### 7.3. 事件监听器的处理
+### 8.3. 事件监听器的处理
 
 > 传入空数组，说明是组件挂载时，只执行一次，后面都是取缓存值
 
@@ -370,7 +395,7 @@ function WindowResizeHandler() {
 }
 ```
 
-### 7.4. 在自定义 Hook 中返回函数
+### 8.4. 在自定义 Hook 中返回函数
 
 ```javascript
 // 自定义 Hook
@@ -444,7 +469,7 @@ function Form() {
 }
 ```
 
-### 7.5. 处理防抖/节流函数
+### 8.5. 处理防抖/节流函数
 
 > 空依赖数组，因为这个函数不需要重新创建
 
@@ -492,7 +517,7 @@ function SearchInput() {
 }
 ```
 
-### 7.6. 复杂表单处理
+### 8.6. 复杂表单处理
 
 ```javascript
 function ComplexForm() {
@@ -575,11 +600,11 @@ function ComplexForm() {
 }
 ```
 
-### 7.7. 使用建议
+### 8.7. 使用建议
 
 - 优先考虑以下场景使用 useCallback：
-	- 传递给使用 React.memo() 的子组件的函数
-	- 作为 useEffect 的依赖项的函数
+	- 传递给使用 `React.memo()` 的子组件的函数
+	- 作为 `useEffect` 的依赖项的函数
 	- 在自定义 Hook 中返回的函数
 	- 需要稳定引用的事件处理函数
 - 避免过度使用：
