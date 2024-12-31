@@ -4,12 +4,30 @@
 
 `#react` 
 
->  是不是很**类似 Vue 的 watch ，并参入参数 `sync`**
-
 
 ## 目录
 <!-- toc -->
- ## 1. 执行时机的区别 
+ ## 1. 总结 
+
+- useEffect：
+	- 渲染完成后执行
+- useLayoutEffect
+	- 渲染完成前同步执行
+	- **类似 Vue 的 watch ，并参入参数 `sync
+- 顺序说明
+	1. React 更新 DOM
+	2. `useLayoutEffect` 执行
+	3. 浏览器绘制屏幕
+		- 区别在于：==是否在浏览器绘制之前执行==
+	4. `useEffect` 执行
+- 区别
+	- ![图片&文件](./files/20241231-1.png)
+- 使用 useLayoutEffect 的场景
+	- 需要==同步测量 DOM==
+	- 需要在==视觉更新之前==修改 DOM
+	- 出现==闪烁==问题需要解决
+
+## 2. 执行时机的区别
 
 ```jsx
 // useEffect：渲染完成后异步执行
@@ -32,9 +50,9 @@ useLayoutEffect(() => {
 3. 浏览器绘制屏幕
 4. `useEffect` 执行
 
-## 2. 性能影响
+## 3. 性能影响
 
-### 2.1. useEffect
+### 3.1. useEffect
 
 ```jsx hl:2
 useEffect(() => {
@@ -43,7 +61,7 @@ useEffect(() => {
 }, []);
 ```
 
-### 2.2. useLayoutEffect
+### 3.2. useLayoutEffect
 
 ```jsx hl:2
 useLayoutEffect(() => {
@@ -52,9 +70,9 @@ useLayoutEffect(() => {
 }, []);
 ```
 
-## 3. 使用场景
+## 4. 使用场景
 
-### 3.1. useLayoutEffect 适用场景
+### 4.1. useLayoutEffect 适用场景
 
 ```jsx hl:1,7
 // 1. 需要立即测量 DOM 的场景
@@ -69,7 +87,7 @@ useLayoutEffect(() => {
 }, []);
 ```
 
-### 3.2. useEffect 适用场景
+### 4.2. useEffect 适用场景
 
 ```jsx hl:1,6
 // 1. 数据获取
@@ -85,7 +103,7 @@ useEffect(() => {
 }, []);
 ```
 
-## 4. 关键区别总结（表格）
+## 5. 关键区别总结（表格）
 
 | 特性    | useEffect | useLayoutEffect |
 | ----- | --------- | --------------- |
@@ -93,10 +111,11 @@ useEffect(() => {
 | 浏览器绘制 | 不阻塞       | 阻塞              |
 | 性能影响  | 较小        | 可能较大            |
 | 适用场景  | 大多数副作用    | DOM 测量和更新       |
+|       |           |                 |
 
-## 5. 最佳实践
+## 6. 最佳实践
 
-### 5.1. 默认使用 useEffect
+### 6.1. 默认使用 useEffect
 
 ```jsx
 // 大多数情况下使用 useEffect 即可
@@ -105,7 +124,7 @@ useEffect(() => {
 }, [dependencies]);
 ```
 
-### 5.2. 仅在必要时使用 useLayoutEffect
+### 6.2. 仅在必要时使用 useLayoutEffect
 
 ```jsx hl:1
 // 当需要同步更新 DOM 或防止闪烁时
@@ -114,9 +133,9 @@ useLayoutEffect(() => {
 }, [dependencies]);
 ```
 
-## 6. 常见问题和解决方案
+## 7. 常见问题和解决方案
 
-### 6.1. 闪烁问题
+### 7.1. 闪烁问题
 
 ```jsx
 // 问题代码
@@ -131,7 +150,7 @@ useLayoutEffect(() => {
 }, []);
 ```
 
-### 6.2. 性能问题
+### 7.2. 性能问题
 
 ```jsx hl:6,3
 // 避免在 useLayoutEffect 中进行耗时操作
@@ -146,7 +165,7 @@ useLayoutEffect(() => {
 }, []);
 ```
 
-## 7. 注意事项
+## 8. 注意事项
 
 - SSR（服务器端渲染）注意事项：
 
@@ -173,7 +192,7 @@ useEffect(() => {
 }, []);
 ```
 
-## 8. 选择建议
+## 9. 选择建议
 
 - 默认使用 `useEffect`
 - 当**出现以下情况时考虑使用 useLayoutEffect**：

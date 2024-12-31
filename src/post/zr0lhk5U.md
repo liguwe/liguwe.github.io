@@ -3,12 +3,23 @@
 
 `#vue` 
 
-简单说就是，蒙层 `z-index` 的问题，所以必须渲染到 `body` 或者挂载到父元素上才行，vue3 本身提供内部组件来支持这个功能
-
 
 ## 目录
 <!-- toc -->
- ## 1. 定义 
+ ## 1. 总结 
+
+- 弹框场景就经常使用
+- 将 `Teleport 组件`的**渲染逻辑**从渲染器中分离出来，这么做有==两点好处==：
+	- ==①== 可以**避免渲染器逻辑代码“膨胀”**
+	- ==②== **方便TreeShaking**：
+		- 当用户没有使用 `Teleport` 组件时，由于 `Teleport` 的渲染逻辑被分离
+		- 因此可以利用 `TreeShaking` 机制在最终的 bundle 中删除 Teleport 相关的代码，使得最终构建包的体积变小
+
+## 2. 使用场景
+
+> 简单说就是，蒙层 `z-index` 的问题，所以必须渲染到 `body` 或者挂载到父元素上才行，vue3 本身提供内部组件来支持这个功能
+
+## 3. 定义
 
 ```typescript
 interface TeleportProps {
@@ -32,19 +43,19 @@ interface TeleportProps {
 }
 ```
 
-## 2. 实现渲染逻辑分离
+## 4. 实现渲染逻辑分离
 
 将 Teleport 组件的**渲染逻辑**从渲染器中分离出来，这么做有两点好处：
 
 - 可以**避免渲染器逻辑代码“膨胀”**； 
 - **方便TreeShaking**：
-	- 当用户没有使用 Teleport 组件时，由于 Teleport 的渲染逻辑被分离，因此可以利用 TreeShaking 机制在最终的 bundle 中删除 Teleport 相关的代码，使得最终构建包的体积变小
+	- 当用户没有使用 Teleport 组件时，由于 `Teleport` 的渲染逻辑被分离，因此可以利用 `TreeShaking` 机制在最终的 bundle 中删除 Teleport 相关的代码，使得最终构建包的体积变小
 
 下面是 patch 函数：
 
 ![|608](https://832-1310531898.cos.ap-beijing.myqcloud.com/157ea664c2294a84c81ee0dba0120952.png)
 
-## 3. 以下面模板为示例
+## 5. 以下面模板为示例
 
 ![|472](https://832-1310531898.cos.ap-beijing.myqcloud.com/43dac0ddd96491945eff4ff8a1f2770c.png)
 
@@ -52,7 +63,7 @@ interface TeleportProps {
 
 ![|536](https://832-1310531898.cos.ap-beijing.myqcloud.com/f25fb6a62f4fc44e773d798c7cc4227b.png)
 
-## 4. 最终代码
+## 6. 最终代码
 
 ```javascript
 const Teleport = {
@@ -81,7 +92,7 @@ const Teleport = {
 }
 ```
 
-## 5. 最后
+## 7. 最后
 
 看看 `Teleport` 单词含义：
 

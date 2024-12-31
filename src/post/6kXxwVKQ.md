@@ -6,7 +6,11 @@
 
 ## 目录
 <!-- toc -->
- ## 1. 基础 
+ ## 总结 
+
+- Suspense 是 Vue 的一个内置组件，用于**协调组件树中的异步依赖关系**
+
+## 1. 基础
 
 ![image.png|632](https://832-1310531898.cos.ap-beijing.myqcloud.com/yuque/158cdda6d2da00692729eb12f32de205.png)
 
@@ -261,7 +265,7 @@ defineProps({
 
 ## 4. 组件事件
 
-> 更多可见 [15. Vue3 事件与原生事件的关系和冒泡机制差异](/post/tUegzEoZ.html)
+> 更多可见 [15. Vue3 事件与原生事件的关系和冒泡机制差异分析](/post/PZCOPnJR.html)
 
 1、`<script setup>` 中 定义：`const emit = defineEmits(['inFocus', 'submit'])`
 
@@ -285,7 +289,7 @@ defineProps({
 
 ==重点：`defineEmit(['click']) 事件`会覆盖原生的 click==
 
->  不是说 通过 @click 定义的时间会覆盖通过 DOM 方式定义的事件，别搞混了，更多详见 [15. Vue3 事件与原生事件的关系和冒泡机制差异](/post/tUegzEoZ.html)
+>  不是说 通过 @click 定义的时间会覆盖通过 DOM 方式定义的事件，别搞混了，更多详见 [15. Vue3 事件与原生事件的关系和冒泡机制差异分析](/post/PZCOPnJR.html)
 
 4、和`原生 DOM 事件`不一样，**组件触发**的事件`没有冒泡机制`。你只能监听直接子组件触发的事件。平级组件或是跨越多层嵌套的组件间通信，应使用一个外部的`事件总线`，或是使用一个[全局状态管理方案](https://cn.vuejs.org/guide/scaling-up/state-management.html)。
 
@@ -583,7 +587,7 @@ const AsyncComponent3 = defineAsyncComponent(() =>
 </script>
 ```
 
-### 6.4. 错误处理 →  `onErrorCaptured`
+### 6.4. 错误处理 → `onErrorCaptured`
 
 ```vue hl:15,13
 <template>
@@ -709,7 +713,8 @@ const { data } = await useAsyncData()
 1. **Suspense 只处理其直接子组件的异步依赖**，只处理以下异步情况：
 	- 带有 `async setup()` 的组件
 	- 使用 `defineAsyncComponent` 定义的组件
-2. 异步组件**必须使用** await 或返回 Promise
+2. 异步组件**必须使用** 
+	1. await 或返回 Promise
 3. 确保正确处理错误情况
 4. 考虑使用 `transition` 来优化加载状态的视觉效果
 5. 在服务器端渲染（SSR）场景中要特别注意使用方式

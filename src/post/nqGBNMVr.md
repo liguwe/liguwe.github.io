@@ -5,12 +5,22 @@
 
 >  另外可见 [41. React 的 Diff 算法](/post/xnovmtPU.html)
 
-Vue3 的 Diff 算法通过多个步骤将时间复杂度从 `O(n³)` 优化到 `O(n)`。
-
 
 ## 目录
 <!-- toc -->
- ## 1. **最初的树 Diff 问题** 
+ ## 1. 总结 
+
+- Vue3 的 Diff 算法通过多个步骤将时间复杂度从 `O(n³)` 优化到 `O(n)`
+	- ① 只比较同层级节点，不跨层级比较
+	- ② 使用 key 作为索引
+	- ③ 预处理：快速路径
+		- 头尾节点快速比对
+	- ④ 进一步优化：
+		- 使用==最长递增子序列==减少节点移动
+
+> 和 React 的优化思路类似，但 React 不是`双端比较`，也是不是`快速 Diff 算法`，而是`仅右移`
+
+## 2. **最初的树 Diff 问题**
 
 ```js
 // 最原始的树 Diff 算法（O(n³)复杂度）
@@ -23,7 +33,7 @@ function originalTreeDiff(oldTree, newTree) {
 }
 ```
 
-## 2. **第一步优化：层级比较**
+## 3. **第一步优化：层级比较**
 
 ```js
 // 只比较同层级节点，不跨层级比较
@@ -39,7 +49,7 @@ function levelByLevelDiff(oldChildren, newChildren) {
 }
 ```
 
-## 3. **第二步优化：使用 key 作为索引**
+## 4. **第二步优化：使用 key 作为索引**
 
 ```js
 // 使用 key 建立映射，避免无效比较
@@ -62,7 +72,7 @@ function keyBasedDiff(oldChildren, newChildren) {
 }
 ```
 
-## 4. **第三步优化：快速路径**
+## 5. **第三步优化：快速路径**
 
 ```js
 function fastPathDiff(oldChildren, newChildren) {
@@ -100,7 +110,7 @@ function fastPathDiff(oldChildren, newChildren) {
 }
 ```
 
-## 5. **最终优化：最长递增子序列**
+## 6. **最终优化：最长递增子序列**
 
 ```js
 function optimizedDiff(oldChildren, newChildren) {
@@ -185,7 +195,7 @@ function getSequence(arr) {
 }
 ```
 
-## 6. **优化的核心策略**
+## 7. **优化的核心策略**
 
 - **空间换时间**：
 	- 使用 Map 存储 key-index 映射
@@ -196,7 +206,7 @@ function getSequence(arr) {
 - **分治思想**：
 	- 将问题分解为更小的子问题
 
-## 7. **时间复杂度分析**
+## 8. **时间复杂度分析**
 
 ```js
 // 最终的时间复杂度分析
@@ -212,7 +222,7 @@ function diffComplexity(oldChildren, newChildren) {
 }
 ```
 
-## 8. 总结
+## 9. 总结
 
 - **算法层面**：
 	- 只比较**同层级**节点
@@ -233,4 +243,3 @@ function diffComplexity(oldChildren, newChildren) {
 这些优化策略综合使用，使得 **Vue3 的 Diff 算法在实际应用中能够达到接近线性的时间复杂度**，大大提升了性能。
 
 
-> 和 React 的优化思路类似，但 React 不是`双端比较`，也是不是`快速 Diff 算法`，而是`仅右移`

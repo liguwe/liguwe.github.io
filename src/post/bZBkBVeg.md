@@ -11,11 +11,16 @@
 <!-- toc -->
  ## 1. 总结 
 
-1. scheduler 函数接收原始的 `effect 函数`作为参数
-2. scheduler 可以控制 effect 的执行时机和方式
-3. 如果提供了 scheduler，effect 的重新执行将由 scheduler 来控制
-4. scheduler 可以用于实现高级功能如`防抖、节流、异步更新`等
-5. 在清理组件时记得`停止 effect 以防内存泄漏`
+- 注意 effect 的==详细 API== ，往下看
+	- `scheduler` 函数接收原始的 `effect 函数`作为参数
+	- `scheduler` 可以控制 `effect` 的执行时机和方式
+	- 如果提供了 `scheduler`，effect 的重新执行将由 `scheduler` 来控制
+	- scheduler 可以用于实现高级功能如`防抖、节流、异步更新`等
+	- 在清理组件时记得`停止 effect 以防内存泄漏`
+- 自定义队列调度，更多==看下面示例==
+	- 批量调度
+	- 优先级调度
+	- 防抖等
 
 ## 2. 先看看 effect 函数的完整定义、参数、返回值
 

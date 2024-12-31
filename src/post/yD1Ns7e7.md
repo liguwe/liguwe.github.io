@@ -1,18 +1,44 @@
 
 # 异步组件和函数式组件的实现原理
 
-`#vue` `#R1` 
+`#vue` 
 
 
 ## 目录
 <!-- toc -->
- ## 1. 异步组件的概念 
+ ## 1. 总结 
+
+- 使用 `defineAsyncComponent` 定义异步组件
+	- loader → import 
+	- loadingComponent
+	- errorComponent
+	- onError
+		- retry
+	- 等等
+- 异步组件使用场景
+	- 页面性能、代码分割、服务端下发组件等场景
+- 异步组件默认是"挂起的"，需要配合 `Suspense 组件`使用才能显示加载状态
+- 在服务器端渲染（SSR）中使用时需要特别注意，确保组件能够正确地在服务器端渲染
+- 异步组件最好用于`较大的组件`或不是`立即需要的组件`
+- Vue 3.5 新特性 - ==水合控制时机==
+	- 当指定的==媒体查询==匹配时进行激活
+	- ==交互时==激活
+	- 仅在==元素可见时==开始加载，且在元素进入视口100px之前开始加载
+- 配合 `is` 使用：
+	- `<component is = "AsyncCmpt">` 
+- 一个函数式组件
+	- **本质上**就是一个==普通函数==，该函数的**返回值**是`虚拟 DOM` 
+	- 函数式组件**没有自身状态** ，需要通过 `props` 的方式传入
+- Loading 组件组件 与 delay 选项
+	- 说说==避免闪烁的原理==？ →  之前理解有误
+
+## 2. 异步组件的概念
 
 即，以异步的方式加载并渲染一个组件。 这在`页面性能` 、 `代码分割`、`服务端下发组件`等场景中尤为重要
 
-## 2. 先看定义和使用指南
+## 3. 先看定义和使用指南
 
-### 2.1. 定义 defineAsyncComponent 
+### 3.1. 定义 defineAsyncComponent 
 
 ```ts
 function defineAsyncComponent(
@@ -49,9 +75,9 @@ const AsyncComp = defineAsyncComponent(() => {
 // ... 像使用其他一般组件一样使用 `AsyncComp`
 ```
 
-### 2.2. 使用示例
+### 3.2. 使用示例
 
-#### 2.2.1. 最基础的用法
+#### 3.2.1. 最基础的用法
 
 ```js
 import { defineAsyncComponent } from 'vue'
@@ -69,7 +95,7 @@ export default {
 }
 ```
 
-#### 2.2.2. 带加载和错误状态的完整配置
+#### 3.2.2. 带加载和错误状态的完整配置
 
 ```js
 const AsyncComponent = defineAsyncComponent({
@@ -101,7 +127,7 @@ const AsyncComponent = defineAsyncComponent({
 })
 ```
 
-#### 2.2.3. 在 setup 函数中使用
+#### 3.2.3. 在 setup 函数中使用
 
 ```js
 import { defineAsyncComponent } from 'vue'
@@ -119,7 +145,7 @@ export default {
 }
 ```
 
-#### 2.2.4. 结合 Suspense 使用
+#### 3.2.4. 结合 Suspense 使用
 
 ```vue
 <template>
@@ -146,7 +172,7 @@ export default {
 </script>
 ```
 
-#### 2.2.5. 处理动态路径的组件
+#### 3.2.5. 处理动态路径的组件
 
 ```js
 const AsyncComponent = defineAsyncComponent({
@@ -159,7 +185,7 @@ const AsyncComponent = defineAsyncComponent({
 })
 ```
 
-#### 2.2.6. 带有缓存的异步组件
+#### 3.2.6. 带有缓存的异步组件
 
 ```js
 const cache = new Map()
@@ -178,7 +204,7 @@ const AsyncComponent = defineAsyncComponent({
 })
 ```
 
-#### 2.2.7. 配合路由
+#### 3.2.7. 配合路由
 
 ```javascript
 // 路由中使用
@@ -196,7 +222,7 @@ const router = createRouter({
 })
 ```
 
-### 2.3. Vue 3.5 新特性 - 水合控制
+### 3.3. Vue 3.5 新特性 - 水合控制
 
 在 Vue 3.5+ 中，异步组件可以通过提供`激活策略`来控制何时进行激活
 
@@ -222,24 +248,24 @@ const AsyncComp = defineAsyncComponent({
 });
 ```
 
-### 2.4. 需要注意的是
+### 3.4. 需要注意的是
 
 - `defineAsyncComponent` 返回的是一个**高阶组件**，它仅在需要时才会加载实际的组件
 - 异步组件默认是"挂起的"，需要配合 `Suspense 组件`使用才能显示加载状态
 - 在服务器端渲染（SSR）中使用时需要特别注意，确保组件能够正确地在服务器端渲染
 - 异步组件最好用于`较大的组件`或不是`立即需要的组件`
 
-## 3. 异步组件的简易实现
+## 4. 异步组件的简易实现
 
 同步渲染，如下面的代码就是同步渲染的
 
 ![|299](https://832-1310531898.cos.ap-beijing.myqcloud.com/473c17f0834312fab0708e76ce7ba693.png)
 
-最简单的异步组件加载渲染实现：使用 `import()` 
+最简单的`异步组`件加载渲染实现：使用 `import()` 
 
 ![|390](https://832-1310531898.cos.ap-beijing.myqcloud.com/c67ad6727edfee99008493c10f669896.png)
 
-### 3.1. 只异步渲染页面的某一部分
+### 4.1. 只异步渲染页面的某一部分
 
 ![|440](https://832-1310531898.cos.ap-beijing.myqcloud.com/9397a82c38cdd035e996cffb175114ca.png)
 
@@ -248,7 +274,7 @@ const AsyncComp = defineAsyncComponent({
 > 关于 `is`参考 [4. Vue3 中 is 属性的使用方法和应用场景](/post/OZt8zyjK.html)
 > 关于 `import` 参考，[32. vite 之 import 关键词](/post/ng4pDIV7.html)
 
-### 3.2. 待完善的点
+### 4.2. 待完善的点
 
 - 如果组件加载失败或加载超时，是否要渲染 ==Error 组件==？
 - 组件在加载时，是否要展示==占位==的内容？例如渲染一个 `Loading` 组件。
@@ -259,17 +285,17 @@ const AsyncComp = defineAsyncComponent({
 > [!abstract]
 从根本上来说，异步组件的实现可以完全在**用户层面**实现，而无须框架支持。但一个完善的异步组件仍需要考虑诸多问题
 
-## 4. 异步组件的实现原理
+## 5. 异步组件的实现原理
 
 异步组件**本质上**是通过封装手段来实现友好的用户接口，从而降低**用户层面**的使用复杂度
 
-### 4.1. 封装 defineAsyncComponent 函数
+### 5.1. 封装 defineAsyncComponent 函数
 
 `defineAsyncComponent` 的`本质`是一个高阶组件，返回一个`包装组件`
 
 ![图片&文件](./files/20241104-11.png)
 
-### 4.2. 一个 Loading 的场景的优化
+### 5.2. 一个 Loading 的场景的优化
 
 > [!question]
 如果加载需要 `201ms` , `delay = 200` , 那么 loading 组件就展示 `1ms` ？
@@ -290,16 +316,16 @@ const AsyncComp = defineAsyncComponent({
 ![|584](https://832-1310531898.cos.ap-beijing.myqcloud.com/6970da42cc493c33ab00c2cba8ae11f2.png)
 >  具体代码参考： [https://github.com/yued-fe/fetch-with-loading/blob/main/fetch-with-loading.js](https://github.com/yued-fe/fetch-with-loading/blob/main/fetch-with-loading.js)
 
-#### 4.2.1. 其他思路
+#### 5.2.1. 其他思路
 
 - 考虑使用骨架屏（Skeleton）代替传统的 loading
 - 使用 CSS 过渡动画
 
-### 4.3. 重试机制
+### 5.3. 重试机制
 
 ![图片&文件](./files/20241104-12.png)
 
-#### 4.3.1. 延伸
+#### 5.3.1. 延伸
 
 如何重现发起请求，并控制次数
 
@@ -323,7 +349,7 @@ Promise.retry = function (fn, times = 3) {
 > [!tip]
  `while` 里直接使用 `break` 跳出循环，平时使用相对少
 
-## 5. 函数式组件 与 有状态的组件
+## 6. 函数式组件 与 有状态的组件
 
 一个函数式组件**本质上**就是一个普通函数，该函数的**返回值**是`虚拟 DOM` ， 
 - 函数式组件**没有自身状态** ，需要通过 `props` 的方式传入。
@@ -352,7 +378,7 @@ MyFuncComp.props = {
 
 ![|552](https://832-1310531898.cos.ap-beijing.myqcloud.com/c20cc1744e847ad5027143ba2dcfedba.png)
 
-## 6. 总结
+## 7. 总结
 
 - 异步组件在页面性能、拆包以及服务端下发组件等场景中尤为重要。
 - 从根本上来说，异步组件的实现可以完全在`用户层面`实现，而`无须框架支持`。
@@ -360,21 +386,21 @@ MyFuncComp.props = {
 	- 允许用户指定加载出错时要渲染的组件;  
 	- 允许用户指定 Loading 组件，以及展示该组件的`延迟`时间; 
 		- ==注意：这是延迟展示 Loading 的时间==
-	- 允许用户设置加载组件的`超时`时长;
+	- 允许用户设置加载组件的`超时`时长
 	- 组件加载失败时，为用户提供重试的能力。
 	- 因此，框架有必要内建异步组件的实现。
-- Vue.js 3 提供了 defineAsyncComponent 函数，用来定义`异步组件`。
-	- 异步组件的加载超时问题，以及当加载错误发生时，如何指定 Error 组件。
+- Vue.js 3 提供了 `defineAsyncComponent` 函数，用来定义`异步组件`
+	- 异步组件的加载超时问题，以及当加载错误发生时，如何指定 Error 组件
 	- 通过为 `defineAsyncComponent` 函数指定选项参数，允许用户通过 timeout 选项设置超时时长。
 	- 当加载超时后，会触发加载错误，这时会渲染用户通过 errorComponent 选 项指定的 Error 组件。
 - Loading 组件组件 与 delay 选项
-	- 为了避免 Loading 组件导致的闪烁问 题，我们还需要设计一个接口，让用户能指定==延迟展示 Loading 组件==的时间，即 delay 选项。
+	- 为了避免 Loading 组件导致的闪烁问题，我们还需要设计一个接口，让用户能指定==延迟展示 Loading 组件==的时间，即 delay 选项。
 - 组件加载发生错误后的重试机制
 - 我们讨论了==函数式组件==。它本质上是一个函数，其内部实现逻辑可以复用有状态组件的实现逻辑。
 	- 为了给函数式组件**定义 props**，我们允许开发者在函数式组件的主函数上添加**静态的 props 属性**。
 	- 出于更加严谨的考虑，函数式组件没有自身状态，也没有生命周期的概念。
 	- 所以，在初始化函数式组件时，需要选择性地复用有状态组件的**初始化逻辑**。
 
-## 7. 参考
+## 8. 参考
 
 《vue.js 设计与实现》

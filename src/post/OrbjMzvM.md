@@ -3,15 +3,33 @@
 
 `#vue` `#R1` 
 
-- 使用异步组件可以有效地进行代码分割，提高应用的性能和用户体验。
-- 要合理使用 `Suspense` 和错误处理机制，确保应用的稳定性。
-
 
 ## 目录
 <!-- toc -->
- ## 1. 基础异步组件定义 
+ ## 1. 总结 
 
-### 1.1. 使用 defineAsyncComponent
+- 异步组件的==优势==
+	- 有效地进行代码分割，提高应用的性能和用户体验
+- 要使用 `Suspense` 来包裹异步组件 → 确保应用的稳定性
+	- 内置错误处理机制
+	- 重试机制
+- 使用 `defineAsyncComponent` 来==配置==异步组件
+	- 有很多==参数==，比如
+		- 加载中组件
+		- 加载错误组件
+		- 超时等等
+- 直接使用 `import` 来引入`异步组件`
+	- ==路由==级别
+	- 全局异步组件==注册==
+	- 可带==缓存==
+- 错误处理
+	- 可==自定义==重试机制
+	- app.handleError 
+	- 组件级别错误 onErrorCaptured 
+
+## 2. 基础异步组件定义
+
+### 2.1. 使用 defineAsyncComponent
 
 ```vue
 <template>
@@ -37,7 +55,7 @@ const AsyncComp = defineAsyncComponent(() =>
 </script>
 ```
 
-### 1.2. 带配置的异步组件
+### 2.2. 带配置的异步组件
 
 ```vue
 <script setup>
@@ -61,9 +79,9 @@ const AsyncComp = defineAsyncComponent({
 </script>
 ```
 
-## 2. 异步组件的加载状态处理
+## 3. 异步组件的加载状态处理
 
-### 2.1. 加载组件
+### 3.1. 加载组件
 
 ```vue
 <!-- LoadingComponent.vue -->
@@ -93,7 +111,7 @@ const loadingText = ref('正在加载...')
 </style>
 ```
 
-### 2.2. 错误组件
+### 3.2. 错误组件
 
 ```vue
 <!-- ErrorComponent.vue -->
@@ -116,9 +134,9 @@ const handleRetry = () => {
 </script>
 ```
 
-## 3. Suspense 的使用
+## 4. Suspense 的使用
 
-### 3.1. 基本用法
+### 4.1. 基本用法
 
 ```vue
 <template>
@@ -150,7 +168,7 @@ const AsyncComponent2 = defineAsyncComponent(() =>
 </script>
 ```
 
-### 3.2. 异步组件嵌套
+### 4.2. 异步组件嵌套
 
 ```vue
 <!-- ParentComponent.vue -->
@@ -185,9 +203,9 @@ await new Promise(resolve => setTimeout(resolve, 1000))
 </script>
 ```
 
-## 4. 异步组件的数据获取
+## 5. 异步组件的数据获取
 
-### 4.1. 使用 async setup
+### 5.1. 使用 async setup
 
 ```vue
 <script setup>
@@ -217,7 +235,7 @@ await loadData() // 直接在 setup 中使用 await
 </template>
 ```
 
-### 4.2. 组合多个异步操作
+### 5.2. 组合多个异步操作
 
 ```vue
 <script setup>
@@ -244,9 +262,9 @@ await Promise.all([
 </script>
 ```
 
-## 5. 错误处理
+## 6. 错误处理
 
-### 5.1. 自定义重试机制
+### 6.1. 自定义重试机制
 
 ```vue
 <script setup>
@@ -283,7 +301,7 @@ const AsyncComp = defineAsyncComponent({
 
 ```
 
-### 5.2. 全局错误处理
+### 6.2. 全局错误处理
 
 ```vue hl:3
 <!-- App.vue -->
@@ -322,7 +340,7 @@ const onFallback = () => {
 </script>
 ```
 
-### 5.3. 组件级错误处理
+### 6.3. 组件级错误处理
 
 ```vue
 <script setup>
@@ -348,9 +366,9 @@ const fetchData = async () => {
 </script>
 ```
 
-## 6. 性能优化
+## 7. 性能优化
 
-### 6.1. 组件预加载
+### 7.1. 组件预加载
 
 ```vue hl:11
 <script setup>
@@ -374,7 +392,7 @@ onMounted(() => {
 </script>
 ```
 
-### 6.2. 代码分割优化
+### 7.2. 代码分割优化
 
 ```vue hl:2
 <script setup>
@@ -396,9 +414,9 @@ const DynamicComponent = computed(() =>
 </script>
 ```
 
-## 7. 实际应用示例
+## 8. 实际应用示例
 
-### 7.1. 路由级异步组件
+### 8.1. 路由级异步组件
 
 ```javascript hl:12
 // router.js
@@ -420,7 +438,7 @@ const router = createRouter({
 })
 ```
 
-### 7.2. 全局异步组件注册
+### 8.2. 全局异步组件注册
 
 ```html hl:4
 <script setup>
@@ -439,7 +457,7 @@ provide('asyncComponents', {
 
 ```
 
-### 7.3. 带缓存的异步数据加载
+### 8.3. 带缓存的异步数据加载
 
 ```vue hl:4
 <script setup>

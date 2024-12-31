@@ -310,7 +310,7 @@
 
     - [Vue3 的 Diff 算法复杂的分析](post/nqGBNMVr.md)
 
-    - [Vue3 事件与原生事件的关系和冒泡机制差异](post/tUegzEoZ.md)
+    - [Vue3 事件与原生事件的关系和冒泡机制差异分析](post/PZCOPnJR.md)
 
     - [Vue3 组件的实现原理](post/viaHZEs7.md)
 

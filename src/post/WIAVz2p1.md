@@ -1,14 +1,30 @@
 
 # vue3 watch 的详细用法（取消监听、恢复监听及清理副作用等）
 
-`#vue3` `#R2` 
-
-> 记得那会看 Vue 源码时，只看到为了 watch 的竞态问题，当时没太理解，再看时，才真正的理解，所以**重复是很重要的**
+`#vue3` 
 
 
 ## 目录
 <!-- toc -->
- ## 1. 基本语法定义 
+ ## 1. 总结 
+
+- 清理时机
+	- 在侦听器**下一次执行前**清理上一次的副作用
+	- 在**组件卸载时**清理副作用
+- 注意这==三个参数==：
+	- newVal, oldVal,
+	- onCleanup
+		- 接受一个函数，作为==清理函数==
+		- 具体==使用示例==见下面
+- v3.5支持暂停和恢复侦听器：
+	- `const { stop, pause, resume } = watchEffect(() => {})`
+- 手动停止侦听器
+	- `const stop = watch(count, (newValue, oldValue) => {`
+
+
+> 记得那会看 Vue 源码时，只看到为了 watch 的竞态问题，当时没太理解，再看时，才真正的理解，所以**重复是很重要的**
+
+## 2. 基本语法定义
 
 ```typescript hl:18
 // 侦听单个来源
@@ -55,7 +71,7 @@ interface WatchHandle {
 }
 ```
 
-## 2. 基本使用示例：取消监听
+## 3. 基本使用示例：取消监听
 
 ```javascript hl:23
 import { ref, watch } from 'vue'
@@ -83,7 +99,7 @@ watch(
 stop() // 调用返回的函数即可取消监听
 ```
 
-## 3. 监听选项的使用
+## 4. 监听选项的使用
 
 ```javascript hl:9,12,29
 const count = ref(0)
@@ -118,14 +134,14 @@ watch(
 )
 ```
 
-## 4. 清理时机
+## 5. 清理时机
 
 1. 在侦听器**下一次执行前**清理上一次的副作用
 2. 在**组件卸载时**清理副作用
 
-## 5. 清理副作用示例
+## 6. 清理副作用示例
 
-### 5.1. 示例：取消请求防止竞态
+### 6.1. 示例：取消请求防止竞态
 
 ```javascript hl:21,9
 <script setup>
@@ -155,7 +171,7 @@ watchEffect((onCleanup) => {
 
 ```
 
-### 5.2. 示例：防止重复请求
+### 6.2. 示例：防止重复请求
 
 ```vue hl:20
 <template>
@@ -206,7 +222,7 @@ function mockSearch(query) {
 </script>
 ```
 
-### 5.3. 示例：定时器清理示例
+### 6.3. 示例：定时器清理示例
 
 ```vue hl:24
 <template>
@@ -240,7 +256,7 @@ watch(isRunning, (newValue, oldValue, onCleanup) => {
 </script>
 ```
 
-### 5.4. 示例：处理多个异步请求示例
+### 6.4. 示例：处理多个异步请求示例
 
 ```vue hl:25
 <template>
@@ -293,7 +309,7 @@ function fetchUserInfo(id) {
 </script>
 ```
 
-### 5.5. 示例：处理WebSocket连接示例，比如关闭 ws
+### 6.5. 示例：处理WebSocket连接示例，比如关闭 ws
 
 ```vue hl:28,29
 <template>
@@ -346,7 +362,7 @@ class MockWebSocket {
 </script>
 ```
 
-### 5.6. 示例：防抖搜索示例
+### 6.6. 示例：防抖搜索示例
 
 和 React 自定义防抖函数 Hooks 一样，没必要一定要使用 `loadsh` 的防抖函数，因为清理函数会在特定时机执行，我们只需要在特定时机做特殊处理即可
 - 特定事件
@@ -398,7 +414,7 @@ function fetchSuggestions(query) {
 </script>
 ```
 
-## 6. 总结：`onCleanup` 的主要作用是
+## 7. 总结：`onCleanup` 的主要作用是
 
 - **防止竞态条件**：
 	- 当多个异步操作同时进行时，确保只有最新的操作结果会被使用。
@@ -410,14 +426,14 @@ function fetchSuggestions(query) {
 - **性能优化**：
 	- 防止不必要的操作和内存泄漏
 
-### 6.1. 使用建议
+### 7.1. 使用建议
 
 1. 在处理异步操作时，始终考虑使用 `onCleanup`
 2. 在清理函数中要清理所有相关的副作用
 3. 确保**清理函数是同步的**
 4. 使用**标志变量**来控制异步操作的结果是否应该被使用
 
-## 7. 暂停/恢复侦听器： `v3.5`
+## 8. 暂停/恢复侦听器： `v3.5`
 
 ```js
 const { stop, pause, resume } = watchEffect(() => {})
@@ -432,7 +448,7 @@ resume()
 stop()
 ```
 
-## 8. 最佳实践和注意事项
+## 9. 最佳实践和注意事项
 
 ```javascript hl:1,8,15,27
 // 1. 避免在监听回调中直接修改被监听的值
