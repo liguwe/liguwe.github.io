@@ -1,19 +1,37 @@
 
 # PureComponent
 
-`#react`  `#R1` 
+`#react`  
 
 
 ## 目录
 <!-- toc -->
- ## 1. PureComponent 的定义 
+ ## 1. 总结 
+
+- PureComponent 自动实现了 `shouldComponentUpdate`
+	- 支持所有常规的 React 生命周期方法
+- Component vs PureComponent
+	- PureComponent：
+		- 会对 props 和 state 进行==浅比较==，只有在数据真正发生变化时才重新渲染
+	- Component：
+		- 默认情况下，只要父组件重新渲染，组件就会重新渲染
+- 可使用 ==React.memo== 来实现类似 PureComponent 的功能
+	- 因为它也接受第二个参数
+- 一些注意点
+	- 对象属性尽量单独提出，比如 style，每次渲染都创建新对象
+		- 建议，将对象提到组件外部或使用 useMemo
+	- 数组属性使用 map 时，会新建数组
+	- 函数属性不要内联
+		- 内联函数会导致 PureComponent 失效
+
+## 2. PureComponent 的定义
 
 PureComponent 是 React 提供的一个基础组件类，它自动实现了 `shouldComponentUpdate` 生命周期方法，通`过浅比较（shallow comparison）props 和 state` 来决定是否需要重新渲染组件
 
 PureComponent **完全支持所有常规的 React 生命周期方法**。
 - 它主要通过自动实现 `shouldComponentUpdate()` 来优化性能，但不会限制你使用其他生命周期钩子。
 
-## 2. PureComponent vs Component
+## 3. PureComponent vs Component
 
 ```javascript
 // 普通 Component
@@ -33,17 +51,17 @@ class PureComponentExample extends React.PureComponent {
 }
 ```
 
-### 2.1. 更新机制
+### 3.1. 更新机制
 
    - Component：默认情况下，**只要父组件重新渲染，组件就会重新渲染**
    - PureComponent：**会对 props 和 state 进行浅比较，只有在数据真正发生变化时才重新渲染**
 
-### 2.2. 性能影响
+### 3.2. 性能影响
 
    - Component：可能导致不必要的重渲染
    - PureComponent：通过**浅比较**避免不必要的重渲染，提高性能
 
-## 3. 浅比较的工作原理
+## 4. 浅比较的工作原理
 
 ```javascript hl:10,12,20,22
 class Example extends React.PureComponent {
@@ -75,9 +93,9 @@ class Example extends React.PureComponent {
 
 ```
 
-## 4. 使用场景和注意事项
+## 5. 使用场景和注意事项
 
-### 4.1. 适合使用 `PureComponent` 的场景
+### 5.1. 适合使用 `PureComponent` 的场景
 
 ```javascript
 // 展示型组件，props 是简单类型
@@ -93,7 +111,7 @@ class UserInfo extends React.PureComponent {
 }
 ```
 
-### 4.2. 不适合使用 `PureComponent` 的场景
+### 5.2. 不适合使用 `PureComponent` 的场景
 
 ```javascript
 // 频繁更新的组件
@@ -116,7 +134,7 @@ class Timer extends React.Component { // 使用普通 Component
 }
 ```
 
-## 5. 在函数组件中的等效实现
+## 6. 在函数组件中的等效实现
 
 在函数组件中，我们使用 **React.memo 来实现类似 PureComponent 的功能**：
 
@@ -148,9 +166,9 @@ const CustomMemoized = React.memo(
 );
 ```
 
-## 6. 常见陷阱和优化
+## 7. 常见陷阱和优化
 
-### 6.1. 对象属性的问题
+### 7.1. 对象属性的问题
 
 > [!danger]
 > 关键的， `style={{ color: 'red' }}` 不好！
@@ -169,7 +187,7 @@ class Parent extends React.Component {
 const styles = { color: 'red' };
 ```
 
-### 6.2. 数组属性的处理
+### 7.2. 数组属性的处理
 
 ```javascript hl:7,16
 class ListComponent extends React.PureComponent {
@@ -206,7 +224,7 @@ class OptimizedList extends React.PureComponent {
 }
 ```
 
-### 6.3. 函数属性的处理
+### 7.3. 函数属性的处理
 
 ```javascript hl:9,12
 class Parent extends React.Component {

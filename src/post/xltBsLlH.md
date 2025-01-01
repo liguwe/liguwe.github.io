@@ -3,15 +3,35 @@
 
 `#react`  
 
+
 ## 目录
 <!-- toc -->
- ## 1. 什么是无状态组件 
+ ## 1. 总结 
+
+- 无状态组件 === 函数式组件
+- 优势：
+	- 更少的内存占用，性能优势、代码简洁性
+- 缺陷：
+	- 无法使用生命周期方法、不能维护内部状态、不支持复杂组件功能等
+	- 但通过 React Hooks，无状态组件的大部分缺陷都可以得到解决，推荐在现代React开发中使用==函数组件 + Hooks的组合==。
+- 条件渲染
+	- `if` 或者 `&&`
+- 性能优化思路
+	- 使用 React.memo 包装
+	- 内联对象 → 提取常量
+	- 事件回调 → 使用 usecallback
+	- 复杂计算：使用 useMemo 缓存结果
+	- 样式
+		- 使用 className  
+		- 或者 style 提出变量
+
+## 2. 什么是无状态组件
 
 无状态组件（也叫**函数式组件**）是最简单的 React 组件形式，它们是**纯函数**
 - 接收 props 并返回 React 元素
 - **不包含内部状态、生命周期方法和 this 引用。**
 
-## 2. 基本语法
+## 3. 基本语法
 
 ```jsx
 // 1. 最基本的无状态组件
@@ -31,9 +51,9 @@ const Welcome = ({ name, age }) => (
 );
 ```
 
-## 3. 特点和优势
+## 4. 特点和优势
 
-### 3.1. 性能优势
+### 4.1. 性能优势
 
 ```jsx
 // 无状态组件
@@ -53,7 +73,7 @@ class DisplayComponent extends React.Component {
 - 更快的渲染速度
 - 更容易测试和维护
 
-### 3.2. 代码简洁
+### 4.2. 代码简洁
 
 ```jsx
 // 无状态组件：简洁明了
@@ -80,9 +100,9 @@ class UserCard extends React.Component {
 }
 ```
 
-## 4. 最佳实践
+## 5. 最佳实践
 
-### 4.1. Props 的默认值处理
+### 5.1. Props 的==默认值==处理
 
 > 两种方式
 
@@ -103,7 +123,7 @@ Button.defaultProps = {
 };
 ```
 
-### 4.2. Props 类型检查
+### 5.2. Props 类型检查
 
 ```jsx
 import PropTypes from 'prop-types';
@@ -123,7 +143,7 @@ UserProfile.propTypes = {
 };
 ```
 
-### 4.3. 条件渲染
+### 5.3. 条件渲染
 
 ```jsx
 const ConditionalComponent = ({ isLoggedIn, userData }) => (
@@ -144,9 +164,9 @@ const Notification = ({ message }) => (
 );
 ```
 
-## 5. 组合模式
+## 6. 组合模式
 
-### 5.1. 组件组合
+### 6.1. 组件组合
 
 ```jsx
 // 小型可复用组件
@@ -170,7 +190,7 @@ const UserCard = ({ user }) => (
 );
 ```
 
-### 5.2. 渲染属性模式
+### 6.2. 渲染属性模式
 
 ```jsx
 const WithTooltip = ({ children, tooltip }) => (
@@ -187,9 +207,9 @@ const Button = () => (
 );
 ```
 
-## 6. 性能优化
+## 7. 性能优化
 
-### 6.1. 使用 React.memo
+### 7.1. 使用 React.memo
 
 ```jsx
 const ExpensiveComponent = React.memo(({ data }) => (
@@ -210,7 +230,7 @@ const MemoizedComponent = React.memo(
 );
 ```
 
-### 6.2. 避免不必要的渲染
+### 7.2. 避免不必要的渲染
 
 ```jsx hl:1,9
 // 不好的做法：内联对象
@@ -233,9 +253,9 @@ const GoodExample = () => (
 );
 ```
 
-## 7. 常见问题和解决方案
+## 8. 常见问题和解决方案
 
-### 7.1. 处理事件
+### 8.1. 处理事件
 
 ```jsx hl:12,1,8,3
 // 不好的做法：每次渲染创建新函数
@@ -261,7 +281,7 @@ const GoodButton = ({ onClick, text }) => {
 };
 ```
 
-### 7.2. 复杂计算：使用 useMemo 缓存结果
+### 8.2. 复杂计算：使用 useMemo 缓存结果
 
 ```jsx
 import { useMemo } from 'react';
@@ -285,7 +305,7 @@ const DataDisplay = ({ items }) => {
 };
 ```
 
-### 7.3. 样式处理
+### 8.3. 样式处理
 
 ```jsx
 // CSS-in-JS
@@ -311,7 +331,7 @@ const Button = ({ type, children }) => (
 );
 ```
 
-## 8. 无状态组件的主要缺陷
+## 9. 无状态组件的主要缺陷
 
 1. 无法使用生命周期方法
 2. 不能维护内部状态

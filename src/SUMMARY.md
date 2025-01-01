@@ -377,9 +377,9 @@
 
     - [React 重新渲染的场景以及对应的优化方案](post/AMYFOt6i.md)
 
-    - [强制重新渲染有哪些方式？](post/MHLW7rSj.md)
+    - [强制重新渲染有哪些方式](post/BcHSEuwG.md)
 
-    - [React.memo 和 useMemo 的区别是什么？React.useCallback 和 useCallback 呢？](post/TfG8MRYb.md)
+    - [React.memo 、 useMemo 、 useCallback 对比](post/QBXOxT25.md)
 
     - [PureComponent](post/zSeYNzez.md)
 

@@ -6,13 +6,25 @@
 
 ## 目录
 <!-- toc -->
- ## 1. 什么是 Capture Value 
+ ## 1. 总结 
+
+- 什么是 Capture Value。
+- 定时器问题和事件处理器问题是常见的 Capture Value 问题
+- 使用函数式更新可以解决定时器问题
+- 解决方案
+	- 使用 useRef 可以保存最新值
+	- 正确使用依赖数组可以确保取到最新值
+	- 使用 useReducer 的 dispatch 永远是稳定的,不需要依赖
+	- 自定义 useLatest Hook 可以保存最新值
+	- 使用 useCallback 或 useMemo 可以处理 Capture Value 问题
+
+## 2. 什么是 Capture Value
 
 Capture Value 是指：
 - React 的函数组件在**每次渲染时都会捕获当前渲染时的 props 和 state 值**。
 - 每次渲染**都有自己的事件处理函数，这些函数会"记住"当时的值**。
 
-### 1.1. 表现
+### 2.1. 表现
 
 ![图片&文件](./files/20241030.png)
 
@@ -42,9 +54,9 @@ export default Counter;
 
 ```
 
-## 2. 常见的 Capture Value 问题
+## 3. 常见的 Capture Value 问题
 
-### 2.1. 定时器问题
+### 3.1. 定时器问题
 
 ```jsx
 function Timer() {
@@ -61,7 +73,7 @@ function Timer() {
 }
 ```
 
-### 2.2. 事件处理器问题
+### 3.2. 事件处理器问题
 
 ```jsx
 function EventHandler() {
@@ -74,9 +86,9 @@ function EventHandler() {
 }
 ```
 
-## 3. 常见的解决方案
+## 4. 常见的解决方案
 
-### 3.1. 使用函数式更新
+### 4.1. 使用函数式更新
 
 ```jsx
 function Timer() {
@@ -93,7 +105,7 @@ function Timer() {
 }
 ```
 
-### 3.2. 使用 useRef
+### 4.2. 使用 useRef
 
 ```jsx
 function Component() {
@@ -114,7 +126,7 @@ function Component() {
 }
 ```
 
-### 3.3. 正确使用依赖数组
+### 4.3. 正确使用依赖数组
 
 > 传入的值总能保证是最新的
 
@@ -129,7 +141,7 @@ function SearchComponent({ onSearch }) {
 }
 ```
 
-### 3.4. 使用 useReducer
+### 4.4. 使用 useReducer
 
 >  dispatch 永远是稳定的，不需要依赖
 
@@ -157,9 +169,9 @@ function Counter() {
 }
 ```
 
-### 3.5. 使用 useLatest 自定义 Hook
+### 4.5. 使用 useLatest 自定义 Hook
 
-#### 3.5.1. 定义 Hooks：使用 useRef 
+#### 4.5.1. 定义 Hooks：使用 useRef 
 
 ```jsx
 function useLatest(value) {
@@ -174,7 +186,7 @@ function useLatest(value) {
 
 ```
 
-#### 3.5.2. 使用
+#### 4.5.2. 使用
 
 ```javascript
 function Component() {
@@ -189,7 +201,7 @@ function Component() {
 }
 ```
 
-### 3.6. 使用 useCallback 或 useMemo 来处理 Capture Value
+### 4.6. 使用 useCallback 或 useMemo 来处理 Capture Value
 
 ```javascript hl:4
 function Example() {

@@ -2,12 +2,25 @@
 # React 组件的各种定义和声明方式
 
 
-`#react`  `#R1` 
+`#react`  
 
 
 ## 目录
 <!-- toc -->
- ## 1. 函数式组件（Function Component） 
+ ## 1. 总结 
+
+- 简单的展示型组件
+	- 使用函数式组件
+- 需要状态管理和生命周期的
+	- 使用 **类组件或 Hooks**
+- 需要==复用==逻辑的
+	- 使用**高阶组件或自定义 Hooks**
+- 需要性能优化的
+	- 使用 `React.memo` 或 `PureComponent`
+- 需要代码分割的
+	- 使用 `React.lazy` 和 `Suspense`
+
+## 2. 函数式组件（Function Component）
 
 ```jsx
 // 1.1 普通函数声明
@@ -32,7 +45,7 @@ const Welcome = ({ name, age }) => (
 );
 ```
 
-## 2. 类组件（Class Component）
+## 3. 类组件（Class Component）
 
 ```jsx hl:1,8,15
 // 2.1 基础类组件
@@ -72,7 +85,7 @@ class ModernWelcome extends React.Component {
 }
 ```
 
-## 3. 高阶组件（HOC）
+## 4. 高阶组件（HOC）
 
 ```jsx
 // 3.1 基本的高阶组件
@@ -119,7 +132,7 @@ const withData = (dataSource) => (WrappedComponent) => {
 };
 ```
 
-## 4. Render Props 模式
+## 5. Render Props 模式
 
 ```jsx
 // 4.1 基本的 Render Props
@@ -162,7 +175,7 @@ class MouseTracker extends React.Component {
 }
 ```
 
-## 5. 使用 Hooks 的函数组件
+## 6. 使用 Hooks 的函数组件
 
 ```jsx
 // 5.1 使用多个 Hooks
@@ -210,7 +223,7 @@ const ResponsiveComponent = () => {
 };
 ```
 
-## 6. React.memo 组件
+## 7. React.memo 组件
 
 ```jsx hl:1,6
 // 6.1 基本的 Memo 组件
@@ -229,7 +242,7 @@ const MemoizedComponent = React.memo(
 );
 ```
 
-## 7. 动态组件 & 异步组件
+## 8. 动态组件 & 异步组件
 
 ```jsx hl:1,13
 // 7.1 使用条件渲染创建动态组件
@@ -256,16 +269,5 @@ function App() {
 }
 ```
 
-## 8. 每种定义方式都有其适用场景
 
-- 简单的展示型组件
-	- 使用函数式组件
-- 需要状态管理和生命周期的
-	- 使用 **类组件或 Hooks**
-- 需要复用逻辑的
-	- 使用**高阶组件或自定义 Hooks**
-- 需要性能优化的
-	- 使用 `React.memo` 或 `PureComponent`
-- 需要代码分割的
-	- 使用 `React.lazy` 和 `Suspense`
 
