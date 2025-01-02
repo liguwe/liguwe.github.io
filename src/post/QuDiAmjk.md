@@ -1,15 +1,38 @@
 
 # 高阶组件（HOC）
 
-
 `#react`  
 
 
 ## 目录
 <!-- toc -->
- ## 1. 什么是高阶组件 
+ ## 1. 总结 
 
-高阶组件是一个函数，接收一个组件作为参数，返回一个新的增强组件。这是一种基于 React 组合特性的组件**复用**技术。
+- 高阶组件==本质是==一个函数，接收一个组件作为参数，返回一个新的==增强组件==
+- 使用场景
+	- 属性代理：`withExtraProps`
+	- 条件渲染：权限控制
+		- 比如 withAuth
+	- withState 状态
+	- withLogger
+	- React.memo 本质也是 HOC
+	- withData 数据获取
+	- withStyles 
+	- `withFetch(url)`
+- 注意事项
+	- ==组合而非修改==
+	- 不要在 render 中使用 hoc
+	- 静态方法会丢失
+	- 可使用 compose 组合多个 HOC
+- hoist-non-react-statics
+	- JavaScript 中，静态方法是定义在类本身上，而不是类的原型上
+		- 当我们创建一个新的组件类来包装原始组件时，这个==新类并不会自动继承原始组件的静态方法== 
+- 使用组合而不是继承
+	- 在现代 React 开发中，**Hooks 通常是更简单和灵活的选择**
+
+## 2. 什么是高阶组件
+
+高阶组件是一个函数，接收一个组件作为参数，返回一个新的增强组件。这是一种基于 React 组合特性的组件**复用**技术
 
 ```jsx
 // 基本的 HOC 结构
@@ -24,9 +47,9 @@ const withExample = (WrappedComponent) => {
 const EnhancedComponent = withExample(OriginalComponent);
 ```
 
-## 2. 常见使用场景
+## 3. 常见使用场景
 
-### 2.1. 属性代理
+### 3.1. 属性代理
 
 ```jsx
 // 添加额外的 props
@@ -49,7 +72,7 @@ const MyComponent = ({ extraProp }) => (
 const Enhanced = withExtraProps(MyComponent);
 ```
 
-### 2.2. 条件渲染：权限控制
+### 3.2. 条件渲染：权限控制
 
 ```jsx 
 // 权限控制 HOC
@@ -75,7 +98,7 @@ const withLoading = (WrappedComponent) => {
 }
 ```
 
-### 2.3. 状态管理
+### 3.3. 状态管理
 
 ```jsx
 // 添加本地状态管理
@@ -100,7 +123,7 @@ const withState = (WrappedComponent) => {
 }
 ```
 
-### 2.4. 日志记录
+### 3.4. 日志记录
 
 ```jsx
 // 组件生命周期日志
@@ -121,7 +144,7 @@ const withLogger = (WrappedComponent) => {
 }
 ```
 
-### 2.5. 性能优化：React.memo
+### 3.5. 性能优化：React.memo
 
 ```jsx
 // 添加性能优化
@@ -133,7 +156,7 @@ const withMemo = (WrappedComponent) => {
 }
 ```
 
-### 2.6. **数据获取和加载状态**
+### 3.6. **数据获取和加载状态**
 
 ```javascript hl:11
 const withData = (dataSource) => (WrappedComponent) => {
@@ -168,7 +191,7 @@ const withData = (dataSource) => (WrappedComponent) => {
 };
 ```
 
-### 2.7. **样式注入**
+### 3.7. **样式注入**
 
 ```javascript
 const withStyles = (styles) => (WrappedComponent) => {
@@ -184,9 +207,9 @@ const withStyles = (styles) => (WrappedComponent) => {
 };
 ```
 
-## 3. 复杂示例
+## 4. 复杂示例
 
-### 3.1. 组合多个 HOC：compose
+### 4.1. 组合多个 HOC：compose
 
 ```jsx
 // HOC 组合
@@ -202,7 +225,7 @@ const enhance = compose(
 const EnhancedComponent = enhance(BaseComponent);
 ```
 
-### 3.2. 带参数的 HOC：带参数 `url`
+### 4.2. 带参数的 HOC：带参数 `url`
 
 ```jsx
 const withFetch = (url) => (WrappedComponent) => {
@@ -245,9 +268,9 @@ const withFetch = (url) => (WrappedComponent) => {
 const UserList = withFetch('https://api.example.com/users')(UserComponent);
 ```
 
-## 4. 注意事项
+## 5. 注意事项
 
-### 4.1. 不要在 render 方法中使用 HOC
+### 5.1. 不要在 render 方法中使用 HOC
 
 ```jsx
 // ❌ 错误示例
@@ -268,7 +291,7 @@ class Example extends React.Component {
 }
 ```
 
-### 4.2. 复制静态方法
+### 5.2. 复制静态方法
 
 ```javascript
 import hoistNonReactStatics from 'hoist-non-react-statics';
@@ -284,7 +307,7 @@ function withExample(WrappedComponent) {
 }
 ```
 
-### 4.3. **命名约定**
+### 5.3. **命名约定**
 
 ```javascript
 // 为 HOC 添加显示名称以便调试
@@ -301,7 +324,7 @@ function getDisplayName(WrappedComponent) {
 }
 ```
 
-### 4.4. 传递 Refs
+### 5.4. 传递 Refs
 
 ```jsx
 const withRef = (WrappedComponent) => {
@@ -311,9 +334,9 @@ const withRef = (WrappedComponent) => {
 }
 ```
 
-## 5. 最佳实践
+## 6. 最佳实践
 
-### 5.1. **命名约定**
+### 6.1. **命名约定**
 
 ```jsx
 // 使用 with 前缀
@@ -329,7 +352,7 @@ const getDisplayName = (WrappedComponent) => {
 HOC.displayName = `WithAuth(${getDisplayName(WrappedComponent)})`;
 ```
 
-### 5.2. **解构 props**
+### 6.2. **解构 props**
 
 ```jsx
 const withExample = (WrappedComponent) => {
@@ -342,7 +365,7 @@ const withExample = (WrappedComponent) => {
 }
 ```
 
-### 5.3. **组合而非修改**
+### 6.3. **组合而非修改**
 
 ```jsx
 // ❌ 错误示例：直接修改原组件
@@ -366,9 +389,9 @@ const withExample = (WrappedComponent) => {
 };
 ```
 
-## 6. 常见问题和解决方案
+## 7. 常见问题和解决方案
 
-### 6.1. **props 命名冲突**
+### 7.1. **props 命名冲突**
 
 ```jsx
 const withProps = (WrappedComponent) => {
@@ -384,7 +407,7 @@ const withProps = (WrappedComponent) => {
 }
 ```
 
-### 6.2. **多个 HOC 的顺序问题**
+### 7.2. **多个 HOC 的顺序问题**
 
 ```jsx
 // HOC 的执行顺序从下到上
@@ -395,7 +418,7 @@ const enhance = compose(
 );
 ```
 
-## 7. 替代方案
+## 8. 替代方案
 
 在某些情况下，可以考虑使用以下替代方案：
 
@@ -413,9 +436,9 @@ HOC 是一个强大的模式，但不是唯一的解决方案。
 
 在现代 React 开发中，**Hooks 通常是更简单和灵活的选择**。
 
-## 8. 性能考虑
+## 9. 性能考虑
 
-### 8.1. **避免不必要的嵌套**
+### 9.1. **避免不必要的嵌套**
 
 ```javascript
 // ❌ 过度嵌套
@@ -430,7 +453,7 @@ const enhance = compose(
 export default enhance(MyComponent);
 ```
 
-### 8.2. **使用记忆化**
+### 9.2. **使用记忆化**
 
 ```javascript
 const memoizedHOC = (WrappedComponent) => {
@@ -440,9 +463,9 @@ const memoizedHOC = (WrappedComponent) => {
 };
 ```
 
-## 9. 高阶组件，为什么静态方法会丢失？
+## 10. 高阶组件，为什么静态方法会丢失？
 
-### 9.1. **组件包装的本质**
+### 10.1. **组件包装的本质**
 
 高阶组件本质上是一个函数，它接受一个组件作为参数，然后返回一个新的组件。这个新组件通常会包装原始组件。例如：
 
@@ -458,16 +481,16 @@ function withExampleHOC(WrappedComponent) {
 
 在这个过程中，**返回的是一个全新的组件类，而不是原始组件的修改版本**
 
-### 9.2. **静态方法不会被继承**
+### 10.2. **静态方法不会被继承**
 
-JavaScript 中，静态方法是定义在类本身上，而不是类的原型上。当我们创建一个新的组件类来包装原始组件时，这个新类并不会自动继承原始组件的静态方法 
+JavaScript 中，静态方法是定义在类本身上，而不是类的原型上。当我们创建一个新的组件类来包装原始组件时，这个==新类并不会自动继承原始组件的静态方法== 
 
-### 9.3. **React 的组件模型**
+### 10.3. **React 的组件模型**
 
 React 的组件模型主要关注实例方法和生命周期，而不是静态方法。
 当 React 处理组件时，它主要关注组件的 render 方法和生命周期方法，而不会特别处理静态方法
 
-### 9.4. 示例说明
+### 10.4. 示例说明
 
 考虑以下例子：
 
@@ -496,11 +519,11 @@ const EnhancedComponent = withHOC(OriginalComponent);
 EnhancedComponent.staticMethod();
 ```
 
-在这个例子中，`EnhancedComponent` 是一个全新的类，它不包含 `OriginalComponent` 的静态方法。
+在这个例子中，`EnhancedComponent` 是一个全新的类，它不包含 `OriginalComponent` 的静态方法
 
-### 9.5. 解决方案
+### 10.5. 解决方案
 
-#### 9.5.1. **手动复制静态方法**
+#### 10.5.1. **手动复制静态方法**
 
 你可以在 HOC 中手动复制静态方法：
 
@@ -517,7 +540,7 @@ function withHOC(WrappedComponent) {
 }
 ```
 
-### 9.6. **使用 hoist-non-react-statics**
+### 10.6. **使用 hoist-non-react-statics**
 
 这就是为什么 `hoist-non-react-statics` 库变得有用。它自动处理静态方法的复制：
 
@@ -537,10 +560,12 @@ function withHOC(WrappedComponent) {
 
 这个库会自动复制所有非 React 特定的静态方法，同时避免覆盖 React 特定的静态属性（如 `displayName`、`propTypes` 等）
 
-### 9.7. **使用组合而不是继承**
+### 10.7. **使用组合而不是继承**
 
 React 推荐使用组合而不是继承。在某些情况下，你可以通过组合来避免使用 HOC，从而避免静态方法丢失的问题
 
-### 9.8. 结论
+### 10.8. 结论
 
-高阶组件中静态方法丢失是由于 JavaScript 的类继承机制和 React 的组件模型共同导致的。理解这一点有助于我们更好地设计组件和使用 HOC。虽然有多种方法可以解决这个问题，但 `hoist-non-react-statics` 提供了一个简洁和自动化的解决方案，特别是在处理复杂组件或第三方库时。
+高阶组件中静态方法丢失是由于 JavaScript 的类继承机制和 React 的组件模型共同导致的。
+理解这一点有助于我们更好地设计组件和使用 HOC。
+虽然有多种方法可以解决这个问题，但 `hoist-non-react-statics` 提供了一个简洁和自动化的解决方案，特别是在处理复杂组件或第三方库时。

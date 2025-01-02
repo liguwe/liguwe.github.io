@@ -6,7 +6,17 @@
 
 ## 目录
 <!-- toc -->
- ## 1. 定义和基本概念 
+ ## 1. 总结 
+
+- useInsertionEffect 是 React 18 引入的一个特殊的 Effect Hook
+	- 它的执行时机比 `useLayoutEffect` 和 `useEffect` 都要早
+	- 其主要目的是用于 CSS-in-JS 库**在 DOM 变更之前注入样式** 
+- 执行顺序如下：
+	1. useInsertionEffect
+	2. useLayoutEffect
+	3. useEffect
+
+## 2. 定义和基本概念
 
 useInsertionEffect 是 React 18 引入的一个特殊的 Effect Hook，它的执行时机比 `useLayoutEffect` 和 `useEffect` 都要早。其主要目的是用于 CSS-in-JS 库**在 DOM 变更之前注入样式** 
 
@@ -16,7 +26,7 @@ useInsertionEffect 是 React 18 引入的一个特殊的 Effect Hook，它的执
 useInsertionEffect(setup, dependencies?)
 ```
 
-## 2. 执行时机
+## 3. 执行时机
 
 执行顺序如下：
 1. useInsertionEffect
@@ -25,7 +35,7 @@ useInsertionEffect(setup, dependencies?)
 
 这个顺序设计使得它**特别适合在 DOM 变更之前插入样式，避免了布局抖动的问题**
 
-## 3. 主要使用场景
+## 4. 主要使用场景
 
 - **CSS-in-JS 库的样式注入**
 	- styled-components
@@ -40,9 +50,9 @@ useInsertionEffect(setup, dependencies?)
 	- 样式表动态插入
 	- 性能敏感的 DOM 修改 
 
-## 4. 实际使用案例
+## 5. 实际使用案例
 
-### 4.1. 案例1：基本的样式注入
+### 5.1. 案例1：基本的样式注入
 
 ```javascript hl:5,8
 function StyleInjector({ styles }) {
@@ -60,7 +70,7 @@ function StyleInjector({ styles }) {
 }
 ```
 
-### 4.2. 案例2：简单的 CSS-in-JS 实现
+### 5.2. 案例2：简单的 CSS-in-JS 实现
 
 ```javascript
 function DynamicStyles({ className, rules }) {
@@ -79,7 +89,7 @@ function DynamicStyles({ className, rules }) {
 }
 ```
 
-### 4.3. 案例3：主题切换实现
+### 5.3. 案例3：主题切换实现
 
 ```javascript hl:9
 function ThemeProvider({ theme, children }) {
@@ -98,10 +108,10 @@ function ThemeProvider({ theme, children }) {
 }
 ```
 
-## 5. 注意事项
+## 6. 注意事项
 
 - 不能访问 refs
--  专注于样式注入
+- 专注于样式注入
 - 做好清理工作
 - 保持简单的逻辑
 - 不能使用 DOM APIs（除了样式注入）
@@ -113,7 +123,7 @@ function ThemeProvider({ theme, children }) {
 - 清理无用样式
 - 验证样式内容
 
-### 5.1. 注意事项的详细说明
+### 6.1. 注意事项的详细说明
 
 - `useInsertionEffect`只在客户端运行，不能在服务器渲染期间运行。
 - 不能从`useInsertionEffect`中更新状态。

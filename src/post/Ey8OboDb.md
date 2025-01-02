@@ -6,7 +6,11 @@
 
 ## 目录
 <!-- toc -->
- ## 1. useRequest：模拟请求 
+ ## 1. 总结 
+
+- [ ] check 常见编程题
+
+## 2. useRequest：模拟请求
 
 ```javascript
 import { useState, useEffect } from "react";
@@ -64,7 +68,7 @@ const MyComponent = () => {
 
 > 比较成熟的请求 hooks：[swr](https://swr.vercel.app/)
 
-## 2. useSetState：管理 object 类型的 state 的 Hooks
+## 3. useSetState：管理 object 类型的 state 的 Hooks
 
 ```javascript
 import { useState } from "react";
@@ -81,7 +85,7 @@ const useSetState = (initialState) => {
 
 ```
 
-## 3. useDidMount：类似于类组件中的 `componentDidMount`，用于组件挂载后的操作
+## 4. useDidMount：类似于类组件中的 `componentDidMount`，用于组件挂载后的操作
 
 ```javascript hl:12,6
 import { useEffect } from "react";
@@ -108,7 +112,7 @@ const MyComponent = () => {
 
 ```
 
-## 4. useUnmount：类似于类组件中的 `componentWillUnmount`，用于组件卸载时的操作
+## 5. useUnmount：类似于类组件中的 `componentWillUnmount`，用于组件卸载时的操作
 
 ```javascript hl:19
 import { useEffect } from "react";
@@ -142,7 +146,7 @@ const MyComponent = () => {
 
 ```
 
-## 5. useDebounce：用于处理输入框内容的防抖处理，避免频繁触发请求
+## 6. useDebounce：用于处理输入框内容的防抖处理，避免频繁触发请求
 
 ```javascript hl:16
 import { useState, useEffect } from "react";
@@ -185,7 +189,7 @@ const MyComponent = () => {
 
 ```
 
-## 6. useThrottle：用于限制某个函数的调用频率
+## 7. useThrottle：用于限制某个函数的调用频率
 
 ```javascript 
 import { useState, useEffect } from "react";
@@ -256,7 +260,7 @@ function SearchComponent() {
 
 ```
 
-## 7. useLocalStorage：便捷地使用 `localStorage` 存储数据
+## 8. useLocalStorage：便捷地使用 `localStorage` 存储数据
 
 ```javascript
 import { useState } from 'react';
@@ -289,7 +293,7 @@ const useLocalStorage = (key, initialValue) => {
 
 > 需要JSON 解析或者序列化
 
-## 8. useEventListener：用于简化事件监听器的添加和清理
+## 9. useEventListener：用于简化事件监听器的添加和清理
 
 ```javascript hl:4,22
 import { useEffect , useRef } from 'react';
@@ -331,7 +335,7 @@ const MyComponent = () => {
 };
 ```
 
-## 9. useScroll：用于监测滚动位置的变化
+## 10. useScroll：用于监测滚动位置的变化
 
 ```javascript
 import { useEffect, useState } from 'react';
@@ -378,6 +382,6 @@ const MyComponent = () => {
 };
 ```
 
-## 10. 更多：阿里 ahooks
+## 11. 更多：阿里 ahooks
 
 https://ahooks.js.org/zh-CN/hooks/use-request/index

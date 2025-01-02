@@ -6,9 +6,17 @@
 
 ## 目录
 <!-- toc -->
- ## 1. 定义和基本概念 
+ ## 1. 总结 
 
-### 1.1. 背景
+- useSyncExternalStore 是 React 18 引入的一个 Hook，它允许你==订阅外部数据源==，并确保在`并发渲染特性`下数据的==一致性==
+	- 比如：
+		- localStorage 同步
+		- 监听窗口大小
+		- 自定义存储等
+
+## 2. 定义和基本概念
+
+### 2.1. 背景
 
 - 随着 React v18 引入并发模式，React 也支持了在处理多个任务时进行优先级调整，这意味着 React 可以“暂停”一个正在进行的渲染任务，切换到另一个更高优先级的任务，然后再回到原来的任务，这使得用户界面响应更快。
 - 但也带来了新的挑战，尤其是在状态管理方面——状态管理库需要**确保它们提供的状态始终是最新的和同步的**。
@@ -16,13 +24,13 @@
 - useSyncExternalStore 是 React 18 引入的一个 Hook，它允许你**订阅外部数据源**，并确保在`并发渲染特性`下数据的一致性。
 - 这个 Hook 主要用于连接外部状态 和 React 组件
 
-### 1.2. 基本语法
+### 2.2. 基本语法
 
 ```javascript
 const snapshot = useSyncExternalStore(subscribe, getSnapshot, getServerSnapshot?)
 ```
 
-### 1.3. 参数说明
+### 2.3. 参数说明
 
 useSyncExternalStore 实际上是一个用于安全地连接`外部数据源`和 `React组件`的桥，如下图
 
@@ -39,7 +47,7 @@ useSyncExternalStore 实际上是一个用于安全地连接`外部数据源`和
 	- 在客户端首次渲染或 hydrate 操作期间，React 会使用此函数而不是`getSnapshot`来读取数据的初始状态。这是为了确保在服务端渲染的内容与客户端的初始内容匹配，从而避免不必要的重新渲染和闪烁。
 	- 如果你的应用不涉及服务端渲染，那么不需要这个参数。
 
-## 2. 主要使用场景
+## 3. 主要使用场景
 
 1. 外部状态管理
    - 订阅浏览器 API（如 localStorage、window size）
@@ -50,9 +58,9 @@ useSyncExternalStore 实际上是一个用于安全地连接`外部数据源`和
    - 处理外部数据源的订阅
    - 确保渲染期间数据不变 
 
-## 3. 详细使用案例
+## 4. 详细使用案例
 
-### 3.1. 案例1：监听窗口大小
+### 4.1. 案例1：监听窗口大小
 
 ```javascript
 function useWindowSize() {
@@ -81,7 +89,7 @@ function WindowSizeComponent() {
 }
 ```
 
-### 3.2. 案例2：自定义存储
+### 4.2. 案例2：自定义存储
 
 ```javascript
 const createStore = (initialState) => {
@@ -122,7 +130,7 @@ function Counter() {
 }
 ```
 
-### 3.3. 案例3：localStorage 同步
+### 4.3. 案例3：localStorage 同步
 
 ```javascript
 function useLocalStorage(key, initialValue) {
@@ -157,9 +165,9 @@ function useLocalStorage(key, initialValue) {
 }
 ```
 
-## 4. 注意事项和最佳实践
+## 5. 注意事项和最佳实践
 
-### 4.1. getSnapshot 应该返回不可变的值
+### 5.1. getSnapshot 应该返回不可变的值
 
 `useSyncExternalStore`依赖`getSnapshot`函数返回的值来决定是否重新渲染
 
@@ -177,11 +185,12 @@ function getSnapshot() {
   return myStore.todos;
 }
 ```
-### 4.2. 避免在每次渲染时创建新的订阅函数，所以 `subscribe`不要放在组件内定义
+
+### 5.2. 避免在每次渲染时创建新的订阅函数，所以 `subscribe`不要放在组件内定义
 
 正确的做法是把 `subscribe` 函数移到组件外部，这样它在组件的整个生命周期中都保持不变；或者使用 `useCallback` 钩子来缓存 `subscribe` 函数。
 
-### 4.3. 服务器端渲染
+### 5.3. 服务器端渲染
 
 ```javascript
 const useStore = (store) => {
@@ -194,7 +203,7 @@ const useStore = (store) => {
 };
 ```
 
-### 4.4. 记得错误处理
+### 5.4. 记得错误处理
 
 ```javascript
 const getSnapshot = () => {
@@ -207,6 +216,6 @@ const getSnapshot = () => {
 };
 ```
 
-## 5. 最后
+## 6. 最后
 
 虽然`useImperativeHandle`对于应用开发者来说不是必要的，但如果你想拓展对 React 生态圈的认识，依然有必要了解一下`useImperativeHandle`的用法和使用场景，因为它能帮助你未来更好地理解优秀的第三方库的设计。

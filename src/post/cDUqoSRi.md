@@ -6,13 +6,20 @@
 
 ## 目录
 <!-- toc -->
- ## 1. 定义 
+ ## 1. 总结 
+
+- Immer.js 
+	- 创建一个草稿状态(draft)来修改数据，而不是直接修改原始状态
+	- 使用 `produce` 方便修改复杂对象的某个属性
+- Vue 值修改就好响应式数据就好，不存在这个问题
+
+## 2. 定义
 
 Immer.js 是一个让我们能够以更简单的方式处理`不可变数据`的库。
 
 它的**核心理念是通过创建一个草稿状态(draft)来修改数据，而不是直接修改原始状态**。
 
-## 2. 基本使用方法
+## 3. 基本使用方法
 
 ```jsx
 import produce from 'immer';
@@ -36,7 +43,7 @@ const newState = produce(baseState, draft => {
 });
 ```
 
-## 3. 在 React 中的应用
+## 4. 在 React 中的应用
 
 ```jsx hl:13
 import { useState } from 'react';
@@ -69,9 +76,9 @@ function UserProfile() {
 }
 ```
 
-## 4. 主要作用和优势
+## 5. 主要作用和优势
 
-### 4.1. 简化复杂状态更新
+### 5.1. 简化复杂状态更新
 
 - 不需要手动创建对象的深拷贝
 - 避免了展开运算符的多层嵌套
@@ -100,15 +107,15 @@ const updateNestedState = () => {
 };
 ```
 
-## 5. 自动处理不可变性
+## 6. 自动处理不可变性
 
 - Immer 确保状态的不可变性
 - 防止意外的状态突变
 - 优化 React 的性能（通过引用比较）
 
-## 6. 使用注意事项
+## 7. 使用注意事项
 
-### 6.1. 返回值处理
+### 7.1. 返回值处理
 
 ```jsx
 // 这样是正确的
@@ -130,7 +137,7 @@ const newState = produce(state, draft => {
 });
 ```
 
-### 6.2. 性能考虑
+### 7.2. 性能考虑
 
 - 对于简单的状态更新，直接使用展开运算符可能更高效
 - Immer 适合处理复杂的嵌套状态更新
@@ -146,7 +153,7 @@ setState(produce(draft => {
 }));
 ```
 
-### 6.3. 异步操作
+### 7.3. 异步操作
 
 ```jsx
 // 在异步操作中使用
@@ -159,9 +166,9 @@ const handleAsync = async () => {
 };
 ```
 
-## 7. 与 React 工具的集成
+## 8. 与 React 工具的集成
 
-### 7.1. 与 useReducer 配合使用
+### 8.1. 与 useReducer 配合使用
 
 ```jsx
 import produce from 'immer';
@@ -178,7 +185,7 @@ const reducer = produce((draft, action) => {
 });
 ```
 
-### 7.2. 与 Redux 配合使用
+### 8.2. 与 Redux 配合使用
 
 ```jsx
 import produce from 'immer';
@@ -198,7 +205,7 @@ const todosReducer = produce((draft, action) => {
 });
 ```
 
-## 8. 最佳实践
+## 9. 最佳实践
 
 - 在状态更新逻辑复杂的组件中使用 Immer
 - 对于简单的状态更新，可以继续使用常规方式
@@ -206,7 +213,7 @@ const todosReducer = produce((draft, action) => {
 - 在性能关键的场景中谨慎使用
 - 保持状态结构的扁平化，即使使用 Immer 也应避免过深的嵌套
 
-## 9. 与 Immutable.js 的比较
+## 10. 与 Immutable.js 的比较
 
 - 如果你的项目不是特别依赖性能，并且希望保持代码的可读性和维护性，Immer.js 是更好的选择。
 - 如果你的项目规模较大，对性能要求极高，并且团队成员都熟悉**函数式编程概念**，那么 Immutable.js 可能更适合。

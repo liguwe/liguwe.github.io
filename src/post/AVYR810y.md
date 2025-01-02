@@ -1,13 +1,34 @@
 
 # React render 方法的原理和触发时机
 
-
 `#react` 
 
 
 ## 目录
 <!-- toc -->
- ## 1. Render 方法的基本原理 
+ ## 1. 总结 
+
+- React 的 render 过程
+	 - 执行 render 方法，获取虚拟 DOM
+	- 对比虚拟 DOM（Diffing）
+	- 更新真实 DOM
+- Render 的触发时机
+	- 首次挂载时
+	- props 变化
+	- state 变化
+	- 父组件重新渲染
+- 性能优化方法
+	- React.memo
+	- PureComponent
+	- shouldComponentUpdate
+	- 避免==内联==对象或函数 → 提出来
+	- 使用 useMemo 缓存结果
+	- 使用 useCallback 缓存函数
+- `static getDerivedStateFromProps(props, state) {`
+	- 返回 `null` 表示不需要更新状态
+	- 这个方法在==每次渲染前都会调用==，包括首次渲染
+
+## 2. Render 方法的基本原理
 
 React 的 render 方法主要负责**将组件转换为虚拟 DOM**（Virtual DOM）：
 
@@ -36,7 +57,7 @@ function MyFunctionalComponent(props) {
 }
 ```
 
-## 2. Render 的执行过程
+## 3. Render 的执行过程
 
  1. 执行 render 方法，获取虚拟 DOM
  2. 对比虚拟 DOM（Diffing）
@@ -56,9 +77,9 @@ const render = (Component, props) => {
 }
 ```
 
-## 3. Render 的触发时机
+## 4. Render 的触发时机
 
-### 3.1. 首次渲染
+### 4.1. 首次渲染
 
 ```jsx
 // 组件首次挂载时
@@ -68,7 +89,7 @@ ReactDOM.render(
 );
 ```
 
-### 3.2. Props 改变
+### 4.2. Props 改变
 
 ```jsx
 function Parent() {
@@ -80,7 +101,7 @@ function Parent() {
 }
 ```
 
-### 3.3. State 改变
+### 4.3. State 改变
 
 ```jsx
 function Counter() {
@@ -97,7 +118,7 @@ function Counter() {
 }
 ```
 
-### 3.4. 父组件重新渲染
+### 4.4. 父组件重新渲染
 
 ```jsx
 function Parent() {
@@ -114,9 +135,9 @@ function Parent() {
 }
 ```
 
-### 3.5. 性能优化方法
+### 4.5. 性能优化方法
 
-#### 3.5.1. React.memo 用于函数组件
+#### 4.5.1. React.memo 用于函数组件
 
 ```jsx
 const MemoizedComponent = React.memo(function MyComponent(props) {
@@ -126,7 +147,7 @@ const MemoizedComponent = React.memo(function MyComponent(props) {
 });
 ```
 
-#### 3.5.2. PureComponent 用于类组件
+#### 4.5.2. PureComponent 用于类组件
 
 ```jsx
 class MyPureComponent extends React.PureComponent {
@@ -138,7 +159,7 @@ class MyPureComponent extends React.PureComponent {
 }
 ```
 
-#### 3.5.3. shouldComponentUpdate 用于自定义更新逻辑
+#### 4.5.3. shouldComponentUpdate 用于自定义更新逻辑
 
 ```jsx
 class MyComponent extends React.Component {
@@ -154,9 +175,9 @@ class MyComponent extends React.Component {
 }
 ```
 
-## 4. 常见的渲染优化问题
+## 5. 常见的渲染优化问题
 
-### 4.1. 避免在渲染中创建新对象或函数
+### 5.1. 避免在渲染中创建新对象或函数
 
 ```jsx hl:4
 // 不好的写法
@@ -182,7 +203,7 @@ function GoodComponent() {
 }
 ```
 
-### 4.2. 使用 useMemo 缓存计算结果
+### 5.2. 使用 useMemo 缓存计算结果
 
 ```jsx
 function ExpensiveComponent({ data }) {
@@ -194,7 +215,7 @@ function ExpensiveComponent({ data }) {
 }
 ```
 
-## 5. 渲染阶段的生命周期
+## 6. 渲染阶段的生命周期
 
 对于类组件，render 相关的生命周期方法执行顺序：
 
@@ -243,7 +264,7 @@ class LifecycleComponent extends React.Component {
 }
 ```
 
-## 6. 总结
+## 7. 总结
 
 1. Render 方法是 React 组件的核心，**负责生成虚拟 DOM**。
 2. 触发时机包括：

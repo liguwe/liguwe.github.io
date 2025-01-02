@@ -6,11 +6,32 @@
 
 ## 目录
 <!-- toc -->
- ## 1. Error Boundary（错误边界） 
+ ## 总结 
+
+- `static getDerivedStateFromError`
+	- 更新 state，降级 UI 显示
+- componentDidCatch
+	- 更后面，将错误日志上报给服务器
+- 全局错误
+	- window.onerror 
+	- window.addEventListener('unhandledrejection'
+	- window.addEventListener('error'
+- 通用的错误解决方案
+	- 错误类型枚举
+	- 错误上报
+	- 默认错误回退组件等
+	- 分层上报
+
+
+> 更多参考
+> - [22. 前端错误的分类、优先级管理及处理策略](/post/fOP9lXd1.html)
+> - [22. 前端错误的分类和优先级管理建议](/post/800WyJFR.html)
+
+## 1. Error Boundary（错误边界）
 
 这是 React 官方推荐的捕获渲染错误的方式：
 
-```jsx hl:7,12
+```jsx hl:7,12,36
 class ErrorBoundary extends React.Component {
   constructor(props) {
     super(props);

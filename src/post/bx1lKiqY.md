@@ -1,13 +1,43 @@
 
 # React Server Components (RSC)
 
-
 `#react` 
 
 
 ## 目录
 <!-- toc -->
- ## 1. RSC 基本概念 
+ ## 总结 
+
+- React Server Components (RSC)：
+	- 服务器上运行的 React 组件
+- 一切不需要交互的内容都应当放到服务端
+	- 比如 markdown
+- 三种组件类型
+	- 默认：服务端组件
+	- 客户端组件：
+		- 使用`'use client';`标识
+	- 共享组件
+		- 可在服务端和客户端都能使用的组件
+- 区别
+	- 服务器组件限制：
+		- 不能使用 useState、useEffect 等客户端 hooks
+		- 不能访问浏览器 API
+		- 不能添加事件处理器
+	- 客户端组件限制：
+		- 不能直接导入服务器组件
+		- 需要通过 props 接收服务器组件
+	- 数据获取注意事项：
+		- 服务器组件中可以直接使用 async/await
+		- 客户端组件需要使用传统的数据获取方式
+	- 服务器组件不能使用像 `useState` 和 `useEffect` 这样的 React hook；客户端则可以
+	- 服务器组件无权访问浏览器 API；客户端有完整的浏览器 API 权限；
+	- 服务端有权限直接访问服务端程序和 API；而客户端组件只能通过请求访问部分程序。
+- `UI = f(data, state)`
+	- 客户端组件的工作是 `UI = f(state)`
+	- 服务端组件的工作是 `UI = f(data)`
+	- React 希望组合二者的优势，实现 `UI = f(data, state)`
+
+## 1. RSC 基本概念
 
 React Server Components 允许开发者编写在服务器上运行的 React 组件，这些组件可以：
 - 直接访问服务器资源（数据库、文件系统等）
@@ -62,6 +92,7 @@ async function ServerComponent() {
   return <div>{data}</div>;
 }
 ```
+
 ### 3.2. 客户端组件
 
 ```javascript

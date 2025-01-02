@@ -4,13 +4,44 @@
 
 ## 目录
 <!-- toc -->
- ## 1. 先说Class组件的生命周期 
+ ## 1. 总结 
 
-分三个阶段：组件挂在阶段 + 组件更新 + 卸载 + 错误处理阶段 ，如下图：
+- Class 组件 ==<=>== Hooks 等效实现
+
+```javascript
+// Class 组件              Hooks 等效实现
+// ------------------------------------------
+// constructor              -> useState, useRef
+// getDerivedStateFromProps -> useEffect 配合 useState
+// shouldComponentUpdate    -> React.memo
+// render                   -> 函数本身
+// componentDidMount        -> useEffect([])
+// componentDidUpdate       -> useEffect([deps])
+// componentWillUnmount     -> useEffect 返回的清理函数
+// componentDidCatch        -> 需要使用 Class 组件
+// getSnapshotBeforeUpdate  -> 没有直接等效实现
+
+```
+
+- getDerivedStateFromError 与 componentDidCatch 区别
+	 - getDerivedStateFromError 在`渲染阶段`调用，是==同步==的
+	- 用于==降级 UI，容错==
+	 - componentDidCatch 在`提交阶段`调用，可以执行副作用
+	 - `getDerivedStateFromError` 必须返回一个`状态对象`
+	 - `getDerivedStateFromError` 支持**服务端渲染**，而 `componentDidCatch` 不支持 
+- Class组件的生命周期，分==五个阶段==
+	- 初始化 + 挂载阶段 + 组件更新 + 卸载 + 错误处理
+- React 为什么要废弃 `componentwillMount`、`componentWillReceiveProps`、`componentWillUpdate` `
+	- 在`fiber`中，==render 可被打断==，**可能在 wilMount 中获取到的元素状态很可能与实际需要的不同
+	- ==一句话就是，Render 阶段可能会被打断，那么 willxxx 就可以执行多次==
+
+## 2. 先说Class组件的生命周期
+
+分四个阶段：组件挂载阶段 + 组件更新 + 卸载 + 错误处理阶段 ，如下图：
 
 ![图片&文件](./files/20241030-3.png)
 
-### 1.1. 第一阶段：组件挂载阶段
+### 2.1. 第一阶段：组件挂载阶段
 
 挂载阶段组件被创建，然后组件实例插入到 DOM 中，完成组件的第一次渲染，在此阶段`会依次调用`以下这些方法
 - `constructor`：初始化组件的 `state`，给事件处理方法绑定 `this`
@@ -21,7 +52,7 @@
 - `componentDidMount`：代表`组件挂载完成`， 在这里可以DOM操作、网络请求、事件订阅等
 	- 其实`不推荐直接在componentDidMount直接调用setState`，因为我们又调用了一次`setState`，就会在未来再进行一次`render`，造成不必要的性能浪费，**大多数情况可以设置初始值来搞定**
 
-#### 1.1.1. 代码详细示例
+#### 2.1.1. 代码详细示例
 
 下面是详细使用示例：
 1. constructor
@@ -87,11 +118,11 @@ class MyComponent extends React.Component {
 }
 ```
 
-### 1.2. 第二阶段：组件更新阶段
+### 2.2. 第二阶段：组件更新阶段
 
 - `getDerivedStateFromProps`，如上
 - `shouldComponentUpdate(nextProps, nextState)` 是否应该渲染组件 
-	-  `性能优化的点`
+	- `性能优化的点`
 - `render`，如上
 - `getSnapshotBeforeUpdate(prevProps, prevState)`
 	- 在 `render` 之后，`componentDidUpdate` 之前调用
@@ -106,7 +137,7 @@ class MyComponent extends React.Component {
 	- 如果你对更新前后的 `props` 进行了比较，也可以选择在此处进行`网络请求`；
 		- （例如，当 `props` 未发生变化时，则不会执行网络请求）
 
-#### 1.2.1. 代码详细示例
+#### 2.2.1. 代码详细示例
 
 1. static getDerivedStateFromProps
 2. shouldComponentUpdate
@@ -164,13 +195,14 @@ class MyComponent extends React.Component {
 }
 ```
 
-### 1.3. 第三阶段：组件卸载阶段
+### 2.3. 第三阶段：组件卸载阶段
 
 - componentWillUnmount
 	- 清除 `timer`，取消网络请求或清除
 	- 取消在 `componentDidMount()` 中创建的订阅等；
 
-#### 1.3.1. 代码详细示例
+#### 2.3.1. 代码详细示例
+
 ```jsx
 class MyComponent extends React.Component {
   // componentWillUnmount
@@ -186,22 +218,22 @@ class MyComponent extends React.Component {
 }
 ```
 
-### 1.4. 第四阶段：错误处理阶段
+### 2.4. 第四阶段：错误处理阶段
 
-- `componentDidCatch(error, info)`，**后代组件抛出错误后被调用**，**发生在渲染阶段**
+- getDerivedStateFromError，**后代组件抛出错误后被调用**，**发生在渲染阶段**
 	- 返回值：返回一个对象来更新 state
 	- 用途：
 		- **在渲染错误页面之前更新 state** ，==用于容错==
 		- 不应该产生副作用
-- getDerivedStateFromError 
+- `componentDidCatch(error, info)`
 	- 参数：
 		- error: 错误对象
-		- errorInfo: 包含 componentStack 信息的对象
+		- errorInfo: 包含 `componentStack` 信息的对象
 	- 用途：
 		- 错误日志记录
 		- 可以产生副作用
 
-#### 1.4.1. 代码详细示例
+#### 2.4.1. 代码详细示例
 
 ```jsx hl:10
 class MyComponent extends React.Component {
@@ -229,7 +261,7 @@ class MyComponent extends React.Component {
 }
 ```
 
-### 1.5. 完整的生命周期示例
+### 2.5. 完整的生命周期示例
 
 ```jsx
 class CompleteLifecycleComponent extends React.Component {
@@ -341,7 +373,7 @@ class CompleteLifecycleComponent extends React.Component {
 }
 ```
 
-### 1.6. 注意点与总结
+### 2.6. 注意点与总结
 
 - **不是所有方法都需要使用**：
 	- 大多数情况下只需要 `constructor`、`render` 和 `componentDidMount`
@@ -361,9 +393,10 @@ class CompleteLifecycleComponent extends React.Component {
 	- 正确处理异步操作
 - 最后，还是多使用 Hooks 吧
 
-## 2. React16 废弃了那些生命周期函数
+## 3. React 16 废弃了那些生命周期函数
 
-- `componentWillMount`：完全可以使用 `componentDidMount` 和 `constructor` 来代替
+- `componentWillMount`：
+	- 完全可以使用 `componentDidMount` 和 `constructor` 来代替
 - `componentWillReceiveProps`
 	- 来回比较数据状态不可预测行
 	- 增加组件重回次数
@@ -379,11 +412,11 @@ React 为什么要废弃 `componentwillMount`、`componentWillReceiveProps`、`c
 
 ==一句话就是，Render 阶段可能会被打断，那么 willxxx 就可以执行多次==
 
-## 3. getDerivedStateFromError vs componentDidCatch 以及 Hooks 中的错误处理
+## 4. getDerivedStateFromError vs componentDidCatch 以及 Hooks 中的错误处理
 
 > 关于错误处理，更多 [23. React 中错误捕获的方式](/post/YvA5LvXj.html)
 
-### 3.1. getDerivedStateFromError vs componentDidCatch
+### 4.1. getDerivedStateFromError vs componentDidCatch
 
 这两个生命周期方法都用于错误处理，但有重要区别：
 
@@ -413,7 +446,7 @@ class ErrorBoundary extends React.Component {
 ```
 
 主要区别：
-- getDerivedStateFromError 在`渲染阶段`调用，是同步的
+- getDerivedStateFromError 在`渲染阶段`调用，是==同步==的
 	- 用于==降级 UI，容错==
 - componentDidCatch 在`提交阶段`调用，可以执行副作用
 - `getDerivedStateFromError` 必须返回一个`状态对象`
@@ -472,10 +505,11 @@ class ErrorBoundary extends React.Component {
 }
 ```
 
-### 3.2. 在现代 React（Hooks）中的使用
+### 4.2. 在现代 React（Hooks）中的使用
 
 虽然目前 Hooks 不能直接实现错误边界，但有几种推荐的解决方案：
-#### 3.2.1. 使用第三方库 react-error-boundary
+
+#### 4.2.1. 使用第三方库 react-error-boundary
 
 ```javascript
 import { ErrorBoundary } from 'react-error-boundary';
@@ -508,7 +542,7 @@ function MyApp() {
 }
 ```
 
-#### 3.2.2. 自定义 Hook 配合错误边界
+#### 4.2.2. 自定义 Hook 配合错误边界
 
 ```javascript
 function useErrorHandler() {
@@ -538,9 +572,9 @@ function MyComponent() {
 }
 ```
 
-### 3.3. 最佳实践和注意事项 
+### 4.3. 最佳实践和注意事项 
 
-#### 3.3.1. 错误边界的粒度控制
+#### 4.3.1. 错误边界的粒度控制
 
 ```javascript
 function App() {
@@ -561,7 +595,7 @@ function App() {
 }
 ```
 
-#### 3.3.2. 错误恢复策略
+#### 4.3.2. 错误恢复策略
 
 ```javascript
 class ErrorBoundary extends React.Component {
@@ -593,7 +627,7 @@ class ErrorBoundary extends React.Component {
 }
 ```
 
-### 3.4. 需要注意的是
+### 4.4. 需要注意的是
 
 - 错误边界无法捕获以下错误：
 	- 事件处理器中的错误
@@ -604,10 +638,11 @@ class ErrorBoundary extends React.Component {
 - 在生产环境中，错误会被限制在错误边界内
 - 建议在应用的不同层级设置错误边界，以实现更细粒度的错误处理
 
-## 4. Class 和 Hooks 对应的生命周期
-### 4.1. 初始化阶段
+## 5. Class 和 Hooks 对应的生命周期
 
-#### 4.1.1. Class 组件
+### 5.1. 初始化阶段
+
+#### 5.1.1. Class 组件
 
 ```javascript
 class MyComponent extends React.Component {
@@ -620,7 +655,7 @@ class MyComponent extends React.Component {
 }
 ```
 
-#### 4.1.2. Hooks 方式
+#### 5.1.2. Hooks 方式
 
 ```javascript
 function MyComponent(props) {
@@ -634,9 +669,9 @@ function MyComponent(props) {
 }
 ```
 
-### 4.2. 挂载阶段
+### 5.2. 挂载阶段
 
-#### 4.2.1. Class 组件
+#### 5.2.1. Class 组件
 
 ```javascript
 class MyComponent extends React.Component {
@@ -650,7 +685,7 @@ class MyComponent extends React.Component {
 }
 ```
 
-#### 4.2.2. Hooks 方式：空依赖数组表示仅在挂载时执行
+#### 5.2.2. Hooks 方式：空依赖数组表示仅在挂载时执行
 
 ```javascript hl:14
 function MyComponent() {
@@ -670,9 +705,9 @@ function MyComponent() {
 }
 ```
 
-### 4.3. 更新阶段
+### 5.3. 更新阶段
 
-#### 4.3.1. Class 组件
+#### 5.3.1. Class 组件
 
 ```javascript
 class MyComponent extends React.Component {
@@ -688,7 +723,7 @@ class MyComponent extends React.Component {
 }
 ```
 
-#### 4.3.2. Hooks 方式
+#### 5.3.2. Hooks 方式
 
 ```javascript
 function MyComponent({ userID }) {
@@ -704,9 +739,9 @@ function MyComponent({ userID }) {
 }
 ```
 
-### 4.4. 卸载阶段
+### 5.4. 卸载阶段
 
-#### 4.4.1. Class 组件
+#### 5.4.1. Class 组件
 
 ```javascript
 class MyComponent extends React.Component {
@@ -718,7 +753,7 @@ class MyComponent extends React.Component {
 }
 ```
 
-#### 4.4.2. Hooks 方式
+#### 5.4.2. Hooks 方式
 
 ```javascript hl:10
 function MyComponent() {
@@ -736,9 +771,9 @@ function MyComponent() {
 }
 ```
 
-### 4.5. 错误处理
+### 5.5. 错误处理
 
-#### 4.5.1. Class 组件
+#### 5.5.1. Class 组件
 
 ```javascript hl:2,6
 class MyComponent extends React.Component {
@@ -752,7 +787,7 @@ class MyComponent extends React.Component {
 }
 ```
 
-#### 4.5.2. Hooks 方式
+#### 5.5.2. Hooks 方式
 
 ```javascript
 // 错误边界目前还需要使用 Class 组件
@@ -771,9 +806,9 @@ function useErrorHandler(error) {
 }
 ```
 
-### 4.6. 获取派生状态
+### 5.6. 获取派生状态
 
-#### 4.6.1. Class 组件
+#### 5.6.1. Class 组件
 
 ```javascript
 class MyComponent extends React.Component {
@@ -789,7 +824,7 @@ class MyComponent extends React.Component {
 }
 ```
 
-#### 4.6.2. Hooks 方式
+#### 5.6.2. Hooks 方式
 
 ```javascript
 function MyComponent(props) {
@@ -806,9 +841,9 @@ function MyComponent(props) {
 }
 ```
 
-### 4.7. 性能优化
+### 5.7. 性能优化
 
-#### 4.7.1. Class 组件
+#### 5.7.1. Class 组件
 
 ```javascript
 class MyComponent extends React.Component {
@@ -818,7 +853,7 @@ class MyComponent extends React.Component {
 }
 ```
 
-#### 4.7.2. Hooks 方式
+#### 5.7.2. Hooks 方式
 
 ```javascript
 function MyComponent({ value }) {
@@ -837,7 +872,7 @@ function MyComponent({ value }) {
 const MemoizedComponent = React.memo(MyComponent);
 ```
 
-### 4.8. 自定义生命周期 Hook
+### 5.8. 自定义生命周期 Hook
 
 ```javascript hl:12
 // 组合多个生命周期的自定义 Hook
@@ -866,7 +901,7 @@ function useLifecycle(props) {
 }
 ```
 
-### 4.9. Hooks 完整的生命周期示例
+### 5.9. Hooks 完整的生命周期示例
 
 ```javascript
 function CompleteLifecycleComponent({ data }) {
@@ -918,7 +953,7 @@ function CompleteLifecycleComponent({ data }) {
 }
 ```
 
-### 4.10. 生命周期方法对照表
+### 5.10. 生命周期方法对照表
 
 ```javascript
 // Class 组件              Hooks 等效实现

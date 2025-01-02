@@ -12,7 +12,7 @@
 - React 使用`链表`结构来存储 Hooks 状态：
 - 每个 Hook 节点包含：
     - 当前状态：`state`
-    - 更新队列:  `queue` ，存储多次更新行为
+    - 更新队列: `queue` ，存储多次更新行为
     - 依赖项（对于 useEffect 等）
     - next：指向下一个 Hook 的指针
 
@@ -34,6 +34,7 @@
     - 不能在类组件中调用
 
 ## 3. useState 的源码分析
+
 ### 3.1. 入口
 
 所有的 Hooks 在 React.js 中被引入，挂载在 React 对象中，如下：

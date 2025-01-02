@@ -1,38 +1,49 @@
 
 # Next.js
 
-`#react`  `#R1` 
+`#react`  
+
 
 ## 目录
 <!-- toc -->
- ## 1. 基本定义 
+ ## 1. 总结 
+
+- Next.js 是一个基于 React 的`全栈 Web 应用开发框架`
+- 支持多少渲染方式
+	- ssr ssg isr csr
+- 文件路径 → 路由
+- 底层技术栈
+	- turbopack
+	- swc
+
+## 2. 基本定义
 
 Next.js 是一个基于 React 的`全栈 Web 应用开发框架`，它提供了构建现代网络应用所需的所有功能。它是由 Vercel 公司开发和维护的开源框架。
 
-## 2. 核心特性
+## 3. 核心特性
 
-### 2.1. 渲染方式
+### 3.1. 渲染方式
 
 - 服务器端渲染 (SSR)
 - 静态站点生成 (SSG)
 - 增量静态再生成 (ISR)
 - 客户端渲染 (CSR)
 
-### 2.2. 路由系统
+### 3.2. 路由系统
 
 - 基于文件系统的路由
 - 动态路由支持
 - App Router（最新稳定版特性）
 - 嵌套路由和布局
 
-### 2.3. 性能优化
+### 3.3. 性能优化
 
 - 自动代码分割
 - 图片优化
 - 字体优化
 - 脚本优化
 
-## 3. 主要优势
+## 4. 主要优势
 
 - 零配置：提供开箱即用的配置
 - SEO 友好：得益于服务器端渲染
@@ -41,9 +52,9 @@ Next.js 是一个基于 React 的`全栈 Web 应用开发框架`，它提供了�
 - TypeScript 支持
 - 自动优化和性能提升
 
-## 4. Next.js 的全栈开发能力
+## 5. Next.js 的全栈开发能力
 
-### 4.1. API 路由实现
+### 5.1. API 路由实现
 
 ```typescript
 // app/api/users/route.ts
@@ -67,7 +78,7 @@ export async function POST(request: Request) {
 }
 ```
 
-### 4.2. 数据库集成
+### 5.2. 数据库集成
 
 ```typescript
 // lib/prisma.ts
@@ -90,7 +101,7 @@ model User {
 }
 ```
 
-### 4.3. 服务器组件中的数据获取
+### 5.3. 服务器组件中的数据获取
 
 ```typescript
 // app/users/page.tsx
@@ -124,7 +135,7 @@ export default async function UsersPage() {
 }
 ```
 
-### 4.4. 中间件实现
+### 5.4. 中间件实现
 
 ```typescript
 // middleware.ts
@@ -149,7 +160,7 @@ export function middleware(request: NextRequest) {
 }
 ```
 
-### 4.5. 全栈数据验证
+### 5.5. 全栈数据验证
 
 ```typescript
 // lib/validations.ts
@@ -184,7 +195,7 @@ export async function POST(request: Request) {
 }
 ```
 
-### 4.6. 服务器端状态管理
+### 5.6. 服务器端状态管理
 
 ```typescript
 // app/actions.ts
@@ -218,7 +229,7 @@ export default function NewPostPage() {
 }
 ```
 
-### 4.7. 认证集成
+### 5.7. 认证集成
 
 ```typescript
 // app/api/auth/[...nextauth]/route.ts
@@ -246,7 +257,7 @@ const handler = NextAuth({
 export { handler as GET, handler as POST }
 ```
 
-### 4.8. 文件上传处理
+### 5.8. 文件上传处理
 
 ```typescript
 // app/api/upload/route.ts
@@ -274,7 +285,7 @@ export async function POST(request: Request) {
 }
 ```
 
-### 4.9. WebSocket 集成
+### 5.9. WebSocket 集成
 
 ```typescript
 // app/api/socket/route.ts
@@ -299,7 +310,7 @@ io.on('connection', (socket) => {
 httpServer.listen(3001)
 ```
 
-### 4.10. 环境变量和配置管理
+### 5.10. 环境变量和配置管理
 
 ```env
 # .env.local
@@ -323,50 +334,50 @@ NEXT_PUBLIC_API_URL="..."
 
 建议根据项目需求逐步整合这些功能，不必一次性实现所有特性。从基本的 API 路由和数据库操作开始，然后根据需要添加更多功能。
 
-## 5. Next.js 的底层技术栈
+## 6. Next.js 的底层技术栈
 
-### 5.1. 核心编译和构建工具
+### 6.1. 核心编译和构建工具
 
-#### 5.1.1. SWC (Speedy Web Compiler)
+#### 6.1.1. SWC (Speedy Web Compiler)
 
 - 用 Rust 编写的高性能 JavaScript/TypeScript 编译器
 - 替代了传统的 Babel
 - 提供代码转换和压缩功能
 - 比 Babel 快 17 倍以上 
 
-#### 5.1.2. b) Turbopack
+#### 6.1.2. Turbopack
 
 - Next.js 13 引入的新一代打包工具
 - 同样使用 Rust 编写
 - 比 Webpack 快 700 倍
 - 支持增量编译
 
-### 5.2. 运行时核心
+### 6.2. 运行时核心
 
-#### 5.2.1. React 核心
+#### 6.2.1. React 核心
 
 - 完全集成 React 18
 - 支持服务器组件（React Server Components）
 - 支持并发渲染
 - 支持 Suspense 和流式渲染 
 
-#### 5.2.2. 渲染引擎
+#### 6.2.2. 渲染引擎
 
 - 支持服务器端渲染（SSR）
 - 静态网站生成（SSG）
 - 增量静态再生成（ISR）
 - 客户端渲染（CSR）
 
-### 5.3. 数据层支持
+### 6.3. 数据层支持
 
-#### 5.3.1. 数据获取
+#### 6.3.1. 数据获取
 
 - fetch API
 - React Query/SWR 集成
 - GraphQL 支持
 - REST API 支持 
 
-#### 5.3.2. 数据库集成
+#### 6.3.2. 数据库集成
 
 - Prisma
 - MongoDB
@@ -374,111 +385,111 @@ NEXT_PUBLIC_API_URL="..."
 - MySQL
 - SQLite
 
-### 5.4. 性能优化工具
+### 6.4. 性能优化工具
 
-#### 5.4.1. 图像优化
+#### 6.4.1. 图像优化
 
 - 内置图像组件
 - 自动图像优化
 - WebP 支持
 - 响应式图像处理
 
-#### 5.4.2. 字体优化
+#### 6.4.2. 字体优化
 
 - 内置字体系统
 - 自动字体优化
 - 变体字体支持
 - 本地字体加载
 
-### 5.5. 开发工具集成
+### 6.5. 开发工具集成
 
-#### 5.5.1. TypeScript
+#### 6.5.1. TypeScript
 
 - 原生 TypeScript 支持
 - 类型检查
 - 智能提示
 - 自动类型生成
 
-#### 5.5.2. ESLint
+#### 6.5.2. ESLint
 
 - 内置 ESLint 配置
 - 代码质量检查
 - 最佳实践强制执行
 
-### 5.6. 路由系统
+### 6.6. 路由系统
 
-#### 5.6.1. 文件系统路由
+#### 6.6.1. 文件系统路由
 
 - 基于文件的路由系统
 - 动态路由支持
 - 嵌套路由
 - 平行路由
 
-#### 5.6.2. 中间件
+#### 6.6.2. 中间件
 
 - 路由中间件
 - 认证中间件
 - 重定向处理
 - 请求拦截
 
-### 5.7. 样式解决方案
+### 6.7. 样式解决方案
 
-#### 5.7.1. CSS 支持
+#### 6.7.1. CSS 支持
 
 - CSS Modules
 - Sass/SCSS
 - PostCSS
 - Tailwind CSS 
 
-#### 5.7.2. CSS-in-JS
+#### 6.7.2. CSS-in-JS
 
 - styled-components
 - emotion
 - CSS Modules
 - 注意：部分 CSS-in-JS 解决方案在服务器组件中可能受限
 
-### 5.8. 安全特性
+### 6.8. 安全特性
 
-#### 5.8.1. 内置安全措施
+#### 6.8.1. 内置安全措施
 
 - CSRF 保护
 - XSS 防护
 - CSP 支持
 - 请求验证
 
-#### 5.8.2. 认证集成
+#### 6.8.2. 认证集成
 
 - NextAuth.js
 - JWT
 - Session 管理
 - OAuth 提供商支持
 
-### 5.9. 部署和基础设施
+### 6.9. 部署和基础设施
 
-#### 5.9.1. 部署平台
+#### 6.9.1. 部署平台
 
 - Vercel（原生支持）
 - AWS
 - Google Cloud
 - Azure
 
-#### 5.9.2. Edge 运行时
+#### 6.9.2. Edge 运行时
 
 - Edge Functions
 - Edge Middleware
 - CDN 集成
 - 全球分发
 
-### 5.10. 开发体验
+### 6.10. 开发体验
 
-#### 5.10.1. 开发服务器
+#### 6.10.1. 开发服务器
 
 - 快速刷新
 - 错误处理
 - 开发时调试
 - 热模块替换（HMR）
 
-#### 5.10.2. 调试工具
+#### 6.10.2. 调试工具
 
 - React DevTools 集成
 - 性能分析

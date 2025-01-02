@@ -6,7 +6,20 @@
 
 ## 目录
 <!-- toc -->
- ## 1. use hook 
+ ## 总结 
+
+- use hook
+	- 可以在循环和条件语句中调用
+- 支持在 React 代码里编写 document metadata，即在页面组件编写`<title>` `<link>` 和 `<meta>` 标签会自动添加应用的 `<head>` 上面
+- 新指令
+	- `'use client'` 标记仅在客户端运行的代码。
+	- `'use server'` 标记可以从客户端代码调用的服务器端函数
+- useOptimistic 乐观更新
+	- 比如点赞
+- 预加载能力：`import { prefetchDNS, preconnect, preload, preinit} from "react-dom";`
+- 等等
+
+## 1. use hook
 
 - 不同于所有其他的 React 钩子，`use` 可以在循环和条件语句中调用，比如 `if`
 
@@ -22,6 +35,7 @@ function HorizontalRule({ show }) {
   return false;
 }
 ```
+
 ### 1.2. use(Promise)
 
 ```jsx

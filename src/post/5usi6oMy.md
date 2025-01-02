@@ -6,23 +6,30 @@
 
 ## 目录
 <!-- toc -->
- ## 1. useDebugValue 基本介绍 
+ ## 1. 总结 
 
-useDebugValue 是一个用于在 **React DevTools** 中显示自定义 hook 标签的 Hook。它的主要目的是帮助开发者在调试时更好地理解自定义 Hook 的内部状态。
+- useDebugValue(value, formatFn?) ：用于在 DevTools 中显示当前值
+	- value: 要显示的调试值
+	- formatFn: (可选) 格式化函数，用于格式化调试值
 
-### 1.1. 基本语法
+## 2. useDebugValue 基本介绍
+
+`useDebugValue` 是一个用于在 **React DevTools** 中显示自定义 hook 标签的 Hook。它的主要目的是帮助开发者在调试时更好地理解自定义 Hook 的内部状态
+
+### 2.1. 基本语法
 
 ```javascript
 useDebugValue(value, formatFn?)
 ```
 
 参数说明：
+
 - value: 要显示的调试值
 - formatFn: (可选) 格式化函数，用于格式化调试值
 
-## 2. 使用方法
+## 3. 使用方法
 
-### 2.1. 基本使用
+### 3.1. 基本使用
 
 ```javascript
 function useCustomHook(initialValue) {
@@ -41,7 +48,7 @@ function MyComponent() {
 }
 ```
 
-### 2.2. 使用格式化函数
+### 3.2. 使用格式化函数
 
 ```javascript
 function useUserStatus(userId) {
@@ -55,7 +62,7 @@ function useUserStatus(userId) {
 }
 ```
 
-### 2.3. 复杂对象的格式化
+### 3.3. 复杂对象的格式化
 
 ```javascript
 function useDataFetching(url) {
@@ -89,7 +96,7 @@ function useDataFetching(url) {
 }
 ```
 
-## 3. 实际示例：带图
+## 4. 实际示例：带图
 
 ```javascript
 export function useOnlineStatus() {

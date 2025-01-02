@@ -6,15 +6,128 @@
 
 ## 目录
 <!-- toc -->
- ## 1. React 事件系统的设计理念 
+ ## 1. 总结 
 
-### 1.1. 合成事件（SyntheticEvent）
+- React 实现了一个==合成事件层== ，将浏览器原生事件统一封装为==合成事件==
+- React 利用==事件委托机制==将大多数事件都==委托到 document 节点上==
+	- React 17 之后改为 `root 节点`
+- React 在内部维护一个==事件对象池==
+	- 复用事件对象以减少内存分配和垃圾回收，React 17 完全移除了事件池机制
+	- 所以 无需调用 `e.persist()`
+- 类组件中使用箭头函数自动绑定 this
+	- 否则需要使用 `.bind` 
+- 函数组件中使用 `useCallback` 优化事件处理函数
+- 使用防抖或节流优化性能，及时清理不需要的事件监听器
+- React 事件和原生事件的执行顺序，==比想象中更复杂些，见下面示例==
+- 事件命名规范
+	- ==原生事件全小写==：`onclick`、`onblur`
+	- React 事件采用驼峰：`onClick`、`onBlur`
+- 阻止默认行为
+	- e.preventDefault()
+	- ==不是 不是 return false==
+- 阻止事件冒泡
+	- ==原生事件==使用 `e.stopPropagation()`
+	- ==React 事件==使用 `e.nativeEvent.stopPropagation()`
+- 处理文档级事件、自定义事件等特殊场景
+- 利用开发环境调试工具检查事件绑定情况，了解事件触发顺序
+- 合理使用==事件委托==，缓存事件处理函数以提高性能
+
+## 2. 执行顺序：==重点==
+
+```jsx
+function EventOrderExample() {
+  useEffect(() => {
+    // document 事件
+    document.addEventListener('click', () => {
+      console.log('1. document 捕获');
+    }, true);
+    
+    document.addEventListener('click', () => {
+      console.log('9. document 冒泡');
+    });
+
+    // root 容器事件
+    const root = document.getElementById('root');
+    root.addEventListener('click', () => {
+      console.log('2. root 捕获（原生）');
+    }, true);
+    
+    root.addEventListener('click', () => {
+      console.log('8. root 冒泡（原生）');
+    });
+
+    // div 元素事件
+    const div = document.querySelector('.container');
+    div.addEventListener('click', () => {
+      console.log('3. div 捕获（原生）');
+    }, true);
+    
+    div.addEventListener('click', () => {
+      console.log('7. div 冒泡（原生）');
+    });
+
+    // button 元素事件
+    const button = document.querySelector('button');
+    button.addEventListener('click', () => {
+      console.log('4. button 捕获（原生）');
+    }, true);
+    
+    button.addEventListener('click', () => {
+      console.log('5. button 目标');
+    });
+    
+    button.addEventListener('click', () => {
+      console.log('6. button 冒泡（原生）');
+    });
+
+    // 清理函数
+    return () => {
+      // ... 清理所有事件监听
+    };
+  }, []);
+
+  // React 事件处理
+  const handleDivCapture = () => {
+    console.log('10. React div 捕获');
+  };
+
+  const handleButtonClick = () => {
+    console.log('11. React button 目标');
+  };
+
+  const handleDivBubble = () => {
+    console.log('12. React div 冒泡');
+  };
+
+  return (
+    <div 
+      className="container" 
+      onClick={handleDivBubble} 
+      onClickCapture={handleDivCapture}
+    >
+      <button onClick={handleButtonClick}>
+        点击测试事件顺序
+      </button>
+    </div>
+  );
+}
+```
+
+> [!danger]
+> ==和自己想象中的顺序不一样==
+
+
+![图片&文件](./files/20250101.png)
+
+## 3. React 事件系统的设计理念
+
+### 3.1. 合成事件（SyntheticEvent）
 
 - React 实现了一个合成事件层，将浏览器原生事件统一封装为`合成事件`
 - 抹平差异，确保事件在不同浏览器中的行为一致
 - 优化性能，通过`事件委托`和`对象池`来管理事件对象
 
-### 1.2. 事件委托（Event Delegation）
+### 3.2. 事件委托（Event Delegation）
 
 - React 将大多数事件都委托到 document 节点上（在 React 17 之后改为 root 节点）
 	- React 17 之前，事件都委托到 `document` 上
@@ -24,9 +137,9 @@
 
 ![图片&文件](./files/20241030-1.png)
 
-## 2. 事件系统实现原理
+## 4. 事件系统实现原理
 
-### 2.1. 事件注册
+### 4.1. 事件注册
 
 渲染后的真实`DOM`绑定的事件函数都被换成了`空函数`
 
@@ -67,9 +180,9 @@ function Component() {
 
 ```
 
-### 2.2. 事件池
+### 4.2. 事件池
 
-### 2.3. React 16 及之前版本
+### 4.3. React 16 及之前版本
 
 核心思想是：**React 会在内部维护一个事件对象池，当事件被触发时，React 会从池子中复用事件对象，而不是每次都创建新的事件对象**。在事件处理完成后，这个事件对象会被清空并放回池子中供下次使用。
 
@@ -102,7 +215,7 @@ class Component extends React.Component {
 
 ```
 
-#### 2.3.1. React 17
+#### 4.3.1. React 17
 
 React 17 **完全移除了事件池机制**，原因是：
 - 现代浏览器性能提升，`对象创建的开销`不再是主要问题
@@ -123,7 +236,7 @@ function Component() {
 }
 ```
 
-#### 2.3.2. 总结
+#### 4.3.2. 总结
 
 - 事件池是 React 16 及之前版本的一个性能优化机制
 - 它通过复用事件对象来减少内存分配和垃圾回收
@@ -131,9 +244,9 @@ function Component() {
 	- 移除事件池后，不再需要调用 `e.persist()`
 - 虽然没有了事件池，但在处理大量事件时仍需注意性能优化
 
-## 3. 常用的事件处理方式
+## 5. 常用的事件处理方式
 
-### 3.1. 类组件中的事件处理
+### 5.1. 类组件中的事件处理
 
 ```jsx hl:3
 class MyComponent extends React.Component {
@@ -147,7 +260,7 @@ class MyComponent extends React.Component {
 }
 ```
 
-### 3.2. 函数组件中的事件处理
+### 5.2. 函数组件中的事件处理
 
 ```jsx
 function MyComponent() {
@@ -160,9 +273,9 @@ function MyComponent() {
 }
 ```
 
-## 4. 事件处理最佳实践
+## 6. 事件处理最佳实践
 
-### 4.1. 性能优化
+### 6.1. 性能优化
 
 ```jsx
 // 使用防抖或节流
@@ -177,7 +290,7 @@ function SearchComponent() {
 }
 ```
 
-### 4.2. 事件解绑
+### 6.2. 事件解绑
 
 ```jsx
 function Component() {
@@ -195,18 +308,18 @@ function Component() {
 }
 ```
 
-## 5. 注意事项和常见问题
+## 7. 注意事项和常见问题
 
-### 5.1. React事件和原生事件执行顺序
+### 7.1. React事件和原生事件执行顺序
 
 ![图片&文件](./files/20241030-2.png)
 
-### 5.2. 事件命名
+### 7.2. 事件命名
 
 - React 事件采用驼峰命名（onClick, onSubmit）
 - 原生事件全小写（onclick, onsubmit）
 
-### 5.3. 阻止默认行为
+### 7.3. 阻止默认行为
 
 ```jsx hl:3
 // React中阻止默认行为
@@ -216,7 +329,7 @@ function handleSubmit(e) {
 }
 ```
 
-### 5.4. 事件传参
+### 7.4. 事件传参
 
 ```jsx
 // 推荐方式
@@ -226,9 +339,9 @@ function handleSubmit(e) {
 <button onClick={handleClick.bind(this, id)}>Click</button>
 ```
 
-## 6. 特殊场景处理
+## 8. 特殊场景处理
 
-### 6.1. 处理文档级事件
+### 8.1. 处理文档级事件
 
 ```jsx
 useEffect(() => {
@@ -245,7 +358,7 @@ useEffect(() => {
 }, [onClickOutside]);
 ```
 
-### 6.2. 自定义事件
+### 8.2. 自定义事件
 
 ```jsx
 const customEvent = new CustomEvent('myEvent', {
@@ -254,9 +367,9 @@ const customEvent = new CustomEvent('myEvent', {
 element.dispatchEvent(customEvent);
 ```
 
-## 7. 调试技巧
+## 9. 调试技巧
 
-### 7.1. 事件监听器检查
+### 9.1. 事件监听器检查
 
 ```jsx
 // 开发环境下检查事件绑定
@@ -265,7 +378,7 @@ useEffect(() => {
 }, []);
 ```
 
-### 7.2. 事件触发顺序
+### 9.2. 事件触发顺序
 
 ```jsx
 <div onClick={() => console.log('div')}> // 第三个触发
@@ -275,10 +388,9 @@ useEffect(() => {
 </div>
 ```
 
-## 8. 性能考虑
+## 10. 性能考虑
 
 - 使用 useCallback 缓存事件处理函数
-- 避免在渲染方法中创建新的函数
+- 避免在渲染方法中==创建新的函数==
 - 合理使用事件委托
 - 及时清理不需要的事件监听器
-

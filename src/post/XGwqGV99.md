@@ -6,11 +6,20 @@
 
 ## 目录
 <!-- toc -->
- ## 1. 发布订阅模式 
+ ## 1. 总结 
+
+- `React.createContext` 与 `useContext` 需要==配合使用==
+	- 一个定义
+	- 一个使用
+	- 示例
+		- ![图片&文件](./files/20250101-1.png)
+- 考虑是否真的需要 Context，有时 props 传递可能是更好的选择
+
+## 2. 发布订阅模式
 
 这就是一个 `发布订阅模式`
 
-## 2. Context 的基本概念和使用场景
+## 3. Context 的基本概念和使用场景
 
 Context 提供了一种在组件树中共享数据的方式，无需通过 props 手动传递。主要用于：
 
@@ -22,7 +31,7 @@ Context 提供了一种在组件树中共享数据的方式，无需通过 props
 // 4. 全局配置
 ```
 
-## 3. createContext 的基本使用
+## 4. createContext 的基本使用
 
 ```jsx
 // 创建 Context
@@ -60,7 +69,7 @@ function App() {
 }
 ```
 
-## 4. useContext 的使用方式
+## 5. useContext 的使用方式
 
 ```jsx hl:3
 function ChildComponent() {
@@ -77,7 +86,7 @@ function ChildComponent() {
 }
 ```
 
-## 5. 高级用法和最佳实践
+## 6. 高级用法和最佳实践
 
 ```jsx
 // 4.1 创建自定义 Hook 封装 Context 逻辑
@@ -120,7 +129,7 @@ class ClassComponent extends React.Component {
 }
 ```
 
-## 6. 性能优化
+## 7. 性能优化
 
 ```jsx
 // 5.1 使用 memo 优化子组件
@@ -151,7 +160,7 @@ function ThemeProvider({ children }) {
 }
 ```
 
-## 7. 实际应用示例
+## 8. 实际应用示例
 
 - 全局状态管理
 - 多语言支持
@@ -188,7 +197,7 @@ function useTranslation() {
 }
 ```
 
-## 8. 常见陷阱和注意事项
+## 9. 常见陷阱和注意事项
 
 ```jsx
 // 7.1 避免重复渲染
@@ -238,7 +247,7 @@ function CombinedProvider({ children }) {
 }
 ```
 
-### 8.1. 避免过度使用
+### 9.1. 避免过度使用
 
 ```tsx
 // 不推荐
@@ -263,7 +272,7 @@ function DeepNestedComponent() {
 
 ```
 
-## 9. 调试技巧
+## 10. 调试技巧
 
 ```jsx
 // 8.1 添加 displayName
@@ -281,12 +290,17 @@ function useDebugContext(context, name) {
 }
 ```
 
-## 10. 使用 Context 时的关键建议
+## 11. 使用 Context 时的关键建议
 
 1. 适度使用：不要为了避免 props 传递就过度使用 Context
 	- 考虑是否真的需要 Context，有时 props 传递可能是更好的选择
-2. 合理拆分：将不同领域的 Context 分开，避免不必要的重渲染
-3. 提供默认值：总是为 createContext 提供合理的默认值
-4. 错误处理：在自定义 Hook 中添加必要的错误检查
-5. 性能优化：使用 memo、useMemo 和 useCallback 优化性能
-6. 类型安全：在 TypeScript 项目中，为 Context 添加适当的类型定义
+2. 合理拆分：
+	1. 将不同领域的 Context 分开，避免不必要的重渲染
+3. 提供默认值：
+	1. 总是为 createContext 提供合理的默认值
+4. 错误处理：
+	1. 在自定义 Hook 中添加必要的错误检查
+5. 性能优化：
+	1. 使用 memo、useMemo 和 useCallback 优化性能
+6. 类型安全：
+	1. 在 TypeScript 项目中，为 Context 添加适当的类型定义

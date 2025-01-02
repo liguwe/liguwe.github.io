@@ -6,7 +6,23 @@
 
 ## 目录
 <!-- toc -->
- ## 1. 基本概念 
+ ## 1. 总结 
+
+- useTransition 是 React 18 引入的一个强大的性能优化 Hook
+	- 它允许我们==将某些更新标记为非紧急的过渡更新==
+	- API：`  const [isPending, startTransition] = useTransition();`
+- 使用场景
+	- 选项卡切换
+	- 输入框高于搜索结果，搜索结果使用 `startTransition` 包装
+	- 使用 startTransition 来包装==路由切换==
+- 注意点
+	- 传递给`startTransition`的函数==必须是同步的，而不能是异步的==
+- 优势
+	- **避免阻塞**：防止大型更新阻塞用户输入
+	- **优先级管理**：自动处理更新优先级
+	- **更流畅的体验**：减少界面卡顿和延迟 
+
+## 2. 基本概念
 
 useTransition 是 React 18 引入的一个强大的性能优化 Hook，它允许我们**将某些更新标记为非紧急的过渡更新**。
 
@@ -22,7 +38,7 @@ const [isPending, startTransition] = useTransition();
 		- 你实际上告诉 React：**这个更新不是非常紧急的**
 		- 如果有更重要的更新要处理，你可以中断或延后这个次要更新
 
-## 2. 主要用途
+## 3. 主要用途
 
 - 处理大量数据更新
 	- 避免界面卡顿
@@ -41,7 +57,7 @@ const [isPending, startTransition] = useTransition();
 	- 防止 UI 冻结
 	- 改善用户体验
 
-## 3. 与 useDeferredValue 的比较
+## 4. 与 useDeferredValue 的比较
 
 - **useTransition**
 	- 直接控制状态更新
@@ -52,9 +68,9 @@ const [isPending, startTransition] = useTransition();
 	- **适用于接收值**的地方
 	- 不提供 pending 状态
 
-## 4. 注意事项
+## 5. 注意事项
 
-- `useTransition`仅在开启React并发模式的时候才有效
+- `useTransition`仅在开启==React 并发模式==的时候才有效
 
 ```javascript
 // React v18以前
@@ -103,12 +119,13 @@ setTimeout(() => {
 ```
 
 - 前面说到很多次“中断或延后更新”，那么什么时候中断，什么时候延后更新？
-	- 最简单的理解：被`useTransition`包裹的同一个状态多次更新，只会渲染最后一个，前面的都算中断（仅UI层面，如：长列表多次请求）；
+	- 最简单的理解：
+		- 被`useTransition`包裹的同一个状态多次更新，只会渲染最后一个，前面的都算中断（仅UI层面，如：长列表多次请求）；
 	- 不同组件触发不同状态的更新，被`useTransition`包裹的状态优先级较低，被中断后会等高优先级的状态更新完成后继续更新（如：复杂图表渲染被中断，会在高优先级状态更新后，继续处理图表的渲染）。
 
-## 5. 实际应用示例
+## 6. 实际应用示例
 
-### 5.1. 示例1：选项卡切换
+### 6.1. 示例1：选项卡切换
 
 如下代码，这样我们快速切换tab，无论点到哪一个tab都不会卡顿
 
@@ -146,7 +163,7 @@ function Tabs() {
 
 ```
 
-### 5.2. 示例 2：输入框优先级高于搜索结果，立即更新
+### 6.2. 示例 2：输入框优先级高于搜索结果，立即更新
 
 ```typescript hl:6,9
 function SearchResults() {
@@ -177,7 +194,7 @@ function SearchResults() {
 }
 ```
 
-### 5.3. 示例 3： `useTransition`和`Suspense`实现路由流畅切换
+### 6.3. 示例 3： `useTransition`和`Suspense`实现路由流畅切换
 
 ```jsx hl:5,9,39
 import React, { useState } from 'react';
@@ -237,22 +254,22 @@ function App() {
 export default App;
 ```
 
-## 6. 使用场景
+## 7. 使用场景
 
 - **复杂数据过滤**：处理大型列表的过滤和搜索
 - **切换视图**：在不同视图之间平滑过渡
 - **数据可视化**：更新大型图表或数据集
 - **延迟加载**：处理异步内容加载 
 
-## 7. 性能优势
+## 8. 性能优势
 
 - **避免阻塞**：防止大型更新阻塞用户输入
 - **优先级管理**：自动处理更新优先级
 - **更流畅的体验**：减少界面卡顿和延迟 
 
-## 8. 最佳实践
+## 9. 最佳实践
 
-### 8.1. **识别非紧急更新**
+### 9.1. **识别非紧急更新**
 
   ```typescript
   // 好的使用方式
@@ -261,7 +278,7 @@ export default App;
   });
   ```
 
-### 8.2. **结合 Suspense**
+### 9.2. **结合 Suspense**
 
   ```typescript
   <Suspense fallback={<Loading />}>
@@ -269,7 +286,7 @@ export default App;
   </Suspense>
   ``` 
 
-## 9. 使用建议
+## 10. 使用建议
 
 1. 优先考虑以下场景使用 useTransition：
     - 大数据列表渲染
@@ -284,9 +301,9 @@ export default App;
     - 数据分页
     - 缓存策略
 
-## 10. 性能优化技巧
+## 11. 性能优化技巧
 
-### 10.1. 分批处理更新
+### 11.1. 分批处理更新
 
   ```typescript
   startTransition(() => {
@@ -298,7 +315,7 @@ export default App;
   });
   ```
 
-### 10.2. 条件使用
+### 11.2. 条件使用
 
   ```typescript
   const handleChange = (e) => {
