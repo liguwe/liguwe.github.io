@@ -1,12 +1,28 @@
 
 # 实现一个简易版本的前端路由
 
-`#前端框架` `#R1` 
+`#前端框架` 
 
 
 ## 目录
 <!-- toc -->
- ## 1. 哈希路由简易实现 
+ ## 1. 总结 
+
+- 哈希路由
+	- 监听两个事件
+		- DOMContentLoaded -> onLoad
+			- 主动触发一次 onHashChange
+		- hashchange -> onHashChange
+			- 每次更新直接修改 `#app` 的 `innerHtml`
+- history 路由
+	- 监听两个事件
+		- DOMContentLoaded -> onLoad
+			- 主动触发一次 `onPopState`
+		- `popstate` -> `onPopState`
+			- 每次更新直接修改 `#app` 的 `innerHtml`
+			- 拦截 `a 标签`的默认行为
+
+## 2. 哈希路由简易实现
 
 - 关键点
 	- 监听两个事件
@@ -58,7 +74,7 @@
 
 ```
 
-## 2. history 路由简易实现
+## 3. history 路由简易实现
 
 - 关键点
 	- 监听两个事件
@@ -120,7 +136,7 @@
 
 ```
 
-### 2.1. 附：popstate 事件
+### 3.1. 附：popstate 事件
 
 - 仅仅调用`pushState()`方法或`replaceState()`方法 ，并不会触发该事件; 
 	- 只有用户`点击浏览器倒退按钮和前进按钮`，
@@ -131,9 +147,9 @@
 - `pushState 与 replaceState` 调用后 History 对象会变化，地址栏会变化，但不会触发页面刷新事件
 	- ![图片&文件](./files/20241024-17.png)
 
-## 3. 一个简单的 Router 类实现
+## 4. 一个简单的 Router 类实现
 
-### 3.1. 入口
+### 4.1. 入口
 
 ```html
 <!DOCTYPE html>
@@ -151,7 +167,7 @@
 
 ```
 
-### 3.2. Router 实现
+### 4.2. Router 实现
 
 ```javascript
 class Router {
@@ -225,7 +241,7 @@ const routes = [
 const router = new Router(routes);
 ```
 
-## 4. mini-react-router-dom 的简易实现
+## 5. mini-react-router-dom 的简易实现
 
 > 使用最新的 Hooks 的方式实现
 
