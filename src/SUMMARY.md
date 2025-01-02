@@ -501,7 +501,7 @@
 
     - [跨端的核心技术点](post/Fn84VG9l.md)
 
-    - [前端研发工作台的设计和实现](post/Y4aPHWTi.md)
+    - [前端研发工作台](post/ZtTs7OIa.md)
 
     - [微前端原理（篇一）](post/NQPxwHiS.md)
 
