@@ -129,7 +129,7 @@
 
 
 
-> 另外见 [2. 前端工程化 SOP](/post/GWG7k34s.html)
+> 另外见 [4. 前端工程化 SOP](/post/J8WWb3lZ.html)
 
 ## 2. 前端工程化的本质
 

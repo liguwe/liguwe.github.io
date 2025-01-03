@@ -36,7 +36,7 @@
 			- `app1@http://localhost:3001/remoteEntry.js`
 
 
-> 关于 vite 如何使用模块联邦，可见 [13. vite 中如何使用 Module Federation](/post/zjmJ8Ccg.html)
+> 关于 vite 如何使用模块联邦，可见 [11. vite 中如何使用 Module Federation](/post/ncDOI8rh.html)
 
 ## 2. Module Federation 基本概念
 

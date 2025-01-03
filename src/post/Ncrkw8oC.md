@@ -117,11 +117,11 @@ export const useComponentStore = defineStore('component', {
 
 ### 3.1. 远程组件配置
 
-> 参考[13. vite 中如何使用 Module Federation](/post/zjmJ8Ccg.html)
+> 参考[11. vite 中如何使用 Module Federation](/post/ncDOI8rh.html)
 
 ### 3.2. 主应用配置
 
-> 参考[13. vite 中如何使用 Module Federation](/post/zjmJ8Ccg.html)
+> 参考[11. vite 中如何使用 Module Federation](/post/ncDOI8rh.html)
 
 ### 3.3. 动态组件加载
 

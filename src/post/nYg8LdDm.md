@@ -357,7 +357,7 @@ class BusinessContainer {
 
 ## 9. 对比一下 V8 和 JavaScriptCore (JSCore) 这两个主流的 JavaScript 引擎：
 
->  另外可参考 [12. JavaScript 引擎](/post/v2NdaNQX.html)
+>  另外可参考 [12. JavaScript 引擎](/post/3dwdSsb6.html)
 
 ### 9.1. 基本背景
 

@@ -627,7 +627,7 @@ const sandbox = new DomSandbox(subApp);
 sandbox.mount(subAppComponent);
 ```
 
->  关于 `{ mode: 'closed' }` ，更多参考 [8. Shadow DOM 中的 closed mode 和 open mode](/post/yhU713jl.html)
+>  关于 `{ mode: 'closed' }` ，更多参考 [8. Shadow DOM 中的 closed mode 和 open mode](/post/sJdwIFVk.html)
 
 ### 10.3. 不同类型的沙箱实现
 
