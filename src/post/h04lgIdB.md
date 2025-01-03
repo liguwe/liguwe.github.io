@@ -135,7 +135,7 @@ WebRTC（Web Real-Time Communication）是一个支持浏览器和移动应用�
 
 ## 7. JAM stack 架构
 
->  更多见 [8. JAMstack 架构](/post/5tFmjfyQ.html)
+>  更多见 [8. JAMstack 架构](/post/beBNemRn.html)
 
 ### 7.1. 定义
 

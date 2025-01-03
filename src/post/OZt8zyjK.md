@@ -559,4 +559,4 @@ const currentComponent = ref(ComponentA)
 
 ## 8. 需要配合 import 关键词
 
->  更多详见 [32. vite 之 import 关键词](/post/ng4pDIV7.html)
+>  更多详见 [32. vite 之 import 关键词](/post/VRabtZlK.html)

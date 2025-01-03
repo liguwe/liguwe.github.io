@@ -272,7 +272,7 @@ const AsyncComp = defineAsyncComponent({
 > 关于 `is`，是`vue`内置的特殊 **Attributes** （其他的如 `key` 和 `ref`）, 用于**绑定动态组件**。 更多参考 [https://cn.vuejs.org/api/built-in-special-attributes.html#is](https://cn.vuejs.org/api/built-in-special-attributes.html#is)
 
 > 关于 `is`参考 [4. Vue3 中 is 属性的使用方法和应用场景](/post/OZt8zyjK.html)
-> 关于 `import` 参考，[32. vite 之 import 关键词](/post/ng4pDIV7.html)
+> 关于 `import` 参考，[32. vite 之 import 关键词](/post/VRabtZlK.html)
 
 ### 4.2. 待完善的点
 
