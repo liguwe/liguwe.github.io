@@ -6,14 +6,14 @@
 
 ## 目录
 <!-- toc -->
- ## 总结 
+ ## 1. 总结 
 
 - 微前端核心原理：
 	- ==①== 应用之间隔离：确保应用间 JS CSS DOM 互不干扰
 		- js 隔离
 		- css 隔离
 	- ==②== 生命周期管理
-		- 主应用统一管理：加载  → 挂载 →  更新 →  卸载
+		- 主应用统一管理：加载 → 挂载 → 更新 → 卸载
 	- ==③== 通信机制：主应用和子应用通讯
 		- event bus：事件总线
 		- props 
@@ -22,22 +22,85 @@
 	- ==④== 路由分发
 		- 主应用统一管理，分发到不同子应用
 - 常用的 JavaScript 沙箱
-	- ① 快照沙箱：
+	- ==①== 快照沙箱：
 		- 启动时机
 			- `启动时`记录全局状态，在沙箱`关闭时`恢复全局状态
+				- 启动：记录当前window对象快照
+				- 关闭：还原window对象
 			- ==进入一个新的容器，那么就使用启动，否则关闭==
 		- 缺点：无法支持多个子应用同时运行
 		- 性能：快照和恢复操作可能比较耗时
-	- ② 代理沙箱
-		- 原理：使用 Proxy 代理对象来实现沙箱，可以精确控制对全局对象的访问和修改
-		- 
-
+	- ==②== 代理沙箱
+		- ==原理==：
+			- 使用 `Proxy` 代理对象来实现沙箱，可以精确控制对全局对象的访问和修改
+		- 优点：
+			- 支持多个实例、多个应用
+				-  ==优先==从自己的环境中取值
+				- 否则从全局取值
+			- 性能好，隔离性强
+		- 缺点
+			- proxy 的兼容问题
+	- ==③== Legacy 沙箱：
+		- 基于 with + eval + new Function
+	- ==④== iframe 沙箱：
+		- 天然的沙箱
+	- ==⑤== Node.js 的 `vm2 模块` 或者 go 的 js 沙箱模块
+	- ==⑥== 组合沙箱 (Composite Sandbox) 
+- 样式隔离方案
+	- Shadow DOM 隔离
+	- 应用切换时：动态样式表切换
+		- 性能开销大，会出现闪烁
+	- css modules
+	- BFM 命名规范
+	- 子应用添加唯一前缀等
+- 应用间通讯方式
+	- 事件总线，比如 event-bus
+	- 状态管理
+		- 结合状态管理库比如 redux 或者 pinia 的==订阅==
+		- 共享实例
+	- 直接调用
+	- props 传递等
+- qiankun 实现原理
+	- 主应用：
+		- 注册子应用，比如
+			- entry 
+			- container
+			-  acitveRule
+		- 监听全局路由，匹配需要加载、切换、卸载子应用等
+			- fetch index.html → 抽取 js ，然后 eval
+				- fetch 需要同域
+			- 需要 umd 格式，故需要修改 webpack
+			- 应用间相关跳转时，需要及时卸载
+			- 样式隔离，两种方案
+				1. 命名空间，类似于 vue scope style
+				2. webcomponent 
+- js 沙箱启动时机
+	1. 子应用==加载时==启动沙箱
+	2. 子应用==挂载时==启动沙箱
+	3. 基于路由的沙箱管理
+		- 找到要进入的路由对应的应用名
+		- 如果果离开的是子应用，==关闭其沙箱==
+		- 如果进入的是子应用，==启动其沙箱==
+		- 可配置是否启动沙箱
+	4. 当容器进入视口时启动沙箱
+		- 使用`IntersectionObserver` 可优化性能
+- 问：如何实现`window.addEventListener('micro-app-message', handler)`
+	- `new CustomEvent('micro-app-message'`
+		- 然后 再 `window.dispatchEvent`
+- js 沙箱==性能优化==的要点
+	- 按需启动沙箱
+	- 使用 `WeakMap` 存储状态，避免内存泄漏
+	- 使用 `requestIdleCallback` 进行==初始化==
+	- 资源共享：比如 React、vue 、各类组件等
+		- sandbox.setGlobalVariables(globalVars);
+- 基于DOM节点的隔离：子应用使用容器沙箱
+	- `container.attachShadow({ mode: 'closed' });`
 
 > 另外可参考
 > - [8. 微前端原理（篇二：无界）](/post/QXJtbNPm.html)
 > - [8. 微前端原理（篇三：乾坤）](/post/GAKVf7qZ.html)
 
-## 1. 微前端的核心原理
+## 2. 微前端的核心原理
 
 - 应用隔离：确保各个子应用之间的 JavaScript、CSS、DOM 互不干扰
 	- JavaScript 沙箱：
@@ -59,11 +122,11 @@
 - 路由分发：
 	- 统一的路由管理，**将不同路由分发到对应的子应用**
 
-## 2. 常见的 JavaScript 沙箱方案
+## 3. 常见的 JavaScript 沙箱方案
 
 >  **主要解决子应用，污染了主应用的 window 对象**
 
-### 2.1. 快照沙箱 (Snapshot Sandbox)
+### 3.1. 快照沙箱 (Snapshot Sandbox)
 
 快照沙箱的核心思想是在沙箱`启动时`记录全局状态，在沙箱`关闭时`恢复全局状态。
 - 比如，==进入一个新的容器，那么就使用启动，否则关闭==
@@ -116,7 +179,7 @@ sandbox.inactive(); // 关闭沙箱
 console.log(window.newVar); // undefined
 ```
 
-### 2.2. 代理沙箱 (Proxy Sandbox)
+### 3.2. 代理沙箱 (Proxy Sandbox)
 
 使用 Proxy 代理对象来实现沙箱，可以精确控制对全局对象的访问和修改。
 
@@ -128,7 +191,7 @@ console.log(window.newVar); // undefined
 	- 不支持低版本浏览器（需要 Proxy 支持）
 	- 某些特殊场景可能存在兼容性问题
 
-```javascript
+```javascript hl:6
 class ProxySandbox {
   constructor() {
     this.running = false;
@@ -181,7 +244,7 @@ console.log(window.newVar); // undefined
 console.log(sandbox.proxy.newVar); // "test"
 ```
 
-### 2.3. Legacy 沙箱 (基于 with + eval)
+### 3.3. Legacy 沙箱 (基于 with + eval)
 
 使用 `with 语句`和 `eval` 来实现简单的沙箱隔离。
 
@@ -217,7 +280,7 @@ sandbox.run(`
 `);
 ```
 
-### 2.4. iframe 沙箱
+### 3.4. iframe 沙箱
 
 利用 iframe 的天然隔离特性实现沙箱。
 
@@ -252,7 +315,7 @@ sandbox.run(`
 console.log(window.testVar); // undefined
 ```
 
-### 2.5. VM 沙箱 (基于 vm2)
+### 3.5. VM 沙箱 (基于 vm2)
 
 使用 Node.js 的 `vm2 模块`实现更安全的沙箱（**仅在 Node.js 环境中可用**）。
 
@@ -289,7 +352,7 @@ sandbox.run(`
 
 >  一些低代码平台，为了增强编排的能力等，后端使用了 JS 沙箱，支持更强更灵活的配置编排能力
 
-### 2.6. 组合沙箱 (Composite Sandbox)
+### 3.6. 组合沙箱 (Composite Sandbox)
 
 在实际应用中，我们可能需要组合多种沙箱技术来实现更完善的隔离。
 
@@ -336,23 +399,23 @@ console.log(proxyWindow.newVar); // "test"
 sandbox.inactive();
 ```
 
-## 3. 样式隔离方案与 JS 隔离
+## 4. 样式隔离方案与 JS 隔离
 
 ![图片&文件](./files/20241127.png)
 
-### 3.1.  Shadow DOM 隔离
+### 4.1.  Shadow DOM 隔离
 
 - 完全隔离，最彻底的方案
 - 浏览器原生支持
 - **弹窗类组件**需要特殊处理 ❓
 	- 其实不用，正好可以解决弹窗问题呀？
 
-### 3.2. 动态样式表切换
+### 4.2. 动态样式表切换
 
 在**应用切换时动态切换样式表**，
 - 常用于 `qiankun` 等方案中， 性能开销较大，可能出现样式闪烁
 
-### 3.3. CSS Modules 方案
+### 4.3. CSS Modules 方案
 
 - 优点
 	- 编译时处理，运行时零开销
@@ -361,11 +424,11 @@ sandbox.inactive();
 	- 需要修改构建配置
 	- 所有样式需要模块化处理
 
-### 3.4. BEM 命名约定、css-In—js、子应用添加唯一前缀 等
+### 4.4. BEM 命名约定、css-In—js、子应用添加唯一前缀 等
 
 通过规范的命名约定来避免样式冲突
 
-## 4. 常见的微前端方案及对比
+## 5. 常见的微前端方案及对比
 
 | 特性      | 无界(wujie)             | qiankun                        | micro-app          | single-spa | iframe      | Module Federation |
 | ------- | --------------------- | ------------------------------ | ------------------ | ---------- | ----------- | ----------------- |
@@ -384,7 +447,7 @@ sandbox.inactive();
 | 子应用调试   | 便捷                    | 一般                             | 便捷                 | 一般         | 便捷          | 便捷                |
 |         |                       |                                |                    |            |             |                   |
 
-## 5. 实现一个主应用和子应用之间的通信系统
+## 6. 实现一个主应用和子应用之间的通信系统
 
 ![图片&文件](./files/20241127-1.png)
 
@@ -410,7 +473,7 @@ sandbox.inactive();
 - 添加消息队列
 - 实现通信重试机制
 
-## 6. qiankun 的实现原理
+## 7. qiankun 的实现原理
 
 >  更多见个人流程图整理： [figjam](https://www.figma.com/board/9ykLrmg5xwkZvY8cxFinog/0022.%E5%B8%B8%E8%A7%81%E7%9A%84%E5%BE%AE%E5%89%8D%E7%AB%AF%E6%96%B9%E6%A1%88%E5%8F%8A%E5%BE%AE%E5%89%8D%E7%AB%AF%E7%9A%84%E5%8E%9F%E7%90%86%E8%A7%A3%E6%9E%90?node-id=0-1&node-type=canvas&t=4hrfzhAvEhnaDpVF-0)
 
@@ -429,32 +492,32 @@ sandbox.inactive();
 	- 图片路径可能 404，所以需要注入正确的子应用 public path
 	- 两个子应用相互跳转时，如果不及时卸载，可能会出现两个子应用**同时展示**的情况
 	- 关于**样式隔离**，两种方案
-		- 命名空间，类似于 vue style scopt
+		- 命名空间，类似于 vue style scope
 		- webcomponet 方案
 
-## 7. 路由分发原理
+## 8. 路由分发原理
 
 ![图片&文件](./files/20241101-30.png)
 
-## 8. 其他微前端框架和实现原理
+## 9. 其他微前端框架和实现原理
 
-### 8.1. iframe 
+### 9.1. iframe 
 
 ![图片&文件](./files/20241127-3.png)
 
-### 8.2. systemjs ： `type=systemjs-importmap`
+### 9.2. systemjs ： `type=systemjs-importmap`
 
 ![图片&文件](./files/20241127-2.png)
 
-### 8.3. micro-app
+### 9.3. micro-app
 
 ![图片&文件](./files/20241127-4.png)
 
-## 9. 微前端中JS沙箱具体使用场景
+## 10. 微前端中JS沙箱具体使用场景
 
-### 9.1. JS沙箱启动时机
+### 10.1. JS沙箱启动时机
 
-#### 9.1.1. 常见的启动时机
+#### 10.1.1. 常见的启动时机
 
 1. 子应用==加载时==启动沙箱
 2. 子应用==挂载时==启动沙箱
@@ -503,9 +566,9 @@ class Sandbox {
 }
 ```
 
-### 9.2. 混合页面场景处理
+### 10.2. 混合页面场景处理
 
-#### 9.2.1. 基于路由的隔离：**匹配到路由了，启动**
+#### 10.2.1. 基于路由的隔离：**匹配到路由了，启动**
 
 >   `router.beforeEach` 中检测是否需要启动
 
@@ -539,7 +602,7 @@ router.beforeEach((to, from, next) => {
 });
 ```
 
-#### 9.2.2. 基于DOM节点的隔离：子应用使用容器沙箱
+#### 10.2.2. 基于DOM节点的隔离：子应用使用容器沙箱
 
 ```javascript hl:19
 class DomSandbox {
@@ -566,9 +629,9 @@ sandbox.mount(subAppComponent);
 
 >  关于 `{ mode: 'closed' }` ，更多参考 [8. Shadow DOM 中的 closed mode 和 open mode](/post/yhU713jl.html)
 
-### 9.3. 不同类型的沙箱实现
+### 10.3. 不同类型的沙箱实现
 
-#### 9.3.1. 快照沙箱（适用于单个子应用）
+#### 10.3.1. 快照沙箱（适用于单个子应用）
 
 ```javascript
 class SnapshotSandbox {
@@ -597,7 +660,7 @@ class SnapshotSandbox {
 }
 ```
 
-#### 9.3.2. 代理沙箱（适用于多个子应用）
+#### 10.3.2. 代理沙箱（适用于多个子应用）
 
 如何适用多个子应用的？
 - ==优先==从自己的环境中取值
@@ -637,7 +700,7 @@ class ProxySandbox {
 }
 ```
 
-#### 9.3.3. 组合沙箱（更完整的隔离）
+#### 10.3.3. 组合沙箱（更完整的隔离）
 
 ```javascript
 class CompositeSandbox {
@@ -663,9 +726,9 @@ class CompositeSandbox {
 }
 ```
 
-### 9.4. 特殊场景处理
+### 10.4. 特殊场景处理
 
-#### 9.4.1. 共享依赖处理 → 比如共享 React、ReactDom 等全局类库
+#### 10.4.1. 共享依赖处理 → 比如共享 React、ReactDom 等全局类库
 
 ```javascript hl:15
 class SharedDependencySandbox {
@@ -688,7 +751,7 @@ const sandbox = new SharedDependencySandbox({
 });
 ```
 
-#### 9.4.2. 通信机制
+#### 10.4.2. 通信机制
 
 ```javascript
 class MessageSandbox {
@@ -727,9 +790,9 @@ class MessageSandbox {
 }
 ```
 
-### 9.5. 最佳实践建议
+### 10.5. 最佳实践建议
 
-#### 9.5.1. 性能优化
+#### 10.5.1. 性能优化
 
 - 使用 `WeakMap` 存储状态，避免内存泄漏
 - 使用 `requestIdleCallback` 进行初始化
@@ -752,7 +815,7 @@ class OptimizedSandbox {
 }
 ```
 
-#### 9.5.2. 错误处理
+#### 10.5.2. 错误处理
 
 ```javascript
 class ErrorBoundarySandbox {
@@ -773,7 +836,7 @@ class ErrorBoundarySandbox {
 }
 ```
 
-#### 9.5.3. 生命周期管理
+#### 10.5.3. 生命周期管理
 
 ```javascript
 class LifecycleSandbox {
@@ -812,9 +875,9 @@ class LifecycleSandbox {
 5. 做好沙箱的生命周期管理
 6. 考虑浏览器兼容性问题
 
-## 10. 主应用和多个子应用并存时的沙箱处理方案：
+## 11. 主应用和多个子应用并存时的沙箱处理方案：
 
-### 10.1. 基于路由的沙箱管理（最常用）
+### 11.1. 基于路由的沙箱管理（最常用）
 
 关键点：
 - 找到要进入的路由对应的应用名
@@ -843,7 +906,7 @@ router.beforeEach((to, from, next) => {
 });
 ```
 
-#### 10.1.1. 简单的沙箱管理类
+#### 11.1.1. 简单的沙箱管理类
 
 ```javascript hl:8,16
 // 简单的沙箱管理类
@@ -891,7 +954,7 @@ const routes = [
 
 ```
 
-### 10.2. 基于 DOM 结构的沙箱管理（混合页面场景）
+### 11.2. 基于 DOM 结构的沙箱管理（混合页面场景）
 
 ```javascript hl:7,8
 // HTML 结构
@@ -927,7 +990,7 @@ class SimpleSandbox {
 
 ```
 
-#### 10.2.1. 当容器进入视口时启动沙箱：`IntersectionObserver` 为了性能优化
+#### 11.2.1. 当容器进入视口时启动沙箱：`IntersectionObserver` 为了性能优化
 
 ```javascript hl:6
 // 初始化子应用
@@ -954,7 +1017,7 @@ initSubApp('app1', 'sub-app1');
 initSubApp('app2', 'sub-app2');
 ```
 
-### 10.3. 主子应用通信场景
+### 11.3. 主子应用通信场景
 
 ```javascript
 // 简单的消息通道
@@ -997,9 +1060,9 @@ messageChannel.listen('app1', (message, from) => {
 });
 ```
 
-### 10.4. 实际应用建议
+### 11.4. 实际应用建议
 
-#### 10.4.1. **按需启动**
+#### 11.4.1. **按需启动**
 
 ```javascript
 // 只在必要时启动沙箱
@@ -1008,7 +1071,7 @@ if (isSubApp(appName)) {
 }
 ```
 
-#### 10.4.2. **资源共享**
+#### 11.4.2. **资源共享**
 
 ```javascript hl:2
 // 可以设置一些公共资源不进入沙箱
@@ -1016,7 +1079,7 @@ const globalVars = ['React', 'Vue', 'jQuery'];
 sandbox.setGlobalVariables(globalVars);
 ```
 
-#### 10.4.3. **性能优化**
+#### 11.4.3. **性能优化**
 
 ```javascript hl:4
 // 使用延迟加载
@@ -1043,7 +1106,7 @@ const sandbox = new Proxy({}, {
 3. 资源可以按需加载和释放
 4. 维护成本相对较低
 
-## 11. 更多
+## 12. 更多
 
 - 再把之前整理的草稿流程图看看，详见 [figjam](https://www.figma.com/board/9ykLrmg5xwkZvY8cxFinog/0022.%E5%B8%B8%E8%A7%81%E7%9A%84%E5%BE%AE%E5%89%8D%E7%AB%AF%E6%96%B9%E6%A1%88%E5%8F%8A%E5%BE%AE%E5%89%8D%E7%AB%AF%E7%9A%84%E5%8E%9F%E7%90%86%E8%A7%A3%E6%9E%90?node-id=0-1&node-type=canvas&t=4hrfzhAvEhnaDpVF-0)
 - https://www.garfishjs.org/blog/architecture.html

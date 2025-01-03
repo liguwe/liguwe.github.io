@@ -6,7 +6,45 @@
 
 ## 目录
 <!-- toc -->
- ## 1. 整体架构 
+ ## 1. 总结 
+
+- 核心能力
+	1. 应用加载（HTML Entry）
+	2. JavaScript 沙箱
+	3. 样式隔离
+	4. 生命周期管理
+	5. 应用通信
+- 应用加载（HTML Entry）
+	- 获取 HTML 内容
+	- 解析 HTML，提取资源
+	- 加载外部脚本和样式
+	- 渲染应用
+- 生命周期管理
+	1. bootstrap：应用首次加载时调用
+	2. mount：应用激活时调用
+	3. unmount：应用切换/卸载时调用
+	4. update：应用更新时调用
+- 通讯方式
+	1. Props：简单直接，适合==父子通信==
+	2. 全局状态：功能完整，适合复杂场景
+	3. 自定义事件：灵活，但需要自行管理 
+- 样式隔离
+	- strictStyleIsolation：使用 Shadow DOM ：严格隔离
+		- 隔离更彻底，但兼容性问题多
+	- experimentalStyleIsolation：特定前缀
+		- 兼容性更好，但隔离不够彻底
+- 性能优化策略
+	1. 应用预加载
+	2. 资源==缓存复用==：缓存检测
+	3. ==并行==加载优化
+	4. 按需加载策略
+- 错误处理机制
+	1. 应用加载错误
+	2. 运行时错误
+	3. 生命周期错误
+	4. 资源加载错误 
+
+## 2. 整体架构
 
 乾坤基于 single-spa 封装，实现了以下核心功能：
 
@@ -32,7 +70,7 @@ start();
 4. 生命周期管理
 5. 应用通信 
 
-## 2. 应用加载机制（HTML Entry）
+## 3. 应用加载机制（HTML Entry）
 
 乾坤使用 HTML Entry 方式加载应用，主要步骤：
 - 获取 HTML 内容
@@ -64,7 +102,7 @@ async function loadApp(app) {
 }
 ```
 
-## 3. 生命周期管理
+## 4. 生命周期管理
 
 乾坤为每个微应用定义了完整的生命周期：
 
@@ -96,7 +134,7 @@ export async function update(props) {
 3. unmount：应用切换/卸载时调用
 4. update：应用更新时调用
 
-## 4. 路由系统
+## 5. 路由系统
 
 乾坤的路由系统基于 URL 改变触发应用切换：
 - 支持配置式路由
@@ -132,7 +170,7 @@ class RouterEngine {
 }
 ```
 
-## 5. 应用通信机制
+## 6. 应用通信机制
 
 乾坤提供多种应用通信方式：
 
@@ -166,13 +204,13 @@ export function mount(props) {
 window.addEventListener('app1-event', () => {});
 ```
 
-### 5.1. 通信方式比较
+### 6.1. 通信方式比较
 
 1. Props：简单直接，适合父子通信
 2. 全局状态：功能完整，适合复杂场景
 3. 自定义事件：灵活，但需要自行管理 
 
-## 6. 样式隔离
+## 7. 样式隔离
 
 乾坤提供两种样式隔离方案：
 - 使用 Shadow DOM ：严格隔离
@@ -196,9 +234,9 @@ registerMicroApps([{
 }]);
 ```
 
-## 7. qiankun 中这两种样式隔离方式的区别和各自的问题：
+## 8. qiankun 中这两种样式隔离方式的区别和各自的问题：
 
-### 7.1. strictStyleIsolation（严格隔离）
+### 8.1. strictStyleIsolation（严格隔离）
 
 这种方式使用 Shadow DOM 实现样式隔离：
 
@@ -213,7 +251,7 @@ const shadowRoot = createShadowDOM(container);
 shadowRoot.appendChild(subAppRoot);
 ```
 
-#### 7.1.1. 存在的问题：
+#### 8.1.1. 存在的问题：
 
 1. **第三方组件库兼容性问题**
 ```javascript
@@ -247,7 +285,7 @@ const Modal = () => {
 }
 ```
 
-### 7.2. experimentalStyleIsolation（实验性隔离）
+### 8.2. experimentalStyleIsolation（实验性隔离）
 
 这种方式通过给样式添加前缀选择器来实现隔离：
 
@@ -259,7 +297,7 @@ const Modal = () => {
 div[data-qiankun="app1"] .title { color: red; }
 ```
 
-#### 7.2.1. 工作原理：
+#### 8.2.1. 工作原理：
 
 ```javascript
 // qiankun 内部实现示意
@@ -276,7 +314,7 @@ function processCSSRule(rule, appName) {
 }
 ```
 
-#### 7.2.2. 优点：
+#### 8.2.2. 优点：
 
 1. **更好的兼容性**
 ```javascript
@@ -299,7 +337,7 @@ const Modal = () => {
 }
 ```
 
-#### 7.2.3. 但也存在一些问题：
+#### 8.2.3. 但也存在一些问题：
 
 1. **动态生成的样式可能逃逸**
 ```javascript
@@ -320,9 +358,9 @@ const observer = new MutationObserver((mutations) => {
 });
 ```
 
-### 7.3. 最佳实践建议
+### 8.3. 最佳实践建议
 
-#### 7.3.1. 选择建议
+#### 8.3.1. 选择建议
 
 ```javascript
 // 1. 如果应用比较简单，推荐使用 experimentalStyleIsolation
@@ -346,7 +384,7 @@ const observer = new MutationObserver((mutations) => {
 }
 ```
 
-#### 7.3.2. 混合使用策略
+#### 8.3.2. 混合使用策略
 
 ```javascript
 // 可以针对不同子应用采用不同的隔离策略
@@ -372,7 +410,7 @@ const apps = [
 ];
 ```
 
-#### 7.3.3. 处理特殊场景
+#### 8.3.3. 处理特殊场景
 
 ```javascript
 // 对于需要全局生效的样式，可以在主应用中设置
@@ -394,16 +432,16 @@ style.textContent = globalStyles;
 document.head.appendChild(style);
 ```
 
-### 7.4. 总结：
+### 8.4. 总结：
 
 - `strictStyleIsolation` 隔离更彻底，但兼容性问题多
 - `experimentalStyleIsolation` 兼容性更好，但隔离不够彻底
 - 建议根据应用场景选择合适的方案，或混合使用
 - 对于复杂场景，可能需要自定义隔离方案
 
-### 7.5. 实现原理：
+### 8.5. 实现原理：
 
-#### 7.5.1. Shadow DOM 隔离：
+#### 8.5.1. Shadow DOM 隔离：
 
 ```javascript
 class ShadowDOM {
@@ -418,7 +456,7 @@ class ShadowDOM {
 }
 ```
 
-#### 7.5.2. 作用域隔离：
+#### 8.5.2. 作用域隔离：
 
 ```javascript
 function scopedCSS(styleSheet, appName) {
@@ -429,7 +467,7 @@ function scopedCSS(styleSheet, appName) {
 }
 ```
 
-## 8. 性能优化
+## 9. 性能优化
 
 乾坤采用多种优化策略：
 
@@ -464,7 +502,7 @@ async function loadResources(resources) {
 3. 并行加载优化
 4. 按需加载策略
 
-## 9. 错误处理
+## 10. 错误处理
 
 乾坤提供完整的错误处理机制：
 
@@ -494,9 +532,9 @@ addGlobalUncaughtErrorHandler((event) => {
 3. 生命周期错误
 4. 资源加载错误 
 
-## 10. 弹框问题常见解决方案：
+## 11. 弹框问题常见解决方案：
 
-### 10.1. 常见弹框问题
+### 11.1. 常见弹框问题
 
 1. **样式丢失问题**
 	- 当弹框设置了`append-to-body`时，会脱离子应用的样式作用域
@@ -506,9 +544,9 @@ addGlobalUncaughtErrorHandler((event) => {
 	- 使用fixed定位的弹框可能出现位置偏移
 	- 依赖popper.js的组件（如Select下拉框）在弹框中位置错误 
 
-### 10.2. 解决方案
+### 11.2. 解决方案
 
-#### 10.2.1. 样式隔离方案
+#### 11.2.1. 样式隔离方案
 
 ```javascript
 // 方案一：重写append方法
@@ -534,7 +572,7 @@ HTMLElement.prototype.append = function(...args) {
 }
 ```
 
-#### 10.2.2. 容器挂载方案
+#### 11.2.2. 容器挂载方案
 
 ```javascript
 // 方案三：指定挂载容器
@@ -549,7 +587,7 @@ document.body.appendChild(modalContainer);
 }
 ```
 
-#### 10.2.3. Element UI 弹框解决方案
+#### 11.2.3. Element UI 弹框解决方案
 
 ```javascript
 // 方案四：修改弹框配置
@@ -573,7 +611,7 @@ export default {
 }
 ```
 
-#### 10.2.4. 全局样式处理
+#### 11.2.4. 全局样式处理
 
 ```javascript
 // 方案五：全局样式处理
@@ -597,7 +635,7 @@ registerMicroApps([
 ]);
 ```
 
-### 10.3. 最佳实践建议
+### 11.3. 最佳实践建议
 
 1. **避免使用append-to-body**
 ```javascript
