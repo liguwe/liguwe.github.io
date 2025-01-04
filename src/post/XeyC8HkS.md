@@ -49,7 +49,7 @@
 	- 一种现代 Web 开发架构，强调使用 JavaScript、API 和 Markup。
 	- 常用工具包括**静态站点生成器**（如 Gatsby、Next.js）和无服务器函数（如 Netlify Functions）。
 
-> 后文会详细说明 [8. JAMstack 架构](/post/beBNemRn.html)
+> 后文会详细说明 [10. JAMstack 架构](/post/ebT5oqF0.html)
 
 ## 6. WebAssembly (Wasm)
 

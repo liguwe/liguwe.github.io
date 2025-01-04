@@ -66,7 +66,7 @@
 - 服务端渲染(SSR)和静态生成(SSG) 的进一步融合
 - 更好的性能和SEO支持 
 - 包括 JAMStack 架构
-	- [8. JAMstack 架构](/post/beBNemRn.html)
+	- [10. JAMstack 架构](/post/ebT5oqF0.html)
 
 ### 4.3. 元框架兴起
 

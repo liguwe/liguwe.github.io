@@ -97,7 +97,7 @@
 	- `container.attachShadow({ mode: 'closed' });`
 
 > 另外可参考
-> - [8. 微前端原理（篇二：无界）](/post/3SBP1pr3.html)
+> - [9. 微前端原理（篇二：无界）](/post/7utiZhCn.html)
 > - [8. 微前端原理（篇三：乾坤）](/post/JvP4OTyz.html)
 
 ## 2. 微前端的核心原理
