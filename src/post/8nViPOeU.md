@@ -18,7 +18,7 @@
 	- 都有开关，可以打开调试模式，默认端口，也可以配置端口
 
 >  因为使用了 [vite-plugin-federation](https://github.com/originjs/vite-plugin-federation)
->  只有主机端支持开发模式，远程端需要使用 vite build 生成 RemoteEntry.js 包。这是因为 Vite 开发模式是无打包的，您可以使用 `vite build --watch` 来实现热更新效果。
+> 只有主机端支持开发模式，远程端需要使用 vite build 生成 RemoteEntry.js 包。这是因为 Vite 开发模式是无打包的，您可以使用 `vite build --watch` 来实现热更新效果。
 
 ## 2. Schema 面板
 
@@ -59,6 +59,8 @@
 	- 打开 `Vue-DevTools` 等
 		- 内置了 `pinia` 
 - 常见问题 FAQ 
+- 工单系统能力
+	- ==一键截图上报工单需求系统==
 
 ## 6. 更高级的玩法
 
