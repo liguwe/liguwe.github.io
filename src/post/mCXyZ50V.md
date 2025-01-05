@@ -7,7 +7,21 @@
 
 ## 目录
 <!-- toc -->
- ## 1. 先说导致长列表性能及体现不佳的本质原因 
+ ## 1. 总结 
+
+- 所有的性能体验问题的本质原因都是：CPU 瓶颈 和 IO 的瓶颈
+- 思路
+	- 分页
+	- 虚拟列表
+	- 其他
+		- 骨架
+		- 使用 `requestAnimationFrame` 来包装回调
+		- 图片懒加载
+		- 精简 DOM 结构
+		- 服务器端渲染 ， `SSR` 
+		-  `requestIdleCallback` 空闲时间再执行==不重要的长任务==
+
+## 2. 先说导致长列表性能及体现不佳的本质原因
 
 - 需要 `渲染大量的DOM节点` 及 `频繁的DOM操作` ，展开说就是每个节点都需要浏览器进行`计算`、`布局`和`绘制` 等。 如果总结，那么其实就是 所谓的 **CPU的瓶颈**
 - 另外，就是一些网络原因了，毕竟请求总是需要耗费时间的，这就是所谓的 **IO的瓶颈** （这里主要指`网络IO`） 
@@ -15,13 +29,13 @@
 
 > 总结：所有的性能体验问题的本质原因都是：CPU 和 IO 的瓶颈
 
-## 2. 一些常见的优化思路
+## 3. 一些常见的优化思路
 
-### 2.1. 分页
+### 3.1. 分页
 
 最简单且见效的方法，但需要与 `用户体验` 做平衡
 
-### 2.2. 虚拟滚动、虚拟列表
+### 3.2. 虚拟滚动、虚拟列表
 
 比较常见且大规模应用的思路，具体的一些`要点`：
 
@@ -64,7 +78,7 @@ updateVisibleData(scrollTop) {
   const end = this.findNearestItemIndex(scrollTop + this.$el.clientHeight);
   this.visibleData = this.data.slice(start, Math.min(end + 1, this.data.length));
   // 通过具体方法来设计
-  this.$refs.content.style.webkitTransform = `translate3d(0, ${    this.getItemSizeAndOffset(start).offset }px, 0)`; 
+  this.$refs.content.style.webkitTransform = `translate3d(0, ${         this.getItemSizeAndOffset(start).offset }px, 0)`; 
 }
 ```
 
@@ -76,7 +90,7 @@ updateVisibleData(scrollTop) {
    - `auto`: 使用普通滚动, 当手指从触摸屏上移开，滚动会立即停止。
    - `touch` , 有回弹效果
 
-### 2.3. 其他的一些细节优化点
+### 3.3. 其他的一些细节优化点
 
 - 使用`骨架片`优化白屏
 - 使用新的API，提高性能
@@ -85,7 +99,7 @@ updateVisibleData(scrollTop) {
 - 使用`缓存`，需要把`尺寸、偏移`等信息进行一个`缓存` 
 - 图片`懒加载`
 
-## 3. 其他的思路
+## 4. 其他的思路
 
 - 使用`缓存` ，包括数据缓存，也包括重复利用节点等
 - `懒加载` 与 `预加载`
@@ -104,9 +118,9 @@ updateVisibleData(scrollTop) {
 > [!tip]
   JPEG 格式不支持透明度设置
 
-## 4. 最后
+## 5. 最后
 
 还是需要根据`实际情况` 选择 `ROI` 最佳的方案，找**主要矛盾**
 
-注意，没必要过早优化，过早优化会导致很多问题
+> 注意，没必要过早优化，过早优化会导致很多问题
 

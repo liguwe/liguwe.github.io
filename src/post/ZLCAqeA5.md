@@ -1,17 +1,26 @@
 
 # PerformanceObserver API
 
-`#前端性能` `#R1` 
+`#前端性能` 
+
 
 ## 目录
 <!-- toc -->
- ## 1. PerformanceObserver 概述 
+ ## 1. 总结 
+
+- new PerformanceObserver：
+	- 以==异步==的方式监听性能度量事件，而==不会阻塞主线程==
+-  CLS (Cumulative Layout Shift) 统计
+	- 检测 layout-shift，==并且需要累加==
+- 可自定义性能标记
+
+## 2. PerformanceObserver 概述
 
 - PerformanceObserver 是 Performance API 的一部分，用于观察和响应性能相关的事件。
 	- 通过 PerformanceObserver，我们可以**全面监控网页性能，收集各种性能指标，为性能优化提供数据支持**。
 - 允许我们**以异步的方式监听性能度量事件，而不会阻塞主线程**。
 
-## 2. 基本使用方法
+## 3. 基本使用方法
 
 ```javascript hl:13
 // 创建性能观察器
@@ -30,7 +39,7 @@ observer.observe({
 });
 ```
 
-## 3. 可观察的性能指标类型
+## 4. 可观察的性能指标类型
 
 ```javascript hl:8
 // 常用的 entryTypes
@@ -47,9 +56,9 @@ const entryTypes = [
 ];
 ```
 
-## 4. 实际应用示例
+## 5. 实际应用示例
 
-### 4.1. 监控页面加载性能
+### 5.1. 监控页面加载性能
 
 ```javascript
 const pageLoadObserver = new PerformanceObserver((list) => {
@@ -70,7 +79,7 @@ const pageLoadObserver = new PerformanceObserver((list) => {
 pageLoadObserver.observe({ entryTypes: ['navigation'] });
 ```
 
-### 4.2. 监控资源加载
+### 5.2. 监控资源加载
 
 ```javascript
 const resourceObserver = new PerformanceObserver((list) => {
@@ -89,7 +98,7 @@ const resourceObserver = new PerformanceObserver((list) => {
 resourceObserver.observe({ entryTypes: ['resource'] });
 ```
 
-### 4.3. 监控 Core Web Vitals
+### 5.3. 监控 Core Web Vitals
 
 ```javascript hl:1,10
 // LCP (Largest Contentful Paint) 监控
@@ -115,7 +124,7 @@ const clsObserver = new PerformanceObserver((list) => {
 clsObserver.observe({ entryTypes: ['layout-shift'] });
 ```
 
-## 5. 自定义性能标记
+## 6. 自定义性能标记
 
 ```javascript hl:6,1
 // 创建自定义性能标记
@@ -140,7 +149,7 @@ setTimeout(() => {
 }, 1000);
 ```
 
-## 6. 错误处理和断开连接
+## 7. 错误处理和断开连接
 
 ```javascript
 const observer = new PerformanceObserver((list, observer) => {
@@ -168,7 +177,7 @@ try {
 }
 ```
 
-## 7. 性能数据收集和分析
+## 8. 性能数据收集和分析
 
 ```javascript
 // 创建性能数据收集器

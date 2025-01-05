@@ -1,9 +1,9 @@
 
 # 人机交互与前端体验
 
-`#前端性能` `#R1` 
+`#前端性能` 
 
-从人机交互（HCI - Human-Computer Interaction）角度来优化前端性能，主要关注**用户体验和交互效率**。
+>  从人机交互（HCI - Human-Computer Interaction）角度来优化前端性能，主要关注**用户体验和交互效率**。
 
 `#todo` 
 

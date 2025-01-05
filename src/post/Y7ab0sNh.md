@@ -1,11 +1,34 @@
 
 # 常见性能优化思路
 
-`#前端性能` `#R1` 
+`#前端性能` 
+
 
 ## 目录
 <!-- toc -->
- ## 1. 缓存 
+ ## 1. 总结 
+
+- 缓存
+	- `from Memory Cache`
+		- js img
+	- `from disk cache` 
+		- css
+- 服务端响应
+	- 流响应
+- 静态资源优化
+	- js
+	- css
+	- 图片
+	- 字体
+	- 视频：流
+- 运行时
+	- css 
+		- 合成
+- 关注真实场景
+
+>  还是快速往下读一遍就好
+
+## 2. 缓存
 
 - 本地缓存：localStorage、sessionStorage、indexedDB
 - 内存缓存：
@@ -27,46 +50,47 @@
 		- ![图片&文件](./files/20241025-15.png)
 
 
-- 内存缓存
-- 磁盘缓存
-## 2. 客户端请求
+- ==内存==缓存
+- ==磁盘缓存==
+
+## 3. 客户端请求
 
 - 避免过多多余重重定向
 - `<link rel="dns-prefetch" href="//yourwebsite.com">`
 - `<link rel="preconnect" href="//sample.com" crossorigin>`
 
-## 3. 服务端响应
+## 4. 服务端响应
 
 - 流响应
 - 前端聚合与后端聚合：
 	- nodejs ==局域网内聚合后端多个服务==肯定快于前端聚合，另外注意**首屏数据就绪就好**
 - Nodejs
 	- 能并行的并行，少串行：async await 
-	- 守护进程（pm2/supervisor）又将进程重启，频繁重启肯定会导致接口变量
+	- 守护进程（pm2/supervisor）又将==进程重启==，频繁重启肯定会导致接口变量
 	- 异常监控，少重启
 	- 代码问题
-		- JSON.parse 大对象
+		- ==JSON.parse 大对象==
 		- 闭包，内存泄漏
 
-## 4. 静态资源
+## 5. 静态资源
 
-### 4.1. js  
+### 5.1. js  
 
 - 拆、按需加载  
 - 合并压缩  
 - Tree Shaking  
-- 避免 Long Task  
+- 避免 ==Long Task==  
 - 反其道而行之，不用框架  
 - 基础库代码打包合并 
 
-### 4.2. css  
+### 5.2. css  
 
 - 避免使用昂贵的属性 ：
 	- border-radius box-shadow opacity transform filter position: fixed  
 - flex 布局取代 float  
 - 选择器简化  
 
-### 4.3. 图片
+### 5.3. 图片
 
 - 根据设备的分辨率优化图片大小  
 - 使用图片的缩略图  
@@ -82,7 +106,7 @@
 - webp
 - `svg`压缩
 
-### 4.4. 字体
+### 5.4. 字体
 
 - 最简单的优化方式是尽可能使用**系统字体**。这样可以避免额外的字体文件下载，从而提高页面加载速度
 - 内联关键字体，`base64`
@@ -97,13 +121,13 @@
 - 异步加载非关键字体：
 	- 使用 `new FontFace` 类似于 `new Image`
 
-### 4.5. 视频
+### 5.5. 视频
 
 - 压缩
 - 选择合适格式
 - 使用流
 
-## 5. 运行时优化
+## 6. 运行时优化
 
 - 使用 window.requestAnimationFrame 避免**同步布局**
 - 批量化操作，或者说是读写分离
@@ -113,12 +137,12 @@
 - 非关键路径延迟执行：
 	- `setTimeout()/ requestIdleCallback`
 - 新开线程辅助计算: `worker`
-- 善用合成： `Composite`
+- ==善用合成==： `Composite`
 	- 会交由 GPU 合成，比 CPU 处理要快
 - 节流 和 防抖
 - Passive event listeners 优化滚动性能
 	- 随着移动端普及，浏览器在处理某些事件（如 scroll、touchstart、touchmove 等）时面临一个**困境**：
-		- 浏览器不知道事件监听器是否会调用 preventDefault()
+		- ==浏览器不知道事件监听器是否会调用 preventDefault()==
 		- 为了安全起见，浏览器必须等待事件监听器执行完毕
 		- 这导致了主线程阻塞，造成滚动响应延迟
 	- 浏览器开发者面临一个两难选择：
@@ -126,17 +150,17 @@
 		- 立即滚动，提高性能但可能导致不正确的行为
 	- 解决方案：
 		- 当添加事件监听器时，指定 `{passive: true}` 选项
-			- 允许开发者明确告知浏览器：事件监听器不会调用 preventDefault()
+			- ==允许开发者明确告知浏览器：事件监听器不会调用 preventDefault()==
 				- 即使 JavaScript 尝试调用 preventDefault()，也会被忽略
 			- 浏览器可以立即开始滚动，而不必等待 JavaScript 执行
 
-## 6. 预加载与预渲染
+## 7. 预加载与预渲染
 
 - `<link rel="preload" href="./nextpage.js" as="script">`
 - `<link rel="preload" as="video" href="/static/sample.mp4">
 - `<link rel="prerender" href="//sample.com/nextpage.html">`
 
-## 7. 其他渲染相关的可优化点
+## 8. 其他渲染相关的可优化点
 
 - DOM元素`读写分离`
 - 让进行大量动画的元素`脱离文档流，`减少重排开销
@@ -152,7 +176,7 @@
 - 使用`chrome performance工`具调试动画性能
 - `requestIdleCallback(fn);`
 
-## 8. 其他
+## 9. 其他
 
 - CI/CD 集成分析工具 lighthouse 等
 - 接入性能监控平台

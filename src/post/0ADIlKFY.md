@@ -1,21 +1,43 @@
 
 # 最大偏移量的统计方法和优化建议
 
-`#前端性能` `#R1` 
+`#前端性能` 
 
 
 ## 目录
 <!-- toc -->
- ## 1. CLS (CLS - Cumulative Layout Shift) 定义 
+ ## 1. 总结 
+
+- CLS (CLS - Cumulative Layout Shift) 定义
+	- 衡量页面视觉稳定性的重要指标
+	- 良好的CLS分数应该`小于0.1`
+	- `大于0.25`则被认为是较差的性能表现
+	- 计算公式：
+		- **不稳定元素**影响的可视区域部分 `*` **不稳定元素**相对于视口的移动距离
+- 统计代码
+	- 使用 npm 库：web-vitals
+	- Performance API
+		- layout-shift
+- 统计场景
+	- 图片加载引起的偏移
+	- 动态内容插入：比如广告、弹框
+	- 字体加载
+- 优化建议
+	- 图片预留空间
+	- 固定尺寸
+	- 内容占位
+- 测量工具
+
+## 2. CLS (CLS - Cumulative Layout Shift) 定义
 
 - `累积布局偏移(CLS)`是衡量页面视觉稳定性的重要指标，用于测量页面内容的意外移动程度
 - 良好的CLS分数应该`小于0.1`，`大于0.25`则被认为是较差的性能表现
 
 CLS 优化的核心是**保持页面视觉稳定性，避免意外的布局偏移**
 
-## 2. CLS 的计算方法
+## 3. CLS 的计算方法
 
-### 2.1. 基本计算公式
+### 3.1. 基本计算公式
 
 ```javascript
 CLS = 影响分数 × 距离分数
@@ -24,7 +46,7 @@ CLS = 影响分数 × 距离分数
 - 影响分数：**不稳定元素**影响的可视区域部分
 - 距离分数：**不稳定元素**相对于视口的移动距离
 
-### 2.2. 统计代码实现
+### 3.2. 统计代码实现
 
 ```javascript
 // 使用 Performance API 统计
@@ -48,7 +70,7 @@ let observer = new PerformanceObserver((list) => {
 observer.observe({entryTypes: ['layout-shift']});
 ```
 
-### 2.3. **使用 Web Vitals 库**
+### 3.3. **使用 Web Vitals 库**
 
 ```javascript
 import {getCLS} from 'web-vitals';
@@ -56,7 +78,7 @@ import {getCLS} from 'web-vitals';
 getCLS(console.log); // 输出 CLS 值
 ```
 
-### 2.4. **Performance API**
+### 3.4. **Performance API**
 
 ```javascript
 // 监听布局偏移
@@ -69,12 +91,12 @@ new PerformanceObserver((entryList) => {
 }).observe({entryTypes: ['layout-shift']});
 ```
 
-### 2.5. **Chrome DevTools**
+### 3.5. **Chrome DevTools**
 
 - Performance 面板
 - Core Web Vitals 报告
 
-## 3. 主要统计场景
+## 4. 主要统计场景
 
 - **图片加载引起的偏移**
 	- 未设置图片尺寸
@@ -88,9 +110,9 @@ new PerformanceObserver((entryList) => {
 	- FOIT (Flash of Invisible Text)
 	- FOUT (Flash of Unstyled Text)
 
-## 4. 优化建议
+## 5. 优化建议
 
-### 4.1. **预留空间**
+### 5.1. **预留空间**
 
 ```html
 <!-- 图片预留空间示例 -->
@@ -99,7 +121,7 @@ new PerformanceObserver((entryList) => {
 </div>
 ```
 
-### 4.2. **固定尺寸**
+### 5.2. **固定尺寸**
 
 ```css
 /* 广告位固定尺寸 */
@@ -109,7 +131,7 @@ new PerformanceObserver((entryList) => {
 }
 ```
 
-### 4.3. **内容占位**
+### 5.3. **内容占位**
 
 ```javascript
 // 使用骨架屏
@@ -123,14 +145,14 @@ function SkeletonLoader() {
 }
 ```
 
-## 5. 注意事项
+## 6. 注意事项
 
-### 5.1. **异步加载优化**
+### 6.1. **异步加载优化**
 
 - 使用 `content-visibility: auto` 优化长列表
 - 使用虚拟滚动处理大量数据
 
-### 5.2. **响应式设计考虑**
+### 6.2. **响应式设计考虑**
 
 ```css
 /* 响应式图片处理 */
@@ -141,7 +163,7 @@ img {
 }
 ```
 
-### 5.3. **字体加载优化**
+### 6.3. **字体加载优化**
 
 ```html
 <!-- 字体预加载 -->
@@ -154,7 +176,7 @@ img {
 >
 ```
 
-### 5.4. **动画和过渡处理**
+### 6.4. **动画和过渡处理**
 
 ```css
 /* 使用 transform 而不是改变位置属性 */
@@ -164,7 +186,7 @@ img {
 }
 ```
 
-## 6. 测量工具
+## 7. 测量工具
 
 1. Chrome DevTools
 2. Lighthouse
