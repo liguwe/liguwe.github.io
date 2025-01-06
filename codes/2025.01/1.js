@@ -1,36 +1,50 @@
 /**
- * @param {string[]} strs
- * @return {string}
+ * @param {string} s
+ * @param {string} p
+ * @return {number[]}
  */
-var longestCommonPrefix = function (strs) {
-  if (strs.length === 0) {
-    return "";
+var findAnagrams = function (s, p) {
+  let left = 0;
+  let right = 0;
+  let win = {};
+  let need = {};
+  let res = [];
+  for (let c of p) {
+    need[c] = (need[c] || 0) + 1;
   }
-  if (strs.length === 1) {
-    return strs[0];
-  }
-
-  let p = 0;
-  let m = strs.length;
-  let n = strs[0].length || 0;
-
-  for (let j = 0; j < n; j++) {
-    let isSame = true;
-    let s = strs[0][j];
-    for (let i = 0; i < m; i++) {
-      // 检查是否超出字符串长度
-      if (j >= strs[i].length) {
-        return strs[0].slice(0, p);
+  while (right < s.length) {
+    let c = s[right];
+    win[c] = (win[c] || 0) + 1;
+    right++;
+    while (right - left > p.length) {
+      if (fn()) {
+        res.push(left);
       }
-      if (strs[i][j] !== s) {
-        isSame = false;
-        return strs[0].slice(0, p);
+      let c = s[left];
+      win[c] = (win[c] || 0) - 1;
+      if (win[c] == 0) {
+        delete win[c];
+      }
+      left++;
+    }
+    if (right - left === p.length && fn()) {
+      res.push(left);
+    }
+  }
+
+  return res;
+
+  function fn() {
+    for (let k of Object.keys(win)) {
+      if (win[k] !== need[k]) {
+        return false;
       }
     }
-    if (isSame) {
-      p++;
+    for (let k of Object.keys(need)) {
+      if (win[k] !== need[k]) {
+        return false;
+      }
     }
+    return true;
   }
-
-  return strs[0].slice(0, p);
 };
