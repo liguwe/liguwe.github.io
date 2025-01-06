@@ -1,57 +1,36 @@
 /**
- * @param {number} n
- * @return {number[][]}
+ * @param {string[]} strs
+ * @return {string}
  */
-var generateMatrix = function (n) {
-  let res = new Array(n).fill().map(() => {
-    return new Array(n).fill(0);
-  });
+var longestCommonPrefix = function (strs) {
+  if (strs.length === 0) {
+    return "";
+  }
+  if (strs.length === 1) {
+    return strs[0];
+  }
 
-  let top = 0;
-  let left = 0;
-  let right = n - 1;
-  let bottom = n - 1;
-  let cur = 1;
+  let p = 0;
+  let m = strs.length;
+  let n = strs[0].length || 0;
 
-  while (cur <= n * n) {
-    if (top <= bottom) {
-      // 在顶部从左向右遍历
-      for (let j = left; j <= right; j++) {
-        cur++;
-        res[top][j] = cur;
+  for (let j = 0; j < n; j++) {
+    let isSame = true;
+    let s = strs[0][j];
+    for (let i = 0; i < m; i++) {
+      // 检查是否超出字符串长度
+      if (j >= strs[i].length) {
+        return strs[0].slice(0, p);
       }
-      // 上边界下移
-      top++;
+      if (strs[i][j] !== s) {
+        isSame = false;
+        return strs[0].slice(0, p);
+      }
     }
-    if (left <= right) {
-      // 在右侧从上向下遍历
-      for (let i = top; i <= bottom; i++) {
-        cur++;
-        res[i][right] = cur;
-      }
-      // 右边界左移
-      right--;
-    }
-    if (top <= bottom) {
-      // 在底部从右向左遍历
-      for (let j = right; j >= left; j--) {
-        cur++;
-        res[bottom][j] = cur;
-      }
-      // 下边界上移
-      bottom--;
-    }
-    if (left <= right) {
-      // 在左侧从下向上遍历
-      for (let i = bottom; i >= top; i--) {
-        cur++;
-        res[i][left] = cur;
-      }
-      // 左边界右移
-      left++;
+    if (isSame) {
+      p++;
     }
   }
-  return res;
-};
 
-console.log("8888", generateMatrix(3));
+  return strs[0].slice(0, p);
+};
