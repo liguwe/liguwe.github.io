@@ -1,50 +1,51 @@
 /**
- * @param {string} s
- * @param {string} p
+ * @param {number[]} nums
+ * @param {number} target
  * @return {number[]}
  */
-var findAnagrams = function (s, p) {
-  let left = 0;
-  let right = 0;
-  let win = {};
-  let need = {};
-  let res = [];
-  for (let c of p) {
-    need[c] = (need[c] || 0) + 1;
-  }
-  while (right < s.length) {
-    let c = s[right];
-    win[c] = (win[c] || 0) + 1;
-    right++;
-    while (right - left > p.length) {
-      if (fn()) {
-        res.push(left);
-      }
-      let c = s[left];
-      win[c] = (win[c] || 0) - 1;
-      if (win[c] == 0) {
-        delete win[c];
-      }
-      left++;
-    }
-    if (right - left === p.length && fn()) {
-      res.push(left);
-    }
-  }
+var searchRange = function (nums, target) {
+  let l = searchLeft(nums, target);
+  let r = searchRight(nums, target);
 
-  return res;
-
-  function fn() {
-    for (let k of Object.keys(win)) {
-      if (win[k] !== need[k]) {
-        return false;
-      }
-    }
-    for (let k of Object.keys(need)) {
-      if (win[k] !== need[k]) {
-        return false;
-      }
-    }
-    return true;
-  }
+  return [l, r];
 };
+
+function searchLeft(nums, target) {
+  let left = 0;
+  let right = nums.length - 1;
+  while (left <= right) {
+    let mid = left + Math.floor((right - left) / 2);
+    if (nums[mid] < target) {
+      left = mid + 1;
+    } else if (nums[mid] > target) {
+      right = mid - 1;
+    } else if (nums[mid] === target) {
+      right = mid - 1;
+    }
+  }
+  if (left >= nums.length || nums[left] !== target) {
+    return -1;
+  }
+
+  return left;
+}
+
+function searchRight(nums, target) {
+  let left = 0;
+  let right = nums.length - 1;
+
+  while (left <= right) {
+    let mid = left + Math.floor((right - left) / 2);
+    if (nums[mid] < target) {
+      left = mid + 1;
+    } else if (nums[mid] > target) {
+      right = mid - 1;
+    } else if (nums[mid] === target) {
+      left = mid + 1;
+    }
+  }
+  if (right < 0 || nums[right] !== target) {
+    return -1;
+  }
+  return right;
+}
