@@ -70,7 +70,7 @@ const tree = dirTree(
 );
 
 // tree 排除任何包含 @832 或者 @ing 的文件夹或者文件
-const excludeReg = /@832|@ing|@todo/;
+const excludeReg = /@832|@ing|@todo|@/;
 // 递归处理所有的文件
 const handleExcludeTree = (tree) => {
   const traverse = (item) => {

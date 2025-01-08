@@ -693,8 +693,6 @@
 
     - [低代码工程结构设计](post/yMC4l8VK.md)
 
-    - [基于 Vue3 的事件系统和事件编排逻辑，参考 AMIS 的实现思路 @823](post/x9mv71UK.md)
-
 # 第三部分 算法
 
 
@@ -910,8 +908,6 @@
 
     - [二叉树与单链表的关系](post/XytBTpYm.md)
 
-    - [二叉树的构造](post/rskoYObF.md)
-
     - [AVL 树和红黑树](post/5vBMYZJL.md)
 
   - [二叉树算法](post/r9wEjAVk.md)
@@ -919,11 +915,24 @@
 
     - [二叉树的最大深度](post/gjVD8BpM.md)
 
+    - [填充每个节点的下一个右侧节点指针](post/Wf6kc1Jv.md)
+
     - [二叉树的前序遍历](post/FTLeKCQh.md)
 
     - [翻转二叉树：翻转二叉树的两种解题思路](post/nRrhzm4L.md)
 
     - [二叉树的直径](post/eantOLiq.md)
+
+  - [二叉树的构造与序列化](post/7Qcj1Vyt.md)
+
+
+    - [二叉树的构造](post/jPbuf3wA.md)
+
+    - [从前序与中序遍历序列构造二叉树](post/bXrOMZJl.md)
+
+    - [二叉树的序列化与反序列化](post/AjV6Fs6g.md)
+
+    - [最大二叉树](post/QqzOOgJx.md)
 
   - [堆及相关算法](post/cHYx449G.md)
 
