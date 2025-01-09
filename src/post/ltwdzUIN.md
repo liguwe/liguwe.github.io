@@ -6,9 +6,9 @@
 
 ![图片&文件](./files/20241119.png)
 
-> 详见 [1. 单调列队算法](/post/wZqf6Tov.html)
+> 详见 [1. 单调列队算法](/post/pqFiQS8P.html)
 
 ---
 
 
-![1. 单调列队算法](/post/wZqf6Tov.html)
+![1. 单调列队算法](/post/pqFiQS8P.html)
