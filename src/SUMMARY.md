@@ -159,6 +159,10 @@
 
     - [class 中各种方法定义的区别](post/6f3wVP29.md)
 
+    - [WeakRef 与 FinalizationRegistry](post/DncUacmF.md)
+
+    - [Array.reduce](post/3ZX7oZRr.md)
+
   - [TypeScript](post/Dpog28le.md)
 
 
@@ -230,6 +234,8 @@
     - [BroadcastChannel](post/2DAAxeDX.md)
 
     - [浏览器的宏任务（MacroTask）的优先级](post/cBhFNWsf.md)
+
+    - [IndexedDB](post/GgT04wIO.md)
 
   - [Node.js](post/H9Qdfauq.md)
 
@@ -609,6 +615,8 @@
 
     - [跨端的核心技术点](post/7VtlmieN.md)
 
+    - [JavaScript Bridge（JSBridge）的原理](post/0scXlayy.md)
+
     - [H5 开发技巧相关](post/aeqDupDF.md)
 
     - [taro 与 uni-app 对比](post/R2wTWUW5.md)
@@ -705,6 +713,11 @@
     - [基于 Vue3 的低代码平台架构设计：篇一](post/KH10ntNR.md)
 
     - [低代码工程结构设计](post/yMC4l8VK.md)
+
+  - [编程题](post/9hg3fDqc.md)
+
+
+    - [对象转成深度为一的对象](post/BFIqYkUD.md)
 
 # 第三部分 算法
 
@@ -1031,46 +1044,48 @@
 
     - [BFS 算法框架](post/runqUOJg.md)
 
-  - [动态规划算法](post/xqUwLU6l.md)
+    - [滑动谜题](post/E85OCp5F.md)
+
+  - [动态规划](post/U8YH5Q2E.md)
 
 
-    - [斐波那契数列](post/okNCFWZC.md)
+    - [斐波那契数列](post/pMV3gZTK.md)
 
-    - [动态规划解题套路框架：以最小零钱为例说明](post/LrauOmst.md)
+    - [动态规划解题套路框架：以最小零钱为例说明](post/mYzjLIWK.md)
 
-    - [如何查找状态转移方程（最长递增子序列与俄罗斯套娃）](post/woaOMPBm.md)
+    - [如何查找状态转移方程（最长递增子序列与俄罗斯套娃）](post/PMFmCiD4.md)
 
-    - [base case 和备忘录的初始值怎么定（下降路径的最小和）](post/8bnwzl5c.md)
+    - [base case 和备忘录的初始值怎么定（下降路径的最小和）](post/0etu9DIU.md)
 
-    - [最优子结构原理 和 DP 数组遍历方向](post/xmL4z7O8.md)
+    - [最优子结构原理 和 DP 数组遍历方向](post/l4s0Xp9w.md)
 
-    - [动态规划穷举的两种视角：不同的子序列个数](post/PMuRgOE3.md)
+    - [动态规划穷举的两种视角：不同的子序列个数](post/8xU0ZWUJ.md)
 
-    - [动态规划和回溯算法的思维转换（单词拆分）](post/49lVbEKZ.md)
+    - [动态规划和回溯算法的思维转换（单词拆分）](post/j9ZfaneO.md)
 
-    - [对动态规划进行空间压缩](post/s2dl6AgU.md)
+    - [对动态规划进行空间压缩](post/vwQVRAv1.md)
 
-    - [子序列：最小编辑距离](post/O5en61VL.md)
+    - [子序列：最小编辑距离](post/cZ7rEfhC.md)
 
-    - [子序列：最大子数组](post/ZH8p02kL.md)
+    - [子序列：最大子数组](post/Ve28OKKH.md)
 
-    - [子序列：最长公共子序列问题](post/gNiZVTug.md)
+    - [子序列：最长公共子序列问题](post/NayXtkM7.md)
 
-    - [子序列： 动态规划之子序列问题解题模板（最长回文子序列）](post/bLj2Kk72.md)
+    - [子序列： 动态规划之子序列问题解题模板（最长回文子序列）](post/ojVgViuP.md)
 
-    - [背包：0-1 背包问题](post/PDFFKo7S.md)
+    - [背包：0-1 背包问题](post/5D2MQ9Dm.md)
 
-    - [背包：数组是否可以分割两个子集，使得这两子集的元素和相等](post/Z0w6hirH.md)
+    - [背包：数组是否可以分割两个子集，使得这两子集的元素和相等](post/BVhJSGBG.md)
 
-    - [完全背包问题：零钱兑换](post/JuaODo96.md)
+    - [完全背包问题：零钱兑换](post/jsW5sS9i.md)
 
-    - [背包问题：目标和](post/qX812t2x.md)
+    - [背包问题：目标和](post/romz7FD7.md)
 
-    - [最小路径和](post/f0hO51k5.md)
+    - [最小路径和](post/sNsTjJ9f.md)
 
-    - [地下城游戏](post/Wp39TWnW.md)
+    - [地下城游戏](post/V33uaQPS.md)
 
-    - [贪心算法：区间调度问题](post/MlAcMhGo.md)
+    - [贪心算法：区间调度问题](post/pgRk1jUi.md)
 
   - [数学运算](post/UgEii5wM.md)
 
