@@ -4,7 +4,7 @@
 
 `#算法/动态规划` 
 
-> 它不是`动态规划问题`，但是对`于理解动态规划`很有帮助！
+> 虽然它不是`动态规划问题`，但是对`于理解动态规划`很有帮助
 
 
 ## 目录
@@ -16,7 +16,6 @@
 | [509. Fibonacci Number](https://leetcode.com/problems/fibonacci-number/) | [509. 斐波那契数](https://leetcode.cn/problems/fibonacci-number/) | 🟢  |
 |                                                                          |                                                              |     |
 
-
 ![|448](https://od-1310531898.cos.ap-beijing.myqcloud.com/202303181734365.png)
 
 ## 2. `自顶向下`的暴力递归解法
@@ -27,6 +26,24 @@ var fib = function (n) {
   if (n === 1) return 1;
   return fib(n - 1) + fib(n - 2);
 };
+```
+
+统一尽量使用 dp 函数
+
+```javascript
+/**
+ * @param {number} n
+ * @return {number}
+ */
+var fib = function (n) {
+  function dp(n) {
+    if (n === 0) return 0;
+    if (n === 1) return 1;
+    return dp(n - 1) + dp(n - 2);
+  }
+  return dp(n);
+};
+
 ```
 
 算法复杂度，如下图，即`子问题的个数 = O(2^n)`  指数级别，`爆炸`，因为有`重叠子问题` 
@@ -63,33 +80,53 @@ var dp = function (memo, n) {
 
 算法的时间复杂度，即 `子问题的个数 = O(n)` ， 空间复杂度 `O(n)`
 
+
+更简单的写法是：**dp 函数写到函数体里面，传入参数少一点**
+
+```javascript
+/**
+ * @param {number} n
+ * @return {number}
+ */
+var fib = function (n) {
+  let memo = new Array(n + 1).fill(-1);
+  function dp(n) {
+    if (n === 0) return 0;
+    if (n === 1) return 1;
+    if (memo[n] !== -1) return memo[n];
+    let res = dp(n - 1) + dp(n - 2);
+    memo[n] = res;
+    return res;
+  }
+  return dp(n);
+};
+```
+
 ****
 
 **如下图：**
 
-![1000](#)      
+![1008](#)      
 
 ## 4. 自低向上的迭代解法： `dp数组`
 
 ![|592](https://cdn.nlark.com/yuque/0/2024/png/687303/1709475955927-3df209e7-9318-4f7d-848f-cc79870f904d.png)
 
 ```typescript
-/*************************************************
- *</div>:解法3： DP table 【自低向上】dp 数组的迭代（递推）解法
- * //</div>:所谓 【自低向上】 即 推倒过程，从0，1 推倒出 f(2)等
- * 算法的时间复杂度是 O(n) ，空间复杂度O(n)
- ************************************************/
-function fib (N) {
-  if (N === 0) return 0;
-  let dp = new Array(N + 1).fill(0);
-  // base case
+/**
+ * @param {number} n
+ * @return {number}
+ */
+var fib = function (n) {
+  let dp = new Array(n).fill(-1);
+   // base cade
   dp[0] = 0;
   dp[1] = 1;
-  //// 状态转移方程
-  for (let i = 2; i <= N; i++) {
+  // 状态转移方程
+  for (let i = 2; i <= n; i++) {
     dp[i] = dp[i - 1] + dp[i - 2];
   }
-  return dp[N];
+  return dp[n];
 };
 ```
 
@@ -102,6 +139,7 @@ function fib (N) {
 ![图片&文件](./files/20241111-2.png)
 
 ## 6. 空间复杂度降为 `O(1)`
+
 ```typescript
 // 进一步优化，把二维的dp table 压成一维的,即只要维护两个变量 prev  curr
 function fib (n) {

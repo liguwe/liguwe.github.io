@@ -1,14 +1,22 @@
 /**
- * @param {number} n
+ * @param {number[]} coins
+ * @param {number} amount
  * @return {number}
  */
-var fib = function (n) {
-  function dp(n) {
-    if (n === 0) return 0;
-    if (n === 1) return 1;
+var coinChange = function (coins, amount) {
+  const MAX_VAL = 10 ** 4 + 1;
 
-    return dp(n - 1) + dp(n - 2);
+  function dp(n) {
+    let res = MAX_VAL;
+    if (n === 0) return 0;
+    if (n < 0) return -1;
+    for (let coin of coins) {
+      let sub = dp(n - coin);
+      if (sub === -1) continue;
+      res = Math.min(sub + 1, res);
+    }
+    return res === MAX_VAL ? -1 : res;
   }
 
-  return dp(n);
+  return dp(amount);
 };
