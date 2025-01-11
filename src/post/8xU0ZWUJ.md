@@ -5,18 +5,159 @@
 `#算法/动态规划`
 
 
+
+## 目录
+<!-- toc -->
+ ## 总结 
+
+### 递归解法
+
+- 错误记录：
+	- `dp[k + 1, j + 1]` 和 `dp( k+1 , j +1 )`
+		- 一个数组，一个函数，区别这么大，老是写错了
+- 注意变量：
+	- **`i  j  k` 分别代表什么** ，很重要
+- dp 函数定义：
+	- ==`s[i..]` 的子序列中 `t[j..]` 出现的次数为 `dp(i, j)`==
+
+
+```javascript
+var numDistinct = function (s, t) {
+  let m = s.length;
+  let n = t.length;
+  function dp(i, j) {
+    // 全部匹配完成，说明匹配成功了，返回 1
+    if (j === n) {
+      return 1;
+    }
+    // i 后面的个数 小于 j 后面的个数，说明匹配不到子序列了，直接返回0 即可
+    // s[i...] 比 t[j...] 还短
+    if (m - i < n - j) {
+      return 0;
+    }
+    let res = 0;
+    //  在 s[i..] 中寻找 k，使得 s[k] == t[j]
+    for (let k = i; k < m; k++) {
+      if (s[k] == t[j]) {
+        res += dp(k + 1, j + 1);
+      }
+    }
+    return res;
+  }
+  return dp(0, 0);
+};
+```
+
+
+带备忘录的解法
+
+```javascript hl:13,30
+var numDistinct = function (s, t) {
+  // s[i..] 的子序列中 t[j..] 出现的次数为 dp(s, i, t, j)
+  let m = s.length;
+  let n = t.length;
+
+  let memo = new Array(m + 1).fill().map(() => {
+    return new Array(n + 1).fill(-1);
+  });
+
+  function dp(i, j) {
+    if (memo[i][j] !== -1) return memo[i][j];
+
+    // base case
+    // 全部匹配完成，说明匹配成功了，返回 1
+    if (j === n) {
+      return 1;
+    }
+    // i 后面的个数 小于 j 后面的个数，说明匹配不到子序列了，直接返回0 即可
+    // s[i...] 比 t[j...] 还短
+    if (m - i < n - j) {
+      return 0;
+    }
+    let res = 0;
+    //  在 s[i..] 中寻找 k，使得 s[k] == t[j]
+    for (let k = i; k < m; k++) {
+      if (s[k] == t[j]) {
+        res += dp(k + 1, j + 1);
+      }
+    }
+    memo[i][j] = res;
+    return res;
+  }
+  return dp(0, 0);
+};
+
+```
+
+### dp 数组迭代解法
+
+> [!todo]
+>  自己再写下试试
+
+要点：
+- 为了能够正着遍历，`dp[i][j]` 表示 `s[...i]` 的子序列中 `t[...j]` 字符出现的次数
+	- 而不是 `s[...j]`
+- 动态转移方程
+
+```javascript
+/**
+ * @param {string} s
+ * @param {string} t
+ * @return {number}
+ */
+var numDistinct = function (s, t) {
+  const m = s.length;
+  const n = t.length;
+
+  // dp[i][j] 表示 s[...i] 的子序列中 t[...j] 字符出现的次数
+  // 初始化为0
+  const dp = Array(m + 1)
+    .fill(0)
+    .map(() => Array(n + 1).fill(0));
+
+  // base case
+  // 当 t 为空串时，空串是任何字符串的子序列，且只有一种方案
+  for (let i = 0; i <= m; i++) {
+    dp[i][0] = 1;
+  }
+
+  // 填充 DP 数组
+  for (let i = 1; i <= m; i++) {
+    for (let j = 1; j <= n; j++) {
+      // ①  当前字符相等时，有两种选择：
+      // 1.1 使用当前字符匹配：dp[i-1][j-1]
+      // 1.2 不使用当前字符匹配：dp[i-1][j]
+      if (s[i - 1] === t[j - 1]) {
+        dp[i][j] = dp[i - 1][j - 1] + dp[i - 1][j];
+      } else {
+        //②  当前字符不相等，只能不使用当前字符
+        dp[i][j] = dp[i - 1][j];
+      }
+    }
+  }
+
+  return dp[m][n];
+};
+
+```
+
+
+
+---
+
+
 | LeetCode                                                                           | 力扣                                                                 | 难度  |
 | ---------------------------------------------------------------------------------- | ------------------------------------------------------------------ | --- |
 | [115. Distinct Subsequences](https://leetcode.com/problems/distinct-subsequences/) | [115. 不同的子序列](https://leetcode.cn/problems/distinct-subsequences/) | 🔴  |
 
 
-## 目录
-<!-- toc -->
- ## 1. 先回顾下动态规划的解题要点 
 
-- 明确 `dp 函数或数组`的定义，从`已知的「状态」`中`推导`出`未知的「状态」`
-- 就算 `dp 函数/数组`的定义相同，如果你使用`不同的「视角」`进行穷举，效率也不见得是相同的
-	- 见本文
+## 1. 先回顾下动态规划的解题要点
+
+- 明确 `dp 函数或数组`的定义
+	- 从`已知的「状态」`中`推导`出`未知的「状态」`
+- 就算 `dp 函数/数组`的定义相同
+	- 如果你使用`不同的「视角」`进行穷举，效率也不见得是相同的
 
 ## 2. 两种穷举的思路（排列组合的两个视角）
 
@@ -26,7 +167,7 @@
 
 如下图：
 
-![|512](https://832-1310531898.cos.ap-beijing.myqcloud.com/7936c202a574509aca13dd0c848ab576.png)
+![|696](https://832-1310531898.cos.ap-beijing.myqcloud.com/7936c202a574509aca13dd0c848ab576.png)
 
 ### 2.2. 视角 1： 盒子的视觉
 
@@ -34,7 +175,7 @@
 - 选择哪个盒子
 	- 选择之后不能再被选择
 
-![|672](https://832-1310531898.cos.ap-beijing.myqcloud.com/45fc7d6729e977ba87c2128b01fd9543.png)
+![|816](https://832-1310531898.cos.ap-beijing.myqcloud.com/45fc7d6729e977ba87c2128b01fd9543.png)
 
 > 一直推导，最终结论，如上面的公式
 
@@ -44,21 +185,22 @@
 - 放入
 - 不放入
 
-![|520](https://832-1310531898.cos.ap-beijing.myqcloud.com/0e5325aa3c46b849764ed679c9f13d00.png)
+![|808](https://832-1310531898.cos.ap-beijing.myqcloud.com/0e5325aa3c46b849764ed679c9f13d00.png)
 
 ## 3. 该题分析
 
-![|552](https://832-1310531898.cos.ap-beijing.myqcloud.com/a8bac35da79575b04fc5d3cad04ef71f.png)
+![|784](https://832-1310531898.cos.ap-beijing.myqcloud.com/a8bac35da79575b04fc5d3cad04ef71f.png)
 
 > 注意是 `子序列`
 
-### 暴力解法
+### 3.1. 暴力解法
 
-一个思路是： `s` 的`子序列`中有多少个 `t` , 所以找出所有的`子序列`即可，这是一个暴力解法
+一个思路是：
+	`s` 的`子序列`中有多少个 `t` , 所以找出所有的`子序列`即可，这是一个暴力解法
 
-### 拆解问题
+### 3.2. 拆解问题
 
-所以，考虑是否能够拆解成 `规模更小的子问题` ，所以，**更小的子问题是**？
+考虑是否能够拆解成 `规模更小的子问题` ，所以，**更小的子问题是**？
 
 `s[i..]` 的`子序列`中 `t[j..]` 出现的次数为 `dp(s, i, t, j)`
 
@@ -84,7 +226,7 @@
 
 上面的描述`翻译`成代码如下：
 
-![|416](https://832-1310531898.cos.ap-beijing.myqcloud.com/43ae65d42c0ca29aaf7d83a08fdb7a15.png)
+![|592](https://832-1310531898.cos.ap-beijing.myqcloud.com/43ae65d42c0ca29aaf7d83a08fdb7a15.png)
 
 ### 4.1. 最终可执行代码
 

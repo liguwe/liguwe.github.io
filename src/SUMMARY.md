@@ -1037,9 +1037,9 @@
 
     - [回溯算法解题框架](post/btaz1jDA.md)
 
-    - [回溯算法 与 DFS算法 的区别](post/JzQvGSUA.md)
+    - [回溯算法与DFS算法的区别](post/NOuyx7A1.md)
 
-    - [回溯算法解决排列、组合、子集问题](post/70vO3Krn.md)
+    - [排列、组合、子集问题合集](post/vvHqs4Q4.md)
 
     - [回溯算法穷举的两种视角（球盒模型）](post/6L4HmUQZ.md)
 
@@ -1051,7 +1051,15 @@
 
     - [划分为 k 个相等的子集](post/k6r6yaFv.md)
 
-    - [全排列](post/IZXTV2v3.md)
+    - [SKU 排列](post/J1fhre4n.md)
+
+    - [全排列：元素不可重复，不可复选](post/tovnltXA.md)
+
+    - [全排列 II：元素可重复，不可复选](post/peLFh7kq.md)
+
+    - [子集：元素不重复不可复选](post/DiFK0hQo.md)
+
+    - [子集 II：元素重复，不可复选](post/3no1Un1T.md)
 
   - [BFS](post/wl5avwQK.md)
 
@@ -1075,7 +1083,7 @@
 
     - [动态规划穷举的两种视角：不同的子序列个数](post/8xU0ZWUJ.md)
 
-    - [动态规划和回溯算法的思维转换（单词拆分）](post/j9ZfaneO.md)
+    - [动态规划和回溯算法的思维转换：单词拆分](post/e9aA7SlZ.md)
 
     - [对动态规划进行空间压缩](post/vwQVRAv1.md)
 

@@ -30,7 +30,7 @@
 
 ## 4. DFS 解法
 
-DFS **关注节点**，关于 DFS 和回溯算法的区别请见 [2. 回溯算法 与 DFS算法 的区别](/post/JzQvGSUA.html)
+DFS **关注节点**，关于 DFS 和回溯算法的区别请见 [2. 回溯算法与DFS算法的区别](/post/NOuyx7A1.html)
 
 - 变量名 `dfs` 或者 `traverse` 本质都是遍历，可以任意用一个
 - `function traverse(graph, src, path) {`
