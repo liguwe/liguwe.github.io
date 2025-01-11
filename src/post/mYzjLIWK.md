@@ -51,22 +51,30 @@ var coinChange = function (coins, amount) {
 
 - dp 函数定义在函数体里面，这样可以少传几个参数
 - 递归减少的变量是：`let sub = dp(n - coin);`
-- **res 写到里面去**
+- **res 写到`dp` 里面去** 
+- 需要加上备忘录，才能通过所有用例：初始化 `-666`
 
 ```javascript hl:2
 var coinChange = function (coins, amount) {
   const MAX_VAL = 10 ** 4 + 1;
 
+  let memo = new Array(amount + 1).fill(-666);
   function dp(n) {
-    let res = MAX_VAL;
     if (n === 0) return 0;
     if (n < 0) return -1;
+
+    if (memo[n] !== -666) return memo[n];
+    let res = MAX_VAL;
     for (let coin of coins) {
       let sub = dp(n - coin);
       if (sub === -1) continue;
+
       res = Math.min(sub + 1, res);
     }
-    return res === MAX_VAL ? -1 : res;
+
+    memo[n] = res === MAX_VAL ? -1 : res;
+
+    return memo[n];
   }
 
   return dp(amount);
@@ -300,7 +308,7 @@ var coinChange = function(coins, amount) {
 
 + 动态规划问题，就两种解决思路
     - `dp 递归函数 - 备忘录`	
-    - `dp 数组迭代（DP table`
+    - `dp 数组迭代
 +  在追求“`如何聪明地穷举`”。`用空间换时间`的思路，是降低时间复杂度的不二法门
 + 配合 [斐波那契数列](https://www.yuque.com/liguwe/agorithms/lqm69gi8zhp789mf) 多理解，多动手
 + `自顶向下`和`自底向上` 

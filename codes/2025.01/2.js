@@ -1,22 +1,17 @@
-/**
- * @param {number[]} coins
- * @param {number} amount
- * @return {number}
- */
-var coinChange = function (coins, amount) {
-  const MAX_VAL = 10 ** 4 + 1;
+// aabcccccaaa 会变为 a2b1c5a3
 
-  function dp(n) {
-    let res = MAX_VAL;
-    if (n === 0) return 0;
-    if (n < 0) return -1;
-    for (let coin of coins) {
-      let sub = dp(n - coin);
-      if (sub === -1) continue;
-      res = Math.min(sub + 1, res);
+function fn(str) {
+  let num = 1;
+  let res = [];
+  for (let i = 0; i < str.length; i++) {
+    if (str[i] === str[i + 1]) {
+      num++;
+    } else {
+      res.push(`${str[i]}${num}`);
+      num = 1;
     }
-    return res === MAX_VAL ? -1 : res;
   }
+  return res.join("");
+}
 
-  return dp(amount);
-};
+console.log(fn("aabcccccaaa"));
