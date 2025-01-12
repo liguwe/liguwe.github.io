@@ -1074,7 +1074,13 @@
 
     - [BFS 算法框架](post/runqUOJg.md)
 
+    - [双向 BFS 优化](post/87mUQbi8.md)
+
+    - [打开转盘锁](post/UivWHKD7.md)
+
     - [滑动谜题](post/E85OCp5F.md)
+
+    - [腐烂的橘子](post/rLFs4AhU.md)
 
   - [动态规划](post/U8YH5Q2E.md)
 
@@ -1111,11 +1117,13 @@
 
     - [背包问题：目标和](post/romz7FD7.md)
 
-    - [最小路径和](post/sNsTjJ9f.md)
-
     - [地下城游戏](post/V33uaQPS.md)
 
     - [贪心算法：区间调度问题](post/pgRk1jUi.md)
+
+    - [最小路径和](post/5hbIiOkm.md)
+
+  - [贪心算法]()
 
   - [数学运算](post/UgEii5wM.md)
 
@@ -1237,8 +1245,6 @@
     - [叶子相似的树](post/ebCnfr0k.md)
 
     - [最近的请求次数](post/bR5umqsw.md)
-
-    - [腐烂的橘子](post/uragHBSE.md)
 
     - [最大连续 1 的个数 III](post/oks1ICIR.md)
 

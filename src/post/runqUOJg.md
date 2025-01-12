@@ -87,6 +87,6 @@ var minDepth = function (root) {
 
 ## 示例二：解开密码最少次数
 
->  力扣第 752 题「[打开转盘锁](https://leetcode.cn/problems/open-the-lock)」
+- [752. 打开转盘锁](/post/UivWHKD7.html)
 
 
