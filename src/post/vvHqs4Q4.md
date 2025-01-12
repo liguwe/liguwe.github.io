@@ -7,72 +7,27 @@
 
 ## 目录
 <!-- toc -->
- ## 全排列 
+ ## 1. 全排列 
 
 - [46. 全排列：元素不可重复，不可复选](/post/tovnltXA.html)
 
-## 全排列 II ：元素可重复不可复选
+## 2. 全排列 II ：元素可重复不可复选
 
 - [47. 全排列 II：元素可重复，不可复选](/post/peLFh7kq.html)
 
-## 子集：元素不重复不可复选
+## 3. 子集：元素不重复不可复选
 
 - [78. 子集：元素不重复不可复选](/post/DiFK0hQo.html)
 
-## 子集 II ：元素重复不可复选
+## 4. 子集 II ：元素重复不可复选
 
 - [90. 子集 II：元素重复，不可复选](/post/3no1Un1T.html)
 
-## 组合：元素不重复不可复选
+## 5. 组合：元素不重复不可复选
 
-> [https://leetcode.cn/problems/combinations/](https://leetcode.cn/problems/combinations/)
+- [77. 组合：元素不重复不可复选](/post/4WXqPtWo.html)
 
-
-![|776](https://832-1310531898.cos.ap-beijing.myqcloud.com/71bd4336ce8d521d370e45ea68e5e3ad.png)
-
-给你输入一个数组 `nums = [1,2..,n]` 和一个正整数 `k`，请你生成所有`大小为 k 的子集` ，是不是就是上一题的一种特殊场景而已。所以两种思路：
-
-### 思路 1：
-
-复用子集的代码，最终返回结果 `再过滤长度=k` 的子集不就行了嘛？
-
-### 思路 2：
-
-修改 `base case` ，代码如下：
-
-```javascript
-/**
- * @param {number} n 
- * @param {number} k 
- * @return {number[][]} 
- */
-var combine = function(n, k) {
-    const res = [];
-    const track = [];
-    // 主函数
-    function backtrack(start, n, k) {
-        // base case
-        if (k === track.length) {
-            // 遍历到了第 k 层，收集当前节点的值
-            res.push([...track]);
-            return;
-        }
-        // 回溯算法标准框架
-        for (let i = start; i <= n; i++) {
-            // 选择
-            track.push(i);
-            // 通过 start 参数控制树枝的遍历，避免产生重复的子集
-            backtrack(i + 1, n, k);
-            // 撤销选择 
-            track.pop();
-        }
-    }
-    backtrack(1, n, k);
-    return res;
-};
-```
-
-## 组合总和 II ：元素可重不可复选
+## 6. 组合总和 II ：元素可重不可复选
 
 ![|712](https://832-1310531898.cos.ap-beijing.myqcloud.com/dc788f87448a26142ca7354275ef6bbc.png)
 
@@ -121,6 +76,7 @@ var combinationSum2 = function (candidates, target) {
 };
 
 ```
+
 
 > [!question]
 很早很早以前刷过这题，那时候还不知道这叫 **回溯算法**，搞出来了还沾沾自喜？

@@ -167,6 +167,10 @@
 
     - [this 指向问题汇总](post/yXLkZ3t0.md)
 
+    - [BigInt 类型](post/F94E3tG2.md)
+
+    - [原型链](post/hlUl3OvK.md)
+
   - [TypeScript](post/Dpog28le.md)
 
 
@@ -1056,6 +1060,8 @@
     - [全排列：元素不可重复，不可复选](post/tovnltXA.md)
 
     - [全排列 II：元素可重复，不可复选](post/peLFh7kq.md)
+
+    - [组合：元素不重复不可复选](post/4WXqPtWo.md)
 
     - [子集：元素不重复不可复选](post/DiFK0hQo.md)
 

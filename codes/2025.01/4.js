@@ -1,26 +1,23 @@
 /**
- * @param {number[]} nums
+ * @param {number} n
+ * @param {number} k
  * @return {number[][]}
  */
-var subsetsWithDup = function (nums) {
-  nums.sort((a, b) => a - b);
+var combine = function (n, k) {
   let res = [];
-  let n = nums.length;
-
   function backtrack(track, start) {
-    res.push([...track]);
-
-    for (let i = start; i < n; i++) {
-      if (i > start && nums[i] === nums[i - 1]) {
-        continue;
-      }
-      track.push(nums[i]);
+    if (track.length === k) {
+      res.push([...track]);
+      return;
+    }
+    for (let i = start; i <= n; i++) {
+      track.push(i);
       backtrack(track, i + 1);
       track.pop();
     }
   }
 
-  backtrack([], 0);
+  backtrack([], 1);
 
   return res;
 };
