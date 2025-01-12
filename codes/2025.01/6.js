@@ -1,57 +1,36 @@
-const data = [
-  {
-    id: "1",
-    name: "test1",
-    children: [
-      {
-        id: "11",
-        name: "test11",
-        children: [
-          {
-            id: "111",
-            name: "test111",
-          },
-          {
-            id: "112",
-            name: "test112",
-          },
-        ],
-      },
-      {
-        id: "12",
-        name: "test12",
-        children: [
-          {
-            id: "121",
-            name: "test121",
-          },
-          {
-            id: "122",
-            name: "test122",
-          },
-        ],
-      },
-    ],
-  },
-];
-
-function find(data, id) {
-  function dfs(root) {
-    if (!root) {
-      return null;
+/**
+ * @param {number[]} candidates
+ * @param {number} target
+ * @return {number[][]}
+ */
+var combinationSum2 = function (candidates, target) {
+  candidates.sort((a, b) => a - b);
+  let n = candidates.length;
+  let res = [];
+  function backtrack(track, sum, start) {
+    if (sum === target) {
+      res.push([...track]);
+      return;
     }
-    if (root.id === id) {
-      return root;
+    // 剪枝
+    if (sum > target) {
+      return;
     }
-    // debugger;
-    if (root.children) {
-      for (let node of root.children) {
-        console.log(node);
-        dfs(node);
+    for (let i = start; i < n; i++) {
+      // 去重逻辑
+      if (i > start && candidates[i] === candidates[i - 1]) {
+        continue;
       }
+
+      track.push(candidates[i]);
+      sum += candidates[i];
+      backtrack(track, sum, i + 1);
+      track.pop();
+      sum -= candidates[i];
     }
   }
-  return dfs(data);
-}
 
-console.log(find(data[0], "test111"));
+  backtrack([], 0, 0);
+
+  return res;
+};
