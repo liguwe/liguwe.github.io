@@ -635,6 +635,8 @@
 
     - [小程序的安全合规和性能优化](post/g4tQfnft.md)
 
+    - [微信小程序的双线程设计](post/tgJfj6lu.md)
+
   - [前端性能及体验](post/qZrXM5yu.md)
 
 
@@ -666,6 +668,17 @@
 
     - [Chrome DevTools（篇三）](post/8ImZhrED.md)
 
+  - [前端构建](post/xbrkjq4M.md)
+
+
+    - [Vite 和 Webpack 在热更新（HMR - Hot Module Replacement）机制上的主要区别](post/FdYgQBvP.md)
+
+    - [Source Map 的本质和实现原理](post/36bfPma6.md)
+
+    - [浏览器对 Source Map 的支持机制和实现原理](post/4UfAo5Hi.md)
+
+    - [Vite 在开发时对 Source Map 的特殊之处](post/jGEm4vNx.md)
+
   - [前端安全](post/K1Kkn6P7.md)
 
 
@@ -685,7 +698,11 @@
 
     - [HTTP 请求是否携带 Cookie](post/WbHXHdtO.md)
 
+    - [常见接口鉴权方式](post/wp2LI0gC.md)
+
     - [常见的高危Web安全漏洞](post/KMBi2FSe.md)
+
+    - [OAuth 2.0 认证](post/3zL2Bspk.md)
 
   - [低代码](post/vw4DnZGz.md)
 
@@ -736,6 +753,29 @@
     - [合并连续的数字](post/cjXigrCc.md)
 
     - [压缩算法：aabcccccaaa 会变为 a2b1c5a3](post/6zc70BFa.md)
+
+  - [前端职业篇](post/Sj3Qp80Z.md)
+
+
+    - [前端工程师在 AI 时代的机会与挑战](post/bCqlCS4X.md)
+
+    - [前端开发与 AI 大模型的集成](post/JsMX9CFm.md)
+
+    - [常见面试题：篇一](post/VbMD8EVt.md)
+
+    - [常见面试题：篇二](post/uxLIofFT.md)
+
+    - [常见面试题：篇三](post/aIgYid4G.md)
+
+    - [常见面试题：篇四](post/QVpHDBu3.md)
+
+    - [常见面试题：篇五](post/W7sOuX9B.md)
+
+    - [常见面试题：篇六](post/xivr5UbI.md)
+
+    - [常见面试题：篇七](post/OSgjd9Ap.md)
+
+    - [常见面试题：篇八](post/JxFYqICT.md)
 
 # 第三部分 算法
 

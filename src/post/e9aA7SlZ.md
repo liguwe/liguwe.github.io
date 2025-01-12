@@ -16,7 +16,7 @@
 
 ![图片&文件](./files/20241111-4.png)
 
-### 1.1. 回溯算法思路
+### 1.1. 回溯算法
 
 ```javascript hl:8,28,32
 var wordBreak = function (s, wordDict) {
@@ -63,7 +63,7 @@ var wordBreak = function (s, wordDict) {
 
 这段代码无法通过所有测试用例
 
-### 1.2. 利用后续位置优化：剪枝
+### 1.2. 回溯算法：剪枝
 
 ```javascript hl:6,27,26,48
 var wordBreak = function (s, wordDict) {
@@ -127,11 +127,13 @@ var wordBreak = function (s, wordDict) {
 
 ```
 
-### 1.3. 转成动态规划问题：分解问题的思路
+### 1.3. 动态规划：递归
 
-- 对于输入的字符串 `s`，如果我能够从单词列表 `wordDict` 中找到一个单词匹配 `s` 的前缀 `s[0..k]`，那么只要我能拼出 `s[k+1..]`，就一定能拼出整个 `s`。
+- 对于 `s`
+	- 如果能够从 `wordDict` 中找到一个单词匹配 `s` 的前缀 `s[0..k]`
+		- 那么只要我能拼出 `s[k+1..]`，就一定能拼出整个 `s`
 
-换句话说，我把规模较大的原问题 `wordBreak(s[0..])` 分解成了规模较小的子问题 `wordBreak(s[k+1..])`，然后通过子问题的解反推出原问题的解。
+规模较大的原问题 `wordBreak(s[0..])` 分解成了规模较小的**子问题** `wordBreak(s[k+1..])`
 
 #### 1.3.1. dp 函数定义
 

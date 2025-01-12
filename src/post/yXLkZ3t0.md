@@ -432,3 +432,49 @@ class DataFetcher1 {
 3. 选择使用哪种函数取决于你是否需要动态的 this 绑定
 4. 在需要保持 this 上下文的场景（如**回调、事件处理器**）中，**箭头函数**很有用
 5. 在需要动态 this 的场景（如**对象方法、原型方法**）中，使用**普通函数**更合适
+
+## 4. this 指向问题
+
+>  还是一样，以为自己懂了，其实没懂啊， **三个 window**
+
+```javascript
+let m = {
+  a: function () {
+    console.log(this);
+  },
+  b: () => {
+    console.log(this);
+  },
+};
+
+m.a(); // 输出: m 对象
+m.b(); // 输出: window 对象
+
+e = m.a; 
+f = m.b;
+
+e();  // 输出: window 对象
+f();  // 输出: window 对象
+```
+
+
+
+下面的 Class 的区别：
+
+```javascript
+class A {
+  a = function () {
+    console.log(this);
+  };
+  b = () => {
+    console.log(this);
+  };
+}
+
+let aa = new A();
+
+aa.a();
+aa.b();
+```
+
+上面的输出都是 **A 对象实例**
