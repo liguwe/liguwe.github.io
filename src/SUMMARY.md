@@ -754,6 +754,8 @@
 
     - [压缩算法：aabcccccaaa 会变为 a2b1c5a3](post/6zc70BFa.md)
 
+    - [打平数组转成树形结构](post/MAIMTxPT.md)
+
   - [前端职业篇](post/Sj3Qp80Z.md)
 
 
@@ -1159,11 +1161,16 @@
 
     - [地下城游戏](post/V33uaQPS.md)
 
-    - [贪心算法：区间调度问题](post/pgRk1jUi.md)
-
     - [最小路径和](post/5hbIiOkm.md)
 
-  - [贪心算法]()
+  - [贪心算法](post/HM11BwdS.md)
+
+
+    - [贪心算法：区间调度问题](post/xbEPnBk4.md)
+
+    - [跳跃游戏 II](post/seyTJIf3.md)
+
+    - [跳跃游戏](post/kc9TDaQ0.md)
 
   - [数学运算](post/UgEii5wM.md)
 
@@ -1214,11 +1221,7 @@
 
     - [接雨水](post/1ou3kkJY.md)
 
-    - [跳跃游戏 II](post/WNw851Rc.md)
-
     - [字母异位词分组](post/VBMUW99u.md)
-
-    - [跳跃游戏](post/wHeC7cnb.md)
 
     - [合并区间](post/wiLwI8Qq.md)
 

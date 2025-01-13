@@ -19,7 +19,7 @@
 
 总结：
 - ==Token 是一种用于身份验证的凭证==，最常见的实现签名规则是 **JWT (JSON Web Token)**
-- 签名规则
+- 签名规则，以 `,` 分割
 	- Header (算法和类型)
 	- Payload (数据)
 	- Signature (签名)

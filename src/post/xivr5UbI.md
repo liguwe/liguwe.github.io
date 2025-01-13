@@ -12,7 +12,7 @@
 - Chrome 通常是设备可用空间的一定比例（约 80%）
 	-  **单个源（Origin）的限制通常是可用空间的 20%**
 - 可通过 `navigator.storage.estimate` 来查看和管理
-- 用户也可以设置
+- 用户也可以自定义设置
 
 ## 2. 常用的 Webpack 插件
 
@@ -113,6 +113,9 @@ console.log(result2);  // Infinity
 ## 7. 防止他人移除水印的技术方案
 
 水印实现原理
+1. 创建 Canvas 生成水印图案
+2. 创建固定定位的容器
+	- fixed 
 
 ```javascript
 class Watermark {
@@ -166,7 +169,7 @@ setInterval(() => {
 
 这是最核心的实现原理：
 1. 用 `Canvas` 生成水印图案
-2. 创建固定定位的 div 覆盖整个页面
+2. 创建固定定位的 div 覆盖整个页面 → `fixed`
 3. 通过 `MutationObserver` 和`定时器`双重监控**防止篡改**
 	- 或者检测不让打开控制台
 		- F12 监听
@@ -251,7 +254,7 @@ graph TD
 ## 11. 介绍几种通知用户刷新页面的方案
 
 - Service Worker 方案
-	- 这是最现代和推荐的方案，可以在后台检测新版本并通知用户。
+	- 这是==最现代和推荐的方案==，可以在后台检测新版本并通知用户。
 - WebSocket 方案
 	- 通过 `WebSocket` 实时推送更新通知。
 - 轮询检测方案
@@ -284,16 +287,15 @@ graph TD
 	- 完整防护方案
 		- 多种方法一起
 
-
 ## 14. 需要在跨域请求中携带另外一个域名下的 Cookie 该如何操作?
 
 > 如何在跨域请求中携带 Cookie，这需要前后端都进行相应的配置。
 
 - 前端配置
 	- fetch
-		- credentials: 'include',  
+		- **credentials**: 'include',  
 	- Axios
-		- withCredentials ： true
+		- **withCredentials** ： true
 	- XMLHttpRequest
 		- `xhr.withCredentials = true;`
 - 后端配置 (Node.js)
@@ -307,6 +309,6 @@ graph TD
 	- Access-Control-Allow-Origin 不要设置为 `*
 	- 合理设置 Cookie 属性
 		- ![图片&文件](./files/20250112-6.png)
-	- 验证请求来源 origin
+	- 验证请求来源 `origin`
 
 

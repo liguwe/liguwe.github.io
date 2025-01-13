@@ -10,9 +10,9 @@
 
 ![图片&文件](./files/20241024-6.png)
 
-④ `[...'abc'].reverse().join("")`
+==④== `[...'abc'].reverse().join("")`
 
-⑤ 递归实现反转字符串
+==⑤== 递归实现反转字符串
 
 ```javascript hl:9
 let str = "1234";
@@ -28,7 +28,7 @@ console.log(fn(str));
 
 ## 2. 实现一个 Object.create(null)：两种方式
 
-```javascript
+```javascript hl:15
 Object.myCreate = function (proto) {
   function F() {}
   F.prototype = proto;
@@ -99,65 +99,6 @@ console.log(
     classNames(['BFE', [{dev: true}, ['is', [obj]]]])
 )
 
-```
-
-## 4. 打平数组转成树形结构
-
-### 4.1. 先去重
-
-使用 `.values()`
-
-![图片&文件](./files/20241114-16.png)
-
-### 4.2. 转成数组
-
-- 关键点：函数的参数 `fn(array,pid)`
-- 必须知道根节点
-
-```javascript hl:20
-/**
- *  21、数组转成树形结构
- *  如何将 [{id: 1}, {id: 2, pId: 1}, ...] 的重复数组（有重复数据）
- *  转成树形结构的数组 [{id: 1, child: [{id: 2, pId: 1}]}, ...] （需要去重） `#243`
- * */
-// :::: 已经去重了
-let arr = [
-  { id: 1, pid: 0 },
-  { id: 2, pid: 1 },
-  { id: 3, pid: 2 },
-  { id: 4, pid: 1 },
-  { id: 5, pid: 3 },
-  { id: 6, pid: 2 },
-];
-
-/**
- * @rootId 跟节点的 pid
- * */
-function fn(array, rootId) {
-  // 第一次遍历： 借助map对象， 转成以id为 key , item为value的 对象
-  let map = {};
-  array.forEach((item) => {
-    map[item.id] = { ...item }; // 浅拷贝
-  });
-  const res = [];
-  // 第二次遍历： 组装 
-  array.forEach((item) => {
-    let { id, pid } = item;
-    // 如果是根节点，那么直接push 给 res
-    if (pid === rootId) {
-      res.push(map[id]);
-      // 否则，操作后面的 map,判断是否有 children，没有就复制给一个
-    } else {
-      if (map[pid].children) {
-        map[pid].children.push(map[id]);
-      } else {
-        map[pid].children = [map[id]];
-      }
-    }
-  });
-  return res;
-}
-console.log(JSON.stringify(fn(arr, 0)));
 ```
 
 ## 5. 自己实现`Array.prototype.splice`
@@ -251,7 +192,7 @@ LazyMan('Tony').eat('lunch').eat('dinner').sleepFirst(5).sleep(10).eat('junk foo
 ```
 
 - 关键点：tasklist 任务队列，注意优先级
-- next 实际执行下一个任务
+- `next` 实际执行下一个任务
 
 ```javascript
 class LazyManClass {
@@ -315,7 +256,11 @@ LazyMan('Tony').eat('lunch').eat('dinner').sleepFirst(5).sleep(4).eat('junk food
 
 ## 8. `[abc[bcd[def]]]` 转成对象
 
-- 正则 ：`/[\[\]]/`
+- 注意点
+	- 正则 ：`/[\[\]]/`
+		- 需要 `[]` 包裹起来
+	-  for 倒着遍历
+### 题目
 
 ```javascript
 /**
@@ -324,6 +269,36 @@ LazyMan('Tony').eat('lunch').eat('dinner').sleepFirst(5).sleep(4).eat('junk food
  * 示例二：'[abc[bcd[def]]]' -->
  *			{value: 'abc', children: {value: 'bcd', children: {value: 'def'}}}
  */
+```
+
+### for 倒着遍历
+
+```javascript
+const str = "[abc[bcd[def]]]";
+let values = str.split(/[\[\]]/).filter((item) => !!item);
+
+// 从后往前遍历构建对象
+let result = null;
+for (let i = values.length - 1; i >= 0; i--) {
+  if (result === null) {
+    // 第一次遍历，创建最内层对象
+    result = { value: values[i] };
+  } else {
+    // 后续遍历，将之前的结果作为 children
+    result = {
+      value: values[i],
+      children: result,
+    };
+  }
+}
+console.log(result);
+```
+
+
+### reduce 的方案
+
+```javascript
+
 
 let str = "[abc[bcd[def]]]";
 // 先转成数组，再递归处理
@@ -394,7 +369,6 @@ function howOld(tree, name) {
 }
 console.log(howOld(tree, "e"));
 console.log(howOld(tree, "c"));
-
 ```
 
 ## 10. 罗马数字转化整数
@@ -453,11 +427,11 @@ let intToRoman = function (num) {
 - `while(times--)`
 
 ```javascript hl:8
-Promise.retry = function (promiseFn, times = 3) {
+Promise.retry = function (fn, times = 3) {
   return new Promise(async (resolve, reject) => {
     while (times--) {
       try {
-        let ret = await promiseFn();
+        let ret = await fn();
         resolve(ret);
         // 成功了就直接break了
         break;
