@@ -6,7 +6,7 @@
 
 ## 目录
 <!-- toc -->
- ## 队列类型 
+ ## 1. 队列类型 
 
 这个库提供了3种优先队列实现：
 
@@ -14,11 +14,11 @@
 2. **MinPriorityQueue**: 最小优先队列，数值越小优先级越高
 3. **MaxPriorityQueue**: 最大优先队列，数值越大优先级越高
 
-## 基本用法
+## 2. 基本用法
 
-### 2. 创建队列
+### 2.1. 创建队列
 
-#### 2.1 通用 PriorityQueue
+#### 2.1.1. 通用 PriorityQueue
 
 ```javascript
 // 创建一个自定义比较器的优先队列
@@ -31,7 +31,7 @@ const customQueue = new PriorityQueue({
 });
 ```
 
-#### 2.2 最小优先队列
+#### 2.1.2. 最小优先队列
 
 ```javascript
 // 简单数字优先队列
@@ -43,7 +43,7 @@ const objectMinQueue = new MinPriorityQueue({
 });
 ```
 
-#### 2.3 最大优先队列
+#### 2.1.3. 最大优先队列
 
 ```javascript
 // 简单数字优先队列
@@ -55,9 +55,9 @@ const objectMaxQueue = new MaxPriorityQueue({
 });
 ```
 
-### 3. 核心 API
+### 2.2. 核心 API
 
-#### 3.1 入队 (enqueue)
+#### 2.2.1. 入队 (enqueue)
 
 ```javascript
 // 基础入队
@@ -67,7 +67,7 @@ queue.enqueue(element);
 queue.enqueue(element, priority);
 ```
 
-#### 3.2 出队 (dequeue)
+#### 2.2.2. 出队 (dequeue)
 
 ```javascript hl:2
 const element = queue.dequeue();
@@ -75,21 +75,22 @@ const element = queue.dequeue();
 // Min/MaxPriorityQueue: 返回 { priority, element } 对象
 ```
 
-#### 3.3 查看队首元素 (front)
+#### 2.2.3. 查看队首元素 (front)
 
 ```javascript
 const frontElement = queue.front();
 // 不移除元素，只返回队首元素
 ```
 
-#### 3.4 查看队尾元素 (back)
+#### 2.2.4. 查看队尾元素 (back)
 
 ```javascript
 const backElement = queue.back();
 // 返回优先级最低的元素
 ```
 
-#### 3.5 其他实用方法
+#### 2.2.5. 其他实用方法
+
 ```javascript
 // 检查队列是否为空
 queue.isEmpty(); // 返回 boolean
@@ -104,9 +105,9 @@ queue.toArray(); // 返回数组
 queue.clear();
 ```
 
-### 4. 实际应用示例
+### 2.3. 实际应用示例
 
-#### 4.1 简单数字优先队列
+#### 2.3.1. 简单数字优先队列
 
 ```javascript
 const minQueue = new MinPriorityQueue();
@@ -120,7 +121,7 @@ console.log(minQueue.dequeue()); // { priority: 5, element: 5 }
 console.log(minQueue.dequeue()); // { priority: 10, element: 10 }
 ```
 
-#### 4.2 对象优先队列
+#### 2.3.2. 对象优先队列
 
 ```javascript
 const taskQueue = new MaxPriorityQueue({

@@ -1,41 +1,25 @@
 
-# 前言
+# 删除排序链表中的重复元素 II：删除所有重复的节点
 
 
->  链表相关算法
-
+> [82. 删除排序链表中的重复元素 II](https://leetcode.cn/problems/remove-duplicates-from-sorted-list-ii/)
 
 
 ## 目录
 <!-- toc -->
- ## 目录 
+ ## 1. 总结 
 
-### 删除排序链表中的重复元素：去重，保留重复元素
+- 快慢指针
+	- `slow = d` ，但 `fast = head`
+	- 如果不等
+		- 快慢指针都先后移动
+	- 如果相等
+		- while 循环：fast 向后移动直到找到不重复的值，→ 跳过了所有重复节点
+		- 慢指针指向 fast.next： slow.next = fast.next
+		- 快指针向后移动我一位
 
-> [83. 删除排序链表中的重复元素：去重](/post/uw3wgqBK.html)
 
-```javascript
-var deleteDuplicates = function (head) {
-  if (!head) return null;
-  let fast = head;
-  let slow = head;
-  while (fast) {
-    if (fast.val !== slow.val) {
-      slow.next = fast;
-      slow = slow.next;
-    }
-    fast = fast.next;
-  }
-  slow.next = null;
-  return head;
-};
-```
-
-### 删除排序链表中的重复元素 II：删除所有重复的节点
-
-> [82. 删除排序链表中的重复元素 II：删除所有重复的节点](/post/YWeTQIpG.html)
-
-```javascript
+```javascript hl:13
 var deleteDuplicates = function (head) {
   if (!head || !head.next) return head;
   let d = new ListNode(-1);
@@ -59,5 +43,9 @@ var deleteDuplicates = function (head) {
   }
   return d.next;
 };
+
 ```
 
+## 2. 相关题目
+
+[83. 删除排序链表中的重复元素：去重](/post/uw3wgqBK.html)

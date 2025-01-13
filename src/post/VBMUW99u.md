@@ -8,7 +8,7 @@
 <!-- toc -->
  ## 题目及理解 
 
-![image.png600|560](https://832-1310531898.cos.ap-beijing.myqcloud.com/202407281620623.png?imageSlim)
+![image.png600|616](https://832-1310531898.cos.ap-beijing.myqcloud.com/202407281620623.png?imageSlim)
 
 ## 解题思路
 

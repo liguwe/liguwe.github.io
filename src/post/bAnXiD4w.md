@@ -46,16 +46,11 @@ var mergeKLists = function (lists) {
     }
     p = p.next;
   }
-
   return d.next;
 };
-
 ```
 
 > 能通过，虽然性能不怎么好
-
-
-
 
 ## 2. 题目
 

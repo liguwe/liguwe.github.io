@@ -22,43 +22,24 @@
 ## 代码
 
 ```javascript
-/**
- * Definition for singly-linked list.
- * function ListNode(val, next) {
- *     this.val = (val===undefined ? 0 : val)
- *     this.next = (next===undefined ? null : next)
- * }
- */
-/**
- * @param {ListNode} head
- * @param {number} n
- * @return {ListNode}
- */
 var removeNthFromEnd = function (head, n) {
   let fast = head;
-  
   let d = new ListNode(-1);
   d.next = head;
-  
   let slow = d;
-  
-
   // 快指针先走 n 步
   for (let i = 0; i < n; i++) {
     fast = fast.next;
   }
-
   // 快指针走到头
   // 并且慢指针也跟着走，快指针走到头时，慢指针正好指向倒数第 n 个节点
   while (fast) {
     fast = fast.next;
     slow = slow.next;
   }
-
   // 删除 slow 指向的节点
   // show = slow.next.next;  // 错误
   slow.next = slow.next.next; // 正确
-
   return d.next;
 };
 

@@ -865,6 +865,8 @@
 
     - [二维数组的遍历技巧](post/w3iTPDvD.md)
 
+    - [有序矩阵中第 K 小的元素：done](post/qUTp5E30.md)
+
     - [转置矩阵](post/07zzm3dV.md)
 
     - [二维网格迁移](post/DiITfpcu.md)
@@ -896,9 +898,9 @@
   - [链表](post/eNfFhldl.md)
 
 
-    - [链表：Python 描述](post/UsuqHDfR.md)
+    - [链表：JavaScript 描述](post/NYupAZnS.md)
 
-    - [链表：JavaScript 描述](post/WEXO4GNv.md)
+    - [链表：Python 描述](post/MbMTs4zk.md)
 
     - [删除链表的倒数第 N 个结点](post/Dx4dXW0h.md)
 
@@ -907,6 +909,10 @@
     - [合并 K 个升序链表](post/bAnXiD4w.md)
 
     - [反转单链表：反转全部、反转前 N 个节点、反转一部分](post/Erpll7fa.md)
+
+    - [删除排序链表中的重复元素 II：删除所有重复的节点](post/YWeTQIpG.md)
+
+    - [删除排序链表中的重复元素：去重](post/uw3wgqBK.md)
 
     - [分隔链表](post/mpU3P27e.md)
 
@@ -919,6 +925,10 @@
     - [相交链表](post/iE1egbNj.md)
 
     - [链表的中间结点：寻找链表的中间节点](post/u6isnJyW.md)
+
+    - [从未排序的链表中移除重复元素：不是去重](post/G7IHCRyR.md)
+
+    - [删除链表的中间节点](post/Q5YbJ1uc.md)
 
   - [栈](post/OqMXtBis.md)
 
@@ -945,6 +955,8 @@
     - [优先级队列：Leetcode 中提供的数据结构介绍](post/b9TQxqhE.md)
 
     - [使用两个栈实现队列](post/FIoFU4yN.md)
+
+    - [查找和最小的 K 对数字](post/Qz3JAg2j.md)
 
   - [哈希表](post/karVhMIc.md)
 
@@ -1177,6 +1189,8 @@
 
     - [反直觉的概率问题](post/kd5Z2keW.md)
 
+    - [丑数 II](post/ueyDlQLF.md)
+
   - [其他算法](post/PezUUN25.md)
 
 
@@ -1326,8 +1340,6 @@
     - [相等行列对](post/PyufNw5E.md)
 
     - [从字符串中移除星号](post/0celKk5C.md)
-
-    - [删除链表的中间节点](post/32DIiyqF.md)
 
 # 第四部分 计算机科学
 
