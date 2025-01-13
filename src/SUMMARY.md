@@ -994,8 +994,6 @@
 
     - [二叉树遍历的迭代解法](post/7qavivLW.md)
 
-    - [二叉树的层次遍历与 BFS 算法](post/A1KcDrHy.md)
-
     - [多叉树的遍历：Python 描述](post/023tCkgY.md)
 
     - [二叉树与单链表的关系](post/zl5S4whG.md)
@@ -1051,16 +1049,55 @@
 
     - [从二叉搜索树到更大和树：BST 转化累加树](post/dklpiYZ9.md)
 
-  - [堆](post/XETSyIUe.md)
+  - [二叉树：分解问题](post/LRbBOioH.md)
 
 
-    - [二叉堆](post/p0d1ryAU.md)
+    - [对称二叉树：判断树是否轴对称](post/T481SRQo.md)
 
-    - [数据结构中的堆和内存中的堆的区别](post/WmCGqbn5.md)
+    - [二叉树中的最大路径和](post/R6PyanFb.md)
 
-    - [堆内存和栈内存的区别](post/IJlWLhqg.md)
+    - [翻转等价二叉树：判断这两棵二叉树是否是翻转等价的](post/pN7LUKNW.md)
 
-    - [二叉堆与优先级队列的关系](post/LkjFKPI0.md)
+  - [二叉树：后序位置](post/tNmoR6Iu.md)
+
+
+    - [平衡二叉树](post/PBXqDzEc.md)
+
+  - [二叉树：层次遍历](post/LpbspKpp.md)
+
+
+    - [二叉树的层序遍历](post/R0Kf0O9y.md)
+
+    - [二叉树的锯齿形层序遍历：Z 字形遍历](post/u2EzuHIX.md)
+
+    - [二叉树的层序遍历 II：自底向上的层序遍历](post/uTTr350G.md)
+
+    - [填充每个节点的下一个右侧节点指针 II](post/Mc521sJI.md)
+
+    - [在每个树行中找最大值](post/jwDJNVZS.md)
+
+    - [二叉树的层平均值](post/8uCGIRaD.md)
+
+    - [二叉树最大宽度](post/NwYcXecU.md)
+
+    - [二叉树的完全性检验：判断完全二叉树](post/rctIpgsW.md)
+
+    - [最大层内元素和：返回哪一层和最大](post/AeR8e4As.md)
+
+    - [层数最深叶子节点的和：返回最后一层的和](post/n5cYJSe2.md)
+
+    - [奇偶树：第 0 层递增，第 1 层递减](post/6jUq0Gvf.md)
+
+  - [堆](post/tQxgvOZ2.md)
+
+
+    - [二叉堆](post/LS71vyvN.md)
+
+    - [数据结构中的堆和内存中的堆的区别](post/5oOMvie9.md)
+
+    - [堆内存和栈内存的区别](post/qVsl6UPB.md)
+
+    - [二叉堆与优先级队列的关系](post/ukZ6x3Qh.md)
 
   - [其他数据结构](post/6RCds46A.md)
 
@@ -1306,8 +1343,6 @@
     - [最大连续 1 的个数 III](post/oks1ICIR.md)
 
     - [字符串的最大公因子](post/J215HMHH.md)
-
-    - [最大层内元素和](post/eGA6RuWp.md)
 
     - [独一无二的出现次数](post/5q4zZchl.md)
 

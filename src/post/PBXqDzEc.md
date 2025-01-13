@@ -1,3 +1,14 @@
+
+# 平衡二叉树
+
+
+> [110. 平衡二叉树](https://leetcode.cn/problems/balanced-binary-tree/)
+
+- **平衡二叉树** 是指该树所有节点的左右子树的高度相差不超过 1
+- 不必要完全遍历完成，发现不满足的直接 return
+- 需要在后序位置计算
+
+```javascript hl:10,18,20,24
 var isBalanced = function (root) {
   // 记录二叉树是否平衡
   let res = true;
@@ -27,3 +38,5 @@ var isBalanced = function (root) {
   maxDepth(root);
   return res;
 };
+
+```
