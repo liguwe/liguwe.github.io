@@ -1,7 +1,35 @@
-/**
- * @param {number[][]} grid
- * @return {number}
- */
+
+# 不同岛屿的数量：形状不同的岛屿
+
+
+`#DFS` 
+
+> [694. 不同岛屿的数量](https://leetcode.cn/problems/number-of-distinct-islands/)
+> 
+
+
+## 目录
+<!-- toc -->
+ ## 1. 题目 
+
+![图片&文件](./files/20250115.png)
+
+![图片&文件](./files/20250115-1.png)
+
+## 2. 思路
+
+- 对于形状相同的岛屿，如果从同一起点出发，`dfs` 函数遍历的顺序肯定是一样的
+	- 因为遍历顺序是写死在你的递归函数里面的，不会动态改变
+
+![图片&文件](./files/20250115-2.png)
+
+## 3. 代码
+
+- 使用 Set 集合，方便去重
+- 后续位置撤销时，不能 pop
+	- 因为 不记录撤销，无法保证遍历的唯一性
+
+```javascript
 var numDistinctIslands = function (grid) {
   let m = grid.length,
     n = grid[0].length;
@@ -12,8 +40,7 @@ var numDistinctIslands = function (grid) {
       // 发现是一个岛屿，淹掉这个岛屿，同时存储岛屿的序列化结果
       if (grid[i][j] === 1) {
         let path = [];
-        // 初始的方向可以随便写，不影响正确性，代表首尾
-        dfs(i, j, path, 0);
+        dfs(i, j, path, 999); // 初始的方向可以随便写，不影响正确性，代表首尾
         console.log(path); // 类似于 [999, 2, 4, 1, -1, -4, -2, -999]
         islands.add(path.join(","));
       }
@@ -38,3 +65,9 @@ var numDistinctIslands = function (grid) {
     path.push(-dir);
   }
 };
+
+```
+
+## 4. 相似题目
+
+- [200. 岛屿数量](/post/eOIoBazB.html)
