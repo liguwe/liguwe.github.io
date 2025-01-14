@@ -750,11 +750,13 @@
 
     - [101 → 一百零一](post/ieewqXcE.md)
 
-    - [合并连续的数字](post/cjXigrCc.md)
+    - [合并连续的数字：1,2,3,5,7,8,9 => 1~3,5,7~9](post/43JF5Yhk.md)
 
     - [压缩算法：aabcccccaaa 会变为 a2b1c5a3](post/6zc70BFa.md)
 
     - [打平数组转成树形结构](post/MAIMTxPT.md)
+
+    - [常见编程题](post/I5GPxZEH.md)
 
   - [前端职业篇](post/Sj3Qp80Z.md)
 
@@ -770,8 +772,6 @@
     - [常见面试题：篇三](post/aIgYid4G.md)
 
     - [常见面试题：篇四](post/QVpHDBu3.md)
-
-    - [常见面试题：篇五](post/W7sOuX9B.md)
 
     - [常见面试题：篇六](post/xivr5UbI.md)
 
@@ -877,7 +877,13 @@
 
     - [二维数组的遍历技巧](post/nyKWO1Wx.md)
 
+    - [搜索二维矩阵：打平成一维也严格递增](post/gNK4bQAR.md)
+
+    - [搜索二维矩阵 II：行递增、列递增](post/BExiJHT4.md)
+
     - [有序矩阵中第 K 小的元素](post/dmG8kMBr.md)
+
+    - [重塑矩阵：m*n 转成 r*c](post/ltZ8hyB9.md)
 
     - [转置矩阵](post/xEEiWiHt.md)
 
