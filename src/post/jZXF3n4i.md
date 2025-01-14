@@ -1,3 +1,15 @@
+
+# 搜索旋转排序数组 II：从两个排序数组中查找目标值，但存在重复元素
+
+
+
+> [81. 搜索旋转排序数组 II](https://leetcode.cn/problems/search-in-rotated-sorted-array-ii/)
+
+
+同 [33. 搜索旋转排序数组：从两个有序组成的数组中找目标值](/post/3OywtA3D.html) ， 但 数组中可能**存在重复元素**， 这个变化会导致算法的时间复杂度在最坏情况下退化到 `O(n)`
+
+
+```javascript
 var search = function (nums, target) {
   let left = 0,
     right = nums.length - 1;
@@ -37,3 +49,9 @@ var search = function (nums, target) {
   // while 结束还没找到，说明 target 不存在
   return false;
 };
+
+```
+
+
+
+

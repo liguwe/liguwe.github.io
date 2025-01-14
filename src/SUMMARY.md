@@ -835,11 +835,25 @@
   - [数组：二分搜索](post/SjJwusEd.md)
 
 
+    - [搜索旋转排序数组：从两个有序组成的数组中找目标值](post/3OywtA3D.md)
+
     - [在排序数组中查找元素的第一个和最后一个位置](post/GtInKqrA.md)
 
-    - [统计目标成绩的出现次数](post/kHTgVXka.md)
+    - [搜索插入位置：有序数组中插入 target，保证有序，返回插入的位置](post/YbqtB8tz.md)
+
+    - [搜索旋转排序数组 II：从两个排序数组中查找目标值，但存在重复元素](post/jZXF3n4i.md)
+
+    - [寻找峰值：峰值元素是指其值严格大于左右相邻值的元素](post/28BQAhVi.md)
+
+    - [LCR.统计目标成绩的出现次数](post/3Y1DMDjO.md)
+
+    - [LCR.点名：从一个升序数组中找出缺失的数字](post/8rcoIEac.md)
+
+    - [找到 K 个最接近的元素：最靠近 x 的 k 个数](post/58OE7SUw.md)
 
     - [二分查找](post/hXCLJdFf.md)
+
+    - [山脉数组的峰顶索引：开口向上的抛物线](post/0cRgczm2.md)
 
   - [数组：前缀和与前缀积](post/JxHsXj2o.md)
 
@@ -880,6 +894,10 @@
     - [反转字符串](post/xU7nRLlI.md)
 
     - [有序转化数组：f(x) = a * x * x + b * x + c](post/9lYoyaO3.md)
+
+    - [判断子序列](post/zK1TTRCJ.md)
+
+    - [匹配子序列的单词数： words中是 s 的子序列的单词个数](post/O5nQtWkx.md)
 
     - [有序数组的平方](post/nK4MRZdv.md)
 
@@ -1353,8 +1371,6 @@
     - [递增的三元子序列](post/ofBHzcft.md)
 
     - [反转字符串中的元音字母](post/IGVZIdTq.md)
-
-    - [判断子序列](post/ycMfK6Wn.md)
 
     - [字符串解码](post/2HPJ1OeF.md)
 

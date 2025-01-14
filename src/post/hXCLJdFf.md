@@ -1,6 +1,7 @@
 
 # 二分查找
 
+`#算法/二分搜索` 
 
 > [704. 二分查找](https://leetcode.cn/problems/binary-search/)
 
