@@ -1,46 +1,23 @@
-/**
- * @param {string} s
- * @return {string}
- */
-var decodeString = function (s) {
-  let countStack = [];
-  let strStack = [];
-  let currentStr = "";
-  let k = 0;
-
-  for (let i = 0; i < s.length; i++) {
-    // ①
-    // 如果是数字，可能是多位数，比如 "12[abc]"，所有处理两次遍历到的数字，计算出真正的数字
-    // 例如：第一次遍历到的是1，第二次遍历到的是2，那么真正的数字就是 1 * 10 + 2 = 12
-    if (!isNaN(s[i])) {
-      k = k * 10 + parseInt(s[i]);
-    }
-    // ② 如果是左括号
-    else if (s[i] === "[") {
-      // 将出现的次数入栈
-      countStack.push(k);
-      // 字符串入栈
-      strStack.push(currentStr);
-      // 重置出现次数和字符串
-      k = 0;
-      currentStr = "";
-    }
-    // ③ 如果是右括号
-    else if (s[i] === "]") {
-      // 出栈
-      let count = countStack.pop();
-      // 出栈
-      let str = strStack.pop();
-      // 拼接字符串
-      currentStr = str + currentStr.repeat(count);
-    }
-    // ④ 如果是字母，即普通字符，更新当前字符串，用于后面拼接逻辑
-    else {
-      // 拼接字符串, 例如 "abc"，"abc" 就是一个字符串
-      // 例如 "12[abc]"，"abc" 就是一个字符串
-      currentStr += s[i];
+function setZeroes(matrix) {
+  const rows = new Set();
+  const cols = new Set();
+  const m = matrix.length;
+  const n = matrix[0].length;
+  // 第一次遍历，记录0的位置
+  for (let i = 0; i < m; i++) {
+    for (let j = 0; j < n; j++) {
+      if (matrix[i][j] === 0) {
+        rows.add(i);
+        cols.add(j);
+      }
     }
   }
-
-  return currentStr;
-};
+  // 第二次遍历，置零
+  for (let i = 0; i < m; i++) {
+    for (let j = 0; j < n; j++) {
+      if (rows.has(i) || cols.has(j)) {
+        matrix[i][j] = 0;
+      }
+    }
+  }
+}

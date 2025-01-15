@@ -1,7 +1,7 @@
 
 # 二叉树中的最长交错路径
 
-`#leetcode`   `#2024/09/04`  `#算法`   `#算法/二叉树` 
+`#leetcode`    `#算法`   `#算法/二叉树` 
 
 
 ## 目录
@@ -10,7 +10,7 @@
 
 > https://leetcode.cn/problems/longest-zigzag-path-in-a-binary-tree/description
 
-![cos-blog-832-34-20241012](https://blog-1310531898.cos.ap-beijing.myqcloud.com/832-34-20241012/Pasted%20image%2020240904081336.png)
+![cos-blog-832-34-20241012|904](https://blog-1310531898.cos.ap-beijing.myqcloud.com/832-34-20241012/Pasted%20image%2020240904081336.png)
 
 ## 思路：二叉树的分解问题的解题思路
 
