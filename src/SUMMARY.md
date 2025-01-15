@@ -505,66 +505,68 @@
 
     - [UmiJS 与 Remix](post/MafisQPz.md)
 
-  - [前端工程化](post/xH4GqfJC.md)
+  - [前端工程架构](post/WKZkCfZO.md)
 
 
-    - [字节跳动现代 Web 开发实践](post/0AY8flZD.md)
+    - [字节跳动现代 Web 开发实践](post/ickgvO9n.md)
 
-    - [前端工程化](post/szkiuGEL.md)
+    - [前端工程化](post/tjHNqrQL.md)
 
-    - [前端工程化历程](post/SmEWa3vW.md)
+    - [前端工程化历程](post/I5DAbuzn.md)
 
-    - [前端工程化 SOP](post/TVQ74e9N.md)
+    - [前端工程化 SOP](post/atVR55jp.md)
 
-    - [前端基建 SOP](post/vTAvrPwF.md)
+    - [前端基建 SOP](post/oNAeZf4q.md)
 
-    - [npm 私服搭建](post/HVgrVtzo.md)
+    - [npm 私服搭建](post/PQcbEwE0.md)
 
-    - [如何提高前端研发效能](post/d0Y5kPXH.md)
+    - [如何提高前端研发效能](post/gzqizpYj.md)
 
-    - [如何前端脚手架 "泼出去的水" 的问题](post/7Dw67Q4T.md)
+    - [如何前端脚手架 "泼出去的水" 的问题](post/MQoxpdC7.md)
 
-    - [前端基础建设路线参考](post/uha9DUzD.md)
+    - [前端基础建设路线参考](post/mq7Um4QD.md)
 
-    - [Webpack 5 的 Module Federation](post/1XLdWqXT.md)
+    - [Webpack 5 的 Module Federation](post/L1Fs4pAL.md)
 
-    - [开源的 git 托管工具](post/HyOwYyep.md)
+    - [开源的 git 托管工具](post/XzF26Lr2.md)
 
-    - [webpack 性能优化的思路](post/HnQvusuF.md)
+    - [webpack 性能优化的思路](post/MS35eXXb.md)
 
-    - [vite 中如何使用 Module Federation](post/G2l3Qo4X.md)
+    - [vite 中如何使用 Module Federation](post/fS11dQav.md)
 
-    - [主流的前端构建工具](post/z4DCNNit.md)
+    - [主流的前端构建工具](post/EYKS8diB.md)
 
-    - [前端构建提速的体系化思路](post/j7eKFJK3.md)
+    - [前端构建提速的体系化思路](post/mDaQCvfP.md)
 
-    - [DevOps 开源项目](post/d8y9QnhZ.md)
+    - [DevOps 开源项目](post/eTA8yPRK.md)
 
-    - [Rspack 分享](post/YIDdlLYJ.md)
+    - [Rspack 分享](post/va9aj0SO.md)
 
-    - [Webpack 5](post/FA9eeJBG.md)
+    - [Webpack 5](post/OLTBrpXL.md)
 
-    - [Eslint 的原理](post/NzYl3Na2.md)
+    - [Eslint 的原理](post/TnFTVOH9.md)
 
-    - [圈复杂度](post/2Qr64dbu.md)
+    - [圈复杂度](post/WUF6Gpqu.md)
 
-    - [Umi 4 的设计思路](post/Ky3jgjsx.md)
+    - [Umi 4 的设计思路](post/5U6P8llP.md)
 
-    - [vite 之 import 关键词](post/AyZjE3qc.md)
+    - [vite 之 import 关键词](post/480IQCyv.md)
 
-    - [Turbopack 与 rspack](post/nxcBBU7S.md)
+    - [Turbopack 与 rspack](post/2J65N6zq.md)
 
-    - [使用 Babel 重构或迁移前端工程](post/lxfZ3hAW.md)
+    - [使用 Babel 重构或迁移前端工程](post/yTdRf92y.md)
 
-    - [Babel 插件开发](post/KTLzx2SM.md)
+    - [Babel 插件开发](post/4FqWsNcf.md)
 
-    - [Babel  的原理（篇一）](post/z2UDSOIq.md)
+    - [Babel  的原理（篇一）](post/ZhD2GFHj.md)
 
-    - [Babel  的原理（篇二）](post/AKXAKgXx.md)
+    - [Babel  的原理（篇二）](post/yAkXzolT.md)
 
-    - [Webpack 的三种hash模式](post/dJ7Imhhy.md)
+    - [分享：美团的产研一体化协作平台](post/AMSCYdhg.md)
 
-    - [前端灰度发布](post/Q4whZF0w.md)
+    - [好文：美团前端工程架构的演变](post/Y6vFnprz.md)
+
+    - [前端灰度发布](post/xfYBA3P1.md)
 
   - [前端架构设计](post/rxjFpXLk.md)
 
@@ -576,6 +578,8 @@
     - [前端研发工作台](post/gSioBK35.md)
 
     - [微前端原理（篇一）](post/zz9by6nG.md)
+
+    - [SystemJS 和模块联邦（Module Federation）的特点和差异](post/4y5sYbTd.md)
 
     - [微前端原理（篇三：乾坤）](post/fIZE0FBD.md)
 
@@ -593,9 +597,11 @@
 
     - [常见的设计模式](post/li3s0nnW.md)
 
-    - [前端常见的架构思路](post/sC1wfnBv.md)
+    - [前端常见的架构思路：篇一](post/o0k74HtY.md)
 
     - [Serverless（无服务器计算）](post/X4FOyp6s.md)
+
+    - [前端常见的架构思路：篇二](post/3PFxmPt6.md)
 
     - [实现一个简单的插件系统](post/ngTvpa9C.md)
 
@@ -604,6 +610,10 @@
     - [度量前端架构](post/8yZQNsj6.md)
 
     - [技术架构与业务架构](post/4Wk1lQ65.md)
+
+    - [前端指标监控与业务指标监控](post/WzrwJoGX.md)
+
+    - [设计协同：D2C 、C2D](post/rMWWn2FF.md)
 
     - [编程思想&范式](post/UOYZNWN9.md)
 
@@ -675,6 +685,8 @@
 
     - [Vite 和 Webpack 在热更新（HMR - Hot Module Replacement）机制上的主要区别](post/FdYgQBvP.md)
 
+    - [Webpack 的三种hash模式](post/4ICzYFX6.md)
+
     - [Source Map 的本质和实现原理](post/36bfPma6.md)
 
     - [浏览器对 Source Map 的支持机制和实现原理](post/4UfAo5Hi.md)
@@ -727,9 +739,13 @@
 
     - [调研：低代码引擎技术白皮书](post/kP80QffY.md)
 
+    - [低代码原理与标准](post/wTJLfuSN.md)
+
     - [好文：低代码实现原理](post/zSZZrJH7.md)
 
     - [好文：阿里低代码引擎和生态建设实战及思考](post/wWIIK2S8.md)
+
+    - [调研：各类大会对低代码的分享](post/Ic6hz0sF.md)
 
     - [好文：低代码探索之路](post/2To6ToKq.md)
 
@@ -796,14 +812,18 @@
 
     - [常见面试题：篇八](post/xSdT33M3.md)
 
-  - [前端工程师](post/jXX24Wpi.md)
+  - [前端的思考](post/tfIvQ4py.md)
 
 
-    - [前端的思考：随记](post/SD9lPCrC.md)
+    - [前端的思考：随记](post/C528vZau.md)
 
-    - [前端工程师在 AI 时代的机会与挑战](post/kiTYjJM6.md)
+    - [业务支撑与业务价值](post/ym6oXjvL.md)
 
-    - [前端开发与 AI 大模型的集成](post/4xtvehKY.md)
+    - [大模型下背景下的前端研发模式随记](post/TRkiyYpw.md)
+
+    - [前端工程师在 AI 时代的机会与挑战](post/Cn9d3WXu.md)
+
+    - [前端开发与 AI 大模型的集成](post/3l43Oqg6.md)
 
 # 第三部分 算法
 
@@ -822,6 +842,11 @@
     - [算法复杂度](post/If23Pt1Q.md)
 
     - [刷题注意事项](post/iABQ1qAL.md)
+
+  - [字符串](post/yeqNmJln.md)
+
+
+    - [字符串的最大公因子](post/CKpOplFt.md)
 
   - [数组](post/Xbnjc5P7.md)
 
@@ -1002,6 +1027,8 @@
     - [简化路径](post/AZUekUhh.md)
 
     - [用队列实现栈](post/P1wE5nVP.md)
+
+    - [字符串解码](post/Gc1pFlwM.md)
 
   - [列队](post/M5c9DLRg.md)
 
@@ -1393,8 +1420,6 @@
 
     - [反转字符串中的元音字母](post/IGVZIdTq.md)
 
-    - [字符串解码](post/2HPJ1OeF.md)
-
     - [除法求值](post/qcuHyJMG.md)
 
     - [压缩字符串](post/LnjxaUFG.md)
@@ -1416,8 +1441,6 @@
     - [最近的请求次数](post/bR5umqsw.md)
 
     - [最大连续 1 的个数 III](post/oks1ICIR.md)
-
-    - [字符串的最大公因子](post/J215HMHH.md)
 
     - [独一无二的出现次数](post/5q4zZchl.md)
 

@@ -273,5 +273,5 @@
 ## 9. 更多参考
 
 - [5. 调研：低代码渲染设计思路](/post/L1eMpxb9.html)
-- [10. Webpack 5 的 Module Federation](/post/1XLdWqXT.html)
-- [11. vite 中如何使用 Module Federation](/post/G2l3Qo4X.html)
+- [10. Webpack 5 的 Module Federation](/post/L1Fs4pAL.html)
+- [11. vite 中如何使用 Module Federation](/post/fS11dQav.html)

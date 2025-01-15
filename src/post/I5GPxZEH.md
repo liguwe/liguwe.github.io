@@ -253,7 +253,6 @@ LazyMan('Tony').eat('lunch').eat('dinner').sleepFirst(5).sleep(4).eat('junk food
 ```javascript
 const str = "[abc[bcd[def]]]";
 let values = str.split(/[\[\]]/).filter((item) => !!item);
-
 // 从后往前遍历构建对象
 let result = null;
 for (let i = values.length - 1; i >= 0; i--) {

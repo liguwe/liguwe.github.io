@@ -46,7 +46,6 @@ function fn(arr, rootId) {
       children: [],
     };
   }
-
   let res = [];
   for (item of arr) {
     let { pid, id } = item;
@@ -56,7 +55,6 @@ function fn(arr, rootId) {
       map[pid].children.push(map[id]);
     }
   }
-
   function removeEmptyChildren(arr) {
     for (item of arr) {
       if (item.children.length === 0) {
@@ -66,12 +64,9 @@ function fn(arr, rootId) {
       }
     }
   }
-
   removeEmptyChildren(res);
-
   return res;
 }
-
 console.log(fn(arr, 0));
 
 ```
