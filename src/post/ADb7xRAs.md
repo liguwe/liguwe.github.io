@@ -8,5 +8,5 @@ Web 组件标准由三部分组成：[HTML 模板](https://developer.mozilla.org
 > 更多参考：[Web Component - Web API | MDN](https://developer.mozilla.org/zh-CN/docs/Web/API/Web_components)
 
 
->  更多详见 [12.  Shadow dom 与 Web Component](/post/CyrAt90j.html)
+>  更多详见 [12.  Shadow dom 与 Web Component](/post/WduU5SEG.html)
 
