@@ -1035,7 +1035,7 @@
 
     - [栈：Python 描述](post/bGGnOLBJ.md)
 
-    - [有效的括号](post/13Y59BCh.md)
+    - [有效的括号：判断括号字符串是否合法的](post/9pscEtNL.md)
 
     - [简化路径](post/AZUekUhh.md)
 
@@ -1123,9 +1123,7 @@
 
     - [二叉树的右视图](post/TR97KG1r.md)
 
-    - [翻转二叉树：翻转二叉树的两种解题思路](post/UnQzmCOv.md)
-
-    - [二叉树的直径](post/viI85w77.md)
+    - [二叉树的直径：左右子树的最大深度之和](post/KuQa712r.md)
 
     - [叶子相似的树](post/lVacl84h.md)
 
@@ -1165,14 +1163,27 @@
 
     - [从二叉搜索树到更大和树：BST 转化累加树](post/dklpiYZ9.md)
 
-  - [二叉树：分解问题](post/LRbBOioH.md)
+  - [二叉树：分解问题的思路](post/vAZ8lQ44.md)
 
 
-    - [对称二叉树：判断树是否轴对称](post/T481SRQo.md)
+    - [相同的树：判断两个二叉树是否相同](post/7aCfXgt1.md)
 
-    - [二叉树中的最大路径和](post/R6PyanFb.md)
+    - [对称二叉树：判断树是否轴对称](post/ne0jmkb0.md)
 
-    - [翻转等价二叉树：判断这两棵二叉树是否是翻转等价的](post/pN7LUKNW.md)
+    - [二叉树中的最大路径和](post/1gEFXoOV.md)
+
+    - [翻转二叉树：翻转二叉树的两种解题思路](post/FXRWryLF.md)
+
+    - [翻转等价二叉树：判断这两棵二叉树是否是翻转等价的](post/w8Y8Zw97.md)
+
+  - [二叉树：遍历一遍的思路](post/Axhr1al8.md)
+
+
+    - [二叉树的最小深度](post/1GnLYvXX.md)
+
+    - [N 叉树的最大深度](post/E4PUbKHP.md)
+
+    - [统计二叉树中好节点的数目：](post/9QVWyCl1.md)
 
   - [二叉树：后序位置](post/tNmoR6Iu.md)
 
@@ -1274,6 +1285,8 @@
 
     - [复原 IP 地址](post/AVLpB28Z.md)
 
+    - [单词拆分 II：加空格生成多少种句子](post/jet0cd5S.md)
+
     - [连续差相同的数字](post/7j6Detcr.md)
 
   - [DFS](post/fih72aLN.md)
@@ -1325,7 +1338,7 @@
 
     - [动态规划穷举的两种视角：不同的子序列个数](post/8xU0ZWUJ.md)
 
-    - [动态规划和回溯算法的思维转换：单词拆分](post/e9aA7SlZ.md)
+    - [动态规划和回溯算法：单词拆分与单词拆分 II](post/84QSpf9n.md)
 
     - [对动态规划进行空间压缩](post/vwQVRAv1.md)
 
@@ -1348,6 +1361,18 @@
     - [地下城游戏](post/V33uaQPS.md)
 
     - [最小路径和](post/5hbIiOkm.md)
+
+    - [不同的子序列： s 的子序列中 t 出现的个数](post/OmQJiWxK.md)
+
+    - [单词拆分：给定的字符串是否能由给定的单词集合组合成](post/7AkHuUCa.md)
+
+    - [最长递增子序列：最长递增子序列数量](post/6EsbUVS3.md)
+
+    - [零钱兑换：需要的最小硬币数](post/Z0feniYM.md)
+
+    - [俄罗斯套娃信封问题：最长子序列的二维版本](post/9XnZU4z3.md)
+
+    - [下降路径最小和：从第一行下降到最后一行最小路径合为多少？](post/WLcTkWmh.md)
 
   - [贪心算法](post/HM11BwdS.md)
 
@@ -1432,8 +1457,6 @@
     - [二叉树中的最长交错路径](post/sQHRad60.md)
 
     - [拥有最多糖果的孩子](post/OaLsmsxy.md)
-
-    - [统计二叉树中好节点的数目](post/CzkgVTfo.md)
 
     - [定长子串中元音的最大数目](post/YcYvXCo5.md)
 

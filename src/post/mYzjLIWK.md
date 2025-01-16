@@ -3,19 +3,22 @@
 
 `#算法/动态规划` 
 
+>  另外见 [322. 零钱兑换：需要的最小硬币数](/post/Z0feniYM.html)
+
+
 
 ## 目录
 <!-- toc -->
  ## 1. 总结 
 
-### 1.1. dp 数组方法
+### 1.1. dp 数组方法： `dp[i] 代表凑足 i 元所需要的最小硬币数量`
 
 注意点：
-- 最大值不好拼写 Infinity ，那就看题设中给的最大值，或者使用 Math.min
+- 最大值不好拼写 Infinity ，那就看题设中给的最大值，或者使用 `Math.min`
 	- 注意定义==常量== `const`
 - 注意长度，从 0 开始，长度为 `amount + 1`
 - 别想着需要使用==多少个硬币==
-	- 因为这是从 0 开始推导的，所以不需要关系需要多少个硬币，这是数学的后遗症吧？
+	- 因为这是从 `0` 开始推导的，所以不需要关系需要多少个硬币，这是数学的后遗症吧？
 
 ```javascript
 var coinChange = function (coins, amount) {
@@ -43,7 +46,6 @@ var coinChange = function (coins, amount) {
 
   return dp[amount] === MAX ? -1 : dp[amount];
 };
-
 ```
 
 

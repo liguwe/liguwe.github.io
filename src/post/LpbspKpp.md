@@ -4,57 +4,10 @@
 
 
 
+
 ## 目录
 <!-- toc -->
- ## 3. [二叉树的最小深度](https://leetcode.cn/problems/minimum-depth-of-binary-tree/) 
-
-这道题，前面使用`二叉树遍历的思路`和`分解问题的思路`都解过，这里使用 `层次遍历的思路（或者说是层次遍历框架）`来解决
-
-```javascript
-/**
- * @param {TreeNode} root
- * @return {number}
- */
-// ::::层次遍历的思路
-var minDepth = function (root) {
-    //   ::::如果根节点为空，直接返回0
-    if (root === null) return 0;
-    // ::::默认深度为1
-    let depth = 1;
-    /**
-     * ::::层次遍历框架
-     */
-    let q = [root];
-
-    while (q.length) {
-        const size = q.length;
-        for (let i = 0; i < size; i++) {
-            // ::::注意：是 shift() 而不是 pop()
-            const node = q.shift();
-            // ::::如果到达叶子节点，返回深度
-            if (node.left === null && node.right === null) {
-                return depth;
-            }
-            if (node.left) {
-                q.push(node.left);
-            }
-            if (node.right) {
-                q.push(node.right);
-            }
-        }
-        // ::::深度加一
-        depth++;
-    }
-};
-```
-
-- 注意点：一般来讲，`层次遍历`特别适合来求`最小值` ，请问这是为什么呢？
-    - 回答：这里省略，想想就就知道了，再结合下图看看就明白了
-        - ![image.png](https://832-1310531898.cos.ap-beijing.myqcloud.com/e80c234bde21ae68b50486fcd25f1061.png)
-- 另：一般来讲，层次遍历复杂度低于 DFS？
-    - 因为不一定需要遍历完成，中途找到了就返回了
-
-## 4. [最大层内元素和](https://leetcode.cn/problems/maximum-level-sum-of-a-binary-tree/)
+ ## 4. [最大层内元素和](https://leetcode.cn/problems/maximum-level-sum-of-a-binary-tree/) 
 
 ![image.png|584](https://832-1310531898.cos.ap-beijing.myqcloud.com/6a912bcd4a453071884f3f4c510d2196.png)
 

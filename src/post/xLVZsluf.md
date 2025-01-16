@@ -2,7 +2,7 @@
 # 二叉树算法概述
 
 
-`#算法/二叉树` `#2023/04/22`
+`#算法/二叉树` 
 
 
 ## 目录
@@ -364,91 +364,7 @@ var count = function(root) {
 > [!info]
 > 一旦你发现题目和 **子树有关**，那大概率要给函数设置合理的定义和返回值，在`后序位置`写代码了。
 
-## 8. 二叉树的直径
 
-> https://leetcode.cn/problems/diameter-of-binary-tree/
-
-![image.png](https://832-1310531898.cos.ap-beijing.myqcloud.com/0679936de5cd6009728269dde4e770b4.png)
-
-### 8.1. `直径` 与 `最长直径` 定义
-
-1. **找到最长路径**：从二叉树中的`任意一个节点`出发，找到连接到`另一个节点`的最长路径。这个路径可能会经过多个节点和边。
-2. **路径的长度**：最长路径上的`边的数量`就是二叉树的`最大直径`。注意，这个路径不一定需要经过根节点 
-
-解决这题的关键在于，`「直径」长度`，就是`一个节点的左右子树的最大深度之和`。
-
-> [!warning]
-> **仔细读这句话：每一条二叉树的「直径」长度，就是一个节点的左右子树的最大深度之和，然后就应该有解题思路了**
-
-**所以：算出每个节点的直径，然后再求直径的最大值即可。**
-
-所以，现在让我求整棵树中的`最长「直径」`，那直截了当的思路就是遍历整棵树中的每个节点，然后通过每个节点的左右子树的`最大深度`算出`每个节点的「直径」`，最后把所有「直径」求个最大值即可
-
-### 8.2. 不好的解法，复杂度较高，双重递归，`O(N^2)` 
-
->  ==可以先不用看了，这种解法==
-
-```javascript
-var diameterOfBinaryTree = function (root) {
-    var maxDiameter = 0;
-    // 遍历二叉树
-    var traverse = function (node) {
-        if (node == null) {
-            return 0;
-        }
-        // ::::双重递归，复杂度比较高
-        // 对每个节点计算直径
-        var leftMax = maxDepth(node.left);
-        var rightMax = maxDepth(node.right);
-        var myDiameter = leftMax + rightMax;
-        // 更新全局最大直径
-        maxDiameter = Math.max(maxDiameter, myDiameter);
-        // 递归遍历左子树
-        traverse(node.left);
-        // 递归遍历右子树
-        traverse(node.right);
-    }
-    // 计算二叉树的最大深度
-    var maxDepth = function (node) {
-        if (node == null) {
-            return 0;
-        }
-        // 计算左右子树最大深度
-        var leftMax = maxDepth(node.left);
-        var rightMax = maxDepth(node.right);
-        return 1 + Math.max(leftMax, rightMax);
-    }
-    // 对每个节点计算直径，求最大直径
-    traverse(root);
-    return maxDiameter;
-}
-```
-
-### 8.3. 好的解法：复杂度 `O(N)` 
-
-```javascript
-var diameterOfBinaryTree = function(root) {
-    let maxDiameter = 0;
-    /**
-     * 递归获取深度
-     * @param {TreeNode} root 
-     * @return {number}
-     */
-    const maxDepth = function(root) {
-        if (root === null) {
-            return 0;
-        }
-        let leftMax = maxDepth(root.left);
-        let rightMax = maxDepth(root.right);
-        // 后序位置，顺便计算最大直径
-        let myDiameter = leftMax + rightMax;
-        maxDiameter = Math.max(maxDiameter, myDiameter);
-        return 1 + Math.max(leftMax, rightMax);
-    }
-    maxDepth(root);
-    return maxDiameter;
-};
-```
 
 ## 9. 层次遍历
 

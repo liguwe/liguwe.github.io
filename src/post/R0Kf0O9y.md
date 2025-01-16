@@ -2,7 +2,6 @@
 # 二叉树的层序遍历
 
 
-
 > [102. 二叉树的层序遍历](https://leetcode.cn/problems/binary-tree-level-order-traversal/)
 
 
@@ -85,3 +84,30 @@ var levelOrder = function (root) {
 };
 
 ```
+
+## 遍历的思路
+
+```javascript
+// DFS 思路
+var levelTraverse = function(){
+    res = [];
+    const traverse = function(root, depth) {
+        if (root === null) {
+            return;
+        }
+        // 前序位置，看看是否已经存储 depth 层的节点了
+        if (res.length <= depth) {
+            // 第一次进入 depth 层
+            res.push([]);
+        }
+        // 前序位置，在 depth 层添加 root 节点的值
+        res[depth].push(root.val);
+        traverse(root.left, depth + 1);
+        traverse(root.right, depth + 1);
+    }
+    // root 视为第 0 层
+    traverse(root, 0);
+    return res;
+}
+```
+

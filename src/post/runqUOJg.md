@@ -55,35 +55,12 @@ var BFS = function (start, target) {
 
 ## 示例一：二叉树最小深度
 
-> 力扣第 111 题「[二叉树的最小深度](https://leetcode.cn/problems/minimum-depth-of-binary-tree)」
+> 参考 [111. 二叉树的最小深度](/post/1GnLYvXX.html)
 
 ![图片&文件](./files/20241113-7.png)
 
-```javascript
-var minDepth = function (root) {
-  if (root == null) return 0;
-  let queue = [];
-  queue.push(root);
-  // root 本身就是一层，depth 初始化为 1
-  let depth = 1;
 
-  while (queue.length != 0) {
-    let size = queue.length;
-    // 将当前队列中的所有节点向四周扩散
-    for (let i = 0; i < size; i++) {
-      let cur = queue.shift();
-      // 判断是否到达终点
-      if (cur.left == null && cur.right == null) return depth;
-      // 将 cur 的相邻节点加入队列
-      if (cur.left != null) queue.push(cur.left);
-      if (cur.right != null) queue.push(cur.right);
-    }
-    // 这里增加步数
-    depth++;
-  }
-  return depth;
-};
-```
+
 
 ## 示例二：解开密码最少次数
 

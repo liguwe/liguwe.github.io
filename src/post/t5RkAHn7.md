@@ -3,60 +3,11 @@
 
 
 
+
+
 ## 目录
 <!-- toc -->
- ## 1. 二叉树的最小深度 
-
-![image.png|520](https://832-1310531898.cos.ap-beijing.myqcloud.com/a8e427b4d5934c36edd8b1ab20fb9667.png)
-
-### 1.1. 使用`遍历`的思路题解
-
-```javascript
-/**
- * @param {TreeNode} root
- * @return {number}
- */
-var minDepth = function(root) {
-  // ::::初始值
-  let res = Infinity;
-  // ::::深度
-  let depth = 0;
-  // ::::少了这段代码，所以报错
-  // 如果根节点为 null，则直接返回 0
-  if (root === null) return 0;
-  function traverse(root) {
-    // ::::base case
-    // ::::问，返回什么？什么也不返回
-    if(root === null) return;
-    // ::::错误，之前的写法
-    // if(root === null) return res;
-    // ::::前序位置
-    depth++;
-    // ::::如果到达叶子节点，更新res
-    if(root.left === null && root.right === null) {
-      res = Math.min(res, depth);
-    }
-    traverse(root.left);
-    // ::::中序位置
-    traverse(root.right);
-    // ::::后序位置
-    depth--;
-  }
-  traverse(root);
-  // return res;  这个必须要判断，否则会报错，有可能就是 Infinity
-  // 之前写错了这个
-  // 如果树不为空但没有叶子节点（只有一个根节点），则最小深度为 1
-  return res === Infinity ? 1 : res;
-};
-
-```
-
-- 这个题还有其他的解法，比如`层次遍历`，这个放到后面再研究
-- 如果 `Infinity`不不好拼写，就使用 `Math.min()`
-    - 注意是 `Math.min()`，反过来的
-    - 当然，还有一种思路是，**看题设的最大值是多少，那就用多少**
-
-## 2. [二叉树的前序遍历](https://leetcode.cn/problems/binary-tree-preorder-traversal/)
+ ## 2. [二叉树的前序遍历](https://leetcode.cn/problems/binary-tree-preorder-traversal/) 
 
 ```javascript
 /**
