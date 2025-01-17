@@ -14,7 +14,7 @@
 
 ## 目录
 <!-- toc -->
- ## DFS 思路 
+ ## 1. DFS 思路 
 
 这题就是基于 [207. 课程表：是否可能完成所有课程的学习](/post/hMyxRQDl.html) 的 DFS 改造下即可
 
@@ -64,4 +64,7 @@ var findOrder = function (numCourses, prerequisites) {
 
 ```
 
-## BFS 思路 @todo
+## 2. BFS 思路：配合入度
+
+> [!danger]
+> 知道有这思路即可，不用深究了

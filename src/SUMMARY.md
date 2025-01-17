@@ -1112,6 +1112,8 @@
 
     - [AVL 树和红黑树](post/OA9ivJu6.md)
 
+    - [其他树结构](post/5wsXjS4y.md)
+
   - [二叉树](post/8BGAT4mA.md)
 
 
@@ -1256,17 +1258,35 @@
 
     - [并查集（Union Find）](post/bmo5HfjN.md)
 
+    - [最小生成树： Kruskal 算法](post/1XRJ5Yl9.md)
+
+    - [最小生成树：Prim 算法](post/NmBKbIAF.md)
+
+    - [Dijkstra 算法](post/1Wwo7hp4.md)
+
     - [课程表：是否可能完成所有课程的学习](post/hMyxRQDl.md)
 
     - [课程表 II：返回你为了学完所有课程所安排的学习顺序](post/E5emFUZe.md)
 
+    - [以图判树：判断图是否可以生成树](post/1GCu59sg.md)
+
     - [搜寻名人：返回名人的编号，不存在返回 -1](post/OLfcyRMU.md)
+
+    - [网络延迟时间](post/Wt0kPEQ3.md)
 
     - [判断二分图：判断一幅图是否是二分图](post/ygjquAxG.md)
 
     - [所有可能的路径](post/q4IZ4sQE.md)
 
     - [可能的二分法：将互相讨厌的人分成两个组](post/Qi1XTwz2.md)
+
+    - [最低成本连通所有城市](post/AJHcuH5R.md)
+
+    - [概率最大的路径](post/Oijcs2SF.md)
+
+    - [连接所有点的最小费用](post/asgztJ8x.md)
+
+    - [最小体力消耗路径](post/JjxGzS0H.md)
 
   - [回溯算法](post/maBaHAVO.md)
 

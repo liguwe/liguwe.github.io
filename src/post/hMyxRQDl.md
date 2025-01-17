@@ -5,7 +5,6 @@
 > [207. 课程表](https://leetcode.cn/problems/course-schedule/)
 
 
-
 ## 目录
 <!-- toc -->
  ## DFS 思路 
@@ -23,7 +22,7 @@
 
 
 - 构建图：邻接表
-- 定义变量：`onPath`  ,  `visited` 
+- 定义变量：`onPath` , `visited` 
 
 ```javascript hl:25,26,30
 var canFinish = function (numCourses, prerequisites) {
@@ -72,8 +71,18 @@ var canFinish = function (numCourses, prerequisites) {
 };
 ```
 
-## BFS 思路：配合入度 @todo
+## BFS 思路：配合入度 
 
+> [!danger]
+> 了解即可，能写出 DFS 就可以了
 
 - 入度为 0 时，即没有依赖的节点
 	- 可以作为拓扑排序的起点，加入队列
+
+### 思路
+
+1、构建邻接表，和之前一样，边的方向表示「被依赖」关系。
+2、构建一个 `indegree` 数组记录每个节点的入度，即 `indegree[i]` 记录节点 `i` 的入度。
+3、对 BFS 队列进行初始化，将入度为 0 的节点首先装入队列。
+4、开始执行 BFS 循环，不断弹出队列中的节点，减少相邻节点的入度，并将入度变为 0 的节点加入队列。
+5、如果最终所有节点都被遍历过（`count` 等于节点数），则说明不存在环，反之则说明存在环。
