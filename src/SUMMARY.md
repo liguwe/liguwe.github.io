@@ -1248,9 +1248,25 @@
 
     - [图的 BFS 遍历](post/y4JlGoPf.md)
 
-    - [并查集原理](post/A6J1Rnlf.md)
+    - [环检测算法：有向图的环检测](post/90mWV4nF.md)
+
+    - [拓扑排序](post/S4miMgDy.md)
+
+    - [二分图](post/4Scwr3yO.md)
+
+    - [并查集（Union Find）](post/bmo5HfjN.md)
+
+    - [课程表：是否可能完成所有课程的学习](post/hMyxRQDl.md)
+
+    - [课程表 II：返回你为了学完所有课程所安排的学习顺序](post/E5emFUZe.md)
+
+    - [搜寻名人：返回名人的编号，不存在返回 -1](post/OLfcyRMU.md)
+
+    - [判断二分图：判断一幅图是否是二分图](post/ygjquAxG.md)
 
     - [所有可能的路径](post/q4IZ4sQE.md)
+
+    - [可能的二分法：将互相讨厌的人分成两个组](post/Qi1XTwz2.md)
 
   - [回溯算法](post/maBaHAVO.md)
 

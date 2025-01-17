@@ -19,13 +19,13 @@
 - 下面的图是**无权图**
 - 对比于多叉树，多了 **visited 数组** 
 
-![cos-blog-832-34-20241012|1064](https://blog-1310531898.cos.ap-beijing.myqcloud.com/832-34-20241012/Pasted%20image%2020240915204210.png)
+![cos-blog-832-34-20241012|1264](https://blog-1310531898.cos.ap-beijing.myqcloud.com/832-34-20241012/Pasted%20image%2020240915204210.png)
 
 ## 3. 多叉树的 BFS → 图的 BFS：记录步数
 
 基于 [#1. 写法一：多叉树的 BFS → 图的 BFS （不记录步数）](/post/y4JlGoPf.html#1-写法一多叉树的-BFS-→-图的-BFS-（不记录步数）) 来改造下即可
 
-![cos-blog-832-34-20241012|1184](https://blog-1310531898.cos.ap-beijing.myqcloud.com/832-34-20241012/Pasted%20image%2020240915205022.png)
+![cos-blog-832-34-20241012|1232](https://blog-1310531898.cos.ap-beijing.myqcloud.com/832-34-20241012/Pasted%20image%2020240915205022.png)
 
 ## 4. 参考及相关笔记
 

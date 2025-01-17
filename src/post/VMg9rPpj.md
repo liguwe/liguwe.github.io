@@ -47,19 +47,7 @@ key 为有序的数字
 ![image.png|536](https://832-1310531898.cos.ap-beijing.myqcloud.com/766d5b7b869e04a2a86cb81f55cef3fa.png)
 
 
-## 
 
-
-
-## 拓扑排序详解及运用
-
-先来看看力扣第 207 题「 [课程表](https://leetcode.cn/problems/course-schedule/)」：
-![image.png|576](https://832-1310531898.cos.ap-beijing.myqcloud.com/c7f78bb6f5498a3137d585140c26ed64.png)
-
-### 先构建图
-
-`graph[s] `是一个列表，存储着节点 `s` 所指向的节点。
-![image.png](https://832-1310531898.cos.ap-beijing.myqcloud.com/ade4378f2781c41cb461d4bdc410c6ab.png)
 
 ## BFS
 
