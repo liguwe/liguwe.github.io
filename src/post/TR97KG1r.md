@@ -2,18 +2,60 @@
 # 二叉树的右视图
 
 
-`#leetcode`    `#算法`  `#算法/二叉树`  
+`#leetcode` `#算法` `#算法/二叉树`  
 
 
 ## 目录
 <!-- toc -->
- ## 题目及理解 
+ ## 总结 
+
+depth 作为参数传入
+
+```javascript
+var rightSideView = function (root) {
+    let res = [];
+
+    function traverse(root, depth) {
+        if (!root) return;
+        // 说明这一层还没有记录值
+        if (res.length === depth) {
+            res.push(root.val);
+        }
+        traverse(root.right, depth + 1);
+        traverse(root.left, depth + 1);
+    }
+    traverse(root, 0);
+    return res;
+};
+```
+
+另外一种写法：前后需要 `depth ++` 和 `depth --`
+
+```javascript hl:8,11
+var rightSideView = function (root) {
+    let res = [];
+    function traverse(root, depth) {
+        if (!root) return;
+        if (res.length === depth) {
+            res.push(root.val);
+        }
+        depth++;
+        traverse(root.right, depth);
+        traverse(root.left, depth);
+        depth--;
+    }
+    traverse(root, 0);
+    return res;
+};
+```
+
+## 题目及理解
 
 >  https://leetcode.cn/problems/binary-tree-right-side-view/description
 
 ![cos-blog-832-34-20241012|560](https://blog-1310531898.cos.ap-beijing.myqcloud.com/832-34-20241012/Pasted%20image%2020240908083048.png)
 
-## 思路一：DFS
+## 思路一：遍历一遍的思路
 
 - 要点一：使用 DFS，我们可以**先访问右子树，然后左子树**。这样可以确保每一层最右边的节点首先被访问
 - 要点二：前序位置 push(root.val)
@@ -55,7 +97,7 @@ var traverse = function (root, depth, res) {
 };
 ```
 
-## 思路二：BFS
+## 思路二：BFS 即层序遍历
 
 使用 BFS，我们可以**逐层遍历树**，并在**每一层中取最右边的节点**
 

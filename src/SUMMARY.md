@@ -1183,7 +1183,17 @@
 
     - [二叉树的最小深度](post/1GnLYvXX.md)
 
+    - [求根节点到叶节点数字之和](post/eBbhEw7q.md)
+
+    - [二叉树的所有路径：返回二叉树的所有路径，以a→b的方式](post/Gp1eQZiD.md)
+
+    - [二叉树最长连续序列：所有路径中，求最长连续序列的长度](post/Ann8vNSv.md)
+
     - [N 叉树的最大深度](post/E4PUbKHP.md)
+
+    - [从叶结点开始的最小字符串](post/duGwXd9A.md)
+
+    - [从根到叶的二进制数之和](post/voPuSgyw.md)
 
     - [统计二叉树中好节点的数目：](post/9QVWyCl1.md)
 
@@ -1463,8 +1473,6 @@
     - [最长连续序列](post/OsXNH57n.md)
 
     - [买卖股票的最佳时机 IV](post/rGMExJnf.md)
-
-    - [二叉树的所有路径](post/zfTDqw4R.md)
 
     - [H 指数](post/zpiepqPD.md)
 
