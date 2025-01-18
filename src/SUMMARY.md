@@ -1043,6 +1043,8 @@
 
     - [字符串解码](post/Gc1pFlwM.md)
 
+    - [使括号有效的最少添加](post/HbdzIfRE.md)
+
     - [从字符串中移除星号](post/OdvCtOUf.md)
 
   - [列队](post/M5c9DLRg.md)
@@ -1077,12 +1079,16 @@
 
     - [字母异位词分组：按字母异位词分组](post/78lvglE6.md)
 
+    - [字符串中的第一个唯一字符](post/IMvctX6A.md)
+
+    - [找不同](post/kMPv28Td.md)
+
+    - [数组中重复的数据：找出所有出现 两次 的整数，并以数组形式返回](post/rgqE56Jq.md)
+
   - [树](post/SWJSul0H.md)
 
 
     - [树的一些基本概念](post/zyhZnSC6.md)
-
-    - [一个方法秒杀 5 道最近公共祖先问题](post/efwkW1Gl.md)
 
     - [二叉树基本概念：Python 描述](post/SSQiWJtK.md)
 
@@ -1117,6 +1123,8 @@
   - [二叉树](post/8BGAT4mA.md)
 
 
+    - [最近公共祖先问题合集](post/kn9MI0oy.md)
+
     - [二叉树的最大深度](post/WXysqmVv.md)
 
     - [填充每个节点的下一个右侧节点指针](post/VLS5qdnO.md)
@@ -1125,9 +1133,25 @@
 
     - [二叉树的右视图](post/TR97KG1r.md)
 
+    - [完全二叉树的节点个数](post/s2O4ipkN.md)
+
+    - [二叉搜索树的最近公共祖先：p 和 q 一定在树中](post/IP1Z0CVK.md)
+
+    - [二叉树的最近公共祖先：p 和 q 一定在树中](post/x8vnQqCL.md)
+
+    - [扁平化嵌套列表迭代器：惰性展开多叉树](post/79iJUmJR.md)
+
     - [二叉树的直径：左右子树的最大深度之和](post/KuQa712r.md)
 
     - [叶子相似的树](post/lVacl84h.md)
+
+    - [二叉树的最近公共祖先 II：p 和 q 不一定在树中](post/5289AF4N.md)
+
+    - [二叉树的最近公共祖先 III：包含 parent 指针](post/LXhtNwOW.md)
+
+    - [二叉树的最近公共祖先 IV：多个节点的最近公共祖先](post/SlDlNJOo.md)
+
+    - [找到二叉树中的距离：p 到 q 的路径上边的数目](post/zE1y8nui.md)
 
   - [二叉树的构造与序列化](post/7Qcj1Vyt.md)
 
@@ -1156,6 +1180,8 @@
     - [验证二叉搜索树](post/djFSIkku.md)
 
     - [二叉搜索树中第 K 小的元素](post/cb9cyw8I.md)
+
+    - [最接近的二叉搜索树值：二叉搜索树中找到最接近目标值 target 的数值，如果有多个答案，返回最小的那个](post/GBYNqjEJ.md)
 
     - [删除二叉搜索树中的节点](post/LtoFWspn.md)
 
@@ -1189,13 +1215,31 @@
 
     - [二叉树最长连续序列：所有路径中，求最长连续序列的长度](post/Ann8vNSv.md)
 
+    - [左叶子之和](post/nel3JDhB.md)
+
     - [N 叉树的最大深度](post/E4PUbKHP.md)
+
+    - [在二叉树中增加一行](post/9N3IA6bq.md)
+
+    - [翻转二叉树以匹配先序遍历：翻转节点后的树的先序遍历顺序是否能够匹配给定的数组顺序](post/1Zad2aWR.md)
+
+    - [二叉树的垂序遍历](post/hIRO8t0s.md)
 
     - [从叶结点开始的最小字符串](post/duGwXd9A.md)
 
+    - [二叉树的堂兄弟节点：x 和 y 是否是堂兄弟](post/umFEOk6Z.md)
+
     - [从根到叶的二进制数之和](post/voPuSgyw.md)
 
+    - [祖父节点值为偶数的节点和](post/vRPO5R0j.md)
+
     - [统计二叉树中好节点的数目：](post/9QVWyCl1.md)
+
+    - [二叉树中的伪回文路径](post/4hv5gC4M.md)
+
+    - [寻找所有的独生节点](post/ULYRD6zn.md)
+
+    - [找到二叉树中最近的右侧节点：找到 节点 u 所在层中距离最近的右侧节点](post/G0BKIDrR.md)
 
   - [二叉树：后序位置](post/tNmoR6Iu.md)
 
@@ -1224,6 +1268,8 @@
     - [最大层内元素和：返回哪一层和最大](post/AeR8e4As.md)
 
     - [层数最深叶子节点的和：返回最后一层的和](post/n5cYJSe2.md)
+
+    - [找到二叉树中最近的右侧节点：u 节点最近的右侧节点](post/0WFy97QT.md)
 
     - [奇偶树：第 0 层递增，第 1 层递减](post/6jUq0Gvf.md)
 

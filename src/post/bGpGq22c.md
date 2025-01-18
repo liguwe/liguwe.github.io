@@ -169,7 +169,4 @@ console.log('mergeSort ', mergeSort(array));
 ## 应用3：力扣第 327 题「 区间和的个数」
 
 
-## 参考
-
-[归并排序详解及应用 :: labuladong的算法小抄](https://labuladong.github.io/algo/di-yi-zhan-da78c/shou-ba-sh-66994/gui-bing-p-1387f/)
-[912. 排序数组 - 力扣（LeetCode）](https://leetcode.cn/problems/sort-an-array/)
+#

@@ -1,36 +1,38 @@
 /**
  * Definition for a binary tree node.
- * function TreeNode(val, left, right) {
- *     this.val = (val===undefined ? 0 : val)
- *     this.left = (left===undefined ? null : left)
- *     this.right = (right===undefined ? null : right)
+ * function TreeNode(val) {
+ *     this.val = val;
+ *     this.left = this.right = null;
  * }
  */
 /**
- * @param {TreeNode} root
- * @return {number}
- */
-var sumRootToLeaf = function (root) {
-    let sum = 0;
-    let res = [];
-
-    function traverse(root, path) {
-        if (!root) return;
-        path.push(root.val);
-        if (!root.left && !root.right) {
-            res.push([...path]);
-        } else {
-            traverse(root.left, path);
-            traverse(root.right, path);
+var firstUniqChar = function(s) {
+    for (let i = 0; i < s.length; i++) {
+        // 如果字符第一次出现的位置和最后一次出现的位置相同
+        // 说明该字符只出现了一次
+        if (s.indexOf(s[i]) === s.lastIndexOf(s[i])) {
+            return i;
         }
-        path.pop();
     }
+    return -1;
+};
 
-    traverse(root, []);
+    function find(root, p, q) {
+        if (!root) return null;
 
-    res.forEach((item) => {
-        sum += parseInt(item.join(""), 2);
-    });
+        let left = find(root.left, p, q);
+        let right = find(root.right, p, q);
 
-    return sum;
+        // 重点：都在后序位置
+        if (root === p) {
+            foundP = true;
+            return root;
+        }
+        if (root === q) {
+            foundQ = true;
+            return root;
+        }
+        if (left && right) return root;
+        return left || right || null;
+    }
 };

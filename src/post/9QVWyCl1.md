@@ -9,8 +9,8 @@
 <!-- toc -->
  ## 1. 总结 
 
-- 关键点：
-	- `max` 变量，遍历到一个节点就更新节点
+- 关键点： `traverse(root, max) {`
+	- 传参数：`max` 变量，遍历到一个节点就更新节点
 		- 注意是 `max = root.val` 而不是 `max = max + 1`
 			- 刷太多题了吧，这都搞错
 
@@ -34,7 +34,7 @@ var goodNodes = function (root) {
 
 ## 2. 题目及理解
 
-![cos-blog-832-34-20241012|832](https://blog-1310531898.cos.ap-beijing.myqcloud.com/832-34-20241012/Pasted%20image%2020240811201951.png)
+![cos-blog-832-34-20241012|816](https://blog-1310531898.cos.ap-beijing.myqcloud.com/832-34-20241012/Pasted%20image%2020240811201951.png)
 
 ### 2.1. 好节点定义
 
