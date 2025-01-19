@@ -1156,6 +1156,10 @@
   - [二叉树的构造与序列化](post/7Qcj1Vyt.md)
 
 
+    - [不同的二叉搜索树 II：列举 1-n 能构造出的所有BST](post/m8qPY7HJ.md)
+
+    - [不同的二叉搜索树](post/bBMWfndu.md)
+
     - [从前序与中序遍历序列构造二叉树](post/bXrOMZJl.md)
 
     - [从中序与后序遍历序列构造二叉树](post/5KAqm4AD.md)
