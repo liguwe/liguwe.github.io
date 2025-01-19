@@ -1179,17 +1179,39 @@
 
     - [验证二叉搜索树](post/djFSIkku.md)
 
+    - [恢复二叉搜索树：恰好 两个节点的值被错误地交换，请修正](post/LUkmnUAA.md)
+
     - [二叉搜索树中第 K 小的元素](post/cb9cyw8I.md)
 
     - [最接近的二叉搜索树值：二叉搜索树中找到最接近目标值 target 的数值，如果有多个答案，返回最小的那个](post/GBYNqjEJ.md)
 
+    - [二叉搜索树中的中序后继：比 p.val 大的节点中键值最小的节点](post/TKyfqx7h.md)
+
     - [删除二叉搜索树中的节点](post/LtoFWspn.md)
+
+    - [二叉搜索树中的众数：找出并返回 BST 中的所有出现频率最高的元素](post/J8KSnRts.md)
+
+    - [二叉搜索树中的中序后继 II](post/Ht9ApGjB.md)
+
+    - [二叉搜索树的最小绝对差：：任意两个节点的差值的绝对值最小值](post/AMfL0nkI.md)
+
+    - [两数之和 IV - 输入二叉搜索树](post/MPXforoG.md)
+
+    - [修剪二叉搜索树](post/MlW3eo8Z.md)
+
+    - [二叉树中第二小的节点：特殊二叉树中找第二小的值](post/MewvmGdS.md)
 
     - [二叉搜索树中的搜索](post/D4FSVDnv.md)
 
     - [二叉搜索树中的插入操作](post/YW1dUn7u.md)
 
+    - [拆分二叉搜索树：大于 k 的子树 和 小于 k 的子树](post/nV5GHgw4.md)
+
+    - [二叉树剪枝](post/MqpjFou8.md)
+
     - [从二叉搜索树到更大和树：BST 转化累加树](post/dklpiYZ9.md)
+
+    - [查找两棵二叉搜索树之和：从两棵BST中各找出一个节点， 满足 2sum = target](post/7VtGCGGT.md)
 
   - [二叉树：分解问题的思路](post/vAZ8lQ44.md)
 
