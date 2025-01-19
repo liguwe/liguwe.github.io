@@ -1,71 +1,101 @@
 
 # 从前序与中序遍历序列构造二叉树
 
+`#二叉树的构造`  
 
 > [105. 从前序与中序遍历序列构造二叉树](https://leetcode.cn/problems/construct-binary-tree-from-preorder-and-inorder-traversal/)
 
 
 ## 目录
 <!-- toc -->
- ## 1. 题目 
+ ## 1. 总结 
 
-![image.png|552](https://832-1310531898.cos.ap-beijing.myqcloud.com/1fa7eeb0a874b33215cbb6a4050cd89d.png)
+- 画图，务必画图
 
-## 2. 分析
+```javascript hl:16
+var buildTree = function (preorder, inorder) {
+    let n = preorder.length;
+    let mapping = {};
+    inorder.forEach((item, index) => {
+        mapping[item] = index;
+    });
+    return build(0, n - 1, 0, n - 1);
+    function build(preStart, preEnd, inStart, inEnd) {
+        if (inStart > inEnd) return null;
+        let rootVal = preorder[preStart];
+        let rootIndex = mapping[rootVal];
+        let leftSize = rootIndex - inStart;
+        let root = new TreeNode(rootVal);
+        root.left = build(
+            preStart + 1, 
+            preStart + leftSize,
+            inStart,
+            rootIndex - 1,
+        );
+        root.right = build(
+            preStart + leftSize + 1,
+            preEnd,
+            rootIndex + 1,
+            inEnd,
+        );
+        return root;
+    }
+};
+```
+
+## 2. 题目
+
+![image.png|600](https://832-1310531898.cos.ap-beijing.myqcloud.com/1fa7eeb0a874b33215cbb6a4050cd89d.png)
+
+## 3. 分析
 
 ![图片&文件](./files/20250107-8.png)
 
 > 关键是要画出这样的图片，脑子自己想大概率是写不出来的
 
-### 2.1. 思路
+### 3.1. 思路
 
-1. 找出根节点
+1. 找出`根节点`
 	- 前序遍历的第一个元素
-2. 递归构建左右子树，
+2. 递归构建左右子树
 	- 这里注意要找出==递归函数的参数==
 	- 这些参数可以从两个数组里计算出来，如下图：
 
-![image.png|792](https://832-1310531898.cos.ap-beijing.myqcloud.com/a3d98f67145d72b588ebb76349faf1f0.png)
+![image.png|1080](https://832-1310531898.cos.ap-beijing.myqcloud.com/a3d98f67145d72b588ebb76349faf1f0.png)
 
 ```javascript
-/**
- * @param {number[]} preorder
- * @param {number[]} inorder
- * @return {TreeNode}
- */
-let valToIndex = new Map();
-var buildTree = function(preorder, inorder) {
-    for (let i = 0; i < inorder.length; i++) {
-        valToIndex.set(inorder[i], i);
+var buildTree = function (preorder, inorder) {
+    let n = preorder.length;
+    let mapping = {};
+    inorder.forEach((item, index) => {
+        mapping[item] = index;
+    });
+    return build(0, n - 1, 0, n - 1);
+    function build(preStart, preEnd, inStart, inEnd) {
+        if (inStart > inEnd) return null;
+        // if(preStart > preEnd) return null;
+        let rootVal = preorder[preStart];
+        let rootIndex = mapping[rootVal];
+        let leftSize = rootIndex - inStart;
+        let root = new TreeNode(rootVal);
+        // 修改2：preStart + 1 作为左子树的起始位置
+        root.left = build(
+            preStart + 1, // 左子树前序起始
+            preStart + leftSize, // 左子树前序结束
+            inStart, // 左子树中序起始
+            rootIndex - 1, // 左子树中序结束
+        );
+        // 修改3：preStart + leftSize + 1 作为右子树的起始位置
+        root.right = build(
+            preStart + leftSize + 1, // 右子树前序起始
+            preEnd, // 右子树前序结束
+            rootIndex + 1, // 右子树中序起始
+            inEnd, // 右子树中序结束
+        );
+        return root;
     }
-    return build(preorder, 0, preorder.length - 1,
-                 inorder, 0, inorder.length - 1);
 };
 
-function build(preorder,  preStart,  preEnd, 
-               inorder,  inStart,  inEnd) {
-        
-    if (preStart > preEnd) {
-        return null;
-    }
-
-    // root 节点对应的值就是前序遍历数组的第一个元素
-    let rootVal = preorder[preStart];
-    // rootVal 在中序遍历数组中的索引
-    let index = valToIndex.get(rootVal);
-
-    let leftSize = index - inStart;
-
-    // 先构造出当前根节点
-    let root = new TreeNode(rootVal,null,null);
-    // 递归构造左右子树
-    root.left = build(preorder, preStart + 1, preStart + leftSize,
-                      inorder, inStart, index - 1);
-
-    root.right = build(preorder, preStart + leftSize + 1, preEnd,
-                       inorder, index + 1, inEnd);
-    return root;
-}
 ```
 
 

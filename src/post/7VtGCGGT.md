@@ -13,7 +13,7 @@
 注意点：
 - traverse 函数里的 traverse 也需要记得传参数啊，相等于有 5 个地方需要传参
 - 这同`合并两个有序数组`不一样，但是可以参考其写法
-	- 四个变量：m n i  j 
+	- 四个变量：`m n i  j` 
 
 ```javascript
 var twoSumBSTs = function (root1, root2, target) {

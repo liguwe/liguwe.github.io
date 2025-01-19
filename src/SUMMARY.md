@@ -1156,13 +1156,17 @@
   - [二叉树的构造与序列化](post/7Qcj1Vyt.md)
 
 
-    - [二叉树的构造](post/jPbuf3wA.md)
-
     - [从前序与中序遍历序列构造二叉树](post/bXrOMZJl.md)
+
+    - [从中序与后序遍历序列构造二叉树](post/5KAqm4AD.md)
+
+    - [将有序数组转换为二叉搜索树](post/tLQaL5R1.md)
 
     - [二叉树的序列化与反序列化](post/AjV6Fs6g.md)
 
-    - [最大二叉树](post/QqzOOgJx.md)
+    - [最大二叉树：根据一个数组构建最大二叉树](post/PadqcvnM.md)
+
+    - [根据前序和后序遍历构造二叉树](post/NEls1C4T.md)
 
   - [二叉搜索树（BST）](post/NESMJRTO.md)
 
