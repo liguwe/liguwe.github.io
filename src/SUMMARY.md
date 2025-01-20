@@ -1158,7 +1158,7 @@
 
     - [不同的二叉搜索树 II：列举 1-n 能构造出的所有BST](post/m8qPY7HJ.md)
 
-    - [不同的二叉搜索树](post/bBMWfndu.md)
+    - [不同的二叉搜索树：1-n 能构造出多少个BST](post/BzosIJO0.md)
 
     - [从前序与中序遍历序列构造二叉树](post/bXrOMZJl.md)
 
@@ -1629,7 +1629,7 @@
   - [其他](post/ycAQd7R7.md)
 
 
-    - [最常见的开源协议](post/8IrV8osr.md)
+    - [最常见的开源协议](post/s8DODDq9.md)
 
 # 第五部分 产品
 

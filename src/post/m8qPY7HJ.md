@@ -5,7 +5,7 @@
 >  [95. 不同的二叉搜索树 II](https://leetcode.cn/problems/unique-binary-search-trees-ii/)
 
 
-思路类似于 [96. 不同的二叉搜索树](/post/bBMWfndu.html)
+思路类似于 [96. 不同的二叉搜索树：1-n 能构造出多少个BST](/post/BzosIJO0.html)
 
 
 分解问题的思路：

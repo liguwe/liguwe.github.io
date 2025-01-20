@@ -3,9 +3,21 @@
 
 `#http` `#计算机网络`
 
+
 ## 目录
 <!-- toc -->
- ## 1. application/x-www-form-urlencoded（默认） 
+ ## 1. 总结 
+
+- ① 用于发送二进制数据：`application/octet-stream`
+- ② multipart/form-data 主要用于上传文件
+- ③ 其他的
+	- 默认的 encodexxx?
+	- json
+	- text
+	- xml
+	- 等
+
+## 2. application/x-www-form-urlencoded（默认）
 
 这是最常见的 POST 提交数据的方式，浏览器的原生 **form 表单**如果不设置 `enctype 属性`，默认会以这种方式提交数据。
 
@@ -15,9 +27,9 @@ Content-Type: application/x-www-form-urlencoded
 name=John+Doe&age=30
 ```
 
-## 2. multipart/form-data
+## 3. multipart/form-data
 
-这种方式主要用于上传文件，也可以用于提交普通表单数据。
+这种方式主要用于**上传文件**，也可以用于提交普通表单数据。
 
 ```http
 Content-Type: multipart/form-data; boundary=----WebKitFormBoundary7MA4YWxkTrZu0gW
@@ -34,7 +46,7 @@ Content-Type: text/plain
 ------WebKitFormBoundary7MA4YWxkTrZu0gW--
 ```
 
-## 3. application/json
+## 4. application/json
 
 现在越来越多的 API 使用 JSON 格式传输数据。
 
@@ -47,7 +59,7 @@ Content-Type: application/json
 }
 ```
 
-## 4. text/plain
+## 5. text/plain
 
 纯文本格式。
 
@@ -57,7 +69,7 @@ Content-Type: text/plain
 Some plain text content
 ```
 
-## 5. application/xml
+## 6. application/xml
 
 XML 格式。
 
@@ -71,7 +83,7 @@ Content-Type: application/xml
 </user>
 ```
 
-## 6. application/octet-stream
+## 7. application/octet-stream
 
 用于发送二进制数据。
 
@@ -81,7 +93,7 @@ Content-Type: application/octet-stream
 (Binary data)
 ```
 
-## 7. 示例
+## 8. 示例
 
 让我们看一些代码示例，展示如何使用不同的方式发送 POST 请求：
 
