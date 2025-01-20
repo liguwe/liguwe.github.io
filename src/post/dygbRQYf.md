@@ -2,11 +2,9 @@
 # 单调列队算法
 
 
-`#leetcode`  `#2024/08/11`  `#算法/单调列队`  `#算法/数据结构算法`   
+`#leetcode` `#算法/单调列队` `#算法/数据结构算法`   
 
 >  第 239 题「[滑动窗口最大值](https://leetcode.cn/problems/sliding-window-maximum)」
-
-
 
 
 ## 目录
@@ -111,7 +109,6 @@ class MonotonicQueue {
 ## 4. LeetCode：滑动窗口最大值
 
 > 第 239 题「[滑动窗口最大值](https://leetcode.cn/problems/sliding-window-maximum)」
-
 
 ### 4.1. 题目
 
