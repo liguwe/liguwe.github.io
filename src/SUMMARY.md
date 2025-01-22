@@ -1291,6 +1291,10 @@
 
     - [二叉树寻路：之字形状标序号](post/2Bl57jSJ.md)
 
+    - [二叉树着色游戏](post/HWE3DqfN.md)
+
+    - [最小公共区域](post/uDuSf4Yl.md)
+
     - [在受污染的二叉树中查找元素](post/BPqgTiE5.md)
 
     - [祖父节点值为偶数的节点和](post/vRPO5R0j.md)
@@ -1306,6 +1310,8 @@
     - [寻找所有的独生节点](post/ULYRD6zn.md)
 
     - [找到二叉树中最近的右侧节点：找到 节点 u 所在层中距离最近的右侧节点](post/G0BKIDrR.md)
+
+    - [检查两棵二叉表达式树是否等价](post/ivEWrviC.md)
 
     - [从二叉树一个节点到另一个节点每一步的方向](post/IwUvJFZ3.md)
 
