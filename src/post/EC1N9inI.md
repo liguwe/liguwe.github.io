@@ -1,6 +1,7 @@
 
 # 递增顺序搜索树：转成单链表
 
+`#链表` `#树与链表`
 
 >  [897. 递增顺序搜索树](https://leetcode.cn/problems/increasing-order-search-tree/)
 

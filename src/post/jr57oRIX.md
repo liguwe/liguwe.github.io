@@ -8,12 +8,7 @@
 - `返回 null` 代表删除
 - 后序位置
 
-```javascript
-/**
- * @param {TreeNode} root
- * @param {number} target
- * @return {TreeNode}
- */
+```javascript  hl:7
 var removeLeafNodes = function (root, target) {
     if (root === null) return null;
 

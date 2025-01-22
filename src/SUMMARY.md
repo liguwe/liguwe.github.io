@@ -1137,6 +1137,8 @@
 
     - [二叉树的最近公共祖先：p 和 q 一定在树中](post/x8vnQqCL.md)
 
+    - [验证二叉树的前序序列化](post/LCTow0TF.md)
+
     - [扁平化嵌套列表迭代器：惰性展开多叉树](post/79iJUmJR.md)
 
     - [二叉树的直径：左右子树的最大深度之和](post/KuQa712r.md)
@@ -1164,11 +1166,19 @@
 
     - [将有序数组转换为二叉搜索树](post/tLQaL5R1.md)
 
+    - [有序链表转换二叉搜索树](post/GkFPmMtS.md)
+
+    - [二叉搜索树迭代器](post/PsEk0Ttu.md)
+
     - [二叉树的序列化与反序列化](post/AjV6Fs6g.md)
+
+    - [序列化和反序列化二叉搜索树](post/edeAHV1o.md)
 
     - [最大二叉树：根据一个数组构建最大二叉树](post/PadqcvnM.md)
 
     - [根据前序和后序遍历构造二叉树](post/NEls1C4T.md)
+
+    - [所有可能的真二叉树：节点数为 n 的所有满二叉树](post/EJ24g22X.md)
 
   - [二叉搜索树（BST）](post/NESMJRTO.md)
 
@@ -1188,6 +1198,8 @@
     - [恢复二叉搜索树：恰好 两个节点的值被错误地交换，请修正](post/LUkmnUAA.md)
 
     - [二叉搜索树中第 K 小的元素](post/cb9cyw8I.md)
+
+    - [验证二叉搜索树的前序遍历序列](post/xqkGcDzR.md)
 
     - [最接近的二叉搜索树值：二叉搜索树中找到最接近目标值 target 的数值，如果有多个答案，返回最小的那个](post/GBYNqjEJ.md)
 
@@ -1217,9 +1229,15 @@
 
     - [递增顺序搜索树：转成单链表](post/EC1N9inI.md)
 
+    - [前序遍历构造二叉搜索树](post/9DMZqsNa.md)
+
     - [从二叉搜索树到更大和树：BST 转化累加树](post/dklpiYZ9.md)
 
     - [查找两棵二叉搜索树之和：从两棵BST中各找出一个节点， 满足 2sum = target](post/7VtGCGGT.md)
+
+    - [两棵二叉搜索树中的所有元素：合并两个 BST，返回有序数组](post/qE9VVYod.md)
+
+    - [将二叉搜索树变平衡](post/xrl01eb2.md)
 
   - [二叉树：分解问题的思路](post/vAZ8lQ44.md)
 
@@ -1228,13 +1246,13 @@
 
     - [对称二叉树：判断树是否轴对称](post/ne0jmkb0.md)
 
-    - [二叉树中的最大路径和](post/1gEFXoOV.md)
+    - [二叉树中的最大路径和：不一定经过根节点，可以从左到右边](post/wJobYYGh.md)
 
     - [LCR.子结构判断：A 是否包含 B](post/7szgzwbW.md)
 
     - [翻转二叉树：翻转二叉树的两种解题思路](post/FXRWryLF.md)
 
-    - [合并二叉树](post/snlaydJ0.md)
+    - [合并二叉树：两个树强强组合](post/gaQ6U7cn.md)
 
     - [翻转等价二叉树：判断这两棵二叉树是否是翻转等价的](post/w8Y8Zw97.md)
 
@@ -1264,6 +1282,8 @@
     - [字典序排数](post/pZV91R7r.md)
 
     - [左叶子之和](post/nel3JDhB.md)
+
+    - [将二叉搜索树转化为排序的双向链表](post/AOHvzzPr.md)
 
     - [路径总和 III](post/iRUabEWW.md)
 
@@ -1322,7 +1342,7 @@
 
     - [统计同值子树](post/3mmEhYJt.md)
 
-    - [最大二叉搜索子树](post/lSDIDZpg.md)
+    - [最大二叉搜索子树：给定一个二叉树，找到其中最大的二叉搜索树（BST）子树，并返回该子树的大小](post/EsA3Z5MB.md)
 
     - [寻找二叉树的叶子节点](post/9KKVfLWB.md)
 

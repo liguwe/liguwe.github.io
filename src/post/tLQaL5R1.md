@@ -14,7 +14,7 @@
 	- 右侧是右子树元素
 
 注意点：
-- 分解问题的思路，所以每次都需要 return 一个节点
+- 分解问题的思路，所以每次都需要 `return` 一个节点
 
 ```javascript
 var sortedArrayToBST = function (nums) {

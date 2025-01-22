@@ -7,13 +7,47 @@
 
 ## 目录
 <!-- toc -->
- ## 同 [1650. 二叉树的最近公共祖先 III：包含 parent 指针](/post/LXhtNwOW.html) 
+ ## 1. 代码 
 
+- 同 [1650. 二叉树的最近公共祖先 III：包含 parent 指针](/post/LXhtNwOW.html),
+- 但不一样的点是，需要使用 map 构造`子节点指向父节点`
 
+```javascript
+var findSmallestRegion = function (regions, region1, region2) {
+    let mapping = new Map();
+    for (let item of regions) {
+        let first = item[0];
+        for (let it of item.slice(1)) {
+            mapping.set(it, first);
+        }
+    }
 
-## 题意
+    return LCA(region1, region2);
 
-### 输入格式
+    function LCA(p, q) {
+        let p1 = p;
+        let p2 = q;
+        while (p1 !== p2) {
+            if (mapping.has(p1)) {
+                p1 = mapping.get(p1);
+            } else {
+                p1 = q; // 注意不是 p1 = p2
+            }
+            if (mapping.has(p2)) {
+                // 向前走一步
+                p2 = mapping.get(p2);
+            } else {
+                p2 = p; // 注意不是 p2 = p1
+            }
+        }
+        return p1;
+    }
+};
+```
+
+## 2. 题意
+
+### 2.1. 输入格式
 
 - `regions`：二维数组
 	- 每个子数组的`第一个元素`是父区域
@@ -21,7 +55,7 @@
 - `region1`：第一个查询区域
 - `region2`：第二个查询区域
 
-### 示例 1
+### 2.2. 示例 1
 
 ```
 输入：
@@ -53,7 +87,7 @@ New York  Boston  Ontario Quebec
 2. "New York" 的父区域链：New York -> United States -> North America -> Earth
 3. 从下往上查找，"`North America`" 是包含这两个区域的最小公共区域
 
-### 示例 2
+### 2.3. 示例 2
 
 ```
 输入：
@@ -85,7 +119,7 @@ New York  Boston  Ontario Quebec
 2. "South America" 的父区域链：South America -> Earth
 3. 从下往上查找，"Earth" 是包含这两个区域的最小公共区域
 
-### 解题关键点
+### 2.4. 解题关键点
 
 1. 这实际上是一个寻找`最近公共祖先(LCA, Lowest Common Ancestor)`的问题
 2. 需要先构建出父子关系（可以使用哈希表存储子节点到父节点的映射）
