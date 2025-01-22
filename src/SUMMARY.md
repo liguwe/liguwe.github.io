@@ -1174,6 +1174,10 @@
 
     - [序列化和反序列化二叉搜索树](post/edeAHV1o.md)
 
+    - [从字符串生成二叉树：由包含括号的字符串生成二叉树](post/hpEauCQf.md)
+
+    - [根据二叉树创建字符串：二叉树转字符串](post/EUO0ebiZ.md)
+
     - [最大二叉树：根据一个数组构建最大二叉树](post/PadqcvnM.md)
 
     - [根据前序和后序遍历构造二叉树](post/NEls1C4T.md)
@@ -1370,6 +1374,10 @@
 
     - [二叉树中的最长交错路径](post/jPJCzgh5.md)
 
+    - [收集树上所有苹果的最少时间](post/cX3EWcuo.md)
+
+    - [统计最高分的节点数目](post/YRLSSeZr.md)
+
   - [二叉树：层次遍历](post/LpbspKpp.md)
 
 
@@ -1381,13 +1389,19 @@
 
     - [填充每个节点的下一个右侧节点指针 II](post/Mc521sJI.md)
 
-    - [在每个树行中找最大值](post/jwDJNVZS.md)
+    - [将 N 叉树编码为二叉树：可以将 N 叉树编码为二叉树，并能将该二叉树解码为原 N 叉树](post/49EKa2VO.md)
 
-    - [从字符串生成二叉树](post/dCRncw43.md)
+    - [在每个树行中找最大值](post/jwDJNVZS.md)
 
     - [二叉树的层平均值](post/8uCGIRaD.md)
 
     - [二叉树最大宽度](post/NwYcXecU.md)
+
+    - [二叉树最近的叶节点：返回树中与目标值 k  最近的叶子节点](post/1CYsgIXi.md)
+
+    - [二叉树中所有距离为 K 的结点：返回到目标结点 target 距离为 k 的所有结点的值组成的数组](post/dtwyezrb.md)
+
+    - [完全二叉树插入器：设计一种算法，将一个新节点插入到一棵完全二叉树中，并在插入后保持其完整](post/OHx86Thb.md)
 
     - [二叉树的完全性检验：判断完全二叉树](post/rctIpgsW.md)
 

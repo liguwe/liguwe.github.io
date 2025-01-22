@@ -1,16 +1,19 @@
-/**
- * Definition for a binary tree node.
- * function TreeNode(val) {
- *     this.val = val;
- *     this.left = this.right = null;
- * }
- */
-/**
- * @param {TreeNode} root
- * @param {TreeNode} target
- * @param {number} k
- * @return {number[]}
- */
+
+# 二叉树中所有距离为 K 的结点：返回到目标结点 target 距离为 k 的所有结点的值组成的数组
+
+
+> [863. 二叉树中所有距离为 K 的结点](https://leetcode.cn/problems/all-nodes-distance-k-in-binary-tree/)
+
+
+## 目录
+<!-- toc -->
+ ## 1. 总结 
+
+- ① mapping 对象：让每个节点的 `parent 指针` 指向 指向改节点的`父节点`
+- ② 执行 BFS 
+
+
+```javascript
 var distanceK = function (root, target, k) {
     let mapping = new Map();
     function traverse(root, parent) {
@@ -47,3 +50,11 @@ var distanceK = function (root, target, k) {
     }
     return dfs();
 };
+
+```
+
+## 2. 题目
+
+与目标结点（值为 5）距离为 2 的结点，值分别为 7，4，以及 1
+
+![272](#)
