@@ -925,6 +925,12 @@
 
     - [最小覆盖子串](post/sSZc0EWP.md)
 
+    - [长度最小的子数组](post/SrBeML10.md)
+
+    - [存在重复元素 II ：两个重复元素的距离小于等于 k](post/0hkK5mFU.md)
+
+    - [至少有 K 个重复字符的最长子串](post/GRZfw6hO.md)
+
     - [找到字符串中所有字母异位词](post/A0gdG6As.md)
 
     - [字符串的排列](post/rBaNdjvr.md)
@@ -987,7 +993,7 @@
 
     - [深入理解归并排序](post/bGpGq22c.md)
 
-    - [煎饼排序](post/U89g3Kcn.md)
+    - [煎饼排序](post/agr0zwwb.md)
 
   - [链表](post/eNfFhldl.md)
 
