@@ -11,7 +11,7 @@
 
 > [!danger]
 > 注意点：
-> - 一般都需要 `prev` 前驱结点这边变量
+> - 一般都需要 `prev` 前驱结点这边变量，你也可以把这个变量理解为 `p 指针` ，另外某个题也是这思路，忘了哪题了？
 
 ```javascript
 var getMinimumDifference = function (root) {

@@ -1215,7 +1215,7 @@
 
     - [两数之和 IV - 输入二叉搜索树](post/MPXforoG.md)
 
-    - [修剪二叉搜索树](post/MlW3eo8Z.md)
+    - [修剪二叉搜索树：通过修剪二叉搜索树，使得所有节点的值在 low~ high 之间](post/tqlhJElu.md)
 
     - [二叉树中第二小的节点：特殊二叉树中找第二小的值](post/MewvmGdS.md)
 
@@ -1382,6 +1382,8 @@
     - [填充每个节点的下一个右侧节点指针 II](post/Mc521sJI.md)
 
     - [在每个树行中找最大值](post/jwDJNVZS.md)
+
+    - [从字符串生成二叉树](post/dCRncw43.md)
 
     - [二叉树的层平均值](post/8uCGIRaD.md)
 
