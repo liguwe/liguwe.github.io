@@ -1,18 +1,22 @@
-var minSubArrayLen = function (target, nums) {
-    let res = Number.MAX_VALUE;
+/**
+ * @param {number[]} nums
+ * @param {number} k
+ * @return {number}
+ */
+var longestOnes = function (nums, k) {
+    let n = nums.length;
     let left = 0;
     let right = 0;
-    let n = nums.length;
-    let winSum = 0; // 维护窗口内元素之和
-
+    let count = 0; // 当前窗口 1 的个数
+    let res = 0;
     while (right < n) {
-        winSum += nums[right];
+        if (nums[right] === 1) count++;
         right++;
-        while (winSum >= target && left < right) {
-            res = Math.min(res, right - left);
-            winSum -= nums[left];
+        while (right - left - count > k) {
+            if (nums[left] === 1) count--;
             left++;
         }
+        res = Math.max(res, right - left);
     }
-    return res == Number.MAX_VALUE ? 0 : res;
+    return res;
 };

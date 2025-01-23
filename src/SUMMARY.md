@@ -929,11 +929,23 @@
 
     - [存在重复元素 II ：两个重复元素的距离小于等于 k](post/0hkK5mFU.md)
 
+    - [存在重复元素 III：两个数的差值不超过 t + 两个数的位置差不超过 k](post/JZy2BA9y.md)
+
+    - [至多包含 K 个不同字符的最长子串：找出至多包含 k 个 不同 字符的最长子串](post/oonhYPM7.md)
+
     - [至少有 K 个重复字符的最长子串](post/GRZfw6hO.md)
+
+    - [替换后的最长重复字符：替换 k 次后最长重复字符数](post/HWgNKfZr.md)
 
     - [找到字符串中所有字母异位词](post/A0gdG6As.md)
 
     - [字符串的排列](post/rBaNdjvr.md)
+
+    - [乘积小于 K 的子数组：子数组内所有元素的乘积严格小于 k 的连续子数组的数目](post/vgtkFk0b.md)
+
+    - [最大连续1的个数 III：最多 k 次把 0 变成 1，数组中连续 1 的最大个数](post/861myxu2.md)
+
+    - [将 x 减到 0 的最小操作数](post/1i7no0u1.md)
 
   - [数组：二维数组](post/lGzGBm05.md)
 
@@ -983,15 +995,19 @@
 
     - [归并排序](post/Zs2cnlwB.md)
 
-    - [排序算法基础](post/q2qxdzLN.md)
+    - [排序算法基础：篇一](post/TUS7xLEt.md)
 
-    - [快速排序算法的原理及运用](post/UM9zCgIt.md)
+    - [排序算法基础：篇二](post/z6en4nPQ.md)
 
-    - [排序算法（高级）](post/qqhX4UYs.md)
+    - [选择排序](post/5rCgrQB6.md)
 
-    - [深入理解快速排序](post/dROYJ6SH.md)
+    - [冒泡排序](post/zuJvCVmn.md)
 
-    - [深入理解归并排序](post/bGpGq22c.md)
+    - [插入排序](post/suEWTenk.md)
+
+    - [快速排序](post/sq0SLjYj.md)
+
+    - [归并排序](post/WxoRC3TG.md)
 
     - [煎饼排序](post/agr0zwwb.md)
 
@@ -1687,8 +1703,6 @@
     - [小行星碰撞](post/MKVSFiQo.md)
 
     - [钥匙和房间](post/l5xSl1Tv.md)
-
-    - [最大连续 1 的个数 III](post/oks1ICIR.md)
 
     - [独一无二的出现次数](post/5q4zZchl.md)
 
