@@ -1,24 +1,48 @@
 
 # 寻找数组的中心下标
 
-`#2024/07/28` `#leetcode`  `#算法/前缀和`  
+`#2024/07/28` `#leetcode` `#算法/前缀和`  
+
 
 ## 目录
 <!-- toc -->
- ## 题目及理解 
+ ## 1. 总结 
 
-![image.png|616](https://832-1310531898.cos.ap-beijing.myqcloud.com/806cae66a6a82c0cf9ac12cab22d1c66.png)
+```javascript hl:8,9,11
+var pivotIndex = function (nums) {
+    // 构造前缀和
+    let n = nums.length;
+    let preSum = new Array(n + 1).fill(0);
+    for (let i = 1; i <= n; i++) {
+        preSum[i] = preSum[i - 1] + nums[i - 1];
+    }
+    // 0 ~ i 之间的元素和为 preSum[i] - preSum[0]
+    // i + 1 ~ n 之间的元素和为 preSum[n] - preSum[i + 1]
+    for (let i = 0; i < n; i++) {
+        if (preSum[i] - preSum[0] === preSum[n] - preSum[i + 1]) {
+            return i;
+        }
+    }
+    return -1;
+};
+```
 
-## 解题思路
+>  注意 i 不参与计算
+
+## 2. 题目及理解
+
+![image.png|672](https://832-1310531898.cos.ap-beijing.myqcloud.com/806cae66a6a82c0cf9ac12cab22d1c66.png)
+
+## 3. 解题思路
 
 - 前缀和 `preSum`
-- 假设原数组 nums = [1, 7, 3, 6, 5, 6]
-   - 前缀和数组 `prefixSum` 就会是：[0, 1, 8, 11, 17, 22, 28]
+- 假设原数组 nums = `[1, 7, 3, 6, 5, 6]`
+   - 前缀和数组 `prefixSum` 就会是：`[0, 1, 8, 11, 17, 22, 28]`
       - 长度为 `length + 1 ` 
       - 第一个元素为 `0`，表示前 `0` 个元素的和
       - `preSum[i]` 表示前 `i` 个元素的和
 
-## 代码实现
+## 4. 代码实现
 
 ```javascript
 /**
@@ -51,9 +75,9 @@ var pivotIndex = function (nums) {
 };
 ```
 
-### 复杂度分析
+### 4.1. 复杂度分析
 
-## 错误记录
+## 5. 错误记录
 
 - 而`当前元素`不参与计算
 - 注意前缀和初始化遍历是从`1` 开始的

@@ -875,9 +875,19 @@
 
     - [除自身以外数组的乘积](post/1E4Xle2F.md)
 
+    - [区域和检索 - 数组不可变](post/6OmJGHrG.md)
+
+    - [二维区域和检索 - 矩阵不可变](post/Pm0GYeQy.md)
+
+    - [连续数组](post/93z4m73U.md)
+
     - [和为 K 的子数组](post/2om8eLhK.md)
 
     - [寻找数组的中心下标](post/AbmML4PN.md)
+
+    - [矩阵区域和](post/s89dEctp.md)
+
+    - [最后 K 个数的乘积](post/OLx3IoCh.md)
 
   - [数组：双指针](post/BOtfhENc.md)
 
@@ -993,8 +1003,6 @@
   - [排序](post/yItiqLjw.md)
 
 
-    - [归并排序](post/Zs2cnlwB.md)
-
     - [排序算法基础：篇一](post/TUS7xLEt.md)
 
     - [排序算法基础：篇二](post/z6en4nPQ.md)
@@ -1008,6 +1016,14 @@
     - [快速排序](post/sq0SLjYj.md)
 
     - [归并排序](post/WxoRC3TG.md)
+
+    - [数组中的第K个最大元素](post/ncXRoT9i.md)
+
+    - [计算右侧小于当前元素的个数](post/cAaGBbcP.md)
+
+    - [区间和的个数](post/mejBYU4c.md)
+
+    - [翻转对](post/vdbfX9CM.md)
 
     - [煎饼排序](post/agr0zwwb.md)
 

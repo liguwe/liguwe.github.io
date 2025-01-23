@@ -1,3 +1,12 @@
+
+# 最后 K 个数的乘积
+
+
+
+>  [1352. 最后 K 个数的乘积](https://leetcode.cn/problems/product-of-the-last-k-numbers/)
+
+
+```javascript
 var ProductOfNumbers = function () {
     this.preProduct = [1];
 };
@@ -22,3 +31,4 @@ ProductOfNumbers.prototype.getProduct = function (k) {
     // 计算最后 k 个元素积
     return this.preProduct[n - 1] / this.preProduct[n - k - 1];
 };
+```

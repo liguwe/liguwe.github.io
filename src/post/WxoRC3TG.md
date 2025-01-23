@@ -211,8 +211,41 @@ console.log('mergeSort ', mergeSort(array));
 
 ![image.png](https://832-1310531898.cos.ap-beijing.myqcloud.com/c5edbd21aa83ab7bc69c4efc19d786d1.png)
 
-## 3. 应用1：力扣第 315 题「 计算右侧小于当前元素的个数」
+## 3. 附
 
-## 4. 应用2：力扣第 493 题「 翻转对」
+### 3.1. 归并排序
 
-## 5. 应用3：力扣第 327 题「 区间和的个数」
+![image.png](https://832-1310531898.cos.ap-beijing.myqcloud.com/f102429e7ca84c46952a0989aea93b85.png)![image.png](https://832-1310531898.cos.ap-beijing.myqcloud.com/71da9e0da956a80bceba467b825b7e4b.png)
+
+```javascript
+const mergeSort = arr => {
+    // 采用自上而下的递归方法
+    const len = arr.length;
+    // 递归条件
+    if (len < 2) {
+        return arr;
+    }
+    let middle = Math.floor(len / 2),
+        left = arr.slice(0, middle),
+        right = arr.slice(middle); // 拆分为两个子数组
+
+    return merge(mergeSort(left), mergeSort(right));
+};
+
+// 合并两个已经排好序的数组，无论left或者right里有多少元素
+const merge = (left, right) => {
+    const result = [];
+    while (left.length && right.length) {
+        // 注意: 判断的条件是小于或等于，如果只是小于，那么排序将不稳定.
+        if (left[0] <= right[0]) {
+            result.push(left.shift());
+        } else {
+            result.push(right.shift());
+        }
+    }
+    while (left.length) result.push(left.shift());
+    while (right.length) result.push(right.shift());
+    return result;
+};
+```
+![image.png](https://832-1310531898.cos.ap-beijing.myqcloud.com/895608ee1ddbdd7d2eec7e444ba4a3d4.png)
