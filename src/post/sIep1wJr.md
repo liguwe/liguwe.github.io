@@ -2,6 +2,7 @@
 # 位运算技巧
 
 
+`#算法/位运算`
 
 
 ## 目录
@@ -37,7 +38,6 @@
 	- 例子（算术右移）：如果是负数，例如 `-1010 >> 2` 在32位系统中可能会得到 `11111111111111111111111111111010`
 
 这些位运算`在低级编程、硬件设计、加密算法等领域中非常有用`，因为它们可以高效地直接操作数据的二进制表示。
-
 
 ## 几个有趣的位操作
 
@@ -142,119 +142,4 @@ while (true) {
 
 ## 利用 n & (n-1) 的应用
 
-`n & (n-1) `这个操作是算法中常见的，作用是 `消除 n 数字的二进制表示` 中的最后一个 `1` ，见下图：
-
-![image.png|504](https://832-1310531898.cos.ap-beijing.myqcloud.com/9e3ec3f2938022fe5b554440d3219676.png)
-
-### 第 191 题「[位 1 的个数](https://leetcode.cn/problems/number-of-1-bits)」：计算汉明权重（Hamming Weight）
-
-![image.png|584](https://832-1310531898.cos.ap-beijing.myqcloud.com/352470d4bb4ef69b30dcceb86e93b758.png)
-
-```javascript
-// 用一个循环不停地消除 1 同时计数，直到 n 变成 0 为止
-var hammingWeight = function(n) {
-    var res = 0;
-    while (n != 0) { 
-        n = n & (n - 1); 
-        res++;
-    }
-    return res;
-};
-```
-
-### 第 231 题「[2 的幂](https://leetcode.cn/problems/power-of-two)」：判断一个数是不是 `2 的指数`
-
-一个数如果是 `2 的指数`，那么它的二进制表示一定`只含有一个 1`
-
-```java
-2^0 = 1 = 0b0001
-2^1 = 2 = 0b0010
-2^2 = 4 = 0b0100
-```
-
-```javascript
-一个数如果是 `2 的指数`，那么它的二进制表示一定`只含有一个 1`
-var isPowerOfTwo = function(n) {
-    if (n <= 0) return false; // 注意是小于等于
-    return (n & (n - 1)) === 0; // 注意运算符优先级，括号不可以省略
-};
-```
-
-## `a ^ a = 0 ; a ^ 0 = a` 的运用
-
-`异或运算`的性质是需要我们牢记的：
-
-- 一个数和它本身做`异或`运算结果为 `0`，即` a ^ a = 0`；
-- 一个数和 0 做`异或`运算的结果为它`本身`，即 `a ^ 0 = a`
-
-### 第 136 题「[只出现一次的数字](https://leetcode.cn/problems/single-number)」：查找只出现一次的元素
-
-![image.png|544](https://832-1310531898.cos.ap-beijing.myqcloud.com/90bcb8d27786de417a6b258383b69831.png)
-
-```javascript
-/**
- * @param {number[]} nums
- * @return {number}
- */
-var singleNumber = function(nums) {
-    let res = 0;
-    nums.forEach((num)=>{
-        console.log(res,num);
-        res = res ^ num; 
-    
-    })
-    return res;
-};
-
-
-singleNumber([4,1,2,2,1,4,5])
-0 4
-4 1
-5 2
-7 2
-5 1
-4 4
-0 5
-```
-
-### 第 268 题「[丢失的数字](https://leetcode.cn/problems/missing-number)」：：寻找缺失的元素
-
-![image.png|560](https://832-1310531898.cos.ap-beijing.myqcloud.com/0f220990728ea42b6b9f7c1291f438be.png)
-
-#### 常规解法
-
-- `排序 + 遍历`：很容易找到缺失的元素
-- `hashSet + 遍历` ：用一个 `HashSet` 把数组里出现的数字都储存下来，再遍历` [0,n] `之间的数字，去 `HashSet` 中查询是否存在
-
-#### 利用数学公式
-
-![image.png|560](https://832-1310531898.cos.ap-beijing.myqcloud.com/92f9b8e0ff2e4f6be00b95011a2173b9.png)
-
-#### 位运算：使用`异或`运算
-
-```typescript
-或运算满足交换律和结合律
-2 ^ 3 ^ 2 = 3 ^ (2 ^ 2) = 3 ^ 0 = 3	
-```
-
-以 `nums = [0,3,1,4]` 为例：
-
-![image.png|536](https://832-1310531898.cos.ap-beijing.myqcloud.com/51f8067f35b21ba018d0c33887880d74.png)
-
-如何找这个`落单的数字`呢，只要把`所有的元素和索引做异或运算`，成对儿的数字都会`消为 0`，只有这个落单的元素会剩下，也就达到了我们的目的
-
-> 由于异或运算满足交换律和结合律，所以总是能把成对儿的数字消去，留下缺失的那个元素。
-
-```javascript
-var missingNumber = function(nums) {
-    const n = nums.length;
-    let res = 0;
-    // 先和新补的索引异或一下
-    res ^= n;
-    // 和其他的元素、索引做异或
-    for (let i = 0; i < n; i++)
-        res ^= i ^ nums[i];
-    return res;
-}
-```
-
+### 第 231 题「[2 的幂](https://leetcode.cn/problems/power-of-two)」：

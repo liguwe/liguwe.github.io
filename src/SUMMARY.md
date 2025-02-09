@@ -520,7 +520,7 @@
 
     - [圈复杂度](post/P9cNqVCq.md)
 
-    - [分享：美团的产研一体化协作平台](post/jmwMTwvK.md)
+    - [好文分享：美团的产研一体化协作平台](post/Q9xjnoav.md)
 
     - [美团前端工程架构的演变](post/a7HyRuED.md)
 
@@ -1712,6 +1712,14 @@
     - [位运算技巧](post/sIep1wJr.md)
 
     - [其他技巧总结](post/973dRVyO.md)
+
+    - [只出现一次的数字](post/QHobbdvI.md)
+
+    - [位1的个数](post/o2v0T6Ue.md)
+
+    - [2 的幂：判断一个数是不是 2 的指数](post/G5ZDXeGz.md)
+
+    - [丢失的数字](post/3fVMyftI.md)
 
   - [LeetCode 刷题篇](post/zRhbwCUV.md)
 
