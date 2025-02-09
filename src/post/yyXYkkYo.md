@@ -27,7 +27,7 @@
 			- `Database connection failed: mysql://root:password@localhost:3306/db`
 		- 包含 token 等信息
 	- 环境变量泄露
-	- 调试信息泄露
+	- ==调试信息==泄露
 
 ## 2. SQL 注入 (SQL Injection)
 

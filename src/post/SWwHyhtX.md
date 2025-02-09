@@ -9,7 +9,7 @@
  ## 1. 总结 
 
 - ① 用于发送二进制数据：`application/octet-stream`
-- ② multipart/form-data 主要用于上传文件
+- ② `multipart/form-data` 主要用于上传文件
 - ③ 其他的
 	- 默认的 encodexxx?
 	- json

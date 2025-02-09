@@ -64,7 +64,7 @@ function callNative(action, params) {
 callNative('share', { title: '标题', content: '内容' });
 ```
 
-#### 3.1.2. 方式二：注入 API
+#### 3.1.2. 方式二：注入 API →  js 调用 native
 
 这是最直接的方式，**通过 WebView 提供的接口，Native 将对象或方法注入到 JS Context 中**。
 
@@ -90,7 +90,7 @@ window.nativeBridge.share({ title: '标题', content: '内容' });
 
 ### 3.2. Native 调用 JavaScript（Native -> JS）
 
-关键：`webview.evaluateJavascrip`
+关键：`webview.evaluateJavascript`
 
 ```javascript
 // Android

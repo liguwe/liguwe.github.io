@@ -16,7 +16,7 @@
 	- getPlugin
 	- unregister
 	- getAllPlugins
-- interface EnhancedPlugin extends Plugin 
+- `interface EnhancedPlugin extends Plugin` 
 	- beforeMount
 	- beforeUnmount
 	- 等等

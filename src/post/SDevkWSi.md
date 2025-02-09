@@ -13,7 +13,7 @@
 		- 卷不了，你不可能把网络实现一遍
 	- 状态或数据管理 → `f(state,data)`
 		- state 影响 Flutter 和 swiftUI
-		- vdom 
+		- vdom
 	- 页面渲染
 		- 止于==宿主环境提供的渲染 API==
 			- 比如浏览器
@@ -35,7 +35,8 @@
 		- 封闭 + 技术半衰期短
 	- RN：
 		- vdom + js 引擎 Hermes
-	- Flutter：自己的渲染引擎
+	- Flutter：
+		- 自己的渲染引擎
 	- 但 RN 和 Flutter
 		- 一旦做深了，前端 hold 不住的，需要专业的客户端原生能力
 

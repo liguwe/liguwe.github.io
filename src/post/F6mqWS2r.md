@@ -20,7 +20,7 @@
 		2. 重定向到 `SSO 服务`
 		3. SSO 认证后生成 Token
 		4. 302 重定向回`系统 A 并携带 Token`
-		5. 系统A 验证 Token
+		5. 系统 A 验证 Token
 	- oAuth 2.0
 		- Client -> 系统A
 		- 系统A -> OAuth服务 (redirect)

@@ -28,7 +28,7 @@
 	- 比如`@connect` redux 的用法
 	- NG 的 `@component`
 - 组合模式：
-	- 我理解像Vue的组合式API，或者 react 自定义`hooks` 也有组合模式的影子
+	- 我理解像 Vue 的组合式API，或者 react 自定义`hooks` 也有组合模式的影子
 - 迭代器模式
 
 ## 2. 模块模式

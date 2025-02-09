@@ -805,7 +805,7 @@
 
     - [业务支撑与业务价值](post/7jtpSA6c.md)
 
-    - [大模型下背景下的前端研发模式随记](post/lxjIYw69.md)
+    - [大模型背景下的前端研发模式随记](post/vwFxMpN0.md)
 
     - [前端工程师在 AI 时代的机会与挑战](post/F21HonTM.md)
 

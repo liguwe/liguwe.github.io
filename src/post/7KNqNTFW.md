@@ -18,7 +18,7 @@
 	6. now ?
 - 构建提速的体系化思路
 	- 构建每个阶段都耗时，下面按照最慢 → 最快的顺序
-		- 编译 dependency最慢
+		- 编译 dependency 最慢
 		- 压缩 js 
 		- 编译 src
 		- 生成 sourcemap
