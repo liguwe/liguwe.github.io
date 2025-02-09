@@ -1,6 +1,7 @@
 
 # 2 的幂：判断一个数是不是 2 的指数
 
+`#算法/位运算` 
 
 > [231. 2 的幂](https://leetcode.cn/problems/power-of-two/)
 
