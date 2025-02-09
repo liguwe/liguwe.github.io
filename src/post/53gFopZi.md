@@ -1,8 +1,19 @@
-/**
- * @param {number[][]} trips
- * @param {number} capacity
- * @return {boolean}
- */
+
+# 拼车
+
+
+> [1094. 拼车](https://leetcode.cn/problems/car-pooling/)
+
+
+## 目录
+<!-- toc -->
+ ## 1. 总结 
+
+- 还是 [3. 差分数组](/post/dYEpqo3a.html) 问题
+- 数组长度，需要自己计算
+
+
+```javascript hl:5,14
 var carPooling = function (trips, capacity) {
     // 找出最远的终点站，用作数组长度
     let maxLocation = 0;
@@ -51,3 +62,9 @@ function restore(diff) {
     }
     return res;
 }
+
+```
+
+## 2. 相关
+
+- [370. 区间加法](/post/IxaY4pSx.html)

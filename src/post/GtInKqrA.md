@@ -11,8 +11,8 @@
  ## 总结 
 
 - 两个函数：
-	- searchLeft
-	- searchRight
+	- `searchLeft`
+	- `searchRight`
 - 判断：小于 → 大于 →  等于 
 	- if `<` target
 	- else if `>` target

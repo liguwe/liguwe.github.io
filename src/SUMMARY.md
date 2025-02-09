@@ -848,6 +848,8 @@
   - [数组：二分搜索](post/SjJwusEd.md)
 
 
+    - [未命名](post/tMugnde1.md)
+
     - [搜索旋转排序数组：从两个有序组成的数组中找目标值](post/3OywtA3D.md)
 
     - [在排序数组中查找元素的第一个和最后一个位置](post/GtInKqrA.md)
@@ -858,7 +860,7 @@
 
     - [寻找峰值：峰值元素是指其值严格大于左右相邻值的元素](post/28BQAhVi.md)
 
-    - [LCR.统计目标成绩的出现次数](post/3Y1DMDjO.md)
+    - [LCR.172.统计目标成绩的出现次数](post/G6ksIAtV.md)
 
     - [LCR.点名：从一个升序数组中找出缺失的数字](post/8rcoIEac.md)
 
@@ -868,26 +870,46 @@
 
     - [山脉数组的峰顶索引：开口向上的抛物线](post/0cRgczm2.md)
 
-  - [数组：前缀和与前缀积](post/JxHsXj2o.md)
+  - [数组：前缀和、前缀积、差分数组](post/bCKOUYNe.md)
 
 
-    - [最大子数组和](post/QfHkcyy7.md)
+    - [前缀和](post/FWCASyB1.md)
 
-    - [除自身以外数组的乘积](post/1E4Xle2F.md)
+    - [前缀积](post/K1xsHEsJ.md)
 
-    - [区域和检索 - 数组不可变](post/6OmJGHrG.md)
+    - [差分数组](post/dYEpqo3a.md)
 
-    - [二维区域和检索 - 矩阵不可变](post/Pm0GYeQy.md)
+    - [最大子数组和](post/CHwvyjB0.md)
 
-    - [连续数组](post/93z4m73U.md)
+    - [除自身以外数组的乘积](post/yy2EUAbj.md)
 
-    - [和为 K 的子数组](post/2om8eLhK.md)
+    - [区域和检索 - 数组不可变](post/GOkMpLli.md)
 
-    - [寻找数组的中心下标](post/AbmML4PN.md)
+    - [二维区域和检索 - 矩阵不可变](post/0zNVMLDg.md)
 
-    - [矩阵区域和](post/s89dEctp.md)
+    - [和等于 k 的最长子数组长度](post/aHOJ1aiZ.md)
 
-    - [最后 K 个数的乘积](post/OLx3IoCh.md)
+    - [区间加法](post/IxaY4pSx.md)
+
+    - [连续的子数组和](post/ILE7xZwZ.md)
+
+    - [连续数组](post/ViS45BXQ.md)
+
+    - [和为 K 的子数组：返回 该数组中和为 k 的子数组的个数](post/SKTZKz2e.md)
+
+    - [寻找数组的中心下标](post/mkCBWW9h.md)
+
+    - [和可被 K 整除的子数组](post/2XfhndQK.md)
+
+    - [拼车](post/53gFopZi.md)
+
+    - [航班预订统计](post/HcyrMi5s.md)
+
+    - [表现良好的最长时间段](post/m6ao4yfJ.md)
+
+    - [矩阵区域和](post/apseo5rk.md)
+
+    - [最后 K 个数的乘积](post/fx3J0CfV.md)
 
   - [数组：双指针](post/BOtfhENc.md)
 
@@ -934,6 +956,8 @@
     - [无重复字符的最长子串](post/5z093pqp.md)
 
     - [最小覆盖子串](post/sSZc0EWP.md)
+
+    - [重复的DNA序列](post/0jYN4U3w.md)
 
     - [长度最小的子数组](post/SrBeML10.md)
 
