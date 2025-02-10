@@ -2,6 +2,7 @@
 # 连续的子数组和
 
 
+`#算法/前缀和` 
 
 
 > [523. 连续的子数组和](https://leetcode.cn/problems/continuous-subarray-sum/)

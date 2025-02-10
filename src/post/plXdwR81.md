@@ -105,7 +105,7 @@ console.log(merge(a1, 3, a2, 3));
 
 ## 4. 题目
 
-![image.png600](https://832-1310531898.cos.ap-beijing.myqcloud.com/202407281626632.png?imageSlim)
+![image.png600|496](https://832-1310531898.cos.ap-beijing.myqcloud.com/202407281626632.png?imageSlim)
 
 > [!danger]
 > 注意：nums 后面会使用 `0` 占位

@@ -6,7 +6,6 @@
 > [974. 和可被 K 整除的子数组](https://leetcode.cn/problems/subarray-sums-divisible-by-k/)
 
 
-
 子数组 `nums[i..j]` 中的元素之和能被 `k` 整除，
 - 就是说 `sum(nums[i..j]) % k == 0`
 
@@ -16,7 +15,6 @@
  ## 1. 解法一：会超时，但简单 
 
 >  掌握这种解法即可
-
 
 说明：
 - 需要注意和为负数的情况

@@ -2,6 +2,9 @@
 # 差分数组
 
 
+`#算法/差分数组`
+
+
 ## 目录
 <!-- toc -->
  ## 1. 使用场景 
@@ -62,13 +65,11 @@ result[4] = result[3] + diff[4] = 9 + (-8) = 1
 2. 无论区间多长，操作的时间复杂度都是 O(1)
 3. 多次操作可以在差分数组上累积，最后统一还原
 
-
-## 实现
+## 3. 实现
 
 ```js
 // 原始数组
 const nums = [8, 2, 6, 3, 1];
-
 // 构造差分数组
 function getDiff(nums) {
     const diff = new Array(nums.length).fill(0);
@@ -78,7 +79,6 @@ function getDiff(nums) {
     }
     return diff;
 }
-
 // 从差分数组还原原始数组
 function restore(diff) {
     const res = new Array(diff.length).fill(0);
@@ -88,7 +88,6 @@ function restore(diff) {
     }
     return res;
 }
-
 const diff = getDiff(nums);
 console.log("原始数组：", nums);        // [8, 2, 6, 3, 1]
 console.log("差分数组：", diff);        // [8, -6, 4, -3, -2]

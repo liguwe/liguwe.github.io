@@ -9,8 +9,8 @@
  ## 1. 总结 
 
 - 注意下图中的顺序 ① ② ③
-	- left → right → left
-	- right → left → right
+	- left   →   right  →  left
+	- right →  left  →  right
 - 都使用 `elseif`
 
 ![cos-blog-832-34-20241012](https://blog-1310531898.cos.ap-beijing.myqcloud.com/832-34-20241012/Pasted%20image%2020240926210526.png)

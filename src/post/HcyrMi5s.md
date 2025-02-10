@@ -2,6 +2,8 @@
 # 航班预订统计
 
 
+`#算法/差分数组` 
+
 >  [1109. 航班预订统计](https://leetcode.cn/problems/corporate-flight-bookings/)
 
 

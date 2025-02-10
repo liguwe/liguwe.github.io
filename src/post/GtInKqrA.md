@@ -54,7 +54,6 @@ function searchLeft(nums, target) {
   if (left >= nums.length || nums[left] !== target) {
     return -1;
   }
-
   return left;
 }
 

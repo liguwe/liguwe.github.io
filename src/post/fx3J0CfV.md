@@ -2,6 +2,7 @@
 # 最后 K 个数的乘积
 
 
+`#算法/前缀积` 
 
 >  [1352. 最后 K 个数的乘积](https://leetcode.cn/problems/product-of-the-last-k-numbers/)
 

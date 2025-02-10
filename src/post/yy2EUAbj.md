@@ -29,7 +29,7 @@ var productExceptSelf = function (nums) {
     }
 
     const res = [];
-    // 遍历数组，计算结果，即前缀积 * 后缀积
+    // 遍历数组，计算结果，即 【前缀积 * 后缀积】
     for (let i = 0; i < n; i++) {
         res.push(prefix[i] * suffix[i]);
     }

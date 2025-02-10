@@ -2,7 +2,10 @@
 # 字符串的最大公因子
 
 
-`#算法`  `#leetcode` `#算法/字符串`
+`#算法`  `#leetcode` `#算法/字符串`  `#done` 
+
+
+> [1071. 字符串的最大公因子](https://leetcode.cn/problems/greatest-common-divisor-of-strings/)
 
 
 ## 目录
@@ -58,7 +61,6 @@ var gcd = function (a, b) {
   }
   return a;
 };
-
 ```
 
 ## 参考
