@@ -1007,7 +1007,7 @@
   - [搜索](post/Q5mhC9Ig.md)
 
 
-    - [搜索算法总结](post/kLOm9qwd.md)
+    - [搜索算法总结](post/VNMt7g88.md)
 
   - [排序](post/yItiqLjw.md)
 

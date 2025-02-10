@@ -4,3 +4,4 @@
 
 > 搜索算法相关
 
+> 另见 [0. 二分搜索](/post/SjJwusEd.html)

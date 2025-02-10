@@ -1,7 +1,7 @@
 
 # 存在重复元素 III：两个数的差值不超过 t + 两个数的位置差不超过 k
 
-
+`#算法/滑动窗口` 
 
 > [220. 存在重复元素 III](https://leetcode.cn/problems/contains-duplicate-iii/)
 

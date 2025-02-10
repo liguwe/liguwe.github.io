@@ -13,7 +13,7 @@
 - 定义 ==6 个变量==
 	- left right 
 	- win need
-	- s1_len 和 s2_len
+	- `s1_len` 和 `s2_len`
 - 收缩条件是：
 	- ==窗口的大小 与 s1 的长度比较==
 - `win[c] === 0` 时最好 `delete` ，不然会导致下面遍历函数出问题
@@ -24,7 +24,7 @@
 
  `s2` 中是否存在一个==子串==，包含 `s1` 中==所有字符且不包含其他字符==
 
-```javascript
+```javascript hl:26
 var checkInclusion = function (s1, s2) {
   let left = 0;
   let right = 0;

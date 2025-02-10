@@ -34,7 +34,7 @@
 
 最终如下图：
 
-![cos-blog-832-34-20241012](https://blog-1310531898.cos.ap-beijing.myqcloud.com/832-34-20241012/Pasted%20image%2020240818210720.png)
+![cos-blog-832-34-20241012|616](https://blog-1310531898.cos.ap-beijing.myqcloud.com/832-34-20241012/Pasted%20image%2020240818210720.png)
 
 ### 2.1. 代码实现
 

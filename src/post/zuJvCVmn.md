@@ -24,5 +24,4 @@ function sortArray(nums) {
     }
     return nums;
 }
-
 ```

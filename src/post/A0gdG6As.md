@@ -14,8 +14,8 @@
 - 异位词：
 	- 由相同的字符组成，包括每个字符的个数
 - 定义变量：
-- while (right < s.length) {
-	- while (right - left > p.length) { 
+- `while (right < s.length) {`
+	- `while (right - left > p.length) {` 
 		- `win[c] == 0` 记得 `delete`
 - 判断是否异位词
 	- `fn(win,need)` 写在一个函数里，不用再传参数了 → `fn()`
@@ -71,8 +71,6 @@ var findAnagrams = function (s, p) {
     return true;
   }
 };
-
-
 ```
 
 ## 2. 题目及理解

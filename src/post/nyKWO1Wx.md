@@ -19,7 +19,7 @@
 	- ② 再按==列反转==即可
 	- ==要点==：
 		- 临时变量 temp
-		- 直接 使用 Array.reverse 
+		- 直接 使用 `Array.reverse` 
 			- 或者使用双指针直接实现，记得使用 `while` 
 - ==逆时针==旋转 `n*n` 二维数组
 	- ① 先按==反对角线==反转，即 ==↗==
@@ -99,7 +99,7 @@ console.log(array1.fill(6));
 
 这里要求原地，参考 [#`原地`反转所有单词的顺序](/post/nyKWO1Wx.html#`原地`反转所有单词的顺序) , 所以，这里常规思路搞不定，得换一种思路，如下图：
 
-![|528](https://832-1310531898.cos.ap-beijing.myqcloud.com/e5e22046d222a014b97696f67742a6f3.png)
+![|608](https://832-1310531898.cos.ap-beijing.myqcloud.com/e5e22046d222a014b97696f67742a6f3.png)
 
 >  [https://www.figma.com/file/hT9k2YbVvV1UIITtUmbJ0C/2023.05.LOG?type=whiteboard&node-id=147-180&t=sZSmw8G9XgtflSer-4](https://www.figma.com/file/hT9k2YbVvV1UIITtUmbJ0C/2023.05.LOG?type=whiteboard&node-id=147-180&t=sZSmw8G9XgtflSer-4)
 
@@ -244,8 +244,8 @@ s = "labuladong world hello"
 常规的做法肯定搞不定，比如 `split(‘ ’)` 成数组，然后 `reverse` 后再 `join`, 它使用了额外的空间，`非原地` , 正确的思路如下：
 ![|534](https://832-1310531898.cos.ap-beijing.myqcloud.com/a449923b54462a1f483662d7e0307f77.png)
 是否能够实现原地，主要的差别是有些语言的`字符串不可变`（如 Java 和 Python、`JavaScript` )，有些语言的`字符串可变`（如 C++) ，如下图：
-![|544](https://832-1310531898.cos.ap-beijing.myqcloud.com/4daff65b60b2e2646a5d50249575c0ed.png)
-![|552](https://832-1310531898.cos.ap-beijing.myqcloud.com/d13fa9892c9afb82460184b95475fc36.png)
+![|440](https://832-1310531898.cos.ap-beijing.myqcloud.com/4daff65b60b2e2646a5d50249575c0ed.png)
+![|440](https://832-1310531898.cos.ap-beijing.myqcloud.com/d13fa9892c9afb82460184b95475fc36.png)
 所以，还是需要借助额外的空间，以下是其中一种解法，当然它不是原地的
 ```javascript
 let s1 = "hello   world    labuladong  ";
@@ -370,7 +370,8 @@ let spiralOrder = function (matrix) {
 
 ## 7. 第 59 题「 螺旋矩阵 II」
 
-[https://leetcode.cn/problems/spiral-matrix/submissions/](https://leetcode.cn/problems/spiral-matrix/submissions/)
+> [59. 螺旋矩阵 II](https://leetcode.cn/problems/spiral-matrix-ii/)
+
 
 ![|664](https://832-1310531898.cos.ap-beijing.myqcloud.com/97b95ae85185a62c14542dd767684e44.png)
 
