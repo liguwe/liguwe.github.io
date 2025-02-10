@@ -35,7 +35,6 @@ var levelOrder = function (root) {
   }
   return res;
 };
-
 ```
 
 ## 2. 题目

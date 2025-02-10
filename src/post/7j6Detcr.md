@@ -1,7 +1,7 @@
 
 # 连续差相同的数字
 
-
+`#算法/回溯算法` 
 
 > [967. 连续差相同的数字](https://leetcode.cn/problems/numbers-with-same-consecutive-differences/)
 
