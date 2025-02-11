@@ -1045,19 +1045,25 @@
 
     - [两数相加：逆序存储，且只能存一位数字](post/i9vOowjc.md)
 
+    - [反转单链表：反转全部、反转前 N 个节点、反转一部分](post/cxJbvWbS.md)
+
     - [删除链表的倒数第 N 个结点](post/Dx4dXW0h.md)
 
     - [合并两个有序链表](post/nyGEEDWf.md)
 
     - [合并 K 个升序链表](post/bAnXiD4w.md)
 
-    - [反转单链表：反转全部、反转前 N 个节点、反转一部分](post/Erpll7fa.md)
+    - [两两交换链表中的节点](post/yB6iURs7.md)
+
+    - [旋转链表：将链表每个节点向右移动 k 个位置](post/Zbmgu6cV.md)
 
     - [删除排序链表中的重复元素 II：删除所有重复的节点](post/YWeTQIpG.md)
 
     - [删除排序链表中的重复元素：去重](post/uw3wgqBK.md)
 
     - [分隔链表](post/mpU3P27e.md)
+
+    - [随机链表的复制](post/mXnXujuS.md)
 
     - [判断链表是否有环](post/DH6uL03B.md)
 
@@ -1069,11 +1075,15 @@
 
     - [反转链表](post/T4Jxp6xG.md)
 
+    - [回文链表](post/N7pnAM0O.md)
+
     - [奇偶链表](post/MgKbSSAQ.md)
 
     - [链表的中间结点：寻找链表的中间节点](post/u6isnJyW.md)
 
     - [从未排序的链表中移除重复元素：不是去重](post/G7IHCRyR.md)
+
+    - [链表最大孪生和](post/C2CCXQKt.md)
 
     - [删除链表的中间节点](post/Q5YbJ1uc.md)
 
@@ -1756,8 +1766,6 @@
     - [交替合并字符串](post/ySmSiWUf.md)
 
     - [迷宫中离入口最近的出口](post/nUD9q8Yk.md)
-
-    - [链表最大孪生和](post/P5D6m0nW.md)
 
     - [找出两数组的不同](post/VD0sJSri.md)
 

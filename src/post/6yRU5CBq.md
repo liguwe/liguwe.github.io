@@ -60,7 +60,7 @@ class PriorityQueue:
 	   return heapq.heappop(self._queue)[-1]
    ```
 
-这个实现利用了Python的heapq模块，它提供了堆队列算法的实现。我们使用负的优先级值是因为heapq实现的是最小堆，而我们通常需要最大优先级先出队。
+这个实现利用了 Python 的heapq模块，它提供了堆队列算法的实现。我们使用负的优先级值是因为heapq实现的是最小堆，而我们通常需要最大优先级先出队。
 
 ### 2.2. 基于有序数组的实现
 

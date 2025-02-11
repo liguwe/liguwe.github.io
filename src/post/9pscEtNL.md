@@ -2,6 +2,7 @@
 # 有效的括号：判断括号字符串是否合法的
 
 
+`#算法/栈`  `#done` 
 
 > [20. 有效的括号](https://leetcode.cn/problems/valid-parentheses/)
 

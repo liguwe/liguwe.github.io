@@ -1,6 +1,7 @@
 
 # 数组中重复的数据：找出所有出现 两次 的整数，并以数组形式返回
 
+`#算法/哈希`
 
 >  [442. 数组中重复的数据](https://leetcode.cn/problems/find-all-duplicates-in-an-array/)
 

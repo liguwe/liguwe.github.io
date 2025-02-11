@@ -1,7 +1,7 @@
 
 # 用队列实现栈
 
-`#队列` `#栈` 
+ `#队列` `#栈` 
 
 > [225. 用队列实现栈](https://leetcode.cn/problems/implement-stack-using-queues/)
 
