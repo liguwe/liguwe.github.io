@@ -42,7 +42,6 @@ var removeNthFromEnd = function (head, n) {
   slow.next = slow.next.next; // 正确
   return d.next;
 };
-
 ```
 
 ## 详解

@@ -25,7 +25,6 @@
 var detectCycle = function (head) {
   let fast = head;
   let slow = head;
-
   // 第一次相遇时 break
   while (fast && fast.next) {
     slow = slow.next;

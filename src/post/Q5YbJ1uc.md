@@ -28,7 +28,6 @@ var deleteMiddle = function (head) {
   slow.next = slow.next.next;
   return d.next;
 };
-
 ```
 ## 2. 题目及理解
 

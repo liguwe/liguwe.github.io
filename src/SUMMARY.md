@@ -1043,6 +1043,8 @@
 
     - [链表：Python 描述](post/MbMTs4zk.md)
 
+    - [两数相加：逆序存储，且只能存一位数字](post/i9vOowjc.md)
+
     - [删除链表的倒数第 N 个结点](post/Dx4dXW0h.md)
 
     - [合并两个有序链表](post/nyGEEDWf.md)

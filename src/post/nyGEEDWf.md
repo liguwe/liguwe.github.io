@@ -60,7 +60,6 @@ var mergeTwoLists = function (list1, list2) {
     }
     p = p.next;
   }
-
   if (p2) {
     p.next = p2;
   }

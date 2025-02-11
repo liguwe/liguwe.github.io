@@ -20,7 +20,6 @@
 var hasCycle = function (head) {
   let fast = head;
   let slow = head;
-
   while (fast && fast.next) {
     slow = slow.next;
     fast = fast.next.next;
@@ -28,7 +27,6 @@ var hasCycle = function (head) {
       return true;
     }
   }
-
   return false;
 };
 ```

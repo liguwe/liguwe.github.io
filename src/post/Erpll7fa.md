@@ -81,7 +81,6 @@ function reverseN(head, n) {
   head.next = curr;
   return prev;
 }
-
 ```
 
 ### 2.2. 递归解法

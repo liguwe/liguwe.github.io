@@ -40,12 +40,10 @@
 var reorderList = function (head) {
   let s = [];
   let p = head;
-
   while (p) {
     s.push(p);
     p = p.next;
   }
-
   // 重新指向 head = 1
   p = head;
   // 以 1 → 2 → 3 → 4 为例
@@ -54,7 +52,6 @@ var reorderList = function (head) {
     let next = p.next;
     // last = 4
     let last = s.pop();
-
     if (last === next || last.next === next) {
       last.next = null;
       break;
@@ -63,10 +60,8 @@ var reorderList = function (head) {
     p.next = last;
     // 4 → 2
     last.next = next;
-
     // 前进 p 指向 2
     p = next;
   }
 };
-
 ```
