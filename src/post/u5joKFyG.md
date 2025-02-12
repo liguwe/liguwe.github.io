@@ -5,13 +5,12 @@
 `#leetcode` `#算法/单调列队` `#算法/滑动窗口` 
 
 
-
 > 第 239 题「[滑动窗口最大值](https://leetcode.cn/problems/sliding-window-maximum)」
 
 
 ## 目录
 <!-- toc -->
- ## 思路一：直接遍历即可 
+ ## 1. 思路一：直接遍历即可 →  不能通过所有用例 
 
 ```javascript
 var maxSlidingWindow = function (nums, k) {
@@ -28,15 +27,17 @@ var maxSlidingWindow = function (nums, k) {
 };
 ```
 
-![图片&文件](./files/20241119.png)
+## 2. 思路二：单调列队
+
+所谓==单调列队==即，列队中元素是==单调递增或者单调递减==的
 
 > 详见 [1. 单调列队算法](/post/dygbRQYf.html)
 
-## 1. 题目
+## 3. 题目
 
 ![cos-blog-832-34-20241012|560](https://blog-1310531898.cos.ap-beijing.myqcloud.com/832-34-20241012/Pasted%20image%2020240811080541.png)
 
-## 2. 使用单调列队来解
+## 4. 使用单调列队来解
 
 ![cos-blog-832-34-20241012|552](https://blog-1310531898.cos.ap-beijing.myqcloud.com/832-34-20241012/Pasted%20image%2020240811101243.png)
 
@@ -116,7 +117,7 @@ var maxSlidingWindow = function (nums, k) {
 
 ```
 
-## 3. 复杂度分析
+## 5. 复杂度分析
 
 - 时间复杂度：O(n)
    - 主循环遍历整个数组 nums，这需要 `O(n)` 时间，其中 n 是数组的长度。

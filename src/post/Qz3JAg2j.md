@@ -25,7 +25,6 @@ var kSmallestPairs = function (nums1, nums2, k) {
   let n2 = nums2.length;
   let pq = [];
   let res = [];
-
   // 存储三元组 [num1[i], nums2[i ~ n2], i]
   function enqueue(item) {
     pq.push(item);
@@ -33,11 +32,9 @@ var kSmallestPairs = function (nums1, nums2, k) {
       return a[0] + a[1] - (b[0] + b[1]);
     });
   }
-
   for (let i = 0; i < n1; i++) {
     enqueue([nums1[i], nums2[0], 0]);
   }
-
   while (pq.length > 0 && res.length < k) {
     // 先从优先级队列中取出对头，肯定是满足条件的，加入 res
     let cur = pq.shift();
@@ -48,7 +45,6 @@ var kSmallestPairs = function (nums1, nums2, k) {
       enqueue([cur[0], nums2[next_index], next_index]);
     }
   }
-
   return res;
 };
 ```
