@@ -14,7 +14,6 @@ depth 作为参数传入
 ```javascript
 var rightSideView = function (root) {
     let res = [];
-
     function traverse(root, depth) {
         if (!root) return;
         // 说明这一层还没有记录值

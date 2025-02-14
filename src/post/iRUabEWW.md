@@ -23,22 +23,17 @@ var pathSum = function (root, targetSum) {
     let res = 0;
     const traverse = function (root) {
         if (root == null) return;
-
         sum += root.val;
         res += mapping.get(sum - targetSum) || 0; // 更新 res
         mapping.set(sum, (mapping.get(sum) || 0) + 1);
-
         traverse(root.left);
         traverse(root.right);
-
         mapping.set(sum, mapping.get(sum) - 1);
         sum -= root.val;
     };
-
     traverse(root);
     return res;
 };
-
 ```
 
 ## 2. 题目及理解

@@ -1165,15 +1165,13 @@
 
     - [二叉树的前中后序遍历详解](post/iFyMtqjR.md)
 
-    - [二叉树的遍历思路习题](post/t5RkAHn7.md)
-
     - [二叉树遍历的迭代解法](post/7qavivLW.md)
 
     - [多叉树的遍历：Python 描述](post/023tCkgY.md)
 
     - [二叉树与单链表的关系](post/zl5S4whG.md)
 
-    - [AVL 树和红黑树](post/OA9ivJu6.md)
+    - [AVL 树和红黑树 →  都是 BST](post/ELxZD8Id.md)
 
     - [其他树结构](post/5wsXjS4y.md)
 
@@ -1183,6 +1181,8 @@
     - [最近公共祖先问题合集](post/kn9MI0oy.md)
 
     - [二叉树的最大深度](post/WXysqmVv.md)
+
+    - [二叉树展开为链表](post/U6zG0hTx.md)
 
     - [填充每个节点的下一个右侧节点指针](post/VLS5qdnO.md)
 
@@ -1214,10 +1214,6 @@
 
   - [二叉树的构造与序列化](post/7Qcj1Vyt.md)
 
-
-    - [不同的二叉搜索树 II：列举 1-n 能构造出的所有BST](post/m8qPY7HJ.md)
-
-    - [不同的二叉搜索树：1-n 能构造出多少个BST](post/BzosIJO0.md)
 
     - [从前序与中序遍历序列构造二叉树](post/bXrOMZJl.md)
 
@@ -1252,9 +1248,15 @@
 
     - [二叉搜索树的增删改查（BST 的增删改查）](post/VzkVzeoQ.md)
 
-    - [二叉搜索树（篇三：BST 的构造）](post/0FAClP3M.md)
+    - [BST 的构造](post/iBJPigFQ.md)
 
     - [二叉搜索树（篇四：BST 的后序位置）](post/5D9gep8x.md)
+
+    - [不同的二叉搜索树 II](post/aQtHmsnw.md)
+
+    - [不同的二叉搜索树 II：列举 1-n 能构造出的所有BST](post/4Tnoqtcb.md)
+
+    - [不同的二叉搜索树：1-n 能构造出多少个BST](post/LNsqiAXG.md)
 
     - [验证二叉搜索树](post/djFSIkku.md)
 
@@ -1326,6 +1328,8 @@
   - [二叉树：遍历一遍的思路](post/Axhr1al8.md)
 
 
+    - [二叉树的中序遍历](post/FdDVMFM0.md)
+
     - [二叉树的最小深度](post/1GnLYvXX.md)
 
     - [路径总和](post/15cYhusq.md)
@@ -1333,6 +1337,8 @@
     - [路径总和 II ：找到所有从根节点到叶子节点路径总和等于 target 的路径](post/qd1DSHbm.md)
 
     - [求根节点到叶节点数字之和](post/eBbhEw7q.md)
+
+    - [二叉树的后序遍历](post/I4SYCCXP.md)
 
     - [二叉树的所有路径：返回二叉树的所有路径，以a→b的方式](post/Gp1eQZiD.md)
 
@@ -1355,6 +1361,10 @@
     - [N 叉树的最大深度](post/E4PUbKHP.md)
 
     - [另一棵树的子树：root 是否包含 subRoot](post/j5NNIJL0.md)
+
+    - [N 叉树的前序遍历](post/Igj7M8ML.md)
+
+    - [N 叉树的后序遍历](post/trmnkEuN.md)
 
     - [在二叉树中增加一行](post/9N3IA6bq.md)
 
@@ -1561,6 +1571,8 @@
     - [SKU 排列](post/B4N0ebmQ.md)
 
     - [电话号码的字母组合](post/G6tx3D8W.md)
+
+    - [根据传入的值  n，生成所有小于 n 的二进制](post/sXS0T9CQ.md)
 
     - [组合总和 II ：元素可重，不可复选](post/5MQJ5sgP.md)
 

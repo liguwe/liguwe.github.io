@@ -1,7 +1,7 @@
 
 # 二叉树与单链表的关系
 
-
+`#算法/二叉树`  
 
 
 ## 目录
@@ -55,7 +55,11 @@ function addLast(head, val) {
     p.next = newNode;
     return head;
 }
+```
 
+## 删除链表的最后一个节点
+
+```javascript
 /**
  * @description 删除链表的最后一个节点
  * @param {ListNode} head

@@ -18,7 +18,6 @@
 ```javascript hl:5,10,12
 var longestZigZag = function (root) {
     let res = 0;
-
     // 输入二叉树的根节点 root，返回两个值
     // [从 root 开始向左走的最长交错路径长度，从 root 开始向右走的最长交错路径长度]
     var getPathLen = function (root) {
@@ -31,10 +30,8 @@ var longestZigZag = function (root) {
         let len2 = right[0] + 1;
         // 更新全局最大值
         res = Math.max(res, Math.max(len1, len2));
-
         return [len1, len2];
     };
-
     getPathLen(root);
     return res;
 };

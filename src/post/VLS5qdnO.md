@@ -7,7 +7,7 @@
 
 ## 目录
 <!-- toc -->
- ## 分析 
+ ## 1. 分析 
 
 注意点：
 - n2.next = null 不用考虑，因为默认就为 null
@@ -17,7 +17,7 @@
 
 ![图片&文件](./files/20250107-3.png)
 
-## 代码
+## 2. 代码
 
 ```javascript hl:2,6
 var connect = function (root) {
@@ -36,6 +36,6 @@ var connect = function (root) {
 };
 ```
 
-## 最后：分解问题
+## 3. 最后：分解问题
 
 这题能不能用「分解问题」的思维模式解决

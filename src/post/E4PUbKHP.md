@@ -7,8 +7,7 @@
 
 ## 目录
 <!-- toc -->
- ## 遍历一遍的思路 
-
+ ## 1. 遍历一遍的思路 
 
 - 两个变量： `depth` 和 `res`
 - `depth` 在 ==for-of 循环外面== `++` 或 `--`
@@ -32,9 +31,7 @@ var maxDepth = function (root) {
 };
 ```
 
-
-
-## 层序遍历
+## 2. 层序遍历
 
 - 注意：
 	- base case 别忘了
@@ -60,4 +57,9 @@ var maxDepth = function (root) {
   return depth;
 };
 ```
+
+## 3. 备注：求最大最小的初始值，一般都需要设置 `Infinity`
+
+- 如果 `Infinity`不不好拼写，就使用 `Math.min()`
+    - 注意是 `Math.min()`，反过来的
 

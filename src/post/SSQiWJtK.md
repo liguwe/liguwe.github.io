@@ -58,13 +58,13 @@ root.right.right = TreeNode(6)
 
 ## 5. 完满二叉树
 
-完满二叉树（full binary tree）除了叶节点之外，其余所有节点都有两个子节点。
+完满二叉树（full binary tree）除了叶节点之外，其余所有节点都有两个子节点
 
 ![图片](https://blog-1310531898.cos.ap-beijing.myqcloud.com/832-34-20241012/Pasted%20image%2020240922164014.png)
 
 ## 6. 平衡二叉树
 
-平衡二叉树（balanced binary tree）中任意节点的左子树和右子树的高度之差的绝对值不超过 1
+平衡二叉树（balanced binary tree）中==任意节点的左子树和右子树的高度之差的绝对值不超过 1==
 
 ![图片](https://blog-1310531898.cos.ap-beijing.myqcloud.com/832-34-20241012/Pasted%20image%2020240922164058.png)
 
