@@ -1244,19 +1244,11 @@
 
     - [二叉搜索树：Python 描述](post/ydjhyNJy.md)
 
-    - [二叉搜索树的特性](post/IeQh6raP.md)
-
-    - [二叉搜索树的增删改查（BST 的增删改查）](post/VzkVzeoQ.md)
-
-    - [BST 的构造](post/iBJPigFQ.md)
-
-    - [二叉搜索树（篇四：BST 的后序位置）](post/5D9gep8x.md)
-
-    - [不同的二叉搜索树 II](post/aQtHmsnw.md)
+    - [二叉搜索树的增删改查模板](post/yAGTMVgV.md)
 
     - [不同的二叉搜索树 II：列举 1-n 能构造出的所有BST](post/4Tnoqtcb.md)
 
-    - [不同的二叉搜索树：1-n 能构造出多少个BST](post/LNsqiAXG.md)
+    - [不同的二叉搜索树：1-n个数字能构造出多少个 BST](post/IJG7m7Pn.md)
 
     - [验证二叉搜索树](post/djFSIkku.md)
 
@@ -1277,6 +1269,8 @@
     - [二叉搜索树中的中序后继 II](post/Ht9ApGjB.md)
 
     - [二叉搜索树的最小绝对差：：任意两个节点的差值的绝对值最小值](post/AMfL0nkI.md)
+
+    - [把二叉搜索树转换为累加树](post/ieevjO2N.md)
 
     - [两数之和 IV - 输入二叉搜索树](post/MPXforoG.md)
 
@@ -1301,6 +1295,8 @@
     - [查找两棵二叉搜索树之和：从两棵BST中各找出一个节点， 满足 2sum = target](post/7VtGCGGT.md)
 
     - [两棵二叉搜索树中的所有元素：合并两个 BST，返回有序数组](post/qE9VVYod.md)
+
+    - [二叉搜索子树的最大键值和：二叉树的 BST 子树最大和](post/1GLStuSm.md)
 
     - [将二叉搜索树变平衡](post/xrl01eb2.md)
 
