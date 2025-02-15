@@ -1,7 +1,7 @@
 
 # 二叉搜索树中的众数：找出并返回 BST 中的所有出现频率最高的元素
 
-
+`#算法/BST` 
 
 > [501. 二叉搜索树中的众数](https://leetcode.cn/problems/find-mode-in-binary-search-tree/)
 

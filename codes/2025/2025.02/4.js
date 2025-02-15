@@ -1,44 +1,31 @@
-var maxSumBST = function (root) {
-    // 记录 BST 最大节点之和
-    var maxSum = 0;
-    // 计算以 root 为根的二叉树的
-    // [是否 BST（0 不是，1 是）, 所有节点中的最小值, 所有节点中的最大值, 所有节点值之和]
-    var findMaxMinSum = function (root) {
-        // base case
-        if (root === null) {
-            return [1, Number.MAX_SAFE_INTEGER, Number.MIN_SAFE_INTEGER, 0];
-        }
-        // 递归计算左右子树
-        var left = findMaxMinSum(root.left);
-        var right = findMaxMinSum(root.right);
-        // ******* 后序遍历位置 *******
-        var res = [0, 0, 0, 0];
-        // 若左右子树都是 BST，且 root 大于左子树的最大值，小于右子树的最小值
-        // 则以 root 为根的二叉树是 BST, 更新 res
-        if (
-            left[0] === 1 &&
-            right[0] === 1 &&
-            root.val > left[2] &&
-            root.val < right[1]
-        ) {
-            // 以 root 为根的二叉树是 BST
-            res[0] = 1;
-            // 计算以 root 为根的这棵 BST 的最小值
-            res[1] = Math.min(left[1], root.val);
-            // 计算以 root 为根的这棵 BST 的最大值
-            res[2] = Math.max(right[2], root.val);
-            // 计算以 root 为根的这棵 BST 所有节点之和
-            res[3] = left[3] + right[3] + root.val;
-            // 更新全局变量
-            maxSum = Math.max(maxSum, res[3]);
-            // 否则，以 root 为根的二叉树不是 BST
-        } else {
-            // 以 root 为根的二叉树不是 BST
-            res[0] = 0;
-            // 其他的值都没必要计算了，因为用不到
-        }
-        return res;
-    };
-    findMaxMinSum(root);
-    return maxSum;
+/**
+ * Definition for a binary tree node.
+ * function TreeNode(val, left, right) {
+ *     this.val = (val===undefined ? 0 : val)
+ *     this.left = (left===undefined ? null : left)
+ *     this.right = (right===undefined ? null : right)
+ * }
+ */
+/**
+ * @param {TreeNode} root
+ * @return {TreeNode}
+ */
+var balanceBST = function (root) {
+    let nums = [];
+    function traverse(root) {
+        if (!root) return;
+        traverse(root.left);
+        nums.push(root.val);
+        traverse(root.right);
+    }
+    traverse(root);
+    function build(nums, left, right) {
+        if (left > right) return null;
+        let mid = left + Math.floor((right - left) / 2);
+        let root = new TreeNode(nums[mid]);
+        root.left = build(nums, left, mid - 1);
+        root.right = build(nums, mid + 1, right);
+        return root;
+    }
+    return build(nums, 0, nums.length - 1);
 };

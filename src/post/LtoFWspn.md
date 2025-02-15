@@ -7,7 +7,44 @@
 
 ## 目录
 <!-- toc -->
- ## 1. 思路 
+ ## 总结 
+
+```javascript
+var deleteNode = function (root, key) {
+    if (!root) return null;
+    if (root.val === key) {
+        // 情况 1：没有子节点, 直接删除
+        if (!root.left && !root.right) {
+            return null;
+        }
+        // 情况 2：只有一个子节点
+        if (!root.left && root.right) {
+            return root.right;
+        }
+        if (!root.right && root.left) {
+            return root.left;
+        }
+        // 情况 3：有两个子节点
+        let minNode = getMin(root.right);
+        root.val = minNode.val;
+        root.right = deleteNode(root.right, minNode.val);
+    } else if (root.val > key) {
+        root.left = deleteNode(root.left, key);
+    } else if (root.val < key) {
+        root.right = deleteNode(root.right, key);
+    }
+    return root;
+};
+
+var getMin = function (node) {
+    while (node.left != null) {
+        node = node.left;
+    }
+    return node;
+};
+```
+
+## 1. 思路
 
 - 先「找」该节点
 - 再「改」该节点

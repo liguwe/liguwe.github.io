@@ -17,10 +17,8 @@
 ```javascript
 var pruneTree = function (root) {
     if (!root) return null;
-
     root.left = pruneTree(root.left);
     root.right = pruneTree(root.right);
-
     // 后序遍历位置
     // 判断自己是否是值为 0 的叶子节点
     if (root.val === 0 && root.left === null && root.right === null) {

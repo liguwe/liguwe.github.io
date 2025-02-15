@@ -6,10 +6,33 @@
 
 
 
-
 ## 目录
 <!-- toc -->
- ## 题目与思路 
+ ## 总结 
+
+```javascript
+var balanceBST = function (root) {
+    let nums = [];
+    function traverse(root) {
+        if (!root) return;
+        traverse(root.left);
+        nums.push(root.val);
+        traverse(root.right);
+    }
+    traverse(root);
+    function build(nums, left, right) {
+        if (left > right) return null;
+        let mid = left + Math.floor((right - left) / 2);
+        let root = new TreeNode(nums[mid]);
+        root.left = build(nums, left, mid - 1);
+        root.right = build(nums, mid + 1, right);
+        return root;
+    }
+    return build(nums, 0, nums.length - 1);
+};
+```
+
+## 题目与思路
 
 - 中序遍历转成 → 有序序列
 - 有序序列 → 构造二叉树 

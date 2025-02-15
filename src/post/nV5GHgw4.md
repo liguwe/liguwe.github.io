@@ -2,7 +2,7 @@
 # 拆分二叉搜索树：大于 k 的子树 和 小于 k 的子树
 
 
-`#p0` 
+`#算法/BST` 
 
 [776. 拆分二叉搜索树](https://leetcode.cn/problems/split-bst/)
 
@@ -15,7 +15,6 @@
 var splitBST = function (root, target) {
     if (root == null) return [null, null];
     let res = [null, null];
-
     // 目标节点在根节点的右边
     if (root.val <= target) {
         // root 必然是第一棵 BST 的根节点
@@ -36,5 +35,4 @@ var splitBST = function (root, target) {
     }
     return res;
 };
-
 ```

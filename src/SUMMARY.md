@@ -1252,7 +1252,7 @@
 
     - [验证二叉搜索树](post/djFSIkku.md)
 
-    - [恢复二叉搜索树：恰好 两个节点的值被错误地交换，请修正](post/LUkmnUAA.md)
+    - [恢复二叉搜索树：恰好两个节点的值被错误地交换，请修正](post/r3b9n33J.md)
 
     - [二叉搜索树中第 K 小的元素](post/cb9cyw8I.md)
 
@@ -1266,17 +1266,17 @@
 
     - [二叉搜索树中的众数：找出并返回 BST 中的所有出现频率最高的元素](post/J8KSnRts.md)
 
-    - [二叉搜索树中的中序后继 II](post/Ht9ApGjB.md)
+    - [二叉搜索树中的中序后继 II：包含 parent节点](post/4xtNufg5.md)
 
-    - [二叉搜索树的最小绝对差：：任意两个节点的差值的绝对值最小值](post/AMfL0nkI.md)
+    - [二叉搜索树的最小绝对差：任意两个节点的差值的绝对值最小值](post/kTWl81O0.md)
 
-    - [把二叉搜索树转换为累加树](post/ieevjO2N.md)
+    - [把二叉搜索树转换为累加树：每个节点变成 `>=` 该节点的所有节点之和](post/yU28jbZo.md)
 
     - [两数之和 IV - 输入二叉搜索树](post/MPXforoG.md)
 
     - [修剪二叉搜索树：通过修剪二叉搜索树，使得所有节点的值在 low~ high 之间](post/tqlhJElu.md)
 
-    - [二叉树中第二小的节点：特殊二叉树中找第二小的值](post/MewvmGdS.md)
+    - [二叉树中第二小的节点：root 总是小于子节点，找第二小的值](post/esou4Ts7.md)
 
     - [二叉搜索树中的搜索](post/D4FSVDnv.md)
 

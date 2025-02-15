@@ -6,6 +6,8 @@
 > [669. 修剪二叉搜索树](https://leetcode.cn/problems/trim-a-binary-search-tree/)
 
 
+![图片&文件](./files/20250215.png)
+
 - 使用分解问题的思维
 	- 明确了递归函数的定义之后进行思考，如果一个节点的值没有落在 `[lo, hi]` 中，有两种情况：
 		- `root.val < lo`
@@ -19,21 +21,17 @@
 ```javascript
 var trimBST = function (root, low, high) {
     if (!root) return null;
-
     // ① 剪掉 root 的左边：即直接返回 root.rigth
     if (root.val < low) {
         return trimBST(root.right, low, high);
     }
-
     // ②  剪掉 root 的右边：即直接返回 root.left
     if (root.val > high) {
         return trimBST(root.left, low, high);
     }
-
     root.left = trimBST(root.left, low, high);
     root.right = trimBST(root.right, low, high);
-
     return root;
 };
-
 ```
+
