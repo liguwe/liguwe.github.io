@@ -73,7 +73,6 @@ var solution = function (knows) {
         }
     };
 };
-
 ```
 
 ## 4. 优化解法

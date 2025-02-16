@@ -799,7 +799,10 @@
 # 第三部分 算法
 
 
-  - [前言](post/Hx1jAMGk.md)
+  - [前言](post/QcLoSqtI.md)
+
+
+    - [算法](post/Hx1jAMGk.md)
 
   - [基础](post/Orn7r337.md)
 
@@ -921,9 +924,15 @@
 
     - [两数之和 II - 输入有序数组](post/KYG8E7S5.md)
 
+    - [移动零 1](post/ltJGSNV7.md)
+
     - [移动零](post/VUjrKwVt.md)
 
+    - [递增的三元子序列](post/UaJFY1QT.md)
+
     - [反转字符串](post/xU7nRLlI.md)
+
+    - [反转字符串中的元音字母](post/5yVhWD2g.md)
 
     - [有序转化数组：f(x) = a * x * x + b * x + c](post/9lYoyaO3.md)
 
@@ -934,6 +943,8 @@
     - [匹配子序列的单词数： words中是 s 的子序列的单词个数](post/O5nQtWkx.md)
 
     - [有序数组的平方](post/nK4MRZdv.md)
+
+    - [交替合并字符串](post/xTgFAevH.md)
 
   - [数组：滑动窗口](post/NTfUuU6G.md)
 
@@ -960,9 +971,15 @@
 
     - [字符串的排列](post/rBaNdjvr.md)
 
+    - [子数组最大平均数 I](post/5wsZPOgW.md)
+
     - [乘积小于 K 的子数组：子数组内所有元素的乘积严格小于 k 的连续子数组的数目](post/vgtkFk0b.md)
 
     - [最大连续1的个数 III：最多 k 次把 0 变成 1，数组中连续 1 的最大个数](post/861myxu2.md)
+
+    - [定长子串中元音的最大数目](post/96v9T2vg.md)
+
+    - [删掉一个元素以后全为 1 的最长子数组](post/Dm4OPeXu.md)
 
     - [将 x 减到 0 的最小操作数](post/1i7no0u1.md)
 
@@ -1004,6 +1021,16 @@
 
     - [轮转数组](post/ZAUpPS6c.md)
 
+    - [种花问题](post/HFcXboLC.md)
+
+    - [拥有最多糖果的孩子](post/MKfQnPbO.md)
+
+    - [确定两个字符串是否接近](post/dDy9vq6g.md)
+
+    - [找到最高海拔](post/tOXNbeFO.md)
+
+    - [找出两数组的不同](post/LVHFkmUv.md)
+
   - [搜索](post/Q5mhC9Ig.md)
 
 
@@ -1027,6 +1054,8 @@
     - [归并排序](post/WxoRC3TG.md)
 
     - [数组中的第K个最大元素](post/ncXRoT9i.md)
+
+    - [H 指数](post/ycMRtYc7.md)
 
     - [计算右侧小于当前元素的个数](post/cAaGBbcP.md)
 
@@ -1100,6 +1129,8 @@
 
     - [字符串解码](post/Gc1pFlwM.md)
 
+    - [小行星碰撞](post/0s9fKWzL.md)
+
     - [使括号有效的最少添加](post/HbdzIfRE.md)
 
     - [从字符串中移除星号](post/OdvCtOUf.md)
@@ -1125,6 +1156,8 @@
 
     - [查找和最小的 K 对数字](post/Qz3JAg2j.md)
 
+    - [Dota2 参议院](post/63TNK9z1.md)
+
     - [最近的请求次数](post/EKG0Gzt8.md)
 
   - [哈希表](post/karVhMIc.md)
@@ -1136,11 +1169,17 @@
 
     - [字母异位词分组：按字母异位词分组](post/78lvglE6.md)
 
+    - [最长连续序列](post/sUAyveHc.md)
+
     - [字符串中的第一个唯一字符](post/IMvctX6A.md)
 
     - [找不同](post/kMPv28Td.md)
 
     - [数组中重复的数据：找出所有出现 两次 的整数，并以数组形式返回](post/rgqE56Jq.md)
+
+    - [独一无二的出现次数](post/nfN6cE3X.md)
+
+    - [K 和数对的最大数目](post/48fQ1uOf.md)
 
   - [树](post/SWJSul0H.md)
 
@@ -1597,11 +1636,15 @@
 
     - [岛屿数量](post/eOIoBazB.md)
 
+    - [除法求值：货币兑换](post/9cvtw7kN.md)
+
     - [省份数量](post/DET2lk4Q.md)
 
     - [不同岛屿的数量：形状不同的岛屿](post/iUMAvXR2.md)
 
     - [岛屿的最大面积：半岛也算](post/yYcKWmun.md)
+
+    - [钥匙和房间](post/oMkUF8IX.md)
 
     - [统计封闭岛屿的数目：全岛的数量](post/Qn2YIkJn.md)
 
@@ -1623,6 +1666,8 @@
     - [滑动谜题](post/E85OCp5F.md)
 
     - [腐烂的橘子](post/rLFs4AhU.md)
+
+    - [迷宫中离入口最近的出口](post/LbpaJPZn.md)
 
   - [动态规划](post/U8YH5Q2E.md)
 
@@ -1665,7 +1710,13 @@
 
     - [不同的子序列： s 的子序列中 t 出现的个数](post/OmQJiWxK.md)
 
+    - [买卖股票的最佳时机](post/dedztXlF.md)
+
+    - [买卖股票的最佳时机 II](post/mqTr50H3.md)
+
     - [单词拆分：给定的字符串是否能由给定的单词集合组合成](post/7AkHuUCa.md)
+
+    - [买卖股票的最佳时机 IV](post/l9AbcdG8.md)
 
     - [最长递增子序列：最长递增子序列数量](post/6EsbUVS3.md)
 
@@ -1684,8 +1735,10 @@
 
     - [跳跃游戏](post/kc9TDaQ0.md)
 
-  - [数学运算](post/UgEii5wM.md)
+  - [数学运算](post/jRGzJbXG.md)
 
+
+    - [字符串乘法计算](post/UgEii5wM.md)
 
     - [反直觉的概率问题](post/kd5Z2keW.md)
 
@@ -1725,57 +1778,6 @@
     - [2 的幂：判断一个数是不是 2 的指数](post/G5ZDXeGz.md)
 
     - [丢失的数字](post/3fVMyftI.md)
-
-  - [LeetCode 刷题篇](post/zRhbwCUV.md)
-
-
-    - [买卖股票的最佳时机](post/59IXTFJS.md)
-
-    - [买卖股票的最佳时机 II](post/Tm9cuRh6.md)
-
-    - [最长连续序列](post/OsXNH57n.md)
-
-    - [买卖股票的最佳时机 IV](post/rGMExJnf.md)
-
-    - [H 指数](post/zpiepqPD.md)
-
-    - [移动零](post/RDyNCDck.md)
-
-    - [递增的三元子序列](post/ofBHzcft.md)
-
-    - [反转字符串中的元音字母](post/IGVZIdTq.md)
-
-    - [除法求值](post/qcuHyJMG.md)
-
-    - [种花问题](post/ReFn8V70.md)
-
-    - [子数组最大平均数 I](post/WVB0AapD.md)
-
-    - [Dota2 参议院](post/zZscnCCA.md)
-
-    - [小行星碰撞](post/MKVSFiQo.md)
-
-    - [钥匙和房间](post/l5xSl1Tv.md)
-
-    - [独一无二的出现次数](post/5q4zZchl.md)
-
-    - [拥有最多糖果的孩子](post/OaLsmsxy.md)
-
-    - [定长子串中元音的最大数目](post/YcYvXCo5.md)
-
-    - [删掉一个元素以后全为 1 的最长子数组](post/2HlAXzif.md)
-
-    - [确定两个字符串是否接近](post/W4cDfDzN.md)
-
-    - [K 和数对的最大数目](post/DBZWc0N1.md)
-
-    - [找到最高海拔](post/7mgJTEQf.md)
-
-    - [交替合并字符串](post/ySmSiWUf.md)
-
-    - [迷宫中离入口最近的出口](post/nUD9q8Yk.md)
-
-    - [找出两数组的不同](post/VD0sJSri.md)
 
 # 第四部分 计算机科学
 

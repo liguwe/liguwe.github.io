@@ -3,6 +3,9 @@
 
 `#算法/动态规划` 
 
+>  [494. 目标和](https://leetcode.cn/problems/target-sum/)
+
+
 
 ## 目录
 <!-- toc -->

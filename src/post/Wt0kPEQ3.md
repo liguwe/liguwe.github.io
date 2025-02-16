@@ -49,7 +49,6 @@ function dijkstra(n, edges, start) {
 
     // 3. 优先队列
     const pq = [0, start](/post/Wt0kPEQ3.html#0,-start);
-
     while (pq.length) {
         const [d, cur] = pq.shift();
         // 如果当前距离大于已知距离，跳过
@@ -72,7 +71,6 @@ function dijkstra(n, edges, start) {
             }
         }
     }
-
     return dist;
 }
 ```

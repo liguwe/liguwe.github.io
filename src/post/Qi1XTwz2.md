@@ -42,7 +42,6 @@ var possibleBipartition = function (n, dislikes) {
             }
         }
     }
-
     // 因为图可能不是连通的，需要遍历所有节点
     for (let i = 1; i <= n; i++) {
         // 从 1 开始遍历，因为从 1 开始编号
@@ -50,10 +49,8 @@ var possibleBipartition = function (n, dislikes) {
             traverse(i);
         }
     }
-
     return res;
 };
-
 ```
 
 
