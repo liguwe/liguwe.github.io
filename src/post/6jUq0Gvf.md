@@ -24,7 +24,6 @@ var isEvenOddTree = function (root) {
   if (root === null) {
     return true;
   }
-
   let q = [];
   q.push(root);
   // 记录奇偶层数

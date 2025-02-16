@@ -13,14 +13,12 @@
 function isSubStructure(A, B) {
     // 如果 A 为空或 B 为空，返回 false
     if (!A || !B) return false;
-
     return (
         isSame(A, B) || // 判断以 A 为根的树是否包含 B
         isSubStructure(A.left, B) || // 判断 A 的左子树是否包含 B
         isSubStructure(A.right, B) // 判断 A 的右子树是否包含 B
     ); 
 }
-
 /**
  * 判断以 A 为根的树是否包含以 B 为根的树
  */
@@ -31,9 +29,7 @@ function isSame(A, B) {
     if (!A) return false;
     // 如果当前节点的值不相等，返回 false
     if (A.val !== B.val) return false;
-
     // 递归判断左右子树是否相同
     return isSame(A.left, B.left) && isSame(A.right, B.right);
 }
-
 ```

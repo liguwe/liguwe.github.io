@@ -153,7 +153,7 @@ print(max_heap.peek())  # 输出: 2
 
 ## 7. 实现一个小顶堆：JavaScript 描述
 
-使用`数组`来存储，因为二叉堆是个**完全二叉树**，如下tu：
+使用`数组`来存储，因为二叉堆是个**完全二叉树**，如下图：
 
 ![图片](https://blog-1310531898.cos.ap-beijing.myqcloud.com/832-34-20241012/Pasted%20image%2020240917145626.png)
 
@@ -267,7 +267,6 @@ class MinHeap {
       // 交换后，继续向上移动
       index = parentIndex;
       parentIndex = this.getParentIndex(index);
-
       // 以下是错误的写法 需要注意，因为这是在 while 循环中，所以不需要递归,被递归影响了
       // 这是 while 循环，不是递归
       // 这是 while 循环，不是递归
@@ -294,7 +293,6 @@ class MinHeap {
     this.shiftDown(0);
     return removedValue;
   }
-
   getAsArray() {
     return this.heap;
   }

@@ -26,9 +26,7 @@ var findFrequentTreeSum = function (root) {
         mapping[sum] = (mapping[sum] || 0) + 1;
         return sum;
     }
-    
     dfs(root);
-    
     let maxCount = Math.max(...Object.values(mapping));
     let keys = Object.keys(mapping);
     for (let k of keys) {
@@ -36,10 +34,8 @@ var findFrequentTreeSum = function (root) {
             res.push(parseInt(k));
         }
     }
-    
     return res;
 };
-
 ```
 
 

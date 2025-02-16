@@ -11,7 +11,6 @@
 var flipMatchVoyage = function (root, voyage) {
     let res = []; // 需要反转的节点值
     let index = 0; // 当前访问的 voyage 索引
-
     function traverse(root) {
         // 空节点返回 true
         if (!root) return true;

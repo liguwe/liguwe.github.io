@@ -21,11 +21,9 @@ var sortedListToBST = function (head) {
         nums.push(p.val);
         p = p.next;
     }
-
     // ② 根据有序数组构建平衡二叉树
     let n = nums.length;
     return build(0, n - 1);
-
     function build(left, right) {
         if (left > right) return null;
 
@@ -39,5 +37,4 @@ var sortedListToBST = function (head) {
         return root;
     }
 };
-
 ```

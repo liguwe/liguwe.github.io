@@ -19,14 +19,10 @@ var getTargetCopy = function (original, cloned, target) {
             res = B;
             return;
         }
-
         traverse(A.left, B.left);
         traverse(A.right, B.right);
     }
-
     traverse(original, cloned);
-
     return res;
 };
-
 ```

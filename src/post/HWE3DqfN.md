@@ -49,7 +49,6 @@ var btreeGameWinningMove = function (root, n, x) {
         Math.floor(n / 2)
     );
 };
-
 ```
 
 ## 2. 题目

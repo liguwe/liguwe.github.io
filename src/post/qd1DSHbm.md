@@ -9,7 +9,7 @@
 - 找到所有路径
 - 然后到叶子节点的时候判断下就行
 
-```javascript
+```javascript hl:12
 var pathSum = function (root, targetSum) {
     let res = [];
     function traverse(root, path) {

@@ -65,33 +65,25 @@ var pathSum = function (nums) {
         let key = depth * 10 + pos;
         mapping.set(key, val);
     }
-
     let res = 0;
-
     function traverse(depth, pos, sum) {
         const key = depth * 10 + pos;
         if (!mapping.has(key)) return;
-
         // 当前路径和
         sum += mapping.get(key);
-
         // 计算下一层的左右子节点位置
         const leftKey = (depth + 1) * 10 + pos * 2 - 1;
         const rightKey = (depth + 1) * 10 + pos * 2;
-
         // 如果是叶子节点，加入总和
         if (!mapping.has(leftKey) && !mapping.has(rightKey)) {
             res += sum;
             return;
         }
-
         // 递归遍历左右子树
         traverse(depth + 1, pos * 2 - 1, sum); // 左子树
         traverse(depth + 1, pos * 2, sum); // 右子树
     }
-
     traverse(1, 1, 0); // 从根节点开始遍历
     return res;
 };
-
 ```

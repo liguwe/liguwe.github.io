@@ -33,9 +33,7 @@ var binaryTreePaths = function (root) {
         traverse(root.right, path);
         path.pop();
     }
-
     traverse(root, []);
-
     return res;
 };
 
@@ -58,9 +56,7 @@ var binaryTreePaths = function (root) {
         }
         path.pop();
     }
-
     traverse(root, []);
-
     return res;
 };
 ```

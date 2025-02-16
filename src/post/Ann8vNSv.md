@@ -16,13 +16,11 @@ var longestConsecutive = function (root) {
     let paths = [];
     function traverse(root, len, parentVal) {
         if (!root) return;
-
         if (parentVal + 1 === root.val) {
             len++;
         } else {
             len = 1;
         }
-
         res = Math.max(res, len);
         traverse(root.left, len, root.val);
         traverse(root.right, len, root.val);

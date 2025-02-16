@@ -21,9 +21,7 @@ var findSmallestRegion = function (regions, region1, region2) {
             mapping.set(it, first);
         }
     }
-
     return LCA(region1, region2);
-
     function LCA(p, q) {
         let p1 = p;
         let p2 = q;

@@ -11,7 +11,6 @@
 ```javascript
 var findTilt = function (root) {
     let res = 0;
-
     // 返回：节点的子元素之和
     function sum(root) {
         if (!root) return 0;
@@ -21,9 +20,7 @@ var findTilt = function (root) {
         // 左子树的节点之和 + 右子树的节点之和 + root 的节点值
         return left + right + root.val;
     }
-
     sum(root);
-
     return res;
 };
 

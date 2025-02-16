@@ -46,7 +46,6 @@ function str2tree(s) {
     }
     return dfs();
 }
-
 ```
 
 ## 示例执行过程

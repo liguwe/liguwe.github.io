@@ -51,7 +51,6 @@ var isSubPath = function (head, root) {
         isSubPath(head, root.right)
     );
 };
-
 // 检查从当前树节点开始是否能匹配整个链表
 function dfs(head, root) {
     // 如果链表已经匹配完，返回true
@@ -63,5 +62,4 @@ function dfs(head, root) {
     // 继续匹配链表的下一个节点，可以选择树的左子节点或右子节点
     return dfs(head.next, root.left) || dfs(head.next, root.right);
 }
-
 ```

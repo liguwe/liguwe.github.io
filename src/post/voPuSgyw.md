@@ -13,7 +13,6 @@
 var sumRootToLeaf = function (root) {
     let sum = 0;
     let res = [];
-
     function traverse(root, path) {
         if (!root) return;
         path.push(root.val);
@@ -25,9 +24,7 @@ var sumRootToLeaf = function (root) {
         }
         path.pop();
     }
-
     traverse(root, []);
-
     res.forEach((item) => {
         sum += parseInt(item.join(""), 2);
     });

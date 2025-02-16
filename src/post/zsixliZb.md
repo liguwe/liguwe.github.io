@@ -19,7 +19,6 @@ var findBottomLeftValue = function (root) {
     let res = null;
     function traverse(root, depth) {
         if (!root) return;
-      
         if (depth > maxDepth) {
 	        maxDepth = depth
             res = root.val;
@@ -27,7 +26,6 @@ var findBottomLeftValue = function (root) {
         traverse(root.left, depth + 1);
         traverse(root.right, depth + 1);
     }
-
     traverse(root, 1);
     return res;
 };

@@ -51,26 +51,19 @@ var serialize = function(root) {
 var deserialize = function(data) {
     if (!data) return null;
     const values = data.split(',').map(Number);
-    
     function build(values, min, max) {
         if (values.length === 0) return null;
-        
         // 如果当前值不在合法范围内，说明应该返回null
         if (values[0] < min || values[0] > max) return null;
-        
         const val = values.shift();
         const root = new TreeNode(val);
-        
         // 递归构建左右子树
         root.left = build(values, min, val);
         root.right = build(values, val, max);
-        
         return root;
     }
-    
     return build(values, -Infinity, Infinity);
 };
-
 ```
 
 ### 2.3. 完整优化后的代码

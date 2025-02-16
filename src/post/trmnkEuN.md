@@ -10,7 +10,6 @@
 ```javascript hl:9
 var postorder = function (root) {
     let res = [];
-
     function traverse(root) {
         if (!root) return;
         for (let item of root.children) {
@@ -19,9 +18,7 @@ var postorder = function (root) {
         // 后序位置
         res.push(root.val);
     }
-
     traverse(root);
-
     return res;
 };
 

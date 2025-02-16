@@ -35,5 +35,4 @@ var isSymmetric = function (root) {
     return check(left.right, right.left) && check(left.left, right.right);
   }
 };
-
 ```

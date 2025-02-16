@@ -36,7 +36,6 @@ var pathInZigZagTree = function (label) {
         if (level % 2 === 0) {
             label = start + (end - label);
         }
-
         // 找父节点
         label = Math.floor(label / 2);
         // 如果即将进入的是偶数层，需要翻转
@@ -50,5 +49,4 @@ var pathInZigZagTree = function (label) {
     }
     return res;
 };
-
 ```

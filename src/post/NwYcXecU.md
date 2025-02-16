@@ -43,8 +43,6 @@ var widthOfBinaryTree = function (root) {
       }
     }
   }
-
   return maxWidth;
 };
-
 ```

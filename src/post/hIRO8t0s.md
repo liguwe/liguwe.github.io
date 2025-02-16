@@ -21,7 +21,6 @@
 var verticalTraversal = function (root) {
     let res = [];
     let grid = [];
-
     // ① 坐标收集：[row,col,val]
     function traverse(root, row, col) {
         if (!root) return;

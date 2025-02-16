@@ -53,7 +53,6 @@ var serialize = function (root) {
     traverse(root.right);
   }
   traverse(root);
-
   return res.join(",");
 };
 ```

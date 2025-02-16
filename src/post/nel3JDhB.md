@@ -26,7 +26,6 @@ var sumOfLeftLeaves = function (root) {
     traverse(root);
     return res;
 };
-
 ```
 
 ## 2. 错误记录

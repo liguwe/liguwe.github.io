@@ -55,7 +55,6 @@ var checkEquivalence = function(root1, root2) {
         if (!root.left && !root.right) {
             return Number(root.val);
         }
-        
         // 如果是操作符节点（+），递归计算左右子树的和
         let sum = 0;
         if (root.left) {
@@ -66,11 +65,9 @@ var checkEquivalence = function(root1, root2) {
         }
         return sum;
     }
-    
     // 比较两棵树的和是否相等
     return getSum(root1) === getSum(root2);
 };
-
 ```
 
 ## 如果 val 值为 `a - z` 时

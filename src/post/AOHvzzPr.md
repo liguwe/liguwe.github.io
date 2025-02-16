@@ -25,7 +25,6 @@ var treeToDoublyList = function (root) {
     function traverse(root) {
         if (!root) return;
         traverse(root.left);
-
         if (p) {
             p.right = root;
             root.left = p;
@@ -33,12 +32,9 @@ var treeToDoublyList = function (root) {
             first = root; // 记录第一个节点
         }
         p = root;
-
         traverse(root.right);
     }
-
     traverse(root);
-
     // 首尾相连，形成循环链表
     p.right = first;
     first.left = p;

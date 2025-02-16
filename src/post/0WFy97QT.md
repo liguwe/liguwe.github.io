@@ -38,7 +38,6 @@ var findNearestRightNode = function (root, u) {
     }
     return null;
 };
-
 ```
 
 ## 遍历一遍的思路

@@ -2,6 +2,7 @@
 # 求根节点到叶节点数字之和
 
 
+>  这种结构适合于数字做压缩
 
 > [129. 求根节点到叶节点数字之和](https://leetcode.cn/problems/sum-root-to-leaf-numbers/)
 

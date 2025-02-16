@@ -59,5 +59,4 @@ var longestConsecutive = function (root) {
     find(root);
     return res;
 };
-
 ```

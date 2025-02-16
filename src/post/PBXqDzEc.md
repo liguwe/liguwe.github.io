@@ -13,7 +13,6 @@
 var isBalanced = function (root) {
   // 记录二叉树是否平衡
   let res = true;
-
   // 输入一个节点，返回以该节点为根的二叉树的最大深度
   var maxDepth = function (root) {
     if (root === null) {
@@ -23,7 +22,6 @@ var isBalanced = function (root) {
     if (!res) {
       return;
     }
-
     let leftMaxDepth = maxDepth(root.left);
     let rightMaxDepth = maxDepth(root.right);
 

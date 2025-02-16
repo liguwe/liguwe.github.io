@@ -36,7 +36,6 @@ var levelOrderBottom = function (root) {
   }
   return res;
 };
-
 ```
 
 ## 1. 更多

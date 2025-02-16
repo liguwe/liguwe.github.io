@@ -1231,7 +1231,7 @@
 
     - [从字符串生成二叉树：由包含括号的字符串生成二叉树](post/hpEauCQf.md)
 
-    - [根据二叉树创建字符串：二叉树转字符串](post/EUO0ebiZ.md)
+    - [根据二叉树创建字符串：二叉树转字符串 → 1(2(4))(3)](post/xahPU5A6.md)
 
     - [最大二叉树：根据一个数组构建最大二叉树](post/PadqcvnM.md)
 
@@ -1298,7 +1298,7 @@
 
     - [将二叉搜索树变平衡](post/xrl01eb2.md)
 
-  - [二叉树：分解问题的思路](post/vAZ8lQ44.md)
+  - [二叉树：分解问题的思路](post/R0hflmUz.md)
 
 
     - [相同的树：判断两个二叉树是否相同](post/7aCfXgt1.md)
@@ -1328,7 +1328,7 @@
 
     - [二叉树的最小深度](post/1GnLYvXX.md)
 
-    - [路径总和](post/15cYhusq.md)
+    - [路径总和：是否存在根节点到叶子节点的路径和为 target](post/DgvmFf2E.md)
 
     - [路径总和 II ：找到所有从根节点到叶子节点路径总和等于 target 的路径](post/qd1DSHbm.md)
 
@@ -1350,7 +1350,7 @@
 
     - [将二叉搜索树转化为排序的双向链表](post/AOHvzzPr.md)
 
-    - [路径总和 III](post/iRUabEWW.md)
+    - [路径总和 III：不需要从根节点查找，返回满足条件的个数](post/YIjC1DP4.md)
 
     - [找树左下角的值：找出该二叉树的 最底层 最左边 节点的值](post/zsixliZb.md)
 
@@ -1423,7 +1423,7 @@
 
     - [均匀树划分：能否分成两棵节点值之和相等的子树](post/gTgYCrbv.md)
 
-    - [最长同值路径：返回边](post/aWgxjFpd.md)
+    - [最长同值路径：返回边的个数](post/tPbVYQHi.md)
 
     - [具有所有最深节点的最小子树](post/DOpRXRpX.md)
 
@@ -1435,7 +1435,7 @@
 
     - [删除给定值的叶子节点](post/jr57oRIX.md)
 
-    - [分裂二叉树的最大乘积](post/ON1Hz0IH.md)
+    - [分裂二叉树的最大乘积：删除 1 条边，使二叉树分裂成两棵子树，且它们子树和的乘积尽可能大](post/b7Dws6tY.md)
 
     - [二叉树中的最长交错路径](post/jPJCzgh5.md)
 

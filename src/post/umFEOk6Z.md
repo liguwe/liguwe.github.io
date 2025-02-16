@@ -7,7 +7,7 @@
 
 - x 和 y 是否是堂兄弟，需要满足
 	- x 和 y 深度相同
-	- x 和 y 父节点不同
+	- `x` 和 `y` 父节点不同
 - 关键点：
 	- 遍历传参数 `function traverse(root, depth, parent) {`
 

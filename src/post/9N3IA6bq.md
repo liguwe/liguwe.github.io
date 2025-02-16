@@ -7,7 +7,7 @@
 ![图片&文件](./files/20250118-1.png)
 
 - 用 `traverse` 函数遍历到对应行，进行插入即可
-	- base case：目标层数是 1时，特殊处理
+	- base case：目标层数是 1 时，特殊处理
 	- 处理条件：当前深度是目标层数 depth 的父级，即 `curDepth = depth - 1`
 
 ```javascript
@@ -36,5 +36,4 @@ var addOneRow = function (root, val, depth) {
     traverse(root, 1);
     return root;
 };
-
 ```

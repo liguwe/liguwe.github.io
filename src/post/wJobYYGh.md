@@ -22,7 +22,6 @@ var maxPathSum = function (root) {
     // 就是从根节点 root 为起点的最大单边路径和
     return Math.max(leftMaxSum, rightMaxSum) + root.val;
   }
-
   // 计算单边路径和时顺便计算最大路径和
   if (root === null) {
     return 0;
@@ -30,5 +29,4 @@ var maxPathSum = function (root) {
   oneSideMax(root);
   return res;
 };
-
 ```
