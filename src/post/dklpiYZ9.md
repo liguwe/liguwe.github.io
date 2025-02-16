@@ -2,7 +2,13 @@
 # 从二叉搜索树到更大和树：BST 转化累加树
 
 
+`#算法/BST` 
+
 > [1038. 从二叉搜索树到更大和树](https://leetcode.cn/problems/binary-search-tree-to-greater-sum-tree/)
+
+>  另外可见 [538. 把二叉搜索树转换为累加树：每个节点变成 `>=` 该节点的所有节点之和](/post/yU28jbZo.html)
+
+![图片&文件](./files/20250216.png)
 
 
 ## 目录
@@ -39,5 +45,7 @@ var bstToGst = function (root) {
 ```
 
 ## 相关题目
+
+[538. 把二叉搜索树转换为累加树：每个节点变成 `>=` 该节点的所有节点之和](/post/yU28jbZo.html)
 
 - 同：[538. 把二叉搜索树转换为累加树](https://leetcode.cn/problems/convert-bst-to-greater-tree/)

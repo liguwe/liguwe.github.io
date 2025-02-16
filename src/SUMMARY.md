@@ -1272,7 +1272,7 @@
 
     - [把二叉搜索树转换为累加树：每个节点变成 `>=` 该节点的所有节点之和](post/yU28jbZo.md)
 
-    - [两数之和 IV - 输入二叉搜索树](post/MPXforoG.md)
+    - [两数之和 IV - 输入二叉搜索树，是否存在](post/c4vFVyZb.md)
 
     - [修剪二叉搜索树：通过修剪二叉搜索树，使得所有节点的值在 low~ high 之间](post/tqlhJElu.md)
 
@@ -1284,11 +1284,9 @@
 
     - [拆分二叉搜索树：大于 k 的子树 和 小于 k 的子树](post/nV5GHgw4.md)
 
-    - [二叉树剪枝](post/MqpjFou8.md)
+    - [递增顺序搜索树： BST转成单链表](post/2apG1D0L.md)
 
-    - [递增顺序搜索树：转成单链表](post/EC1N9inI.md)
-
-    - [前序遍历构造二叉搜索树](post/9DMZqsNa.md)
+    - [前序遍历构造二叉搜索树：前序位置构造二叉搜索树](post/HSfivPnP.md)
 
     - [从二叉搜索树到更大和树：BST 转化累加树](post/dklpiYZ9.md)
 
@@ -1314,6 +1312,8 @@
     - [翻转二叉树：翻转二叉树的两种解题思路](post/FXRWryLF.md)
 
     - [合并二叉树：两个树强强组合](post/gaQ6U7cn.md)
+
+    - [二叉树剪枝：返回移除了所有不包含 1 的子树的原二叉树](post/SImG9j7U.md)
 
     - [翻转等价二叉树：判断这两棵二叉树是否是翻转等价的](post/w8Y8Zw97.md)
 

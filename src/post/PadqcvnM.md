@@ -44,7 +44,6 @@ var constructMaximumBinaryTree = function (nums) {
     return root;
   }
 };
-
 ```
 
 ## 3. 错误记录

@@ -70,7 +70,6 @@ var serialize = function (root) {
 var deserialize = function (data) {
   console.log("data:", data);
   let arr = data.split(",");
-
   return build(arr);
   function build(arr) {
     if (arr.length === 0) return null;

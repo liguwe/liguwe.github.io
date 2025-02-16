@@ -11,7 +11,7 @@
 	- ② 对两个有序数组执行两数之和问题
 
 注意点：
-- traverse 函数里的 traverse 也需要记得传参数啊，相等于有 5 个地方需要传参
+- `traverse` 函数里的 `traverse` 也需要记得传参数啊，相等于有 5 个地方需要传参
 - 这同`合并两个有序数组`不一样，但是可以参考其写法
 	- 四个变量：`m n i  j` 
 
@@ -27,12 +27,10 @@ var twoSumBSTs = function (root1, root2, target) {
     }
     traverse(root1, arr1);
     traverse(root2, arr2);
-
     let m = arr1.length;
     let n = arr2.length;
     let i = 0;
     let j = n - 1;
-
     while (i < m && j >= 0) {
         let sum = arr1[i] + arr2[j];
         if (sum < target) {
@@ -43,7 +41,6 @@ var twoSumBSTs = function (root1, root2, target) {
             return true;
         }
     }
-
     return false;
 };
 ```
