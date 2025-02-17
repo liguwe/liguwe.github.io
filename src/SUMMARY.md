@@ -799,10 +799,7 @@
 # 第三部分 算法
 
 
-  - [前言](post/QcLoSqtI.md)
-
-
-    - [算法](post/Hx1jAMGk.md)
+  - [前言](post/Hx1jAMGk.md)
 
   - [基础](post/Orn7r337.md)
 
@@ -817,10 +814,7 @@
 
     - [刷题注意事项](post/iABQ1qAL.md)
 
-  - [字符串](post/yeqNmJln.md)
-
-
-    - [字符串的最大公因子](post/CKpOplFt.md)
+    - [刷题篇](post/JMwGk4ED.md)
 
   - [数组](post/Xbnjc5P7.md)
 
@@ -1743,6 +1737,8 @@
     - [反直觉的概率问题](post/kd5Z2keW.md)
 
     - [丑数 II](post/ueyDlQLF.md)
+
+    - [字符串的最大公因子](post/2YEkn547.md)
 
   - [其他算法](post/PezUUN25.md)
 
