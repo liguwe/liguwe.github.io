@@ -30,5 +30,5 @@
 ## 4. 参考及相关笔记
 
 - https://labuladong.online/algo/data-structure-basic/graph-traverse-basic/
-- [4. 二叉树的遍历： DFS（前中后序遍历）、BFS（层序遍历）](/post/tu8Ih6p2.html)
-- [5. 多叉树的遍历： DFS（前中后序遍历）、BFS（层序遍历）](/post/sp4tGpi3.html)
+- [4. 二叉树的遍历： DFS（前中后序遍历）、BFS（层序遍历）](/post/KKDFzLXm.html)
+- [5. 多叉树的遍历： DFS（前中后序遍历）、BFS（层序遍历）](/post/yuxjMXyT.html)

@@ -55,7 +55,7 @@ var BFS = function (start, target) {
 
 ## 示例一：二叉树最小深度
 
-> 参考 [111. 二叉树的最小深度](/post/1GnLYvXX.html)
+> 参考 [111. 二叉树的最小深度](/post/6yeWr8HN.html)
 
 ![图片&文件](./files/20241113-7.png)
 

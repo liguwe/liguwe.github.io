@@ -695,3 +695,7 @@ ol.section,
     overflow: hidden;
     text-overflow: ellipsis;
 }
+
+.chapter li > a.toggle div.fa {
+    font-size: 18px;
+}

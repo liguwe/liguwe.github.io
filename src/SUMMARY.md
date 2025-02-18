@@ -816,217 +816,218 @@
 
     - [刷题篇](post/JMwGk4ED.md)
 
-  - [数组](post/Xbnjc5P7.md)
+  - [数组](post/cgIuO9aG.md)
 
 
-    - [数组：Python 描述](post/ko2sTNim.md)
+    - [基础](post/h1ZvCYaC.md)
 
-    - [列表：Python 描述](post/nsxeGwSC.md)
 
-    - [数组：JavaScript 描述](post/YufYkWHU.md)
+      - [列表：Python 描述](post/iENLIeB8.md)
 
-    - [数组链表与内存缓存的关系](post/EYEFWZNR.md)
+      - [数组：JavaScript 描述](post/CHOKNDIn.md)
 
-  - [数组：二分搜索](post/SjJwusEd.md)
+      - [数组链表与内存缓存的关系](post/Ph0RLVik.md)
 
+    - [数组：前缀和、前缀积、差分数组](post/LIVmdh9x.md)
 
-    - [搜索旋转排序数组：从两个有序组成的数组中找目标值](post/3OywtA3D.md)
 
-    - [在排序数组中查找元素的第一个和最后一个位置](post/GtInKqrA.md)
+      - [前缀和](post/MNMNZT79.md)
 
-    - [搜索插入位置：有序数组中插入 target，保证有序，返回插入的位置](post/YbqtB8tz.md)
+      - [前缀积](post/AmFPqnHS.md)
 
-    - [搜索旋转排序数组 II：从两个排序数组中查找目标值，但存在重复元素](post/jZXF3n4i.md)
+      - [差分数组](post/cuhn3EFf.md)
 
-    - [寻找峰值：峰值元素是指其值严格大于左右相邻值的元素](post/28BQAhVi.md)
+      - [最大子数组和](post/5URMCTXg.md)
 
-    - [LCR.172.统计目标成绩的出现次数](post/G6ksIAtV.md)
+      - [除自身以外数组的乘积](post/vdNNpvE3.md)
 
-    - [LCR.点名：从一个升序数组中找出缺失的数字](post/8rcoIEac.md)
+      - [区域和检索 - 数组不可变](post/vT3C1pKf.md)
 
-    - [找到 K 个最接近的元素：最靠近 x 的 k 个数](post/58OE7SUw.md)
+      - [二维区域和检索 - 矩阵不可变](post/NBIpa6QT.md)
 
-    - [二分查找](post/hXCLJdFf.md)
+      - [和等于 k 的最长子数组长度](post/Ot2g5Ary.md)
 
-    - [山脉数组的峰顶索引：开口向上的抛物线](post/0cRgczm2.md)
+      - [区间加法](post/dNXoGqVM.md)
 
-  - [数组：前缀和、前缀积、差分数组](post/bCKOUYNe.md)
+      - [连续的子数组和](post/39K6eUQn.md)
 
+      - [连续数组](post/FokjvwfF.md)
 
-    - [前缀和](post/FWCASyB1.md)
+      - [和为 K 的子数组：返回 该数组中和为 k 的子数组的个数](post/nr6sZYAF.md)
 
-    - [前缀积](post/K1xsHEsJ.md)
+      - [寻找数组的中心下标](post/k6bYBvUd.md)
 
-    - [差分数组](post/dYEpqo3a.md)
+      - [和可被 K 整除的子数组](post/c7D9o7ti.md)
 
-    - [最大子数组和](post/CHwvyjB0.md)
+      - [拼车](post/OEv5d41P.md)
 
-    - [除自身以外数组的乘积](post/yy2EUAbj.md)
+      - [航班预订统计](post/qUiSiUPz.md)
 
-    - [区域和检索 - 数组不可变](post/GOkMpLli.md)
+      - [表现良好的最长时间段](post/XMnHKFPX.md)
 
-    - [二维区域和检索 - 矩阵不可变](post/0zNVMLDg.md)
+      - [矩阵区域和](post/181MhFc2.md)
 
-    - [和等于 k 的最长子数组长度](post/aHOJ1aiZ.md)
+      - [最后 K 个数的乘积](post/wEYJUPSN.md)
 
-    - [区间加法](post/IxaY4pSx.md)
+    - [数组：双指针](post/27TtEczL.md)
 
-    - [连续的子数组和](post/ILE7xZwZ.md)
 
-    - [连续数组](post/ViS45BXQ.md)
+      - [两数之和：无序](post/tzUOLSZl.md)
 
-    - [和为 K 的子数组：返回 该数组中和为 k 的子数组的个数](post/SKTZKz2e.md)
+      - [最长回文子串](post/hH2ysu8g.md)
 
-    - [寻找数组的中心下标](post/mkCBWW9h.md)
+      - [盛最多水的容器：找两条线装水最多](post/0X2sQxBi.md)
 
-    - [和可被 K 整除的子数组](post/2XfhndQK.md)
+      - [三数之和](post/PUWbzyym.md)
 
-    - [拼车](post/53gFopZi.md)
+      - [删除有序数组中的重复项](post/t4rsc156.md)
 
-    - [航班预订统计](post/HcyrMi5s.md)
+      - [移除元素：移除指定元素](post/XMeK5LLx.md)
 
-    - [表现良好的最长时间段](post/m6ao4yfJ.md)
+      - [接雨水：下雨了柱子间能装多少水](post/Vlg9hVh5.md)
 
-    - [矩阵区域和](post/apseo5rk.md)
+      - [颜色分类](post/eB5COFQB.md)
 
-    - [最后 K 个数的乘积](post/fx3J0CfV.md)
+      - [删除有序数组中的重复项 II：最多允许重复两次](post/pbrcGZkS.md)
 
-  - [数组：双指针](post/BOtfhENc.md)
+      - [合并两个有序数组](post/3sXKarxE.md)
 
+      - [验证回文串](post/lXdOqcA8.md)
 
-    - [两数之和：无序](post/stWMlFCK.md)
+      - [两数之和 II - 输入有序数组](post/fr5XjcgK.md)
 
-    - [最长回文子串](post/CCg05SDH.md)
+      - [移动零 1](post/1IkbcJEx.md)
 
-    - [盛最多水的容器：找两条线装水最多](post/eRLEJeNM.md)
+      - [移动零](post/Pr0Lt2c9.md)
 
-    - [三数之和](post/UHd77RXd.md)
+      - [递增的三元子序列](post/5gf2FrbI.md)
 
-    - [删除有序数组中的重复项](post/iadDzAAu.md)
+      - [反转字符串](post/MmzDYObw.md)
 
-    - [移除元素：移除指定元素](post/5Z1I7qpU.md)
+      - [反转字符串中的元音字母](post/PnL83n2V.md)
 
-    - [接雨水：下雨了柱子间能装多少水](post/bWDpbIS3.md)
+      - [有序转化数组：f(x) = a * x * x + b * x + c](post/qDRKQPYC.md)
 
-    - [颜色分类](post/zhH7PYtZ.md)
+      - [判断子序列](post/L3iVxag4.md)
 
-    - [删除有序数组中的重复项 II：最多允许重复两次](post/2arU77uQ.md)
+      - [压缩字符串：b12 => b,1,2 代替](post/8E7vGbtM.md)
 
-    - [合并两个有序数组](post/plXdwR81.md)
+      - [匹配子序列的单词数： words中是 s 的子序列的单词个数](post/lM8AXgtP.md)
 
-    - [验证回文串](post/TsR3yPJU.md)
+      - [有序数组的平方](post/dWBpJ3Dk.md)
 
-    - [两数之和 II - 输入有序数组](post/KYG8E7S5.md)
+      - [交替合并字符串](post/pamc5nGy.md)
 
-    - [移动零 1](post/ltJGSNV7.md)
+    - [数组：滑动窗口](post/r3VzHMmw.md)
 
-    - [移动零](post/VUjrKwVt.md)
 
-    - [递增的三元子序列](post/UaJFY1QT.md)
+      - [无重复字符的最长子串](post/9wy9QJRu.md)
 
-    - [反转字符串](post/xU7nRLlI.md)
+      - [最小覆盖子串](post/Anf4XvAN.md)
 
-    - [反转字符串中的元音字母](post/5yVhWD2g.md)
+      - [重复的DNA序列](post/Uk7ESaYO.md)
 
-    - [有序转化数组：f(x) = a * x * x + b * x + c](post/9lYoyaO3.md)
+      - [长度最小的子数组](post/IokLjwOx.md)
 
-    - [判断子序列](post/zK1TTRCJ.md)
+      - [存在重复元素 II ：两个重复元素的距离小于等于 k](post/f4JEgoq2.md)
 
-    - [压缩字符串：b12 => b,1,2 代替](post/lcpqsl5x.md)
+      - [存在重复元素 III：两个数的差值不超过 t + 两个数的位置差不超过 k](post/pSzFAZte.md)
 
-    - [匹配子序列的单词数： words中是 s 的子序列的单词个数](post/O5nQtWkx.md)
+      - [至多包含 K 个不同字符的最长子串：找出至多包含 k 个 不同 字符的最长子串](post/2gKOfcup.md)
 
-    - [有序数组的平方](post/nK4MRZdv.md)
+      - [至少有 K 个重复字符的最长子串](post/sK3LtLPd.md)
 
-    - [交替合并字符串](post/xTgFAevH.md)
+      - [替换后的最长重复字符：替换 k 次后最长重复字符数](post/pZXrcOE1.md)
 
-  - [数组：滑动窗口](post/NTfUuU6G.md)
+      - [找到字符串中所有字母异位词](post/g2tCfGHM.md)
 
+      - [字符串的排列](post/z6cHCsRY.md)
 
-    - [无重复字符的最长子串](post/5z093pqp.md)
+      - [子数组最大平均数 I](post/936VFjTs.md)
 
-    - [最小覆盖子串](post/sSZc0EWP.md)
+      - [乘积小于 K 的子数组：子数组内所有元素的乘积严格小于 k 的连续子数组的数目](post/FEtqcPrw.md)
 
-    - [重复的DNA序列](post/0jYN4U3w.md)
+      - [最大连续1的个数 III：最多 k 次把 0 变成 1，数组中连续 1 的最大个数](post/S8Dy75PM.md)
 
-    - [长度最小的子数组](post/SrBeML10.md)
+      - [定长子串中元音的最大数目](post/EqL0yyJE.md)
 
-    - [存在重复元素 II ：两个重复元素的距离小于等于 k](post/0hkK5mFU.md)
+      - [删掉一个元素以后全为 1 的最长子数组](post/Q113cXNJ.md)
 
-    - [存在重复元素 III：两个数的差值不超过 t + 两个数的位置差不超过 k](post/JZy2BA9y.md)
+      - [将 x 减到 0 的最小操作数](post/g08ryEtf.md)
 
-    - [至多包含 K 个不同字符的最长子串：找出至多包含 k 个 不同 字符的最长子串](post/oonhYPM7.md)
+    - [数组：二维数组](post/vnA5Xihy.md)
 
-    - [至少有 K 个重复字符的最长子串](post/GRZfw6hO.md)
 
-    - [替换后的最长重复字符：替换 k 次后最长重复字符数](post/HWgNKfZr.md)
+      - [最长公共前缀](post/2oS7pk6u.md)
 
-    - [找到字符串中所有字母异位词](post/A0gdG6As.md)
+      - [二维数组的遍历技巧](post/ZNbyaSmx.md)
 
-    - [字符串的排列](post/rBaNdjvr.md)
+      - [矩阵置零](post/QvsoFtwo.md)
 
-    - [子数组最大平均数 I](post/5wsZPOgW.md)
+      - [搜索二维矩阵：打平成一维也严格递增](post/TwFbtrF8.md)
 
-    - [乘积小于 K 的子数组：子数组内所有元素的乘积严格小于 k 的连续子数组的数目](post/vgtkFk0b.md)
+      - [搜索二维矩阵 II：行递增、列递增](post/OvK0ZDO5.md)
 
-    - [最大连续1的个数 III：最多 k 次把 0 变成 1，数组中连续 1 的最大个数](post/861myxu2.md)
+      - [有序矩阵中第 K 小的元素](post/0Dj6fFtg.md)
 
-    - [定长子串中元音的最大数目](post/96v9T2vg.md)
+      - [重塑矩阵：m*n 转成 r*c](post/VgaFACtV.md)
 
-    - [删掉一个元素以后全为 1 的最长子数组](post/Dm4OPeXu.md)
+      - [转置矩阵](post/cF2ATz7m.md)
 
-    - [将 x 减到 0 的最小操作数](post/1i7no0u1.md)
+      - [二维网格迁移](post/Y5UPWlv7.md)
 
-  - [数组：二维数组](post/lGzGBm05.md)
+      - [将矩阵按对角线排序](post/uqQG1CuI.md)
 
+      - [相等行列对](post/dU3WDE79.md)
 
-    - [最长公共前缀](post/PoFRwCHl.md)
+    - [数组：其他](post/DL66n0tF.md)
 
-    - [二维数组的遍历技巧](post/nyKWO1Wx.md)
 
-    - [矩阵置零](post/I4tCZ908.md)
+      - [缺失的第一个正数：找第一个缺失的正整数](post/sil5Z4ky.md)
 
-    - [搜索二维矩阵：打平成一维也严格递增](post/gNK4bQAR.md)
+      - [合并区间](post/hlaFWthK.md)
 
-    - [搜索二维矩阵 II：行递增、列递增](post/BExiJHT4.md)
+      - [反转字符串中的单词](post/d0i3IvNM.md)
 
-    - [有序矩阵中第 K 小的元素](post/dmG8kMBr.md)
+      - [多数元素](post/Nr6sQkAh.md)
 
-    - [重塑矩阵：m*n 转成 r*c](post/ltZ8hyB9.md)
+      - [轮转数组](post/GyN7G96k.md)
 
-    - [转置矩阵](post/xEEiWiHt.md)
+      - [种花问题](post/GzSoWm8y.md)
 
-    - [二维网格迁移](post/wctjlMiy.md)
+      - [拥有最多糖果的孩子](post/OLi0NiBe.md)
 
-    - [将矩阵按对角线排序](post/IITxTDvE.md)
+      - [确定两个字符串是否接近](post/VC2TNxAv.md)
 
-    - [相等行列对](post/gEprQGiC.md)
+      - [找到最高海拔](post/AXFDiLq8.md)
 
-  - [数组：其他](post/6iFoeHAv.md)
-
-
-    - [缺失的第一个正数：找第一个缺失的正整数](post/65YudmiQ.md)
-
-    - [合并区间](post/KmvnpL6Y.md)
-
-    - [反转字符串中的单词](post/w9w54gu3.md)
-
-    - [多数元素](post/e2lxwG9n.md)
-
-    - [轮转数组](post/ZAUpPS6c.md)
-
-    - [种花问题](post/HFcXboLC.md)
-
-    - [拥有最多糖果的孩子](post/MKfQnPbO.md)
-
-    - [确定两个字符串是否接近](post/dDy9vq6g.md)
-
-    - [找到最高海拔](post/tOXNbeFO.md)
-
-    - [找出两数组的不同](post/LVHFkmUv.md)
+      - [找出两数组的不同](post/qeIgoOj4.md)
 
   - [搜索](post/Q5mhC9Ig.md)
 
+
+    - [二分搜索](post/tMNcxsB6.md)
+
+
+      - [搜索旋转排序数组：从两个有序组成的数组中找目标值](post/Y0aiMdMf.md)
+
+      - [在排序数组中查找元素的第一个和最后一个位置](post/9LdPc7yW.md)
+
+      - [搜索插入位置：有序数组中插入 target，保证有序，返回插入的位置](post/DYNgULpl.md)
+
+      - [搜索旋转排序数组 II：从两个排序数组中查找目标值，但存在重复元素](post/D7QIxH6k.md)
+
+      - [寻找峰值：峰值元素是指其值严格大于左右相邻值的元素](post/sqT7McUU.md)
+
+      - [LCR.172.统计目标成绩的出现次数](post/nIQy5fOD.md)
+
+      - [LCR.点名：从一个升序数组中找出缺失的数字](post/uvVsStw9.md)
+
+      - [找到 K 个最接近的元素：最靠近 x 的 k 个数](post/xzwII3SQ.md)
+
+      - [二分查找](post/yMDRm88n.md)
+
+      - [山脉数组的峰顶索引：开口向上的抛物线](post/CYbpwlmt.md)
 
     - [搜索算法总结](post/VNMt7g88.md)
 
@@ -1175,341 +1176,342 @@
 
     - [K 和数对的最大数目](post/48fQ1uOf.md)
 
-  - [树](post/SWJSul0H.md)
+  - [树](post/MPg6OKzp.md)
 
 
-    - [树的一些基本概念](post/zyhZnSC6.md)
+    - [基础](post/AQZfXfgy.md)
 
-    - [二叉树基本概念：Python 描述](post/SSQiWJtK.md)
 
-    - [二叉树的存储方式](post/NGIy201y.md)
+      - [树的一些基本概念](post/3T0JlAuY.md)
 
-    - [二叉树的遍历：Python 描述](post/LZ1Rs4u3.md)
+      - [二叉树基本概念：Python 描述](post/1NYSm1r8.md)
 
-    - [二叉树的遍历： DFS（前中后序遍历）、BFS（层序遍历）](post/tu8Ih6p2.md)
+      - [二叉树的存储方式](post/XLnyEKAx.md)
 
-    - [多叉树的遍历： DFS（前中后序遍历）、BFS（层序遍历）](post/sp4tGpi3.md)
+      - [二叉树的遍历：Python 描述](post/tcrT8quY.md)
 
-    - [二叉树算法概述](post/xLVZsluf.md)
+      - [二叉树的遍历： DFS（前中后序遍历）、BFS（层序遍历）](post/KKDFzLXm.md)
 
-    - [二叉树的两种解题思维](post/XijVtSEP.md)
+      - [多叉树的遍历： DFS（前中后序遍历）、BFS（层序遍历）](post/yuxjMXyT.md)
 
-    - [二叉树的分解问题思路](post/C2558jHU.md)
+      - [二叉树算法概述](post/QllOZkci.md)
 
-    - [二叉树的前中后序遍历详解](post/iFyMtqjR.md)
+      - [二叉树的两种解题思维](post/L4GMaNEh.md)
 
-    - [二叉树遍历的迭代解法](post/7qavivLW.md)
+      - [二叉树的分解问题思路](post/1xDczB1A.md)
 
-    - [多叉树的遍历：Python 描述](post/023tCkgY.md)
+      - [二叉树的前中后序遍历详解](post/X8osHr9V.md)
 
-    - [二叉树与单链表的关系](post/zl5S4whG.md)
+      - [二叉树遍历的迭代解法](post/j2Evrdcb.md)
 
-    - [AVL 树和红黑树 →  都是 BST](post/ELxZD8Id.md)
+      - [多叉树的遍历：Python 描述](post/QbdNVmQa.md)
 
-    - [其他树结构](post/5wsXjS4y.md)
+      - [二叉树与单链表的关系](post/t4puC5SM.md)
 
-  - [二叉树](post/8BGAT4mA.md)
+      - [AVL 树和红黑树 →  都是 BST](post/9FPtAijq.md)
 
+      - [其他树结构](post/QwudufcU.md)
 
-    - [最近公共祖先问题合集](post/kn9MI0oy.md)
+    - [二叉树基础](post/pURB4uE7.md)
 
-    - [二叉树的最大深度](post/WXysqmVv.md)
 
-    - [二叉树展开为链表](post/U6zG0hTx.md)
+      - [二叉树的最大深度](post/qKJPK7eM.md)
 
-    - [填充每个节点的下一个右侧节点指针](post/VLS5qdnO.md)
+      - [二叉树展开为链表](post/LfwzcF7Z.md)
 
-    - [二叉树的前序遍历](post/NK0t20jV.md)
+      - [填充每个节点的下一个右侧节点指针](post/qEYAXcLw.md)
 
-    - [二叉树的右视图](post/TR97KG1r.md)
+      - [二叉树的前序遍历](post/AfEamTpG.md)
 
-    - [完全二叉树的节点个数](post/s2O4ipkN.md)
+      - [二叉树的右视图](post/F3hNwl9a.md)
 
-    - [二叉搜索树的最近公共祖先：p 和 q 一定在树中](post/IP1Z0CVK.md)
+      - [完全二叉树的节点个数](post/5VYLS68c.md)
 
-    - [二叉树的最近公共祖先：p 和 q 一定在树中](post/x8vnQqCL.md)
+      - [二叉搜索树的最近公共祖先：p 和 q 一定在树中](post/dhhpwBSL.md)
 
-    - [验证二叉树的前序序列化](post/LCTow0TF.md)
+      - [二叉树的最近公共祖先：p 和 q 一定在树中](post/o2az1q8q.md)
 
-    - [扁平化嵌套列表迭代器：惰性展开多叉树](post/79iJUmJR.md)
+      - [验证二叉树的前序序列化](post/5exjfYBj.md)
 
-    - [二叉树的直径：左右子树的最大深度之和](post/KuQa712r.md)
+      - [扁平化嵌套列表迭代器：惰性展开多叉树](post/SA4a3sLn.md)
 
-    - [叶子相似的树](post/lVacl84h.md)
+      - [二叉树的直径：左右子树的最大深度之和](post/eV1r4o8F.md)
 
-    - [二叉树的最近公共祖先 II：p 和 q 不一定在树中](post/5289AF4N.md)
+      - [叶子相似的树](post/S3E13zTa.md)
 
-    - [二叉树的最近公共祖先 III：包含 parent 指针](post/LXhtNwOW.md)
+      - [二叉树的最近公共祖先 II：p 和 q 不一定在树中](post/OBXkk1r5.md)
 
-    - [二叉树的最近公共祖先 IV：多个节点的最近公共祖先](post/SlDlNJOo.md)
+      - [二叉树的最近公共祖先 III：包含 parent 指针](post/n4mC1ZSv.md)
 
-    - [找到二叉树中的距离：p 到 q 的路径上边的数目](post/zE1y8nui.md)
+      - [二叉树的最近公共祖先 IV：多个节点的最近公共祖先](post/FPqFCWmS.md)
 
-  - [二叉树的构造与序列化](post/7Qcj1Vyt.md)
+      - [找到二叉树中的距离：p 到 q 的路径上边的数目](post/3EMkdRkK.md)
 
+    - [构造与序列化](post/JU1Cwote.md)
 
-    - [从前序与中序遍历序列构造二叉树](post/bXrOMZJl.md)
 
-    - [从中序与后序遍历序列构造二叉树](post/5KAqm4AD.md)
+      - [从前序与中序遍历序列构造二叉树](post/nM4pQyo5.md)
 
-    - [将有序数组转换为二叉搜索树](post/tLQaL5R1.md)
+      - [从中序与后序遍历序列构造二叉树](post/nKZTaQAI.md)
 
-    - [有序链表转换二叉搜索树](post/GkFPmMtS.md)
+      - [将有序数组转换为二叉搜索树](post/6jjMqmPh.md)
 
-    - [二叉搜索树迭代器](post/PsEk0Ttu.md)
+      - [有序链表转换二叉搜索树](post/nPrB54KO.md)
 
-    - [二叉树的序列化与反序列化](post/AjV6Fs6g.md)
+      - [二叉搜索树迭代器](post/JKnApN80.md)
 
-    - [序列化和反序列化二叉搜索树](post/edeAHV1o.md)
+      - [二叉树的序列化与反序列化](post/BF9CjAHa.md)
 
-    - [从字符串生成二叉树：由包含括号的字符串生成二叉树](post/hpEauCQf.md)
+      - [序列化和反序列化二叉搜索树](post/ZDvYD3n7.md)
 
-    - [根据二叉树创建字符串：二叉树转字符串 → 1(2(4))(3)](post/xahPU5A6.md)
+      - [从字符串生成二叉树：由包含括号的字符串生成二叉树](post/Q8yAfLWb.md)
 
-    - [最大二叉树：根据一个数组构建最大二叉树](post/PadqcvnM.md)
+      - [根据二叉树创建字符串：二叉树转字符串 → 1(2(4))(3)](post/Muw2k6wQ.md)
 
-    - [根据前序和后序遍历构造二叉树](post/NEls1C4T.md)
+      - [最大二叉树：根据一个数组构建最大二叉树](post/XlnofoBM.md)
 
-    - [所有可能的真二叉树：节点数为 n 的所有满二叉树](post/EJ24g22X.md)
+      - [根据前序和后序遍历构造二叉树](post/9f6jbHcn.md)
 
-  - [二叉搜索树（BST）](post/NESMJRTO.md)
+      - [所有可能的真二叉树：节点数为 n 的所有满二叉树](post/P8o7QHNT.md)
 
+    - [二叉搜索树（BST）](post/Hcw4hCVw.md)
 
-    - [二叉搜索树：Python 描述](post/ydjhyNJy.md)
 
-    - [二叉搜索树的增删改查模板](post/yAGTMVgV.md)
+      - [二叉搜索树：Python 描述](post/swN0nFcW.md)
 
-    - [不同的二叉搜索树 II：列举 1-n 能构造出的所有BST](post/4Tnoqtcb.md)
+      - [二叉搜索树的增删改查模板](post/XBWFUznD.md)
 
-    - [不同的二叉搜索树：1-n个数字能构造出多少个 BST](post/IJG7m7Pn.md)
+      - [不同的二叉搜索树 II：列举 1-n 能构造出的所有BST](post/ETZW6LTZ.md)
 
-    - [验证二叉搜索树](post/djFSIkku.md)
+      - [不同的二叉搜索树：1-n个数字能构造出多少个 BST](post/LyDs5qOS.md)
 
-    - [恢复二叉搜索树：恰好两个节点的值被错误地交换，请修正](post/r3b9n33J.md)
+      - [验证二叉搜索树](post/EmoB4FwK.md)
 
-    - [二叉搜索树中第 K 小的元素](post/cb9cyw8I.md)
+      - [恢复二叉搜索树：恰好两个节点的值被错误地交换，请修正](post/U9rNic6M.md)
 
-    - [验证二叉搜索树的前序遍历序列](post/xqkGcDzR.md)
+      - [二叉搜索树中第 K 小的元素](post/H5LJxXWm.md)
 
-    - [最接近的二叉搜索树值：二叉搜索树中找到最接近目标值 target 的数值，如果有多个答案，返回最小的那个](post/GBYNqjEJ.md)
+      - [验证二叉搜索树的前序遍历序列](post/lsHZ9hQo.md)
 
-    - [二叉搜索树中的中序后继：比 p.val 大的节点中键值最小的节点](post/TKyfqx7h.md)
+      - [最接近的二叉搜索树值：二叉搜索树中找到最接近目标值 target 的数值，如果有多个答案，返回最小的那个](post/uE8syzGM.md)
 
-    - [删除二叉搜索树中的节点](post/LtoFWspn.md)
+      - [二叉搜索树中的中序后继：比 p.val 大的节点中键值最小的节点](post/tTQxBCL7.md)
 
-    - [二叉搜索树中的众数：找出并返回 BST 中的所有出现频率最高的元素](post/J8KSnRts.md)
+      - [删除二叉搜索树中的节点](post/iI0hsMxu.md)
 
-    - [二叉搜索树中的中序后继 II：包含 parent节点](post/4xtNufg5.md)
+      - [二叉搜索树中的众数：找出并返回 BST 中的所有出现频率最高的元素](post/VDO9qFq6.md)
 
-    - [二叉搜索树的最小绝对差：任意两个节点的差值的绝对值最小值](post/kTWl81O0.md)
+      - [二叉搜索树中的中序后继 II：包含 parent节点](post/DQcYHZ7S.md)
 
-    - [把二叉搜索树转换为累加树：每个节点变成 `>=` 该节点的所有节点之和](post/yU28jbZo.md)
+      - [二叉搜索树的最小绝对差：任意两个节点的差值的绝对值最小值](post/zJwUKWCT.md)
 
-    - [两数之和 IV - 输入二叉搜索树，是否存在](post/c4vFVyZb.md)
+      - [把二叉搜索树转换为累加树：每个节点变成 `>=` 该节点的所有节点之和](post/Xjc2uGdt.md)
 
-    - [修剪二叉搜索树：通过修剪二叉搜索树，使得所有节点的值在 low~ high 之间](post/tqlhJElu.md)
+      - [两数之和 IV - 输入二叉搜索树，是否存在](post/4xcCaxG1.md)
 
-    - [二叉树中第二小的节点：root 总是小于子节点，找第二小的值](post/esou4Ts7.md)
+      - [修剪二叉搜索树：通过修剪二叉搜索树，使得所有节点的值在 low~ high 之间](post/ChYLX29d.md)
 
-    - [二叉搜索树中的搜索](post/D4FSVDnv.md)
+      - [二叉树中第二小的节点：root 总是小于子节点，找第二小的值](post/GHruIS4L.md)
 
-    - [二叉搜索树中的插入操作](post/YW1dUn7u.md)
+      - [二叉搜索树中的搜索](post/gER01KGF.md)
 
-    - [拆分二叉搜索树：大于 k 的子树 和 小于 k 的子树](post/nV5GHgw4.md)
+      - [二叉搜索树中的插入操作](post/v8T0AT35.md)
 
-    - [递增顺序搜索树： BST转成单链表](post/2apG1D0L.md)
+      - [拆分二叉搜索树：大于 k 的子树 和 小于 k 的子树](post/UPbYKs74.md)
 
-    - [前序遍历构造二叉搜索树：前序位置构造二叉搜索树](post/HSfivPnP.md)
+      - [递增顺序搜索树： BST转成单链表](post/oWRMMYBz.md)
 
-    - [从二叉搜索树到更大和树：BST 转化累加树](post/dklpiYZ9.md)
+      - [前序遍历构造二叉搜索树：前序位置构造二叉搜索树](post/YNl8jbT4.md)
 
-    - [查找两棵二叉搜索树之和：从两棵BST中各找出一个节点， 满足 2sum = target](post/7VtGCGGT.md)
+      - [从二叉搜索树到更大和树：BST 转化累加树](post/XModJxOA.md)
 
-    - [两棵二叉搜索树中的所有元素：合并两个 BST，返回有序数组](post/qE9VVYod.md)
+      - [查找两棵二叉搜索树之和：从两棵BST中各找出一个节点， 满足 2sum = target](post/0yoiHwvE.md)
 
-    - [二叉搜索子树的最大键值和：二叉树的 BST 子树最大和](post/1GLStuSm.md)
+      - [两棵二叉搜索树中的所有元素：合并两个 BST，返回有序数组](post/ZTlUrIzK.md)
 
-    - [将二叉搜索树变平衡](post/xrl01eb2.md)
+      - [二叉搜索子树的最大键值和：二叉树的 BST 子树最大和](post/5WsUjfPt.md)
 
-  - [二叉树：分解问题的思路](post/R0hflmUz.md)
+      - [将二叉搜索树变平衡](post/SW50qzb3.md)
 
+    - [分解问题的思路](post/JjDD5DQr.md)
 
-    - [相同的树：判断两个二叉树是否相同](post/7aCfXgt1.md)
 
-    - [对称二叉树：判断树是否轴对称](post/ne0jmkb0.md)
+      - [相同的树：判断两个二叉树是否相同](post/sqsCtGd3.md)
 
-    - [二叉树中的最大路径和：不一定经过根节点，可以从左到右边](post/wJobYYGh.md)
+      - [对称二叉树：判断树是否轴对称](post/MErp8H0r.md)
 
-    - [LCR.子结构判断：A 是否包含 B](post/7szgzwbW.md)
+      - [二叉树中的最大路径和：不一定经过根节点，可以从左到右边](post/NFyFx8iJ.md)
 
-    - [翻转二叉树：翻转二叉树的两种解题思路](post/FXRWryLF.md)
+      - [LCR.子结构判断：A 是否包含 B](post/0kbTrYfQ.md)
 
-    - [合并二叉树：两个树强强组合](post/gaQ6U7cn.md)
+      - [翻转二叉树：翻转二叉树的两种解题思路](post/gh45I2x1.md)
 
-    - [二叉树剪枝：返回移除了所有不包含 1 的子树的原二叉树](post/SImG9j7U.md)
+      - [合并二叉树：两个树强强组合](post/Om27G4w3.md)
 
-    - [翻转等价二叉树：判断这两棵二叉树是否是翻转等价的](post/w8Y8Zw97.md)
+      - [二叉树剪枝：返回移除了所有不包含 1 的子树的原二叉树](post/Wpa2fPyz.md)
 
-    - [二叉树中的链表：二叉树中是否包含某条单链表](post/mjO8UGWx.md)
+      - [翻转等价二叉树：判断这两棵二叉树是否是翻转等价的](post/iYOVM6nX.md)
 
-    - [克隆 N 叉树](post/E43D9vz5.md)
+      - [二叉树中的链表：二叉树中是否包含某条单链表](post/BZBDzYfP.md)
 
-  - [二叉树：遍历一遍的思路](post/Axhr1al8.md)
+      - [克隆 N 叉树](post/sg15I2Ek.md)
 
+    - [遍历一遍的思路](post/sBXDilmS.md)
 
-    - [二叉树的中序遍历](post/FdDVMFM0.md)
 
-    - [二叉树的最小深度](post/1GnLYvXX.md)
+      - [二叉树的中序遍历](post/Xpm2BITm.md)
 
-    - [路径总和：是否存在根节点到叶子节点的路径和为 target](post/DgvmFf2E.md)
+      - [二叉树的最小深度](post/6yeWr8HN.md)
 
-    - [路径总和 II ：找到所有从根节点到叶子节点路径总和等于 target 的路径](post/qd1DSHbm.md)
+      - [路径总和：是否存在根节点到叶子节点的路径和为 target](post/5NbKNTL8.md)
 
-    - [求根节点到叶节点数字之和](post/eBbhEw7q.md)
+      - [路径总和 II ：找到所有从根节点到叶子节点路径总和等于 target 的路径](post/1j6YO3yD.md)
 
-    - [二叉树的后序遍历](post/I4SYCCXP.md)
+      - [求根节点到叶节点数字之和](post/Id8tsejA.md)
 
-    - [二叉树的所有路径：返回二叉树的所有路径，以a→b的方式](post/Gp1eQZiD.md)
+      - [二叉树的后序遍历](post/kDwbvlpZ.md)
 
-    - [二叉树最长连续序列：所有路径中，求最长连续序列的长度](post/Ann8vNSv.md)
+      - [二叉树的所有路径：返回二叉树的所有路径，以a→b的方式](post/sJEUiwT3.md)
 
-    - [嵌套列表加权和](post/CpSZNe5i.md)
+      - [二叉树最长连续序列：所有路径中，求最长连续序列的长度](post/eN77rOow.md)
 
-    - [嵌套列表加权和 II](post/a5ASWxCP.md)
+      - [嵌套列表加权和](post/1SFYG6lA.md)
 
-    - [字典序排数](post/pZV91R7r.md)
+      - [嵌套列表加权和 II](post/VWhHdJYq.md)
 
-    - [左叶子之和](post/nel3JDhB.md)
+      - [字典序排数](post/XTl8GBNe.md)
 
-    - [将二叉搜索树转化为排序的双向链表](post/AOHvzzPr.md)
+      - [左叶子之和](post/kbwkGsuY.md)
 
-    - [路径总和 III：不需要从根节点查找，返回满足条件的个数](post/YIjC1DP4.md)
+      - [将二叉搜索树转化为排序的双向链表](post/kL8ywdx9.md)
 
-    - [找树左下角的值：找出该二叉树的 最底层 最左边 节点的值](post/zsixliZb.md)
+      - [路径总和 III：不需要从根节点查找，返回满足条件的个数](post/YMa6seoW.md)
 
-    - [N 叉树的最大深度](post/E4PUbKHP.md)
+      - [找树左下角的值：找出该二叉树的 最底层 最左边 节点的值](post/aPuJY7u5.md)
 
-    - [另一棵树的子树：root 是否包含 subRoot](post/j5NNIJL0.md)
+      - [N 叉树的最大深度](post/eigF9uSw.md)
 
-    - [N 叉树的前序遍历](post/Igj7M8ML.md)
+      - [另一棵树的子树：root 是否包含 subRoot](post/DK2Uk3vn.md)
 
-    - [N 叉树的后序遍历](post/trmnkEuN.md)
+      - [N 叉树的前序遍历](post/jO6JJzHp.md)
 
-    - [在二叉树中增加一行](post/9N3IA6bq.md)
+      - [N 叉树的后序遍历](post/rWt6L6ph.md)
 
-    - [路径总和 IV](post/SyW6qrnp.md)
+      - [在二叉树中增加一行](post/qe8JN58Y.md)
 
-    - [二叉搜索树的范围和：返回给定区间所有结点的值的和](post/jWpJljt8.md)
+      - [路径总和 IV](post/x20DY4so.md)
 
-    - [翻转二叉树以匹配先序遍历：翻转节点后的树的先序遍历顺序是否能够匹配给定的数组顺序](post/1Zad2aWR.md)
+      - [二叉搜索树的范围和：返回给定区间所有结点的值的和](post/8fJ4qxwt.md)
 
-    - [二叉树的垂序遍历](post/hIRO8t0s.md)
+      - [翻转二叉树以匹配先序遍历：翻转节点后的树的先序遍历顺序是否能够匹配给定的数组顺序](post/0c7akIO9.md)
 
-    - [从叶结点开始的最小字符串](post/duGwXd9A.md)
+      - [二叉树的垂序遍历](post/Rblkq989.md)
 
-    - [二叉树的堂兄弟节点：x 和 y 是否是堂兄弟](post/umFEOk6Z.md)
+      - [从叶结点开始的最小字符串](post/liMgC4ar.md)
 
-    - [从根到叶的二进制数之和](post/voPuSgyw.md)
+      - [二叉树的堂兄弟节点：x 和 y 是否是堂兄弟](post/Flsg4YNG.md)
 
-    - [二叉树寻路：之字形状标序号](post/2Bl57jSJ.md)
+      - [从根到叶的二进制数之和](post/xodjFrox.md)
 
-    - [二叉树着色游戏](post/HWE3DqfN.md)
+      - [二叉树寻路：之字形状标序号](post/u8TMB6zd.md)
 
-    - [最小公共区域](post/uDuSf4Yl.md)
+      - [二叉树着色游戏](post/DZvxvqqO.md)
 
-    - [在受污染的二叉树中查找元素](post/BPqgTiE5.md)
+      - [最小公共区域](post/etWu1bBV.md)
 
-    - [祖父节点值为偶数的节点和](post/vRPO5R0j.md)
+      - [在受污染的二叉树中查找元素](post/3zJ8iPV4.md)
 
-    - [找出克隆二叉树中的相同节点：使用 A 中的 target 去找 B 中对应节点](post/7xXS79Pd.md)
+      - [祖父节点值为偶数的节点和](post/6A1QeqkW.md)
 
-    - [判断给定的序列是否是二叉树从根到叶的路径](post/c6wzQN6x.md)
+      - [找出克隆二叉树中的相同节点：使用 A 中的 target 去找 B 中对应节点](post/alZCrFML.md)
 
-    - [统计二叉树中好节点的数目：](post/9QVWyCl1.md)
+      - [判断给定的序列是否是二叉树从根到叶的路径](post/VvYBxsxi.md)
 
-    - [二叉树中的伪回文路径](post/4hv5gC4M.md)
+      - [统计二叉树中好节点的数目：](post/SRuWJMic.md)
 
-    - [寻找所有的独生节点](post/ULYRD6zn.md)
+      - [二叉树中的伪回文路径](post/sYGyhsDq.md)
 
-    - [找到二叉树中最近的右侧节点：找到 节点 u 所在层中距离最近的右侧节点](post/G0BKIDrR.md)
+      - [寻找所有的独生节点](post/QjuZRoRV.md)
 
-    - [检查两棵二叉表达式树是否等价](post/ivEWrviC.md)
+      - [找到二叉树中最近的右侧节点：找到 节点 u 所在层中距离最近的右侧节点](post/gSrOw9bX.md)
 
-    - [从二叉树一个节点到另一个节点每一步的方向](post/IwUvJFZ3.md)
+      - [检查两棵二叉表达式树是否等价](post/4rkDtuyH.md)
 
-  - [二叉树：后序位置](post/tNmoR6Iu.md)
+      - [从二叉树一个节点到另一个节点每一步的方向](post/8nzd35TK.md)
 
+    - [后序位置](post/rgp1wWdl.md)
 
-    - [平衡二叉树](post/PBXqDzEc.md)
 
-    - [统计同值子树](post/3mmEhYJt.md)
+      - [平衡二叉树](post/xf2QPVFi.md)
 
-    - [最大二叉搜索子树：给定一个二叉树，找到其中最大的二叉搜索树（BST）子树，并返回该子树的大小](post/EsA3Z5MB.md)
+      - [统计同值子树](post/EDxeLX8G.md)
 
-    - [寻找二叉树的叶子节点](post/9KKVfLWB.md)
+      - [最大二叉搜索子树：给定一个二叉树，找到其中最大的二叉搜索树（BST）子树，并返回该子树的大小](post/2lzE1kdI.md)
 
-    - [出现次数最多的子树元素和](post/R3nHleIV.md)
+      - [寻找二叉树的叶子节点](post/AIWEcZQk.md)
 
-    - [二叉树最长连续序列 II：最长连续的路径](post/vfDRZ6Rh.md)
+      - [出现次数最多的子树元素和](post/6KYvJPJS.md)
 
-    - [二叉树的坡度：返回整个树的坡度](post/GWfXjmml.md)
+      - [二叉树最长连续序列 II：最长连续的路径](post/4Q1IcKKs.md)
 
-    - [均匀树划分：能否分成两棵节点值之和相等的子树](post/gTgYCrbv.md)
+      - [二叉树的坡度：返回整个树的坡度](post/to5v0yIX.md)
 
-    - [最长同值路径：返回边的个数](post/tPbVYQHi.md)
+      - [均匀树划分：能否分成两棵节点值之和相等的子树](post/nLAO450m.md)
 
-    - [具有所有最深节点的最小子树](post/DOpRXRpX.md)
+      - [最长同值路径：返回边的个数](post/weLm2nIu.md)
 
-    - [监控二叉树](post/mngilNyf.md)
+      - [具有所有最深节点的最小子树](post/zlyXcqAD.md)
 
-    - [节点与其祖先之间的最大差值](post/wT2W5gQw.md)
+      - [监控二叉树](post/F8UcqAcP.md)
 
-    - [子树的最大平均值](post/3Jy3n74y.md)
+      - [节点与其祖先之间的最大差值](post/ZVacun6f.md)
 
-    - [删除给定值的叶子节点](post/jr57oRIX.md)
+      - [子树的最大平均值](post/E1n9au1s.md)
 
-    - [分裂二叉树的最大乘积：删除 1 条边，使二叉树分裂成两棵子树，且它们子树和的乘积尽可能大](post/b7Dws6tY.md)
+      - [删除给定值的叶子节点](post/WECAdkpn.md)
 
-    - [二叉树中的最长交错路径](post/jPJCzgh5.md)
+      - [分裂二叉树的最大乘积：删除 1 条边，使二叉树分裂成两棵子树，且它们子树和的乘积尽可能大](post/8A9wGp8J.md)
 
-    - [收集树上所有苹果的最少时间](post/cX3EWcuo.md)
+      - [二叉树中的最长交错路径](post/Xy2hjesa.md)
 
-    - [统计最高分的节点数目](post/YRLSSeZr.md)
+      - [收集树上所有苹果的最少时间](post/HlHVIzEM.md)
 
-  - [二叉树：层次遍历](post/LpbspKpp.md)
+      - [统计最高分的节点数目](post/7VtzxzGq.md)
 
+    - [层次遍历](post/wtsvAAEn.md)
 
-    - [二叉树的层序遍历](post/R0Kf0O9y.md)
 
-    - [二叉树的锯齿形层序遍历：Z 字形遍历](post/u2EzuHIX.md)
+      - [二叉树的层序遍历](post/ZwC7vxrt.md)
 
-    - [二叉树的层序遍历 II：自底向上的层序遍历](post/uTTr350G.md)
+      - [二叉树的锯齿形层序遍历：Z 字形遍历](post/3VAiQSVE.md)
 
-    - [填充每个节点的下一个右侧节点指针 II](post/Mc521sJI.md)
+      - [二叉树的层序遍历 II：自底向上的层序遍历](post/dTq8eH0U.md)
 
-    - [将 N 叉树编码为二叉树：可以将 N 叉树编码为二叉树，并能将该二叉树解码为原 N 叉树](post/49EKa2VO.md)
+      - [填充每个节点的下一个右侧节点指针 II](post/0D3uLxx3.md)
 
-    - [在每个树行中找最大值](post/jwDJNVZS.md)
+      - [将 N 叉树编码为二叉树：可以将 N 叉树编码为二叉树，并能将该二叉树解码为原 N 叉树](post/Y7B9SdjF.md)
 
-    - [二叉树的层平均值](post/8uCGIRaD.md)
+      - [在每个树行中找最大值](post/8ddv8ave.md)
 
-    - [二叉树最大宽度](post/NwYcXecU.md)
+      - [二叉树的层平均值](post/vJLE899h.md)
 
-    - [二叉树最近的叶节点：返回树中与目标值 k  最近的叶子节点](post/1CYsgIXi.md)
+      - [二叉树最大宽度](post/60L0HiGp.md)
 
-    - [二叉树中所有距离为 K 的结点：返回到目标结点 target 距离为 k 的所有结点的值组成的数组](post/dtwyezrb.md)
+      - [二叉树最近的叶节点：返回树中与目标值 k  最近的叶子节点](post/nrhcG1ZI.md)
 
-    - [完全二叉树插入器：设计一种算法，将一个新节点插入到一棵完全二叉树中，并在插入后保持其完整](post/OHx86Thb.md)
+      - [二叉树中所有距离为 K 的结点：返回到目标结点 target 距离为 k 的所有结点的值组成的数组](post/Y331378x.md)
 
-    - [二叉树的完全性检验：判断完全二叉树](post/rctIpgsW.md)
+      - [完全二叉树插入器：设计一种算法，将一个新节点插入到一棵完全二叉树中，并在插入后保持其完整](post/TR8sk2fj.md)
 
-    - [最大层内元素和：返回哪一层和最大](post/AeR8e4As.md)
+      - [二叉树的完全性检验：判断完全二叉树](post/w6AXzcVs.md)
 
-    - [层数最深叶子节点的和：返回最后一层的和](post/n5cYJSe2.md)
+      - [最大层内元素和：返回哪一层和最大](post/q7ohz2CS.md)
 
-    - [找到二叉树中最近的右侧节点：u 节点最近的右侧节点](post/0WFy97QT.md)
+      - [层数最深叶子节点的和：返回最后一层的和](post/h5oBiqz4.md)
 
-    - [奇偶树：第 0 层递增，第 1 层递减](post/6jUq0Gvf.md)
+      - [找到二叉树中最近的右侧节点：u 节点最近的右侧节点](post/e7IgZNAE.md)
+
+      - [奇偶树：第 0 层递增，第 1 层递减](post/5nDTxJQi.md)
 
   - [堆](post/tQxgvOZ2.md)
 
@@ -1799,6 +1801,8 @@
     - [常见的几种 POST 数据提交方式](post/SWwHyhtX.md)
 
     - [幂等与非幂等、HTTP 常见状态码](post/OX31uSE1.md)
+
+    - [本地配置 SSH](post/X9dPSLc5.md)
 
   - [数据库](post/xwFx64Vn.md)
 

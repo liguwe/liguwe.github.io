@@ -4,4 +4,4 @@
 
 > 搜索算法相关
 
-> 另见 [0. 二分搜索](/post/SjJwusEd.html)
+> 另见 [0. 二分搜索](/post/tMNcxsB6.html)
