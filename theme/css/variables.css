@@ -3,8 +3,8 @@
 :root {
     /* 2024 年 09 月 11 日 22:14:50 于杭州，32.91 岁，就从这里开始吧，书写 832 之书    */
     --sidebar-width: 329.176px;
-    --sidebar-resize-indicator-width: 8px;
-    --sidebar-resize-indicator-space: 2px;
+    --sidebar-resize-indicator-width: 4px;
+    --sidebar-resize-indicator-space: 0px;
     --page-padding: 15px;
     --content-max-width: 750px;
     --menu-bar-height: 50px;

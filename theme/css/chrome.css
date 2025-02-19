@@ -699,3 +699,20 @@ ol.section,
 .chapter li > a.toggle div.fa {
     font-size: 18px;
 }
+
+/* 点击区域大一点 */
+.chapter .chapter-item a:first-of-type {
+    flex: 1;
+}
+.sidebar-resize-handle .sidebar-resize-indicator {
+    display: none;
+}
+.sidebar-resize-handle {
+    opacity: 0;
+    position: relative;
+    background-color: var(--sidebar-active);
+}
+.sidebar-resize-handle:hover {
+    opacity: 1;
+    transition: opacity 0.3s ease-in-out;
+}
