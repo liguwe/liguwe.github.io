@@ -27,7 +27,7 @@
 16. 自定义数据属性：`data-属性`
 17. 模板：template标签
 18. **图片响应式：srcset和sizes属性**
-19. 延迟加载：使用 loading="lazy" 属性
+19. 延迟加载：使用 `loading="lazy"` 属性
 	1. ==标准本来就支持==
 20. 表单验证：使用 pattern, required 等属性
 21. 输入类型：如date, time, email, url等
