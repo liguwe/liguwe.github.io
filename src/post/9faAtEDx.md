@@ -6,4 +6,11 @@
 
 
 目录：
+- AGI
+	- [0. 前言](/post/lstlMGds.html)
 - 前端
+	- [0. 前言](/post/ZBgBseQh.html)
+- 算法
+	- [0. 算法](/post/Hx1jAMGk.html)
+- 计算机科学
+	- [0. 前言](/post/CSSqJ5oL.html)
