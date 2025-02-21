@@ -14,7 +14,7 @@
 - Modernizr 库: 
 	- 一个流行的库，用于检测 HTML5 和 CSS3 特性，比如 `if (Modernizr.flexbox) {} `
 - IE条件注释
-	- ==太老了，可以不用关注了==
+	- **太老了，可以不用关注了**
 - 渐进增强和优雅降级
 - CSS Hack：
 	- 比如 `*color: yellow; /* IE6,IE7 */`

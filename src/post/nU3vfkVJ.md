@@ -49,7 +49,7 @@
 	- 等
 2. **数据库**：
 	- **关系型数据库**：如 MySQL、PostgreSQL，使用 SQL 进行数据查询和操作。
-	- **NoSQL 数据库**：如 MongoDB、Cassandra，适用于处理大规模和==非结构化数据==。
+	- **NoSQL 数据库**：如 MongoDB、Cassandra，适用于处理大规模和**非结构化数据**。
 3. **Web 框架**：
 	- 提供结构化的开发环境和工具，简化 Web 应用的开发过程。
 	- 常见的框架如 Express (Node.js)、Django (Python)、Rails (Ruby)。

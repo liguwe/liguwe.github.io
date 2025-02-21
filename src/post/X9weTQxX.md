@@ -25,7 +25,7 @@
 
 ### 2.1. 自回归生成
 
-![图片](https://blog-1310531898.cos.ap-beijing.myqcloud.com/832-34-20241012/Pasted%20image%2020240907111029.png)
+![图片|720](https://blog-1310531898.cos.ap-beijing.myqcloud.com/832-34-20241012/Pasted%20image%2020240907111029.png)
 
 举个例子：输入`我`，最终返回 `我是一字小小鸟` ，看看大模型的生成过程：
 
@@ -88,3 +88,4 @@
 ## 4. 总结：GPT 的基础原理
 
 ![图片|776](https://blog-1310531898.cos.ap-beijing.myqcloud.com/832-34-20241012/Pasted%20image%2020240907121705.png)
+

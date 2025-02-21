@@ -7,6 +7,9 @@ try {
         el.className = "832-angle-right fa  fa-angle-right";
         el.innerHTML = "";
     });
+    // 动态修改变量
+    let width = window.localStorage.getItem("sidebarWidth") || "320px";
+    document.documentElement.style.setProperty("--sidebar-width", width);
 } catch (e) {}
 
 // Fix back button cache problem
@@ -601,6 +604,7 @@ function playground_text(playground, hidden = true) {
                 "--sidebar-width",
                 pos + "px",
             );
+            window.localStorage.setItem("sidebarWidth", pos + "px");
         }
     }
     //on mouseup remove windows functions mousemove & mouseup

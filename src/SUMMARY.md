@@ -31,6 +31,8 @@
 
     - [chatGPT 的原理](post/UNqPtZ9R.md)
 
+    - [DeepSeek LLM v3 和 DeepSeek R1 对比](post/FNBJZLPz.md)
+
     - [大模型是如何训练的？](post/Wuw8iWpP.md)
 
     - [LangChain（篇一：基础入门篇）](post/bghSSCnj.md)
@@ -1479,7 +1481,7 @@
   - [图](post/n2Gzkw3z.md)
 
 
-    - [基本概念：篇二](post/58tbcNMu.md)
+    - [基本概念：篇一](post/xvNLiAg7.md)
 
     - [基本概念：篇二](post/suckpoo2.md)
 
