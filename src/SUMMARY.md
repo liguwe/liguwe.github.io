@@ -3,7 +3,23 @@
 [前言](post/9faAtEDx.md)
 
 
-# 第一部分 AGI
+# 第一部分 博客
+
+
+  - [2024](post/nx1f0Akc.md)
+
+
+    - [播客：AI 时代的频率跃迁背景下个人的选择：高频的卷或低频的定](post/ljsE0frl.md)
+
+    - [播客：张云帆的芒格之道](post/VxdWZUGT.md)
+
+    - [播客：人生危机不是崩溃而是瓦解](post/Vht8G1T8.md)
+
+    - [个人常用工具及技巧分享](post/uMN097Vn.md)
+
+    - [播客：rrweb 作者的某期播客节目纪要](post/OxCnVDnH.md)
+
+# 第二部分 AGI
 
 
   - [前言](post/lstlMGds.md)
@@ -32,7 +48,7 @@
 
     - [Agent 的进化之路](post/0kRgaHej.md)
 
-# 第二部分 前端
+# 第三部分 前端
 
 
   - [前言](post/ZBgBseQh.md)
@@ -786,7 +802,7 @@
 
     - [前端开发与 AI 大模型的集成](post/zFAPVbqc.md)
 
-# 第三部分 算法
+# 第四部分 算法
 
 
   - [前言](post/Hx1jAMGk.md)
@@ -1782,7 +1798,7 @@
 
       - [丢失的数字](post/ZwMmJDQf.md)
 
-# 第四部分 计算机科学
+# 第五部分 计算机科学
 
 
   - [前言](post/CSSqJ5oL.md)
@@ -1819,7 +1835,7 @@
 
     - [最常见的开源协议](post/s8DODDq9.md)
 
-# 第五部分 产品
+# 第六部分 产品
 
 
   - [前言](post/6T0nb0xg.md)
