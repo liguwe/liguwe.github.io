@@ -190,13 +190,6 @@ const handleFileAndWrite = (file, depth) => {
         return `\n## 目录\n` + `<!-- toc -->` + `\n ## ${p1} `;
     });
 
-    // `==xxx==` 换成 `**xxx**`
-    // 高亮变成加粗，mdbook 不支持高亮场景
-    //// 匹配不在代码块中的 ==xxx==
-    const regex =
-        /(?<!`[^`]*)==([^=]+?)==(?![^`]*`)|(?<!```[\s\S]*)==([^=]+?)==(?![\s\S]*```)/g;
-    content = content.replace(regex, (match, g1, g2) => `**${g1 || g2}**`);
-
     const postContent = H1Content + "\n" + content;
 
     postObj[uid] = postContent;
@@ -205,42 +198,6 @@ const handleFileAndWrite = (file, depth) => {
 
     fs.writeFileSync(`${postPath}/${file.uid}.md`, postContent);
 };
-
-function convertHighlightToStrong(text) {
-    // 存储代码块的数组
-    const codeBlocks = [];
-    let counter = 0;
-
-    // 第一步：保护代码块内容
-    let processedText = text
-        // 处理多行代码块 ``` ```
-        .replace(/```[\s\S]+?```/g, (match) => {
-            const placeholder = `___CODE_BLOCK_${counter}___`;
-            codeBlocks.push(match);
-            counter++;
-            return placeholder;
-        })
-        // 处理行内代码块 ` `
-        .replace(/`[^`]+`/g, (match) => {
-            const placeholder = `___CODE_BLOCK_${counter}___`;
-            codeBlocks.push(match);
-            counter++;
-            return placeholder;
-        });
-
-    // 第二步：处理高亮语法 ==xxx==（跳过代码块内容）
-    processedText = processedText.replace(/==(.+?)==/g, "**$1**");
-
-    // 第三步：恢复代码块内容
-    codeBlocks.forEach((block, index) => {
-        processedText = processedText.replace(
-            `___CODE_BLOCK_${index}___`,
-            block,
-        );
-    });
-
-    return processedText;
-}
 
 /**
  *  @description 递归遍历树，处理数据，添加深度 depth

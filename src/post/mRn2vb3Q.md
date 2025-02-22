@@ -23,25 +23,25 @@
 		- 编译 src
 		- 生成 sourcemap
 		- 压缩 css 
-			- 可以对js/或者css做**无用抹除**
+			- 可以对js/或者css做==无用抹除==
 	- 提速的三个思路
-		- **①** 缓存：做过的事情不做二遍，比如
+		- ==①== 缓存：做过的事情不做二遍，比如
 			- extenals
 				- 标识这些依赖项不需要打包，运行时从外部获取这些依赖
 			- dll
 				- 把公共代码打包成 dll 文件放到硬盘里
 			- cache-loader  
 			- hard-source-webpack-plugin 等
-		- **②** 延迟处理
+		- ==②== 延迟处理
 			- sourcemap 延迟
 			- 按需编译
 				- vite 
-		- **③** 高级语言
+		- ==③== 高级语言
 			- esbuild 
 			- swc 
 			- rspack 等等
 - npm 包上 cdn 方案
-	- **ESM CDN 方案**
+	- ==ESM CDN 方案==
 	- 类似于 unpkg 方案
 
 ---
@@ -125,7 +125,7 @@
 ### 3.3. 传统提速方案：`externals`
 
 - `externals`：用于标记不用打包的库模块，如`JQuery、react-dom`等。可以直接通过script的方式加载
-	- `externals` 配置选项提供了「从输出的 bundle 中排除依赖」的方法。相当于说："**这些依赖项不需要打包，运行时从外部获取这些依赖**"。
+	- `externals` 配置选项提供了「从输出的 bundle 中排除依赖」的方法。相当于说："==这些依赖项不需要打包，运行时从外部获取这些依赖=="。
 
 ![图片&文件](./files/20241101-54.png)
 

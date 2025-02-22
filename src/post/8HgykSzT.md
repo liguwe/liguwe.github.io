@@ -28,7 +28,7 @@
 17. 模板：template标签
 18. **图片响应式：srcset和sizes属性**
 19. 延迟加载：使用 `loading="lazy"` 属性
-	1. **标准本来就支持**
+	1. ==标准本来就支持==
 20. 表单验证：使用 pattern, required 等属性
 21. 输入类型：如date, time, email, url等
 22. 字符编码：使用UTF-8
@@ -128,7 +128,7 @@
 ### 2.8. Web Components
 
 - **自定义元素 (Custom Elements)**:
-	- 创建**自定义 HTML 标签**
+	- 创建==自定义 HTML 标签==
 - **Shadow DOM**:
 	- 隐藏DOM树
 - **HTML模板 (HTML Templates)**:

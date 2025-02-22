@@ -15,7 +15,7 @@
 		- state 影响 Flutter 和 swiftUI
 		- vdom
 	- 页面渲染
-		- 止于**宿主环境提供的渲染 API**
+		- 止于==宿主环境提供的渲染 API==
 			- 比如浏览器
 			- 客户端渲染 API
 			- 自己实现的渲染能力：Flutter
