@@ -24,16 +24,16 @@
 ```
 
 - getDerivedStateFromError 与 componentDidCatch 区别
-	 - getDerivedStateFromError 在`渲染阶段`调用，是==同步==的
-	- 用于==降级 UI，容错==
+	 - getDerivedStateFromError 在`渲染阶段`调用，是**同步**的
+	- 用于**降级 UI，容错**
 	 - componentDidCatch 在`提交阶段`调用，可以执行副作用
 	 - `getDerivedStateFromError` 必须返回一个`状态对象`
 	 - `getDerivedStateFromError` 支持**服务端渲染**，而 `componentDidCatch` 不支持 
-- Class组件的生命周期，分==五个阶段==
+- Class组件的生命周期，分**五个阶段**
 	- 初始化 + 挂载阶段 + 组件更新 + 卸载 + 错误处理
 - React 为什么要废弃 `componentwillMount`、`componentWillReceiveProps`、`componentWillUpdate` `
-	- 在`fiber`中，==render 可被打断==，**可能在 wilMount 中获取到的元素状态很可能与实际需要的不同
-	- ==一句话就是，Render 阶段可能会被打断，那么 willxxx 就可以执行多次==
+	- 在`fiber`中，**render 可被打断**，**可能在 wilMount 中获取到的元素状态很可能与实际需要的不同
+	- **一句话就是，Render 阶段可能会被打断，那么 willxxx 就可以执行多次**
 
 ## 2. 先说Class组件的生命周期
 
@@ -223,7 +223,7 @@ class MyComponent extends React.Component {
 - getDerivedStateFromError，**后代组件抛出错误后被调用**，**发生在渲染阶段**
 	- 返回值：返回一个对象来更新 state
 	- 用途：
-		- **在渲染错误页面之前更新 state** ，==用于容错==
+		- **在渲染错误页面之前更新 state** ，**用于容错**
 		- 不应该产生副作用
 - `componentDidCatch(error, info)`
 	- 参数：
@@ -402,7 +402,7 @@ class CompleteLifecycleComponent extends React.Component {
 	- 增加组件重回次数
 	- 使用静态方法代替：`getDerivedStateFromProps`，不使用 `this`，纯函数，不会写出副作用代码
 - `componentWillUpdate`：
-	- 在`fiber`中，==render 可被打断==，**可能在wilMount中获取到的元素状态很可能与实际需要的不同**
+	- 在`fiber`中，**render 可被打断**，**可能在wilMount中获取到的元素状态很可能与实际需要的不同**
 	- 会触发多次
 		- 比如，在这个生命周期中，`调用setState会造成死循环`，导致程序崩溃。
 
@@ -410,7 +410,7 @@ React 为什么要废弃 `componentwillMount`、`componentWillReceiveProps`、`c
 
 ![图片&文件](./files/20241111-16.png)
 
-==一句话就是，Render 阶段可能会被打断，那么 willxxx 就可以执行多次==
+**一句话就是，Render 阶段可能会被打断，那么 willxxx 就可以执行多次**
 
 ## 4. getDerivedStateFromError vs componentDidCatch 以及 Hooks 中的错误处理
 
@@ -446,8 +446,8 @@ class ErrorBoundary extends React.Component {
 ```
 
 主要区别：
-- getDerivedStateFromError 在`渲染阶段`调用，是==同步==的
-	- 用于==降级 UI，容错==
+- getDerivedStateFromError 在`渲染阶段`调用，是**同步**的
+	- 用于**降级 UI，容错**
 - componentDidCatch 在`提交阶段`调用，可以执行副作用
 - `getDerivedStateFromError` 必须返回一个`状态对象`
 - `getDerivedStateFromError` 支持**服务端渲染**，而 `componentDidCatch` 不支持 

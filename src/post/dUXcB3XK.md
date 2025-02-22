@@ -8,7 +8,7 @@
 <!-- toc -->
  ## 1. 总结 
 
-- 下面按==性能从高到低==排序说明
+- 下面按**性能从高到低**排序说明
 	- DocumentFragment + 虚拟列表
 	- DocumentFragment + requestAnimationFrame 分批插入
 	- DocumentFragment 一次性插入

@@ -10,7 +10,7 @@
 	- gerrit 可集成 CI/CD 工具
 		- Jenkins
 		- Drone
-- 运维备份 → ==很重要==
+- 运维备份 → **很重要**
 - 集成监控
 	- Prometheus
 	- Grafana

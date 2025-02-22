@@ -63,7 +63,7 @@ document.querySelector('.my-class').addEventListener('click', () => {
 - CSS Grid 和 Flexbox 调试工具
 - CSS 选择器统计功能 
 - 使用 `Computed` 查看计算后的样式
-- 使用 `Layout` 查看==盒模型==
+- 使用 `Layout` 查看**盒模型**
 - CSS Grid 和 Flexbox 可视化工具
 
 ## 4. Console 面板技巧

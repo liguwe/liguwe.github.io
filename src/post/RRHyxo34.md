@@ -21,12 +21,12 @@
 	- React.memo
 	- PureComponent
 	- shouldComponentUpdate
-	- 避免==内联==对象或函数 → 提出来
+	- 避免**内联**对象或函数 → 提出来
 	- 使用 useMemo 缓存结果
 	- 使用 useCallback 缓存函数
 - `static getDerivedStateFromProps(props, state) {`
 	- 返回 `null` 表示不需要更新状态
-	- 这个方法在==每次渲染前都会调用==，包括首次渲染
+	- 这个方法在**每次渲染前都会调用**，包括首次渲染
 
 ## 2. Render 方法的基本原理
 

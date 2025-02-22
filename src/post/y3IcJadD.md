@@ -95,7 +95,7 @@ var removeCoveredIntervals = function (intervals) {
 空间复杂度分析：
 1. 排序：JavaScript 的排序算法通常使用额外的 O(log n) 到 O(n) 的空间。
 2. 其他变量（left, right, res）：使用常数额外空间。
-3. 总的空间复杂度：`O(log n) 到 O(n)`，==主要取决于排序算法的实现==。
+3. 总的空间复杂度：`O(log n) 到 O(n)`，**主要取决于排序算法的实现**。
 
 ### 2.5. 错误记录
 

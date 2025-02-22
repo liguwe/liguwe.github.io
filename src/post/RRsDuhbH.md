@@ -8,13 +8,13 @@
 <!-- toc -->
  ## 1. Amis：设计态渲染有什么不一样？ 
 
-- 编辑器在渲染 `amis` 配置的时候，会把所有的 json（配置） 节点都自动加个 `$$id` 唯一 id。然后复写了 `rendererResolver` 方法。
+- 编辑器在渲染 `amis` 配置的时候，会把所有的 json（配置） 节点都自动加个 `$id` 唯一 id。然后复写了 `rendererResolver` 方法。
 - 某个节点 `{type: 'xxxx'}` 在找到对应 amis 组件渲染前，都会调用这个方法。 这个方法会在渲染之前，基于 schema、渲染器信息，通过插件去收集编辑器信息
 	- 如果收集到了，会额外的通过一个 `Wrapper` 包裹。
-	- 这个 `Wrapper` 主要是自动把 `$$id` 写入到 dom 的属性上`data-editor-id="$$id"`。
+	- 这个 `Wrapper` 主要是自动把 `$id` 写入到 dom 的属性上`data-editor-id="$id"`。
 	- 这样鼠标点击的时候，能够根据 dom 上的标记知道是哪个 json 节点，同时根据渲染器编辑器信息，能够生成对应的配置面板，并把对应 json 的节点做配置修改。
 	- 有些组件是带区域的，所以除了 dom 上标记节点信息外，还需要标记区域信息。节点能够通过 `Wrapper` 自动包裹来实现，但是区域则不能，这个要去分析组件本身是怎么实现。
-	- 最终目的是要通过 `RegionWrapper` 去包裹对应 `JSX.Element` 来完成标记。这个 `RegionWrapper` 会自动完成 dom 的标记 `data-region="xxx" data-region-host="$$id"`，这样点击到这个 dom 的时候，能知道是哪个组件的哪个区域，这样就能往里面拖入新组件。
+	- 最终目的是要通过 `RegionWrapper` 去包裹对应 `JSX.Element` 来完成标记。这个 `RegionWrapper` 会自动完成 dom 的标记 `data-region="xxx" data-region-host="$id"`，这样点击到这个 dom 的时候，能知道是哪个组件的哪个区域，这样就能往里面拖入新组件。
 
 左侧的组件列表主要是将收集到的渲染器编辑器信息做个汇总展示，可拖入到指定区域内。
 

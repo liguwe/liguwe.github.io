@@ -8,9 +8,9 @@
 <!-- toc -->
  ## 1. 总结 
 
-- React.memo 是一个==高阶组件(HOC)==，用于==组件级别的缓存==
+- React.memo 是一个**高阶组件(HOC)**，用于**组件级别的缓存**
 	- 可接受第二个参数：自定义比较函数
-- useMemo 用于==缓存==计算结果
+- useMemo 用于**缓存**计算结果
 - useCallback 用于缓存 函数
 
 ## 2. React.useCallback 和 useCallback

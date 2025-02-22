@@ -32,9 +32,9 @@
 	- CPU 分析
 	- 帧率监控
 	- 内存分析
-	- ==垃圾回收==分析
+	- **垃圾回收**分析
 - Memory（内存）
-	- ==内存泄漏检测==
+	- **内存泄漏检测**
 - Application（应用）
 - Performance Insights
 - Device Mode
@@ -43,7 +43,7 @@
 	- 局域网内网调试
 - Security（安全） & Privacy（隐私）
 - Layers（图层）
-	- ==可查看合成层==
+	- **可查看合成层**
 - Animations（动画）
 -  Rendering（渲染）
 	- FPS 计量表
@@ -51,7 +51,7 @@
 - Settings（设置）
 - 扩展支持
 - 其他
-	- ==Coverage 覆盖率==
+	- **Coverage 覆盖率**
 	- Lighthouse 集成
 
 ## 2. 性能监控

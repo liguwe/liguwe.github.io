@@ -15,7 +15,7 @@
 - 配置 `resolve.alias` 简化引用路径
 - 使用 `resolve.modules` 指定模块搜索目录
 - 使用 `noParse` 跳过对已知无依赖模块的解析
-- 合理使用 `externals` ==外部化一些大型库==
+- 合理使用 `externals` **外部化一些大型库**
 - 优化打包体积
 	- 代码分割 `splitChunks`
 	- Tree Shaking

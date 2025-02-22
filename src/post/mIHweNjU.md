@@ -165,7 +165,7 @@ export default {
 
 ## 6. 提供/注入（Provide/Inject）
 
-对于需要在组件树中==共享数据或功能==的场景，我们可以使用 Vue 3的 `provide/inject` 特性。
+对于需要在组件树中**共享数据或功能**的场景，我们可以使用 Vue 3的 `provide/inject` 特性。
 
 示例：
 

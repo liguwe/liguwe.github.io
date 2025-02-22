@@ -154,7 +154,7 @@ state = reactive({ count: 1 })
 	- `按键修饰符`和`系统按键修饰符`用于处理特定按键事件
 		- 按键修饰符： `.enter .tab .delete  .esc .space .up .down .left .right`
 		- 系统按键修饰符： `.ctrl .alt .shift .meta` 
-		- `.exact` 修饰符允许精确控制触发==事件所需的系统修饰符组合==
+		- `.exact` 修饰符允许精确控制触发**事件所需的系统修饰符组合**
 		- `鼠标按键修饰符`用于处理特定鼠标按键触发的事件
 		   - 比如 `.left.right.middle` 
 

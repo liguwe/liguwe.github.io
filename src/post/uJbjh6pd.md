@@ -16,7 +16,7 @@
 - 快慢指针同时走，直到快指针走完
 - 删除 slow 指向的节点
 	- slow.next = slow.next.next;
-		- ==注意不是==：`show = slow.next.next;`
+		- **注意不是**：`show = slow.next.next;`
 - 最后返回 `d.next`
 
 ## 代码

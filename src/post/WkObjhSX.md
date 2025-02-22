@@ -58,7 +58,7 @@ var buildTree = function (preorder, inorder) {
 1. 找出`根节点`
 	- 前序遍历的第一个元素
 2. 递归构建左右子树
-	- 这里注意要找出==递归函数的参数==
+	- 这里注意要找出**递归函数的参数**
 	- 这些参数可以从两个数组里计算出来，如下图：
 
 ![image.png|1080](https://832-1310531898.cos.ap-beijing.myqcloud.com/a3d98f67145d72b588ebb76349faf1f0.png)

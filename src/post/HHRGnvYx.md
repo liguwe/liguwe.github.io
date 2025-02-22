@@ -126,7 +126,7 @@ function processArray(array) {
 }
 ```
 
-### 4.3. 错误处理：一定要==顶层使用==
+### 4.3. 错误处理：一定要**顶层使用**
 
 ```javascript hl:11
 // 错误的方式

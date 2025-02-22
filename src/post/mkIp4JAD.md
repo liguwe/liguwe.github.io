@@ -11,18 +11,18 @@
 <!-- toc -->
  ## 总结 
 
-- 删除==排序链表==中的重复项
+- 删除**排序链表**中的重复项
 	- `while(fast !==null)`
 		- `if (fast.val !== slow.val) {`
 	- 注意点
-		- ==①== base case
-		- ==②== 最后
+		- **①** base case
+		- **②** 最后
 			- `slow.next = null`断开与后面重复元素的连接
 			- 最后 一定要 ` return head`
-		- ==③== 前进：
+		- **③** 前进：
 			- slow = slow.next
 			- fast = fast.next 
-		- ④ 这题==不用虚拟节点==
+		- ④ 这题**不用虚拟节点**
 
 ![图片&文件](./files/删除排序链表中的重复元素.gif)
 

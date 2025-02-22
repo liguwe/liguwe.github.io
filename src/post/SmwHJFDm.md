@@ -11,7 +11,7 @@
 - useMemo 、 useCallback 的 执行时机：
 	- 首次渲染时，执行一次
 	- 再之后就依赖于`依赖项数组`
-- 目的是为了优化性能，缓存==值或函数==
+- 目的是为了优化性能，缓存**值或函数**
 - useMemo 与 useCallback 的区别
 	- 用途：
 		- useMemo：缓存**函数计算的结果**
@@ -26,14 +26,14 @@
 			- 需要缓存引用的对象
 		- useCallback：
 			- **传递给子组件的回调函数**
-			- 防止不必要的重渲染， ==防止子组件重渲染==
+			- 防止不必要的重渲染， **防止子组件重渲染**
 			- 需要保持**函数引用稳定**的场景
 	- 性能考虑：
 		- 不是所有值都需要 useMemo
 		- 不是所有函数都需要 useCallback
 		- 应该在实际遇到性能问题时才使用
 - useCallback 一般配合 React.memo 使用，也可作为 `useEffect` 的依赖项的函数
-- React 的 `useEffect` ==对应类比== Vue 的 `watch 或 watchEffect`
+- React 的 `useEffect` **对应类比** Vue 的 `watch 或 watchEffect`
 
 ## 2. 执行时机
 
@@ -107,7 +107,7 @@ function OptimizedComponent() {
 	- vue **只有依赖变化时重新计算**
 	- react **每次渲染都会检查依赖数组**，依赖未变化时使用缓存值
 
-==编程范式不同：==
+**编程范式不同：**
 - Vue 的组合式 API 中的 computed 更符合`响应式编程范式`
 - 而 React 的 useMemo 则更符合`函数式编程思维`。
 

@@ -9,7 +9,7 @@
  ## 1. 总结 
 
 - 重点：
-	- 可以给 `dfs` 函数设置返回值，==记录每次淹没的陆地的个数==
+	- 可以给 `dfs` 函数设置返回值，**记录每次淹没的陆地的个数**
 
 ```javascript
 var maxAreaOfIsland = function (grid) {
@@ -60,7 +60,7 @@ var maxAreaOfIsland = function (grid) {
 
 思路还是类似于 [200. 岛屿数量](/post/dPehIUZT.html) ， 只不过 `dfs` 函数淹没岛屿的同时，还应该想办法`记录`这个岛屿的面积
 
-所以：可以给 `dfs` 函数设置返回值，==记录每次淹没的陆地的个数==
+所以：可以给 `dfs` 函数设置返回值，**记录每次淹没的陆地的个数**
 
 
 ```javascript

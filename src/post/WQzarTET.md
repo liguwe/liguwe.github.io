@@ -16,7 +16,7 @@
 	- 例如`return 2`会被包装为`return Promise.resolve(2)`。
 - `Promise` 的 `.then` 或者 `.catch` **可以被调用多次**,
 	- 但如果`Promise`内部的状态一经改变，并且有了一个值
-		- 那么后续每次调用`.then`或者`.catch`的时候==都会直接拿到该值==
+		- 那么后续每次调用`.then`或者`.catch`的时候**都会直接拿到该值**
 			- 注意，状态改变了，后面仍然可以调用 then 和 catch，一直调用
 - `.then` 或者 `.catch` 中 `return` 一个 `error` 对象并不会抛出错误
 	- 所以不会被后续的 `.catch` 捕获 
@@ -491,7 +491,7 @@ reject Error: 2; // 2s 后输出 Error: 2
     - 一旦错误在 `then` 的第二个回调中被处理，JavaScript 认为这个错误已经被"捕获"和"处理"了。
     - 因此，错误不会继续传播到后面的 `catch` 语句。
 4. `catch` 的作用：
-    - ==`catch` 主要用于捕获在前面的 `then` 链中未被处理的错误。==
+    - **`catch` 主要用于捕获在前面的 `then` 链中未被处理的错误。**
     - 在这个例子中，错误已经在 `then` 的第二个回调中被处理了，所以 `catch` 不会被触发
 
 > 总结就是：**Promise.all 只处理一个异常，其他的都被吞了**
@@ -501,7 +501,7 @@ reject Error: 2; // 2s 后输出 Error: 2
 
 ![图片&文件](./files/20241226-2.png)
 
-## 19. race **会获取最新有结论的任务**，然后走==后一个==then 或者 catch，其他的**正常执行**，==再之后==的 then和 catch 了,执行结果会被抛弃
+## 19. race **会获取最新有结论的任务**，然后走**后一个**then 或者 catch，其他的**正常执行**，**再之后**的 then和 catch 了,执行结果会被抛弃
 
 ```javascript
 function runAsync(x) {

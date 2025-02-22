@@ -8,12 +8,12 @@
 <!-- toc -->
  ## 1. 总结 
 
-- ==IO 密集==型：
+- **IO 密集**型：
 	- 使用异步 I/O 即可，不需要多进程/多线程
-- ==CPU 密集型==应用：
+- **CPU 密集型**应用：
 	- 使用 Worker Threads
 - Web 服务器：
-	- 通过 ==cluster 模块==实现**多进程、多核**
+	- 通过 **cluster 模块**实现**多进程、多核**
 		- 多核 = 多线程，对于 node 而言
 		- 适合任务是**隔离的** ，比如 HTTP 服务器
 
@@ -30,8 +30,8 @@
 
 - Node.js 默认运行在`单线程环境`中，这个主线程被称为"事件循环"（Event Loop）
 - 虽然是单线程
-	- 使用**事件驱动**和==非阻塞 I/O 模型==来处理并发
-	- 但通过**事件循环**可以==高效处理大量并发连接==
+	- 使用**事件驱动**和**非阻塞 I/O 模型**来处理并发
+	- 但通过**事件循环**可以**高效处理大量并发连接**
 
 ### 2.3. 多进程支持：child_process 模块
 
@@ -281,7 +281,7 @@ pool.runTask({ type: 'compute', data: [1,2,3,4] })
     .catch(err => console.error('错误:', err));
 ```
 
-#### 3.4.2. 使用 ==cluster 模块== 来处理 Web服务器负载均衡
+#### 3.4.2. 使用 **cluster 模块** 来处理 Web服务器负载均衡
 
 示例：利用计算机的多核能力启动多个 HTTP 服务器，以实现负载均衡，如下代码：
 
@@ -376,7 +376,7 @@ if (cluster.isMaster) {
 - I/O密集型应用：
 	- 使用内置的异步机制即可
 
-## 4.  Cluster 模块  →  创建==共享服务器端口==的子进程
+## 4.  Cluster 模块  →  创建**共享服务器端口**的子进程
 
 ### 4.1. Cluster 模块基本概念
 
@@ -814,7 +814,7 @@ if (cluster.isPrimary) {
 
 ### 5.4. 多线程（Multi-Thread）
 
-==线程==是进程中的执行单元，共享进程的内存空间。**Node.js 通过 worker_threads 模块实现多线程**。
+**线程**是进程中的执行单元，共享进程的内存空间。**Node.js 通过 worker_threads 模块实现多线程**。
 
 ```javascript
 const { Worker, isMainThread, parentPort, workerData } = require('worker_threads');
@@ -1077,8 +1077,8 @@ if (cluster.isPrimary) {
 - **多进程 = 多核** ：
 	- 适合需要隔离的场景，如 Web 服务器
 - 多线程：
-	- 适合 ==CPU 密集型==任务
+	- 适合 **CPU 密集型**任务
 - Node.js 的事件循环
-	- 适合 ==I/O 密集型==任务
+	- 适合 **I/O 密集型**任务
 
 

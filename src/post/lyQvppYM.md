@@ -5,10 +5,10 @@
 > [931. 下降路径最小和](https://leetcode.cn/problems/minimum-falling-path-sum/)
 
 
-- 定义 `dp[i,j]` : 下降到 `[i,j]` 这个位置的==最小==路径和 
+- 定义 `dp[i,j]` : 下降到 `[i,j]` 这个位置的**最小**路径和 
 	- ![image.png|368](https://832-1310531898.cos.ap-beijing.myqcloud.com/736082a26402922ebd21bf34f8136d34.png)
 
-所以==状态转移方程==是：
+所以**状态转移方程**是：
 
 ```javascript
 dp[i][j] =

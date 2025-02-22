@@ -9,14 +9,14 @@
  ## 1. 总结 
 
 - useTransition 是 React 18 引入的一个强大的性能优化 Hook
-	- 它允许我们==将某些更新标记为非紧急的过渡更新==
+	- 它允许我们**将某些更新标记为非紧急的过渡更新**
 	- API：`  const [isPending, startTransition] = useTransition();`
 - 使用场景
 	- 选项卡切换
 	- 输入框高于搜索结果，搜索结果使用 `startTransition` 包装
-	- 使用 startTransition 来包装==路由切换==
+	- 使用 startTransition 来包装**路由切换**
 - 注意点
-	- 传递给`startTransition`的函数==必须是同步的，而不能是异步的==
+	- 传递给`startTransition`的函数**必须是同步的，而不能是异步的**
 - 优势
 	- **避免阻塞**：防止大型更新阻塞用户输入
 	- **优先级管理**：自动处理更新优先级
@@ -70,7 +70,7 @@ const [isPending, startTransition] = useTransition();
 
 ## 5. 注意事项
 
-- `useTransition`仅在开启==React 并发模式==的时候才有效
+- `useTransition`仅在开启**React 并发模式**的时候才有效
 
 ```javascript
 // React v18以前

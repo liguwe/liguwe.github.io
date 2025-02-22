@@ -10,7 +10,7 @@
 
 - React 元素、React 组件、FiberNode
 	- **职责不同**
-		- React 元素：描述 UI 的==纯数据结构==
+		- React 元素：描述 UI 的**纯数据结构**
 		- React 组件：封装可重用的 UI 逻辑
 		- FiberNode：管理组件**更新和调度**
 	- **可变性**
@@ -22,9 +22,9 @@
 		- React 组件：有完整生命周期
 		- FiberNode：负责管理组件的生命周期
 	- **使用场景**
-		- React 元素：作为组件的==渲染结果==
+		- React 元素：作为组件的**渲染结果**
 		- React 组件：构建应用界面
-		- FiberNode：React ==内部实现机制==
+		- FiberNode：React **内部实现机制**
 - todo 再读一遍
 
 
@@ -74,9 +74,9 @@ const createElement = React.createElement(
 
 特点：
 1. 不可变对象（Immutable）
-2. 描述界面的==快照==
-3. 轻量级==普通对象==
-4. ==每次更新都会创建新的元素树==
+2. 描述界面的**快照**
+3. 轻量级**普通对象**
+4. **每次更新都会创建新的元素树**
 
 ### 2.2. React 组件 (React Components)
 
@@ -108,7 +108,7 @@ function App() {
 
 特点：
 1. 接受 `props` 作为输入
-2. ==返回 React 元素==
+2. **返回 React 元素**
 3. 可以包含`状态`和`生命周期`
 4. 可以被`多次`复用
 
@@ -334,10 +334,10 @@ function FiberNode(
 ## 4. 两棵 Fiber 树：双缓存机制
 
 - 真实 UI 对应的 Fiber Tree：
-	- ==前缓冲区==、即`浏览器上显示的 UI`
+	- **前缓冲区**、即`浏览器上显示的 UI`
 		- workInProgress Fiber 树
 		- 使用 current 指针 指向它
-- 正在内存中构建 Fiber Tree：==后缓冲区==
+- 正在内存中构建 Fiber Tree：**后缓冲区**
 	- workInProgress Fiber 树
 
 ### 4.1. 举个示例：mount 一个组件时
@@ -351,12 +351,12 @@ function FiberNode(
 ## 5. 为什么需要 Fiber
 
 在旧的架构中，React 的更新过程是同步的，称为 `Stack Reconciler`。这可能导致以下问题：
-- ==当组件树很大时，更新过程会占用主线程太长时间==
+- **当组件树很大时，更新过程会占用主线程太长时间**
 - 无法中断更新过程
 - 可能导致掉帧和页面卡顿
 Fiber 是 React 16 引入的新架构，其核心目标是实现：
 - **增量渲染**：
-	- 能够将渲染工作分片，并将其分散到==多个帧==中
+	- 能够将渲染工作分片，并将其分散到**多个帧**中
 - **任务暂停和恢复**：
 	- 能够暂停正在进行的工作，稍后再恢复
 - **任务优先级**：
@@ -421,19 +421,19 @@ function FiberNode(
 
 - **单元工作**：
 	- 每个Fiber节点代表一个`工作单元`，所有Fiber节点共同组成一个Fiber链表树（有链接属性，同时又有树的结构）
-	- 这种结构让React可以==细粒度控制节点的行为==。
+	- 这种结构让React可以**细粒度控制节点的行为**。
 - **指针属性**：
 	- **`child`**、**`sibling`** 和 **`return`** 字段构成了Fiber之间的链接关系
 	- 使React能够遍历组件树并知道从哪里开始、继续或停止工作。
 - **双缓冲技术**
 - **State 和 Props**：
 	- `memoizedProps`、**`pendingProps`** 和 **`memoizedState`** 字段
-		- 让 React 知道组件的==上一个状态和即将应用的状态==
+		- 让 React 知道组件的**上一个状态和即将应用的状态**
 	- 通过比较这些值，React 可以决定组件是否需要更新，从而避免不必要的渲染，提高性能
 - **副作用的追踪**：
 	- `flags` 和 **`subtreeFlags`** 字段标识 Fiber 及其子树中需要执行的副作用
 	- 例如 DOM 更新、生命周期方法调用等。
-	- ==React 会积累这些副作用，然后在 Commit 阶段一次性执行，从而提高效率。==
+	- **React 会积累这些副作用，然后在 Commit 阶段一次性执行，从而提高效率。**
 
 ## 7. 协调阶段（Reconciler）：Render 阶段
 
@@ -518,8 +518,8 @@ ReactDOM.render(<App />, document.getElementById("root"));
 ![图片&文件](./files/20241031-18.png)
 
 然后就是`DFS 递归遍历`这个树了
-- 如果是==进入==节点，执行 `beginWork`
-- 如果是==离开==节点，执行 `completeWork`
+- 如果是**进入**节点，执行 `beginWork`
+- 如果是**离开**节点，执行 `completeWork`
 
 所以，下面打印出遍历这些节点的顺序
 

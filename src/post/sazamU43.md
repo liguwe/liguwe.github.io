@@ -122,7 +122,7 @@ import './non-existent.js'
 
 ## 2. ESM 和 CJS 的混合使用
 
->  ==只要知道可以混用，并且需要配置 package.json 支持双模式即可==，需要时再查询即可
+>  **只要知道可以混用，并且需要配置 package.json 支持双模式即可**，需要时再查询即可
 
 ### 2.1. ESM 中使用 CJS 模块
 

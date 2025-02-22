@@ -38,7 +38,7 @@
 		3. 分布式 Session 同步
 - 权限系统
 	- `RBAC`（Role-Based Access Control ）基于角色的访问控制
-	- ==Casbin==
+	- **Casbin**
 
 ## 1. SSO 系统要素
 
@@ -83,7 +83,7 @@ client -> sso.example.com -> Set-Cookie: token=xxx; domain=.example.com
 ```
 - 适用场景：主域名相同的子域名系统
 - 原理：设置顶级域名的 Cookie
-- 限制：==只能用于同一主域名下的系统==
+- 限制：**只能用于同一主域名下的系统**
 - 示例：
   - app1.example.com
   - app2.example.com

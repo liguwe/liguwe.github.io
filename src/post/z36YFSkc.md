@@ -56,8 +56,8 @@ type Bear = Animal & {
 
 ### 2.2. interface：可被实现和扩展
 
-- 可以使用 `extends` 关键字==扩展==其他接口或类型
-- 可以被==**类**==实现（`implements`）或继承（`extends`）
+- 可以使用 `extends` 关键字**扩展**其他接口或类型
+- 可以被****类****实现（`implements`）或继承（`extends`）
 
 ```typescript
 interface Animal {

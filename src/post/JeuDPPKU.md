@@ -7,7 +7,7 @@
 
 - 以 `num[i] 结尾`的最长递增子序列数量为 `dp[i]`
 - for i → n
-	- for j → ==i== 
+	- for j → **i** 
 
 ```javascript
 var lengthOfLIS = function (nums) {

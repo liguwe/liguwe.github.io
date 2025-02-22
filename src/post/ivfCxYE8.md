@@ -39,14 +39,14 @@ document.addEventListener('click', function(e) {
 - a) 焦点事件：
 	- `focus`  
 		- 如果 focus 冒泡，当输入框获得焦点时，所有父元素都会收到通知
-		- ==额外的性能开销==
+		- **额外的性能开销**
 	- blur
-- b) 资源事件： → ==加载完了，没必要再冒泡了==
+- b) 资源事件： → **加载完了，没必要再冒泡了**
 	- load
 	- unload
 	- abort
 	- error
-- c) 鼠标事件： ==enter 和 leave==  →  逻辑合理性，不然矛盾了
+- c) 鼠标事件： **enter 和 leave**  →  逻辑合理性，不然矛盾了
 	- `mouseenter`
 	- `mouseleave`
 - d) 媒体事件：

@@ -1247,8 +1247,8 @@ registerAction('my-action', new MyAction());
 	- 理论上没什么问题的
 - 本质是：
 	- 再基于 Vue 包一层 DSL 而已，JSON Schema 的协议可以参考 Amis 的结构
-- 但 Amis 的功能点较多，先实现==最小 MVP==
-	- ==amis 的事件流的设计很符合业务要求==
+- 但 Amis 的功能点较多，先实现**最小 MVP**
+	- **amis 的事件流的设计很符合业务要求**
 
 
 

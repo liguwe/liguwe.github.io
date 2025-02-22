@@ -181,6 +181,8 @@ const handleFileAndWrite = (file, depth) => {
         return `\`${match}\``;
     });
 
+    content = convertObsidianHighlight(content);
+
     // 添加 H1 标题
     const H1Content = "\n" + `# ${file.title}` + "\n";
 
@@ -198,6 +200,53 @@ const handleFileAndWrite = (file, depth) => {
 
     fs.writeFileSync(`${postPath}/${file.uid}.md`, postContent);
 };
+
+function convertObsidianHighlight(text) {
+    const replacements = [];
+    const placeholderPrefix = "HLD_PH_";
+    let counter = 0;
+
+    // 保护代码块和缩进代码（分步处理）
+    const protectionSteps = [
+        {
+            // 多行代码块 ```...```
+            regex: /^```[\s\S]*?^```/gm,
+            replace: (match) => storeReplacement(match),
+        },
+        {
+            // 行内代码 `...`
+            regex: /`[^`\n]+`/g,
+            replace: (match) => storeReplacement(match),
+        },
+    ];
+
+    // 分步处理保护内容
+    let processedText = text;
+    protectionSteps.forEach(({ regex, replace }) => {
+        processedText = processedText.replace(regex, replace);
+    });
+
+    // 处理高亮语法（排除跨行情况）
+    processedText = processedText.replace(/==([^=\n]+?)==/g, "**$1**");
+
+    // 还原保护内容（逆序处理）
+    for (let i = replacements.length - 1; i >= 0; i--) {
+        const placeholder = `${placeholderPrefix}${i}_`;
+        processedText = processedText.replace(
+            new RegExp(placeholder, "g"),
+            replacements[i],
+        );
+    }
+
+    function storeReplacement(content) {
+        const placeholder = `${placeholderPrefix}${counter}_`;
+        replacements[counter] = content;
+        counter++;
+        return placeholder;
+    }
+
+    return processedText;
+}
 
 /**
  *  @description 递归遍历树，处理数据，添加深度 depth

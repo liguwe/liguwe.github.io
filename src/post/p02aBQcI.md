@@ -8,7 +8,7 @@
 - 验证回文串
 	- 关键点：
 		- `s = s.toLowerCase().replace(/[^a-z0-9]/g,"")`
-			- ==toLowerCase==
+			- **toLowerCase**
 	- `while (left < right) {`
 
 

@@ -14,7 +14,7 @@
 - 顶层 await 支持
 - 资源模块 Asset Modules
 	- 内置了资源模块类型，不再需要额外的loader
-- ==模块联邦==
+- **模块联邦**
 - 改进了对 `WebAssembly` 的支持
 
 ## 2. 性能优化：持久化缓存（Persistent Caching）

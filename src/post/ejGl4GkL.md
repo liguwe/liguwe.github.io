@@ -11,7 +11,7 @@
 
 - 快慢指针
 - 但如果数据两巨大
-	- 可以考虑使用==二分法==来实现，这里到此为止
+	- 可以考虑使用**二分法**来实现，这里到此为止
 ```javascript
 var isSubsequence = function (s, t) {
   let slow = 0; // 慢指针

@@ -55,7 +55,7 @@ const server = http.createServer((req, res) => {
 });
 ```
 
-### 2.2. 使用==连接池==
+### 2.2. 使用**连接池**
 
 ```javascript
 // 使用连接池示例
@@ -122,7 +122,7 @@ if (cluster.isMaster) {
 
 ### 3.1. 服务端设计
 
-   - 尽量使用==长连接==
+   - 尽量使用**长连接**
    - 实现**连接池**机制
    - 合理配置 keepalive 参数
 

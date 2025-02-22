@@ -8,7 +8,7 @@
 <!-- toc -->
  ## R1 
 
-==init → mounted → updated →  unmountd==
+**init → mounted → updated →  unmountd**
 - 初始化 
 	- 创建应用实例
 	- 初始化响应式系统
@@ -17,9 +17,9 @@
 - 挂载
 	- 创建虚拟 DOM
 	- 渲染真实 DOM
-	- ==建立响应式联系==
+	- **建立响应式联系**
 - 更新
-	- ==触发响应式更新==
+	- **触发响应式更新**
 	-  diff 算法比较
 	-  最小化 DOM 操作
 - 卸载

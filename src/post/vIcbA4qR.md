@@ -9,9 +9,9 @@
  ## 1. 总结 
 
 - new PerformanceObserver：
-	- 以==异步==的方式监听性能度量事件，而==不会阻塞主线程==
+	- 以**异步**的方式监听性能度量事件，而**不会阻塞主线程**
 -  CLS (Cumulative Layout Shift) 统计
-	- 检测 layout-shift，==并且需要累加==
+	- 检测 layout-shift，**并且需要累加**
 - 可自定义性能标记
 
 ## 2. PerformanceObserver 概述

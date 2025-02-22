@@ -7,10 +7,10 @@
 
 - 基本思想：从 1 开始往后找最新值，然后交换，直到交换完
 - 关键点：
-	- ==sortedIndex== 变量
+	- **sortedIndex** 变量
 		- `索引 < sortedIndex` 的元素都是已排序的
 		- `索引 >= sortedIndex` 的元素都是未排序的
-	- ==不稳定==，因为交换这一行，不考虑他们的相对顺序，直接交换了
+	- **不稳定**，因为交换这一行，不考虑他们的相对顺序，直接交换了
 
 ```javascript hl:4,13
 function sortArray(nums) {

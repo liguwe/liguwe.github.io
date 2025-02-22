@@ -6,7 +6,7 @@
 <!-- toc -->
  ## 1. 简介 
 
-- BroadcastChannel 是一个用于==同源页面==之间进行通信的 Web API。
+- BroadcastChannel 是一个用于**同源页面**之间进行通信的 Web API。
 - 它允许同源的不同浏览器窗口、标签页、iframe 之间发送和接收消息。
 
 ## 2. 基本使用
@@ -164,7 +164,7 @@ const channel = new BroadcastChannel('my-channel');
    ```
 
 3. **自动连接**
-   - ==浏览器会自动处理==不同 Tab 之间的连接
+   - **浏览器会自动处理**不同 Tab 之间的连接
    - 不需要手动建立连接
    - 不需要共享任何变量
 

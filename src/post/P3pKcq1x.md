@@ -16,12 +16,12 @@
 	- 适用于`跨机器`的进程通信 
 - 消息队列：
 	- 适用于解耦的异步通信 （redis）
-- 共享==内存==：
+- 共享**内存**：
 	- 适用于高性能数据共享（`worker_threads`）
 - HTTP / HTTPS：
 	- 适用于 `RESTful` 服务通信
 - WebSocket：
-	- 适用于实时==双向通信==
+	- 适用于实时**双向通信**
 - 进程管理：
 	- 适用于复杂的多进程应用
 
@@ -73,7 +73,7 @@ process.on('message', (message) => {
 });
 ```
 
-## 3. cluster ==集群模式==通信
+## 3. cluster **集群模式**通信
 
 ```javascript hl:34,39
 const cluster = require('cluster');

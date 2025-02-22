@@ -45,7 +45,7 @@ var findNearestRightNode = function (root, u) {
 - 一定会遍历所有节点的
 	- 所以判断
 		- 如果找到了，且在同一层，更新 res 即可，为了性能，直接 return 即可
-- 传入==两个==参数：
+- 传入**两个**参数：
 	- `root`
 	- `depth`
 

@@ -188,7 +188,7 @@ class Button extends Control implements SelectableControl {
 }
 ```
 
-### 10.2. ==可选方法==：和可选属性一样
+### 10.2. **可选方法**：和可选属性一样
 
 ```typescript
 interface EventListener {
@@ -260,7 +260,7 @@ const response: IResponse<IUser> = {
 };
 ```
 
-> ==范型接口，很有用的==
+> **范型接口，很有用的**
 
 ## 12. 注意事项
 

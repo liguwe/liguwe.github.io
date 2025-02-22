@@ -8,7 +8,7 @@
 > [17. BroadcastChannel](/post/XAjOVYzy.html)
 
 
-> `BroadcastChannel` 和 `MessageChannel` 是两种不同的通信机制，它们有==很大的区别==
+> `BroadcastChannel` 和 `MessageChannel` 是两种不同的通信机制，它们有**很大的区别**
 > 一个**广播**
 > 一个是**点对点**
 
@@ -122,7 +122,7 @@ dataChannel.onmessage = (event) => {
 };
 ```
 
-### 3.2. MessageChannel 适用场景：==同一上下文通讯==
+### 3.2. MessageChannel 适用场景：**同一上下文通讯**
 
 - iframe 通信
 - Web Worker 通信

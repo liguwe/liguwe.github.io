@@ -11,7 +11,7 @@
 - compiler-core：
 	- 模板 → 渲染函数
 - compiler-dom
-	- ==浏览器中进行运行时编译==
+	- **浏览器中进行运行时编译**
 - compiler-sfc
 	- 编译 `.vue` 文件
 - reactivity

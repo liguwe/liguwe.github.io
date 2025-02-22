@@ -8,7 +8,7 @@
 <!-- toc -->
  ## 1. 总结 
 
-- useSyncExternalStore 是 React 18 引入的一个 Hook，它允许你==订阅外部数据源==，并确保在`并发渲染特性`下数据的==一致性==
+- useSyncExternalStore 是 React 18 引入的一个 Hook，它允许你**订阅外部数据源**，并确保在`并发渲染特性`下数据的**一致性**
 	- 比如：
 		- localStorage 同步
 		- 监听窗口大小

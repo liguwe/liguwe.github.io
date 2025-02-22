@@ -10,7 +10,7 @@
  ## 1. 遍历一遍的思路 
 
 - 两个变量： `depth` 和 `res`
-- `depth` 在 ==for-of 循环外面== `++` 或 `--`
+- `depth` 在 **for-of 循环外面** `++` 或 `--`
 
 
 ```javascript

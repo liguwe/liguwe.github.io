@@ -17,7 +17,7 @@
 
 ## 2. 算法框架区别
 
-- 做选择和撤销选择==是否在 for 循环里面==
+- 做选择和撤销选择**是否在 for 循环里面**
 
 ```javascript hl:1,15
 // 回溯算法框架模板
@@ -50,14 +50,14 @@ function dfs(...) {
 
 ```
 
-## 3. backtrack、dfs、traverse ==不要有返回值==
+## 3. backtrack、dfs、traverse **不要有返回值**
 
-- 对于 `backtrack/dfs/traverse` 函数，就作为单纯的遍历函数，==请不要给它们带返回值==
+- 对于 `backtrack/dfs/traverse` 函数，就作为单纯的遍历函数，**请不要给它们带返回值**
 	- 因为这是`遍历的思路`
 		- 而`分解问题的思路`，则一定会有返回值
 - 如果需要其他变量，请使用**外部变量**
 
-## 4. traverse 的 base case ==写在前面==
+## 4. traverse 的 base case **写在前面**
 
 ```javascript hl:2,14
 void traverse(TreeNode root) {
@@ -74,7 +74,7 @@ void traverse(TreeNode root) {
 
 ```
 
-## 5. backtrack 的 base case ==写在前面==
+## 5. backtrack 的 base case **写在前面**
 
 ```javascript
 void backtrack(...) {
@@ -100,7 +100,7 @@ void backtrack(...) {
 }
 ```
 
-## 6. 回溯算法的==剪枝逻辑==写在哪儿？
+## 6. 回溯算法的**剪枝逻辑**写在哪儿？
 
 >  **注意是 continue**
 

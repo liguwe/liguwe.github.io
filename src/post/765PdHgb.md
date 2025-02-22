@@ -309,7 +309,7 @@ self.onconnect = function(e) {
 
 1. WebSocket 是一个独立的、完整的协议，与 HTTP 协议是平行的关系。
 	- 虽然 WebSocket 连接的建立需要依赖 HTTP 协议进行一次握手（upgrade），但是一旦 WebSocket 连接建立成功后，后续的数据传输就与 HTTP 无关了。
-2. 浏览器在实现 WebSocket 协议时，==默认就是允许跨域的==。这意味着：
+2. 浏览器在实现 WebSocket 协议时，**默认就是允许跨域的**。这意味着：
 	- 你可以从任何域名下的页面连接到任何服务器的 WebSocket 服务
 	- 不需要像 HTTP 请求那样配置 CORS（跨域资源共享）相关的头部
 

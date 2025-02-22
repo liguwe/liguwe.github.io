@@ -13,7 +13,7 @@
 - 一张图：
 	- ![|528](https://od-1310531898.cos.ap-beijing.myqcloud.com/202303250744477.png)
 - 注意：
-	- 不是累计 ==res++==
+	- 不是累计 **res++**
 	- 状态转移方程： `dp[i] = Math.max(dp[j] + 1, dp[i]);`
 
 ```javascript

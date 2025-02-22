@@ -8,7 +8,7 @@
 <!-- toc -->
  ## 1. 总结 
 
-- React 17 或更高版本，==不需要在文件顶部显式导入 React==，而是会**自动引入必要的方法**
+- React 17 或更高版本，**不需要在文件顶部显式导入 React**，而是会**自动引入必要的方法**
 	- Babel 中 `@babel/preset-react` 配置为 `runtime:automatic`
 
 ## 2. 基本概念

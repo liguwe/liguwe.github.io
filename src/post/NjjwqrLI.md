@@ -9,12 +9,12 @@
  ## 1. 总结 
 
 - 三个变量&指针：p1 p2 p 
-- 注意： `nums1` 后面是空，所以需要==倒着遍历==
+- 注意： `nums1` 后面是空，所以需要**倒着遍历**
 - 只往 `num1` 里放元素
 - `while (p1 >= 0 && p2 >= 0) {`
 - `while (p2 >= 0) {`
 	- 因为我们本身就是在往 `nums1` 中放元素
-		- 所以==只需考虑 nums2 是否剩元素即可==
+		- 所以**只需考虑 nums2 是否剩元素即可**
 
 
 > https://leetcode.cn/problems/merge-sorted-array/description/
@@ -64,7 +64,7 @@ var merge = function (nums1, m, nums2, n) {
 
 ## 3. 之前的解法
 
-> 但有问题，需要==原地修改==
+> 但有问题，需要**原地修改**
 > 并且 
 
 ```javascript

@@ -25,7 +25,7 @@
 	- vite 依赖它
 - Webpack 5
 	- 最成熟的解决方案，生态好
-	- 大型项目==慢==
+	- 大型项目**慢**
 - Parcel
 	- 零配置
 - SWC (Speedy Web Compiler)

@@ -18,7 +18,7 @@ array.reduce(callback(accumulator, currentValue[, index[, array]])[, initialValu
 	- `index`（可选）: 数组中正在处理的当前元素的**索引**
 	- `array`（可选）: 调用 `reduce()` 的数组
 - `initialValue`（可选）: 作为第一次调用 `callback` 函数时的第一个参数的值
-	- ==注意：如果不传时，调用空数组会报错==
+	- **注意：如果不传时，调用空数组会报错**
 
 >  `accumulator` 是返回值，函数需要显式返回该值才行
  

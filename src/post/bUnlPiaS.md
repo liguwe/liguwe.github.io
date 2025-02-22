@@ -12,10 +12,10 @@
 	- 支持所有常规的 React 生命周期方法
 - Component vs PureComponent
 	- PureComponent：
-		- 会对 props 和 state 进行==浅比较==，只有在数据真正发生变化时才重新渲染
+		- 会对 props 和 state 进行**浅比较**，只有在数据真正发生变化时才重新渲染
 	- Component：
 		- 默认情况下，只要父组件重新渲染，组件就会重新渲染
-- 可使用 ==React.memo== 来实现类似 PureComponent 的功能
+- 可使用 **React.memo** 来实现类似 PureComponent 的功能
 	- 因为它也接受第二个参数
 - 一些注意点
 	- 对象属性尽量单独提出，比如 style，每次渲染都创建新对象

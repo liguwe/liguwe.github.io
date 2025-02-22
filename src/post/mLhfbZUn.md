@@ -12,15 +12,15 @@
 CSS 选择器的优先级由四个数值组成，用来计算选择器的`特异性（Specificity）`。这些数值从高到低分别是：
 
 - 内联样式：如果样式是通过元素的 `style` 属性内联定义的，例如 `<div style="color: red;"></div>`。
-	- 特异性（Specificity）：==1000==
+	- 特异性（Specificity）：**1000**
 - ID 选择器：例如 `#id`
-	- 特异性（Specificity）：==100==
+	- 特异性（Specificity）：**100**
 - `类选择器、属性选择器`和`伪类选择器`：例如 `.class`、`[type="text"]`、`:hover`
-	- 特异性（Specificity）：==10==
+	- 特异性（Specificity）：**10**
 - 元素选择器 和`伪元素`选择器：例如 `div`、`p`、`::before`
-	- 特异性（Specificity）：==1==
+	- 特异性（Specificity）：**1**
 - 通配符选择器（`*`）
-	- 特异性（Specificity）：==0==
+	- 特异性（Specificity）：**0**
 
 > 特异性（Specificity） 即 优先级
 

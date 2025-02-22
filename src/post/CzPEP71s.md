@@ -12,12 +12,12 @@
 <!-- toc -->
  ## 1. 总结 
 
-- 滑动窗口使用==左右快慢指针技巧==
-- 四个变量： left right res ==obj==
+- 滑动窗口使用**左右快慢指针技巧**
+- 四个变量： left right res **obj**
 - **两个 while 嵌套**
 	- while (right < s.length) {
 		-  right ++
-		- `while (obj[c] > 1) {` → while 里面放==收缩条件==
+		- `while (obj[c] > 1) {` → while 里面放**收缩条件**
 		- 注意：
 			- 先 right ++ 再  left++
 

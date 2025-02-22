@@ -20,14 +20,14 @@
 - 安全相关
 	- 敏感信息泄露
 	- 接口响应中的敏感数据
-		- 比如==身份证号，手机号需要脱敏==
+		- 比如**身份证号，手机号需要脱敏**
 	- 错误信息泄露
 		- 详细的堆栈信息...
 		- 甚至
 			- `Database connection failed: mysql://root:password@localhost:3306/db`
 		- 包含 token 等信息
 	- 环境变量泄露
-	- ==调试信息==泄露
+	- **调试信息**泄露
 
 ## 2. SQL 注入 (SQL Injection)
 

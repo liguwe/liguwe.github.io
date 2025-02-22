@@ -269,7 +269,7 @@ obj = (a:number) => a + 1;
 > [!danger]
  **无所不包的Object类型既不符合直觉，也不方便使用，所以不建议使用**
 
-再看 **小写的 object** , ==只包含对象、数组和函数==， 不包括原始类型的值，比如下面代码
+再看 **小写的 object** , **只包含对象、数组和函数**， 不包括原始类型的值，比如下面代码
 
 ```typescript
 let obj:object;
@@ -714,7 +714,7 @@ type World = "world";
 type Greeting = `hello ${World}`;
 ```
 
->  type命令属于类型相关的代码，编译成 JavaScript 的时候，会被 ==全部删除==
+>  type命令属于类型相关的代码，编译成 JavaScript 的时候，会被 **全部删除**
 
 ### 6.10. typeof 运算符
 
@@ -742,7 +742,7 @@ type T1 = typeof a.x; // number
 
 3、类型运算 与 值运算
 
-- `typeof` 返回的是 TypeScript 类型，所以只能用在**类型运算**之中（即跟==类型相关的代码之中==），不能用在 **值运算**
+- `typeof` 返回的是 TypeScript 类型，所以只能用在**类型运算**之中（即跟**类型相关的代码之中**），不能用在 **值运算**
 - `typeof` 的参数不能是一个值的运算式，如下示例：
 
 ```typescript

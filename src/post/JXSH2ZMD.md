@@ -16,7 +16,7 @@
 	- 在`主应用和远程应用`中都配置 Pinia 作为共享依赖
 	- `远程应用`中定义 Store ，并暴露 Store
 - 共享实例
-	- 建议：vue 和 pinia 、 vue-router ==必须单例==
+	- 建议：vue 和 pinia 、 vue-router **必须单例**
 
 ## 2. 定义
 

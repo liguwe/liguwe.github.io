@@ -13,7 +13,7 @@
 - 重试机制
 - startTransition 优化交互体验
 - 错误处理
-- 异步组件的==自己实现==
+- 异步组件的**自己实现**
 	- Class 实现 AsyncComponent
 	- Hooks：useAsync 
 

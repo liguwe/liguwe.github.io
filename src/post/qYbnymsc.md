@@ -10,7 +10,7 @@
 
 - `import` 必须放在文件开头
 - `import()` 可以在任何位置使用
-	- 需 ==返回 Promise==
+	- 需 **返回 Promise**
 	- 按需加载和条件加载
 		- 根据环境变量
 			- 比如 import(env.xx.xx)
@@ -49,7 +49,7 @@ async function loadModule() {
 }
 ```
 - 可以在任何位置使用
-- ==返回 Promise==
+- **返回 Promise**
 - 支持动态路径
 
 ## 3. import(env.xx.xx) 的用处

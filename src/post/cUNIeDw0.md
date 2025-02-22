@@ -8,7 +8,7 @@
 <!-- toc -->
  ## 1. 总结 
 
-- React 中的 Portal 的点击事件，同样遵循 ==React 事件系统==的冒泡机制，不依赖于它真实的渲染结构(与实际的 DOM 结构无关)
+- React 中的 Portal 的点击事件，同样遵循 **React 事件系统**的冒泡机制，不依赖于它真实的渲染结构(与实际的 DOM 结构无关)
 	- ReactDOM.createPortal
 		- 使用 `e.stopPropagation()` 来阻止事件冒泡
 - Portal 的 context 同样从父组件继承而来

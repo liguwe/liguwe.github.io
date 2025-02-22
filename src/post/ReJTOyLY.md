@@ -13,7 +13,7 @@
  ## 1. 总结  
 
 - 变量：
-	- ==win 和 need==
+	- **win 和 need**
 	- left right 都等于 0
 	- start 
 	- len 

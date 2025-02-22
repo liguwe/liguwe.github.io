@@ -9,8 +9,8 @@
  ## 1. 总结 
 
 - Module Federation 的特点，两个
-	- ==动态加载==另一个应用的代码和依赖
-	- 可在运行时==共享代码==
+	- **动态加载**另一个应用的代码和依赖
+	- 可在运行时**共享代码**
 - 配置说明：
 	- new ModuleFederationPlugin
 		- remotes
@@ -20,18 +20,18 @@
 				- 可指定 requiredVersion 版本
 				- singleton 是否单例
 - 示例：
-	- 使用 promise ==可自定义动态远程加载==
+	- 使用 promise **可自定义动态远程加载**
 		- 错误边界，自己写代码，可以自己实现
-		- 请求时可添加==认证逻辑==
+		- 请求时可添加**认证逻辑**
 	- 共享状态管理，记得 exposes
 - 其他
-	- `remoteEntry.js` 是 Module Federation 中的一个==约定俗成==的命名
+	- `remoteEntry.js` 是 Module Federation 中的一个**约定俗成**的命名
 		- 也可
 			- ① 根据环境使用不同的文件名
 			- ② 添加 hash 以处理缓存
 			- ③ 用版本号作为文件名的一部分
 	- 端口配置有什么要求
-		- 建议==不同应用分配不同端口==，比如主应用、用户管理管理
+		- 建议**不同应用分配不同端口**，比如主应用、用户管理管理
 		- `[远程应用名称]@[远程入口文件URL]`
 			- `app1@http://localhost:3001/remoteEntry.js`
 

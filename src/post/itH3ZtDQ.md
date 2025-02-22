@@ -24,7 +24,7 @@
 		- [referrerpolicy](https://wangdoc.com/html/a#referrerpolicy)
 		- [ping](https://wangdoc.com/html/a#ping)：**用于打点**
 		- [type](https://wangdoc.com/html/a#type)
-		- [download](https://wangdoc.com/html/a#download) ：==用于下载==
+		- [download](https://wangdoc.com/html/a#download) ：**用于下载**
 	- 发邮件：调用邮件客户端
 	- 打电话：H5
 - link 标签
@@ -42,13 +42,13 @@
 	- `integrity`：哈希防篡改
 	- `nonce`：密码随机值，配合服务器，只有白名单才执行
 - iframe
-	- `sandbox`：**沙盒权限属性**，==比如是否允许提交表单、是否允许提示框等等==
+	- `sandbox`：**沙盒权限属性**，**比如是否允许提交表单、是否允许提示框等等**
 	- `importance`：下载优先级
 	- `loading`: auto / lazy / eager 
 - `table` 相关标签都有哪些
 	- 如何合并单元格 
-		- 使用 `colspan` 属性来实现==水平方向==的单元格合并
-		- 使用 `rowspan` 属性来实现==垂直方向==的单元格合并。
+		- 使用 `colspan` 属性来实现**水平方向**的单元格合并
+		- 使用 `rowspan` 属性来实现**垂直方向**的单元格合并。
 - `details/summary/dialog 标签`是干什么用的 ？ 
 - form 
 	- input type 有哪些 ？

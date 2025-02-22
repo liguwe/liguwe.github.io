@@ -8,7 +8,7 @@
 - 注意返回值
 	- 最后也一定要返回来
 	- 为了方便拼写，后面就直接写 `dfs`
-		- 这样也不用想着==如何拼写==了
+		- 这样也不用想着**如何拼写**了
 
 ```javascript hl:14,8
 var findFrequentTreeSum = function (root) {

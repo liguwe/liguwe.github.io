@@ -17,7 +17,7 @@
 总结：
 - 使用层次遍历
 - 最后一层，计算和即可
-	- ==记得每一层记得都需要重置为 0==
+	- **记得每一层记得都需要重置为 0**
 
 ```javascript hl:8
 var deepestLeavesSum = function (root) {

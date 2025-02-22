@@ -194,7 +194,7 @@ class Response {
 - 异步流程：
 	- 完美支持 `async/await`
 - 上下文封装：
-	- ==将 request 和 response 封装为单一的 context 对象==
+	- **将 request 和 response 封装为单一的 context 对象**
 - 错误处理：
 	- 统一的错误处理机制
 - 无回调地狱：

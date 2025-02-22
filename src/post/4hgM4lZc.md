@@ -368,7 +368,7 @@ window.addEventListener('error', function(event) {
 
 - `addEventListener` 的处理函数应该尽可能简洁
 - 避免在错误处理函数中执行复杂的操作
-- 考虑使用防抖或节流来限制错误==上报频率==
+- 考虑使用防抖或节流来限制错误**上报频率**
 
 ### 7.7. **调试支持**：
 

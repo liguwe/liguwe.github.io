@@ -11,7 +11,7 @@
 1. call 和 apply 的区别主要在于参数的传递方式:
     - call 接受一系列参数：`fn.call(obj,arg1,arg2)`
     - apply 接受一个参数数组：`fn.apply(obj,[arg1,arg2])`
-2. bind 与 call/apply 的主要区别 → ==是否立即执行==
+2. bind 与 call/apply 的主要区别 → **是否立即执行**
     - call 和 apply 会**立即执行**函数
     - bind **返回一个新函数**,可以稍后执行
 3. 使用场景:

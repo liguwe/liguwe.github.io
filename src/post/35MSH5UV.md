@@ -287,7 +287,7 @@ defineProps({
 
 > 如果一个原生事件的名字 (例如 `click`) 被定义在 `emits` 选项中，则监听器只会监听组件触发的 `click` 事件而不会再响应原生的 `click` 事件。
 
-==重点：`defineEmit(['click']) 事件`会覆盖原生的 click==
+**重点：`defineEmit(['click']) 事件`会覆盖原生的 click**
 
 >  不是说 通过 @click 定义的时间会覆盖通过 DOM 方式定义的事件，别搞混了，更多详见 [15. Vue3 事件与原生事件的关系和冒泡机制差异分析](/post/xlSIm6Jf.html)
 
