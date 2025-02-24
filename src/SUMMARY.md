@@ -27,19 +27,29 @@
   - [入门篇](post/dbhtcXcC.md)
 
 
-    - [chatGPT 是什么](post/X9weTQxX.md)
+    - [基础概念](post/jdFEXoMf.md)
 
-    - [chatGPT 的原理](post/UNqPtZ9R.md)
 
-    - [DeepSeek LLM v3 和 DeepSeek R1 对比](post/FNBJZLPz.md)
+      - [chatGPT 是什么](post/ZZRyFWPS.md)
 
-    - [大模型是如何训练的？](post/Wuw8iWpP.md)
+      - [chatGPT 的原理](post/jCBfldLA.md)
 
-    - [LangChain（篇一：基础入门篇）](post/bghSSCnj.md)
+      - [DeepSeek LLM v3 和 DeepSeek R1 对比](post/pmVAeI6x.md)
 
-    - [LangChain 概述](post/iTpV1UnH.md)
+      - [大模型是如何训练的？](post/vnJPZPp3.md)
 
-    - [Dify notes](post/XBu9isDz.md)
+      - [LangChain（篇一：基础入门篇）](post/bdRpyq2O.md)
+
+      - [LangChain 概述](post/asem2cW5.md)
+
+      - [Dify notes](post/4FM3C7gK.md)
+
+    - [生成式 AI 导论（李宏毅 ）](post/8zJvFNI4.md)
+
+
+      - [什么是生成式 AI](post/mrLxcyLH.md)
+
+      - [今日的生成式AI 厉害在哪儿？工具 →  工具人](post/hM8NQuec.md)
 
   - [Agent](post/FxlVdxk0.md)
 
