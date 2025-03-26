@@ -1,6 +1,7 @@
 # liguwe's Books
 
 [前言](post/FfsDEnSY.md)
+[更新日志](post/gJdSxiFL.md)
 
 
 # 第一部分 博客
@@ -8,6 +9,8 @@
 
   - [2025](post/qa2LFgUD.md)
 
+
+    - [Cursor 使用技巧总结](post/YZ4WjpnY.md)
 
     - [模型上下文协议（MCP）](post/Qu0OMSBi.md)
 
