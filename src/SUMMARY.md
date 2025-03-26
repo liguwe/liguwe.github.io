@@ -6,18 +6,23 @@
 # 第一部分 博客
 
 
-  - [2024](post/h1Q9gnlr.md)
+  - [2025](post/qa2LFgUD.md)
 
 
-    - [播客：AI 时代的频率跃迁背景下个人的选择：高频的卷或低频的定](post/YiFJboYv.md)
+    - [模型上下文协议（MCP）](post/Qu0OMSBi.md)
 
-    - [播客：张云帆的芒格之道](post/Ekpm9VwQ.md)
+  - [2024](post/swsUjjOS.md)
 
-    - [播客：人生危机不是崩溃而是瓦解](post/kmnAbbb7.md)
 
-    - [个人常用工具及技巧分享](post/ztnUty11.md)
+    - [播客：AI 时代的频率跃迁背景下个人的选择：高频的卷或低频的定](post/uUh4czdw.md)
 
-    - [播客：rrweb 作者的某期播客节目纪要](post/uRJp5rVx.md)
+    - [播客：张云帆的芒格之道](post/ja1R7kMW.md)
+
+    - [播客：人生危机不是崩溃而是瓦解](post/3PerSrzA.md)
+
+    - [个人常用工具及技巧分享](post/6D8lUg51.md)
+
+    - [播客：rrweb 作者的某期播客节目纪要](post/lgJbn8vd.md)
 
 # 第二部分 AGI
 
@@ -1836,6 +1841,8 @@
     - [幂等与非幂等、HTTP 常见状态码](post/H7bdbK9v.md)
 
     - [本地配置 SSH](post/CykPSNuU.md)
+
+    - [0.0.0.0 和 127.0.0.1 的区别](post/c3OkR15b.md)
 
   - [数据库](post/7I60ufR6.md)
 
