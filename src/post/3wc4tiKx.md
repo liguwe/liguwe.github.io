@@ -51,7 +51,7 @@ var maxAreaOfIsland = function (grid) {
 
 ## 2. 题目
 
-![图片&文件](./files/20241113-5.png)
+![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20241113-5.png)
 
 - 1 代表陆地
 - 0 代表海洋

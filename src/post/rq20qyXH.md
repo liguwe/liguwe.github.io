@@ -34,7 +34,7 @@ const snapshot = useSyncExternalStore(subscribe, getSnapshot, getServerSnapshot?
 
 useSyncExternalStore 实际上是一个用于安全地连接`外部数据源`和 `React组件`的桥，如下图
 
-![图片&文件](./files/20241031.png)
+![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20241031.png)
 
 - subscribe：订阅函数，当**存储更改时**调用回调
 	- 其作用是订阅外部存储的变化。当外部存储发生变化时，它应该调用传入的 `callback`

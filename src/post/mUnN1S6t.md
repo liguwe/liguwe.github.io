@@ -10,16 +10,16 @@
 
 ### 1.1. 列举下跨页面通讯的方式
 
-![图片&文件](./files/20241028-15.png)
+![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20241028-15.png)
 
 ### 1.2. 跨域的表现、如何跨域？
 
-![图片&文件](./files/20241028-16.png)
+![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20241028-16.png)
 
 - 简单请求，直接在 origin 中添加字段
 - 非简单请求，需要预检
 
-![图片&文件](./files/20241028-17.png)
+![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20241028-17.png)
 
 ### 1.3. 关于跨域、为什么非简单请求不需要预检，而其他请求需要预检
 
@@ -264,15 +264,15 @@ self.onconnect = function(e) {
 
 ### 2.2. 非同源
 
-![图片&文件](./files/20241024-14.png)
+![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20241024-14.png)
 
 ## 3. iframe 通讯的方法有哪些
 
 - 1. **对于主域相同而子域不同的例子**，可以通过设置`document.domain`的办法来解决。
-	- ![图片&文件](./files/20241024-15.png)
+	- ![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20241024-15.png)
 - 使用 window.postMessage，**不同域也可以**
 	- `window.frames[0].postMessage('Hello from parent!', 'https://child-domain.com')`
-	- ![图片&文件](./files/20241024-16.png)
+	- ![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20241024-16.png)
 - 利用 window.name 属性在**不同域**之间传递信息
 - **同域**下，使用 Web Storage (localStorage 或 sessionStorage) 来通讯
 - 两个**不同域**的页面可以通过向**同一个服务器**发送请求来间接通信
@@ -348,7 +348,7 @@ self.onconnect = function(e) {
 
 ## 6. 如何在 Canvas 获取跨域的图片
 
-![图片&文件](./files/20241112-8.png)
+![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20241112-8.png)
 
 当然，需要设置图片的响应头，允许跨域
 
@@ -388,10 +388,10 @@ self.onconnect = function(e) {
 
 ## 8. 前端页面通讯的方式有哪些？
 
-![图片&文件](./files/20241111-39.png)
+![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20241111-39.png)
 
 >  sharedWorker 确实不太常用！！！
 
 ## 9. 如何实现 Tab 之间通讯，不能 websocket
 
-![图片&文件](./files/20241111-23.png)
+![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20241111-23.png)

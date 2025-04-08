@@ -18,7 +18,7 @@
 
 ### 1.1. 示例
 
-![图片&文件](./files/20241101-6.png)
+![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20241101-6.png)
 
 - Hooks 状态存储在 Fiber 节点上
 - 通过 Fiber 实现时间切片和优先级调度
@@ -72,7 +72,7 @@ export type Hook = {
 
 ### 3.3. 一个示例
 
-![图片&文件](./files/20241101-7.png)
+![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20241101-7.png)
 
 ## 4. 简化版的 useState 实现
 

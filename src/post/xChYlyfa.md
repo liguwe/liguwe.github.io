@@ -48,7 +48,7 @@ var fib = function (n) {
 
 算法复杂度，如下图，即`子问题的个数 = O(2^n)`  指数级别，`爆炸`，因为有`重叠子问题` 
 
-![图片&文件](./files/20241111.png)
+![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20241111.png)
 
 ## 3. `自顶向下`的递归解法：带备忘录优化
 
@@ -106,7 +106,7 @@ var fib = function (n) {
 
 **如下图：**
 
-![1008](#)      
+![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20241111-1.png)      
 
 ## 4. 自低向上的迭代解法： `dp数组`
 
@@ -136,7 +136,7 @@ var fib = function (n) {
 
 其实，就是`转态转移方程`的实现，如下：
 
-![图片&文件](./files/20241111-2.png)
+![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20241111-2.png)
 
 ## 6. 空间复杂度降为 `O(1)`
 

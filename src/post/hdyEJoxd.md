@@ -342,11 +342,11 @@ function FiberNode(
 
 ### 4.1. 举个示例：mount 一个组件时
 
-![图片&文件](./files/20241029-3.png)
+![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20241029-3.png)
 
 ### 4.2. 举个示例：点击 p 节点，update 一个组件时
 
-![图片&文件](./files/20241029-4.png)
+![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20241029-4.png)
 
 ## 5. 为什么需要 Fiber
 
@@ -456,7 +456,7 @@ function FiberNode(
 3. 执行任务回调: 在内存中构造出`fiber树`, 同时与与渲染器(`react-dom`)交互, 在内存中创建出与`fiber`对应的`DOM`节点.
 4. 输出: 与渲染器(`react-dom`)交互, 渲染`DOM`节点.
 
-![图片&文件](./files/20241031-19.png)
+![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20241031-19.png)
 
 ### 7.2. `Fiber节点`是如何被创建并构建`Fiber 树`的呢？
 
@@ -515,7 +515,7 @@ ReactDOM.render(<App />, document.getElementById("root"));
 
 对应的 `Fiber 树` 如下：
 
-![图片&文件](./files/20241031-18.png)
+![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20241031-18.png)
 
 然后就是`DFS 递归遍历`这个树了
 - 如果是**进入**节点，执行 `beginWork`
@@ -585,7 +585,7 @@ Scheduler（调度器）是 React 的核心模块，主要负责：
 - 时间片分配
 - 可中断渲染
 
-![图片&文件](./files/20241031-25.png)
+![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20241031-25.png)
 
 ### 9.1. 调度中心的核心实现
 
@@ -595,7 +595,7 @@ Scheduler（调度器）是 React 的核心模块，主要负责：
 4. **任务调度**：循环执行任务，支持中断
 5. **时间切片**：控制执行时间，避免阻塞
 
-![图片&文件](./files/20241031-20.png)
+![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20241031-20.png)
 
 ### 9.2. 时间切片的实现
 

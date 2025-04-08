@@ -12,7 +12,7 @@
 
 关键点：
 - 思路，看着这图就明白了
-	- ![图片&文件](./files/20250112-2.png)
+	- ![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20250112-2.png)
 	- 所以，关键点就是需要把二维数组转成一维数组，方便做 BFS
 		- 并且需要构建一维数组的 maping 关系
 - 需要添加 `visited` 检测
@@ -96,20 +96,20 @@ var slidingPuzzle = function (board) {
 
 ## 2. 题目
 
-![图片&文件](./files/20250109-5.png)
+![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20250109-5.png)
 
-![图片&文件](./files/20250109-4.png)
+![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20250109-4.png)
 
 类似的拼图游戏
 
-![图片&文件](./files/20250109-3.png)
+![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20250109-3.png)
 
 ## 3. 思路
 
 - 如何穷举出 `board` 当前局面下可能**衍生出的所有局面**
 	- 看数字 `0` 的位置呗，和上下左右的数字进行交换就行了，如下图：
 
-![图片&文件](./files/20250109-6.png)
+![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20250109-6.png)
 
 - 这样就是一个 BFS 问题
 	- 每次先找到数字 0，然后和周围的数字进行交换，形成新的局面加入队列…… 

@@ -36,4 +36,4 @@ function myInstanceof(left, right) {
 
 > 别搞混了：是 实例的 `__proto__` 指向 `构造函数的 prototype`
 
-![图片&文件](./files/20241024-4.png)
+![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20241024-4.png)

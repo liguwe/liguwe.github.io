@@ -33,7 +33,7 @@
 - Solid 是一个用于制作交互式 Web 应用程序的 JavaScript 框架。
 	- 它利用自定义编译器将 JSX 转换为高性能的 DOM 操作。更新则由细粒度的响应式系统提供支持，响应式系统减少了对比差异的开销，从而获得最佳性能
 - Solid 的性能表型
-	- ![图片&文件](./files/20241102.png)
+	- ![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20241102.png)
 
 ### 3.2. Vue 3.x 主要版本
 

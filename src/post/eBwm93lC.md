@@ -26,7 +26,7 @@ console.log(typeof a);  // 'bigint'
 
 JavaScript 的 Number 类型使用 64 位双精度浮点数（IEEE 754），这导致：
 - 最大安全整数：`Number.MAX_SAFE_INTEGER` (2^53 - 1)
-	- ![图片&文件](./files/20241203-1.png)
+	- ![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20241203-1.png)
 - 最小安全整数：`Number.MIN_SAFE_INTEGER` (-(2^53 - 1))
 
 ```javascript

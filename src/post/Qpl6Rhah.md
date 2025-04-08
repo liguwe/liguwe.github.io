@@ -6,7 +6,7 @@
 | ---------------------------------------------------------------------- | ---------------------------------------------------------- | --- |
 | [969. Pancake Sorting](https://leetcode.com/problems/pancake-sorting/) | [969. 煎饼排序](https://leetcode.cn/problems/pancake-sorting/) | 🟠  |
 
-![图片&文件](./files/20241119-3.png)
+![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20241119-3.png)
 
 
 ## 目录

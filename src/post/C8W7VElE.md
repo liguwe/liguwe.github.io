@@ -43,4 +43,4 @@ var findFrequentTreeSum = function (root) {
 <!-- toc -->
  ## 题目 
 
-![undefined](#)
+![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20250120-5.png)

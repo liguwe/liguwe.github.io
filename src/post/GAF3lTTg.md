@@ -27,7 +27,7 @@
 
 `Vue.js 的模板`和 `JSX` 都属于 `领域特定语言(DSL)` ，`Vue.js 模板编译器`的作用如下图
 
-![图片&文件](./files/20241104-14.png)
+![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20241104-14.png)
 
 - 源码是：`.vue 模板`
 - 目标代码：`可执行的渲染函数`
@@ -45,7 +45,7 @@
 
 ### 2.2. 模板 生成 模板AST
 
-![图片&文件](./files/20241104-16.png)
+![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20241104-16.png)
 
 ### 2.3. 模板AST 生成 `JS AST 转换器`
 
@@ -55,13 +55,13 @@
 
 ### 2.4. jsAST 生成最终可执行的 **渲染函数**
 
-![图片&文件](./files/20241104-17.png)
+![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20241104-17.png)
 
 ## 3. Vue3 的模板编译器实现原理
 
 ### 3.1. 如何用`有限状态自动机`构造一个`词法分析器`
 
-![图片&文件](./files/20241104-18.png)
+![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20241104-18.png)
 
 按照`有限状态自动机的状态迁移过程`，我们可以很容易地编写对应的代码实现。
 
@@ -241,7 +241,7 @@ console.log(tokenize(template));
 
 实现一个 `parse` 函数，即将 `上面的token 列表`输出为如下`树结构`，如下结构就是 `AST` 或者说是 `Vnode`
 
-![图片&文件](./files/20241104-19.png)
+![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20241104-19.png)
 
 ```json
 {
@@ -336,7 +336,7 @@ function parse(str) {
 
 ### 3.3. 完成流程示意图
 
-![图片&文件](./files/20241104-20.png)
+![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20241104-20.png)
 
 >  这就是**一个特定的打平一维数组结构构造成树形结构的算法问题**
 
@@ -517,7 +517,7 @@ function render() {
 
  上面代码对应的 `js AST` 是什么呢？如下
 
-![图片&文件](./files/20241104-21.png)
+![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20241104-21.png)
 
 下面是具体结构
 

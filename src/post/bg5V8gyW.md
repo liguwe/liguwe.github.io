@@ -4,7 +4,7 @@
 
 >  [894. 所有可能的真二叉树](https://leetcode.cn/problems/all-possible-full-binary-trees/)
 
-![图片&文件](./files/20250216-2.png)
+![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20250216-2.png)
 
 关键点：`for (let i = 1; i < n; i = i + 2) {`
 1. **为什么从 `1` 开始？**

@@ -86,7 +86,7 @@ var nthUglyNumber = function (n) {
 
 ### 3.1. 示例
 
-![图片&文件](./files/20241120.png)
+![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20241120.png)
 
 如果让 `primes = [2, 3, 5]` 就是上道题：第 263 题「[丑数](https://leetcode.cn/problems/ugly-number)」，但我们不能用 `min` 函数计算最小头结点了，而是要用**优先级队列**来计算**最小头结点**，同时依然要**维护链表指针**、**指针所指节点的值**，我们可以用一个**三元组** 来保存这些信息
 

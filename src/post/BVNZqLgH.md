@@ -140,7 +140,7 @@ makeAnimalSound(cat);  // 输出: Whiskers says: Meow!
 - 将横切关注点（cross-cutting concerns）从主要业务逻辑中分离出来
 - **不修改原有代码的情况下增加新功能**
 - **TypeScript 的装饰器**是实现 AOP（面向切面编程）的一种重要方式
-	- ![图片&文件](./files/20250109-1.png)
+	- ![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20250109-1.png)
 - 常见的应用场景包括：
 	- 日志记录、性能统计、权限控制、错误处理等
 
@@ -300,5 +300,5 @@ IOC（Inversion of Control）是一种设计原则，核心思想是：
 	-  provider 和 injection 等
 		- 虽然 Vue3 中的依赖注入机制不是传统意义上完整的 IOC 容器，但它确实体现了控制反转的思想，并且以一种更适合前端组件化开发的方式来实现
 	- Vue 的插件系统
-		- ![图片&文件](./files/20250109-2.png)
+		- ![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20250109-2.png)
 -  React 的 Context API 

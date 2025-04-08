@@ -15,7 +15,7 @@
 	- 定义 ：`dp[i][j]` 
 		- `从 grid[0][0] 走到 grid[i][j] 的最小路径和`
 	- base case
-		- ![图片&文件](./files/20250112.png)
+		- ![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20250112.png)
 	- 尽量使用**迭代解法**，解出来的大概率都能通过用例
 
 ### 代码：迭代解法
@@ -55,19 +55,19 @@ var minPathSum = function (grid) {
 
 ### 错误记录
 
-![图片&文件](./files/20250112-1.png)
+![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20250112-1.png)
 
 >  找了半天，人眼睛还是不容易发现，AI 一下就发现了
 
 ## 1. 题目
 
-![图片&文件](./files/20241112-1.png)
+![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20241112-1.png)
 
 ## 2. 分析
 
 一般来说，让你在二维矩阵中求最优化问题（最大值或者最小值），肯定需要**递归 + 备忘录**，也就是动态规划技巧
 
-![图片&文件](./files/20241112-2.png)
+![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20241112-2.png)
 
 「从 `D` 走到 `B` 的最小路径和这个问题转化成了
 - 从 `D` 走到 `A` 的最小路径和
@@ -93,7 +93,7 @@ var minPathSum = function(grid) {
 
 ### 3. base Case 分析
 
-![图片&文件](./files/20250112.png)
+![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20250112.png)
 
 ## 4. 自顶向下动态规划解法：会超时
 

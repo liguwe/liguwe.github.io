@@ -38,7 +38,7 @@ var findLeaves = function (root) {
 
 ## 2. 思路
 
-![图片&文件](./files/20250120-4.png)
+![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20250120-4.png)
 
 ## 3. 题目
 
@@ -46,5 +46,5 @@ var findLeaves = function (root) {
 - 移除所有的叶子节点。
 - 重复以上步骤，直到树为空
 
-![图片&文件](./files/20250120-3.png)
+![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20250120-3.png)
 

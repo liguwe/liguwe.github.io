@@ -11,7 +11,7 @@
 
 下图中的二叉树包含  `4 → 2 → 8` 的单链表
 
-![图片&文件](./files/20250121-3.png)
+![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20250121-3.png)
 
 ```javascript
 二叉树：

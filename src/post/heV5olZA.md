@@ -24,7 +24,7 @@
 			- fast = fast.next 
 		- ④ 这题**不用虚拟节点**
 
-![图片&文件](./files/删除排序链表中的重复元素.gif)
+![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/删除排序链表中的重复元素.gif)
 
 - 不需要使用**虚拟头结点**
 

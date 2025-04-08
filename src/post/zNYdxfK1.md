@@ -39,7 +39,7 @@
 
 分四个阶段：组件挂载阶段 + 组件更新 + 卸载 + 错误处理阶段 ，如下图：
 
-![图片&文件](./files/20241030-3.png)
+![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20241030-3.png)
 
 ### 2.1. 第一阶段：组件挂载阶段
 
@@ -408,7 +408,7 @@ class CompleteLifecycleComponent extends React.Component {
 
 React 为什么要废弃 `componentwillMount`、`componentWillReceiveProps`、`componentWillUpdate` 这三个生命周期钩子？，它们有哪些问题呢？ React 又是如何解决的呢？
 
-![图片&文件](./files/20241111-16.png)
+![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20241111-16.png)
 
 **一句话就是，Render 阶段可能会被打断，那么 willxxx 就可以执行多次**
 

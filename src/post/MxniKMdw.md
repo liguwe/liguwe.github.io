@@ -12,11 +12,11 @@
 
 ## 2. 前后端模块及服务架构图
 
-![图片&文件](./files/20241114-3.png)
+![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20241114-3.png)
 
 ## 3. 数据库设计
 
-![图片&文件](./files/20241114-4.png)
+![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20241114-4.png)
 
 ## 4. 功能清单列举
 

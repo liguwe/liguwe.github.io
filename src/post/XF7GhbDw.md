@@ -12,7 +12,7 @@
 	- 一个定义
 	- 一个使用
 	- 示例
-		- ![图片&文件](./files/20250101-1.png)
+		- ![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20250101-1.png)
 - 考虑是否真的需要 Context，有时 props 传递可能是更好的选择
 
 ## 2. 发布订阅模式

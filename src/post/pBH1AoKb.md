@@ -20,7 +20,7 @@
 2. 计算它把树分成的三个部分各自的节点数
 3. 判断最大的那部分是否超过 `n/2`
 
-![图片&文件](./files/20250122-1.png)
+![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20250122-1.png)
 
 
 ```javascript
@@ -68,7 +68,7 @@ var btreeGameWinningMove = function (root, n, x) {
 4. 胜利条件：
    - 谁能染色更多的节点，谁就赢
 
-![图片&文件](./files/20250122.png)
+![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20250122.png)
 
 ### 2.2. 题目输入
 
@@ -126,7 +126,7 @@ n = 6, x = 3
    - 选中节点 x 的父节点及其相连的其他部分
 3. 玩家2只要能选择一个位置，使得他能控制这三个部分中最大的那个，就可以赢
 
-![图片&文件](./files/20250122-1.png)
+![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20250122-1.png)
 
 
 

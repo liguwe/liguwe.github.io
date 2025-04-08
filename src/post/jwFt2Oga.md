@@ -54,9 +54,9 @@
 		- 比如`jQuery`插件：简单说就是`jQuery.prototype.extend`用于扩展插件
 	- 实现要点：
 		- 微内核
-			- ![图片&文件](./files/20250103-2.png)
+			- ![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20250103-2.png)
 		- 插件系统
-			- ![图片&文件](./files/20250103-3.png)
+			- ![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20250103-3.png)
 		- 插件间通讯
 		- 事件驱动的插件系统
 

@@ -5,7 +5,7 @@
 >  [240. 搜索二维矩阵 II](https://leetcode.cn/problems/search-a-2d-matrix-ii/)
 
 
-![图片&文件](./files/20250114-2.png)
+![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20250114-2.png)
 
 
 ## 目录
@@ -16,7 +16,7 @@
 - 规定只能**向左或向下**移动
 	- 如果向左移动，元素在减小
 	- 如果向下移动，元素在增大
-		- ![图片&文件](./files/20250114-3.png)
+		- ![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20250114-3.png)
 
 ## 代码
 

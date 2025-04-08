@@ -131,7 +131,7 @@ JavaScript 最初是为了在浏览器中操作 DOM 而设计的
 		- 是 JavaScript 引擎等待任务、执行任务和进入休眠状态等待更多任务的一种机制
 	- JavaScript 是单线程的，**事件循环**使得它能够**非阻塞地执行 I/O 操作**
 
-![图片&文件](./files/20241025-3.png)
+![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20241025-3.png)
 
 类似于下面代码：
 

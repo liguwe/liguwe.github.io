@@ -102,7 +102,7 @@ var minFallingPathSum = function (matrix) {
 ### 1.3. 错误记录
 
 - **混合了递归和 dp 数组的写法**，搞混了啊
-	- ![图片&文件](./files/20250110.png)
+	- ![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20250110.png)
 
 ## 2. 题解
 

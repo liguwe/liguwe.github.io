@@ -12,7 +12,7 @@
 
 `AbortController` 接口表示一个控制器对象，允许你根据需`要中止一个或多个 Web 请求`。
 
-![图片&文件](./files/20241024-19.png)
+![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20241024-19.png)
 
 ## 2. 使用 
 

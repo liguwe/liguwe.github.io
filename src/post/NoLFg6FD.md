@@ -16,7 +16,7 @@
 
 详细如下图：
 
-![图片&文件](./files/20241025-4.png)
+![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20241025-4.png)
 
 ## 2. 一些基本设置
 
@@ -28,5 +28,5 @@
 
 ## 3. 负载均衡
 
-![图片&文件](./files/20241025-5.png)
+![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20241025-5.png)
 

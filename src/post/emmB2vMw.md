@@ -194,11 +194,11 @@
 
 #### 6.1.1. edge
 
-![图片&文件](./files/20241227-1.png)
+![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20241227-1.png)
 
 #### 6.1.2. chrome
 
-![图片&文件](./files/20241227.png)
+![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20241227.png)
 
 ## 7. 最佳实践
 

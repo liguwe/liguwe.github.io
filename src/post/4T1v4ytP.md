@@ -47,7 +47,7 @@
 			- 304 没更新，直接用吧
 		- `Etag / If-None-Match`的优先级比 `Last-Modified / If-Modified-Since`高
 	- Push Cache ： HTTP2 支持，访问 index.html ，同时推送必要css 和 js 等
-		- ![图片&文件](./files/20241025-15.png)
+		- ![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20241025-15.png)
 
 
 - **内存**缓存
@@ -100,7 +100,7 @@
 		- 这个样式规则，如果不应用到具体的元素，浏览器不会去下载该图片。
 		- 所以你可以通过切换 className 的方式，放心得进行 CSS 中图片的懒加载。
 	- 自己实现
-		- ![图片&文件](./files/20241025-16.png)
+		- ![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20241025-16.png)
 - 选择适合大小和分辨率
 - 图片压缩，删除冗余信息，比如jpg大小能减少15%
 - webp
@@ -133,7 +133,7 @@
 - 批量化操作，或者说是读写分离
 - 长列表优化
 - 任务分解：把 10 亿次分散为十个 1 亿次的子任务
-	- ![图片&文件](./files/20241025-17.png)
+	- ![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20241025-17.png)
 - 非关键路径延迟执行：
 	- `setTimeout()/ requestIdleCallback`
 - 新开线程辅助计算: `worker`

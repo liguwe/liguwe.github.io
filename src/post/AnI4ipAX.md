@@ -145,7 +145,7 @@
 - 另外，该事件只针对同一个文档，如果浏览历史的切换，导致加载不同的文档，该事件也不会触发。
 - 页面 `第一次加载的时候`，浏览器不会触发`popstate`事件
 - `pushState 与 replaceState` 调用后 History 对象会变化，地址栏会变化，但不会触发页面刷新事件
-	- ![图片&文件](./files/20241024-17.png)
+	- ![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20241024-17.png)
 
 ## 4. 一个简单的 Router 类实现
 

@@ -11,7 +11,7 @@
 | ---------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- | --- |
 | [241. Different Ways to Add Parentheses](https://leetcode.com/problems/different-ways-to-add-parentheses/) | [241. 为运算表达式设计优先级](https://leetcode.cn/problems/different-ways-to-add-parentheses/) | 🟠  |
 
-![图片&文件](./files/20241119-10.png)
+![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20241119-10.png)
 
 
 ## 思路

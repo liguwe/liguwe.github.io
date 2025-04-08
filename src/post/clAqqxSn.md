@@ -11,7 +11,7 @@
 | -------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------ | --- |
 | [659. Split Array into Consecutive Subsequences](https://leetcode.com/problems/split-array-into-consecutive-subsequences/) | [659. 分割数组为连续子序列](https://leetcode.cn/problems/split-array-into-consecutive-subsequences/) | 🟠  |
 
-![图片&文件](./files/20241119-9.png)
+![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20241119-9.png)
 
 > 但斗地主里面顺子至少要 5 张连续的牌，和这个题唯一的差别了就是这个了
 

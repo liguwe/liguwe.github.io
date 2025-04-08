@@ -30,7 +30,7 @@
 >  至少要得到前、中、后序遍历中的两种互相配合才能还原二叉树。那是因为前文的遍历结果**没有记录空指针**的信息。
 >  这里的 `nodes` 列表包含了空指针的信息，所以只使用 `nodes` 列表就可以还原二叉树
 
-![图片&文件](./files/20250108.png)
+![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20250108.png)
 
 ### 2.1. 序列化
 
@@ -96,18 +96,18 @@ var deserialize = function (data) {
 	- **根据后序遍历结果（包括空指针）构造一颗二叉树**
 	- 只不过，每次取值时，`pop` 即可，不是 `shift` 
 
-![图片&文件](./files/20250108-1.png)
+![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20250108-1.png)
 
 ## 层次遍历思路
 
 ### 序列化
 
 - 会多出一层来，别被下图无界了
-	- ![图片&文件](./files/20250108-4.png)
+	- ![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20250108-4.png)
 		- 上图中，觉得序列化的结果应该是 `1,2,3,#,#,5`
 			- 但其实是：`1,2,3,#,#,5,#,#,#,#` 
 				- 多出一层，又比如下图
-					- ![图片&文件](./files/20250108-3.png)
+					- ![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20250108-3.png)
 
 
 ```javascript

@@ -11,7 +11,7 @@
 - 通过在两个栈之间倒腾元素，实现顺序的反转
 
 
-![图片&文件](./files/20250107.png)
+![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20250107.png)
 
 
 ## 目录

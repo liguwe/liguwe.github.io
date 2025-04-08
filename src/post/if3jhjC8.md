@@ -17,7 +17,7 @@
 
 ## LeetCode 环境说明
 
-![图片&文件](./files/20241120-1.png)
+![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20241120-1.png)
 
 
  - 版本：`Node.js 20.10.0`

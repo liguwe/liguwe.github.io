@@ -51,14 +51,14 @@ var flatten = function (root) {
 
 ## 2. 重点：不能使用遍历的思路
 
-![图片&文件](./files/20250107-6.png)
+![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20250107-6.png)
 
 ## 3. 分解问题的思路
 
-![图片&文件](./files/20250107-4.png)
+![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20250107-4.png)
 
 > 关键是这张图这张图
 
-![图片&文件](./files/20250107-7.png)
+![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20250107-7.png)
 
 ### 3.1. 定义：`flatten(root)` 将 root 节点拉平

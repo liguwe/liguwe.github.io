@@ -6,7 +6,7 @@
 >  [304. 二维区域和检索 - 矩阵不可变](https://leetcode.cn/problems/range-sum-query-2d-immutable/)
 
 
-![图片&文件](./files/20250123.png)
+![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20250123.png)
 
 
 - 四个大矩阵有一个共同的特点，就是`左上角`都是 `(0, 0)` 原点，已上图为例

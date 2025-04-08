@@ -29,11 +29,11 @@
 
 未使用时间切片的效果如下：
 
-![图片&文件](./files/20241029.png)
+![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20241029.png)
 
 使用时间切片的效果如下：**很平滑**
 
-![图片&文件](./files/20241029-1.png)
+![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20241029-1.png)
 
 ### 2.2. I/O 瓶颈
 
@@ -53,7 +53,7 @@
 
 ### 3.1. React 15 ：Reconciler 架构
 
-![图片&文件](./files/20241031-21.png)
+![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20241031-21.png)
 
 #### 3.1.1. Reconciler 协调器
 
@@ -75,7 +75,7 @@ function reconcileChildrenArray(returnFiber, currentFirstChild, newChildren) {
 
 ### 3.2. React 16 ：支持时间切片的 Fiber Reconciler
 
-![图片&文件](./files/20241031-22.png)
+![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20241031-22.png)
 
 - 新引入：`Scheduler 调度器`
 	- 调度任务的优先级，高优的优先进入 Reconciler
@@ -86,7 +86,7 @@ function reconcileChildrenArray(returnFiber, currentFirstChild, newChildren) {
 
 #### 3.2.1. 演示更新效果
 
-![图片&文件](./files/20241029-2.png)
+![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20241029-2.png)
 
 ### 3.3. Legacy（遗产） 模式（React 16/17 默认模式）
 
@@ -200,4 +200,4 @@ function ConcurrentComponent() {
 
 ## 4. 架构分层与核心包的关系
 
-![undefined](#)
+![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20241031-23.png)

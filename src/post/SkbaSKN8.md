@@ -84,7 +84,7 @@
 				- 无界提供插件在运行时对子应用的 html 文本进行修改
 	- 应用共享
 		- 比如主应用使用到了`lodash`，子应用 A 也使用到了相同版本的`lodash`
-		- ![图片&文件](./files/20250103.png)
+		- ![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20250103.png)
 		- 但：
 			- 应用共享原理是主应用和子应用运行iframe沙箱同域可以共享内存，对于**组件库**这样有副作用的第三方包，可能无法共享
 - **坑**
@@ -277,7 +277,7 @@ MonacoEditor 其实已经考虑到了 shadowRoot 的情况，但是 MonacoEditor
 - 而无界子应用 `document.body` 在 `shadowRoot 内部` 
 - 这导致 MonacoEditor 认为编辑器不在 shadowRoot 内
 
-![图片&文件](./files/20241127-5.png)
+![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20241127-5.png)
 
 
 > https://github.com/Tencent/wujie/issues/205

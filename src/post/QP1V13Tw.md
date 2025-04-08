@@ -137,7 +137,7 @@ arr.sort((a, b) => a[0] - b[0] || b[1] - a[1]);
 
 结合动图看看：
 
-![cos-blog-832-34-20241012](https://blog-1310531898.cos.ap-beijing.myqcloud.com/832-34-20241012/Interval Problem Solution.gif|504)
+![cos-blog-832-34-20241012](https://blog-1310531898.cos.ap-beijing.myqcloud.com/832-34-20241012/Interval Problem Solution.gif)
 
 ### 4.3. 代码实现
 

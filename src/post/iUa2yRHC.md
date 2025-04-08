@@ -467,4 +467,4 @@ npm run deploy
 - 然后在流程里`找可优化的点`，并去调研或者看社区有没有能借力的，看是否需要二次开发
 
 
-![720](#)
+![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20241028-4.png)

@@ -38,4 +38,4 @@ var balanceBST = function (root) {
 - 有序序列 → 构造二叉树 
 	- 这就是 ：[108. 将有序数组转换为二叉搜索树](/post/LTihx742.html)
 
-![616](#)
+![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20250122-3.png)

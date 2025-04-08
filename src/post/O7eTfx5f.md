@@ -17,7 +17,7 @@
 	- JSX 转换为普通 JavaScript 
 	- ts → es5
 - 示例：移除 console.log
-	- ![图片&文件](./files/20250103-5.png)
+	- ![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20250103-5.png)
 
 ## 2. Babel 插件的基本概念
 

@@ -48,7 +48,7 @@ channel.port2.postMessage('你好，这是来自 Port2 的消息');
 
 ### 3.1. 简单示例：在控制台中直接可执行
 
-![图片&文件](./files/20241207-2.png)
+![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20241207-2.png)
 
 ```javascript
 // 创建 MessageChannel

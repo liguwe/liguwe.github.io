@@ -14,7 +14,7 @@
 
 ## 2. Umi 如何管理状态
 
-![图片&文件](./files/20241030-9.png)
+![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20241030-9.png)
 
 ### 2.1. 定义示例
 
@@ -62,7 +62,7 @@ export default UserInfo;
 
 ## 3. 最新的 Hooks 数据流
 
-![图片&文件](./files/20241030-10.png)
+![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20241030-10.png)
 
 ### 3.1. counterModel
 
@@ -113,7 +113,7 @@ export default function Page() {
 
 ## 4. Dva 
 
-![图片&文件](./files/20241030-8.png)
+![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20241030-8.png)
 
 - namespace
     - model 的命名空间，同时也是他在全局 state 上的属性，只能用字符串，不支持通过 `.` 的方式创建多层命名空间

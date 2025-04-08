@@ -44,4 +44,4 @@ var simplifyPath = function (path) {
 
 ## 技巧：记得 console.log 帮助很快写出代码
 
-![undefined](#)
+![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20250107-1.png)

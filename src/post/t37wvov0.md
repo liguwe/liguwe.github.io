@@ -12,9 +12,9 @@
 
 Koa 最核心的特性是其`中间件机制`，采用洋葱模型（Onion Model）。这种模型的工作方式如下：
 
-![图片&文件](./files/20241101-29.png)
+![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20241101-29.png)
 
-![图片&文件](./files/20241101-27.png)
+![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20241101-27.png)
 
 ### 1.1. 中间件的核心实现原理
 
@@ -183,7 +183,7 @@ class Response {
 
 完整的 Koa 工作流程如下：
 
-![图片&文件](./files/20241101-28.png)
+![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20241101-28.png)
 
 ## 7. 主要特点总结
 

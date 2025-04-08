@@ -293,7 +293,7 @@ const AsyncComp = defineAsyncComponent({
 
 `defineAsyncComponent` 的`本质`是一个高阶组件，返回一个`包装组件`
 
-![图片&文件](./files/20241104-11.png)
+![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20241104-11.png)
 
 ### 5.2. 一个 Loading 的场景的优化
 
@@ -323,7 +323,7 @@ const AsyncComp = defineAsyncComponent({
 
 ### 5.3. 重试机制
 
-![图片&文件](./files/20241104-12.png)
+![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20241104-12.png)
 
 #### 5.3.1. 延伸
 

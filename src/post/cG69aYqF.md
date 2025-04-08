@@ -31,10 +31,10 @@
 		- 使用 SameSite Cookie 属性
 	- 服务端
 		- X-Frame-Options 头
-			- ![图片&文件](./files/20250105.png)
+			- ![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20250105.png)
 		- CSP 
 			- frame-ancestors 指令
-			- ![图片&文件](./files/20250105-1.png)
+			- ![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20250105-1.png)
 	- 重要操作二次确定
 		- 安全警告：请直接访问我们的网站进行操作
 		- 重要操作验证码

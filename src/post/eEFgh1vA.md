@@ -8,7 +8,7 @@
 <!-- toc -->
  ## 1. class中箭头函数与普通函数的 `this` 指向问题 
 
-![图片&文件](./files/20241114-20.png)
+![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20241114-20.png)
 
 ```javascript hl:17,23,8
 class Animal {

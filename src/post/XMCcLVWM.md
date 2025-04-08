@@ -56,4 +56,4 @@ var distanceK = function (root, target, k) {
 
 与目标结点（值为 5）距离为 2 的结点，值分别为 7，4，以及 1
 
-![272](#)
+![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20250122-4.png)

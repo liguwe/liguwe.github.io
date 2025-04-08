@@ -5,7 +5,7 @@
 [687. 最长同值路径](https://leetcode.cn/problems/longest-univalue-path/)
 
 
-![图片&文件](./files/20250120-8.png)
+![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20250120-8.png)
 
 关键点：
 - 路径长度是边的数量，不是节点的数量

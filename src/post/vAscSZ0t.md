@@ -35,7 +35,7 @@
 	- PC 正常预览
 - 有点类似于之前些的 `SchemaEditor` 组件
 - 每个组件都有一个对应的插件，需要时注册进去
-	- ![图片&文件](./files/20241108.png)
+	- ![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20241108.png)
 	- 在里面需要**写详细的信息，比如任何配置**
 	- 或者其他有助于开发的
 		- 组件的`文档地址`
@@ -52,25 +52,25 @@
 	- 否则就是空的了
 - 因为 `amis` 的设计，最终拖入的都是基于 json 的编辑以及渲染
 - 功能细节点，很多很多的，所以**设计态初版**好做，但想做的很好，很难的，特别是面向非程序员的
-	- ![图片&文件](./files/20241108-1.png)
+	- ![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20241108-1.png)
 - 比如各类快捷键等等
 
 ## 5. 竞品长什么样？微搭、爱搭、宜搭 → 所以知道这是个工作量大的细活
 
 ### 5.1. 设置区域
 
-![图片&文件](./files/20241201-69.png)
+![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20241201-69.png)
 
 
-![图片&文件](./files/20241201-67.png)
+![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20241201-67.png)
 
 ### 5.2. 可选组件列表参考
 
-![图片&文件](./files/20241201-68.png)
+![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20241201-68.png)
 
 ### 5.3. 主题设计器
 
-![图片&文件](./files/20241201-70.png)
+![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20241201-70.png)
 
 ## 6. 数据源如何选择
 
@@ -84,9 +84,9 @@
 
 ### 6.2. API 编排的方式
 
-![图片&文件](./files/20241108-5.png)
+![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20241108-5.png)
 
-![图片&文件](./files/20241108-4.png)
+![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20241108-4.png)
 
 ## 7. 前沿：如何结合 AI 的能力
 
@@ -96,21 +96,21 @@
 
 ### 7.1. AI 能力展示：微搭、爱搭、宜搭
 
-![图片&文件](./files/20241108-2.png)
+![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20241108-2.png)
 
 - 还是基本的使用 `chatbot` 的方式来搭建
 - 上传 `PRD 文档`，可直接生成内容
 - 平台搭建解惑
 - 开发助手：智能对话
 
-![图片&文件](./files/20241201-64.png)
+![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20241201-64.png)
 
 
-![图片&文件](./files/20241201-65.png)
+![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20241201-65.png)
 
-![图片&文件](./files/20241108-3.png)
+![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20241108-3.png)
 
-![图片&文件](./files/20241201-66.png)
+![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20241201-66.png)
 
 
 

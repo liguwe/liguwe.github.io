@@ -5,7 +5,7 @@
 >  [663. 均匀树划分](https://leetcode.cn/problems/equal-tree-partition/)
 
 
-![图片&文件](./files/20250120-7.png)
+![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20250120-7.png)
 
 
 - 整棵树所有节点之和 `rootSum`

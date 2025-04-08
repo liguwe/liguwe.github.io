@@ -30,7 +30,7 @@
 
 ## 2. Xaas
 
-![图片&文件](./files/20241116.png)
+![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20241116.png)
 
 - PaaS 是（Platform as a Service）的缩写
 - SaaS
@@ -172,7 +172,7 @@
 
 ### 2.9. **各服务模型对比**
 
-![图片&文件](./files/20241116-1.png)
+![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20241116-1.png)
 
 ### 2.10. **选择建议**
 

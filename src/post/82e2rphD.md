@@ -242,4 +242,4 @@ function jsonp(url, callback) {
 
 当预检请求（OPTIONS）返回不允许跨域时，浏览器**不会**发送真正的请求。让我通过代码和图解来说明这个过程：
 
-![568](#)
+![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20241207-3.png)

@@ -23,11 +23,11 @@
 
 ## 2. 基本流程
 
-![图片&文件](./files/20241101.png)
+![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20241101.png)
 
 ### 2.1. 示例 1：删除一个节点 `a`
 
-![图片&文件](./files/20241101-1.png)
+![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20241101-1.png)
 
 ### 2.2. 示例 2：`vdom` 到 `真实 DOM` 代码示例
 
@@ -61,7 +61,7 @@ patch(root, patches);
 
 ## 3. 复杂度为什么是O(n^3) 及 怎么做到 O(n^2) 的？
 
-![图片&文件](./files/20241101-2.png)
+![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20241101-2.png)
 
 下面展开说说
 
@@ -69,13 +69,13 @@ patch(root, patches);
 
 当出现节点`跨层级的移动`时，并不会出现想象中移动操作，而是`删了重建`，如下图：
 
-![图片&文件](./files/20241101-4.png)
+![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20241101-4.png)
 
 > Web UI 中 DOM 节点跨层级的移动操作特别少，可以忽略不计
 
 ### 3.2. 只做类型比较：Component Diff
 
-![图片&文件](./files/20241101-5.png)
+![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20241101-5.png)
 
 ### 3.3. Element Diff：同级使用 `key`
 
@@ -161,7 +161,7 @@ function updateChildren(oldList, newList) {
 
 ## 4. 源码中 Diff 算法位置
 
-![图片&文件](./files/20241101-3.png)
+![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20241101-3.png)
 
 ## 5. 一个简单的 Diff 算法
 

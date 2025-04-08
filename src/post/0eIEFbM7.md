@@ -15,7 +15,7 @@
 		- ③ 未过期（Expires/Max-Age 属性）
 		- ④ 符合 SameSite 策略
 		- 比如
-			- ![图片&文件](./files/20250105-2.png)
+			- ![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20250105-2.png)
 - 影响 Cookie 发送的**关键属性**
 	- Domain
 	- Path

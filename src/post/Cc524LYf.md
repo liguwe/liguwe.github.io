@@ -5,7 +5,7 @@
 >  [515. 在每个树行中找最大值](https://leetcode.cn/problems/find-largest-value-in-each-tree-row/)
 
 
-![图片&文件](./files/20250113-4.png)
+![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20250113-4.png)
 
 - 层次遍历，参考[102. 二叉树的层序遍历](/post/g8ldiaSO.html)
 	- 遍历过程中更新每一行的最大值即可

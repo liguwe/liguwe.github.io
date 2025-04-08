@@ -32,4 +32,4 @@ var sumOfLeftLeaves = function (root) {
 
 不需要通过 prarent 参数至递归函数
 
-![520](#)
+![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20250118.png)

@@ -13,7 +13,7 @@
 
 ## 2. 原理
 
-![图片&文件](./files/20250123-1.png)
+![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20250123-1.png)
 
 
 如果你想对区间 `nums[i..j]` 的元素全部加 3，

@@ -86,7 +86,7 @@
 	- 与传统的 CMS 不同，Headless CMS **只负责内容的存储和管理，不负责内容的展示方式**。
 	- 常见的 Headless CMS 有 Contentful、Strapi 和 Sanity。
 
-![图片&文件](./files/20241115-1.png)
+![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20241115-1.png)
 
 ## 11. Progressive Web Apps (PWA)
 
@@ -157,7 +157,7 @@
 	- 一种设计模式，为每个前端应用（如 Web、移动）创建专门的后端服务，优化 API 调用和数据处理。
 	- 是一种架构模式，在前端应用和后端服务之间添加一个中间层，专门用于服务特定的前端应用或客户端。
 
-![图片&文件](./files/20241115-2.png)
+![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20241115-2.png)
 
 ## 23. 状态管理库：State Management Libraries
 
@@ -193,11 +193,11 @@
 
 SSG 是一种将模板和数据转换为静态 HTML 网站的工具。它在**构建时（而不是运行时）生成所有页面**。
 
-![图片&文件](./files/20241115-3.png)
+![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20241115-3.png)
 
 常见的
 - vitepress：**自己常用的**
-	- ![图片&文件](./files/20241115-5.png)
+	- ![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20241115-5.png)
 - **Hugo**：
 	- 一个用 Go 语言编写的静态站点生成器，构建速度非常快
 	- 听过，没用过，一些网站都是用它来搭建的
@@ -286,7 +286,7 @@ SSG 是一种将模板和数据转换为静态 HTML 网站的工具。它在**�
 	- RPC 允许程序**调用另一个地址空间**（通常是网络上的另一台机器）的程序
 	- 使程序能像调用本地方法一样调用远程服务
 	- 适用于高性能的前后端通信。
-		- ![图片&文件](./files/20241115-6.png)
+		- ![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20241115-6.png)
 - **主要特点**
 	- **透明性**：调用方感知不到远程调用的存在
 	- **高效性**：通常比 REST API 更高效
@@ -312,7 +312,7 @@ SSG 是一种将模板和数据转换为静态 HTML 网站的工具。它在**�
 	- 并在`运行时`**按需更新**这些页面，从而实现高性能和最新数据的平衡。
 - 但**不适合**高实时、更新频繁的页面
 
-![图片&文件](./files/20241226.png)
+![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20241226.png)
 
 ## 38. Storybook
 

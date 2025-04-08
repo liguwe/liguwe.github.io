@@ -573,7 +573,7 @@ const analytics = {
 
 ### 10.1. 开发流程模板
 
-![图片&文件](./files/20241028-5.png)
+![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20241028-5.png)
 ````mermaid
   graph TD
     A[需求分析] --> B[技术方案]

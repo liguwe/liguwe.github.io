@@ -44,7 +44,7 @@
 
 > 关键点：引导到黑客的网站
 
-![图片&文件](./files/20241023-2.png)
+![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20241023-2.png)
 
 ## 2. CSRF 的基本概念
 
@@ -260,24 +260,24 @@ const api = {
 
 ### 10.1. 一个示例
 
-![图片&文件](./files/20241023-3.png)
+![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20241023-3.png)
 
 ### 10.2. 特点
 
-![图片&文件](./files/20241023-4.png)
+![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20241023-4.png)
 
 ### 10.3. 如何规避
 
 - 严格的同源策略，两种策略 **strict 和 Lax** 
 	- 示例：`Set-Cookie: session=abc123; SameSite=Strict; Secure`
-	- ![图片&文件](./files/20241023-6.png)
+	- ![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20241023-6.png)
 - **较短的会话时间**可以减少 CSRF 攻击的窗口期
 - 双重 cookie
-	- ![图片&文件](./files/20241023-5.png)
+	- ![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20241023-5.png)
 - **重要操作进行二次验证**，比如重新输入密码
 - 使用 `CSRF Token`
 	- 服务器为每个用户会话生成一个唯一的令牌，并在每个表单中包含这个令牌
-	- ![图片&文件](./files/20241023-7.png)
+	- ![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20241023-7.png)
 - 重要操作，需要验证码提示
 - 对于 AJAX 请求，可以**添加自定义头**
 	- 相等于重要入口**必须通过特定的自己的 js 发起Ajax**，直接访问不行
@@ -290,6 +290,6 @@ const api = {
 
 ### 10.4. 与 XSS 的区别
 
-![图片&文件](./files/20241023-8.png)
+![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20241023-8.png)
 
 >  因为注入是需要成本和一些条件的

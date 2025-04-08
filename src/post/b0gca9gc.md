@@ -36,7 +36,7 @@
 
 - 基于 Rust 的高性能 Web 打包工具
 - 使用兼容 API 无缝替换 webpack
-![图片&文件](./files/20241129.png)
+![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20241129.png)
 
 > 没实际生产中用过
 
@@ -49,7 +49,7 @@
 
 ### 3.1. 为什么 vite HMR 性能比较好
 
-![图片&文件](./files/20241101-33.png)
+![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20241101-33.png)
 
 ## 4. Turbopack (Next.js 13 的构建工具)
 

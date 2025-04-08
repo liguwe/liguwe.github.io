@@ -401,7 +401,7 @@ sandbox.inactive();
 
 ## 4. 样式隔离方案与 JS 隔离
 
-![图片&文件](./files/20241127.png)
+![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20241127.png)
 
 ### 4.1.  Shadow DOM 隔离
 
@@ -449,7 +449,7 @@ sandbox.inactive();
 
 ## 6. 实现一个主应用和子应用之间的通信系统
 
-![图片&文件](./files/20241127-1.png)
+![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20241127-1.png)
 
 这个`通信系统`提供了三种主要的通信方式：
 
@@ -482,7 +482,7 @@ sandbox.inactive();
 	- entry 子应用 HTML 的入口去哪儿拿
 	- container：**渲染到哪儿**
 	- activeRule：路由匹配规则
-	- ![图片&文件](./files/20241101-32.png)
+	- ![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20241101-32.png)
 - ② **基座里，需要监听全局路由，然后找到匹配子应用，然后加载子应用，再然后卸载或切换等**
 	- fetch 子应用的入口文件 `index.html` ，然后需要**抽取 js , eval** 执行它
 	- 所以，需要**处理成兼容的 umd 格式**，故需要修改 webpack
@@ -497,21 +497,21 @@ sandbox.inactive();
 
 ## 8. 路由分发原理
 
-![图片&文件](./files/20241101-30.png)
+![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20241101-30.png)
 
 ## 9. 其他微前端框架和实现原理
 
 ### 9.1. iframe 
 
-![图片&文件](./files/20241127-3.png)
+![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20241127-3.png)
 
 ### 9.2. systemjs ： `type=systemjs-importmap`
 
-![图片&文件](./files/20241127-2.png)
+![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20241127-2.png)
 
 ### 9.3. micro-app
 
-![图片&文件](./files/20241127-4.png)
+![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20241127-4.png)
 
 ## 10. 微前端中JS沙箱具体使用场景
 

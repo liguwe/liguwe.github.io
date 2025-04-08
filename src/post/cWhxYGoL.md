@@ -133,7 +133,7 @@ rrweb 的实现原理主要包含以下几个关键部分：
 	- 监听滚动事件
 	- 记录窗口大小变化
 
-![图片&文件](./files/20241101-73.png)
+![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20241101-73.png)
 代码展示 DOM 变更的监听过程：
 
 ```javascript

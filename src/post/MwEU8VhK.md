@@ -41,7 +41,7 @@
 		- 按照事件传播的特性（捕获 -> 目标 -> 冒泡）遍历节点
 		- 调用对应的事件处理函数
 - 事件池
-	- ![图片&文件](./files/20250101-3.png)
+	- ![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20250101-3.png)
 
 
 
@@ -245,7 +245,7 @@ useEffect(() => {
 - 事件不再绑定到 `document`，而是绑定到`root节点`
 	- 这使得**多个 React 版本共存成为可能**
 
-![图片&文件](./files/20241111-26.png)
+![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20241111-26.png)
 
 ## 9. 性能考虑
 

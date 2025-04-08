@@ -115,7 +115,7 @@ function State(id, distFromStart) {
 - 在 Dijkstra 算法中，你第一次经过某个节点时的路径权重，不见得就是最小的
 	- 所以对于同一个节点，我们可能会经过多次，而且每次的 `distFromStart` 可能都不一样，比如下图
 
-![图片&文件](./files/20250117-18.png)
+![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20250117-18.png)
 
 - 我会经过节点 `5` 三次，每次的 `distFromStart` 值都不一样
 - 那我取 `distFromStart` 最小的那次，不就是从起点 `start` 到节点 `5` 的最短路径权重了么？

@@ -31,7 +31,7 @@
 		- 使用**非对称加密**（公钥/私钥）**建立初始连接**
 		- 使用**对称加密**进行**实际数据传输**
 	- 证书流程验证
-		- ![图片&文件](./files/20250120-1.png)
+		- ![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20250120-1.png)
 
 ## 2. websocket 与 HTTP 的区别
 
@@ -45,7 +45,7 @@
 	- http2：二进制
 	- ws： 协议帧
 - ws 使用 HTTP 建立连接，如下图
-	- ![图片&文件](./files/20241025-18.png)
+	- ![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20241025-18.png)
 
 ## 3. http1.0 、http1.1、https、http2 、 http3 的区别
 
@@ -60,7 +60,7 @@
 		- 服务器必须按照接收请求的顺序返回响应。
 		- 所有的请求和响应都通过**同一个 TCP** 连接传输
 		- pipeline 的**对头阻塞**问题
-			- ![图片&文件](./files/20241026-1.png)
+			- ![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20241026-1.png)
 - HTTP 2.0 
 	- 支持服务端 push 
 	- 二进制分帧协议
@@ -73,7 +73,7 @@
 			- 服务器可以同时处理这些帧，并以任意顺序返回
 			- 客户端根据标识重组这些帧
 	- 二进制的`流`与`帧`
-		- ![图片&文件](./files/20241026.png)
+		- ![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20241026.png)
 	- HTTP 2.0 的 **队头阻塞**（Head-of-Line Blocking）问题
 		- 问题原因：
 			- 虽然 HTTP/2 在应用层实现了多路复用，但它仍然依赖于 TCP 这个可靠的传输层协议，并且 HTTP/2 的多路复用建立在`单个 TCP 连接之上`
@@ -82,7 +82,7 @@
 - HTTP 3.0 
 	- 无论 http1.0 的 pipleine 和 http2.0 的多路复用，都会出现 **队头阻塞**
 	- 因为 TCP 是无解了，但是UDP是有解的 
-		- ![图片&文件](./files/20241026-2.png)
+		- ![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20241026-2.png)
 
 ## 4. HTTP/3.0 如何解决队头阻塞问题
 
@@ -94,7 +94,7 @@ HTTP/3.0 通过以下几个关键机制解决了队头阻塞问题：
 - QUIC 是建立在 **UDP 之上**的传输层协议
 - 这使得协议能够实现真正的多路复用，**每个流都是完全独立的**
 	- 每个 Stream 都是独立的，一个 Stream 的问题不会影响其他 Stream，如下图
-	- ![图片&文件](./files/20241115-8.png)
+	- ![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20241115-8.png)
 
 ### 4.2. 独立的流处理
 
@@ -202,7 +202,7 @@ QUIC 协议的这些特性使它特别适合现代互联网应用，尤其是在
 
 ## 6. HTTPS 协议
 
-![图片&文件](./files/20241026-5.png)
+![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20241026-5.png)
 
 - 证书机制：
 	- 网站需要获取 SSL/TLS 证书
@@ -223,19 +223,19 @@ QUIC 协议的这些特性使它特别适合现代互联网应用，尤其是在
 		- 三方 CA 证书认证
 	- ② 数据传输
 		- 非对称加密：需要产出 客户端和服务端共享的 `随机码 key` ，用于下面的对称加密
-			- ![图片&文件](./files/20241026-4.png)
+			- ![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20241026-4.png)
 		- 对称加密
 			- 服务端和客户端共享 `随机码 key` ，分别用它加密和解密
 
 ## 7. 网络七层协议
 
-![图片&文件](./files/20241026-6.png)
+![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20241026-6.png)
 
 ## 8. tcp 怎么在`不可靠的传输`上保证`可靠` 的
 
 其实就是`位置标记` ，他可以标记位置
 
-![图片&文件](./files/20241026-9.png)
+![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20241026-9.png)
 
 ## 9. 三次握手与四次挥手
 
@@ -256,7 +256,7 @@ QUIC 协议的这些特性使它特别适合现代互联网应用，尤其是在
 	- 支持半关闭
 	- 处理延迟和重传
 	- 防止旧连接干扰
-![图片&文件](./files/20241026-10.png)
+![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20241026-10.png)
 
 ## 10. HTTP 协议的理解
 
@@ -264,7 +264,7 @@ HTTP 是一个在`计算机世界`里专门在两点之间传输文字、图片�
 
 ## 11. 常见的 HTTP 请求
 
-![图片&文件](./files/20241026-11.png)
+![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20241026-11.png)
 
 ## 12. 简述 HTTP 内容协商
 
@@ -272,7 +272,7 @@ HTTP 是一个在`计算机世界`里专门在两点之间传输文字、图片�
 
 ## 13. HTTP 缓存机制
 
-![图片&文件](./files/20241026-12.png)
+![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20241026-12.png)
 
 ## 14. 为什么 HTTP2 下，一个 TCP 包丢失会阻塞所有流
 

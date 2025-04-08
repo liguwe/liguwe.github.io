@@ -67,7 +67,7 @@ Object.entries({a: 1})
 '1'.padStart(2, '0')
 ```
 
-![图片&文件](./files/20241111-35.png)
+![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20241111-35.png)
 
 ## ES2018
 
@@ -115,7 +115,7 @@ Promise.allSettled([p1, p2])
 
 ### globalThis
 
-![图片&文件](./files/20241111-36.png)
+![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20241111-36.png)
 
 ## ES2021
 
@@ -132,9 +132,9 @@ x ??= y   => x = x??y
 Promise.any([p1, p2])
 ```
 
-![图片&文件](./files/20241111-37.png)
+![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20241111-37.png)
 
-![图片&文件](./files/20241111-38.png)
+![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20241111-38.png)
 
 ## ES2022
 

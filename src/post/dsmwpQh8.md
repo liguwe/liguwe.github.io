@@ -214,7 +214,7 @@ function JSONTraverse(json, mapper) {
 
 哪怕是真能可视化处理，大概率是这样子的 
 
-![图片&文件](./files/20241105-25.png)
+![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20241105-25.png)
 
 ### 8.2. 固化交互行为
 
@@ -302,7 +302,7 @@ amis 将常用的**交互行为固化**并做成了配置，比如弹框是下�
 
 在图形界面上，你可能会看到类似这样的表单：
 
-![图片&文件](./files/20241105-26.png)
+![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20241105-26.png)
 
 ##### 10.1.3.3. 转换过程
 
@@ -446,7 +446,7 @@ CREATE TABLE wp_postmeta (
 
 ### 11.3. 执行树
 
-![图片&文件](./files/20241105-27.png)
+![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20241105-27.png)
 
 左侧是树形结构，右侧是点中某个节点时的参数配置，左侧的树形结构其实是直接参考代码的树形结构：
 - 默认从上往下执行，但有个特殊的「并行执行」节点可以并行执行。
@@ -459,7 +459,7 @@ CREATE TABLE wp_postmeta (
 
 ## 12. 后端低代码的方案：如何实现流程流转？
 
-![图片&文件](./files/20241105-28.png)
+![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20241105-28.png)
 
 `BPMN` 不能解决平台锁定问题，在一个平台开发的流程无法直接迁移到另一个平台。
 

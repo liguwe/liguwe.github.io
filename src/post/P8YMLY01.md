@@ -12,7 +12,7 @@
 - 需要计算当前左子树的节点数量
 	- `leftSize = inRootIndex - inStart`
 - 构建左右子树：
-	- ![图片&文件](./files/20250119.png)
+	- ![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20250119.png)
 	- 找到`左子树`的
 		- 中序开始
 		- 中序结束

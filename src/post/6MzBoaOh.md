@@ -8,14 +8,14 @@
 <!-- toc -->
  ## 1. 题目 
 
-![图片&文件](./files/20241112-3.png)
+![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20241112-3.png)
 
 
 ### 1.1. 分析
 
-![图片&文件](./files/20241112-4.png)
+![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20241112-4.png)
 
-![图片&文件](./files/20241112-5.png)
+![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20241112-5.png)
 
 所以，关键不在于吃最多的血瓶，而是在于**如何损失最少的生命值**
 
@@ -27,7 +27,7 @@
 - 从 `B` 到达右下角的最少生命值
 - 从 `C` 到达右下角的最少生命值
 
-![图片&文件](./files/20241112-6.png)
+![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20241112-6.png)
 
 - B：从 `(i, j+1)` 出发，到达右下角，需要的最小初始血量
 - C：从 `(i+1, j)` 出发，到达右下角，需要的最小初始血量

@@ -117,7 +117,7 @@ function EventOrderExample() {
 > **和自己想象中的顺序不一样**
 
 
-![图片&文件](./files/20250101.png)
+![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20250101.png)
 
 ## 3. React 事件系统的设计理念
 
@@ -135,7 +135,7 @@ function EventOrderExample() {
 - 减少内存消耗，提高性能
 - 动态绑定，支持组件动态加载
 
-![图片&文件](./files/20241030-1.png)
+![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20241030-1.png)
 
 ## 4. 事件系统实现原理
 
@@ -312,7 +312,7 @@ function Component() {
 
 ### 7.1. React事件和原生事件执行顺序
 
-![图片&文件](./files/20241030-2.png)
+![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20241030-2.png)
 
 ### 7.2. 事件命名
 

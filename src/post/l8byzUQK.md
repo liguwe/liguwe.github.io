@@ -61,7 +61,7 @@ XSS 攻击有 `两大要素`
 
 ### 1.3. 如何解决？
 
-![图片&文件](./files/20241023.png)
+![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20241023.png)
 
 ### 1.4. 如何防范
 
@@ -80,7 +80,7 @@ XSS 攻击有 `两大要素`
 
 ### 1.5. 分类
 
-![图片&文件](./files/2024102310.png)
+![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/2024102310.png)
 
 ## 2. XSS（Cross-Site Scripting，跨站脚本攻击）的原理、类型和防御方法。
 

@@ -23,7 +23,7 @@
 		- `const state = data ? reactive(data()) : null`
 	- **保证每个组件实例不同享**，否则就共享了
 	- 因为响应式，所以每次 data 变更时，都会导致重新渲染，解决方案：**使用微任务队列，如下图**
-		- ![图片&文件](./files/20241231.png)
+		- ![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20241231.png)
 - 组件实例：
 	- 是一个对象，**存储组件运行过程的所有信息**
 		- 包括状态、props、**各类生命周期**、是否挂载
@@ -162,9 +162,9 @@ const C1 = {
 		- 来判断它是否是否是`组件`
 			- 如果是，则会继续递归使用 `mountComponent` 或者 `patchComponent`来完成组件的挂载和更新
 				- 比如 ：
-					- ![图片&文件](./files/20241104.png)
+					- ![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20241104.png)
 				- 比如：
-					- ![图片&文件](./files/20241104-1.png)
+					- ![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20241104-1.png)
 - 部分代码如下：
 
 ```js
@@ -208,7 +208,7 @@ if (typeof type === 'string') {
 
 挂载与更新组件，对应不同的生命周期，如下图
 
-![图片&文件](./files/20241104-2.png)
+![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20241104-2.png)
 
 ## 3. 如何保存组件状态，以及状态改变了同步更新组件
 
@@ -221,7 +221,7 @@ const state = data ? reactive(data()) : null
 
 所以，每次更新 data ，会重新渲染
 
-![图片&文件](./files/20241104-3.png)
+![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20241104-3.png)
 
 但是浏览器渲染是`同步任务`，所以需要有个**调度器**来调度，它通过`promise` 实现了一个`微任务队列`，避免重复渲染，去重任务队列等。
 
@@ -240,7 +240,7 @@ const state = data ? reactive(data()) : null
 
 **queueJob** 的代码如下：
 
-![图片&文件](./files/20241104-4.png)
+![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20241104-4.png)
 
 ## 4. 组件实例与组件的生命周期
 
@@ -271,7 +271,7 @@ const instance = {
 
 > 我们通常把生命周期钩子序列化一个数组
 
-![图片&文件](./files/20241104-5.png)
+![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20241104-5.png)
 
 ## 5. props 与组件的被动更新
 
@@ -414,7 +414,7 @@ function emit(event, ...payload) {
 
 比如 `this.$slots.header()` ，在 `renderContext 代理对象`中获取，如下：
 
-![图片&文件](./files/20241104-6.png)
+![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20241104-6.png)
 
 **插槽的实现是不是和 React render props 的概念很像？**，如下图：
 
@@ -431,15 +431,15 @@ function emit(event, ...payload) {
 	- 我们定义了`全局变量currentinstance`，以及用来设置该变量的 `setCurrentInstance` 函数
 - 其他生命周期同理
 
-![图片&文件](./files/20241104-7.png)
+![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20241104-7.png)
 
 ### 9.1. 如何 push 的
 
-![图片&文件](./files/20241104-10.png)
+![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20241104-10.png)
 
 ### 9.2. 如何执行的
 
-![图片&文件](./files/20241104-9.png)
+![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20241104-9.png)
 
 ## 10. 最后
 

@@ -143,7 +143,7 @@
 
 ### 3.1. **提升开发效率**
 
-![图片&文件](./files/20241028-6.png)
+![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20241028-6.png)
 
 ### 3.2. **保证项目质量**
 
@@ -318,7 +318,7 @@ interface ComponentLayers {
 
 ### 5.3. **自动化流程**
 
-![图片&文件](./files/20241028-7.png)
+![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20241028-7.png)
 
 - 构建自动化
 - 测试自动化
@@ -447,9 +447,9 @@ interface SecurityStrategy {
 
 ### 9.1. **监控体系**
 
-![图片&文件](./files/20241028-9.png)
+![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20241028-9.png)
 
-![图片&文件](./files/20241028-8.png)
+![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20241028-8.png)
 
 ### 9.2. 日志系统
 

@@ -337,7 +337,7 @@ process.on('uncaughtException', error => {
 
 ## 9. 写一个koa中间件，用于捕获相关的异常
 
-![图片&文件](./files/20241027-8.png)
+![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20241027-8.png)
 
 ## 10. 总结
 

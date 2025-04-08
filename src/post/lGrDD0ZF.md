@@ -58,15 +58,15 @@
 
 按下图操作展开
 
-![图片&文件](./files/20241130-4.png)
+![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20241130-4.png)
 
 检测渲染是否卡顿
 
-- ![图片&文件](./files/20241130-3.png)
+- ![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20241130-3.png)
 
 任务管理
 
-![图片&文件](./files/20241130-5.png)
+![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20241130-5.png)
 
 ## 3. Elements（元素面板）
 
@@ -200,7 +200,7 @@
 - 3D 视图
 - 图层边界
 - 绘制分析
-![图片&文件](./files/20241130-6.png)
+![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20241130-6.png)
 
 ## 15. Animations（动画）
 

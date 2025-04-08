@@ -20,7 +20,7 @@
 
 ## 2. 思路二： 受控中序遍历法：使用栈模拟中序遍历过程（推荐）
 
-![图片&文件](./files/二叉搜索树迭代器173.gif)
+![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/二叉搜索树迭代器 173.gif)
 
 
 ```javascript

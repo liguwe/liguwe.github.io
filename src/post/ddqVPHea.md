@@ -20,11 +20,11 @@
 
 ## 2. 前端从业人员认为的低代码鼻祖
 
-![图片&文件](./files/20241130-7.png)
+![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20241130-7.png)
 
 ## 3. 当下低代码应该是
 
-![图片&文件](./files/20241130-8.png)
+![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20241130-8.png)
 
 ## 4. 低代码市场分类：表单驱动 + 模型驱动
 
@@ -39,7 +39,7 @@
 
 ## 5. 更高格局：云 + 端 + 协同 + 低代码 → 微软
 
-![图片&文件](./files/20241130-9.png)
+![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20241130-9.png)
 
 所以，低代码平台只是其中的一部分而已
 
@@ -94,7 +94,7 @@
 
 ## 8. 冰山理论
 
-![图片&文件](./files/20241130-10.png)
+![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20241130-10.png)
 
 ### 8.1. 拖拽设计器 == 低代码？
 

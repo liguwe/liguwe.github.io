@@ -15,7 +15,7 @@
 
 ## 2. 展开
 
-![图片&文件](./files/20241111-15.png)
+![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20241111-15.png)
 
 首先，让我们明确一下什么是 Portal：
 

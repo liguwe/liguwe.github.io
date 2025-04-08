@@ -28,5 +28,5 @@
 
 ## 3. 常见的 HTTP 状态码
 
-![图片&文件](./files/20241023-9.png)
+![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20241023-9.png)
 

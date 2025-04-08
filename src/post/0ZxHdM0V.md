@@ -54,41 +54,41 @@
 
 ## 2. 构建相关 5 个时代
 
-![图片&文件](./files/20241101-34.png)
+![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20241101-34.png)
 
 ### 2.1. 文件即scrip时代
 
-![图片&文件](./files/20241101-35.png)
+![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20241101-35.png)
 
 ### 2.2. 大文件时代：grunt/gulp/iife
 
-![图片&文件](./files/20241101-36.png)
+![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20241101-36.png)
 
 ### 2.3. AMD 和 CMD 时代
 
-![图片&文件](./files/20241101-37.png)
+![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20241101-37.png)
 
 三个问题都解决了
 
 ### 2.4. webpack 时代
 
-![图片&文件](./files/20241101-38.png)
+![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20241101-38.png)
 
 虽然三个问题都解决了，但新的问题又出现了
 
-![图片&文件](./files/20241101-39.png)
+![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20241101-39.png)
 
 举个例子
 
-![图片&文件](./files/20241101-41.png)
+![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20241101-41.png)
 
 不同的慢有不同的解
 
-![图片&文件](./files/20241101-42.png)
+![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20241101-42.png)
 
 ### 2.5. esm 年代
 
-![图片&文件](./files/20241101-43.png)
+![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20241101-43.png)
 
 > 后面说
 
@@ -98,58 +98,58 @@
 
 > 编译 dependency 最慢！！！
 
-![图片&文件](./files/20241101-44.png)
+![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20241101-44.png)
 
-![图片&文件](./files/20241101-45.png)
+![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20241101-45.png)
 
 ### 3.2. 提速的三个思路
 
-![图片&文件](./files/20241101-46.png)
+![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20241101-46.png)
 
 #### 3.2.1. 缓存
 
-![图片&文件](./files/20241101-47.png)
+![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20241101-47.png)
 
 #### 3.2.2. 延迟处理
 
-![图片&文件](./files/20241101-48.png)
+![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20241101-48.png)
 
 #### 3.2.3. native code
 
-![图片&文件](./files/20241101-49.png)
+![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20241101-49.png)
 
 #### 3.2.4. 提速方案三个思路的应用：注意颜色
 
-![图片&文件](./files/20241101-51.png)
+![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20241101-51.png)
 
 ### 3.3. 传统提速方案：`externals`
 
 - `externals`：用于标记不用打包的库模块，如`JQuery、react-dom`等。可以直接通过script的方式加载
 	- `externals` 配置选项提供了「从输出的 bundle 中排除依赖」的方法。相当于说："**这些依赖项不需要打包，运行时从外部获取这些依赖**"。
 
-![图片&文件](./files/20241101-54.png)
+![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20241101-54.png)
 
-![图片&文件](./files/20241101-55.png)
+![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20241101-55.png)
 
 可用`auto externals`来解决配置复杂问题
 
-![图片&文件](./files/20241101-56.png)
+![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20241101-56.png)
 
 ### 3.4. 传统提速方案：dll **动态链接库**
 
-![图片&文件](./files/20241101-57.png)
+![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20241101-57.png)
 
-![图片&文件](./files/20241101-58.png)
+![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20241101-58.png)
 
 ### 3.5. 传统提速方案：按需编译
 
-![图片&文件](./files/20241101-61.png)
+![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20241101-61.png)
 
 ### 3.6. 传统生产优化思路
 
 #### 3.6.1. webpack构建中tree shaking
 
-![图片&文件](./files/20241101-59.png)
+![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20241101-59.png)
 
 #### 3.6.2. 无用抹除
 
@@ -157,41 +157,41 @@
 
 #### 3.6.3. webpack构建中 scope Hoisting
 
-![图片&文件](./files/20241101-60.png)
+![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20241101-60.png)
 
 ### 3.7. 当代提速思路
 
 #### 3.7.1. umi
 
-![图片&文件](./files/20241101-62.png)
+![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20241101-62.png)
 
-![图片&文件](./files/20241101-63.png)
+![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20241101-63.png)
 
 #### 3.7.2. vite
 
-![图片&文件](./files/20241101-64.png)
+![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20241101-64.png)
 
 #### 3.7.3. umi 的 mfsu
 
-![图片&文件](./files/20241101-65.png)
+![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20241101-65.png)
 
 使用 Module Federation （云组件）了
 
-![图片&文件](./files/20241101-66.png)
+![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20241101-66.png)
 
-![图片&文件](./files/20241101-67.png)
+![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20241101-67.png)
 
-![图片&文件](./files/20241101-68.png)
+![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20241101-68.png)
 
 ### 3.8. ESM CDN ⽅案
 
-![图片&文件](./files/20241101-69.png)
+![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20241101-69.png)
 
-![图片&文件](./files/20241101-70.png)
+![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20241101-70.png)
 
-![图片&文件](./files/20241101-71.png)
+![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20241101-71.png)
 
 ## 4. 总结
 
-![图片&文件](./files/20241101-72.png)
+![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20241101-72.png)
 

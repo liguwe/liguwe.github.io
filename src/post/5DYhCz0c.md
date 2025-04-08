@@ -571,7 +571,7 @@ show && {
 		- `form`组件中的`initApi`；
 		- `select`组件中的`source`选项源接口`url`, `data`只能用于主动联动；
 			- `"source": "/amis/api/mock2/options/level2?a=${a}",` a 变化就会发请求
-			- ![图片&文件](./files/20241107-2.png)
+			- ![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20241107-2.png)
 		- `service`组件中的`api`和`schemaApi`；
 		- `crud`组件中的`api`；
 			- crud 默认是跟地址栏联动，如果要做请关闭同步地址栏 syncLocation: false 
@@ -579,7 +579,7 @@ show && {
 
 ### 3.1. 主动触发
 
-![图片&文件](./files/20241107-3.png)
+![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20241107-3.png)
 
 ### 3.2. 发送指定数据
 
@@ -983,13 +983,13 @@ let result = await (scriptFunc as any)?.call(
 
 #### 4.14.1. 示例
 
-![图片&文件](./files/20241107-4.png)
+![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20241107-4.png)
 
 #### 4.14.2. 修改 组件状态
 
 通过配置`actionType: 'show'`或`'hidden'`或`'enabled'`或`'disabled'`或`'static'`或`'nonstatic'`实现对指定组件的显示、隐藏、启用、禁用，仅支持实现了对应状态控制功能的数据`输入类`组件。
 
-![图片&文件](./files/20241107-5.png)
+![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20241107-5.png)
 
 #### 4.14.3. 刷新 CRUD 列表
 
@@ -1010,7 +1010,7 @@ let result = await (scriptFunc as any)?.call(
 
 #### 4.14.4. 切换到具体 Tab
 
-![图片&文件](./files/20241107-6.png)
+![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20241107-6.png)
 
 ### 4.15. 注册自定义动作：`RendererAction` 中注册
 
@@ -1054,7 +1054,7 @@ registerAction('my-action', new MyAction());
 
 ### 4.16. 触发广播
 
-![图片&文件](./files/20241107-7.png)
+![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20241107-7.png)
 
 ### 4.17. 编排事件&动作
 
@@ -1121,7 +1121,7 @@ registerAction('my-action', new MyAction());
 
 比如
 
-![图片&文件](./files/20241107-8.png)
+![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20241107-8.png)
 
 >  events → click → `actions:[] （可编排）` 
 
@@ -1134,7 +1134,7 @@ registerAction('my-action', new MyAction());
 | id   | 组件 ID，即组件的 id 属性的值 |
 | path | 数据路径，即数据变量的路径      |
 
-![图片&文件](./files/20241107-9.png)
+![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20241107-9.png)
 
 > 同样的，vue 是可以直接拿到全局数据的，从这种模板里面
 

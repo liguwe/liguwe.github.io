@@ -80,7 +80,7 @@
 
 ## 4. 出码还是渲染
 
-![图片&文件](./files/20241201-17.png)
+![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20241201-17.png)
 
 针对工业软件的平台分析
 - **实时性**要求
@@ -117,7 +117,7 @@
 
 ## 5. 如何协作并行开发？
 
-![图片&文件](./files/20241201-18.png)
+![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20241201-18.png)
 
 - 传统源码思维里，涉及到多人协作，多迭代，解法就是 **git 版本管理**
 - 低代码领域，更推荐**产品思维**
@@ -149,17 +149,17 @@
 
 目前市面上的低代码都会提供正常三种模式，如下图
 
-![图片&文件](./files/20241201-20.png)
+![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20241201-20.png)
 
 他们的关系如下图：
 
-![图片&文件](./files/20241201-21.png)
+![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20241201-21.png)
 
 > 更到可参考 [1. 分享：基于低代码平台的三种开发模式](/post/DjlMDV4P.html)
 
 ## 7. 更多
 
-![图片&文件](./files/20241201-19.png)
+![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20241201-19.png)
 
 ## 8. LowCode 与 ProCode 的**混合研发模式**
 
@@ -173,7 +173,7 @@
 
 ### 8.2. 低代码研发流程
 
-![图片&文件](./files/20241201-3.png)
+![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20241201-3.png)
 
 ### 8.3. 现状
 
@@ -200,7 +200,7 @@
 
 #### 8.5.1. 完全独立，如下图：
 
-![图片&文件](./files/20241201-4.png)
+![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20241201-4.png)
 
 解法：
 - 通过 URL 嵌入的方式
@@ -208,14 +208,14 @@
 
 #### 8.5.2. 简单的融合
 
-![图片&文件](./files/20241201-5.png)
+![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20241201-5.png)
 
 - 要么分别创建 ProCode 应用和 LowCode 应用再做集成
 - 要么以 `iframe` 的形式嵌入
 
 #### 8.5.3. 理想的融合方式
 
-![图片&文件](./files/20241201-6.png)
+![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20241201-6.png)
 
 - 应用上不做 ProCode 应用和 LowCode 应用的区分
 - 页面上不区分 ProCode 还是 LowCode 的组件和模块，都有一致的引入方式。

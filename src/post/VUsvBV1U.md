@@ -74,7 +74,7 @@ var constructFromPrePost = function (preorder, postorder) {
 
 ## 2. 为什么不唯一？
 
-![图片&文件](./files/20250119-1.png)
+![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20250119-1.png)
 
 上面两棵树结构不同，但是它们的前序遍历和后序遍历结果是相同的
 
@@ -86,4 +86,4 @@ var constructFromPrePost = function (preorder, postorder) {
 
 示例：
 
-![392](#)
+![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20250119-3.png)

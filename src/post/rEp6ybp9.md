@@ -8,7 +8,7 @@
 <!-- toc -->
  ## 1. 浏览器是如何把网页渲染到显示器上的 
 
-![图片&文件](./files/20241025-6.png)
+![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20241025-6.png)
 
 ## 2. 重排、重绘、合成
 
@@ -19,14 +19,14 @@
 	- 直接在**非主线程**上执行合成动画操作
 	- 合成层的transform、opacity修改，只需要将多个图层再次合并，而后生成位图，最终展示到屏幕上
 
-![图片&文件](./files/20241025-8.png)
+![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20241025-8.png)
 
 ## 3. 渲染流程、渲染层、合成层、开启 GPU 加速的关系
 
 ### 3.1. 渲染过程概述
 
 首先,让我们简要回顾一下浏览器的基本渲染过程:
-![图片&文件](./files/20241025-9.png)
+![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20241025-9.png)
 
 1) 解析HTML构建DOM树
 2) 解析CSS构建CSSOM树
@@ -35,11 +35,11 @@
 5) 绘制(Paint):将渲染树中的各个节点绘制到屏幕上
 6) 合成(Compositing): **将不同的绘制层合成到一起**
 
-![图片&文件](./files/20241025-11.png)
+![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20241025-11.png)
 
 ### 3.2. 渲染层和合成层主要区别
 
-![图片&文件](./files/20241025-13.png)
+![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20241025-13.png)
 
 ### 3.3. 渲染层
 
@@ -66,7 +66,7 @@
 
 #### 3.4.1. 在开发者工具看到的全部都是合成层
 
-![图片&文件](./files/20241025-12.png)
+![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20241025-12.png)
 
 #### 3.4.2. 创建合成层的条件
 
@@ -102,7 +102,7 @@
 
 创建合成层的条件和开启 GPU 3D 加速的条件虽然有很大的重叠，但并不完全相同，具体如下表：
 
-![图片&文件](./files/20241025-10.png)
+![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20241025-10.png)
 
 ### 3.6. 新开GPU加速
 

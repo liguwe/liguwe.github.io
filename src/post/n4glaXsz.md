@@ -75,7 +75,7 @@ let wr = new WeakRef(target);
 
 > 使用 `Object` 包装下
 
-![图片&文件](./files/20241025.png)
+![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20241025.png)
 
 ## 5. 使用 `Object.prototype.toString.call` 来判断类型 ，如下
 
@@ -220,7 +220,7 @@ Object.fromEntries([
 
 ## 11. concat 只能解析一层，再一层就不会打平了
 
-![图片&文件](./files/20241025-1.png)
+![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20241025-1.png)
 
 ## 12. array 的 reverse 方法是原地的
 
@@ -273,7 +273,7 @@ Array.prototype.slice.call(arguments);
 
 ```
 
-![图片&文件](./files/20241115-7.png)
+![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20241115-7.png)
 
 ## 15. sort((a, b) => a - b > 0) 和 sort((a, b) => a - b) 的区别 ？
 
@@ -291,7 +291,7 @@ Array.prototype.slice.call(arguments);
     - 返回 true (1)：当 a-b > 0 时
     - 结果：
         - **也不一定，自己的理解的那种，比如**
-            - ![图片&文件](./files/20241115-7.png)
+            - ![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20241115-7.png)
             - 例如：当 a=3, b=1 时，返回 true（转为数字就是 1）
 
 ### 15.1. 返回值类型不同

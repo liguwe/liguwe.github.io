@@ -39,14 +39,14 @@
 	- 迁移磨平工具，**迁移工具**，一键迁移
 		- babel 静态解析
 		- webpack 分析依赖然后迁移
-		- ![图片&文件](./files/20241211-17.png)
+		- ![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20241211-17.png)
 	- rome 定制 `docker` 变化
 		- 没用更新 `npm` ， 直接拉取 `docker` 镜像就好
 		- 每次都会尝试复用
 
 ### 1.2. 工具化
 
-![图片&文件](./files/20241211-16.png)
+![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20241211-16.png)
 
 框架开发辅助 ？
 - vue ui
@@ -58,19 +58,19 @@
 - 收集历史问题，版本黁吗版本
 
 - 比如社区故障，紧急版本检测等
-![图片&文件](./files/20241211-18.png)
+![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20241211-18.png)
 
-![图片&文件](./files/20241211-19.png)
+![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20241211-19.png)
 
 > 太割裂的，可能都会某个时刻都不知道下一步应该干啥！
 
 ### 1.3. 框架度量
 
-![图片&文件](./files/20241211-21.png)
+![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20241211-21.png)
 
 
 
-![图片&文件](./files/20241211-20.png)
+![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20241211-20.png)
 
 - 客户成本
 - 覆盖率
@@ -79,13 +79,13 @@
 
 ### 1.4. 基于工程框架的思考
 
-![图片&文件](./files/20241211-22.png)
+![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20241211-22.png)
 
 ### 1.5. 未来
 
 - **开发链路深度整合**：`vercel` 产品
 
-![图片&文件](./files/20241211-23.png)
+![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20241211-23.png)
 
 >  值得搞的，能不能结合我们那不大模型的能力，把我们的资产，比如物料、遍历流程等等**向量化**，方便提效
 
@@ -121,17 +121,17 @@
 
 提案 → 评审 → 公示 → 发布提案 → 工具建设 → 运营 
 
-![图片&文件](./files/20241211-24.png)
+![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20241211-24.png)
 
 #### 2.3.2. 关键抓手：运营大盘，通过发布系统来抓
 
 > 项目管理 → 需求管理平台 → 设计平台 → 各类平台等等需要打通！
 
-![图片&文件](./files/20241211-25.png)
+![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20241211-25.png)
 
 构建产物备份，回滚机制
 
-![图片&文件](./files/20241211-26.png)
+![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20241211-26.png)
 
 ### 2.4. 阶段二：工程化
 
@@ -142,11 +142,11 @@
 		- 并且 SEO，也可以单独做
 	- 海外时长需要考虑
 
-![图片&文件](./files/20241211-27.png)
+![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20241211-27.png)
 
 #### 2.4.2. 纯静态架构
 
-![图片&文件](./files/20241211-28.png)
+![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20241211-28.png)
 
 #### 2.4.3. 结果
 
@@ -174,7 +174,7 @@
 - 组件一致性：
 	- 否则 UI 一致性难保障，沉淀效率低
 
-![图片&文件](./files/20241211-29.png)
+![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20241211-29.png)
 
 #### 2.5.1. 组件一致性
 
@@ -182,4 +182,4 @@
 - 资产运营起来
 - 设计资产
 
-![图片&文件](./files/20241211-30.png)
+![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20241211-30.png)

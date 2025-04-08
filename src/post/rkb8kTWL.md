@@ -35,7 +35,7 @@
 	- 生态还是最好！
 - NodeJS的问题
 	- ==服务器端应用架构 != 客户端应用架构==，比如下面的 DB
-		- ![图片&文件](./files/20241214-5.png)
+		- ![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20241214-5.png)
 - 前后端一体化？
 	- 一套业务逻辑分散在客户端和服务器端
 	- 服务器端需求通常只是:  
@@ -62,11 +62,11 @@
 			- SeverLess Functions
 		- Markup： 
 	- STAR App 
-		- ![图片&文件](./files/20241214-6.png)
+		- ![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20241214-6.png)
 	- 元框架
-		- ![图片&文件](./files/20241214-7.png)
-- ![图片&文件](./files/20241214-8.png)
-- ![图片&文件](./files/20241214-9.png)
+		- ![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20241214-7.png)
+- ![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20241214-8.png)
+- ![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20241214-9.png)
 
 **前后端分离 →  前后端一体化**
 - 前端研发：平台
@@ -79,17 +79,17 @@
 - 底码中台：
 - 工程方案：
 
-![图片&文件](./files/20241214-11.png)
+![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20241214-11.png)
 
 ### 2.1. 三个运行时
 
-![图片&文件](./files/20241214-10.png)
+![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20241214-10.png)
 
 ## 3. 前端工程
 
-![图片&文件](./files/20241214-12.png)
+![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20241214-12.png)
 
-![图片&文件](./files/20241214-13.png)
+![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20241214-13.png)
 
 - 工程&仓库
 - 工作流
@@ -99,31 +99,31 @@
 
 ### 3.1. 工程模板收敛
 
-![图片&文件](./files/20241214-14.png)
+![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20241214-14.png)
 
-![图片&文件](./files/20241214-15.png)
+![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20241214-15.png)
 
-![图片&文件](./files/20241214-16.png)
+![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20241214-16.png)
 
 ## 4. 标准解决方案：类似于 umi
 
-![图片&文件](./files/20241214-17.png)
+![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20241214-17.png)
 
-![图片&文件](./files/20241214-18.png)
+![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20241214-18.png)
 
-![图片&文件](./files/20241214-19.png)
+![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20241214-19.png)
 
 ## 5. 本地&云端同步开发
 
-![图片&文件](./files/20241214-20.png)
+![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20241214-20.png)
 
 ## 6. 开发 API，约定就好
 
-![图片&文件](./files/20241214-21.png)
+![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20241214-21.png)
 
 ## 7. 另外一个维度：**编写时、运行时、编译时、构建部署时**
 
 > 编写时 → 即开发时
 
-![图片&文件](./files/20241214-22.png)
+![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20241214-22.png)
 

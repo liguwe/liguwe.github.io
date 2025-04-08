@@ -13,13 +13,13 @@
 
 下图中每个节点自成一派，没有和其他节点相连
 
-![图片&文件](./files/20241120-11.png)
+![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20241120-11.png)
 
 ### 1.2. 8个`连通分量`
 
 - 图结构中
 
-![图片&文件](./files/20241120-12.png)
+![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20241120-12.png)
 
 ### 1.3. 两个节点`是否连通` → 多个节点`是否连通`
 
@@ -83,7 +83,7 @@ interface UFNode {
 
 ### 平衡优化
 
-![图片&文件](./files/20250117-12.png)
+![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20250117-12.png)
 
 
 **如果能保持树高为常数**，那么上述方法的复杂度就都是 `O(1)` 了
@@ -93,4 +93,4 @@ interface UFNode {
 
 ### 路径压缩
 
-![图片&文件](./files/20250117-13.png)
+![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20250117-13.png)

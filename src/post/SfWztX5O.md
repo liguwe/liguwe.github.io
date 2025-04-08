@@ -49,7 +49,7 @@ var buildTree = function (preorder, inorder) {
 
 ## 3. 分析
 
-![图片&文件](./files/20250107-8.png)
+![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20250107-8.png)
 
 > 关键是要画出这样的图片，脑子自己想大概率是写不出来的
 

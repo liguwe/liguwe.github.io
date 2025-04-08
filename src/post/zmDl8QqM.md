@@ -5,7 +5,7 @@
 > [572. 另一棵树的子树](https://leetcode.cn/problems/subtree-of-another-tree/)
 
 
-![图片&文件](./files/20250121-4.png)
+![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20250121-4.png)
 
 思路：
 - 遍历以 `root` 为根的这棵二叉树的所有节点

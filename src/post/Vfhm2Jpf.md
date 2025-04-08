@@ -281,9 +281,9 @@ class BundleMonitor {
 
 携程 React-native CRB 方案：
 
-![图片&文件](./files/20241028-10.png)
+![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20241028-10.png)
 
-![图片&文件](./files/20241028-11.png)
+![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20241028-11.png)
 
 好的，简要总结携程 CRN (Ctrip React Native) 方案的核心特点：
 
@@ -352,7 +352,7 @@ class BusinessContainer {
 
 ## 8. 常见的 四个js渲染引擎
 
-![图片&文件](./files/20241028-12.png)
+![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20241028-12.png)
 
 > 端侧性能优化一个思路是，直接基于 js 渲染引擎做定制
 

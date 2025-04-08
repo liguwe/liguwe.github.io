@@ -4,7 +4,7 @@
 
 > [623. 在二叉树中增加一行](https://leetcode.cn/problems/add-one-row-to-tree/)
 
-![图片&文件](./files/20250118-1.png)
+![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20250118-1.png)
 
 - 用 `traverse` 函数遍历到对应行，进行插入即可
 	- base case：目标层数是 1 时，特殊处理

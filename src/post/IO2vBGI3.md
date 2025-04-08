@@ -13,7 +13,7 @@
 
 需求语言 → 业务语言 → 代码语言
 
-![图片&文件](./files/20241130-37.png)
+![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20241130-37.png)
 
 ## 2. 开发范式演变：for 前端开发者
 
@@ -39,7 +39,7 @@
 - 是前端 SDK
 - 是一款**面向前端研发人员**的技术产品
 
-![图片&文件](./files/20241201-51.png)
+![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20241201-51.png)
 
 ## 5. 协议基础
 
@@ -58,11 +58,11 @@
 
 组件基础信息
 
-![图片&文件](./files/20241130-38.png)
+![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20241130-38.png)
 
 ## 6. 入料
 
-![图片&文件](./files/20241201-63.png)
+![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20241201-63.png)
 
 ## 7. 编排
 
@@ -72,19 +72,19 @@
 
 类似于 DOM，操作 DOM，等价与操作编排 JSON Schema 了
 
-![图片&文件](./files/20241201-52.png)
+![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20241201-52.png)
 
-![图片&文件](./files/20241201-53.png)
+![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20241201-53.png)
 
-![图片&文件](./files/20241201-54.png)
+![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20241201-54.png)
 
 ## 8. 渲染
 
-![图片&文件](./files/20241201-55.png)
+![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20241201-55.png)
 
 ### 8.1. 运行时方案
 
-![图片&文件](./files/20241201-56.png)
+![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20241201-56.png)
 
 ### 8.2. 预编译方案
 
@@ -102,17 +102,17 @@ npx @alilc/lowcode-code-generator -i example-schema.json -o generated -s rax
 
 
 
-![图片&文件](./files/20241201-57.png)
+![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20241201-57.png)
 
 ## 9. 出码
 
-![图片&文件](./files/20241201-59.png)
+![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20241201-59.png)
 
 
 
-![图片&文件](./files/20241201-60.png)
+![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20241201-60.png)
 
-![图片&文件](./files/20241201-61.png)
+![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20241201-61.png)
 
 
-![undefined](#)
+![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20241201-62.png)

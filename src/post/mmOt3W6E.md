@@ -10,12 +10,12 @@
 <!-- toc -->
  ## 题目 
 
-![图片&文件](./files/20241119-4.png)
+![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20241119-4.png)
 
 
 ## 思路：模拟手算
 
-![图片&文件](./files/20241119-5.png)
+![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20241119-5.png)
 
 ```css
     1 2 3
@@ -43,7 +43,7 @@
 	-  `res[3] = 2`
 
 
-![图片&文件](./files/20241119-6.png)
+![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20241119-6.png)
 
 ## 代码
 

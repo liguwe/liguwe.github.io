@@ -39,41 +39,41 @@
 
 ## 2. 性能优化三板斧
 
-![图片&文件](./files/20241101-18.png)
+![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20241101-18.png)
 
 ## 3. 缓存
 
 ### 3.1. web 缓存技术
 
-![图片&文件](./files/20241101-19.png)
+![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20241101-19.png)
 
 ### 3.2. 常见的缓存技术
 
-![图片&文件](./files/20241101-20.png)
+![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20241101-20.png)
 
 ## 4. 预加载
 
 ### 4.1. 资源预加载
 
-![图片&文件](./files/20241101-21.png)
+![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20241101-21.png)
 
 ### 4.2. 数据预数据
 
-![图片&文件](./files/20241101-22.png)
+![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20241101-22.png)
 
 ## 5. 渲染
 
 ### 5.1. 渲染分类
 
-![图片&文件](./files/20241101-23.png)
+![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20241101-23.png)
 
 ### 5.2. csr → ssr
 
-![图片&文件](./files/20241101-24.png)
+![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20241101-24.png)
 
 ### 5.3. 预渲染的案例
 
-![图片&文件](./files/20241101-25.png)
+![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20241101-25.png)
 
 ### 5.4. 其他运行时优化思路
 
@@ -86,4 +86,4 @@
 
 ## 6. 一些启发
 
-![图片&文件](./files/20241101-26.png)
+![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20241101-26.png)

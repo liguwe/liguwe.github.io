@@ -47,7 +47,7 @@ for (int i = 1; i < n; i++) {
 
 ## 3. 最长回文子序列
 
-![图片&文件](./files/20241111-10.png)
+![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20241111-10.png)
 
 比如说输入 `s = "aecda"`，算法返回 3，因为最长回文子序列是 `"aca"`，长度为 3。
 ### 3.1. dp 数组定义
@@ -69,7 +69,7 @@ else
 
 ### 3.2. 为什么是 `dp[i][j] = dp[i + 1][j - 1]` 
 
-![图片&文件](./files/20241111-13.png)
+![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20241111-13.png)
 
 如上图，如果 `i=j` ，那么就可以
 - i 指针向右移动，i + 1
@@ -77,7 +77,7 @@ else
 
 ### 3.3. 遍历顺序
 
-![图片&文件](./files/20241111-11.png)
+![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20241111-11.png)
 ### 3.4. 最终代码
 
 ```javascript
@@ -114,7 +114,7 @@ var longestPalindromeSubseq = function (s) {
 
 ## 4. 让字符串成为回文串的最少插入次数
 
-![图片&文件](./files/20241111-12.png)
+![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20241111-12.png)
 
 - 比如说输入 `s = "abcea"`，算法返回 2，因为可以给 `s` 插入 2 个字符 `ba` 变成回文串 `"abeceba"` 或者 `"aebcbea"`。
 - 如果输入 `s = "aba"`，则算法返回 0，因为 `s` 已经是回文串，不用插入任何字符

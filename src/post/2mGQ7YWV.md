@@ -22,11 +22,11 @@
 	- 微服务架构
 	- 领域模型架构
 	- 分层架构
-		- ![图片&文件](./files/20241215-3.png)
+		- ![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20241215-3.png)
 	- 服务化架构：**事件驱动架构**
-		- ![图片&文件](./files/20241215-4.png)
+		- ![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20241215-4.png)
 	- 宿主-插件架构：微内核架构
-		- ![图片&文件](./files/20241215-5.png)
+		- ![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20241215-5.png)
 	- 架构随业务发展由简单变得复杂是规律 
 	- 没必要最初用复杂架构来解决简单问题 
 	- 需要用**规范持续重**构来对抗**代码的腐朽**
@@ -44,7 +44,7 @@
 	- 动态注册和发现
 - 领域驱动设计
 
-![图片&文件](./files/20241215-6.png)
+![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20241215-6.png)
 
 ### 2.1. 单体架构
 
@@ -86,7 +86,7 @@
 	- 不规范
 	- 无用代码
 
-![图片&文件](./files/20241215-7.png)
+![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20241215-7.png)
 
-![图片&文件](./files/20241215-8.png)
+![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20241215-8.png)
 

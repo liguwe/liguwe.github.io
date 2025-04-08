@@ -6,7 +6,7 @@
 
 
 
-![图片&文件](./files/20250120-9.png)
+![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20250120-9.png)
 
 
 ## 目录

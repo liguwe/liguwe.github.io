@@ -56,14 +56,14 @@
 
 ## 4. 零代码（No Code）配置
 
-![图片&文件](./files/20241201-22.png)
+![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20241201-22.png)
 
 >  `type = app →  menu  → page →  component`
 
 
 这些 **积木**包括图标、组件、瓦片、页面等，如下图菜单
 
-![图片&文件](./files/20241201-23.png)
+![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20241201-23.png)
 
 
 更详细的流程：
@@ -92,7 +92,7 @@
 ### 4.3. 页面管理
 
 - 内置常用布局
-	- ![图片&文件](./files/20241201-24.png)
+	- ![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20241201-24.png)
 - 设置区域
 	- 初始化数据，选择 **编码 → 智能体模型** 
 		- 即**源类** 
@@ -100,7 +100,7 @@
 		- 主要应对的是存量 API
 	- 所以是支持两种数据源类型
 - 页面内部事件流可视化配置
-	- ![图片&文件](./files/20241201-25.png)
+	- ![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20241201-25.png)
 
 ### 4.4. 组件管理
 
@@ -119,7 +119,7 @@
 - 每个组件都有标准的 API 调用方式，都有详细的 Typescript 定义
 	- 入参 payload 
 	- 对外暴露的方法
-		- ![图片&文件](./files/20241201-26.png)
+		- ![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20241201-26.png)
 - 这样才能在设计态方便配置
 
 ### 4.6. 按钮配置&行为配置
@@ -134,7 +134,7 @@
 		- 另外需要配置入参
 	- 调用自定义事件
 		- 直接写代码
-			- ![图片&文件](./files/20241201-27.png)
+			- ![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20241201-27.png)
 - 打开特定菜单、特定页面等
 	- 也可以打开其他应用的特定菜单
 
@@ -169,7 +169,7 @@
 	- 和 **Vue3 的生命周期对应**
 - 前面说的自定义事件流
 	- 示例：通过编码的方式打开组件
-		- ![图片&文件](./files/20241201-29.png)
+		- ![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20241201-29.png)
 
 ### 5.1. 使用场景列举
 
@@ -180,7 +180,7 @@
 
 ## 6. 高代码（Pro Code）开发
 
-![图片&文件](./files/20241201-30.png)
+![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20241201-30.png)
 
 ### 6.1. 基础低代码组件
 
@@ -249,7 +249,7 @@
 		- vue 3 + 组件库 + vite 
 		- React + Antd + ...
 		- 更多参考无界微前端
-			- ![图片&文件](./files/20241201-31.png)
+			- ![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20241201-31.png)
 - 优点：
 	- 跨前端技术栈，并且集成接入成本低
 - 缺点：

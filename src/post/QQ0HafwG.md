@@ -17,4 +17,4 @@
 	- ELK Stack
 
 
-![496](#)
+![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20241207.png)

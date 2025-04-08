@@ -410,11 +410,11 @@ f1 f2
 
 > 比如上题
 
-![图片&文件](./files/20241207-1.png)
+![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20241207-1.png)
 
 比如换个顺序，打印就不一样了，如下图
 
-![图片&文件](./files/20241226-1.png)
+![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20241226-1.png)
 
 ## 18. `.catch()`函数能够捕获到`.all()`里**最先**的那个异常，并且**只执行一次**
 
@@ -499,7 +499,7 @@ reject Error: 2; // 2s 后输出 Error: 2
 
 ### 注意：上面的写法很诱惑人
 
-![图片&文件](./files/20241226-2.png)
+![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20241226-2.png)
 
 ## 19. race **会获取最新有结论的任务**，然后走**后一个**then 或者 catch，其他的**正常执行**，**再之后**的 then和 catch 了,执行结果会被抛弃
 

@@ -14,7 +14,7 @@
 	- redux-tooltik （没用过）
 - Redux 是 Flux 架构的一个演进和改进版本
 - umi 的数据流
-	- ![图片&文件](./files/20250101-2.png)
+	- ![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20250101-2.png)
 - store 、action、state、reducer 的关系
 	- store 中存放了所有的状态 `state`，要想改变里面的状态 state，只能 dispatch 一个动作
 		- 发出去的 `action` 需要用 `reducer` 来处理，传入 state 和 action，返回新的 `state`
@@ -36,7 +36,7 @@ Redux 是 Flux 架构的一个演进和改进版本。它通过引入`单一数�
 
 ## 3. Redux 的核心原则
 
-![图片&文件](./files/20241030-6.png)
+![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20241030-6.png)
 
 1. **单一数据源（Single Source of Truth）**
     - 整个应用的状态存储在单个 store 的对象树中
@@ -72,7 +72,7 @@ Redux 是 Flux 架构的一个演进和改进版本。它通过引入`单一数�
 - middleware
     - 中间件，扩展 dispatch 函数
 
-![图片&文件](./files/20241030-7.png)
+![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20241030-7.png)
 
 ### 4.2. Store
 
@@ -393,7 +393,7 @@ function createStore(reducer) {
 - 避免不必要的组件渲染
 - 合理使用 connect 或 hooks
 - 精细化依赖
-	- ![图片&文件](./files/20241030-5.png)
+	- ![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20241030-5.png)
 
 ## 10. Redux Hooks
 

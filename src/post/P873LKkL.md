@@ -242,12 +242,12 @@ export interface IScopedContext {
 
 ### 5.1. 组件包：所有的组件入口
 
-![图片&文件](./files/20241107-1.png)
+![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20241107-1.png)
 
 - 必须统一都在一个地方写，并且必须有规范，比如样式、vue、schema 文件等等
 
 ### 5.2. 组件注册，使用最小集来注册，避免包过大
 
-![图片&文件](./files/20241107.png)
+![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20241107.png)
 
 

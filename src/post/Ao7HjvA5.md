@@ -13,7 +13,7 @@
 <!-- toc -->
  ## 1. 最长公共子序列 
 
-![图片&文件](./files/20241111-7.png)
+![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20241111-7.png)
 
 > https://leetcode.cn/problems/longest-common-subsequence/description/
 
@@ -109,7 +109,7 @@ var longestCommonSubsequence = function (s1, s2) {
 
 ## 2. 两个字符串同时删除后相等，最少需要几步？
 
-![图片&文件](./files/20241111-8.png)
+![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20241111-8.png)
 
 删除的结果不就是它俩的`最长公共子序列`嘛，
 
@@ -126,7 +126,7 @@ var minDistance = function(s1, s2) {
 
 ## 3. 使两个字符串相等所需删除字符的 `ASCII 值`的最小和
 
-![图片&文件](./files/20241111-9.png)
+![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20241111-9.png)
 
 比如输入 `s1 = "sea", s2 = "eat"`，算法返回 231。
 - 因为在 `"sea"` 中删除 `"s"`

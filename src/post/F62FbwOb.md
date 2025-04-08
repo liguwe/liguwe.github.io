@@ -54,13 +54,13 @@
 - `typeof` 类比于 js 的`typeof`
 - `instanceof` 类比于 js 的`instanceof`
 - `in` 如下检查某个对象上是否存在某个属性
-	- ![图片&文件](./files/20241114-21.png)
+	- ![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20241114-21.png)
 - is 
-	- ![图片&文件](./files/20241114-22.png)
+	- ![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20241114-22.png)
 
 ## 3. implements 与 extends 的区别
 
-![图片&文件](./files/20241114-23.png)
+![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20241114-23.png)
 
 >   类不能继承接口，只能实现`接口` ，但`接口`可以继承`接口`
 
@@ -425,7 +425,7 @@ class PayPalPayment implements PaymentStrategy {
 - `type` 声明可以声明任何类型。
 - `interface` 能够声明 **合并**，两个相同接口会 **合并**。`Type`声明合并会报错
 - `type`可以`类型推导`
-	- ![图片&文件](./files/20241114-24.png)
+	- ![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20241114-24.png)
 
 ## 5. ts 中的 const 、 readonly 的区别
 

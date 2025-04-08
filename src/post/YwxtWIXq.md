@@ -75,7 +75,7 @@ export default {
 
 > 否则多个组件会共享数据了，因为引用类型的原因
 
-![图片&文件](./files/20241127-6.png)
+![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20241127-6.png)
 
 ### 3.2. 组合式 + setup
 

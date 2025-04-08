@@ -29,7 +29,7 @@
 
 ## 1. 传统 Diff 算法的问题
 
-![图片&文件](./files/20241104-32.png)
+![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20241104-32.png)
 
 为什么虚拟 DOM 会产生额外的性能开销呢?
 - 根本原因在于，**渲染器在运行时得不到足够的信息**。
@@ -43,7 +43,7 @@
 
 ### 2.1. Block 和 PatchFlags
 
-![图片&文件](./files/20241105.png)
+![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20241105.png)
 
 - 观察上面的 `vnode 对象`可以发现，与普通虚拟节点相比，它多出了一个额外的 `dynamicChildren` 属性。
 - 我们把带有该属性的虚拟节点称为“块”， 即 `Block`。
@@ -57,13 +57,13 @@
 同时，由于动态节点中存在对应的补丁标志，所以在更新动态节点的时候，也能够做到**靶向更新**。
 - 例如，当一 个动态节点的 `patchFlag` 值为数字 1 时，我们知道它只存在动态的文本节点，所以只需要更新它的文本内容即可
 
-![图片&文件](./files/20241105-1.png)
+![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20241105-1.png)
 
 ### 2.2. 收集动态节点
 
 在编译器生成的渲染函数代码中，**并不会直接包含用来描述虚拟节点的数据结构，而是包含着用来创建虚拟 DOM 节点的辅助函数**
 
-![图片&文件](./files/20241105-3.png)
+![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20241105-3.png)
 
 `createBlock` 函数及 `createVNode` 代码如下：
 
@@ -185,7 +185,7 @@ const vdom = {
 
 现在，我们已经有了动态节点集合 `vnode.dynamicChildren`， 以及附着其上的补丁标志。基于这两点，即可在渲染器中实现**靶向更新**。
 
-![图片&文件](./files/20241105-4.png)
+![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20241105-4.png)
 
 ### 2.4. 总结
 
@@ -200,19 +200,19 @@ const vdom = {
 
 ### 3.1. v-if 的问题：使用 key 
 
-![图片&文件](./files/20241105-5.png)
+![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20241105-5.png)
 
 解决方案：
 
-![图片&文件](./files/20241105-6.png)
+![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20241105-6.png)
 
 ### 3.2. v-for 的解决方案： 让 v-for 的指令也作为 block
 
-![图片&文件](./files/20241105-7.png)
+![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20241105-7.png)
 
 ### 3.3. Fragment 的稳定性与不稳定
 
-![图片&文件](./files/20241105-8.png)
+![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20241105-8.png)
 
 ### 3.4. 总结
 
@@ -228,23 +228,23 @@ const vdom = {
 
 ### 4.1. 静态提升静态虚拟节点
 
-![图片&文件](./files/20241105-11.png)
+![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20241105-11.png)
 
 ### 4.2. 静态提升静态属性
 
-![图片&文件](./files/20241105-9.png)
+![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20241105-9.png)
 
 ## 5. 预字符串化：静态提升静态字符串
 
 预字符串化: 在静态提升的基础上，对静态节点进行字符串化。 这样做能够减少创建虚拟节点产生的性能开销以及内存占用。
 
-![图片&文件](./files/20241105-10.png)
+![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20241105-10.png)
 
 ## 6. 缓存内联事件处理函数
 
 避免造成不必要的组件更新
 
-![图片&文件](./files/20241105-12.png)
+![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20241105-12.png)
 
 ## 7. v-once 指令：缓存全部或部分虚拟节点
 
@@ -252,7 +252,7 @@ const vdom = {
 
 当编译器遇到 `v-once 指令`时，会利用我们上一节介绍的 `cache 数组`来缓存`渲染函数的全部或者部分执行结果`，如下图
 
-![图片&文件](./files/20241105-13.png)
+![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20241105-13.png)
 
 实际上，`v-once 指令`能够从两个方面提升性能。
 - 避免组件更新时重新创建虚拟 DOM 带来的性能开销。

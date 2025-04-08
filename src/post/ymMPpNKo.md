@@ -28,15 +28,15 @@
 
 ## 3. gulp → 不同资源依然走各自的处理逻辑
 
-![图片&文件](./files/20241211.png)
+![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20241211.png)
 
 ## 4. webpack → 广度优先遍历，找到所有资源和依赖关系，最后统一打包
 
-![图片&文件](./files/20241211-1.png)
+![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20241211-1.png)
 
 ## 5. webpack → 优势与劣势
 
-![图片&文件](./files/20241211-2.png)
+![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20241211-2.png)
 
 ## 6. 再之后 
 
@@ -45,30 +45,30 @@
 
 ## 7. bundle → module 、原生语言
 
-![图片&文件](./files/20241211-3.png)
+![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20241211-3.png)
 
 ## 8. Vite 的优势与劣势
 
-![图片&文件](./files/20241211-4.png)
+![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20241211-4.png)
 
 ## 9. Turbopack: The Rust-powered successor to Webpack
 
-![图片&文件](./files/20241211-5.png)
+![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20241211-5.png)
 
 ### 9.1. 函数级别的缓存
 
-![图片&文件](./files/20241211-7.png)
+![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20241211-7.png)
 
-![图片&文件](./files/20241211-8.png)
+![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20241211-8.png)
 
-![图片&文件](./files/20241211-9.png)
+![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20241211-9.png)
 
 
-![图片&文件](./files/20241211-10.png)
+![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20241211-10.png)
 
 ## 10. 对比
 
-![图片&文件](./files/20241211-6.png)
+![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20241211-6.png)
 
 ## 11. 下载量对比
 
@@ -79,14 +79,14 @@
 - 但，Webpack 下载量依然是绝对的榜首
 - Rollup 下载量高居榜二
 
-![图片&文件](./files/20241211-11.png)
+![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20241211-11.png)
 
 ## 12. 工程化的一些思考
 
-![图片&文件](./files/20241211-12.png)
+![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20241211-12.png)
 
 
-![图片&文件](./files/20241211-13.png)
+![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20241211-13.png)
 
 ## 13. 参考
 

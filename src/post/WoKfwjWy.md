@@ -10,10 +10,10 @@
 
 ### 1.1. 两种 DOM
 
-![图片&文件](./files/20241024-9.png)
+![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20241024-9.png)
 所以，有两种 DOM，如下图：
 
-![图片&文件](./files/20241024-10.png)
+![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20241024-10.png)
 
 ### 1.2. 定义
 
@@ -31,7 +31,7 @@ Shadow DOM 是 Web Components 标准的一个重要部分，它提供了一种�
 > 它里面的，一些概念如`template` 与 `插槽slot` 影响如`Vue`类的框架
 
 - `window.customElements.define()` 方法来自定义 `组件` ，下面是一个简单实现 `<user-card>`
-	- ![图片&文件](./files/20241024-11.png)
+	- ![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20241024-11.png)
 		- 要点 1：`<template id="userCardTemplate"/>`
 		- 要点 2：定义 `window.customElements.define('user-card',UserCard)`
 		- 要点 3：定义 `UserCard`
@@ -43,7 +43,7 @@ Web Components 的核心特性：
 
 ### 2.1. 实现一个 custom-counter 
 
-![图片&文件](./files/20241024-13.png)
+![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20241024-13.png)
 
 ```html hl:17,15,36,34
 <!doctype html>
@@ -132,4 +132,4 @@ Web Components 的核心特性：
 
 `":host" 选择器`用于选择自定义元素本身，即**组件的根元素**
 
-![图片&文件](./files/20241024-12.png)
+![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20241024-12.png)

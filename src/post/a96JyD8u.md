@@ -46,7 +46,7 @@
 	- 同域，都会携带一个`AuthToken` 来校验身份就好
 	- `跨域`，主要流程就是`sso`系统会上生成一个`service ticket` 
 		- 然后重定向到应用服务，应用服务再根据`st` 想sso服务发送验证，成功后写入应用域名cookie，如下图
-			- ![图片&文件](./files/20241114-5.png)
+			- ![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20241114-5.png)
 - redis 缓存登录信息
 - 数据库存储用户信息等
 - 权限系统
@@ -66,7 +66,7 @@
 	- p, alice, data1, read
 	- p, bob, data2, write  
     
-![图片&文件](./files/20241114-6.png)
+![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20241114-6.png)
 
 ## SSO（Single Sign-On）在跨域场景下的实现原理：
 

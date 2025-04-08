@@ -14,7 +14,7 @@
 <!-- toc -->
  ## 1. 单词拆分 
 
-![图片&文件](./files/20241111-4.png)
+![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20241111-4.png)
 
 ### 1.1. 回溯算法
 
@@ -187,7 +187,7 @@ var wordBreak = function(s, wordDict) {
 
 ## 2. 单词拆分 II
 
-![图片&文件](./files/20241111-5.png)
+![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20241111-5.png)
 
 这道题不是单单问你 `s` 是否能被拼出，还要问你是`怎么拼`的
 

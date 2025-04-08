@@ -13,7 +13,7 @@
 <!-- toc -->
  ## 第 645 题「[错误的集合](https://leetcode.cn/problems/set-mismatch)」 
 
-![图片&文件](./files/20241120-8.png)
+![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20241120-8.png)
 
 给一个长度为 `N` 的数组 `nums`，其中本来装着 `[1..N]` 这 `N` 个元素，无序。但是现在出现了一些错误，`nums` 中的一个元素出现了重复，也就同时导致了另一个元素的缺失。请你写一个算法，找到 `nums` 中的**重复元素和缺失元素的值**
 

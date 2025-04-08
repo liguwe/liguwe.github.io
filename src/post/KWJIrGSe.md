@@ -10,7 +10,7 @@
 
 - 数据结构设计与存储
 	- 标记数据结构
-		- ![图片&文件](./files/20250105-3.png)
+		- ![图片](https://832-1310531898.cos.ap-beijing.myqcloud.com/999.%20Obsidian@832/files/20250105-3.png)
 - 图像渲染和交互层
 	- `canvas.addEventListener('mousedown、mouseup、wheel')` 等
 - 绘制和编辑功能
