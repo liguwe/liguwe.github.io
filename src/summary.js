@@ -5,7 +5,7 @@
 /*************************************************
  * :::::::::::  生成 SUMMARY.md 需要配置的地方 start  :::::::::::::::::
  ************************************************/
-let mdStr = `# liguwe's Books\n\n`;
+let mdStr = `# liguwe's Books\n`;
 /*************************************************
  * ::::::::::  生成 SUMMARY.md 需要配置的地方 start  :::::::::::::::::
  ************************************************/
@@ -41,20 +41,19 @@ const generatePrefix = () => {
 
 // 递归生成目录
 const generatePart = (menus) => {
-  mdStr += "\n";
   menus.forEach((item) => {
     if (!item.isPart) {
       // 缩进：根据当前节点的层级来决定
       const indent = "  ".repeat(item.depth - 1);
       // 本地的 md 链接
       const mdLink = getMdLink(item);
-      mdStr += `\n${indent}- [${item.title}](${mdLink})\n`;
+      mdStr += `${indent}- [${item.title}](${mdLink})\n`;
       if (item.children && item.children.length) {
         generatePart(item.children);
       }
       // 如果是部分
     } else {
-      mdStr += `\n# ${item.title}\n`;
+      mdStr += `# ${item.title}\n`;
       if (item.children && item.children.length) {
         generatePart(item.children);
       }
@@ -64,7 +63,7 @@ const generatePart = (menus) => {
 
 // 后序不会有层级关系
 const generateSuffix = () => {
-  mdStr += "\n-----------\n";
+  mdStr += "-----------\n";
   suffix.forEach((item) => {
     const mdLink = getMdLink(item);
     mdStr += `[${item.title}](${mdLink})\n`;

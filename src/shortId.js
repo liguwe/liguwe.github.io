@@ -3,10 +3,10 @@ const crypto = require("crypto");
 class ShortIdGenerator {
   constructor(options = {}) {
     this.options = {
-      length: options.length || 8,
+      length: options.length || 10,
       alphabet:
         options.alphabet ||
-        "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ",
+        "0123456789abcdefghijklmnopqrstuvwxyz",
       algorithm: options.algorithm || "md5",
     };
   }
