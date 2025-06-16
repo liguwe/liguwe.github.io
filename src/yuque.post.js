@@ -130,6 +130,8 @@ async function syncToYuque(
                 /\[([^\]]+)\]\(\/post\/([^\s]+)\.html\)/g,
                 "[$1](/liguwe/post/$2)"
               );
+              // 再添加跳转 liguwe.site 的链接
+              // todo
               console.log(`更新文档：${post.title}，slug：${post.uid || post.indexFile?.uid}`);
               return await update(
                 namespace,
@@ -192,7 +194,7 @@ async function updateToc(namespace) {
       data: {
         toc: tocStr,
         public: 1,
-        description: "liguwe.site 博客",
+        description: "个人知识库合集",
         slug: "post",
         name: "liguwe.site",
       },
