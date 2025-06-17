@@ -10,20 +10,7 @@ try {
     // 动态修改变量
     let width = window.localStorage.getItem("sidebarWidth") || "320px";
     document.documentElement.style.setProperty("--sidebar-width", width);
-
-    // right-buttons
-    let editButton = document.querySelectorAll(".right-buttons a")[1];
-    editButton.innerHTML = " ";
-    let href = editButton.href.replace("/src/post/", "/").replace(".md", "");
-    editButton.href = href;
-    editButton.target = "_blank";
-    editButton.title = "在语雀中查看";
-    editButton.style.backgroundImage = 'url(https://mdn.alipayobjects.com/huamei_0prmtq/afts/img/A*PXAJTYXseTsAAAAAAAAAAAAADvuFAQ/original)';
-    editButton.style.backgroundSize = "100% 100%";
-    editButton.style.backgroundRepeat = "no-repeat";
-    editButton.style.backgroundPosition = "center";
-    editButton.style.border = "none";
-    editButton.style.padding = "5px 10px";
+  
 } catch (e) {}
 
 // Fix back button cache problem

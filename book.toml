@@ -14,7 +14,7 @@ create-missing = false
 smart-punctuation = true
 mathjax-support = true
 git-repository-url = "https://github.com/liguwe"
-edit-url-template = "https://yuque.com/liguwe/post/{path}"
+edit-url-template = "https://github.com/liguwe/liguwe.github.io/blob/master/{path}"
 cname = "liguwe.site"
 
 
