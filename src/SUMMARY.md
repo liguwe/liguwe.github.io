@@ -1,17 +1,19 @@
 # liguwe's Books
 [前言](post/3pv220r63g.md)
 [更新日志](post/tjvg7663x9.md)
-# 第一部分 博客
-  - [2025](post/xtykx6zd9b.md)
-    - [Cursor 使用技巧总结](post/h9i4kx035m.md)
-    - [模型上下文协议（MCP）](post/66yklua7sw.md)
-  - [2024](post/hz4qvsaebq.md)
-    - [播客：AI 时代的频率跃迁背景下个人的选择：高频的卷或低频的定](post/so0q83798y.md)
-    - [播客：张云帆的芒格之道](post/jg36ne3axu.md)
-    - [播客：人生危机不是崩溃而是瓦解](post/v31y22c13e.md)
-    - [个人常用工具及技巧分享](post/zic0a3vnpj.md)
-    - [播客：rrweb 作者的某期播客节目纪要](post/11oaqc5nk7.md)
-# 第二部分 AGI
+# 第一部分 月报
+  - [第 000 期：前言（2025.06）](post/kqoms5k9jk.md)
+# 第二部分 博客
+  - [2025](post/0bj9km2rxr.md)
+    - [Cursor 使用技巧总结](post/bq2qy7n56j.md)
+    - [模型上下文协议（MCP）](post/s2t92ukxif.md)
+  - [2024](post/3ux12rdxy7.md)
+    - [播客：AI 时代的频率跃迁背景下个人的选择：高频的卷或低频的定](post/f4wvx5txz3.md)
+    - [播客：张云帆的芒格之道](post/t99tl1nqfi.md)
+    - [播客：人生危机不是崩溃而是瓦解](post/kclxa2vmr9.md)
+    - [个人常用工具及技巧分享](post/1ixmvtsmmz.md)
+    - [播客：rrweb 作者的某期播客节目纪要](post/plqxch2mld.md)
+# 第三部分 AGI
   - [前言](post/nifydp6rzc.md)
   - [入门篇](post/c4pgsz62lc.md)
     - [基础概念](post/kprtwayv19.md)
@@ -29,7 +31,7 @@
     - [Agent 是什么](post/xqlx648ch4.md)
     - [Agent 工程架构图](post/tyqtbpnaop.md)
     - [Agent 的进化之路](post/b168ui54qp.md)
-# 第三部分 前端
+# 第四部分 前端
   - [前言](post/f4tnhtibrv.md)
   - [前端基础](post/hjhi0u1uy7.md)
     - [Web 技术概述](post/3bcnhxeurm.md)
@@ -394,7 +396,7 @@
     - [大模型背景下的前端研发模式随记](post/zv1so1rxld.md)
     - [前端工程师在 AI 时代的机会与挑战](post/7u0ch0v9mf.md)
     - [前端开发与 AI 大模型的集成](post/azba5ptca5.md)
-# 第四部分 算法
+# 第五部分 算法
   - [前言](post/mwj3i3sgn7.md)
   - [基础](post/va2ppm9vrm.md)
     - [算法核心框架](post/ht3gya6h57.md)
@@ -872,7 +874,7 @@
       - [位1的个数](post/mtdis1jz0d.md)
       - [2 的幂：判断一个数是不是 2 的指数](post/nw86mepohz.md)
       - [丢失的数字](post/bu2veg8lfy.md)
-# 第五部分 计算机科学
+# 第六部分 计算机科学
   - [前言](post/fha571ofpz.md)
   - [Python 编程语言](post/xzupoekz9t.md)
     - [Python 语言基础](post/vx33mdiv3n.md)
@@ -889,7 +891,7 @@
     - [数据库事务（Transaction）的概念和重要性](post/508s792haf.md)
   - [其他](post/86w270mr2j.md)
     - [最常见的开源协议](post/8ce2b0x2hx.md)
-# 第六部分 产品
+# 第七部分 产品
   - [前言](post/9qw567k1hq.md)
   - [XaaS](post/wepvaoej07.md)
 -----------
