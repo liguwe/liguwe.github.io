@@ -1,8 +1,9 @@
 # liguwe's Books
 [前言](post/3pv220r63g.md)
 [更新日志](post/tjvg7663x9.md)
-# 第一部分 月报
-  - [第 000 期：前言（2025.06）](post/kqoms5k9jk.md)
+# 第一部分 周报
+  - [2025](post/hu423k7hf7.md)
+    - [第 000 期：什么是真正的开始？](post/plyibot7kd.md)
 # 第二部分 博客
   - [2025](post/0bj9km2rxr.md)
     - [Cursor 使用技巧总结](post/bq2qy7n56j.md)
