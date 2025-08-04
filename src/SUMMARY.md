@@ -5,6 +5,7 @@
   - [2025](post/hu423k7hf7.md)
     - [第 000 期：什么是真正的开始？](post/plyibot7kd.md)
     - [第 001 期：为什么不能准时的二、四、六跑步？](post/ug3j43fffr.md)
+    - [第 002 期：持续构建人生上下文](post/fiza8pylp6.md)
 # 第二部分 博客
   - [2025](post/0bj9km2rxr.md)
     - [Cursor 使用技巧总结](post/bq2qy7n56j.md)
