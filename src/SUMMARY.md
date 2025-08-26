@@ -3,6 +3,7 @@
 [更新日志](post/tjvg7663x9.md)
 # 第一部分 周报
   - [2025](post/hu423k7hf7.md)
+    - [第 004 期：戒酒](post/2ddvwnwa80.md)
     - [第 003 期：你需要的不是更多笔记，而是转身的行动](post/cb1ru5qmdt.md)
     - [第 002 期：持续构建人生上下文](post/ba0ihuuqgm.md)
     - [第 001 期：为什么不能准时的二、四、六跑步？](post/op9otphswj.md)
