@@ -1,5 +1,4 @@
 # liguwe's Books
-[前言](post/3pv220r63g.md)
 [更新日志](post/tjvg7663x9.md)
 # 第一部分 周报
   - [2025](post/hu423k7hf7.md)
