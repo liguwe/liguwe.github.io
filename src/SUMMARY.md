@@ -37,6 +37,7 @@
       - [初识 GPT-4 和 ChatGPT](post/yxrwh77bxs.md)
       - [为什么GPT 的翻译效果也挺好？](post/zma7n5y2os.md)
       - [GPT-1 介绍](post/cn9le6fr7j.md)
+      - [深入了解 OpenAI API](post/1inmudhobu.md)
   - [Agent](post/gqb851575y.md)
     - [Agent 是什么](post/xqlx648ch4.md)
     - [Agent 工程架构图](post/tyqtbpnaop.md)
