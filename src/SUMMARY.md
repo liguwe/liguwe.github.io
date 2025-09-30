@@ -2,6 +2,7 @@
 [更新日志](post/tjvg7663x9.md)
 # 第一部分 周报
   - [2025](post/hu423k7hf7.md)
+    - [第 006 期：主角只有一个](post/qsm5f6mqqw.md)
     - [第 005 期：侥幸](post/bggajoml72.md)
     - [第 004 期：戒酒](post/2ddvwnwa80.md)
     - [第 003 期：你需要的不是更多笔记，而是转身的行动](post/cb1ru5qmdt.md)
@@ -12,7 +13,7 @@
   - [2025](post/0bj9km2rxr.md)
     - [Cursor 使用技巧总结](post/bq2qy7n56j.md)
     - [模型上下文协议（MCP）](post/s2t92ukxif.md)
-    - [Excel 与 Web 的完美融合：从导入到导出，前端 Excel 处理技术浅析](post/stl5zo90j3.md)
+    - [Excel 与 Web 的完美融合：从导入到导出，前端 Excel 处理技术选型浅析](post/i4vxzb0bvx.md)
   - [2024](post/3ux12rdxy7.md)
     - [播客：AI 时代的频率跃迁背景下个人的选择：高频的卷或低频的定](post/f4wvx5txz3.md)
     - [播客：张云帆的芒格之道](post/t99tl1nqfi.md)
