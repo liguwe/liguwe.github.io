@@ -2,6 +2,7 @@
 [更新日志](post/tjvg7663x9.md)
 # 第一部分 周报
   - [2025](post/hu423k7hf7.md)
+    - [第 009：Winter is coming again ？](post/1kinvhzpry.md)
     - [第 006 期：主角只有一个](post/qsm5f6mqqw.md)
     - [第 005 期：侥幸](post/bggajoml72.md)
     - [第 004 期：戒酒](post/2ddvwnwa80.md)
