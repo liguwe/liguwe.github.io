@@ -2,7 +2,6 @@
 [更新日志](post/tjvg7663x9.md)
 # 第一部分 周报
   - [2025](post/hu423k7hf7.md)
-    - [第 008 期： 诊断与处方（写于 34 周岁）](post/2bck5zr8pg.md)
     - [第 007 期：Winter is coming again ？](post/n1feedqemd.md)
     - [第 006 期：主角只有一个](post/qsm5f6mqqw.md)
     - [第 005 期：侥幸](post/bggajoml72.md)
