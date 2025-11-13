@@ -1,27 +1,25 @@
 # liguwe's Books
 [更新日志](post/tjvg7663x9.md)
-# 第一部分 周报
-  - [2025](post/hu423k7hf7.md)
-    - [Winter is coming again ？](post/b6cuseg42i.md)
-    - [主角只有一个](post/ajdi419z2v.md)
-    - [侥幸](post/c7is6p5qen.md)
-    - [戒酒](post/nkt5rnrbin.md)
-    - [持续构建人生上下文](post/i5yrnuh6iq.md)
-    - [你需要的不是更多笔记，而是转身的行动](post/gjvm4jcdbg.md)
-    - [为什么不能准时的二、四、六跑步？](post/40k99knzep.md)
-    - [什么是真正的开始？](post/tl09v4emjj.md)
-# 第二部分 博客
-  - [2025](post/24ty1iu47b.md)
-    - [Cursor 使用技巧总结](post/bpnj3b7j5f.md)
-    - [模型上下文协议（MCP）](post/jf83k4p7ol.md)
-    - [Excel 与 Web 的完美融合：从导入到导出，前端 Excel 处理技术选型浅析](post/avmzd6sgoh.md)
-  - [2024](post/idy0630m4k.md)
-    - [播客：AI 时代的频率跃迁背景下个人的选择：高频的卷或低频的定](post/wthm1yp73r.md)
-    - [播客：张云帆的芒格之道](post/4pkiupn65n.md)
-    - [播客：人生危机不是崩溃而是瓦解](post/uq8bzn1vie.md)
-    - [个人常用工具及技巧分享](post/2rphekmbnc.md)
-    - [播客：rrweb 作者的某期播客节目纪要](post/1lud5a7983.md)
-# 第三部分 AI
+# 第一部分 博客
+  - [2025](post/x61vqbdbfk.md)
+    - [周报v008：Winter is coming again ？](post/xm65zxo8fp.md)
+    - [周报v007：主角只有一个](post/2c1rto6tbn.md)
+    - [周报v006：侥幸](post/z9yf7024y9.md)
+    - [周报v005：戒酒](post/cdhin0yupg.md)
+    - [周报v004：持续构建人生上下文](post/ick6zcyd8e.md)
+    - [周报v003：你需要的不是更多笔记，而是转身的行动](post/2zbi96ib1u.md)
+    - [周报v002：为什么不能准时的二、四、六跑步？](post/h25unk9wua.md)
+    - [周报v001：什么是真正的开始？](post/66pjbqfbiv.md)
+    - [博客：Excel 与 Web 的完美融合：从导入到导出，前端 Excel 处理技术选型浅析](post/xrjwtpr5fe.md)
+    - [博客：Cursor 使用技巧总结](post/caujo640er.md)
+    - [博客：模型上下文协议（MCP）](post/8gacl0m5ha.md)
+  - [2024](post/bnc2rzkxas.md)
+    - [播客：AI 时代的频率跃迁背景下个人的选择：高频的卷或低频的定](post/b9byavruzv.md)
+    - [播客：张云帆的芒格之道](post/ibnh7f92da.md)
+    - [播客：人生危机不是崩溃而是瓦解](post/c40okjkpum.md)
+    - [博客：个人常用工具及技巧分享](post/f55029usdl.md)
+    - [播客：rrweb 作者的某期播客节目纪要](post/z6yz1ahqys.md)
+# 第二部分 AI
   - [前言](post/icf25iva0g.md)
   - [入门篇](post/iy5b3oz4z2.md)
     - [基础概念](post/lg0598qqs9.md)
@@ -44,7 +42,7 @@
     - [Agent 是什么](post/emx24o8byi.md)
     - [Agent 工程架构图](post/rufm5fcbjz.md)
     - [Agent 的进化之路](post/jcaavcnh2o.md)
-# 第四部分 前端
+# 第三部分 前端
   - [前言](post/f4tnhtibrv.md)
   - [前端基础](post/hjhi0u1uy7.md)
     - [Web 技术概述](post/3bcnhxeurm.md)
@@ -409,7 +407,7 @@
     - [大模型背景下的前端研发模式随记](post/zv1so1rxld.md)
     - [前端工程师在 AI 时代的机会与挑战](post/7u0ch0v9mf.md)
     - [前端开发与 AI 大模型的集成](post/azba5ptca5.md)
-# 第五部分 算法
+# 第四部分 算法
   - [前言](post/mwj3i3sgn7.md)
   - [基础](post/va2ppm9vrm.md)
     - [算法核心框架](post/ht3gya6h57.md)
@@ -887,7 +885,7 @@
       - [位1的个数](post/mtdis1jz0d.md)
       - [2 的幂：判断一个数是不是 2 的指数](post/nw86mepohz.md)
       - [丢失的数字](post/bu2veg8lfy.md)
-# 第六部分 计算机科学
+# 第五部分 计算机科学
   - [前言](post/fha571ofpz.md)
   - [Python 编程语言](post/xzupoekz9t.md)
     - [Python 语言基础](post/vx33mdiv3n.md)
@@ -904,7 +902,7 @@
     - [数据库事务（Transaction）的概念和重要性](post/508s792haf.md)
   - [其他](post/86w270mr2j.md)
     - [最常见的开源协议](post/8ce2b0x2hx.md)
-# 第七部分 产品
+# 第六部分 产品
   - [前言](post/9qw567k1hq.md)
   - [XaaS](post/wepvaoej07.md)
 -----------
