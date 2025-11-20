@@ -4,11 +4,11 @@
 `#2025/07/21`
 
 目录：
-- [92. 周报v008：Winter is coming again ？](/post/xm65zxo8fp.html)
-- [93.  周报v007：主角只有一个](/post/2c1rto6tbn.html)
-- [94. 周报v006：侥幸](/post/z9yf7024y9.html)
-- [95. 周报v005：戒酒](/post/cdhin0yupg.html)
-- [97. 周报v003：你需要的不是更多笔记，而是转身的行动](/post/2zbi96ib1u.html)
-- [96.  周报v004：持续构建人生上下文](/post/ick6zcyd8e.html)
-- [98. 周报v002：为什么不能准时的二、四、六跑步？](/post/h25unk9wua.html)
-- [99. 周报v001：什么是真正的开始？](/post/66pjbqfbiv.html)
+- [92. 周报：Winter is coming again ？](/post/i3r0nks8ty.html)
+- [93.  周报：主角只有一个](/post/5hngiwz5g6.html)
+- [94. 周报：侥幸](/post/tvshxwu5hy.html)
+- [95. 周报 v005：戒酒](/post/u5w7dkzjh7.html)
+- [97. 周报：你需要的不是更多笔记，而是转身的行动](/post/515xlefwy6.html)
+- [96.  周报：持续构建人生上下文](/post/ecxjom0g3f.html)
+- [98. 周报：为什么不能准时的二、四、六跑步？](/post/ey3sch9r61.html)
+- [99. 周报：什么是真正的开始？](/post/dmah0tafnn.html)
