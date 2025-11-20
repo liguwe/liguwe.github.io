@@ -5,7 +5,7 @@
     - [周报：Winter is coming again ？](post/i3r0nks8ty.md)
     - [周报：主角只有一个](post/5hngiwz5g6.md)
     - [周报：侥幸](post/tvshxwu5hy.md)
-    - [周报 v005：戒酒](post/u5w7dkzjh7.md)
+    - [周报：戒酒](post/tkrefh6907.md)
     - [周报：持续构建人生上下文](post/ecxjom0g3f.md)
     - [博客：Excel 与 Web 的完美融合：从导入到导出，前端 Excel 处理技术选型浅析](post/i5qtg1mt2e.md)
     - [周报：你需要的不是更多笔记，而是转身的行动](post/515xlefwy6.md)
