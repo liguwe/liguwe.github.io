@@ -2,6 +2,7 @@
 [更新日志](post/tjvg7663x9.md)
 # 第一部分 博客
   - [2025](post/x61vqbdbfk.md)
+    - [博客：PPT 在线化技术方案调研报告](post/rvkfsc24i8.md)
     - [周报v008：Winter is coming again ？](post/xm65zxo8fp.md)
     - [周报v007：主角只有一个](post/2c1rto6tbn.md)
     - [周报v006：侥幸](post/z9yf7024y9.md)
