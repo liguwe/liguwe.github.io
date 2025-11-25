@@ -10,14 +10,15 @@
 <!-- toc -->
  ## 1. 先说结论 
 
-- 先说 导出 PPT
+- 先说导出 PPT
 	- **交付最快**：PptxGenJS (前端)   
 		- 前端闭环，后端仅做存储支持
 	- **综合性价比最高**：`python-pptx`（生成）
 		- 兼顾了当下的快速交付（利用 Python 模板填充）与未来的 AI 扩展性（Python 生态）
-	- 最稳的方案：Apache POI (Java)  
+	- **最稳的方案**：Apache POI (Java)  
 - 在线预览、二次编辑及导出，真的没必要自研编辑器，开发周期至少以`月`为单位
-	- 可选 1（`最稳`）：接入 wps web office ，除了支持 PPT、exel 或者 docs 文档也能支持
+	- 可选 1（`最稳`）：接入 wps web office ，但需要预算，除了支持 PPT、exel 或者 docs 文档也能支持
+		- 相较于其他需要付费的，如 `Aspose.Slides` 和   https://docxtemplater.com/demo/  等，wps 绝对是最稳、性价比最高的
 	- 可选 2：自己部署 `ONLYOFFICE` ，同样 其他格式都支持
 
 鉴于团队并非专业的文档工具开发商及当前业务现状，推荐采用 " 短期导出优先，中期闭环体验、长期 AI 智能导出 " 的策略。

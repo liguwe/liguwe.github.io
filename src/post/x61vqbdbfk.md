@@ -4,6 +4,7 @@
 `#2025/07/21`
 
 目录：
+- [80. 博客：PPT 在线化技术方案调研报告](/post/rvkfsc24i8.html)
 - [92. 周报v008：Winter is coming again ？](/post/xm65zxo8fp.html)
 - [93.  周报v007：主角只有一个](/post/2c1rto6tbn.html)
 - [94. 周报v006：侥幸](/post/z9yf7024y9.html)
