@@ -18,7 +18,7 @@
 	- **最稳的方案**：Apache POI (Java)  
 - 在线预览、二次编辑及导出，真的没必要自研编辑器，开发周期至少以`月`为单位
 	- 可选 1（`最稳`）：接入 wps web office ，但需要预算，除了支持 PPT、exel 或者 docs 文档也能支持
-		- 相较于其他需要付费的，如 `Aspose.Slides` 和   https://docxtemplater.com/demo/  等，wps 绝对是最稳、性价比最高的
+		- 相较于其他需要付费的，如 `Aspose.Slides` 和 https://docxtemplater.com/demo/ 等，wps 绝对是最稳、性价比最高的
 	- 可选 2：自己部署 `ONLYOFFICE` ，同样 其他格式都支持
 
 鉴于团队并非专业的文档工具开发商及当前业务现状，推荐采用 " 短期导出优先，中期闭环体验、长期 AI 智能导出 " 的策略。
@@ -94,7 +94,7 @@ ppt/
 | AI 适配性     | ⭐ 弱  <br>JS对接LLM链路冗余        | ⭐⭐⭐⭐⭐ 最强  <br>LangChain等AI框架原生支持，是目前 AI PPT 的主流技术栈。          | ⭐⭐ 一般  <br>需通过API调用Python服务                    |     |     |
 | 性能（生成100页） | ~4秒 (浏览器端)                  | ~3秒 (服务端)                                                    | ~2秒  (但内存占用高)                                  |     |     |
 | 可能的坑       | • 复杂母版无法处理  <br>• 中文字体依赖客户端 | • 需处理并发队列 <br>• Python 环境部署                                  | • Apache 基金会下，大概率没有<br>• 支持 SmartArt、动画、宏等高级功能 |     |     |
-|            |                             |                                                              |                                                |     |     |                    
+|            |                             |                                                              |                                                |     |     |                      
 综合结论：
 - ⭐⭐⭐⭐ 使用 PptxGenJS (前端)
 - ⭐⭐⭐⭐⭐ python-pptx (后端) 
@@ -109,7 +109,7 @@ ppt/
 | 图表支持  <br>(关键点) | 极难  <br>POI 生成原生可编辑图表非常痛苦，往往需要直接操作 XML Bean。     | 优秀  <br>内置了非常友好的 Chart API，支持生成 Excel 支撑的原生图表。         | Python 胜 |     |
 | 模板修改            | 强  <br>可以遍历文档的每一个角落，替换任何内容（只要你懂 XML 结构）。         | 中等  <br>主要用于“新建”，修改现有模板的能力稍弱（但替换图片/文本够用）。              | POI 胜    |     |
 | 生态结合            | 结合 Java 企业级后端 (Spring Boot) 方便，但在数据处理上不如 Python。 | 无敌  <br>结合 `Pandas/NumPy` 处理报表数据，再吐出 PPT，是数据分析领域的黄金搭流。 | Python 胜 |     |
-| 性能              | 稳  <br>JVM 内存管理成熟，适合超大文件流处理。                     | 一般  <br>处理极大量数据时可能较慢，但生成几十页 PPT 毫秒级无感。                 | 平手       |     |                            
+| 性能              | 稳  <br>JVM 内存管理成熟，适合超大文件流处理。                     | 一般  <br>处理极大量数据时可能较慢，但生成几十页 PPT 毫秒级无感。                 | 平手       |     |                              
 结论：
 - 如果你需要`对一份极其复杂的PPT做极小的改动`或者做是`专业的 PPT 工具`，那么选择 `Apache POI` 肯定没有问题
 - 但我们大概率的场景是**只需要写一个极其简单的 Python 微服务，接收前端的 JSON 数据，吐出 PPTX 文件流，这个成本是最低的**。
@@ -223,14 +223,10 @@ async def generate_ppt(data: ReportData):
 
 ![image.png|424](https://832-1310531898.cos.ap-beijing.myqcloud.com/202520251124175637513.png)
 
-![image.png|440](https://832-1310531898.cos.ap-beijing.myqcloud.com/202520251124175756380.png)
-
 #### 5.2.2. 自部署 ONLYOFFICE 演示
 
 - 核心成本：机器成本，8G 内存机器  
 - 核心问题：使用开源版本最大 `20 个并发连接`
-
-![image.png|832](https://832-1310531898.cos.ap-beijing.myqcloud.com/202520251125102314623.png)
 
 | 维度             | 社区版 (Community Edition)  | 企业版 (Enterprise Edition)     |
 | :------------- | :----------------------- | :--------------------------- |
