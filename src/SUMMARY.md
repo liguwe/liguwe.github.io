@@ -3,6 +3,7 @@
 # 第一部分 博客
   - [2025](post/x61vqbdbfk.md)
     - [博客：PPT 在线化技术方案调研报告](post/rvkfsc24i8.md)
+    - [周报：写于 34 周岁（篇二：对自己的战争？但“你”是“你之所以成为你”的全部材料）](post/iupo2fqk7y.md)
     - [周报v009：写于 34 周岁（篇一：假努力、真内耗，除了焦虑和体重，什么都没涨）](post/3c5ppj0id2.md)
     - [周报v008：Winter is coming again ？](post/xm65zxo8fp.md)
     - [周报v007：主角只有一个](post/2c1rto6tbn.md)
