@@ -4,6 +4,8 @@
 `#2025/07/21`
 
 **目录：**
+- [86. 周报v012：一份写给自己的诊断书](/post/t0c2zfcf6c.html)
+- [88. 周报v011：人生体检报告·症状篇](/post/kp5g6fxji2.html)
 - [90.  周报v010：对自己的战争？但“你”是“你之所以成为你”的全部材料](/post/fczfvo281h.html)
 - [89. 博客：PPT 在线化技术方案调研报告](/post/ljk8bp3hs8.html)
 - [92. 周报v008：Winter is coming again ？](/post/xm65zxo8fp.html)
