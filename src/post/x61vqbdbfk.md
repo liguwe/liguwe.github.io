@@ -3,8 +3,9 @@
 
 `#2025/07/21`
 
-目录：
-- [80. 博客：PPT 在线化技术方案调研报告](/post/rvkfsc24i8.html)
+**目录：**
+- [90.  周报v010：写于 34 周岁（篇二：对自己的战争？但“你”是“你之所以成为你”的全部材料）](/post/hhmp47qj7g.html)
+- [89. 博客：PPT 在线化技术方案调研报告](/post/ljk8bp3hs8.html)
 - [92. 周报v008：Winter is coming again ？](/post/xm65zxo8fp.html)
 - [93.  周报v007：主角只有一个](/post/2c1rto6tbn.html)
 - [94. 周报v006：侥幸](/post/z9yf7024y9.html)
