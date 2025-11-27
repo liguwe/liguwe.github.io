@@ -4,7 +4,7 @@
 `#2025/07/21`
 
 **目录：**
-- [90.  周报v010：写于 34 周岁（篇二：对自己的战争？但“你”是“你之所以成为你”的全部材料）](/post/hhmp47qj7g.html)
+- [90.  周报v010：对自己的战争？但“你”是“你之所以成为你”的全部材料](/post/fczfvo281h.html)
 - [89. 博客：PPT 在线化技术方案调研报告](/post/ljk8bp3hs8.html)
 - [92. 周报v008：Winter is coming again ？](/post/xm65zxo8fp.html)
 - [93.  周报v007：主角只有一个](/post/2c1rto6tbn.html)
