@@ -95,7 +95,7 @@ ppt/
 | AI 适配性     | ⭐ 弱  <br>JS对接LLM链路冗余        | ⭐⭐⭐⭐⭐ 最强  <br>LangChain等AI框架原生支持，是目前 AI PPT 的主流技术栈。          | ⭐⭐ 一般  <br>需通过API调用Python服务                    |     |     |
 | 性能（生成100页） | ~4秒 (浏览器端)                  | ~3秒 (服务端)                                                    | ~2秒  (但内存占用高)                                  |     |     |
 | 可能的坑       | • 复杂母版无法处理  <br>• 中文字体依赖客户端 | • 需处理并发队列 <br>• Python 环境部署                                  | • Apache 基金会下，大概率没有<br>• 支持 SmartArt、动画、宏等高级功能 |     |     |
-|            |                             |                                                              |                                                |     |     |                        
+|            |                             |                                                              |                                                |     |     |                            
 综合结论：
 - ⭐⭐⭐⭐ 使用 PptxGenJS (前端)
 - ⭐⭐⭐⭐⭐ python-pptx (后端) 
@@ -110,7 +110,7 @@ ppt/
 | 图表支持  <br>(关键点) | 极难  <br>POI 生成原生可编辑图表非常痛苦，往往需要直接操作 XML Bean。     | 优秀  <br>内置了非常友好的 Chart API，支持生成 Excel 支撑的原生图表。         | Python 胜 |     |
 | 模板修改            | 强  <br>可以遍历文档的每一个角落，替换任何内容（只要你懂 XML 结构）。         | 中等  <br>主要用于“新建”，修改现有模板的能力稍弱（但替换图片/文本够用）。              | POI 胜    |     |
 | 生态结合            | 结合 Java 企业级后端 (Spring Boot) 方便，但在数据处理上不如 Python。 | 无敌  <br>结合 `Pandas/NumPy` 处理报表数据，再吐出 PPT，是数据分析领域的黄金搭流。 | Python 胜 |     |
-| 性能              | 稳  <br>JVM 内存管理成熟，适合超大文件流处理。                     | 一般  <br>处理极大量数据时可能较慢，但生成几十页 PPT 毫秒级无感。                 | 平手       |     |                                
+| 性能              | 稳  <br>JVM 内存管理成熟，适合超大文件流处理。                     | 一般  <br>处理极大量数据时可能较慢，但生成几十页 PPT 毫秒级无感。                 | 平手       |     |                                    
 结论：
 - 如果你需要`对一份极其复杂的PPT做极小的改动`或者做是`专业的 PPT 工具`，那么选择 `Apache POI` 肯定没有问题
 - 但我们大概率的场景是**只需要写一个极其简单的 Python 微服务，接收前端的 JSON 数据，吐出 PPTX 文件流，这个成本是最低的**。
@@ -149,7 +149,7 @@ fetch('/api/ppt/generate', {
 
 后端（以 `Python FastAPI` 为例）：
 
-```python
+```python hl:33
 from pptx import Presentation  
 from pptx.util import Inches, Pt  
 from io import BytesIO  
@@ -189,9 +189,12 @@ async def generate_ppt(data: ReportData):
 
 - 如果是 python 方案
 	- 前端 or 后端都直接投入，但需要提请探探公司关于 python 的基建情况（如是否有统一的 Python 运行环境、依赖管理等）
-		- 之前听说 python 新版本的镜像仍不支持
 - 前端团队在于“数据组装” 与 “可视化截图”，而非死磕 PPT 渲染引擎
 - 关于数据组装是`前端组装` 还是 后端组装，可以再讨论
+
+#### 4.2.3. 一个基于 AI 能快速跑起来的 Demo 
+
+> 演示
 
 ## 5. 在线预览、二次编辑及导出方案
 
@@ -288,12 +291,12 @@ def export_with_fallback(element):
 
 ### 8.1. Phase 1: 核心导出能力建设 (MVP)
 
-#### 8.1.1. 可选路径1：PptxGenJS（快速验证） （1 - 2 周）
+#### 8.1.1. 可选路径1：PptxGenJS（快速验证）
 
 前端：组装JSON数据 + 调用 PptxGenJS API  
 后端：仅负责文件存储  
 
-#### 8.1.2. 可选路径2：Python方案（推荐）（2 - 3 周）
+#### 8.1.2. 可选路径2：Python方案（推荐）
 
 前端职责：
 - 组装业务数据 JSON（定义好 Schema，如 Title, ChartsData, TableRows）。
@@ -324,7 +327,7 @@ pip install fastapi python-pptx pillow aiofiles
 
 ### 8.2. Phase 2: 在线预览编辑闭环
 
-#### 8.2.1. 部署 ONLYOFFICE：（ 1 周左右）
+#### 8.2.1. 部署 ONLYOFFICE：
 
 ```bash
 docker run -i -t -d -p 80:80 \
@@ -357,7 +360,7 @@ docker run -i -t -d -p 80:80 \
           replicas: 3  # 部署3个实例  
     ```
 
-#### 8.2.2. 接入 WPS WebOffice （1 周左右）
+#### 8.2.2. 接入 WPS WebOffice 
 
 - 需要进一步确定细节点，关键是`成本预算` 需要走申请
 
@@ -418,3 +421,18 @@ for slide_content in outline.slides:
 - AI PPT ，可能 不是26 年落地 AI 一个好的场景
 
 > 但需要结合 26 年业务规划，以上观点限于个人当下所认知的
+
+## 参考
+
+- onlyoffice： https://github.com/ONLYOFFICE
+	- 如何部署 docker 版本： https://blog.fe-mm.com/workflow/library/onlyoffice
+- 前端或者 Nodejs 导出： https://github.com/gitbrent/PptxGenJS
+- 基于模板的授权方案： https://docxtemplater.com/demo/ 
+- 在线 PPT 编辑： https://pipipi-pikachu.github.io/PPTist/
+- wps office 方案： https://solution.wps.cn/docs/start/summary.html
+- 其他类库：
+	- https://github.com/Sayi/poi-tl  
+	- https://github.com/af19git5/EasyExcel   
+	- https://github.com/carboneio/carbone
+- 谷歌 AI IDE ，白嫖期
+	- https://antigravity.google/
