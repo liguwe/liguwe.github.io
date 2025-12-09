@@ -3,7 +3,6 @@
 
 `#2025/07/21`
 
-**目录：**
 - [82. 翻译：Anthropic 内部如何通过 AI 变革工作方式](/post/y5uhusjf84.html)
 - [85. 周报v013：今天，最小的输出是什么？](/post/92imn3k7e2.html)
 - [86. 周报v012：一份写给自己的诊断书](/post/t0c2zfcf6c.html)
