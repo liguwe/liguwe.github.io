@@ -2,7 +2,7 @@
 [更新日志](post/tjvg7663x9.md)
 # 第一部分 博客
   - [2025](post/x61vqbdbfk.md)
-    - [博客：cursor 个人最佳实践（2025.12 篇）](post/f1cz97axg8.md)
+    - [翻译：Anthropic 内部如何通过 AI 变革工作方式](post/y5uhusjf84.md)
     - [周报v013：今天，最小的输出是什么？](post/92imn3k7e2.md)
     - [周报v012：一份写给自己的诊断书](post/t0c2zfcf6c.md)
     - [周报v011：人生体检报告·症状篇](post/kp5g6fxji2.md)
