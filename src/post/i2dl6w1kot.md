@@ -1,21 +1,23 @@
 
 # 深入了解 OpenAI API
 
-`#2025/07/30` `#大模型开发` 
+`#2025/07/30` `#大模型开发`  `#大模型应用开发极简入门`
 
 
 ## 目录
 <!-- toc -->
- ## 基本概念 
+ ## 1. 基本概念：prompt 、 token 
 
-- `提示词`就是发送给模型的输入文本，用于指示模型执行特定任务。
-- 词元是单词或单词的一部分，100 个`词元`约等于 75 个英文单词。调用 OpenAI 模型的请求是基于`词元`数量收费的
+- `提示词`
+	- 就是发送给模型的输入文本，用于指示模型执行特定任务
+- `词元（token）`
+	- 是单词或单词的一部分，100 个`词元`约等于 `75 个英文单词`。调用 OpenAI 模型的请求是基于`词元`数量收费的
 
 ![{%}|472](https://www.ituring.com.cn/figures/2025/AppGPT4ChatGPT2nd/017.jpg)
 
-## 入门：OpenAI Python 库
+## 2. 入门：OpenAI Python 库
 
-### OpenAI 服务访问与 API 密钥
+### 2.1. OpenAI 服务访问与 API 密钥
 
 在 API keys 页面中，单击 Create new secret key（创建新密钥），写到环境变量中
 
@@ -30,7 +32,7 @@ echo $OPENAI_API_KEY
 
 > 请注意，切勿将这些命令行代码推送到公共代码库中。
 
-### Hello World
+### 2.2. Hello World
 
 python 环境准备
 
@@ -53,7 +55,7 @@ pyenv local 3.11.5
 
 使用以下命令通过 pip 安装 Python 库：
 
-```cmake
+```cmake hl:4
 pip3 install openai
 
 # 本地需要开启翻墙代理，所以需要安装
@@ -70,10 +72,11 @@ client = OpenAI()
 response = client.chat.completions.create(
     model="gpt-3.5-turbo",
     messages=[
-        {"role": "user", "content": "Hello World!"}
+        { "role": "user", 
+          "content": "Hello World!"
+        }
     ]
 )
-
 # 输出响应内容
 print(response.choices[0].message.content)
 ```
@@ -92,9 +95,9 @@ print(response.choices[0].message.content)
 Hello there! How may I assist you today?
 ```
 
-## 秘钥本地管理
+## 3. 秘钥本地管理
 
-前面的代码片段没有明确提供 OpenAI API 密钥。这是因为 OpenAI 库会自动查找名为 `OPENAI_API_KEY` 的环境变量。
+前面的代码片段没有明确提供 `OpenAI API 密钥`。这是因为 OpenAI 库会自动查找名为 `OPENAI_API_KEY` 的环境变量。
 
 你也可以手动在代码中设置 API 密钥，如下所示：
 
@@ -115,11 +118,13 @@ from openai import OpenAI
 
 加载`.env` 文件后，不要忘记 OpenAI 库的导入语句，否则 OpenAI 设置将无法正确应用。
 
-> 　需要注意的是，dotenv 包不是标准 Python 库的一部分，因此你需要使用 `pip install python-dotenv` 命令安装。
+> 　dotenv 包不是标准 Python 库的一部分，因此你需要使用 `pip install python-dotenv` 命令安装。
 
-## 使用聊天补全模型
+## 4. 使用聊天补全模型
 
-```python hl:9
+### 4.1. 示例
+
+```python hl:9,10,11,15,19
 from openai import OpenAI
 client = OpenAI()
 
@@ -143,12 +148,51 @@ client.chat.completions.create(
 )
 ```
 
-- 输入消息采用对话格式，可以发送多条消息给模型，如上面的 `messages` 数组
+- 输入消息采用对话格式，可以发送**多条消息**给模型
+	- 如上面的 `messages` 数组
 - API 并不会在上下文中存储之前的消息
 	- 因此，问题`“What is it?”`（那是什么？）指代的是前一个答案中的方法，**这个问题只有在模型理解该答案时才有意义**。
-- 每次请求时，**你必须重新发送完整的对话内容**，以模拟一个完整的聊天会话。
+- 每次请求时，**你必须重新发送完整的对话内容**，以模拟一个完整的聊天会话
 
-### 聊天补全端点的输入选项：一些参数选项
+### 4.2. 模型本身是无状态的，类似于 http 
+
+因为，由于模型是**无状态的（Stateless）** ， 要保证模型理解完整上下文，关键在于**你（开发者）如何组织并回传那条 `messages` 数组**。
+
+解决方案是：历史记录的“全量回传”，即**将之前所有的对话轮次，按照时间顺序重新发送给 API**。模型处理这串**数组**时，本质上是在处理一段超长的文本。它会看到：
+1. **System**: 你是个老师。
+2. **User**: 除了时间复杂度还有别的吗？
+3. **Assistant**: 有，比如空间复杂度。
+4. **User**: 那是什么？
+
+当模型接收到这个完整的数组时，它通过 **Attention（注意力机制）** 发现“What is it?” 中的 “it” 与上一条消息中的 “space complexity” 相关联。
+
+### 4.3. 如何解决这种无状态
+
+在实际编程中，你通常需要维护一个**列表**来管理这些`历史`
+
+```python
+# 1. 初始化对话历史
+history = [{"role": "system", "content": "你是一个严谨的老师。"}]
+
+# 2. 第一轮对话
+user_input_1 = "除了时间复杂度还有别的吗？"
+history.append({"role": "user", "content": user_input_1})
+# 调用 API ... 得到回复 response_1
+history.append({"role": "assistant", "content": response_1})
+
+# 3. 第二轮对话（此时 history 已包含前两轮，模型就能看懂了）
+user_input_2 = "那是什么？"
+history.append({"role": "user", "content": user_input_2})
+# 再次调用 API，发送整个 history 列表
+```
+
+### 4.4. 三个关键点
+
+- **角色顺序（Roles Consistency）：** 必须严格遵守 `user` -> `assistant` -> `user` 的交替顺序。
+- **上下文长度限制（Context Window）：** 每个模型都有最大 Token 限制（比如 128k）
+- **System Message 的持续引导：** 永远把 `system` 消息放在数组的第一位。它像是一个“固定的人设准则”，即使对话再长，它也会时刻提醒模型“你是谁”。
+
+### 4.5. 聊天补全端点的输入选项：一些参数选项
 
 讨论如何使用 `chat.completions` 端点及其 `create` 方法。
 
@@ -160,7 +204,7 @@ create 方法参数：
 
 ![{%}|528](https://www.ituring.com.cn/figures/2025/AppGPT4ChatGPT2nd/023.jpg)
 
-消息的 `name` 参数似乎在 OpenAI 的文档中少有记录，甚至在某些模型中得不到支持
+消息的 `name` 参数似乎在 `OpenAI` 的文档中少有记录，甚至在某些模型中得不到支持
 
 ```json
 "content": [{"type": "image_url", "image_url":{"url": your_url}}]
@@ -187,7 +231,7 @@ create 方法参数：
 
 ![{%}|536](https://www.ituring.com.cn/figures/2025/AppGPT4ChatGPT2nd/024.jpg)  
 
-### 调整 `temperature` 和 `top_p`
+### 4.6. 调整 `temperature` 和 `top_p`
 
  `temperature` 和 `top_p` 的作用是，在`生成连贯的文本与引入变化`和`创造性`之间调整平衡。调整这些参数可以显著影响生成文本的特征。
 
@@ -195,7 +239,7 @@ create 方法参数：
 
 下图显示了在补全句子“`The cat is`”（猫是）时，温度为 1 和温度为 0.1 的分布差异。
 
-![{%}|464](https://www.ituring.com.cn/figures/2025/AppGPT4ChatGPT2nd/025.jpg)
+![{%}|408](https://www.ituring.com.cn/figures/2025/AppGPT4ChatGPT2nd/025.jpg)
 
 **图 2-6：温度对词元概率分布的影响**
 
@@ -203,12 +247,11 @@ create 方法参数：
 
 在前面的例子中，0.1 的 top-p 采样和 1 的温度，将只保留前三个词元，因为“a”“still”和“not”的概率总和超过了 0.1，如图 2-7 所示。
 
-![{%}|536](https://www.ituring.com.cn/figures/2025/AppGPT4ChatGPT2nd/026.jpg)
+![{%}|448](https://www.ituring.com.cn/figures/2025/AppGPT4ChatGPT2nd/026.jpg)
 
 **图 2-7：top-p 采样对词元概率分布的影响**
 
 因此，在一致的输出和创造性的输出之间进行选择时，这两个参数非常有用。我们在这里推荐一些示例，但在你自己的项目上进行试验总是最好的。
-
 - 对于需要保持内容和风格一致的事实性输出，请选择低 `temperature` 和低 `top_p` 。
 	- 例如，在代码生成中， `temperature = 0.1, top_p = 0.1` 。
 - 对于事实重要但表述方式不那么重要的输出，使用较低的 `top_p` ，但提高 `temperature` ，以获得更自然和引人入胜的输出。
@@ -218,7 +261,7 @@ create 方法参数：
 
 即使在最低的 top-p 和温度值下，OpenAI 也并不保证确定性，但输出更有可能高度一致。 `seed` 参数是获得确定性输出的解决方案
 
-### 聊天补全端点的输出结果格式
+### 4.7. 聊天补全端点的输出结果格式
 
 现在你已经有了查询基于聊天的模型所需的信息，让我们看看如何使用这些结果。
 
@@ -248,7 +291,7 @@ ChatCompletion(
 
 > 　如果你想在多个响应间进行选择，使用了一个大于 1 的 `n` 参数，你会发现 `prompt_tokens` 值不会改变，但 `completion_tokens` 的值将大致乘以 `n` 。
 
-### 视觉能力:：多模态
+### 4.8. 视觉能力:：多模态
 
 gpt-4-turbo 支持 PNG（.png）、JPEG（.jpeg 和.jpg）、WEBP（.webp）和非动画 GIF（.gif）格式图像，每张图像最大为 `20 MB`。
 
@@ -316,7 +359,7 @@ response = client.chat.completions.create(
 )
 ```
 
-### 请求 JSON 输出
+### 4.9. 请求 JSON 输出
 
 这个方案相当简单：将 `response_format` 参数设置为 `{"type": "json_object"}` 。此外，指示模型在消息中使用 JSON 输出格式。例如：
 
@@ -351,7 +394,7 @@ response = client.chat.completions.create(
 > [!info]  
 > 其他需要时查文档就好了，知道可以要求输入的格式就好
 
-## 使用其他文本补全模型
+## 5. 使用其他文本补全模型
 
 **文本补全**和**聊天补全**之间有一个重要区别：
 - 二者都生成文本
@@ -377,13 +420,13 @@ print(response.choices[0].text)
 "\n\nIt's a pleasure to meet you. I'm new to the world"
 ```
 
-### 文本补全端点的输入选项
+### 5.1. 文本补全端点的输入选项
 
 `completions.create` 的输入选项集与此前提到的聊天端点的非常相似
 
 ![{%}|608](https://www.ituring.com.cn/figures/2025/AppGPT4ChatGPT2nd/030.jpg)
 
-### 文本补全端点的输出结果格式
+### 5.2. 文本补全端点的输出结果格式
 
 现在，你已拥有查询基于文本的模型所需的所有信息，你会发现结果与聊天端点的结果非常相似。以下是将其用于我们的“Hello World”示例的输出：
 
@@ -409,13 +452,13 @@ Completion(
 
 > 　这个输出与我们从聊天模型中得到的非常相似。唯一的区别在于 `Choice` 对象：没有包含 `content` 和 `role` 属性的消息，而是一个简单的 `text` 属性，包含模型生成的补全内容。
 
-## 注意事项
+## 6. 注意事项
 
 在大规模使用 API 之前，你应该考虑两个重要因素：**成本和数据隐私**
 
-## 其他 OpenAI API 和功能
+## 7. 其他 OpenAI API 和功能
 
-### 嵌入 (Embedding)
+### 7.1. 嵌入 (Embedding)
 
 - 将高维或离散数据映射到低维连续向量空间的特定技术
 - 嵌入的原理是以某种方式有意义地表示文本字符串，以捕捉它们的语义相似度
@@ -443,7 +486,7 @@ result = client.embeddings.create(
 result.data[0].embedding
 ```
 
-### 审核
+### 7.2. 审核
 
 OpenAI 提供了一个审核模型，用于检查内容是否符合使用政策，
 
@@ -459,7 +502,9 @@ OpenAI 提供了一个审核模型，用于检查内容是否符合使用政策�
 - 暴力
 - 暴力 / 详细描绘
 
-审核模型的端点是 `moderations.create`，只有两个可用参数：模型和输入文本。内容审核模型有两个。默认是 text-moderation-latest 10 ，它会随时自动更新，以确保你始终使用最准确的模型。另一个模型是 text-moderation-stable
+审核模型的端点是 `moderations.create`，只有两个可用参数：模型和输入文本。内容审核模型有两个。
+
+默认是 text-moderation-latest 10 ，它会随时自动更新，以确保你始终使用最准确的模型。另一个模型是 text-moderation-stable
 
 以下是使用审核模型的示例：
 
@@ -469,12 +514,12 @@ client = OpenAI()
 
 # 调用 openai 审核端点的 text-moderation-latest 模型
 response = client.moderations.create(
-model="text-moderation-latest",
-input="I want to kill my neighbor."
+	model="text-moderation-latest",
+	input="I want to kill my neighbor."
 )
 ```
 
-### 文本转语音
+### 7.3. 文本转语音
 
 目前 OpenAI 有两个可用 TTS 模型：tts-1 和 tts-1-hd。tts-1 是标准模型，经过优化以提高速度
 
@@ -492,11 +537,12 @@ response.stream_to_file("speech.mp3")
 ```
 
 详细参数如下图：  
+
 ![{%}|600](https://www.ituring.com.cn/figures/2025/AppGPT4ChatGPT2nd/033.jpg)
 
-### 语音转文本
+### 7.4. 语音转文本
 
-Whisper 是一个多功能的语音识别模型。有开源版本，可以搜索
+`Whisper` 是一个多功能的语音识别模型。有开源版本，可以搜索
 
 这是转录 API 的一个使用示例：
 
@@ -515,7 +561,7 @@ transcript.text
 
 ![{%}|416](https://www.ituring.com.cn/figures/2025/AppGPT4ChatGPT2nd/034.jpg)
 
-### 图像 API
+### 7.5. 图像 API
 
 OpenAI 提供的图像 API 提供了三种方法来处理文本中的图像。
 

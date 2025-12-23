@@ -2,6 +2,7 @@
 [更新日志](post/tjvg7663x9.md)
 # 第一部分 博客
   - [2025](post/x61vqbdbfk.md)
+    - [周报v015：要完美地毁掉向AI领域的职业转型，最有效的方法是什么？](post/8svt8r1xcj.md)
     - [周报v014：通过专业深度获得自主和安全感](post/yxih13ky8g.md)
     - [精读：十问 Agent Skills，一场围绕 AI 编码新范式的深度研讨](post/zs88fklx2c.md)
     - [翻译：Anthropic 内部如何通过 AI 变革工作方式](post/y5uhusjf84.md)
@@ -45,8 +46,9 @@
     - [《大模型应用开发极简入门》](post/i561vgvmh3.md)
       - [名词解释：LLM、Transformer 架构、注意力机制、编码器与解码器、词云化、温度、图片词云](post/1zrzc3l9d9.md)
       - [为什么GPT 的翻译效果也挺好？](post/rocegczc63.md)
-      - [GPT-1 介绍](post/oaxka5dvwg.md)
+      - [GPT-1 介绍：监督学习 → 无监督学习（预测下一个字） →  再微调](post/8olq9z62tq.md)
       - [深入了解 OpenAI API](post/i2dl6w1kot.md)
+      - [构建基于 LLM 的应用程序：功能与挑战](post/metjalh2l4.md)
   - [Agent](post/hrz5mw7qq9.md)
     - [Agent 是什么](post/emx24o8byi.md)
     - [Agent 工程架构图](post/rufm5fcbjz.md)
