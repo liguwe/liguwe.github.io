@@ -48,7 +48,7 @@
       - [为什么GPT 的翻译效果也挺好？](post/rocegczc63.md)
       - [GPT-1 介绍：监督学习 → 无监督学习（预测下一个字） →  再微调](post/8olq9z62tq.md)
       - [深入了解 OpenAI API](post/i2dl6w1kot.md)
-      - [构建基于 LLM 的应用程序：功能与挑战](post/metjalh2l4.md)
+      - [如何构建基于 Redis 的 RAG 系统、如何意图识别？](post/9abwio6usu.md)
   - [Agent](post/hrz5mw7qq9.md)
     - [Agent 是什么](post/emx24o8byi.md)
     - [Agent 工程架构图](post/rufm5fcbjz.md)
