@@ -12,7 +12,7 @@ RAG 系统（Retrieval-Augmented Generation）通过结合 “私有数据检索
 <!-- toc -->
  ## 整体流程 
 
-![image.png|713](https://832-1310531898.cos.ap-beijing.myqcloud.com/202520251223095037949.png)
+![image.png|585](https://832-1310531898.cos.ap-beijing.myqcloud.com/202520251223095037949.png)
 
 ## 1. 核心数据流转表
 
