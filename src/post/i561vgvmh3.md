@@ -5,7 +5,7 @@
 
 > 书名：《大模型应用开发极简入门：基于GPT-4和ChatGPT（第2版）》
 
-![image.png|536](https://832-1310531898.cos.ap-beijing.myqcloud.com/202520250724094755506.png)
+![image.png|344](https://832-1310531898.cos.ap-beijing.myqcloud.com/202520250724094755506.png)
 
 
 ## 目录
