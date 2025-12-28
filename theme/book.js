@@ -11,19 +11,19 @@
     document.documentElement.style.setProperty("--sidebar-width", width);
 
     // 页面加载时显示警示信息 - 每小时最多一次
-    const now = Date.now();
-    const lastAlertTime = localStorage.getItem("lastAlertTime");
-    // 每 1 小时最多显示一次
-    const interval = 1 * 60 * 60 * 1000;
-    if (!lastAlertTime || now - parseInt(lastAlertTime) > interval) {
-      alert(
-        `请回答：\n1、此刻，你还在计划吗？\n2、今天，你正在交付什么？\n3、不知道？先把那几本大模型的书看完！`
-      );
-      alert(
-        `请警惕：\n1、你沉迷于"重启"的快感，用"计划"本身来逃避"开始"\n2、你对工具的"洁癖"，是你对失控人生的"掌控欲"补偿\n3、你已经把"准备"和"反思"本身，当成了"努力"的结果\n4、于是，你陷入了"计划 → 失控 → 自责 → 报复式计划" 的内耗循环`
-      );
-      localStorage.setItem("lastAlertTime", now.toString());
-    }
+    // const now = Date.now();
+    // const lastAlertTime = localStorage.getItem("lastAlertTime");
+    // // 每 1 小时最多显示一次
+    // const interval = 1 * 60 * 60 * 1000;
+    // if (!lastAlertTime || now - parseInt(lastAlertTime) > interval) {
+    //   alert(
+    //     `请回答：\n1、此刻，你还在计划吗？\n2、今天，你正在交付什么？\n3、不知道？先把那几本大模型的书看完！`
+    //   );
+    //   alert(
+    //     `请警惕：\n1、你沉迷于"重启"的快感，用"计划"本身来逃避"开始"\n2、你对工具的"洁癖"，是你对失控人生的"掌控欲"补偿\n3、你已经把"准备"和"反思"本身，当成了"努力"的结果\n4、于是，你陷入了"计划 → 失控 → 自责 → 报复式计划" 的内耗循环`
+    //   );
+    //   localStorage.setItem("lastAlertTime", now.toString());
+    // }
   } catch (e) {
     console.error(e);
   }
