@@ -10,11 +10,11 @@
 
 - 前言
 	- [0. 前言](/post/ox0zmp6kar.html)
-	- [2. Conda 是什么？](/post/0udozxe96w.html)
-	- [3. 关于如何选择 GPU](/post/eq3xq65nw5.html)
+	- [2. Conda 是什么？](/post/vtezrae4vw.html)
+	- [3. 关于如何选择 GPU](/post/w4j27ptl6d.html)
 - 第 1 章　大语言模型简介
-	- [10. “语言人工智能” 的演化](/post/cddr917tjc.html)
-	- [11.  什么是 NPC ？](/post/nscq3aq2si.html)
-	- [12.  Transformer 中的 “作弊”](/post/wniff39gem.html)
+	- [10. “语言人工智能” 的演化](/post/p3ctyxbo3h.html)
+	- [11.  什么是 NPC ？](/post/knudu7dfzq.html)
+	- [12.  Transformer 中的 “作弊”](/post/bfi92ca1kd.html)
 - 第 2 章　词元和嵌入
 	- 
