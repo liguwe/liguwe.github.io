@@ -29,6 +29,7 @@
       - [精读：十问 Agent Skills，一场围绕 AI 编码新范式的深度研讨](post/0kc6dgplgz.md)
       - [翻译：Anthropic 内部如何通过 AI 变革工作方式](post/pdktfs3m8e.md)
     - [播客](post/mut761tnzk.md)
+      - [播客：AI 是一面镜子，照见人类最后的价值](post/zgn70ijwiz.md)
   - [2024](post/7y19ph3zui.md)
     - [播客：AI 时代的频率跃迁背景下个人的选择：高频的卷或低频的定](post/b9byavruzv.md)
     - [播客：张云帆的芒格之道](post/ibnh7f92da.md)
