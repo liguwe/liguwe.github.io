@@ -120,6 +120,9 @@
       - [利用嵌入向量的分类任务](post/lyacf8nvh1.md)
       - [余弦相似度如何衡量高维向量的接近度](post/5unvct9a0b.md)
       - [使用生成模型进行文本分类](post/xfzlj3abdd.md)
+    - [文本聚类和主题建模](post/alkdnpnknr.md)
+      - [文本聚类的通用流程](post/ra3ihrhngx.md)
+      - [从文本聚类到主题建模：给数据“贴标签”的艺术](post/yqycf16on3.md)
 # 第三部分 前端
   - [前言](post/f4tnhtibrv.md)
   - [前端基础](post/hjhi0u1uy7.md)
