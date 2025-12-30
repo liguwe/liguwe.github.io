@@ -2,7 +2,8 @@
 [更新日志](post/tjvg7663x9.md)
 # 第一部分 博客
   - [2025](post/x61vqbdbfk.md)
-    - [周报](post/ui129ky6uz.md)
+    - [周报](post/39lc5uwt7c.md)
+      - [周报v016：普通人与 AI，别被 AI 淹没了](post/ui129ky6uz.md)
       - [周报v015：要完美地毁掉向AI领域的职业转型，最有效的方法是什么？](post/tttfh30kzc.md)
       - [周报v014：通过专业深度获得自主和安全感](post/cl6nqmpz09.md)
       - [周报v013：今天，最小的输出是什么？](post/eldcebo3e9.md)
