@@ -105,6 +105,10 @@
       - [通过缓存键-值加速生成过程](post/ldj3e1ghl3.md)
       - [Transformer 块的内部结构](post/qjdd536xct.md)
       - [Transformer 架构的最新改进](post/62nhdej7yf.md)
+    - [文本分类](post/0djs9mn3r3.md)
+      - [电影评论的情感分析](post/t49sc3xnrb.md)
+      - [使用表示模型进行文本分类](post/zsuxlaghd4.md)
+      - [模型选择](post/ck7f37wq5k.md)
 # 第三部分 前端
   - [前言](post/f4tnhtibrv.md)
   - [前端基础](post/hjhi0u1uy7.md)
