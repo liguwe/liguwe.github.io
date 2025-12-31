@@ -76,7 +76,7 @@ years = dataset["Years"]  # 发表年份
 
 >  [2. 文本聚类的通用流程](/post/ra3ihrhngx.html)
 
-## 5.3　从文本聚类到主题建模
+## 从文本聚类到主题建模
 
 > 详见 [3. 从文本聚类到主题建模：给数据“贴标签”的艺术](/post/yqycf16on3.html)
 
