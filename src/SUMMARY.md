@@ -140,6 +140,11 @@
       - [语义搜索与RAG技术全景](post/2xpeq1ktxr.md)
       - [语言模型驱动的语义搜索实践](post/0tx5jxa6my.md)
       - [RAG（检索增强生成）](post/94z1807pj5.md)
+    - [多模态 LLM](post/cgyeanrtl9.md)
+      - [视觉Transformer](post/sl9zl6pxhb.md)
+      - ["线性层投影成嵌入向量"的详细解释](post/h15q7jizk6.md)
+      - [多模态嵌入模型 - 让AI同时理解图片和文字](post/74boh33l6f.md)
+      - [让文本生成模型具备多模态能力](post/w7ikzpy681.md)
 # 第三部分 前端
   - [前言](post/f4tnhtibrv.md)
   - [前端基础](post/hjhi0u1uy7.md)
