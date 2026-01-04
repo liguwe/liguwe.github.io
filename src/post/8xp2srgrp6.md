@@ -538,7 +538,8 @@ def generate_file():
 ```
 
 **访问文档字符串：**
-```python
+
+```python hl:2
 help(generate_file)
 print(generate_file.__doc__)
 ```
@@ -652,10 +653,3 @@ for file in Path(".").glob("*.py"):
 2. **扩展**：添加进度条显示（使用 `tqdm` 库）
 3. **优化**：使用 `pathlib` 重写路径操作
 4. **错误处理**：添加重试机制（使用 `tenacity` 库）
-
----
-
-**推荐阅读：**
-- [Python 官方教程 - 文件 I/O](https://docs.python.org/3/tutorial/inputoutput.html)
-- [Requests 库文档](https://docs.python-requests.org/)
-- [Python PEP 8 代码风格指南](https://peps.python.org/pep-0008/)
