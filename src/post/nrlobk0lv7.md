@@ -10,9 +10,9 @@
 <!-- toc -->
  ## 第一步：构建“词汇表” (Vocabulary) 
 
-在大模型眼里，单词就是数字。首先我们需要扫描训练数据，建立一个“单词 -> ID”的映射字典。
+在大模型眼里，单词就是数字。首先我们需要扫描训练数据，建立一个“`单词` -> `ID`”的映射字典。
 
-![{%}](https://www.ituring.com.cn/figures/2025/LargeLanguageModel/015.jpg)
+![{%}|864](https://www.ituring.com.cn/figures/2025/LargeLanguageModel/015.jpg)
 
 
 ```python
@@ -32,6 +32,7 @@ print(f"词汇表大小: {vocab_size}")
 # enumerate 会产生 (0, 'I'), (1, 'Jack')... 这样的对
 vocab = {token: integer for integer, token in enumerate(all_words)}
 
+
 # 打印前 5 个看看长什么样
 for i, item in enumerate(vocab.items()):
     print(item)
@@ -45,9 +46,43 @@ for i, item in enumerate(vocab.items()):
 # ...
 ```
 
+
+### 一些语法忘了
+
+enumerate 
+
+```python hl:4
+# 假设
+all_words = ['!', 'always', 'thought']
+
+# enumerate(all_words) 会产生类似下面这样的数据对：
+# (0, '!')
+# (1, 'always')
+# (2, 'thought')
+```
+
+`vocab = {token: integer for integer, token in enumerate(all_words)}`
+- **循环体**：`for integer, token in enumerate(all_words)`（遍历带序号的单词列表）。
+- **结果定义**：`token : integer`（单词作为 **Key**，序号作为 **Value**）
+
+等价于 
+
+```python
+# %%
+vocab = {} # 先建个空字典
+
+# integer 拿的是索引（0, 1, 2...）
+# token 拿的是单词（'!', 'thought'...）
+for integer, token in enumerate(all_words):
+    vocab[token] = integer # 存入字典：{'!': 0, 'thought': 1 ...}
+```
+
+>  另外更多可参考 [5. Python 字典推导式与 enumerate 用法详解](/post/vzrcmybi1t.html)
+
+
 ## 第二步：实现分词器类 `SimpleTokenizerV1`
 
-![{%}](https://www.ituring.com.cn/figures/2025/LargeLanguageModel/016.jpg)
+![{%}|728](https://www.ituring.com.cn/figures/2025/LargeLanguageModel/016.jpg)
 
 这是本节最核心的代码（代码清单 2-3）。这个类封装了两个功能：
 
