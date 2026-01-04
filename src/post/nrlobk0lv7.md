@@ -14,7 +14,6 @@
 
 ![{%}|864](https://www.ituring.com.cn/figures/2025/LargeLanguageModel/015.jpg)
 
-
 ```python
 # 假设这是上一节处理好的分词结果（书中使用的是《The Verdict》这本小说）
 # 这里模拟一部分数据，展示逻辑
@@ -45,7 +44,6 @@ for i, item in enumerate(vocab.items()):
 # ("'", 2)
 # ...
 ```
-
 
 ### 一些语法忘了
 
@@ -78,7 +76,6 @@ for integer, token in enumerate(all_words):
 ```
 
 >  另外更多可参考 [5. Python 字典推导式与 enumerate 用法详解](/post/vzrcmybi1t.html)
-
 
 ## 第二步：实现分词器类 `SimpleTokenizerV1`
 
@@ -152,8 +149,6 @@ print("解码后的文本:", decoded_text)
 # 输出: '" It\' s the last he painted, you know," Mrs. Gisburn said with pardonable pride.'
 ```
 
-
-
 **2. 致命 Bug 演示 (KeyError)：**
 
 如果你输入训练数据（那本小说）里没有的词，代码会直接崩溃。
@@ -175,5 +170,3 @@ KeyError: 'Hello'
 **原因分析：** 在 `encode` 方法中，执行 `self.str_to_int[s]` 时，字典里找不到 `'Hello'` 这个键，所以 Python 抛出了 `KeyError`。
 
 这也引出了下一节（2.4节）的解决方案：我们需要引入一个特殊的 `<|unk|>` (Unknown) 词元来代表所有没见过的词，防止程序崩溃。
-
-

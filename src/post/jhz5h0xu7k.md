@@ -76,6 +76,13 @@ class SimpleTokenizerV2:
         return ids  
 ```
 
+- **条件部分**: `item if item in self.str_to_int`
+    - 这是一个条件检查，判断当前 `item` 是否存在于 `self.str_to_int` 中。
+- **如果条件为真**: `item`
+    - 如果 `item` 存在于 `self.str_to_int`，则将 `item` 保持不变（即保留原词元）。
+- **如果条件为假**: `"<|unk|>"`
+    - 如果 `item` 不存在于 `self.str_to_int`，则将其替换为 `"<|unk|>"`。通常 `"<|unk|>"` 是表示未知词元的占位符（token）。
+
 ## 5. 特殊词元的应用场景
 
 • 处理未登录词汇  

@@ -166,7 +166,6 @@
       - [使用滑动窗口进行数据采样](post/qhp5rzts91.md)
       - [创建词元嵌入：将离散词元转换为连续向量表示](post/gyv9ifqaad.md)
       - [编码单词位置信息：为词元嵌入添加位置感知能力](post/uz4877rghl.md)
-      - [视频导读](post/1sqsud7b6i.md)
     - [编码注意力机制](post/kb18bwrrsp.md)
       - [长序列建模中的问题](post/9b667bgzz0.md)
       - [长序列建模中的问题：传统模型处理序列数据的局限性](post/cdzakn44dq.md)
