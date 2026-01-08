@@ -3,7 +3,7 @@
 # 第一部分 博客
   - [2026](post/kmy6516u5a.md)
     - [周报](post/kkwvpyzac8.md)
-      - [周报v17：卸载、](post/zm3twqmph9.md)
+      - [周报v17：卸载，减负](post/qv3336cdcc.md)
   - [2025](post/btht7jqnp6.md)
     - [周报](post/vto5mwysn1.md)
       - [周报v016：普通人与 AI，别被 AI 淹没了](post/h69wswc1wr.md)
@@ -61,7 +61,7 @@
     - [Agent 的进化之路](post/jcaavcnh2o.md)
   - [claude code](post/vn1fy9x584.md)
     - [Claude Code 快速上手指南：从安装到实战](post/2p30w3jtn0.md)
-    - [Claude Code 常见工作流程指南](post/b0lfifcgb4.md)
+    - [常见工作流程](post/en1njjty9n.md)
   - [《大模型应用开发极简入门》](post/y9venoapl2.md)
     - [名词解释：LLM、Transformer 架构、注意力机制、编码器与解码器、词云化、温度、图片词云](post/3yvj8vwbof.md)
     - [为什么GPT 的翻译效果也挺好？](post/cf0bkbtmyo.md)
