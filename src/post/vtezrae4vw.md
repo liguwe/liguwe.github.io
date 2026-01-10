@@ -12,6 +12,8 @@
 
 **作用** 为不同项目创建隔离的开发环境
 
+> 另外可参考 [2. Jupyter、.ipynb、Jupyter Notebook、JupyterLab、uv run 等的概念](/post/39zm3eqk9q.html)
+
 ## 问题场景：为什么需要 Conda？
 
 ```python
@@ -24,7 +26,7 @@
 
 ## 💡 核心理解
 
-```
+```bash
 Conda = 虚拟的"独立电脑"
 
 每个项目有自己的：
@@ -141,7 +143,7 @@ conda env create -f environment.yml
 
 ## 与你学习 LLM 的关系 → 为本书创建专属环境
 
-```
+```bash
 你的学习路径：
 《大模型应用开发极简入门》
          ↓
