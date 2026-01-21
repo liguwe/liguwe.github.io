@@ -9,7 +9,8 @@
  ## 1. 定义 
 
 - **Jupyter**（通常指 Jupyter Notebook 或 JupyterLab）是数据科学和 AI 开发领域的“**实验室**”。
-- 你可以把它理解为一个**增强版的 Web 交互式 REPL**。它不仅仅能运行代码，还能将代码、运行结果（如图像、表格）、数学公式和 Markdown 文档完美融合在一个文件（`.ipynb`）中。
+- 你可以把它理解为一个**增强版的 Web 交互式 REPL**。
+	- 它不仅仅能运行代码，还能将代码、运行结果（如图像、表格）、数学公式和 Markdown 文档完美融合在一个文件（`.ipynb`）中。
 
 ## 2. 为什么 AI 开发离不开它？
 
@@ -67,7 +68,7 @@ uv run jupyter lab
 
 ## 5. VS Code 里安装 "Jupyter" 扩展
 
-你会发现 VS Code 对 Jupyter 的支持非常好。你不需要在浏览器运行，直接在 VS Code 里安装 "Jupyter" 扩展，就可以像编辑普通代码一样打开 `.ipynb 文件`，同时还能享受 Copilot 的强力辅助。
+你会发现 VS Code 对 Jupyter 的支持非常好。你不需要在浏览器运行，直接在 VS Code 里安装 "Jupyter" 扩展，就可以像编辑普通代码一样打开 `.ipynb 文件`，同时还能享受 Copilot 的强力辅助
 
 ---
 

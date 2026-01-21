@@ -63,7 +63,7 @@ xxx
 - **官方渠道**：前往 [Python.org](https://www.python.org/) 下载。
 - **包管理器（推荐）**：macOS 用户可以使用 Homebrew：
 
-```
+```bash
 brew install python@3.11
 ```
 
@@ -79,7 +79,7 @@ brew install python@3.11
 - **兼容性高**：它提供了 `uv pip` 接口，语法与 Pip 几乎完全一致。
 - **安装简单**：
 
-```
+```bash
 pip install uv
 ```
 
@@ -132,10 +132,12 @@ uv run jupyter lab
 如果你更喜欢在云端运行，可以利用 UV 快速配置 Colab 环境：
 
 1. 在 Notebook 单元格中输入：
+
     ```Python
     !pip install uv
     !uv pip install --system -r https://raw.githubusercontent.com/rasbt/LLM-from-scratch/main/requirements.txt
     ```
+
 2. 注意：在 `Colab` 中无需创建虚拟环境，直接使用 `--system` 参数安装即可。
 
 ---
