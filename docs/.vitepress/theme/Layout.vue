@@ -2,7 +2,7 @@
 import { Github, Menu, Moon, Search, Sun } from 'lucide-vue-next'
 import { Content, inBrowser, useData, useRoute, withBase } from 'vitepress'
 import { computed, nextTick, onBeforeUnmount, onMounted, ref, watch } from 'vue'
-import ZedLogo from './components/ZedLogo.vue'
+import SiteLogo from './components/SiteLogo.vue'
 import { categories, posts } from './posts'
 
 const { frontmatter, page, isDark } = useData()
@@ -164,7 +164,7 @@ onBeforeUnmount(() => {
             class="container-max-w relative isolate z-[2] flex w-full flex-1 items-center justify-between gap-4 pl-3 pr-3 lg:gap-0 lg:pl-3.5 [--node-horizontal-offset:-3.5px]"
           >
             <div class="flex flex-none items-center">
-              <ZedLogo />
+              <SiteLogo />
             </div>
 
             <ul class="ml-auto hidden list-none items-center gap-1.5 lg:m-0 lg:flex" aria-orientation="horizontal">

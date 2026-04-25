@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <defs>
+    <pattern
+      id="favicon-hatch"
+      width="2.25"
+      height="2.25"
+      patternUnits="userSpaceOnUse"
+    >
+      <line
+        x1="0"
+        y1="2.12"
+        x2="2.25"
+        y2="2.12"
+        stroke="#1e69f6"
+        stroke-width="0.5"
+        opacity="0.42"
+      />
+    </pattern>
+    <pattern
+      id="favicon-microgrid"
+      width="7"
+      height="7"
+      patternUnits="userSpaceOnUse"
+    >
+      <path
+        d="M0 7V0H7"
+        stroke="#1e69f6"
+        stroke-width="0.35"
+        opacity="0.14"
+      />
+    </pattern>
+    <clipPath id="favicon-eight-clip">
+      <path
+        fill="black"
+        fill-rule="evenodd"
+        d="M16 7.25c-3.05 0-5.5 2.28-5.5 5.1 0 1.55.72 2.95 1.85 3.85a.42.42 0 0 1 0 .68c-1.13.9-1.85 2.3-1.85 3.85 0 2.82 2.45 5.1 5.5 5.1s5.5-2.28 5.5-5.1c0-1.55-.72-2.95-1.85-3.85a.42.42 0 0 1 0-.68c1.13-.9 1.85-2.3 1.85-3.85 0-2.82-2.45-5.1-5.5-5.1zm0 2.05c1.68 0 3.05 1.32 3.05 2.95s-1.37 2.95-3.05 2.95-3.05-1.32-3.05-2.95 1.37-2.95 3.05-2.95zm0 7.9c1.68 0 3.05 1.32 3.05 2.95s-1.37 2.95-3.05 2.95-3.05-1.32-3.05-2.95 1.37-2.95 3.05-2.95z"
+      />
+    </clipPath>
+    <clipPath id="favicon-frame-inner">
+      <rect x="3.35" y="3.35" width="25.3" height="25.3" rx="5.65" />
+    </clipPath>
+  </defs>
+  <rect width="32" height="32" rx="7" fill="#121316" />
+  <g clip-path="url(#favicon-frame-inner)">
+    <rect width="32" height="32" fill="url(#favicon-microgrid)" />
+  </g>
+  <rect
+    x="2.25"
+    y="2.25"
+    width="27.5"
+    height="27.5"
+    rx="6"
+    fill="none"
+    stroke="#1e69f6"
+    stroke-width="1.65"
+  />
+  <g clip-path="url(#favicon-eight-clip)">
+    <rect x="6" y="5" width="20" height="22" fill="url(#favicon-hatch)" />
+  </g>
+  <path
+    fill="none"
+    stroke="#1e69f6"
+    stroke-width="1.15"
+    stroke-linejoin="round"
+    d="M16 7.25c-3.05 0-5.5 2.28-5.5 5.1 0 1.55.72 2.95 1.85 3.85a.42.42 0 0 1 0 .68c-1.13.9-1.85 2.3-1.85 3.85 0 2.82 2.45 5.1 5.5 5.1s5.5-2.28 5.5-5.1c0-1.55-.72-2.95-1.85-3.85a.42.42 0 0 1 0-.68c1.13-.9 1.85-2.3 1.85-3.85 0-2.82-2.45-5.1-5.5-5.1zm0 2.05c1.68 0 3.05 1.32 3.05 2.95s-1.37 2.95-3.05 2.95-3.05-1.32-3.05-2.95 1.37-2.95 3.05-2.95zm0 7.9c1.68 0 3.05 1.32 3.05 2.95s-1.37 2.95-3.05 2.95-3.05-1.32-3.05-2.95 1.37-2.95 3.05-2.95z"
+  />
+  <path
+    stroke="#1e69f6"
+    stroke-width="0.95"
+    stroke-linecap="round"
+    opacity="0.9"
+    d="M11.2 15.9h3.2M17.6 15.9h3.2"
+  />
+</svg>
