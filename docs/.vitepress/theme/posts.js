@@ -20,12 +20,8 @@ export const posts = [
     newest: true,
     author: 'Liguwe',
     authorHandle: 'liguwe',
+    authorUrl: 'https://github.com/liguwe',
     initials: 'L',
-    headings: [
-      { id: '为什么先改主题', title: '为什么先改主题' },
-      { id: '把页面当作编辑器', title: '把页面当作编辑器' },
-      { id: '下一步', title: '下一步' },
-    ],
   },
   {
     id: '9999-0001',
@@ -39,12 +35,8 @@ export const posts = [
     featured: true,
     author: 'Liguwe',
     authorHandle: 'liguwe',
+    authorUrl: 'https://github.com/liguwe',
     initials: 'L',
-    headings: [
-      { id: '反馈不是装饰', title: '反馈不是装饰' },
-      { id: '暗色模式的边界', title: '暗色模式的边界' },
-      { id: '小结', title: '小结' },
-    ],
   },
   {
     id: '9999-0002',
@@ -58,12 +50,8 @@ export const posts = [
     featured: true,
     author: 'Liguwe',
     authorHandle: 'liguwe',
+    authorUrl: 'https://github.com/liguwe',
     initials: 'L',
-    headings: [
-      { id: '先整理入口', title: '先整理入口' },
-      { id: '再整理节奏', title: '再整理节奏' },
-      { id: '保留松弛感', title: '保留松弛感' },
-    ],
   },
   {
     id: '9999-0003',
@@ -77,8 +65,8 @@ export const posts = [
     featured: false,
     author: 'Liguwe',
     authorHandle: 'liguwe',
+    authorUrl: 'https://github.com/liguwe',
     initials: 'L',
-    headings: [],
   },
   {
     id: '9999-0004',
@@ -92,8 +80,8 @@ export const posts = [
     featured: false,
     author: 'Liguwe',
     authorHandle: 'liguwe',
+    authorUrl: 'https://github.com/liguwe',
     initials: 'L',
-    headings: [],
   },
   {
     id: '9999-0005',
@@ -107,7 +95,7 @@ export const posts = [
     featured: false,
     author: 'Liguwe',
     authorHandle: 'liguwe',
+    authorUrl: 'https://github.com/liguwe',
     initials: 'L',
-    headings: [],
   },
 ]

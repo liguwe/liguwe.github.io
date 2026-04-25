@@ -20,6 +20,12 @@
   "homepage": "https://github.com/liguwe/liguwe.github.io#readme",
   "description": "",
   "dependencies": {
+    "@fontsource-variable/inter": "^5.2.8",
+    "@fontsource/ibm-plex-mono": "^5.2.7",
+    "@fontsource/ibm-plex-serif": "^5.2.7",
+    "@tailwindcss/vite": "^4.2.4",
+    "lucide-vue-next": "^1.0.0",
+    "tailwindcss": "^4.2.4",
     "vitepress": "^1.6.4",
     "vue": "^3.5.33"
   }
