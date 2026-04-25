@@ -117,6 +117,13 @@
     line-height: 1.25;
   }
 
+  /* zed-detail SingleFile：文章页主标题 */
+  .h1 {
+    font-size: clamp(2.1rem, 1.65rem + 2.5vw, 2.4rem);
+    font-weight: 340;
+    line-height: 1.2;
+  }
+
   .h6 {
     font-size: clamp(0.875rem, 0.8rem + 0.35vw, 0.95rem);
     line-height: 1.1;
