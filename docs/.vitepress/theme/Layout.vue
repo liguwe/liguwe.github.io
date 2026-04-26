@@ -289,9 +289,9 @@ onBeforeUnmount(() => {
                   xmlns="http://www.w3.org/2000/svg"
                 >
                   <defs>
-                    <!-- 仅水平线：避免与下方文章列表区竖向轨条错位的「假竖线」 -->
-                    <pattern id="zed-hero-line-grid" width="8" height="8" patternUnits="userSpaceOnUse">
-                      <line x1="0" y1="0.5" x2="8" y2="0.5" stroke="currentColor" stroke-width="1" />
+                    <!-- 与 zed-blog.html 一致：8×8 平铺的 L 形描边，横竖线交错成格 -->
+                    <pattern id="zed-hero-line-grid" width="8" height="8" patternUnits="userSpaceOnUse" x="-1" y="-1">
+                      <path d="M.5 8V.5H8" fill="none" stroke="currentColor" stroke-width="1" />
                     </pattern>
                   </defs>
                   <rect width="100%" height="100%" fill="url(#zed-hero-line-grid)" stroke-width="0" />
