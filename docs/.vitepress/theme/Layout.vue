@@ -107,7 +107,7 @@ onBeforeUnmount(() => {
 
     <div class="relative overflow-x-clip">
       <div
-        class="relative z-10 flex min-h-screen w-screen flex-none flex-col overflow-x-clip transition-[transform,border-radius] duration-[400ms] ease-[cubic-bezier(0.32,0.72,0,1)] [transform-origin:center_top] will-change-transform"
+        class="site-page-shell relative z-10 flex min-h-dvh w-screen flex-col overflow-x-clip transition-[transform,border-radius] duration-[400ms] ease-[cubic-bezier(0.32,0.72,0,1)] [transform-origin:center_top] will-change-transform"
         :class="menuOpen ? 'scale-[0.98] translate-y-1 overflow-hidden rounded-t-lg' : ''"
       >
         <header
@@ -232,7 +232,7 @@ onBeforeUnmount(() => {
         </header>
 
         <main v-if="isHome" class="flex min-h-0 flex-1 flex-col">
-          <section class="outer-section-node-offset relative flex !min-h-fit min-w-0">
+          <section class="outer-section-node-offset relative flex shrink-0 !min-h-fit min-w-0">
             <div
               class="pointer-events-none absolute z-[99] size-1.5 rotate-45 border border-offgray-100 bg-[var(--node-bg)] dark:border-offgray-900 dark:bg-[hsl(219,92%,2%)] [top:calc(-1*var(--node-vertical-offset))] [left:var(--node-horizontal-offset)]"
               aria-hidden="true"
@@ -331,7 +331,7 @@ onBeforeUnmount(() => {
 
           <section
             id="divider-slash"
-            class="relative h-3.5 w-full before:pointer-events-none before:absolute before:top-0 before:right-0 before:-left-[100vw] before:z-[-1] before:h-px before:w-[200vw] before:bg-[color-mix(in_oklch,var(--border),transparent_58%)] after:pointer-events-none after:absolute after:bottom-0 after:right-0 after:-left-[100vw] after:z-[-1] after:h-px after:w-[200vw] after:bg-[color-mix(in_oklch,var(--border),transparent_50%)] dark:before:bg-[color-mix(in_oklch,var(--border),transparent_42%)] dark:after:bg-[color-mix(in_oklch,var(--border),transparent_38%)]"
+            class="relative h-3.5 w-full shrink-0 before:pointer-events-none before:absolute before:top-0 before:right-0 before:-left-[100vw] before:z-[-1] before:h-px before:w-[200vw] before:bg-[color-mix(in_oklch,var(--border),transparent_58%)] after:pointer-events-none after:absolute after:bottom-0 after:right-0 after:-left-[100vw] after:z-[-1] after:h-px after:w-[200vw] after:bg-[color-mix(in_oklch,var(--border),transparent_50%)] dark:before:bg-[color-mix(in_oklch,var(--border),transparent_42%)] dark:after:bg-[color-mix(in_oklch,var(--border),transparent_38%)]"
             aria-hidden="true"
           >
             <svg class="pointer-events-none absolute inset-0 size-full select-none py-[1px] text-offgray-200/70 [z-index:-1] !opacity-30 dark:text-blue-400/10 dark:!opacity-60" xmlns="http://www.w3.org/2000/svg">
@@ -344,7 +344,7 @@ onBeforeUnmount(() => {
             </svg>
           </section>
 
-          <section class="outer-section-node-offset relative flex min-h-0 min-w-0 flex-1">
+          <section class="outer-section-node-offset relative flex min-h-0 min-w-0 flex-1 items-stretch">
             <div
               class="pointer-events-none absolute z-[99] size-1.5 rotate-45 border border-offgray-100 bg-[var(--node-bg)] dark:border-offgray-900 dark:bg-[hsl(219,92%,2%)] [top:calc(-1*var(--node-vertical-offset))] [left:var(--node-horizontal-offset)]"
               aria-hidden="true"
@@ -361,7 +361,7 @@ onBeforeUnmount(() => {
               class="pointer-events-none absolute z-[99] size-1.5 rotate-45 border border-offgray-100 bg-[var(--node-bg)] dark:border-offgray-900 dark:bg-[hsl(219,92%,2%)] [bottom:calc(-1*var(--node-vertical-offset))] [right:var(--node-horizontal-offset)]"
               aria-hidden="true"
             />
-            <span class="relative z-[1] w-4 shrink-0 border-r border-transparent sm:w-6 md:w-12 lg:border-r-0" aria-hidden="true">
+            <span class="relative z-[1] w-4 shrink-0 self-stretch border-r border-transparent sm:w-6 md:w-12 lg:border-r-0" aria-hidden="true">
               <div class="default-border-text-color pointer-events-none absolute top-0 bottom-0 right-[-0.5px] w-[10px] translate-x-1/2">
                 <div class="absolute top-0 bottom-0 left-1/2 flex w-px -translate-x-1/2 flex-col">
                   <div class="w-px flex-[2.8083788164930317] bg-current" />
@@ -369,7 +369,7 @@ onBeforeUnmount(() => {
                 </div>
               </div>
             </span>
-            <span class="relative z-[1] hidden flex-1 border-x border-transparent lg:block" aria-hidden="true">
+            <span class="relative z-[1] hidden flex-1 self-stretch border-x border-transparent lg:block" aria-hidden="true">
               <div class="default-border-text-color pointer-events-none absolute top-0 bottom-0 right-[-0.5px] w-[10px] translate-x-1/2">
                 <div class="absolute top-0 bottom-0 left-1/2 flex w-px -translate-x-1/2 flex-col">
                   <div class="w-px flex-[2.81904649819203] bg-[repeating-linear-gradient(to_bottom,currentColor_0_4px,transparent_4px_8px)]" />
@@ -378,10 +378,10 @@ onBeforeUnmount(() => {
                 </div>
               </div>
             </span>
-            <div class="relative container-max-w max-md:min-w-0 flex min-h-0 flex-1 flex-col">
-              <div class="isolate relative min-h-0 flex-1 overflow-x-clip p-0">
-                <div class="relative grid min-h-full w-full auto-rows-[minmax(0,1fr)] grid-cols-5">
-                  <div class="col-span-5 flex max-w-5xl min-h-full flex-col lg:col-span-1">
+            <div class="relative container-max-w flex max-md:min-w-0 h-full min-h-0 flex-1 flex-col">
+              <div class="isolate relative flex h-full min-h-0 flex-1 flex-col overflow-x-clip p-0">
+                <div class="relative grid h-full min-h-0 w-full flex-1 auto-rows-[minmax(0,1fr)] grid-cols-5">
+                  <div class="col-span-5 flex max-w-5xl h-full min-h-0 flex-col lg:col-span-1">
                     <nav class="max-md:[mask-image:linear-gradient(to_right,black_85%,transparent)] md:[mask-image:none]" aria-label="Blog categories">
                       <div class="sticky top-24 py-10">
                         <div class="subheader text-center lg:text-left px-0 pb-2.5 lg:pl-[15px] border-b lg:border-b-0 default-border-color">
@@ -403,8 +403,8 @@ onBeforeUnmount(() => {
                       </div>
                     </nav>
                   </div>
-                  <div class="col-span-5 flex min-h-full flex-col lg:col-span-4">
-                    <div class="border-l default-border-color flex flex-1 flex-col p-4 lg:p-8">
+                  <div class="col-span-5 flex h-full min-h-0 flex-col lg:col-span-4">
+                    <div class="border-l default-border-color flex h-full min-h-0 flex-1 flex-col p-4 lg:p-8">
                 <a
                   v-for="post in visiblePosts"
                   :key="post.slug"
@@ -443,7 +443,7 @@ onBeforeUnmount(() => {
                 </div>
               </div>
             </div>
-            <span class="relative z-[1] hidden flex-1 border-x border-transparent lg:block" aria-hidden="true">
+            <span class="relative z-[1] hidden flex-1 self-stretch border-x border-transparent lg:block" aria-hidden="true">
               <div class="default-border-text-color pointer-events-none absolute top-0 bottom-0 left-[-0.5px] w-[10px] -translate-x-1/2">
                 <div class="absolute top-0 bottom-0 left-1/2 flex w-px -translate-x-1/2 flex-col">
                   <div class="w-px flex-[2.9101247796370298] bg-[repeating-linear-gradient(to_bottom,currentColor_0_4px,transparent_4px_8px)]" />
@@ -451,7 +451,7 @@ onBeforeUnmount(() => {
                 </div>
               </div>
             </span>
-            <span class="relative z-[1] w-4 shrink-0 border-l border-transparent sm:w-6 md:w-12 lg:border-l-0" aria-hidden="true">
+            <span class="relative z-[1] w-4 shrink-0 self-stretch border-l border-transparent sm:w-6 md:w-12 lg:border-l-0" aria-hidden="true">
               <div class="default-border-text-color pointer-events-none absolute top-0 bottom-0 left-[-0.5px] w-[10px] -translate-x-1/2">
                 <div class="absolute top-0 bottom-0 left-1/2 flex w-px -translate-x-1/2 flex-col">
                   <div class="w-px flex-[4.369975210805412] bg-current" />
@@ -578,7 +578,7 @@ onBeforeUnmount(() => {
             </span>
           </section>
 
-          <section class="outer-section-node-offset relative flex min-h-0 min-w-0 flex-1 border-t default-border-color">
+          <section class="outer-section-node-offset relative flex min-h-0 min-w-0 flex-1 items-stretch border-t default-border-color">
             <div
               class="pointer-events-none absolute z-[99] size-1.5 rotate-45 border border-offgray-100 bg-[var(--node-bg)] dark:border-offgray-900 dark:bg-[hsl(219,92%,2%)] [top:calc(-1*var(--node-vertical-offset))] [left:var(--node-horizontal-offset)]"
               aria-hidden="true"
@@ -614,7 +614,7 @@ onBeforeUnmount(() => {
                 </div>
               </div>
             </span>
-            <div class="relative container-max-w max-md:min-w-0 min-h-0 flex-1 [--node-horizontal-offset:-3.5px]">
+            <div class="relative container-max-w flex max-md:min-w-0 h-full min-h-0 flex-1 flex-col [--node-horizontal-offset:-3.5px]">
               <div
                 class="pointer-events-none absolute z-[99] size-1.5 rotate-45 border border-offgray-100 bg-[var(--node-bg)] dark:border-offgray-900 dark:bg-[hsl(219,92%,2%)] [top:calc(-1*var(--node-vertical-offset))] [left:var(--node-horizontal-offset)] hidden lg:block"
                 aria-hidden="true"
@@ -631,7 +631,7 @@ onBeforeUnmount(() => {
                 class="pointer-events-none absolute z-[99] size-1.5 rotate-45 border border-offgray-100 bg-[var(--node-bg)] dark:border-offgray-900 dark:bg-[hsl(219,92%,2%)] [bottom:calc(-1*var(--node-vertical-offset))] [right:var(--node-horizontal-offset)] hidden lg:block"
                 aria-hidden="true"
               />
-              <div class="isolate relative flex size-full min-w-0 flex-col justify-between gap-10 overflow-clip p-4 lg:flex lg:min-h-0 lg:flex-row-reverse lg:items-start lg:gap-12 lg:gap-x-10 lg:p-12 xl:gap-x-14">
+              <div class="isolate relative flex h-full min-h-0 min-w-0 flex-1 flex-col justify-between gap-10 overflow-clip p-4 lg:flex lg:flex-row-reverse lg:items-start lg:gap-12 lg:gap-x-10 lg:p-12 xl:gap-x-14">
                 <aside
                   class="post-doc-aside sticky top-24 hidden w-[min(272px,32vw)] shrink-0 flex-col gap-4 lg:flex"
                   aria-label="本页目录"
