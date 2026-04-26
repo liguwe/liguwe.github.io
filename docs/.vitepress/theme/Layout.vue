@@ -2,6 +2,7 @@
 import { Github, Menu, Moon, Search, Sun } from 'lucide-vue-next'
 import { Content, inBrowser, useData, useRoute, withBase } from 'vitepress'
 import { computed, nextTick, onBeforeUnmount, onMounted, ref, watch } from 'vue'
+import SiteLogo from './components/SiteLogo.vue'
 import { categories, posts } from './posts'
 
 const { frontmatter, page, isDark } = useData()
@@ -90,12 +91,16 @@ function categoryActive(id) {
   return activeCategory.value === id
 }
 
+function setActiveCategory(id) {
+  activeCategory.value = id
+}
+
 function categoryLinkClass(id) {
-  const base = 'fv-style w-full shrink-0 text-nowrap border-b p-2.5 text-center lg:border-b-0 lg:border-l lg:px-4 lg:py-1 lg:text-left lg:text-wrap focus-visible:[outline-offset:-4px]!'
+  const base = 'p-2.5 lg:px-4 lg:py-1 fv-style w-full shrink-0 text-nowrap lg:text-wrap border-b lg:border-b-0 lg:border-l text-center lg:text-left focus-visible:[outline-offset:-4px]!'
   if (categoryActive(id)) {
-    return `${base} scroll-mt-0 scroll-ml-0 border-accent-blue/50 bg-accent-blue/5 text-accent-blue dark:border-blue-300/40 dark:bg-accent-blue/12 dark:text-blue-400`
+    return `${base} text-accent-blue bg-accent-blue/5 dark:bg-accent-blue/12 border-accent-blue/50 scroll-mt-0 scroll-ml-0 dark:border-blue-300/40 dark:text-blue-400`
   }
-  return `${base} default-border-color hover:bg-accent-blue/10 lg:!border-transparent`
+  return `${base} hover:bg-accent-blue/10 default-border-color lg:!border-transparent`
 }
 
 function bindTocObserver() {
@@ -163,15 +168,7 @@ onBeforeUnmount(() => {
             class="container-max-w relative isolate z-[2] flex w-full flex-1 items-center justify-between gap-4 pl-3 pr-3 lg:gap-0 lg:pl-3.5 [--node-horizontal-offset:-3.5px]"
           >
             <div class="flex flex-none items-center">
-              <a
-                :href="withBase('/')"
-                aria-label="832 首页"
-                class="fv-style outline-hidden flex flex-none items-center [-webkit-touch-callout:none]"
-              >
-                <span class="font-plex-serif text-[1.35rem] font-medium tracking-[-0.02em] text-offgray-1000 dark:text-white">
-                  832
-                </span>
-              </a>
+              <SiteLogo />
             </div>
 
             <ul class="ml-auto hidden list-none items-center gap-1.5 lg:m-0 lg:flex" aria-orientation="horizontal">
@@ -273,7 +270,7 @@ onBeforeUnmount(() => {
               <div class="relative isolate size-full w-full overflow-clip p-4 py-8 lg:pt-12 lg:pb-14">
                 <hgroup class="mx-auto flex w-full max-w-lg flex-col items-center gap-1">
                   <h1 class="font-plex-serif h2 mb-2 scroll-mt-24 text-center text-balance text-accent-blue dark:text-blue-300">
-                    From The Blog
+                    博客
                   </h1>
                   <p class="text-center text-balance tracking-tight text-offgray-600 dark:text-offgray-500">
                     记录工程实践、设计细节和长期写作中的判断。
@@ -285,7 +282,7 @@ onBeforeUnmount(() => {
                   xmlns="http://www.w3.org/2000/svg"
                 >
                   <defs>
-                    <!-- 仅水平线：避免与下方 Categories | 列表 的竖向 border 错位的「假竖线」 -->
+                    <!-- 仅水平线：避免与下方文章列表区竖向轨条错位的「假竖线」 -->
                     <pattern id="zed-hero-line-grid" width="8" height="8" patternUnits="userSpaceOnUse">
                       <line x1="0" y1="0.5" x2="8" y2="0.5" stroke="currentColor" stroke-width="1" />
                     </pattern>
@@ -378,23 +375,25 @@ onBeforeUnmount(() => {
               <div class="isolate relative min-h-0 flex-1 overflow-x-clip p-0">
                 <div class="relative grid min-h-full w-full auto-rows-[minmax(0,1fr)] grid-cols-5">
                   <div class="col-span-5 flex max-w-5xl min-h-full flex-col lg:col-span-1">
-                    <nav class="sticky top-10 max-md:[mask-image:linear-gradient(to_right,black_85%,transparent)] py-6 md:[mask-image:none] lg:py-10" aria-label="Blog categories">
-                      <div class="subheader border-b px-0 pb-2.5 text-center default-border-color lg:border-b-0 lg:pl-[15px] lg:text-left">
-                        Categories
+                    <nav class="max-md:[mask-image:linear-gradient(to_right,black_85%,transparent)] md:[mask-image:none]" aria-label="Blog categories">
+                      <div class="sticky top-24 py-10">
+                        <div class="subheader text-center lg:text-left px-0 pb-2.5 lg:pl-[15px] border-b lg:border-b-0 default-border-color">
+                          Categories
+                        </div>
+                        <ul class="flex list-none gap-0 overflow-x-auto pr-12 text-sm md:pr-0 lg:flex-col lg:pr-0" role="tablist">
+                          <li v-for="cat in categories" :key="cat.id" class="flex w-full flex-1">
+                            <a
+                              role="tab"
+                              :href="withBase('/')"
+                              :aria-selected="categoryActive(cat.id)"
+                              :class="categoryLinkClass(cat.id)"
+                              @click.prevent="setActiveCategory(cat.id)"
+                            >
+                              {{ cat.label }}
+                            </a>
+                          </li>
+                        </ul>
                       </div>
-                      <ul class="flex list-none gap-0 overflow-x-auto pr-12 text-sm md:pr-0 lg:flex-col lg:pr-0" role="tablist">
-                        <li v-for="cat in categories" :key="cat.id" class="flex w-full flex-1">
-                          <button
-                            type="button"
-                            role="tab"
-                            :aria-selected="categoryActive(cat.id)"
-                            :class="categoryLinkClass(cat.id)"
-                            @click="activeCategory = cat.id"
-                          >
-                            {{ cat.label }}
-                          </button>
-                        </li>
-                      </ul>
                     </nav>
                   </div>
                   <div class="col-span-5 flex min-h-full flex-col lg:col-span-4">
@@ -403,6 +402,8 @@ onBeforeUnmount(() => {
                   v-for="post in visiblePosts"
                   :key="post.id"
                   :href="withBase(post.href)"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   class="group fv-style relative isolate flex flex-col items-start justify-between gap-2 rounded border border-transparent py-2 hover:border-blue-300 hover:bg-blue-50/50 hover:[box-shadow:var(--sh-alt)] lg:min-h-[42px] lg:flex-row lg:items-center lg:px-2 dark:hover:border-blue-300/20 dark:hover:bg-blue-700/5"
                 >
                   <svg class="pointer-events-none absolute inset-0 -z-10 size-full select-none text-offgray-200/70 opacity-50 [mask-image:linear-gradient(to_left,#ffffffad,transparent)] invisible group-hover:visible dark:text-blue-400/10 dark:opacity-80" aria-hidden="true">
@@ -515,10 +516,6 @@ onBeforeUnmount(() => {
               />
               <div class="isolate relative size-full overflow-clip p-4 px-4 py-6 lg:px-12 lg:py-16">
                 <header class="relative flex w-full flex-col justify-center gap-6">
-                  <a
-                    :href="withBase('/')"
-                    class="fv-style w-fit text-sm text-accent-blue underline decoration-accent-blue/25 underline-offset-2 hover:decoration-accent-blue/80"
-                  >← From The Blog</a>
                   <h1 class="font-plex-serif h1 max-w-[850px] scroll-mt-24 text-balance text-accent-blue dark:text-blue-300">
                     {{ currentPost.title }}
                   </h1>
@@ -590,7 +587,7 @@ onBeforeUnmount(() => {
               aria-hidden="true"
             />
             <span class="relative z-[1] w-4 shrink-0 border-r border-transparent sm:w-6 md:w-12 lg:border-r-0" aria-hidden="true">
-              <div class="default-border-text-color pointer-events-none absolute top-0 bottom-0 right-[-0.5px] w-[10px] translate-x-1/2">
+              <div class="default-border-text-color pointer-events-none absolute top-0 right-[-0.5px] bottom-[-1px] w-[10px] translate-x-1/2">
                 <div class="absolute top-0 bottom-0 left-1/2 flex w-px -translate-x-1/2 flex-col">
                   <div class="w-px flex-[4.03169] bg-current" />
                   <div class="w-px flex-[4.55797] bg-[repeating-linear-gradient(to_bottom,currentColor_0_4px,transparent_4px_8px)]" />
@@ -601,7 +598,7 @@ onBeforeUnmount(() => {
               </div>
             </span>
             <span class="relative z-[1] hidden flex-1 border-x border-transparent lg:block" aria-hidden="true">
-              <div class="default-border-text-color pointer-events-none absolute top-0 bottom-0 right-[-0.5px] w-[10px] translate-x-1/2">
+              <div class="default-border-text-color pointer-events-none absolute top-0 right-[-0.5px] bottom-[-1px] w-[10px] translate-x-1/2">
                 <div class="absolute top-0 bottom-0 left-1/2 flex w-px -translate-x-1/2 flex-col">
                   <div class="w-px flex-[2.80838] bg-current" />
                   <div class="w-px flex-[4.39461] bg-[repeating-linear-gradient(to_bottom,currentColor_0_4px,transparent_4px_8px)]" />
@@ -652,7 +649,7 @@ onBeforeUnmount(() => {
               </div>
             </div>
             <span class="relative z-[1] hidden flex-1 border-x border-transparent lg:block" aria-hidden="true">
-              <div class="default-border-text-color pointer-events-none absolute top-0 bottom-0 left-[-0.5px] w-[10px] -translate-x-1/2">
+              <div class="default-border-text-color pointer-events-none absolute top-0 bottom-[-1px] left-[-0.5px] w-[10px] -translate-x-1/2">
                 <div class="absolute top-0 bottom-0 left-1/2 flex w-px -translate-x-1/2 flex-col">
                   <div class="w-px flex-[2.45501] bg-current" />
                   <div class="w-px flex-[3.12177] bg-[repeating-linear-gradient(to_bottom,currentColor_0_4px,transparent_4px_8px)]" />
@@ -662,7 +659,7 @@ onBeforeUnmount(() => {
               </div>
             </span>
             <span class="relative z-[1] w-4 shrink-0 border-l border-transparent sm:w-6 md:w-12 lg:border-l-0" aria-hidden="true">
-              <div class="default-border-text-color pointer-events-none absolute top-0 bottom-0 left-[-0.5px] w-[10px] -translate-x-1/2">
+              <div class="default-border-text-color pointer-events-none absolute top-0 bottom-[-1px] left-[-0.5px] w-[10px] -translate-x-1/2">
                 <div class="absolute top-0 bottom-0 left-1/2 flex w-px -translate-x-1/2 flex-col">
                   <div class="w-px flex-[3.24898] bg-[repeating-linear-gradient(to_bottom,currentColor_0_4px,transparent_4px_8px)]" />
                   <div class="w-px flex-[3.4364] bg-current" />
@@ -685,7 +682,8 @@ onBeforeUnmount(() => {
           </section>
         </main>
 
-        <footer class="outer-section-node-offset relative mt-auto flex min-h-fit min-w-0 bg-accent-blue text-offgray-50">
+        <!-- -mt-px：与上一节竖轨重叠 1px，消除主区与 footer 拼接处的亚像素断缝 -->
+        <footer class="outer-section-node-offset relative -mt-px flex min-h-fit min-w-0 bg-accent-blue text-offgray-50">
           <span class="relative z-[1] w-4 shrink-0 border-r border-white/10 sm:w-6 md:w-12 lg:border-r-0" aria-hidden="true">
             <div class="pointer-events-none absolute top-0 right-[-0.5px] z-[99] w-[10px] translate-x-1/2" aria-hidden="true">
               <div
@@ -771,7 +769,14 @@ onBeforeUnmount(() => {
           Menu
         </div>
         <a :href="withBase('/')" class="rounded-md px-3 py-2 text-offgray-1000 hover:bg-accent-blue/10 dark:text-white" @click="menuOpen = false">Blog</a>
-        <a v-if="latestPost" :href="withBase(latestPost.href)" class="rounded-md px-3 py-2 text-offgray-1000 hover:bg-accent-blue/10 dark:text-white" @click="menuOpen = false">Latest Post</a>
+        <a
+          v-if="latestPost"
+          :href="withBase(latestPost.href)"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="rounded-md px-3 py-2 text-offgray-1000 hover:bg-accent-blue/10 dark:text-white"
+          @click="menuOpen = false"
+        >Latest Post</a>
         <button type="button" class="rounded-md px-3 py-2 text-left text-offgray-1000 hover:bg-accent-blue/10 dark:text-white" @click="openCommand">
           Search
         </button>
@@ -808,6 +813,8 @@ onBeforeUnmount(() => {
             v-for="post in searchResults"
             :key="post.id"
             :href="withBase(post.href)"
+            target="_blank"
+            rel="noopener noreferrer"
             class="fv-style grid gap-1 rounded-md px-3 py-2 hover:bg-accent-blue/10 dark:hover:bg-accent-blue/15"
             @click="commandOpen = false"
           >

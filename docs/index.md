@@ -1,3 +1,3 @@
 ---
-title: From The Blog
+title: 博客
 ---
