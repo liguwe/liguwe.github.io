@@ -1,18 +1,17 @@
 <script setup>
-import { BookOpen, FolderGit2, Github, Menu, Moon, MoreHorizontal, Sun } from 'lucide-vue-next'
+import { BookOpen, FolderGit2, Github, Menu, Moon, MoreHorizontal, Search, Sun } from 'lucide-vue-next'
 import { Content, inBrowser, useData, useRoute, withBase } from 'vitepress'
 import { VPNavBarSearch } from 'vitepress/theme'
-import { computed, nextTick, onBeforeUnmount, onMounted, ref, watch } from 'vue'
+import VPDocAsideOutline from 'vitepress/dist/client/theme-default/components/VPDocAsideOutline.vue'
+import { computed, nextTick, onBeforeUnmount, onMounted, ref } from 'vue'
 import SiteLogo from './components/SiteLogo.vue'
 import { categories, posts } from './posts'
 
-const { frontmatter, page, isDark } = useData()
+const { page, isDark, theme } = useData()
 const route = useRoute()
 
 const activeCategory = ref('all')
 const menuOpen = ref(false)
-const activeTocSlug = ref('')
-let tocObserver
 
 const isHome = computed(() => page.value.relativePath === 'index.md')
 /** docs/blog 下仅数字 slug：0.md、1.md … 无子目录 */
@@ -36,24 +35,19 @@ const postSlugFromPath = computed(() => {
 })
 
 const currentPost = computed(() => {
-  return posts.find(post => post.slug === postSlugFromPath.value) || posts[0]
+  const slug = postSlugFromPath.value
+  if (!slug)
+    return undefined
+  return posts.find(post => post.slug === slug)
 })
 
-function flattenToc(headers) {
-  const out = []
-  function walk(list) {
-    for (const h of list || []) {
-      if (h.level >= 2 && h.level <= 3)
-        out.push(h)
-      if (h.children?.length)
-        walk(h.children)
-    }
-  }
-  walk(headers)
-  return out
-}
+const postHeroTitle = computed(() => currentPost.value?.title ?? page.value.title ?? '')
+const postHeroDate = computed(() => currentPost.value?.displayDate ?? '')
+const postHeroCategory = computed(() => currentPost.value?.categoryLabel ?? '')
 
-const tocHeaders = computed(() => flattenToc(page.value.headers))
+const pageName = computed(() =>
+  route.path.replace(/[./]+/g, '_').replace(/_html$/, ''),
+)
 
 function toggleAppearance() {
   if (!inBrowser)
@@ -97,37 +91,12 @@ function categoryLinkClass(id) {
   return `${base} hover:bg-accent-blue/10 default-border-color lg:!border-transparent`
 }
 
-function bindTocObserver() {
-  nextTick(() => {
-    tocObserver?.disconnect()
-    if (!isPost.value || !tocHeaders.value.length)
-      return
-    tocObserver = new IntersectionObserver((entries) => {
-      const visible = entries.filter(e => e.isIntersecting && e.target.id)
-      if (!visible.length)
-        return
-      visible.sort((a, b) => a.target.getBoundingClientRect().top - b.target.getBoundingClientRect().top)
-      activeTocSlug.value = visible[0].target.id
-    }, { rootMargin: '-20% 0px -55% 0px', threshold: 0 })
-
-    for (const h of tocHeaders.value) {
-      const el = document.getElementById(h.slug)
-      if (el)
-        tocObserver.observe(el)
-    }
-  })
-}
-
-watch(() => [route.path, page.value.headers], bindTocObserver, { flush: 'post' })
-
 onMounted(() => {
   window.addEventListener('keydown', onKeydown)
-  bindTocObserver()
 })
 
 onBeforeUnmount(() => {
   window.removeEventListener('keydown', onKeydown)
-  tocObserver?.disconnect()
 })
 </script>
 
@@ -142,7 +111,7 @@ onBeforeUnmount(() => {
         :class="menuOpen ? 'scale-[0.98] translate-y-1 overflow-hidden rounded-t-lg' : ''"
       >
         <header
-          class="outer-section-node-offset sticky top-0 z-[100] flex h-[57px] min-w-0 shrink-0 items-stretch border-b border-t border-offgray-200/90 nav-background sm:border-t-0 dark:border-white/[0.09]"
+          class="outer-section-node-offset sticky top-0 z-[100] flex h-[57px] min-w-0 shrink-0 items-stretch border-b border-t default-border-color nav-background sm:border-t-0"
         >
           <div
             class="pointer-events-none absolute z-[99] size-1.5 rotate-45 border border-offgray-100 bg-[var(--node-bg)] dark:border-offgray-900 dark:bg-[hsl(219,92%,2%)] [bottom:calc(-1*var(--node-vertical-offset))] [left:var(--node-horizontal-offset)]"
@@ -166,8 +135,18 @@ onBeforeUnmount(() => {
             </div>
 
             <ul class="ml-auto hidden list-none items-center gap-1.5 lg:m-0 lg:flex" aria-orientation="horizontal">
-              <li class="vp-nav-local-search flex items-center">
-                <VPNavBarSearch />
+              <li class="vp-nav-local-search flex items-center relative">
+                <button
+                  type="button"
+                  class="fv-style inline-flex size-8 select-none items-center justify-center rounded-sm border border-[var(--border)] text-offgray-1000 hover:bg-offgray-100/60 dark:text-white dark:hover:bg-offgray-500/10 lg:active:translate-y-px lg:active:scale-[.99]"
+                  aria-label="搜索"
+                  @click="openLocalSearch"
+                >
+                  <Search class="size-[18px] shrink-0" stroke-width="2" />
+                </button>
+                <div class="hidden">
+                  <VPNavBarSearch />
+                </div>
               </li>
               <li class="h-5 w-px border-l border-[var(--border)]" aria-hidden="true" />
               <li>
@@ -297,7 +276,7 @@ onBeforeUnmount(() => {
             <div class="relative container-max-w max-md:min-w-0 flex-1 [--node-horizontal-offset:-3.5px]">
               <div class="relative isolate size-full w-full overflow-clip p-4 py-8 lg:pt-12 lg:pb-14">
                 <hgroup class="mx-auto flex w-full max-w-lg flex-col items-center gap-1">
-                  <h1 class="font-plex-serif h2 mb-2 scroll-mt-24 text-center text-balance text-accent-blue dark:text-blue-300">
+                  <h1 class="zed-blog-hero-title font-plex-serif text-balance scroll-mt-24 mb-2 text-center text-accent-blue dark:text-blue-300">
                     博客
                   </h1>
                   <p class="text-center text-balance tracking-tight text-offgray-600 dark:text-offgray-500">
@@ -543,13 +522,15 @@ onBeforeUnmount(() => {
                 aria-hidden="true"
               />
               <div class="isolate relative size-full overflow-clip p-4 px-4 py-6 lg:px-12 lg:py-16">
-                <header class="relative flex w-full flex-col justify-center gap-6">
-                  <h1 class="font-plex-serif h1 max-w-[850px] scroll-mt-24 text-balance text-accent-blue dark:text-blue-300">
-                    {{ currentPost.title }}
+                <header class="flex w-full flex-col justify-center gap-6">
+                  <h1 class="zed-detail-hero-title font-plex-serif text-balance scroll-mt-24 text-accent-blue dark:text-blue-300">
+                    {{ postHeroTitle }}
                   </h1>
-                  <div class="flex flex-col gap-2.5">
+                  <div v-if="postHeroDate || postHeroCategory" class="flex flex-col gap-2.5">
                     <p class="text-xs text-offgray-600 dark:text-offgray-500">
-                      {{ currentPost.displayDate }} · {{ currentPost.categoryLabel }}
+                      <template v-if="postHeroDate">{{ postHeroDate }}</template>
+                      <template v-if="postHeroDate && postHeroCategory"> · </template>
+                      <template v-if="postHeroCategory">{{ postHeroCategory }}</template>
                     </p>
                   </div>
                 </header>
@@ -597,7 +578,7 @@ onBeforeUnmount(() => {
             </span>
           </section>
 
-          <section class="outer-section-node-offset relative flex min-h-0 min-w-0 flex-1 border-t border-offgray-200/90 dark:border-white/[0.09]">
+          <section class="outer-section-node-offset relative flex min-h-0 min-w-0 flex-1 border-t default-border-color">
             <div
               class="pointer-events-none absolute z-[99] size-1.5 rotate-45 border border-offgray-100 bg-[var(--node-bg)] dark:border-offgray-900 dark:bg-[hsl(219,92%,2%)] [top:calc(-1*var(--node-vertical-offset))] [left:var(--node-horizontal-offset)]"
               aria-hidden="true"
@@ -650,29 +631,20 @@ onBeforeUnmount(() => {
                 class="pointer-events-none absolute z-[99] size-1.5 rotate-45 border border-offgray-100 bg-[var(--node-bg)] dark:border-offgray-900 dark:bg-[hsl(219,92%,2%)] [bottom:calc(-1*var(--node-vertical-offset))] [right:var(--node-horizontal-offset)] hidden lg:block"
                 aria-hidden="true"
               />
-              <div class="isolate relative size-full justify-between gap-16 overflow-clip p-4 lg:flex lg:flex-row-reverse lg:items-start lg:gap-16 lg:p-12">
+              <div class="isolate relative flex size-full min-w-0 flex-col justify-between gap-10 overflow-clip p-4 lg:flex lg:min-h-0 lg:flex-row-reverse lg:items-start lg:gap-12 lg:gap-x-10 lg:p-12 xl:gap-x-14">
                 <aside
-                  v-if="tocHeaders.length"
-                  class="sticky top-24 hidden w-[256px] flex-none flex-col gap-1 lg:flex"
-                  aria-label="Table of contents"
+                  class="post-doc-aside sticky top-24 hidden w-[min(272px,32vw)] shrink-0 flex-col gap-4 lg:flex"
+                  aria-label="本页目录"
                 >
-                  <h2 class="subheader mb-2 flex items-center gap-2 text-xs">
-                    On this page
-                  </h2>
-                  <a
-                    v-for="h in tocHeaders"
-                    :key="h.slug"
-                    :href="`#${h.slug}`"
-                    class="border-l py-1 pl-3 text-sm transition-colors"
-                    :class="activeTocSlug === h.slug ? 'border-accent-blue text-accent-blue' : 'border-[var(--border)] text-offgray-600 hover:border-accent-blue hover:text-accent-blue dark:text-offgray-400'"
-                  >{{ h.title }}</a>
-                  <div class="mt-4 rounded border border-[var(--border)] bg-[var(--panel)] p-3 shadow-[var(--shadow-blue-alt)]">
-                    <strong class="text-sm text-offgray-1000 dark:text-white">What's next?</strong>
-                    <a :href="withBase('/')" class="mt-1 block text-sm text-accent-blue">See all posts →</a>
+                  <div class="post-doc-aside-outline min-w-0">
+                    <VPDocAsideOutline />
                   </div>
                 </aside>
-                <div class="zed-article w-full min-w-0 lg:mx-0 lg:max-w-[var(--blog-content-width)]">
-                  <Content />
+                <div class="zed-article min-w-0 flex-1 lg:max-w-[min(var(--blog-content-width),100%)] VPDoc">
+                  <Content
+                    class="vp-doc"
+                    :class="[pageName, theme.externalLinkIcon && 'external-link-icon-enabled']"
+                  />
                 </div>
               </div>
             </div>
@@ -699,11 +671,14 @@ onBeforeUnmount(() => {
         </main>
 
         <main v-else class="flex flex-1 flex-col">
-          <section class="outer-section-node-offset relative flex min-w-0 border-t border-offgray-200/90 py-10 dark:border-white/[0.09]">
+          <section class="outer-section-node-offset relative flex min-w-0 border-t default-border-color py-10">
             <span class="relative z-[1] w-4 shrink-0 border-r border-transparent sm:w-6 md:w-12 lg:border-r-0" aria-hidden="true" />
             <span class="relative z-[1] hidden flex-1 border-x border-[var(--border)] lg:block" aria-hidden="true" />
-            <div class="zed-article container-max-w relative flex-1 px-4 lg:px-12">
-              <Content />
+            <div class="zed-article container-max-w relative flex-1 px-4 lg:px-12 VPDoc">
+              <Content
+                class="vp-doc"
+                :class="[pageName, theme.externalLinkIcon && 'external-link-icon-enabled']"
+              />
             </div>
             <span class="relative z-[1] hidden flex-1 border-x border-[var(--border)] lg:block" aria-hidden="true" />
             <span class="relative z-[1] w-4 shrink-0 border-l border-transparent sm:w-6 md:w-12 lg:border-l-0" aria-hidden="true" />

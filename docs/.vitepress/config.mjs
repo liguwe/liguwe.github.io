@@ -20,6 +20,10 @@ export default defineConfig({
     },
   },
   themeConfig: {
+    outline: {
+      label: '本页目录',
+      level: [2, 3],
+    },
     search: {
       provider: 'local',
       options: {
