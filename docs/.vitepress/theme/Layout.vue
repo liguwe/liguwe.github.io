@@ -130,7 +130,12 @@ watch(() => [route.path, page.value.headers], bindTocObserver, { flush: 'post' }
 watch(commandOpen, (open) => {
   if (!open)
     return
-  nextTick(() => commandInputRef.value?.focus())
+  nextTick(() => {
+    requestAnimationFrame(() => {
+      const el = commandInputRef.value
+      el?.focus({ preventScroll: true })
+    })
+  })
 })
 
 onMounted(() => {
@@ -809,44 +814,54 @@ onBeforeUnmount(() => {
       </div>
     </aside>
 
-    <div
-      class="pointer-events-none fixed inset-0 z-[200] flex justify-center bg-black/0 opacity-0 transition-[opacity,visibility] duration-200"
-      :class="commandOpen ? 'pointer-events-auto visible bg-black/45 opacity-100' : 'invisible'"
-      role="dialog"
-      aria-modal="true"
-      aria-label="Command menu"
-      @click.self="commandOpen = false"
-    >
+    <Teleport to="body">
       <div
-        class="fv-style mt-[12vh] w-[min(620px,100%)] translate-y-2 scale-[0.98] overflow-hidden rounded-lg border border-[var(--border)] bg-[var(--panel)] opacity-0 shadow-[0_24px_80px_rgba(0,0,0,0.25),var(--shadow-blue-alt)] transition-transform duration-200"
-        :class="commandOpen ? 'translate-y-0 scale-100 opacity-100' : ''"
+        class="fixed inset-0 z-[200] flex items-start justify-center px-3 pt-[12vh] transition-[opacity,visibility] duration-200"
+        :class="
+          commandOpen
+            ? 'pointer-events-auto visible bg-black/50 opacity-100'
+            : 'pointer-events-none invisible bg-transparent opacity-0'
+        "
+        role="dialog"
+        aria-modal="true"
+        aria-label="Command menu"
+        @click.self="commandOpen = false"
       >
-        <div class="flex items-center gap-3 border-b border-[var(--border)] px-4 py-3">
-          <Search class="size-4 shrink-0 text-offgray-500" stroke-width="2" />
-          <input
-            ref="commandInputRef"
-            v-model="query"
-            type="search"
-            autocomplete="off"
-            class="command-input select-text w-full border-0 bg-transparent text-base text-offgray-1000 outline-none dark:text-white"
-            placeholder="搜索文章…"
-          >
-        </div>
-        <div class="command-results max-h-[360px] overflow-auto p-2">
-          <a
-            v-for="post in searchResults"
-            :key="post.id"
-            :href="withBase(post.href)"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="fv-style grid gap-1 rounded-md px-3 py-2 hover:bg-accent-blue/10 dark:hover:bg-accent-blue/15"
-            @click="commandOpen = false"
-          >
-            <span class="text-sm font-medium text-offgray-1000 dark:text-white">{{ post.title }}</span>
-            <small class="font-mono text-[0.68rem] text-offgray-600 dark:text-offgray-400">{{ post.categoryLabel }} · {{ post.displayDate }}</small>
-          </a>
+        <div
+          class="fv-style flex max-h-[min(85vh,calc(100dvh-2.5rem))] w-[min(620px,calc(100vw-1.5rem))] translate-y-2 scale-[0.98] flex-col overflow-hidden rounded-sm border border-offgray-200/90 opacity-0 shadow-[0_24px_80px_rgba(0,0,0,0.22),var(--shadow-blue-alt)] transition-[transform,opacity] duration-200 nav-background dark:border-white/[0.09] dark:shadow-[0_24px_80px_rgba(0,0,0,0.45),var(--shadow-blue-alt)]"
+          :class="commandOpen ? 'translate-y-0 scale-100 opacity-100' : ''"
+        >
+          <div class="flex shrink-0 items-center gap-3 border-b border-offgray-200/90 px-4 py-3 dark:border-white/[0.09]">
+            <Search class="pointer-events-none size-4 shrink-0 text-offgray-500 dark:text-offgray-400" stroke-width="2" />
+            <input
+              ref="commandInputRef"
+              v-model="query"
+              type="text"
+              inputmode="search"
+              enterkeyhint="search"
+              autocomplete="off"
+              autocorrect="off"
+              spellcheck="false"
+              class="command-input relative z-[1] min-h-[1.25rem] w-full min-w-0 flex-1 select-text border-0 bg-transparent text-base text-offgray-1000 outline-none placeholder:text-offgray-500 dark:text-offgray-200 dark:placeholder:text-offgray-500"
+              placeholder="搜索文章…"
+            >
+          </div>
+          <div class="command-results min-h-0 flex-1 overflow-y-auto overscroll-contain p-2">
+            <a
+              v-for="post in searchResults"
+              :key="post.id"
+              :href="withBase(post.href)"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="fv-style grid gap-1 rounded-sm px-3 py-2 hover:bg-accent-blue/10 dark:hover:bg-accent-blue/15"
+              @click="commandOpen = false"
+            >
+              <span class="text-sm font-medium text-offgray-1000 dark:text-offgray-100">{{ post.title }}</span>
+              <small class="font-mono text-[0.68rem] text-offgray-600 dark:text-offgray-500">{{ post.categoryLabel }} · {{ post.displayDate }}</small>
+            </a>
+          </div>
         </div>
       </div>
-    </div>
+    </Teleport>
   </div>
 </template>

@@ -1167,9 +1167,25 @@ html.dark .avatar {
 .command-results {
   display: grid;
   gap: 0.25rem;
-  max-height: 360px;
-  overflow: auto;
+  overflow-x: hidden;
+  overflow-y: auto;
+  overscroll-behavior: contain;
   padding: 0.5rem;
+  scrollbar-color: color-mix(in oklch, var(--border), transparent 35%) transparent;
+  scrollbar-width: thin;
+}
+
+.command-results::-webkit-scrollbar {
+  width: 5px;
+}
+
+.command-results::-webkit-scrollbar-thumb {
+  border-radius: 999px;
+  background: color-mix(in oklch, var(--border), transparent 30%);
+}
+
+.command-results::-webkit-scrollbar-track {
+  background: transparent;
 }
 
 .command-results a {
