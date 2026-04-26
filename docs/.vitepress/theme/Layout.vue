@@ -1,6 +1,7 @@
 <script setup>
-import { BookOpen, FolderGit2, Github, Menu, Moon, MoreHorizontal, Search, Sun } from 'lucide-vue-next'
+import { BookOpen, FolderGit2, Github, Menu, Moon, MoreHorizontal, Sun } from 'lucide-vue-next'
 import { Content, inBrowser, useData, useRoute, withBase } from 'vitepress'
+import { VPNavBarSearch } from 'vitepress/theme'
 import { computed, nextTick, onBeforeUnmount, onMounted, ref, watch } from 'vue'
 import SiteLogo from './components/SiteLogo.vue'
 import { categories, posts } from './posts'
@@ -9,15 +10,13 @@ const { frontmatter, page, isDark } = useData()
 const route = useRoute()
 
 const activeCategory = ref('all')
-const commandOpen = ref(false)
 const menuOpen = ref(false)
-const query = ref('')
 const activeTocSlug = ref('')
-const commandInputRef = ref(null)
 let tocObserver
 
 const isHome = computed(() => page.value.relativePath === 'index.md')
-const isPost = computed(() => page.value.relativePath.startsWith('blog/') && frontmatter.value.id)
+/** docs/blog 下仅数字 slug：0.md、1.md … 无子目录 */
+const isPost = computed(() => /^blog\/\d+\.md$/.test(page.value.relativePath))
 
 const latestPost = computed(() => [...posts].sort((a, b) => b.date.localeCompare(a.date))[0])
 
@@ -31,17 +30,13 @@ const visiblePosts = computed(() => {
   return posts.filter((post) => post.category === activeCategory.value)
 })
 
-const searchResults = computed(() => {
-  const value = query.value.trim().toLowerCase()
-  if (!value)
-    return posts.slice(0, 6)
-  return posts.filter((post) => {
-    return [post.title, post.excerpt, post.categoryLabel].join(' ').toLowerCase().includes(value)
-  })
+const postSlugFromPath = computed(() => {
+  const m = page.value.relativePath.match(/^blog\/(\d+)\.md$/)
+  return m?.[1] ?? ''
 })
 
 const currentPost = computed(() => {
-  return posts.find((post) => post.id === frontmatter.value.id) || posts[0]
+  return posts.find(post => post.slug === postSlugFromPath.value) || posts[0]
 })
 
 function flattenToc(headers) {
@@ -66,23 +61,21 @@ function toggleAppearance() {
   isDark.value = !isDark.value
 }
 
-function openCommand() {
-  commandOpen.value = true
+function closePanels() {
   menuOpen.value = false
 }
 
-function closePanels() {
-  commandOpen.value = false
+/** 移动端抽屉内触发：与顶栏共用 VPNavBarSearch 的 #local-search 按钮 */
+function openLocalSearch() {
   menuOpen.value = false
+  nextTick(() => {
+    document.querySelector('#local-search .DocSearch-Button')?.dispatchEvent(
+      new MouseEvent('click', { bubbles: true, cancelable: true, view: window }),
+    )
+  })
 }
 
 function onKeydown(event) {
-  if ((event.metaKey || event.ctrlKey) && event.key.toLowerCase() === 'k') {
-    event.preventDefault()
-    openCommand()
-    return
-  }
-
   if (event.key === 'Escape') {
     closePanels()
   }
@@ -126,17 +119,6 @@ function bindTocObserver() {
 }
 
 watch(() => [route.path, page.value.headers], bindTocObserver, { flush: 'post' })
-
-watch(commandOpen, (open) => {
-  if (!open)
-    return
-  nextTick(() => {
-    requestAnimationFrame(() => {
-      const el = commandInputRef.value
-      el?.focus({ preventScroll: true })
-    })
-  })
-})
 
 onMounted(() => {
   window.addEventListener('keydown', onKeydown)
@@ -184,15 +166,8 @@ onBeforeUnmount(() => {
             </div>
 
             <ul class="ml-auto hidden list-none items-center gap-1.5 lg:m-0 lg:flex" aria-orientation="horizontal">
-              <li>
-                <button
-                  type="button"
-                  class="fv-style inline-flex size-8 select-none items-center justify-center rounded-sm border border-[var(--border)] text-offgray-1000 hover:bg-offgray-100/60 dark:text-white dark:hover:bg-offgray-500/10 lg:active:translate-y-px lg:active:scale-[.99]"
-                  aria-label="搜索"
-                  @click="openCommand"
-                >
-                  <Search class="size-[18px] shrink-0" stroke-width="2" />
-                </button>
+              <li class="vp-nav-local-search flex items-center">
+                <VPNavBarSearch />
               </li>
               <li class="h-5 w-px border-l border-[var(--border)]" aria-hidden="true" />
               <li>
@@ -453,7 +428,7 @@ onBeforeUnmount(() => {
                     <div class="border-l default-border-color flex flex-1 flex-col p-4 lg:p-8">
                 <a
                   v-for="post in visiblePosts"
-                  :key="post.id"
+                  :key="post.slug"
                   :href="withBase(post.href)"
                   target="_blank"
                   rel="noopener noreferrer"
@@ -461,11 +436,11 @@ onBeforeUnmount(() => {
                 >
                   <svg class="pointer-events-none absolute inset-0 -z-10 size-full select-none text-offgray-200/70 opacity-50 [mask-image:linear-gradient(to_left,#ffffffad,transparent)] invisible group-hover:visible dark:text-blue-400/10 dark:opacity-80" aria-hidden="true">
                     <defs>
-                      <pattern :id="`row-${post.id}`" width="4" height="4" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+                      <pattern :id="`row-${post.slug}`" width="4" height="4" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
                         <line x1="0" y1="0" x2="0" y2="4" stroke="currentColor" stroke-width="1.5" />
                       </pattern>
                     </defs>
-                    <rect width="100%" height="100%" :fill="`url(#row-${post.id})`" />
+                    <rect width="100%" height="100%" :fill="`url(#row-${post.slug})`" />
                   </svg>
                   <div class="flex min-w-0 items-center gap-3">
                     <h2 class="text-[0.9375rem] text-offgray-900 underline decoration-accent-blue/20 decoration-1 underline-offset-[3px] hover:decoration-accent-blue/80 group-hover:decoration-accent-blue/80 dark:text-offgray-100 dark:decoration-blue-300/20 dark:hover:decoration-blue-400/80 dark:group-hover:decoration-blue-400/80">
@@ -799,8 +774,8 @@ onBeforeUnmount(() => {
           <span class="flex-1">GitHub</span>
           <span class="text-offgray-400">↗</span>
         </a>
-        <button type="button" class="rounded-md px-3 py-2 text-left text-offgray-1000 hover:bg-accent-blue/10 dark:text-white" @click="openCommand">
-          Search
+        <button type="button" class="rounded-md px-3 py-2 text-left text-offgray-1000 hover:bg-accent-blue/10 dark:text-white" @click="openLocalSearch">
+          搜索
         </button>
         <button
           type="button"
@@ -814,54 +789,5 @@ onBeforeUnmount(() => {
       </div>
     </aside>
 
-    <Teleport to="body">
-      <div
-        class="fixed inset-0 z-[200] flex items-start justify-center px-3 pt-[12vh] transition-[opacity,visibility] duration-200"
-        :class="
-          commandOpen
-            ? 'pointer-events-auto visible bg-black/50 opacity-100'
-            : 'pointer-events-none invisible bg-transparent opacity-0'
-        "
-        role="dialog"
-        aria-modal="true"
-        aria-label="Command menu"
-        @click.self="commandOpen = false"
-      >
-        <div
-          class="fv-style flex max-h-[min(85vh,calc(100dvh-2.5rem))] w-[min(620px,calc(100vw-1.5rem))] translate-y-2 scale-[0.98] flex-col overflow-hidden rounded-sm border border-offgray-200/90 opacity-0 shadow-[0_24px_80px_rgba(0,0,0,0.22),var(--shadow-blue-alt)] transition-[transform,opacity] duration-200 nav-background dark:border-white/[0.09] dark:shadow-[0_24px_80px_rgba(0,0,0,0.45),var(--shadow-blue-alt)]"
-          :class="commandOpen ? 'translate-y-0 scale-100 opacity-100' : ''"
-        >
-          <div class="flex shrink-0 items-center gap-3 border-b border-offgray-200/90 px-4 py-3 dark:border-white/[0.09]">
-            <Search class="pointer-events-none size-4 shrink-0 text-offgray-500 dark:text-offgray-400" stroke-width="2" />
-            <input
-              ref="commandInputRef"
-              v-model="query"
-              type="text"
-              inputmode="search"
-              enterkeyhint="search"
-              autocomplete="off"
-              autocorrect="off"
-              spellcheck="false"
-              class="command-input relative z-[1] min-h-[1.25rem] w-full min-w-0 flex-1 select-text border-0 bg-transparent text-base text-offgray-1000 outline-none placeholder:text-offgray-500 dark:text-offgray-200 dark:placeholder:text-offgray-500"
-              placeholder="搜索文章…"
-            >
-          </div>
-          <div class="command-results min-h-0 flex-1 overflow-y-auto overscroll-contain p-2">
-            <a
-              v-for="post in searchResults"
-              :key="post.id"
-              :href="withBase(post.href)"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="fv-style grid gap-1 rounded-sm px-3 py-2 hover:bg-accent-blue/10 dark:hover:bg-accent-blue/15"
-              @click="commandOpen = false"
-            >
-              <span class="text-sm font-medium text-offgray-1000 dark:text-offgray-100">{{ post.title }}</span>
-              <small class="font-mono text-[0.68rem] text-offgray-600 dark:text-offgray-500">{{ post.categoryLabel }} · {{ post.displayDate }}</small>
-            </a>
-          </div>
-        </div>
-      </div>
-    </Teleport>
   </div>
 </template>

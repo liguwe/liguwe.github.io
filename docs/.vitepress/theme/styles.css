@@ -38,9 +38,30 @@
   --article-width: 740px;
   --blog-content-width: 740px;
   --node-offset: 3.5px;
+
+  /* VitePress 本地搜索 / DocSearch 使用的变量，映射到本站主题色 */
+  --vp-c-bg: var(--page-bg);
+  --vp-c-bg-soft: var(--panel);
+  --vp-c-bg-alt: var(--nav-bg-color);
+  --vp-c-text-1: var(--text-strong);
+  --vp-c-text-2: var(--text-muted);
+  --vp-c-text-3: var(--text-muted);
+  --vp-c-divider: var(--border);
+  --vp-c-brand-1: var(--accent-blue);
+  --vp-c-brand-2: color-mix(in oklch, var(--accent-blue), #fff 14%);
+  --vp-c-brand-3: color-mix(in oklch, var(--accent-blue), #000 12%);
+  --vp-c-brand-soft: color-mix(in oklch, var(--accent-blue), transparent 88%);
+  --vp-c-default-soft: color-mix(in oklch, var(--offgray-50), transparent 45%);
+  --vp-c-gray-1: var(--border);
+  --vp-c-gray-2: var(--border-strong);
+  --vp-c-gray-3: color-mix(in oklch, var(--offgray), #000 25%);
+  --vp-c-white: #fff;
+  --vp-c-black: #000;
 }
 
 html.dark {
+  --vp-c-default-soft: color-mix(in oklch, var(--panel), #fff 8%);
+
   --page-bg: hsl(218 13% 7.5%);
   --text: var(--offgray-300);
   --text-strong: #fff;
@@ -408,16 +429,14 @@ html.dark .theme-button:hover {
   transform: translateY(0) scale(1);
 }
 
-.popover-panel a,
-.command-results a {
+.popover-panel a {
   border-radius: 4px;
   padding: 0.55rem 0.6rem;
   color: var(--text-strong);
   font-size: 0.85rem;
 }
 
-.popover-panel a:hover,
-.command-results a:hover {
+.popover-panel a:hover {
   background: color-mix(in oklch, var(--accent-blue), transparent 92%);
   color: color-mix(in oklch, var(--accent-blue), #000 5%);
 }
@@ -432,8 +451,7 @@ html.dark .theme-button:hover {
 }
 
 .icon-button svg,
-.menu-button svg,
-.command-input-wrap svg {
+.menu-button svg {
   width: 15px;
   height: 15px;
   fill: none;
@@ -1063,8 +1081,7 @@ html.dark .avatar {
   text-underline-offset: 3px;
 }
 
-.mobile-backdrop,
-.command-overlay {
+.mobile-backdrop {
   pointer-events: none;
   position: fixed;
   inset: 0;
@@ -1075,8 +1092,7 @@ html.dark .avatar {
   transition: opacity 180ms ease, visibility 180ms ease;
 }
 
-.mobile-backdrop.active,
-.command-overlay.active {
+.mobile-backdrop.active {
   pointer-events: auto;
   visibility: visible;
   opacity: 1;
@@ -1126,77 +1142,37 @@ html.dark .avatar {
   background: color-mix(in oklch, var(--accent-blue), transparent 92%);
 }
 
-.command-overlay {
-  display: grid;
-  place-items: start center;
-  padding: 12vh 1rem 1rem;
+/* 顶栏：本地搜索与导航对齐（:deep 仅 SFC 有效，此处用后代选择器） */
+.vp-nav-local-search .VPNavBarSearch {
+  flex-grow: 0;
+  padding-left: 0;
 }
 
-.command-panel {
-  width: min(620px, 100%);
-  overflow: hidden;
-  border: 1px solid var(--border);
-  border-radius: 8px;
-  background: var(--panel);
-  box-shadow: 0 24px 80px #00000040, var(--shadow-blue);
-  transform: translateY(-8px) scale(0.98);
-  transition: transform 180ms ease;
-}
-
-.command-overlay.active .command-panel {
-  transform: translateY(0) scale(1);
-}
-
-.command-input-wrap {
-  display: flex;
+.vp-nav-local-search .DocSearch-Button {
+  display: inline-flex;
+  width: auto;
+  height: 2rem;
+  min-width: 2rem;
   align-items: center;
-  gap: 0.7rem;
-  padding: 0.9rem 1rem;
-  border-bottom: 1px solid var(--border);
-}
-
-.command-input {
-  width: 100%;
-  border: 0;
-  outline: 0;
-  background: transparent;
-  color: var(--text-strong);
-  font-size: 1rem;
-}
-
-.command-results {
-  display: grid;
-  gap: 0.25rem;
-  overflow-x: hidden;
-  overflow-y: auto;
-  overscroll-behavior: contain;
-  padding: 0.5rem;
-  scrollbar-color: color-mix(in oklch, var(--border), transparent 35%) transparent;
-  scrollbar-width: thin;
-}
-
-.command-results::-webkit-scrollbar {
-  width: 5px;
-}
-
-.command-results::-webkit-scrollbar-thumb {
-  border-radius: 999px;
-  background: color-mix(in oklch, var(--border), transparent 30%);
-}
-
-.command-results::-webkit-scrollbar-track {
+  justify-content: center;
+  gap: 0.35rem;
+  padding: 0 0.45rem;
+  border: 1px solid var(--border);
+  border-radius: 0.125rem;
   background: transparent;
 }
 
-.command-results a {
-  display: grid;
-  gap: 0.25rem;
+.vp-nav-local-search .DocSearch-Button:hover {
+  background: color-mix(in oklch, var(--offgray-50), transparent 40%);
 }
 
-.command-results small {
-  color: var(--text-muted);
-  font-family: var(--font-mono);
-  font-size: 0.68rem;
+html.dark .vp-nav-local-search .DocSearch-Button:hover {
+  background: color-mix(in oklch, var(--offgray-500), transparent 90%);
+}
+
+/* 去掉 DocSearch 按钮上的 ⌘K / Ctrl+K 快捷键提示 */
+.vp-nav-local-search .DocSearch-Button-Keys {
+  display: none !important;
 }
 
 @media (max-width: 1023px) {
