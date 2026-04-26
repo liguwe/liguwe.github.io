@@ -1,8 +1,6 @@
 <script setup>
 import { withBase } from "vitepress";
-
-const logoLight = withBase("/8-mark-light.svg");
-const logoDark = withBase("/8-mark-dark.svg");
+const logo = withBase("/8.svg");
 </script>
 
 <template>
@@ -12,25 +10,17 @@ const logoDark = withBase("/8-mark-dark.svg");
     class="fv-style outline-hidden flex flex-none items-center gap-2.5 rounded [-webkit-touch-callout:none]"
   >
     <img
-      :src="logoLight"
+      :src="logo"
       alt=""
       width="26"
       height="26"
-      class="h-[26px] w-[26px] shrink-0 object-contain dark:hidden"
-      decoding="async"
-    />
-    <img
-      :src="logoDark"
-      alt=""
-      width="26"
-      height="26"
-      class="hidden h-[26px] w-[26px] shrink-0 object-contain dark:block"
+      class="h-[26px] w-[26px] shrink-0 object-contain"
       decoding="async"
     />
     <span
       class="font-plex-serif text-[1.35rem] font-medium tracking-[-0.02em] text-offgray-1000 dark:text-white"
     >
-      832
+      32
     </span>
   </a>
 </template>

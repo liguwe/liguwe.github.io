@@ -456,7 +456,7 @@ onBeforeUnmount(() => {
         </main>
 
         <main v-else-if="isPost" class="flex min-h-0 flex-1 flex-col">
-          <section class="outer-section-node-offset relative flex !min-h-fit min-h-[450px] min-w-0">
+          <section class="outer-section-node-offset relative flex shrink-0 !min-h-fit min-h-[450px] min-w-0">
             <div
               class="pointer-events-none absolute z-[99] size-1.5 rotate-45 border border-offgray-100 bg-[var(--node-bg)] dark:border-offgray-900 dark:bg-[hsl(219,92%,2%)] [top:calc(-1*var(--node-vertical-offset))] [left:var(--node-horizontal-offset)]"
               aria-hidden="true"
@@ -569,7 +569,7 @@ onBeforeUnmount(() => {
             </span>
           </section>
 
-          <section class="outer-section-node-offset relative flex min-w-0 border-t border-[var(--border)]">
+          <section class="outer-section-node-offset relative flex min-h-0 min-w-0 flex-1 border-t border-[var(--border)]">
             <div
               class="pointer-events-none absolute z-[99] size-1.5 rotate-45 border border-offgray-100 bg-[var(--node-bg)] dark:border-offgray-900 dark:bg-[hsl(219,92%,2%)] [top:calc(-1*var(--node-vertical-offset))] [left:var(--node-horizontal-offset)]"
               aria-hidden="true"
@@ -586,7 +586,7 @@ onBeforeUnmount(() => {
               class="pointer-events-none absolute z-[99] size-1.5 rotate-45 border border-offgray-100 bg-[var(--node-bg)] dark:border-offgray-900 dark:bg-[hsl(219,92%,2%)] [bottom:calc(-1*var(--node-vertical-offset))] [right:var(--node-horizontal-offset)]"
               aria-hidden="true"
             />
-            <span class="relative z-[1] w-4 shrink-0 border-r border-transparent sm:w-6 md:w-12 lg:border-r-0" aria-hidden="true">
+            <span class="relative z-[1] w-4 shrink-0 self-stretch border-r border-transparent sm:w-6 md:w-12 lg:border-r-0" aria-hidden="true">
               <div class="default-border-text-color pointer-events-none absolute top-0 right-[-0.5px] bottom-[-1px] w-[10px] translate-x-1/2">
                 <div class="absolute top-0 bottom-0 left-1/2 flex w-px -translate-x-1/2 flex-col">
                   <div class="w-px flex-[4.03169] bg-current" />
@@ -597,7 +597,7 @@ onBeforeUnmount(() => {
                 </div>
               </div>
             </span>
-            <span class="relative z-[1] hidden flex-1 border-x border-transparent lg:block" aria-hidden="true">
+            <span class="relative z-[1] hidden flex-1 self-stretch border-x border-transparent lg:block" aria-hidden="true">
               <div class="default-border-text-color pointer-events-none absolute top-0 right-[-0.5px] bottom-[-1px] w-[10px] translate-x-1/2">
                 <div class="absolute top-0 bottom-0 left-1/2 flex w-px -translate-x-1/2 flex-col">
                   <div class="w-px flex-[2.80838] bg-current" />
@@ -605,7 +605,7 @@ onBeforeUnmount(() => {
                 </div>
               </div>
             </span>
-            <div class="relative container-max-w max-md:min-w-0 flex-1 [--node-horizontal-offset:-3.5px]">
+            <div class="relative container-max-w max-md:min-w-0 min-h-0 flex-1 [--node-horizontal-offset:-3.5px]">
               <div
                 class="pointer-events-none absolute z-[99] size-1.5 rotate-45 border border-offgray-100 bg-[var(--node-bg)] dark:border-offgray-900 dark:bg-[hsl(219,92%,2%)] [top:calc(-1*var(--node-vertical-offset))] [left:var(--node-horizontal-offset)] hidden lg:block"
                 aria-hidden="true"
@@ -648,7 +648,7 @@ onBeforeUnmount(() => {
                 </div>
               </div>
             </div>
-            <span class="relative z-[1] hidden flex-1 border-x border-transparent lg:block" aria-hidden="true">
+            <span class="relative z-[1] hidden flex-1 self-stretch border-x border-transparent lg:block" aria-hidden="true">
               <div class="default-border-text-color pointer-events-none absolute top-0 bottom-[-1px] left-[-0.5px] w-[10px] -translate-x-1/2">
                 <div class="absolute top-0 bottom-0 left-1/2 flex w-px -translate-x-1/2 flex-col">
                   <div class="w-px flex-[2.45501] bg-current" />
@@ -658,7 +658,7 @@ onBeforeUnmount(() => {
                 </div>
               </div>
             </span>
-            <span class="relative z-[1] w-4 shrink-0 border-l border-transparent sm:w-6 md:w-12 lg:border-l-0" aria-hidden="true">
+            <span class="relative z-[1] w-4 shrink-0 self-stretch border-l border-transparent sm:w-6 md:w-12 lg:border-l-0" aria-hidden="true">
               <div class="default-border-text-color pointer-events-none absolute top-0 bottom-[-1px] left-[-0.5px] w-[10px] -translate-x-1/2">
                 <div class="absolute top-0 bottom-0 left-1/2 flex w-px -translate-x-1/2 flex-col">
                   <div class="w-px flex-[3.24898] bg-[repeating-linear-gradient(to_bottom,currentColor_0_4px,transparent_4px_8px)]" />
