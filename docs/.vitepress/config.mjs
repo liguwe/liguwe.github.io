@@ -11,7 +11,7 @@ export default defineConfig({
   },
   head: [
     ['meta', { name: 'theme-color', content: 'var(--nav-bg-color)' }],
-    ['link', { rel: 'icon', href: '/8.svg', type: 'image/svg+xml' }],
+    ['link', { rel: 'icon', href: '/favicon.png', type: 'image/png' }],
   ],
   markdown: {
     theme: {

@@ -1,5 +1,5 @@
 <script setup>
-import { Github, Menu, Moon, Search, Sun } from 'lucide-vue-next'
+import { BookOpen, FolderGit2, Github, Menu, Moon, MoreHorizontal, Search, Sun } from 'lucide-vue-next'
 import { Content, inBrowser, useData, useRoute, withBase } from 'vitepress'
 import { computed, nextTick, onBeforeUnmount, onMounted, ref, watch } from 'vue'
 import SiteLogo from './components/SiteLogo.vue'
@@ -13,6 +13,7 @@ const commandOpen = ref(false)
 const menuOpen = ref(false)
 const query = ref('')
 const activeTocSlug = ref('')
+const commandInputRef = ref(null)
 let tocObserver
 
 const isHome = computed(() => page.value.relativePath === 'index.md')
@@ -68,7 +69,6 @@ function toggleAppearance() {
 function openCommand() {
   commandOpen.value = true
   menuOpen.value = false
-  requestAnimationFrame(() => document.querySelector('.command-input')?.focus())
 }
 
 function closePanels() {
@@ -80,6 +80,7 @@ function onKeydown(event) {
   if ((event.metaKey || event.ctrlKey) && event.key.toLowerCase() === 'k') {
     event.preventDefault()
     openCommand()
+    return
   }
 
   if (event.key === 'Escape') {
@@ -126,6 +127,12 @@ function bindTocObserver() {
 
 watch(() => [route.path, page.value.headers], bindTocObserver, { flush: 'post' })
 
+watch(commandOpen, (open) => {
+  if (!open)
+    return
+  nextTick(() => commandInputRef.value?.focus())
+})
+
 onMounted(() => {
   window.addEventListener('keydown', onKeydown)
   bindTocObserver()
@@ -144,11 +151,11 @@ onBeforeUnmount(() => {
 
     <div class="relative overflow-x-clip">
       <div
-        class="relative z-10 flex min-h-screen w-screen flex-none flex-col justify-between overflow-x-clip transition-[transform,border-radius] duration-[400ms] ease-[cubic-bezier(0.32,0.72,0,1)] [transform-origin:center_top] will-change-transform"
+        class="relative z-10 flex min-h-screen w-screen flex-none flex-col overflow-x-clip transition-[transform,border-radius] duration-[400ms] ease-[cubic-bezier(0.32,0.72,0,1)] [transform-origin:center_top] will-change-transform"
         :class="menuOpen ? 'scale-[0.98] translate-y-1 overflow-hidden rounded-t-lg' : ''"
       >
         <header
-          class="outer-section-node-offset sticky top-0 z-[100] flex h-[57px] min-w-0 shrink-0 items-stretch border-t border-b border-[var(--border)] nav-background default-border-color sm:border-t-0"
+          class="outer-section-node-offset sticky top-0 z-[100] flex h-[57px] min-w-0 shrink-0 items-stretch border-b border-t border-offgray-200/90 nav-background sm:border-t-0 dark:border-white/[0.09]"
         >
           <div
             class="pointer-events-none absolute z-[99] size-1.5 rotate-45 border border-offgray-100 bg-[var(--node-bg)] dark:border-offgray-900 dark:bg-[hsl(219,92%,2%)] [bottom:calc(-1*var(--node-vertical-offset))] [left:var(--node-horizontal-offset)]"
@@ -195,16 +202,57 @@ onBeforeUnmount(() => {
                   <Moon v-else class="size-[18px] shrink-0 text-offgray-600 dark:text-offgray-200" stroke-width="2" />
                 </button>
               </li>
-              <li>
-                <a
-                  href="https://github.com/liguwe"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  class="fv-style inline-flex size-8 shrink-0 items-center justify-center rounded-sm text-offgray-1000 hover:bg-offgray-100/60 dark:text-white dark:hover:bg-offgray-500/10 lg:active:translate-y-px lg:active:scale-[.99]"
-                  aria-label="在 GitHub 上查看 liguwe"
+              <li class="group/more relative">
+                <button
+                  type="button"
+                  class="fv-style inline-flex size-8 select-none items-center justify-center rounded-sm border border-[var(--border)] text-offgray-1000 hover:bg-offgray-100/60 dark:text-white dark:hover:bg-offgray-500/10 lg:active:translate-y-px lg:active:scale-[.99] group-hover/more:bg-offgray-100/50 dark:group-hover/more:bg-offgray-500/10"
+                  aria-label="更多外链"
+                  aria-haspopup="menu"
                 >
-                  <Github class="size-[18px] shrink-0" stroke-width="2" />
-                </a>
+                  <MoreHorizontal class="size-[18px] shrink-0" stroke-width="2" />
+                </button>
+                <div
+                  class="pointer-events-none invisible absolute right-0 top-full z-[110] translate-y-1 pt-1 opacity-0 transition-[opacity,visibility,transform] duration-150 ease-out group-hover/more:pointer-events-auto group-hover/more:visible group-hover/more:translate-y-0 group-hover/more:opacity-100 group-focus-within/more:pointer-events-auto group-focus-within/more:visible group-focus-within/more:translate-y-0 group-focus-within/more:opacity-100"
+                  role="menu"
+                >
+                  <div
+                    class="min-w-[11rem] rounded-md border border-[var(--border)] bg-[var(--nav-bg-color)] py-1 shadow-[0_12px_40px_rgba(0,0,0,0.12),var(--shadow-blue-alt)] dark:shadow-[0_12px_40px_rgba(0,0,0,0.35)]"
+                  >
+                    <a
+                      href="https://github.com/liguwe/pre-34.5"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="flex items-center gap-2.5 px-3 py-2 text-sm text-offgray-1000 hover:bg-accent-blue/10 dark:text-white dark:hover:bg-accent-blue/15"
+                      role="menuitem"
+                    >
+                      <FolderGit2 class="size-4 shrink-0 text-offgray-500 dark:text-offgray-400" stroke-width="2" aria-hidden="true" />
+                      <span class="min-w-0 flex-1">pre-34.5</span>
+                      <span class="shrink-0 text-offgray-400 dark:text-offgray-500">↗</span>
+                    </a>
+                    <a
+                      href="https://www.yuque.com/liguwe"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="flex items-center gap-2.5 px-3 py-2 text-sm text-offgray-1000 hover:bg-accent-blue/10 dark:text-white dark:hover:bg-accent-blue/15"
+                      role="menuitem"
+                    >
+                      <BookOpen class="size-4 shrink-0 text-offgray-500 dark:text-offgray-400" stroke-width="2" aria-hidden="true" />
+                      <span class="min-w-0 flex-1">语雀</span>
+                      <span class="shrink-0 text-offgray-400 dark:text-offgray-500">↗</span>
+                    </a>
+                    <a
+                      href="https://github.com/liguwe"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="flex items-center gap-2.5 px-3 py-2 text-sm text-offgray-1000 hover:bg-accent-blue/10 dark:text-white dark:hover:bg-accent-blue/15"
+                      role="menuitem"
+                    >
+                      <Github class="size-4 shrink-0 text-offgray-500 dark:text-offgray-400" stroke-width="2" aria-hidden="true" />
+                      <span class="min-w-0 flex-1">GitHub</span>
+                      <span class="shrink-0 text-offgray-400 dark:text-offgray-500">↗</span>
+                    </a>
+                  </div>
+                </div>
               </li>
             </ul>
 
@@ -324,7 +372,7 @@ onBeforeUnmount(() => {
 
           <section
             id="divider-slash"
-            class="default-border-before-color default-border-after-color relative h-3.5 w-full before:absolute before:top-0 before:right-0 before:-left-[100vw] before:h-px before:w-[200vw] before:[z-index:-1] after:absolute after:bottom-0 after:right-0 after:-left-[100vw] after:h-px after:w-[200vw] after:[z-index:-1]"
+            class="relative h-3.5 w-full before:pointer-events-none before:absolute before:top-0 before:right-0 before:-left-[100vw] before:z-[-1] before:h-px before:w-[200vw] before:bg-[color-mix(in_oklch,var(--border),transparent_58%)] after:pointer-events-none after:absolute after:bottom-0 after:right-0 after:-left-[100vw] after:z-[-1] after:h-px after:w-[200vw] after:bg-[color-mix(in_oklch,var(--border),transparent_50%)] dark:before:bg-[color-mix(in_oklch,var(--border),transparent_42%)] dark:after:bg-[color-mix(in_oklch,var(--border),transparent_38%)]"
             aria-hidden="true"
           >
             <svg class="pointer-events-none absolute inset-0 size-full select-none py-[1px] text-offgray-200/70 [z-index:-1] !opacity-30 dark:text-blue-400/10 dark:!opacity-60" xmlns="http://www.w3.org/2000/svg">
@@ -337,7 +385,7 @@ onBeforeUnmount(() => {
             </svg>
           </section>
 
-          <section class="outer-section-node-offset relative flex min-h-0 min-w-0 flex-1 border-t border-[var(--border)]">
+          <section class="outer-section-node-offset relative flex min-h-0 min-w-0 flex-1">
             <div
               class="pointer-events-none absolute z-[99] size-1.5 rotate-45 border border-offgray-100 bg-[var(--node-bg)] dark:border-offgray-900 dark:bg-[hsl(219,92%,2%)] [top:calc(-1*var(--node-vertical-offset))] [left:var(--node-horizontal-offset)]"
               aria-hidden="true"
@@ -569,7 +617,7 @@ onBeforeUnmount(() => {
             </span>
           </section>
 
-          <section class="outer-section-node-offset relative flex min-h-0 min-w-0 flex-1 border-t border-[var(--border)]">
+          <section class="outer-section-node-offset relative flex min-h-0 min-w-0 flex-1 border-t border-offgray-200/90 dark:border-white/[0.09]">
             <div
               class="pointer-events-none absolute z-[99] size-1.5 rotate-45 border border-offgray-100 bg-[var(--node-bg)] dark:border-offgray-900 dark:bg-[hsl(219,92%,2%)] [top:calc(-1*var(--node-vertical-offset))] [left:var(--node-horizontal-offset)]"
               aria-hidden="true"
@@ -671,7 +719,7 @@ onBeforeUnmount(() => {
         </main>
 
         <main v-else class="flex flex-1 flex-col">
-          <section class="outer-section-node-offset relative flex min-w-0 border-t border-[var(--border)] py-10">
+          <section class="outer-section-node-offset relative flex min-w-0 border-t border-offgray-200/90 py-10 dark:border-white/[0.09]">
             <span class="relative z-[1] w-4 shrink-0 border-r border-transparent sm:w-6 md:w-12 lg:border-r-0" aria-hidden="true" />
             <span class="relative z-[1] hidden flex-1 border-x border-[var(--border)] lg:block" aria-hidden="true" />
             <div class="zed-article container-max-w relative flex-1 px-4 lg:px-12">
@@ -682,70 +730,6 @@ onBeforeUnmount(() => {
           </section>
         </main>
 
-        <!-- -mt-px：与上一节竖轨重叠 1px，消除主区与 footer 拼接处的亚像素断缝 -->
-        <footer class="outer-section-node-offset relative -mt-px flex min-h-fit min-w-0 bg-accent-blue text-offgray-50">
-          <span class="relative z-[1] w-4 shrink-0 border-r border-white/10 sm:w-6 md:w-12 lg:border-r-0" aria-hidden="true">
-            <div class="pointer-events-none absolute top-0 right-[-0.5px] z-[99] w-[10px] translate-x-1/2" aria-hidden="true">
-              <div
-                class="pointer-events-none absolute top-0 left-1/2 z-[99] size-1.5 -translate-x-1/2 -translate-y-1/2 rotate-45 border border-offgray-100 bg-[var(--node-bg)] dark:border-offgray-900 dark:bg-[hsl(219,92%,2%)]"
-                aria-hidden="true"
-              />
-            </div>
-          </span>
-          <span class="relative z-[1] hidden flex-1 border-x border-white/10 lg:block" aria-hidden="true">
-            <div class="pointer-events-none absolute top-0 right-[-0.5px] z-[99] w-[10px] translate-x-1/2" aria-hidden="true">
-              <div
-                class="pointer-events-none absolute top-0 left-1/2 z-[99] size-1.5 -translate-x-1/2 -translate-y-1/2 rotate-45 border border-offgray-100 bg-[var(--node-bg)] dark:border-offgray-900 dark:bg-[hsl(219,92%,2%)]"
-                aria-hidden="true"
-              />
-            </div>
-          </span>
-          <div class="container-max-w relative flex flex-1 flex-col gap-8 px-4 py-12 lg:flex-row lg:items-center lg:justify-between lg:px-12">
-            <div
-              v-if="isHome"
-              class="pointer-events-none absolute top-0 left-0 z-[99] hidden size-1.5 -translate-x-1/2 -translate-y-1/2 rotate-45 border border-offgray-100 bg-[var(--node-bg)] lg:left-[20%] lg:block dark:border-offgray-900 dark:bg-[hsl(219,92%,2%)]"
-              aria-hidden="true"
-            />
-            <div>
-              <h3 class="font-plex-serif h6 mb-2 scroll-mt-24 text-balance text-white">
-                Zed Industries © 2026
-              </h3>
-              <hr class="my-2 w-20 border-t border-white/10">
-              <p class="flex max-w-md flex-wrap items-center gap-1 text-xs text-white/80">
-                Liguwe 的个人博客实验场。
-              </p>
-            </div>
-            <div class="flex flex-wrap gap-4 text-xs">
-              <a :href="withBase('/')" class="fv-style-contrast underline decoration-white/25 underline-offset-2 hover:decoration-white">Blog</a>
-              <a href="https://github.com/liguwe" class="fv-style-contrast underline decoration-white/25 underline-offset-2 hover:decoration-white">GitHub</a>
-              <button
-                type="button"
-                class="fv-style-contrast underline decoration-white/25 underline-offset-2 hover:decoration-white"
-                :aria-label="appearanceLabel"
-                :aria-pressed="isDark"
-                @click="toggleAppearance"
-              >
-                {{ isDark ? '浅色' : '深色' }}
-              </button>
-            </div>
-          </div>
-          <span class="relative z-[1] hidden flex-1 border-x border-white/10 lg:block" aria-hidden="true">
-            <div class="pointer-events-none absolute top-0 left-[-0.5px] z-[99] w-[10px] -translate-x-1/2" aria-hidden="true">
-              <div
-                class="pointer-events-none absolute top-0 left-1/2 z-[99] size-1.5 -translate-x-1/2 -translate-y-1/2 rotate-45 border border-offgray-100 bg-[var(--node-bg)] dark:border-offgray-900 dark:bg-[hsl(219,92%,2%)]"
-                aria-hidden="true"
-              />
-            </div>
-          </span>
-          <span class="relative z-[1] w-4 shrink-0 border-l border-white/10 sm:w-6 md:w-12 lg:border-l-0" aria-hidden="true">
-            <div class="pointer-events-none absolute top-0 left-[-0.5px] z-[99] w-[10px] -translate-x-1/2" aria-hidden="true">
-              <div
-                class="pointer-events-none absolute top-0 left-1/2 z-[99] size-1.5 -translate-x-1/2 -translate-y-1/2 rotate-45 border border-offgray-100 bg-[var(--node-bg)] dark:border-offgray-900 dark:bg-[hsl(219,92%,2%)]"
-                aria-hidden="true"
-              />
-            </div>
-          </span>
-        </footer>
       </div>
 
       <div
@@ -777,6 +761,39 @@ onBeforeUnmount(() => {
           class="rounded-md px-3 py-2 text-offgray-1000 hover:bg-accent-blue/10 dark:text-white"
           @click="menuOpen = false"
         >Latest Post</a>
+        <a
+          href="https://github.com/liguwe/pre-34.5"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="flex items-center gap-2.5 rounded-md px-3 py-2 text-offgray-1000 hover:bg-accent-blue/10 dark:text-white"
+          @click="menuOpen = false"
+        >
+          <FolderGit2 class="size-[18px] shrink-0 text-offgray-500 dark:text-offgray-400" stroke-width="2" aria-hidden="true" />
+          <span class="flex-1">pre-34.5</span>
+          <span class="text-offgray-400">↗</span>
+        </a>
+        <a
+          href="https://www.yuque.com/liguwe"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="flex items-center gap-2.5 rounded-md px-3 py-2 text-offgray-1000 hover:bg-accent-blue/10 dark:text-white"
+          @click="menuOpen = false"
+        >
+          <BookOpen class="size-[18px] shrink-0 text-offgray-500 dark:text-offgray-400" stroke-width="2" aria-hidden="true" />
+          <span class="flex-1">语雀</span>
+          <span class="text-offgray-400">↗</span>
+        </a>
+        <a
+          href="https://github.com/liguwe"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="flex items-center gap-2.5 rounded-md px-3 py-2 text-offgray-1000 hover:bg-accent-blue/10 dark:text-white"
+          @click="menuOpen = false"
+        >
+          <Github class="size-[18px] shrink-0 text-offgray-500 dark:text-offgray-400" stroke-width="2" aria-hidden="true" />
+          <span class="flex-1">GitHub</span>
+          <span class="text-offgray-400">↗</span>
+        </a>
         <button type="button" class="rounded-md px-3 py-2 text-left text-offgray-1000 hover:bg-accent-blue/10 dark:text-white" @click="openCommand">
           Search
         </button>
@@ -806,7 +823,14 @@ onBeforeUnmount(() => {
       >
         <div class="flex items-center gap-3 border-b border-[var(--border)] px-4 py-3">
           <Search class="size-4 shrink-0 text-offgray-500" stroke-width="2" />
-          <input v-model="query" class="command-input w-full border-0 bg-transparent text-base text-offgray-1000 outline-none dark:text-white" placeholder="搜索文章…">
+          <input
+            ref="commandInputRef"
+            v-model="query"
+            type="search"
+            autocomplete="off"
+            class="command-input select-text w-full border-0 bg-transparent text-base text-offgray-1000 outline-none dark:text-white"
+            placeholder="搜索文章…"
+          >
         </div>
         <div class="command-results max-h-[360px] overflow-auto p-2">
           <a

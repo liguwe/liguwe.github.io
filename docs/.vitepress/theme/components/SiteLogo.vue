@@ -1,26 +1,18 @@
 <script setup>
-import { withBase } from "vitepress";
-const logo = withBase("/8.svg");
+import { withBase } from 'vitepress'
 </script>
 
 <template>
   <a
     :href="withBase('/')"
-    aria-label="832 首页"
+    aria-label="liguwe's site 首页"
     class="fv-style outline-hidden flex flex-none items-center gap-2.5 rounded [-webkit-touch-callout:none]"
   >
-    <img
-      :src="logo"
-      alt=""
-      width="26"
-      height="26"
-      class="h-[26px] w-[26px] shrink-0 object-contain"
-      decoding="async"
-    />
+    <span class="select-none text-[1.35rem] leading-none" aria-hidden="true">📚</span>
     <span
-      class="font-plex-serif text-[1.35rem] font-medium tracking-[-0.02em] text-offgray-1000 dark:text-white"
+      class="font-plex-serif text-[1.15rem] font-medium tracking-[-0.02em] text-offgray-1000 sm:text-[1.25rem] dark:text-white"
     >
-      32
+      liguwe's site
     </span>
   </a>
 </template>

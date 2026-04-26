@@ -61,7 +61,8 @@ html.dark {
 
 html {
   min-height: 100%;
-  background: transparent;
+  /* 与页面底色一致，避免橡皮筋滚动 / 视口子像素缝露出浏览器默认白底 */
+  background-color: var(--page-bg);
   color: var(--text);
   font-family: var(--font-writer);
   letter-spacing: 0;
@@ -73,9 +74,16 @@ html {
 body {
   min-width: 320px;
   min-height: 100vh;
+  min-height: 100dvh;
   margin: 0;
   overflow-x: clip;
-  background: transparent;
+  background-color: var(--page-bg);
+}
+
+#app {
+  min-height: 100vh;
+  min-height: 100dvh;
+  background-color: var(--page-bg);
 }
 
 body,
