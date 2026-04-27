@@ -457,8 +457,6 @@ onBeforeUnmount(() => {
                   v-for="post in visiblePosts"
                   :key="post.slug"
                   :href="withBase(post.href)"
-                  target="_blank"
-                  rel="noopener noreferrer"
                   class="group fv-style relative isolate flex flex-col items-start justify-between gap-2 rounded border border-transparent py-2 hover:border-blue-300 hover:bg-blue-50/50 hover:[box-shadow:var(--sh-alt)] lg:min-h-[42px] lg:flex-row lg:items-center lg:px-2 dark:hover:border-blue-300/20 dark:hover:bg-blue-700/5"
                 >
                   <svg class="pointer-events-none absolute inset-0 -z-10 size-full select-none text-offgray-200/70 opacity-50 [mask-image:linear-gradient(to_left,#ffffffad,transparent)] invisible group-hover:visible dark:text-blue-400/10 dark:opacity-80" aria-hidden="true">
@@ -768,8 +766,6 @@ onBeforeUnmount(() => {
         <a
           v-if="latestPost"
           :href="withBase(latestPost.href)"
-          target="_blank"
-          rel="noopener noreferrer"
           class="rounded-md px-3 py-2 text-offgray-1000 hover:bg-accent-blue/10 dark:text-white"
           @click="menuOpen = false"
         >Latest Post</a>

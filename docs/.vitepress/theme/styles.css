@@ -1342,10 +1342,44 @@ html.dark .vp-nav-local-search .DocSearch-Button:hover {
   color: var(--text-muted);
 }
 
-/* TOC aside: internal scroll when content is too long */
+/* TOC aside：限高滚动 + 贴近 macOS 的细圆角滚动条（透明轨道、悬停略加深） */
 .post-doc-aside {
   max-height: calc(100vh - 7rem);
   overflow-y: auto;
+  overscroll-behavior: contain;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(0, 0, 0, 0.28) transparent;
+}
+
+html.dark .post-doc-aside {
+  scrollbar-color: rgba(255, 255, 255, 0.28) transparent;
+}
+
+.post-doc-aside::-webkit-scrollbar {
+  width: 11px;
+}
+
+.post-doc-aside::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.post-doc-aside::-webkit-scrollbar-thumb {
+  border-radius: 9999px;
+  border: 3px solid transparent;
+  background-clip: content-box;
+  background-color: rgba(0, 0, 0, 0.28);
+}
+
+.post-doc-aside::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(0, 0, 0, 0.45);
+}
+
+html.dark .post-doc-aside::-webkit-scrollbar-thumb {
+  background-color: rgba(255, 255, 255, 0.28);
+}
+
+html.dark .post-doc-aside::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(255, 255, 255, 0.45);
 }
 
 /* Hide the fake blurry pseudo-element lines to use crisp 1px borders instead */
