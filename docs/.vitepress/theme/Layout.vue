@@ -105,9 +105,9 @@ onBeforeUnmount(() => {
     <div class="nav-background absolute top-0 left-0 z-[-1] h-full w-4 sm:w-6 md:w-12" aria-hidden="true" />
     <div class="nav-background absolute top-0 right-0 z-[-1] h-full w-4 sm:w-6 md:w-12" aria-hidden="true" />
 
-    <div class="relative overflow-x-clip">
+    <div class="relative flex flex-1 flex-col overflow-x-clip">
       <div
-        class="site-page-shell relative z-10 flex min-h-dvh w-screen flex-col overflow-x-clip transition-[transform,border-radius] duration-[400ms] ease-[cubic-bezier(0.32,0.72,0,1)] [transform-origin:center_top] will-change-transform"
+        class="site-page-shell relative z-10 flex flex-1 w-screen flex-col overflow-x-clip transition-[transform,border-radius] duration-[400ms] ease-[cubic-bezier(0.32,0.72,0,1)] [transform-origin:center_top] will-change-transform"
         :class="menuOpen ? 'scale-[0.98] translate-y-1 overflow-hidden rounded-t-lg' : ''"
       >
         <header
@@ -121,10 +121,10 @@ onBeforeUnmount(() => {
             class="pointer-events-none absolute z-[110] size-1.5 rotate-45 border border-offgray-100 bg-[var(--node-bg)] dark:border-offgray-900 dark:bg-[hsl(219,92%,2%)] [bottom:calc(-1*var(--node-vertical-offset))] [right:var(--node-horizontal-offset)]"
             aria-hidden="true"
           />
-          <span class="relative z-[1] w-4 shrink-0 border-r border-transparent sm:w-6 md:w-12 lg:border-r-0" aria-hidden="true">
+          <span class="relative z-[1] w-4 shrink-0 border-r border-[var(--border)] sm:w-6 md:w-12 lg:border-r-0" aria-hidden="true">
             <span class="default-border-color absolute top-0 bottom-0 hidden border-r lg:block" />
           </span>
-          <span class="relative z-[1] hidden flex-1 border-x border-transparent default-border-color lg:block" aria-hidden="true" />
+          <span class="relative z-[1] hidden flex-1 border-x border-[var(--border)]  lg:block" aria-hidden="true" />
 
           <nav
             aria-label="Site's main navigation"
@@ -235,8 +235,8 @@ onBeforeUnmount(() => {
             </button>
           </nav>
 
-          <span class="relative z-[1] hidden flex-1 border-x border-transparent default-border-color lg:block" aria-hidden="true" />
-          <span class="relative z-[1] w-4 shrink-0 border-l border-transparent sm:w-6 md:w-12 lg:border-l-0" aria-hidden="true" />
+          <span class="relative z-[1] hidden flex-1 border-x border-[var(--border)]  lg:block" aria-hidden="true" />
+          <span class="relative z-[1] w-4 shrink-0 border-l border-[var(--border)] sm:w-6 md:w-12 lg:border-l-0" aria-hidden="true" />
         </header>
 
         <main v-if="isHome" class="flex min-h-0 flex-1 flex-col">
@@ -257,7 +257,7 @@ onBeforeUnmount(() => {
               class="pointer-events-none absolute z-[110] size-1.5 rotate-45 border border-offgray-100 bg-[var(--node-bg)] dark:border-offgray-900 dark:bg-[hsl(219,92%,2%)] [bottom:calc(-1*var(--node-vertical-offset))] [right:var(--node-horizontal-offset)]"
               aria-hidden="true"
             />
-            <span class="relative z-[1] w-4 shrink-0 border-r border-transparent sm:w-6 md:w-12 lg:border-r-0" aria-hidden="true">
+            <span class="relative z-[1] w-4 shrink-0 border-r border-[var(--border)] sm:w-6 md:w-12 lg:border-r-0" aria-hidden="true">
               <svg class="pointer-events-none absolute inset-0 text-accent-blue/15 dark:text-blue-300/5" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
                 <pattern id="hero-grid" width="10" height="10" patternUnits="userSpaceOnUse">
                   <svg width="10" height="10" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -273,7 +273,7 @@ onBeforeUnmount(() => {
                 </div>
               </div>
             </span>
-            <span class="relative z-[1] hidden flex-1 border-x border-transparent lg:block" aria-hidden="true">
+            <span class="relative z-[1] hidden flex-1 border-x border-[var(--border)] lg:block" aria-hidden="true">
               <div class="default-border-text-color pointer-events-none absolute top-0 bottom-0 right-[-0.5px] w-[10px] translate-x-1/2">
                 <div class="absolute top-0 bottom-0 left-1/2 flex w-px -translate-x-1/2 flex-col">
                   <div class="w-px flex-[2.810797334560564] bg-current" />
@@ -322,7 +322,7 @@ onBeforeUnmount(() => {
                 </svg>
               </div>
             </div>
-            <span class="relative z-[1] hidden flex-1 border-x border-transparent lg:block" aria-hidden="true">
+            <span class="relative z-[1] hidden flex-1 border-x border-[var(--border)] lg:block" aria-hidden="true">
               <div class="default-border-text-color pointer-events-none absolute top-0 bottom-0 left-[-0.5px] w-[10px] -translate-x-1/2">
                 <div class="absolute top-0 bottom-0 left-1/2 flex w-px -translate-x-1/2 flex-col">
                   <div class="w-px flex-[3.8821601881096885] bg-current" />
@@ -333,7 +333,7 @@ onBeforeUnmount(() => {
                 </div>
               </div>
             </span>
-            <span class="relative z-[1] w-4 shrink-0 border-l border-transparent sm:w-6 md:w-12 lg:border-l-0" aria-hidden="true">
+            <span class="relative z-[1] w-4 shrink-0 border-l border-[var(--border)] sm:w-6 md:w-12 lg:border-l-0" aria-hidden="true">
               <svg class="pointer-events-none absolute inset-0 text-accent-blue/15 dark:text-blue-300/5" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
                 <pattern id="hero-grid-right" width="10" height="10" patternUnits="userSpaceOnUse">
                   <svg width="10" height="10" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -385,7 +385,7 @@ onBeforeUnmount(() => {
               class="pointer-events-none absolute z-[110] size-1.5 rotate-45 border border-offgray-100 bg-[var(--node-bg)] dark:border-offgray-900 dark:bg-[hsl(219,92%,2%)] [bottom:calc(-1*var(--node-vertical-offset))] [right:var(--node-horizontal-offset)]"
               aria-hidden="true"
             />
-            <span class="relative z-[1] w-4 shrink-0 self-stretch border-r border-transparent sm:w-6 md:w-12 lg:border-r-0" aria-hidden="true">
+            <span class="relative z-[1] w-4 shrink-0 self-stretch border-r border-[var(--border)] sm:w-6 md:w-12 lg:border-r-0" aria-hidden="true">
               <div class="default-border-text-color pointer-events-none absolute top-0 bottom-0 right-[-0.5px] w-[10px] translate-x-1/2">
                 <div class="absolute top-0 bottom-0 left-1/2 flex w-px -translate-x-1/2 flex-col">
                   <div class="w-px flex-[2.8083788164930317] bg-current" />
@@ -393,7 +393,7 @@ onBeforeUnmount(() => {
                 </div>
               </div>
             </span>
-            <span class="relative z-[1] hidden flex-1 self-stretch border-x border-transparent lg:block" aria-hidden="true">
+            <span class="relative z-[1] hidden flex-1 self-stretch border-x border-[var(--border)] lg:block" aria-hidden="true">
               <div class="default-border-text-color pointer-events-none absolute top-0 bottom-0 right-[-0.5px] w-[10px] translate-x-1/2">
                 <div class="absolute top-0 bottom-0 left-1/2 flex w-px -translate-x-1/2 flex-col">
                   <div class="w-px flex-[2.81904649819203] bg-current" />
@@ -444,7 +444,7 @@ onBeforeUnmount(() => {
                     </nav>
                   </div>
                   <div class="col-span-5 flex min-h-0 flex-col lg:col-span-4">
-                    <div class="border-l default-border-color flex min-h-0 flex-1 flex-col p-4 lg:p-8">
+                    <div class="border-l border-dashed default-border-color flex min-h-0 flex-1 flex-col p-4 lg:p-8">
                 <a
                   v-for="post in visiblePosts"
                   :key="post.slug"
@@ -483,7 +483,7 @@ onBeforeUnmount(() => {
                 </div>
               </div>
             </div>
-            <span class="relative z-[1] hidden flex-1 self-stretch border-x border-transparent lg:block" aria-hidden="true">
+            <span class="relative z-[1] hidden flex-1 self-stretch border-x border-[var(--border)] lg:block" aria-hidden="true">
               <div class="default-border-text-color pointer-events-none absolute top-0 bottom-0 left-[-0.5px] w-[10px] -translate-x-1/2">
                 <div class="absolute top-0 bottom-0 left-1/2 flex w-px -translate-x-1/2 flex-col">
                   <div class="w-px flex-[2.9101247796370298] bg-current" />
@@ -491,7 +491,7 @@ onBeforeUnmount(() => {
                 </div>
               </div>
             </span>
-            <span class="relative z-[1] w-4 shrink-0 self-stretch border-l border-transparent sm:w-6 md:w-12 lg:border-l-0" aria-hidden="true">
+            <span class="relative z-[1] w-4 shrink-0 self-stretch border-l border-[var(--border)] sm:w-6 md:w-12 lg:border-l-0" aria-hidden="true">
               <div class="default-border-text-color pointer-events-none absolute top-0 bottom-0 left-[-0.5px] w-[10px] -translate-x-1/2">
                 <div class="absolute top-0 bottom-0 left-1/2 flex w-px -translate-x-1/2 flex-col">
                   <div class="w-px flex-[4.369975210805412] bg-current" />
@@ -503,7 +503,7 @@ onBeforeUnmount(() => {
         </main>
 
         <main v-else-if="isPost" class="flex min-h-0 flex-1 flex-col">
-          <section class="outer-section-node-offset relative flex shrink-0 !min-h-fit min-h-[450px] min-w-0">
+          <section class="outer-section-node-offset relative z-[1] flex shrink-0 !min-h-fit min-h-[450px] min-w-0">
             <div
               class="pointer-events-none absolute z-[110] size-1.5 rotate-45 border border-offgray-100 bg-[var(--node-bg)] dark:border-offgray-900 dark:bg-[hsl(219,92%,2%)] [top:calc(-1*var(--node-vertical-offset))] [left:var(--node-horizontal-offset)]"
               aria-hidden="true"
@@ -520,7 +520,7 @@ onBeforeUnmount(() => {
               class="pointer-events-none absolute z-[110] size-1.5 rotate-45 border border-offgray-100 bg-[var(--node-bg)] dark:border-offgray-900 dark:bg-[hsl(219,92%,2%)] [bottom:calc(-1*var(--node-vertical-offset))] [right:var(--node-horizontal-offset)]"
               aria-hidden="true"
             />
-            <span class="relative z-[1] w-4 shrink-0 border-r border-transparent sm:w-6 md:w-12 lg:border-r-0" aria-hidden="true">
+            <span class="relative z-[1] w-4 shrink-0 border-r border-[var(--border)] sm:w-6 md:w-12 lg:border-r-0" aria-hidden="true">
               <svg class="pointer-events-none absolute inset-0 text-accent-blue/15 dark:text-blue-300/5" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
                 <pattern id="post-hero-grid" width="10" height="10" patternUnits="userSpaceOnUse">
                   <svg width="10" height="10" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -536,7 +536,7 @@ onBeforeUnmount(() => {
                 </div>
               </div>
             </span>
-            <span class="relative z-[1] hidden flex-1 border-x border-transparent lg:block" aria-hidden="true">
+            <span class="relative z-[1] hidden flex-1 border-x border-[var(--border)] lg:block" aria-hidden="true">
               <div class="default-border-text-color pointer-events-none absolute top-0 bottom-0 right-[-0.5px] w-[10px] translate-x-1/2">
                 <div class="absolute top-0 bottom-0 left-1/2 flex w-px -translate-x-1/2 flex-col">
                   <div class="w-px flex-[2.8108] bg-current" />
@@ -587,7 +587,7 @@ onBeforeUnmount(() => {
                 </svg>
               </div>
             </div>
-            <span class="relative z-[1] hidden flex-1 border-x border-transparent lg:block" aria-hidden="true">
+            <span class="relative z-[1] hidden flex-1 border-x border-[var(--border)] lg:block" aria-hidden="true">
               <div class="default-border-text-color pointer-events-none absolute top-0 bottom-0 left-[-0.5px] w-[10px] -translate-x-1/2">
                 <div class="absolute top-0 bottom-0 left-1/2 flex w-px -translate-x-1/2 flex-col">
                   <div class="w-px flex-[3.88216] bg-current" />
@@ -598,7 +598,7 @@ onBeforeUnmount(() => {
                 </div>
               </div>
             </span>
-            <span class="relative z-[1] w-4 shrink-0 border-l border-transparent sm:w-6 md:w-12 lg:border-l-0" aria-hidden="true">
+            <span class="relative z-[1] w-4 shrink-0 border-l border-[var(--border)] sm:w-6 md:w-12 lg:border-l-0" aria-hidden="true">
               <svg class="pointer-events-none absolute inset-0 text-accent-blue/15 dark:text-blue-300/5" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
                 <pattern id="post-hero-grid-right" width="10" height="10" patternUnits="userSpaceOnUse">
                   <svg width="10" height="10" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -618,7 +618,7 @@ onBeforeUnmount(() => {
             </span>
           </section>
 
-          <section class="outer-section-node-offset relative flex min-h-[calc(100vh-521px)] min-w-0 flex-1 items-stretch border-t default-border-color">
+          <section class="outer-section-node-offset relative z-[1] flex min-h-[calc(100vh-250px)] min-w-0 flex-1 items-stretch border-t default-border-color">
             <div
               class="pointer-events-none absolute z-[110] size-1.5 rotate-45 border border-offgray-100 bg-[var(--node-bg)] dark:border-offgray-900 dark:bg-[hsl(219,92%,2%)] [top:calc(-1*var(--node-vertical-offset))] [left:var(--node-horizontal-offset)]"
               aria-hidden="true"
@@ -635,7 +635,7 @@ onBeforeUnmount(() => {
               class="pointer-events-none absolute z-[110] size-1.5 rotate-45 border border-offgray-100 bg-[var(--node-bg)] dark:border-offgray-900 dark:bg-[hsl(219,92%,2%)] [bottom:calc(-1*var(--node-vertical-offset))] [right:var(--node-horizontal-offset)]"
               aria-hidden="true"
             />
-            <span class="relative z-[1] w-4 shrink-0 self-stretch border-r border-transparent sm:w-6 md:w-12 lg:border-r-0" aria-hidden="true">
+            <span class="relative z-[1] w-4 shrink-0 self-stretch border-r border-[var(--border)] sm:w-6 md:w-12 lg:border-r-0" aria-hidden="true">
               <div class="default-border-text-color pointer-events-none absolute top-0 right-[-0.5px] bottom-0 w-[10px] translate-x-1/2">
                 <div class="absolute top-0 bottom-0 left-1/2 flex w-px -translate-x-1/2 flex-col">
                   <div class="w-px flex-[4.03169] bg-current" />
@@ -646,7 +646,7 @@ onBeforeUnmount(() => {
                 </div>
               </div>
             </span>
-            <span class="relative z-[1] hidden flex-1 self-stretch border-x border-transparent lg:block" aria-hidden="true">
+            <span class="relative z-[1] hidden flex-1 self-stretch border-x border-[var(--border)] lg:block" aria-hidden="true">
               <div class="default-border-text-color pointer-events-none absolute top-0 right-[-0.5px] bottom-0 w-[10px] translate-x-1/2">
                 <div class="absolute top-0 bottom-0 left-1/2 flex w-px -translate-x-1/2 flex-col">
                   <div class="w-px flex-[2.80838] bg-current" />
@@ -654,7 +654,7 @@ onBeforeUnmount(() => {
                 </div>
               </div>
             </span>
-            <div class="relative z-[2] container-max-w flex max-md:min-w-0 h-full min-h-0 flex-1 flex-col [--node-horizontal-offset:-3.5px]">
+            <div class="relative z-[2] container-max-w flex max-md:min-w-0 min-h-0 flex-1 flex-col [--node-horizontal-offset:-3.5px]">
               <div
                 class="pointer-events-none absolute z-[110] size-1.5 rotate-45 border border-offgray-100 bg-[var(--node-bg)] dark:border-offgray-900 dark:bg-[hsl(219,92%,2%)] [top:calc(-1*var(--node-vertical-offset))] [left:var(--node-horizontal-offset)] hidden lg:block"
                 aria-hidden="true"
@@ -671,7 +671,7 @@ onBeforeUnmount(() => {
                 class="pointer-events-none absolute z-[110] size-1.5 rotate-45 border border-offgray-100 bg-[var(--node-bg)] dark:border-offgray-900 dark:bg-[hsl(219,92%,2%)] [bottom:calc(-1*var(--node-vertical-offset))] [right:var(--node-horizontal-offset)] hidden lg:block"
                 aria-hidden="true"
               />
-              <div class="isolate relative flex h-full min-h-0 min-w-0 flex-1 flex-col justify-between gap-10 overflow-clip p-4 lg:flex lg:flex-row-reverse lg:items-start lg:gap-12 lg:gap-x-10 lg:p-12 xl:gap-x-14">
+              <div class="isolate relative flex min-h-0 min-w-0 flex-1 flex-col justify-between gap-10 overflow-clip p-4 lg:flex lg:flex-row-reverse lg:items-start lg:gap-12 lg:gap-x-10 lg:p-12 xl:gap-x-14">
                 <aside
                   class="post-doc-aside sticky top-24 hidden w-[min(272px,32vw)] shrink-0 flex-col gap-4 lg:flex"
                   aria-label="本页目录"
@@ -688,7 +688,7 @@ onBeforeUnmount(() => {
                 </div>
               </div>
             </div>
-            <span class="relative z-[1] hidden flex-1 self-stretch border-x border-transparent lg:block" aria-hidden="true">
+            <span class="relative z-[1] hidden flex-1 self-stretch border-x border-[var(--border)] lg:block" aria-hidden="true">
               <div class="default-border-text-color pointer-events-none absolute top-0 bottom-0 left-[-0.5px] w-[10px] -translate-x-1/2">
                 <div class="absolute top-0 bottom-0 left-1/2 flex w-px -translate-x-1/2 flex-col">
                   <div class="w-px flex-[2.45501] bg-current" />
@@ -698,7 +698,7 @@ onBeforeUnmount(() => {
                 </div>
               </div>
             </span>
-            <span class="relative z-[1] w-4 shrink-0 self-stretch border-l border-transparent sm:w-6 md:w-12 lg:border-l-0" aria-hidden="true">
+            <span class="relative z-[1] w-4 shrink-0 self-stretch border-l border-[var(--border)] sm:w-6 md:w-12 lg:border-l-0" aria-hidden="true">
               <div class="default-border-text-color pointer-events-none absolute top-0 bottom-0 left-[-0.5px] w-[10px] -translate-x-1/2">
                 <div class="absolute top-0 bottom-0 left-1/2 flex w-px -translate-x-1/2 flex-col">
                   <div class="w-px flex-[3.24898] bg-current" />
@@ -711,8 +711,8 @@ onBeforeUnmount(() => {
         </main>
 
         <main v-else class="flex flex-1 flex-col">
-          <section class="outer-section-node-offset relative flex min-h-[calc(100vh-57px)] min-w-0 border-t default-border-color py-10">
-            <span class="relative z-[1] w-4 shrink-0 border-r border-transparent sm:w-6 md:w-12 lg:border-r-0" aria-hidden="true" />
+          <section class="outer-section-node-offset relative z-[1] flex min-h-[calc(100vh-57px)] min-w-0 border-t default-border-color py-10">
+            <span class="relative z-[1] w-4 shrink-0 border-r border-[var(--border)] sm:w-6 md:w-12 lg:border-r-0" aria-hidden="true" />
             <span class="relative z-[1] hidden flex-1 border-x border-[var(--border)] lg:block" aria-hidden="true" />
             <div class="zed-article container-max-w relative flex-1 px-4 lg:px-12 VPDoc">
               <Content
@@ -721,7 +721,7 @@ onBeforeUnmount(() => {
               />
             </div>
             <span class="relative z-[1] hidden flex-1 border-x border-[var(--border)] lg:block" aria-hidden="true" />
-            <span class="relative z-[1] w-4 shrink-0 border-l border-transparent sm:w-6 md:w-12 lg:border-l-0" aria-hidden="true" />
+            <span class="relative z-[1] w-4 shrink-0 border-l border-[var(--border)] sm:w-6 md:w-12 lg:border-l-0" aria-hidden="true" />
           </section>
         </main>
 

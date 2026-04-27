@@ -1340,3 +1340,8 @@ html.dark .vp-nav-local-search .DocSearch-Button:hover {
   text-transform: uppercase;
   color: var(--text-muted);
 }
+
+/* Hide the fake blurry pseudo-element lines to use crisp 1px borders instead */
+.default-border-text-color {
+  display: none !important;
+}
