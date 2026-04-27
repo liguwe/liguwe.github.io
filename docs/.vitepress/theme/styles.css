@@ -1345,3 +1345,9 @@ html.dark .vp-nav-local-search .DocSearch-Button:hover {
 .default-border-text-color {
   display: none !important;
 }
+
+/* Custom dashed border for the article list separator */
+.custom-dashed-border-l {
+  border-left-width: 1px;
+  border-image: repeating-linear-gradient(to bottom, var(--border) 0, var(--border) 4px, transparent 4px, transparent 12px) 1;
+}

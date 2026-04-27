@@ -122,7 +122,6 @@ onBeforeUnmount(() => {
             aria-hidden="true"
           />
           <span class="relative z-[1] w-4 shrink-0 border-r border-[var(--border)] sm:w-6 md:w-12 lg:border-r-0" aria-hidden="true">
-            <span class="default-border-color absolute top-0 bottom-0 hidden border-r lg:block" />
           </span>
           <span class="relative z-[1] hidden flex-1 border-x border-[var(--border)]  lg:block" aria-hidden="true" />
 
@@ -444,7 +443,15 @@ onBeforeUnmount(() => {
                     </nav>
                   </div>
                   <div class="col-span-5 flex min-h-0 flex-col lg:col-span-4">
-                    <div class="border-l border-dashed default-border-color flex min-h-0 flex-1 flex-col p-4 lg:p-8">
+                    <div class="border-l border-dashed default-border-color relative flex min-h-0 flex-1 flex-col p-4 lg:p-8">
+                      <div
+                        class="pointer-events-none absolute z-[110] size-1.5 rotate-45 border border-offgray-100 bg-[var(--node-bg)] dark:border-offgray-900 dark:bg-[hsl(219,92%,2%)] [top:calc(-1*var(--node-vertical-offset))] [left:var(--node-horizontal-offset)] hidden lg:block"
+                        aria-hidden="true"
+                      />
+                      <div
+                        class="pointer-events-none absolute z-[110] size-1.5 rotate-45 border border-offgray-100 bg-[var(--node-bg)] dark:border-offgray-900 dark:bg-[hsl(219,92%,2%)] [bottom:calc(-1*var(--node-vertical-offset))] [left:var(--node-horizontal-offset)] hidden lg:block"
+                        aria-hidden="true"
+                      />
                 <a
                   v-for="post in visiblePosts"
                   :key="post.slug"
