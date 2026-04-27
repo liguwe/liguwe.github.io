@@ -404,7 +404,7 @@ onBeforeUnmount(() => {
                 </div>
               </div>
             </span>
-            <div class="relative z-[2] container-max-w flex max-md:min-w-0 min-h-[60vh] flex-1 flex-col [--node-horizontal-offset:-3.5px]">
+            <div class="relative z-[2] container-max-w flex max-md:min-w-0 min-h-[75vh] flex-1 flex-col [--node-horizontal-offset:-3.5px]">
               <div
                 class="pointer-events-none absolute z-[110] size-1.5 rotate-45 border border-offgray-100 bg-[var(--node-bg)] dark:border-offgray-900 dark:bg-[hsl(219,92%,2%)] [top:calc(-1*var(--node-vertical-offset))] [left:var(--node-horizontal-offset)] hidden lg:block"
                 aria-hidden="true"
@@ -571,7 +571,7 @@ onBeforeUnmount(() => {
                 class="pointer-events-none absolute z-[110] size-1.5 rotate-45 border border-offgray-100 bg-[var(--node-bg)] dark:border-offgray-900 dark:bg-[hsl(219,92%,2%)] [bottom:calc(-1*var(--node-vertical-offset))] [right:var(--node-horizontal-offset)] hidden lg:block"
                 aria-hidden="true"
               />
-              <div class="isolate relative size-full overflow-clip p-4 px-4 py-6 lg:px-12 lg:py-16">
+              <div class="isolate relative size-full overflow-clip px-4 py-4 lg:px-12 lg:py-10">
                 <header class="flex w-full flex-col justify-center gap-6">
                   <h1 class="zed-detail-hero-title font-plex-serif scroll-mt-24 text-accent-blue dark:text-blue-300">
                     {{ postHeroTitle }}
