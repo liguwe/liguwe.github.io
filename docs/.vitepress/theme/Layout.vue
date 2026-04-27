@@ -573,7 +573,7 @@ onBeforeUnmount(() => {
               />
               <div class="isolate relative size-full overflow-clip p-4 px-4 py-6 lg:px-12 lg:py-16">
                 <header class="flex w-full flex-col justify-center gap-6">
-                  <h1 class="zed-detail-hero-title font-plex-serif text-balance scroll-mt-24 text-accent-blue dark:text-blue-300">
+                  <h1 class="zed-detail-hero-title font-plex-serif scroll-mt-24 text-accent-blue dark:text-blue-300">
                     {{ postHeroTitle }}
                   </h1>
                   <div v-if="postHeroDate || postHeroTags.length" class="flex flex-col gap-2.5">
@@ -688,7 +688,7 @@ onBeforeUnmount(() => {
                 class="pointer-events-none absolute z-[110] size-1.5 rotate-45 border border-offgray-100 bg-[var(--node-bg)] dark:border-offgray-900 dark:bg-[hsl(219,92%,2%)] [bottom:calc(-1*var(--node-vertical-offset))] [right:var(--node-horizontal-offset)] hidden lg:block"
                 aria-hidden="true"
               />
-              <div class="isolate relative flex min-h-0 min-w-0 flex-1 flex-col justify-between gap-10 overflow-clip p-4 lg:flex lg:flex-row-reverse lg:items-start lg:gap-12 lg:gap-x-10 lg:p-12 xl:gap-x-14">
+              <div class="isolate relative flex min-h-0 min-w-0 flex-1 flex-col justify-between gap-10 p-4 lg:flex lg:flex-row-reverse lg:items-start lg:gap-12 lg:gap-x-10 lg:p-12 xl:gap-x-14">
                 <aside
                   class="post-doc-aside sticky top-24 hidden w-[min(272px,32vw)] shrink-0 flex-col gap-4 lg:flex"
                   aria-label="本页目录"

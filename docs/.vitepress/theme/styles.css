@@ -137,12 +137,11 @@ body {
  */
 h1.zed-detail-hero-title {
   margin: 0;
-  max-width: 850px;
   font-family: var(--font-serif), ui-serif, Georgia, serif;
-  font-size: clamp(2.1rem, 1.65rem + 2.5vw, 2.4rem);
+  font-size: clamp(1.6rem, 1.2rem + 2vw, 2rem);
   font-weight: 340;
   line-height: 1.2;
-  text-wrap: balance;
+  text-wrap: pretty;
   scroll-margin-top: 6rem;
 }
 
@@ -1341,6 +1340,12 @@ html.dark .vp-nav-local-search .DocSearch-Button:hover {
   letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--text-muted);
+}
+
+/* TOC aside: internal scroll when content is too long */
+.post-doc-aside {
+  max-height: calc(100vh - 7rem);
+  overflow-y: auto;
 }
 
 /* Hide the fake blurry pseudo-element lines to use crisp 1px borders instead */
