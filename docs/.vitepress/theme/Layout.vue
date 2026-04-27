@@ -1,5 +1,5 @@
 <script setup>
-import { BookOpen, Github, Library, Menu, Moon, MoreHorizontal, Search, Sun } from 'lucide-vue-next'
+import { BookOpen, FileText, FolderGit2, Github, Library, Menu, Moon, MoreHorizontal, Search, Sun } from 'lucide-vue-next'
 import { Content, inBrowser, useData, useRoute, withBase } from 'vitepress'
 import { VPNavBarSearch } from 'vitepress/theme'
 import VPDocAsideOutline from 'vitepress/dist/client/theme-default/components/VPDocAsideOutline.vue'
@@ -199,7 +199,18 @@ onBeforeUnmount(() => {
                       <span class="shrink-0 text-offgray-400 dark:text-offgray-500">↗</span>
                     </a>
                     <a
-                      href="https://www.yuque.com/liguwe"
+                      href="https://liguwe.site/codex-docs/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="flex items-center gap-2.5 px-3 py-2 text-sm text-offgray-1000 hover:bg-accent-blue/10 dark:text-white dark:hover:bg-accent-blue/15"
+                      role="menuitem"
+                    >
+                      <FileText class="size-4 shrink-0 text-offgray-500 dark:text-offgray-400" stroke-width="2" aria-hidden="true" />
+                      <span class="min-w-0 flex-1">Codex Docs</span>
+                      <span class="shrink-0 text-offgray-400 dark:text-offgray-500">↗</span>
+                    </a>
+                    <a
+                      href="https://www.yuque.com/liguwe/post"
                       target="_blank"
                       rel="noopener noreferrer"
                       class="flex items-center gap-2.5 px-3 py-2 text-sm text-offgray-1000 hover:bg-accent-blue/10 dark:text-white dark:hover:bg-accent-blue/15"
@@ -770,6 +781,17 @@ onBeforeUnmount(() => {
           @click="menuOpen = false"
         >Latest Post</a>
         <a
+          href="https://liguwe.site/codex-docs/"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="flex items-center gap-2.5 rounded-md px-3 py-2 text-offgray-1000 hover:bg-accent-blue/10 dark:text-white"
+          @click="menuOpen = false"
+        >
+          <FileText class="size-[18px] shrink-0 text-offgray-500 dark:text-offgray-400" stroke-width="2" aria-hidden="true" />
+          <span class="flex-1">Codex Docs</span>
+          <span class="text-offgray-400">↗</span>
+        </a>
+        <a
           href="https://github.com/liguwe/pre-34.5"
           target="_blank"
           rel="noopener noreferrer"
@@ -781,7 +803,7 @@ onBeforeUnmount(() => {
           <span class="text-offgray-400">↗</span>
         </a>
         <a
-          href="https://www.yuque.com/liguwe"
+          href="https://www.yuque.com/liguwe/post"
           target="_blank"
           rel="noopener noreferrer"
           class="flex items-center gap-2.5 rounded-md px-3 py-2 text-offgray-1000 hover:bg-accent-blue/10 dark:text-white"
