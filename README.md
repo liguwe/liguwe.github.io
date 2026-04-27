@@ -35,3 +35,7 @@ npm run make
 ```bash
 npm run build
 ```
+
+## 致谢
+
+本站的设计风格参考了 [https://zed.dev](https://zed.dev)。
