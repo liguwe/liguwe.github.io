@@ -421,11 +421,10 @@ onBeforeUnmount(() => {
                 class="pointer-events-none absolute z-[110] size-1.5 rotate-45 border border-offgray-100 bg-[var(--node-bg)] dark:border-offgray-900 dark:bg-[hsl(219,92%,2%)] [bottom:calc(-1*var(--node-vertical-offset))] [right:var(--node-horizontal-offset)] hidden lg:block"
                 aria-hidden="true"
               />
-              <div class="isolate relative flex min-h-0 flex-1 flex-col overflow-x-clip p-0">
-                <div class="relative grid min-h-0 w-full flex-1 auto-rows-[minmax(0,1fr)] grid-cols-5">
-                  <div class="col-span-5 flex max-w-5xl min-h-0 flex-col lg:col-span-1">
-                    <nav class="max-md:[mask-image:linear-gradient(to_right,black_85%,transparent)] md:[mask-image:none]" aria-label="Blog years">
-                      <div class="sticky top-24 py-10">
+              <div class="isolate relative flex min-h-0 flex-1 flex-col p-0">
+                <div class="relative grid min-h-0 w-full flex-1 grid-cols-5">
+                  <div class="col-span-5 max-w-5xl lg:col-span-1">
+                    <nav class="max-md:[mask-image:linear-gradient(to_right,black_85%,transparent)] md:[mask-image:none] sticky top-14 py-6 lg:py-10" aria-label="Blog years">
                         <div class="subheader text-center lg:text-left px-0 pb-2.5 lg:pl-[15px] border-b lg:border-b-0 default-border-color">
                           年份
                         </div>
@@ -442,7 +441,6 @@ onBeforeUnmount(() => {
                             </a>
                           </li>
                         </ul>
-                      </div>
                     </nav>
                   </div>
                   <div class="col-span-5 flex min-h-0 flex-col lg:col-span-4">
