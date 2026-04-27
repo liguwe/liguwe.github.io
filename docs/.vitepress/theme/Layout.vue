@@ -314,10 +314,10 @@ onBeforeUnmount(() => {
               <div class="relative isolate size-full w-full overflow-clip p-4 py-8 lg:pt-12 lg:pb-14">
                 <hgroup class="mx-auto flex w-full max-w-lg flex-col items-center gap-1">
                   <h1 class="zed-blog-hero-title font-plex-serif text-balance scroll-mt-24 mb-2 text-center text-accent-blue dark:text-blue-300">
-                    博客
+                    AI 实践笔记
                   </h1>
                   <p class="text-center text-balance tracking-tight text-offgray-600 dark:text-offgray-500">
-                    记录工程实践、设计细节和长期写作中的判断。
+                    少一点旁观，多一点动手
                   </p>
                 </hgroup>
                 <svg
