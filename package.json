@@ -4,7 +4,7 @@
   "main": "index.js",
   "scripts": {
     "make": "node make.js",
-    "dev": "vitepress dev docs",
+    "dev": "node make.js && vitepress dev docs",
     "build": "vitepress build docs",
     "preview": "vitepress preview docs"
   },

@@ -24,6 +24,22 @@ const themeRoot = path.resolve(docsRoot, ".vitepress/theme");
 const excludeReg = /@832|@ing|@todo|@/;
 const yearReg = /^\d{4}$/;
 const indexReg = /^(\d+)\.\s*/;
+const metadataDateReg = /^(\d{4})\/(\d{2})\/(\d{2})$/;
+const calloutTypeMap = {
+  tip: "tip",
+  success: "tip",
+  note: "info",
+  info: "info",
+  abstract: "info",
+  question: "info",
+  example: "info",
+  quote: "info",
+  warning: "warning",
+  todo: "warning",
+  danger: "danger",
+  bug: "danger",
+  failure: "danger",
+};
 
 /**
  * 判断是否应排除该路径
@@ -62,30 +78,40 @@ function parseFileName(fileName) {
 function parseFirstLine(content) {
   const lines = content.split("\n");
   const firstLine = (lines[0] || "").trim();
+  return parseMetadataLine(firstLine);
+}
 
-  // 匹配所有 #xxx 标签（不在行内代码/链接中的）
-  const tagPattern = /(?<!\S)#([^\s#]+)(?!\/\S)/g;
-  const datePattern = /^(\d{4})\/(\d{2})\/(\d{2})$/;
+/**
+ * 解析首行元信息：仅由 #tag / #YYYY/MM/DD 组成时认为是文章元信息
+ */
+function parseMetadataLine(line) {
+  const tokens = line.split(/\s+/).filter(Boolean);
+  if (tokens.length === 0) {
+    return { isMetadataLine: false, date: "", tags: [] };
+  }
 
   let date = "";
   const tags = [];
 
-  let match;
-  // 重新用更精确的方式提取
-  const tokens = firstLine.split(/\s+/);
   for (const token of tokens) {
-    if (token.startsWith("#")) {
-      const value = token.slice(1); // 去掉 #
-      const dateMatch = value.match(datePattern);
-      if (dateMatch) {
-        date = `${dateMatch[1]}.${dateMatch[2]}.${dateMatch[3]}`;
-      } else if (value.length > 0) {
-        tags.push(value);
-      }
+    if (!token.startsWith("#") || token.length <= 1) {
+      return { isMetadataLine: false, date: "", tags: [] };
+    }
+
+    const value = token.slice(1);
+    const dateMatch = value.match(metadataDateReg);
+    if (dateMatch) {
+      date = `${dateMatch[1]}.${dateMatch[2]}.${dateMatch[3]}`;
+    } else {
+      tags.push(value);
     }
   }
 
-  return { date, tags };
+  return {
+    isMetadataLine: Boolean(date),
+    date,
+    tags,
+  };
 }
 
 /**
@@ -167,7 +193,64 @@ function convertTags(content) {
 }
 
 /**
- * 转换文件内容（简化版：处理高亮、Vue 模板、tags）
+ * 删除首行元信息，避免详情页正文重复展示 Hero 中的日期和标签
+ */
+function removeLeadingMetadataLine(content) {
+  const lines = content.split("\n");
+  const firstLine = (lines[0] || "").trim();
+  const metadata = parseMetadataLine(firstLine);
+
+  if (!metadata.isMetadataLine) {
+    return content;
+  }
+
+  lines.shift();
+  while (lines.length > 0 && lines[0].trim() === "") {
+    lines.shift();
+  }
+
+  return lines.join("\n");
+}
+
+/**
+ * 转换 Obsidian callout 为 VitePress 自定义容器
+ */
+function convertObsidianCallouts(content) {
+  const lines = content.split("\n");
+  const output = [];
+
+  for (let i = 0; i < lines.length; i++) {
+    const line = lines[i];
+    const calloutMatch = line.match(/^>\s*\[!([^\]\s]+)\](.*)$/i);
+
+    if (!calloutMatch) {
+      output.push(line);
+      continue;
+    }
+
+    const sourceType = calloutMatch[1].toLowerCase();
+    const targetType = calloutTypeMap[sourceType] || "info";
+    const title = calloutMatch[2].trim();
+    const header = title ? `::: ${targetType} ${title}` : `::: ${targetType}`;
+    const bodyLines = [];
+
+    i++;
+    while (i < lines.length && /^> ?/.test(lines[i])) {
+      bodyLines.push(lines[i].replace(/^> ?/, ""));
+      i++;
+    }
+    i--;
+
+    output.push(header);
+    output.push(...bodyLines);
+    output.push(":::");
+  }
+
+  return output.join("\n");
+}
+
+/**
+ * 转换文件内容（简化版：处理元信息、callout、高亮、Vue 模板、tags）
  */
 function transformContent(file) {
   let content = fs.readFileSync(file.sourcePath, "utf8");
@@ -189,16 +272,11 @@ function transformContent(file) {
     return text;
   });
 
-  // 去掉首行的 #date #tags 行（详情页 Hero 已经展示了标题和 tags）
-  const lines = content.split("\n");
-  if (lines.length > 0 && /^#\d{4}\//.test(lines[0].trim())) {
-    lines.shift();
-    // 去掉首行后面可能的空行
-    while (lines.length > 0 && lines[0].trim() === "") {
-      lines.shift();
-    }
-  }
-  content = lines.join("\n");
+  // 去掉首行元信息（详情页 Hero 已经展示了标题和 tags）
+  content = removeLeadingMetadataLine(content);
+
+  // 转换 Obsidian callout
+  content = convertObsidianCallouts(content);
 
   // 转换 tags
   content = convertTags(content);
