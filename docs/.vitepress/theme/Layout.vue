@@ -688,7 +688,7 @@ onBeforeUnmount(() => {
                 class="pointer-events-none absolute z-[110] size-1.5 rotate-45 border border-offgray-100 bg-[var(--node-bg)] dark:border-offgray-900 dark:bg-[hsl(219,92%,2%)] [bottom:calc(-1*var(--node-vertical-offset))] [right:var(--node-horizontal-offset)] hidden lg:block"
                 aria-hidden="true"
               />
-              <div class="isolate relative flex min-h-0 min-w-0 flex-1 flex-col justify-between gap-10 p-4 lg:flex lg:flex-row-reverse lg:items-start lg:gap-12 lg:gap-x-10 lg:p-12 xl:gap-x-14">
+              <div class="isolate relative flex min-h-0 min-w-0 flex-1 flex-col justify-between gap-5 pl-2 pr-0 py-6 lg:flex lg:flex-row-reverse lg:items-start lg:gap-6 lg:gap-x-5 lg:pl-6 lg:pr-0 lg:py-12 xl:gap-x-7">
                 <aside
                   class="post-doc-aside sticky top-24 hidden w-[min(272px,32vw)] shrink-0 flex-col gap-4 lg:flex"
                   aria-label="本页目录"
