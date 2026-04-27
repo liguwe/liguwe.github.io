@@ -114,11 +114,11 @@ onBeforeUnmount(() => {
           class="outer-section-node-offset sticky top-0 z-[100] flex h-[57px] min-w-0 shrink-0 items-stretch border-b border-t default-border-color nav-background sm:border-t-0"
         >
           <div
-            class="pointer-events-none absolute z-[99] size-1.5 rotate-45 border border-offgray-100 bg-[var(--node-bg)] dark:border-offgray-900 dark:bg-[hsl(219,92%,2%)] [bottom:calc(-1*var(--node-vertical-offset))] [left:var(--node-horizontal-offset)]"
+            class="pointer-events-none absolute z-[110] size-1.5 rotate-45 border border-offgray-100 bg-[var(--node-bg)] dark:border-offgray-900 dark:bg-[hsl(219,92%,2%)] [bottom:calc(-1*var(--node-vertical-offset))] [left:var(--node-horizontal-offset)]"
             aria-hidden="true"
           />
           <div
-            class="pointer-events-none absolute z-[99] size-1.5 rotate-45 border border-offgray-100 bg-[var(--node-bg)] dark:border-offgray-900 dark:bg-[hsl(219,92%,2%)] [bottom:calc(-1*var(--node-vertical-offset))] [right:var(--node-horizontal-offset)]"
+            class="pointer-events-none absolute z-[110] size-1.5 rotate-45 border border-offgray-100 bg-[var(--node-bg)] dark:border-offgray-900 dark:bg-[hsl(219,92%,2%)] [bottom:calc(-1*var(--node-vertical-offset))] [right:var(--node-horizontal-offset)]"
             aria-hidden="true"
           />
           <span class="relative z-[1] w-4 shrink-0 border-r border-transparent sm:w-6 md:w-12 lg:border-r-0" aria-hidden="true">
@@ -130,6 +130,14 @@ onBeforeUnmount(() => {
             aria-label="Site's main navigation"
             class="container-max-w relative isolate z-[2] flex w-full flex-1 items-center justify-between gap-4 pl-3 pr-3 lg:gap-0 lg:pl-3.5 [--node-horizontal-offset:-3.5px]"
           >
+            <div
+              class="pointer-events-none absolute z-[110] size-1.5 rotate-45 border border-offgray-100 bg-[var(--node-bg)] dark:border-offgray-900 dark:bg-[hsl(219,92%,2%)] [bottom:calc(-1*var(--node-vertical-offset))] [left:var(--node-horizontal-offset)] hidden lg:block"
+              aria-hidden="true"
+            />
+            <div
+              class="pointer-events-none absolute z-[110] size-1.5 rotate-45 border border-offgray-100 bg-[var(--node-bg)] dark:border-offgray-900 dark:bg-[hsl(219,92%,2%)] [bottom:calc(-1*var(--node-vertical-offset))] [right:var(--node-horizontal-offset)] hidden lg:block"
+              aria-hidden="true"
+            />
             <div class="flex flex-none items-center">
               <SiteLogo />
             </div>
@@ -232,21 +240,21 @@ onBeforeUnmount(() => {
         </header>
 
         <main v-if="isHome" class="flex min-h-0 flex-1 flex-col">
-          <section class="outer-section-node-offset relative flex shrink-0 !min-h-fit min-w-0">
+          <section class="outer-section-node-offset relative z-[1] flex shrink-0 !min-h-fit min-w-0">
             <div
-              class="pointer-events-none absolute z-[99] size-1.5 rotate-45 border border-offgray-100 bg-[var(--node-bg)] dark:border-offgray-900 dark:bg-[hsl(219,92%,2%)] [top:calc(-1*var(--node-vertical-offset))] [left:var(--node-horizontal-offset)]"
+              class="pointer-events-none absolute z-[110] size-1.5 rotate-45 border border-offgray-100 bg-[var(--node-bg)] dark:border-offgray-900 dark:bg-[hsl(219,92%,2%)] [top:calc(-1*var(--node-vertical-offset))] [left:var(--node-horizontal-offset)]"
               aria-hidden="true"
             />
             <div
-              class="pointer-events-none absolute z-[99] size-1.5 rotate-45 border border-offgray-100 bg-[var(--node-bg)] dark:border-offgray-900 dark:bg-[hsl(219,92%,2%)] [top:calc(-1*var(--node-vertical-offset))] [right:var(--node-horizontal-offset)]"
+              class="pointer-events-none absolute z-[110] size-1.5 rotate-45 border border-offgray-100 bg-[var(--node-bg)] dark:border-offgray-900 dark:bg-[hsl(219,92%,2%)] [top:calc(-1*var(--node-vertical-offset))] [right:var(--node-horizontal-offset)]"
               aria-hidden="true"
             />
             <div
-              class="pointer-events-none absolute z-[99] size-1.5 rotate-45 border border-offgray-100 bg-[var(--node-bg)] dark:border-offgray-900 dark:bg-[hsl(219,92%,2%)] [bottom:calc(-1*var(--node-vertical-offset))] [left:var(--node-horizontal-offset)]"
+              class="pointer-events-none absolute z-[110] size-1.5 rotate-45 border border-offgray-100 bg-[var(--node-bg)] dark:border-offgray-900 dark:bg-[hsl(219,92%,2%)] [bottom:calc(-1*var(--node-vertical-offset))] [left:var(--node-horizontal-offset)]"
               aria-hidden="true"
             />
             <div
-              class="pointer-events-none absolute z-[99] size-1.5 rotate-45 border border-offgray-100 bg-[var(--node-bg)] dark:border-offgray-900 dark:bg-[hsl(219,92%,2%)] [bottom:calc(-1*var(--node-vertical-offset))] [right:var(--node-horizontal-offset)]"
+              class="pointer-events-none absolute z-[110] size-1.5 rotate-45 border border-offgray-100 bg-[var(--node-bg)] dark:border-offgray-900 dark:bg-[hsl(219,92%,2%)] [bottom:calc(-1*var(--node-vertical-offset))] [right:var(--node-horizontal-offset)]"
               aria-hidden="true"
             />
             <span class="relative z-[1] w-4 shrink-0 border-r border-transparent sm:w-6 md:w-12 lg:border-r-0" aria-hidden="true">
@@ -273,7 +281,23 @@ onBeforeUnmount(() => {
                 </div>
               </div>
             </span>
-            <div class="relative container-max-w max-md:min-w-0 flex-1 [--node-horizontal-offset:-3.5px]">
+            <div class="relative z-[2] container-max-w max-md:min-w-0 flex-1 [--node-horizontal-offset:-3.5px]">
+              <div
+                class="pointer-events-none absolute z-[110] size-1.5 rotate-45 border border-offgray-100 bg-[var(--node-bg)] dark:border-offgray-900 dark:bg-[hsl(219,92%,2%)] [top:calc(-1*var(--node-vertical-offset))] [left:var(--node-horizontal-offset)] hidden lg:block"
+                aria-hidden="true"
+              />
+              <div
+                class="pointer-events-none absolute z-[110] size-1.5 rotate-45 border border-offgray-100 bg-[var(--node-bg)] dark:border-offgray-900 dark:bg-[hsl(219,92%,2%)] [top:calc(-1*var(--node-vertical-offset))] [right:var(--node-horizontal-offset)] hidden lg:block"
+                aria-hidden="true"
+              />
+              <div
+                class="pointer-events-none absolute z-[110] size-1.5 rotate-45 border border-offgray-100 bg-[var(--node-bg)] dark:border-offgray-900 dark:bg-[hsl(219,92%,2%)] [bottom:calc(-1*var(--node-vertical-offset))] [left:var(--node-horizontal-offset)] hidden lg:block"
+                aria-hidden="true"
+              />
+              <div
+                class="pointer-events-none absolute z-[110] size-1.5 rotate-45 border border-offgray-100 bg-[var(--node-bg)] dark:border-offgray-900 dark:bg-[hsl(219,92%,2%)] [bottom:calc(-1*var(--node-vertical-offset))] [right:var(--node-horizontal-offset)] hidden lg:block"
+                aria-hidden="true"
+              />
               <div class="relative isolate size-full w-full overflow-clip p-4 py-8 lg:pt-12 lg:pb-14">
                 <hgroup class="mx-auto flex w-full max-w-lg flex-col items-center gap-1">
                   <h1 class="zed-blog-hero-title font-plex-serif text-balance scroll-mt-24 mb-2 text-center text-accent-blue dark:text-blue-300">
@@ -301,10 +325,10 @@ onBeforeUnmount(() => {
             <span class="relative z-[1] hidden flex-1 border-x border-transparent lg:block" aria-hidden="true">
               <div class="default-border-text-color pointer-events-none absolute top-0 bottom-0 left-[-0.5px] w-[10px] -translate-x-1/2">
                 <div class="absolute top-0 bottom-0 left-1/2 flex w-px -translate-x-1/2 flex-col">
-                  <div class="w-px flex-[3.8821601881096885] bg-[repeating-linear-gradient(to_bottom,currentColor_0_4px,transparent_4px_8px)]" />
+                  <div class="w-px flex-[3.8821601881096885] bg-current" />
                   <div class="w-px flex-[1.869571805405231] bg-current" />
                   <div class="w-px flex-[1.0783224106199678] bg-current" />
-                  <div class="w-px flex-[1.4467267992192538] bg-[repeating-linear-gradient(to_bottom,currentColor_0_4px,transparent_4px_8px)]" />
+                  <div class="w-px flex-[1.4467267992192538] bg-current" />
                   <div class="w-px flex-[4.047455312240615] bg-current" />
                 </div>
               </div>
@@ -320,7 +344,7 @@ onBeforeUnmount(() => {
               </svg>
               <div class="default-border-text-color pointer-events-none absolute top-0 bottom-0 left-[-0.5px] w-[10px] -translate-x-1/2">
                 <div class="absolute top-0 bottom-0 left-1/2 flex w-px -translate-x-1/2 flex-col">
-                  <div class="w-px flex-[3.3796901713962155] bg-[repeating-linear-gradient(to_bottom,currentColor_0_4px,transparent_4px_8px)]" />
+                  <div class="w-px flex-[3.3796901713962155] bg-current" />
                   <div class="w-px flex-[3.982290269333073] bg-current" />
                   <div class="w-px flex-[4.161550523322798] bg-current" />
                   <div class="w-px flex-[2.140127182537749] bg-current" />
@@ -331,10 +355,10 @@ onBeforeUnmount(() => {
 
           <section
             id="divider-slash"
-            class="relative h-3.5 w-full shrink-0 before:pointer-events-none before:absolute before:top-0 before:right-0 before:-left-[100vw] before:z-[-1] before:h-px before:w-[200vw] before:bg-[color-mix(in_oklch,var(--border),transparent_58%)] after:pointer-events-none after:absolute after:bottom-0 after:right-0 after:-left-[100vw] after:z-[-1] after:h-px after:w-[200vw] after:bg-[color-mix(in_oklch,var(--border),transparent_50%)] dark:before:bg-[color-mix(in_oklch,var(--border),transparent_42%)] dark:after:bg-[color-mix(in_oklch,var(--border),transparent_38%)]"
+            class="relative z-[2] isolate h-3.5 w-full shrink-0 before:pointer-events-none before:absolute before:top-0 before:right-0 before:-left-[100vw] before:z-0 before:h-px before:w-[200vw] before:bg-[color-mix(in_oklch,var(--border),transparent_58%)] after:pointer-events-none after:absolute after:bottom-0 after:right-0 after:-left-[100vw] after:z-0 after:h-px after:w-[200vw] after:bg-[color-mix(in_oklch,var(--border),transparent_50%)] dark:before:bg-[color-mix(in_oklch,var(--border),transparent_42%)] dark:after:bg-[color-mix(in_oklch,var(--border),transparent_38%)]"
             aria-hidden="true"
           >
-            <svg class="pointer-events-none absolute inset-0 size-full select-none py-[1px] text-offgray-200/70 [z-index:-1] !opacity-30 dark:text-blue-400/10 dark:!opacity-60" xmlns="http://www.w3.org/2000/svg">
+            <svg class="pointer-events-none absolute inset-0 z-0 size-full select-none py-[1px] text-offgray-200/70 !opacity-30 dark:text-blue-400/10 dark:!opacity-60" xmlns="http://www.w3.org/2000/svg">
               <defs>
                 <pattern id="zed-divider-slash" width="4" height="4" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
                   <line x1="0" y1="0" x2="0" y2="4" stroke="currentColor" stroke-width="1.5" />
@@ -344,44 +368,60 @@ onBeforeUnmount(() => {
             </svg>
           </section>
 
-          <section class="outer-section-node-offset relative flex min-h-0 min-w-0 flex-1 items-stretch">
+          <section class="outer-section-node-offset relative z-[1] flex min-h-[calc(100vh-240px)] min-w-0 flex-1 items-stretch">
             <div
-              class="pointer-events-none absolute z-[99] size-1.5 rotate-45 border border-offgray-100 bg-[var(--node-bg)] dark:border-offgray-900 dark:bg-[hsl(219,92%,2%)] [top:calc(-1*var(--node-vertical-offset))] [left:var(--node-horizontal-offset)]"
+              class="pointer-events-none absolute z-[110] size-1.5 rotate-45 border border-offgray-100 bg-[var(--node-bg)] dark:border-offgray-900 dark:bg-[hsl(219,92%,2%)] [top:calc(-1*var(--node-vertical-offset))] [left:var(--node-horizontal-offset)]"
               aria-hidden="true"
             />
             <div
-              class="pointer-events-none absolute z-[99] size-1.5 rotate-45 border border-offgray-100 bg-[var(--node-bg)] dark:border-offgray-900 dark:bg-[hsl(219,92%,2%)] [top:calc(-1*var(--node-vertical-offset))] [right:var(--node-horizontal-offset)]"
+              class="pointer-events-none absolute z-[110] size-1.5 rotate-45 border border-offgray-100 bg-[var(--node-bg)] dark:border-offgray-900 dark:bg-[hsl(219,92%,2%)] [top:calc(-1*var(--node-vertical-offset))] [right:var(--node-horizontal-offset)]"
               aria-hidden="true"
             />
             <div
-              class="pointer-events-none absolute z-[99] size-1.5 rotate-45 border border-offgray-100 bg-[var(--node-bg)] dark:border-offgray-900 dark:bg-[hsl(219,92%,2%)] [bottom:calc(-1*var(--node-vertical-offset))] [left:var(--node-horizontal-offset)]"
+              class="pointer-events-none absolute z-[110] size-1.5 rotate-45 border border-offgray-100 bg-[var(--node-bg)] dark:border-offgray-900 dark:bg-[hsl(219,92%,2%)] [bottom:calc(-1*var(--node-vertical-offset))] [left:var(--node-horizontal-offset)]"
               aria-hidden="true"
             />
             <div
-              class="pointer-events-none absolute z-[99] size-1.5 rotate-45 border border-offgray-100 bg-[var(--node-bg)] dark:border-offgray-900 dark:bg-[hsl(219,92%,2%)] [bottom:calc(-1*var(--node-vertical-offset))] [right:var(--node-horizontal-offset)]"
+              class="pointer-events-none absolute z-[110] size-1.5 rotate-45 border border-offgray-100 bg-[var(--node-bg)] dark:border-offgray-900 dark:bg-[hsl(219,92%,2%)] [bottom:calc(-1*var(--node-vertical-offset))] [right:var(--node-horizontal-offset)]"
               aria-hidden="true"
             />
             <span class="relative z-[1] w-4 shrink-0 self-stretch border-r border-transparent sm:w-6 md:w-12 lg:border-r-0" aria-hidden="true">
               <div class="default-border-text-color pointer-events-none absolute top-0 bottom-0 right-[-0.5px] w-[10px] translate-x-1/2">
                 <div class="absolute top-0 bottom-0 left-1/2 flex w-px -translate-x-1/2 flex-col">
                   <div class="w-px flex-[2.8083788164930317] bg-current" />
-                  <div class="w-px flex-[4.3946094528746835] bg-[repeating-linear-gradient(to_bottom,currentColor_0_4px,transparent_4px_8px)]" />
+                  <div class="w-px flex-[4.3946094528746835] bg-current" />
                 </div>
               </div>
             </span>
             <span class="relative z-[1] hidden flex-1 self-stretch border-x border-transparent lg:block" aria-hidden="true">
               <div class="default-border-text-color pointer-events-none absolute top-0 bottom-0 right-[-0.5px] w-[10px] translate-x-1/2">
                 <div class="absolute top-0 bottom-0 left-1/2 flex w-px -translate-x-1/2 flex-col">
-                  <div class="w-px flex-[2.81904649819203] bg-[repeating-linear-gradient(to_bottom,currentColor_0_4px,transparent_4px_8px)]" />
+                  <div class="w-px flex-[2.81904649819203] bg-current" />
                   <div class="w-px flex-[2.6110425002924362] bg-current" />
-                  <div class="w-px flex-[4.921013357080991] bg-[repeating-linear-gradient(to_bottom,currentColor_0_4px,transparent_4px_8px)]" />
+                  <div class="w-px flex-[4.921013357080991] bg-current" />
                 </div>
               </div>
             </span>
-            <div class="relative container-max-w flex max-md:min-w-0 h-full min-h-0 flex-1 flex-col">
-              <div class="isolate relative flex h-full min-h-0 flex-1 flex-col overflow-x-clip p-0">
-                <div class="relative grid h-full min-h-0 w-full flex-1 auto-rows-[minmax(0,1fr)] grid-cols-5">
-                  <div class="col-span-5 flex max-w-5xl h-full min-h-0 flex-col lg:col-span-1">
+            <div class="relative z-[2] container-max-w flex max-md:min-w-0 min-h-[60vh] flex-1 flex-col [--node-horizontal-offset:-3.5px]">
+              <div
+                class="pointer-events-none absolute z-[110] size-1.5 rotate-45 border border-offgray-100 bg-[var(--node-bg)] dark:border-offgray-900 dark:bg-[hsl(219,92%,2%)] [top:calc(-1*var(--node-vertical-offset))] [left:var(--node-horizontal-offset)] hidden lg:block"
+                aria-hidden="true"
+              />
+              <div
+                class="pointer-events-none absolute z-[110] size-1.5 rotate-45 border border-offgray-100 bg-[var(--node-bg)] dark:border-offgray-900 dark:bg-[hsl(219,92%,2%)] [top:calc(-1*var(--node-vertical-offset))] [right:var(--node-horizontal-offset)] hidden lg:block"
+                aria-hidden="true"
+              />
+              <div
+                class="pointer-events-none absolute z-[110] size-1.5 rotate-45 border border-offgray-100 bg-[var(--node-bg)] dark:border-offgray-900 dark:bg-[hsl(219,92%,2%)] [bottom:calc(-1*var(--node-vertical-offset))] [left:var(--node-horizontal-offset)] hidden lg:block"
+                aria-hidden="true"
+              />
+              <div
+                class="pointer-events-none absolute z-[110] size-1.5 rotate-45 border border-offgray-100 bg-[var(--node-bg)] dark:border-offgray-900 dark:bg-[hsl(219,92%,2%)] [bottom:calc(-1*var(--node-vertical-offset))] [right:var(--node-horizontal-offset)] hidden lg:block"
+                aria-hidden="true"
+              />
+              <div class="isolate relative flex min-h-0 flex-1 flex-col overflow-x-clip p-0">
+                <div class="relative grid min-h-0 w-full flex-1 auto-rows-[minmax(0,1fr)] grid-cols-5">
+                  <div class="col-span-5 flex max-w-5xl min-h-0 flex-col lg:col-span-1">
                     <nav class="max-md:[mask-image:linear-gradient(to_right,black_85%,transparent)] md:[mask-image:none]" aria-label="Blog categories">
                       <div class="sticky top-24 py-10">
                         <div class="subheader text-center lg:text-left px-0 pb-2.5 lg:pl-[15px] border-b lg:border-b-0 default-border-color">
@@ -403,8 +443,8 @@ onBeforeUnmount(() => {
                       </div>
                     </nav>
                   </div>
-                  <div class="col-span-5 flex h-full min-h-0 flex-col lg:col-span-4">
-                    <div class="border-l default-border-color flex h-full min-h-0 flex-1 flex-col p-4 lg:p-8">
+                  <div class="col-span-5 flex min-h-0 flex-col lg:col-span-4">
+                    <div class="border-l default-border-color flex min-h-0 flex-1 flex-col p-4 lg:p-8">
                 <a
                   v-for="post in visiblePosts"
                   :key="post.slug"
@@ -446,7 +486,7 @@ onBeforeUnmount(() => {
             <span class="relative z-[1] hidden flex-1 self-stretch border-x border-transparent lg:block" aria-hidden="true">
               <div class="default-border-text-color pointer-events-none absolute top-0 bottom-0 left-[-0.5px] w-[10px] -translate-x-1/2">
                 <div class="absolute top-0 bottom-0 left-1/2 flex w-px -translate-x-1/2 flex-col">
-                  <div class="w-px flex-[2.9101247796370298] bg-[repeating-linear-gradient(to_bottom,currentColor_0_4px,transparent_4px_8px)]" />
+                  <div class="w-px flex-[2.9101247796370298] bg-current" />
                   <div class="w-px flex-[1.6569280627448708] bg-current" />
                 </div>
               </div>
@@ -455,7 +495,7 @@ onBeforeUnmount(() => {
               <div class="default-border-text-color pointer-events-none absolute top-0 bottom-0 left-[-0.5px] w-[10px] -translate-x-1/2">
                 <div class="absolute top-0 bottom-0 left-1/2 flex w-px -translate-x-1/2 flex-col">
                   <div class="w-px flex-[4.369975210805412] bg-current" />
-                  <div class="w-px flex-[3.3009514819369428] bg-[repeating-linear-gradient(to_bottom,currentColor_0_4px,transparent_4px_8px)]" />
+                  <div class="w-px flex-[3.3009514819369428] bg-current" />
                 </div>
               </div>
             </span>
@@ -465,19 +505,19 @@ onBeforeUnmount(() => {
         <main v-else-if="isPost" class="flex min-h-0 flex-1 flex-col">
           <section class="outer-section-node-offset relative flex shrink-0 !min-h-fit min-h-[450px] min-w-0">
             <div
-              class="pointer-events-none absolute z-[99] size-1.5 rotate-45 border border-offgray-100 bg-[var(--node-bg)] dark:border-offgray-900 dark:bg-[hsl(219,92%,2%)] [top:calc(-1*var(--node-vertical-offset))] [left:var(--node-horizontal-offset)]"
+              class="pointer-events-none absolute z-[110] size-1.5 rotate-45 border border-offgray-100 bg-[var(--node-bg)] dark:border-offgray-900 dark:bg-[hsl(219,92%,2%)] [top:calc(-1*var(--node-vertical-offset))] [left:var(--node-horizontal-offset)]"
               aria-hidden="true"
             />
             <div
-              class="pointer-events-none absolute z-[99] size-1.5 rotate-45 border border-offgray-100 bg-[var(--node-bg)] dark:border-offgray-900 dark:bg-[hsl(219,92%,2%)] [top:calc(-1*var(--node-vertical-offset))] [right:var(--node-horizontal-offset)]"
+              class="pointer-events-none absolute z-[110] size-1.5 rotate-45 border border-offgray-100 bg-[var(--node-bg)] dark:border-offgray-900 dark:bg-[hsl(219,92%,2%)] [top:calc(-1*var(--node-vertical-offset))] [right:var(--node-horizontal-offset)]"
               aria-hidden="true"
             />
             <div
-              class="pointer-events-none absolute z-[99] size-1.5 rotate-45 border border-offgray-100 bg-[var(--node-bg)] dark:border-offgray-900 dark:bg-[hsl(219,92%,2%)] [bottom:calc(-1*var(--node-vertical-offset))] [left:var(--node-horizontal-offset)]"
+              class="pointer-events-none absolute z-[110] size-1.5 rotate-45 border border-offgray-100 bg-[var(--node-bg)] dark:border-offgray-900 dark:bg-[hsl(219,92%,2%)] [bottom:calc(-1*var(--node-vertical-offset))] [left:var(--node-horizontal-offset)]"
               aria-hidden="true"
             />
             <div
-              class="pointer-events-none absolute z-[99] size-1.5 rotate-45 border border-offgray-100 bg-[var(--node-bg)] dark:border-offgray-900 dark:bg-[hsl(219,92%,2%)] [bottom:calc(-1*var(--node-vertical-offset))] [right:var(--node-horizontal-offset)]"
+              class="pointer-events-none absolute z-[110] size-1.5 rotate-45 border border-offgray-100 bg-[var(--node-bg)] dark:border-offgray-900 dark:bg-[hsl(219,92%,2%)] [bottom:calc(-1*var(--node-vertical-offset))] [right:var(--node-horizontal-offset)]"
               aria-hidden="true"
             />
             <span class="relative z-[1] w-4 shrink-0 border-r border-transparent sm:w-6 md:w-12 lg:border-r-0" aria-hidden="true">
@@ -504,21 +544,21 @@ onBeforeUnmount(() => {
                 </div>
               </div>
             </span>
-            <div class="relative container-max-w max-md:min-w-0 flex-1 [--node-horizontal-offset:-3.5px]">
+            <div class="relative z-[2] container-max-w max-md:min-w-0 flex-1 [--node-horizontal-offset:-3.5px]">
               <div
-                class="pointer-events-none absolute z-[99] size-1.5 rotate-45 border border-offgray-100 bg-[var(--node-bg)] dark:border-offgray-900 dark:bg-[hsl(219,92%,2%)] [top:calc(-1*var(--node-vertical-offset))] [left:var(--node-horizontal-offset)] hidden lg:block"
+                class="pointer-events-none absolute z-[110] size-1.5 rotate-45 border border-offgray-100 bg-[var(--node-bg)] dark:border-offgray-900 dark:bg-[hsl(219,92%,2%)] [top:calc(-1*var(--node-vertical-offset))] [left:var(--node-horizontal-offset)] hidden lg:block"
                 aria-hidden="true"
               />
               <div
-                class="pointer-events-none absolute z-[99] size-1.5 rotate-45 border border-offgray-100 bg-[var(--node-bg)] dark:border-offgray-900 dark:bg-[hsl(219,92%,2%)] [top:calc(-1*var(--node-vertical-offset))] [right:var(--node-horizontal-offset)] hidden lg:block"
+                class="pointer-events-none absolute z-[110] size-1.5 rotate-45 border border-offgray-100 bg-[var(--node-bg)] dark:border-offgray-900 dark:bg-[hsl(219,92%,2%)] [top:calc(-1*var(--node-vertical-offset))] [right:var(--node-horizontal-offset)] hidden lg:block"
                 aria-hidden="true"
               />
               <div
-                class="pointer-events-none absolute z-[99] size-1.5 rotate-45 border border-offgray-100 bg-[var(--node-bg)] dark:border-offgray-900 dark:bg-[hsl(219,92%,2%)] [bottom:calc(-1*var(--node-vertical-offset))] [left:var(--node-horizontal-offset)] hidden lg:block"
+                class="pointer-events-none absolute z-[110] size-1.5 rotate-45 border border-offgray-100 bg-[var(--node-bg)] dark:border-offgray-900 dark:bg-[hsl(219,92%,2%)] [bottom:calc(-1*var(--node-vertical-offset))] [left:var(--node-horizontal-offset)] hidden lg:block"
                 aria-hidden="true"
               />
               <div
-                class="pointer-events-none absolute z-[99] size-1.5 rotate-45 border border-offgray-100 bg-[var(--node-bg)] dark:border-offgray-900 dark:bg-[hsl(219,92%,2%)] [bottom:calc(-1*var(--node-vertical-offset))] [right:var(--node-horizontal-offset)] hidden lg:block"
+                class="pointer-events-none absolute z-[110] size-1.5 rotate-45 border border-offgray-100 bg-[var(--node-bg)] dark:border-offgray-900 dark:bg-[hsl(219,92%,2%)] [bottom:calc(-1*var(--node-vertical-offset))] [right:var(--node-horizontal-offset)] hidden lg:block"
                 aria-hidden="true"
               />
               <div class="isolate relative size-full overflow-clip p-4 px-4 py-6 lg:px-12 lg:py-16">
@@ -550,10 +590,10 @@ onBeforeUnmount(() => {
             <span class="relative z-[1] hidden flex-1 border-x border-transparent lg:block" aria-hidden="true">
               <div class="default-border-text-color pointer-events-none absolute top-0 bottom-0 left-[-0.5px] w-[10px] -translate-x-1/2">
                 <div class="absolute top-0 bottom-0 left-1/2 flex w-px -translate-x-1/2 flex-col">
-                  <div class="w-px flex-[3.88216] bg-[repeating-linear-gradient(to_bottom,currentColor_0_4px,transparent_4px_8px)]" />
+                  <div class="w-px flex-[3.88216] bg-current" />
                   <div class="w-px flex-[1.86957] bg-current" />
                   <div class="w-px flex-[1.07832] bg-current" />
-                  <div class="w-px flex-[1.44673] bg-[repeating-linear-gradient(to_bottom,currentColor_0_4px,transparent_4px_8px)]" />
+                  <div class="w-px flex-[1.44673] bg-current" />
                   <div class="w-px flex-[4.04746] bg-current" />
                 </div>
               </div>
@@ -569,7 +609,7 @@ onBeforeUnmount(() => {
               </svg>
               <div class="default-border-text-color pointer-events-none absolute top-0 bottom-0 left-[-0.5px] w-[10px] -translate-x-1/2">
                 <div class="absolute top-0 bottom-0 left-1/2 flex w-px -translate-x-1/2 flex-col">
-                  <div class="w-px flex-[3.37969] bg-[repeating-linear-gradient(to_bottom,currentColor_0_4px,transparent_4px_8px)]" />
+                  <div class="w-px flex-[3.37969] bg-current" />
                   <div class="w-px flex-[3.98229] bg-current" />
                   <div class="w-px flex-[4.16155] bg-current" />
                   <div class="w-px flex-[2.14013] bg-current" />
@@ -578,57 +618,57 @@ onBeforeUnmount(() => {
             </span>
           </section>
 
-          <section class="outer-section-node-offset relative flex min-h-0 min-w-0 flex-1 items-stretch border-t default-border-color">
+          <section class="outer-section-node-offset relative flex min-h-[calc(100vh-521px)] min-w-0 flex-1 items-stretch border-t default-border-color">
             <div
-              class="pointer-events-none absolute z-[99] size-1.5 rotate-45 border border-offgray-100 bg-[var(--node-bg)] dark:border-offgray-900 dark:bg-[hsl(219,92%,2%)] [top:calc(-1*var(--node-vertical-offset))] [left:var(--node-horizontal-offset)]"
+              class="pointer-events-none absolute z-[110] size-1.5 rotate-45 border border-offgray-100 bg-[var(--node-bg)] dark:border-offgray-900 dark:bg-[hsl(219,92%,2%)] [top:calc(-1*var(--node-vertical-offset))] [left:var(--node-horizontal-offset)]"
               aria-hidden="true"
             />
             <div
-              class="pointer-events-none absolute z-[99] size-1.5 rotate-45 border border-offgray-100 bg-[var(--node-bg)] dark:border-offgray-900 dark:bg-[hsl(219,92%,2%)] [top:calc(-1*var(--node-vertical-offset))] [right:var(--node-horizontal-offset)]"
+              class="pointer-events-none absolute z-[110] size-1.5 rotate-45 border border-offgray-100 bg-[var(--node-bg)] dark:border-offgray-900 dark:bg-[hsl(219,92%,2%)] [top:calc(-1*var(--node-vertical-offset))] [right:var(--node-horizontal-offset)]"
               aria-hidden="true"
             />
             <div
-              class="pointer-events-none absolute z-[99] size-1.5 rotate-45 border border-offgray-100 bg-[var(--node-bg)] dark:border-offgray-900 dark:bg-[hsl(219,92%,2%)] [bottom:calc(-1*var(--node-vertical-offset))] [left:var(--node-horizontal-offset)]"
+              class="pointer-events-none absolute z-[110] size-1.5 rotate-45 border border-offgray-100 bg-[var(--node-bg)] dark:border-offgray-900 dark:bg-[hsl(219,92%,2%)] [bottom:calc(-1*var(--node-vertical-offset))] [left:var(--node-horizontal-offset)]"
               aria-hidden="true"
             />
             <div
-              class="pointer-events-none absolute z-[99] size-1.5 rotate-45 border border-offgray-100 bg-[var(--node-bg)] dark:border-offgray-900 dark:bg-[hsl(219,92%,2%)] [bottom:calc(-1*var(--node-vertical-offset))] [right:var(--node-horizontal-offset)]"
+              class="pointer-events-none absolute z-[110] size-1.5 rotate-45 border border-offgray-100 bg-[var(--node-bg)] dark:border-offgray-900 dark:bg-[hsl(219,92%,2%)] [bottom:calc(-1*var(--node-vertical-offset))] [right:var(--node-horizontal-offset)]"
               aria-hidden="true"
             />
             <span class="relative z-[1] w-4 shrink-0 self-stretch border-r border-transparent sm:w-6 md:w-12 lg:border-r-0" aria-hidden="true">
-              <div class="default-border-text-color pointer-events-none absolute top-0 right-[-0.5px] bottom-[-1px] w-[10px] translate-x-1/2">
+              <div class="default-border-text-color pointer-events-none absolute top-0 right-[-0.5px] bottom-0 w-[10px] translate-x-1/2">
                 <div class="absolute top-0 bottom-0 left-1/2 flex w-px -translate-x-1/2 flex-col">
                   <div class="w-px flex-[4.03169] bg-current" />
-                  <div class="w-px flex-[4.55797] bg-[repeating-linear-gradient(to_bottom,currentColor_0_4px,transparent_4px_8px)]" />
-                  <div class="w-px flex-[3.70754] bg-[repeating-linear-gradient(to_bottom,currentColor_0_4px,transparent_4px_8px)]" />
-                  <div class="w-px flex-[1.7575] bg-[repeating-linear-gradient(to_bottom,currentColor_0_4px,transparent_4px_8px)]" />
+                  <div class="w-px flex-[4.55797] bg-current" />
+                  <div class="w-px flex-[3.70754] bg-current" />
+                  <div class="w-px flex-[1.7575] bg-current" />
                   <div class="w-px flex-[3.88886] bg-current" />
                 </div>
               </div>
             </span>
             <span class="relative z-[1] hidden flex-1 self-stretch border-x border-transparent lg:block" aria-hidden="true">
-              <div class="default-border-text-color pointer-events-none absolute top-0 right-[-0.5px] bottom-[-1px] w-[10px] translate-x-1/2">
+              <div class="default-border-text-color pointer-events-none absolute top-0 right-[-0.5px] bottom-0 w-[10px] translate-x-1/2">
                 <div class="absolute top-0 bottom-0 left-1/2 flex w-px -translate-x-1/2 flex-col">
                   <div class="w-px flex-[2.80838] bg-current" />
-                  <div class="w-px flex-[4.39461] bg-[repeating-linear-gradient(to_bottom,currentColor_0_4px,transparent_4px_8px)]" />
+                  <div class="w-px flex-[4.39461] bg-current" />
                 </div>
               </div>
             </span>
-            <div class="relative container-max-w flex max-md:min-w-0 h-full min-h-0 flex-1 flex-col [--node-horizontal-offset:-3.5px]">
+            <div class="relative z-[2] container-max-w flex max-md:min-w-0 h-full min-h-0 flex-1 flex-col [--node-horizontal-offset:-3.5px]">
               <div
-                class="pointer-events-none absolute z-[99] size-1.5 rotate-45 border border-offgray-100 bg-[var(--node-bg)] dark:border-offgray-900 dark:bg-[hsl(219,92%,2%)] [top:calc(-1*var(--node-vertical-offset))] [left:var(--node-horizontal-offset)] hidden lg:block"
+                class="pointer-events-none absolute z-[110] size-1.5 rotate-45 border border-offgray-100 bg-[var(--node-bg)] dark:border-offgray-900 dark:bg-[hsl(219,92%,2%)] [top:calc(-1*var(--node-vertical-offset))] [left:var(--node-horizontal-offset)] hidden lg:block"
                 aria-hidden="true"
               />
               <div
-                class="pointer-events-none absolute z-[99] size-1.5 rotate-45 border border-offgray-100 bg-[var(--node-bg)] dark:border-offgray-900 dark:bg-[hsl(219,92%,2%)] [top:calc(-1*var(--node-vertical-offset))] [right:var(--node-horizontal-offset)] hidden lg:block"
+                class="pointer-events-none absolute z-[110] size-1.5 rotate-45 border border-offgray-100 bg-[var(--node-bg)] dark:border-offgray-900 dark:bg-[hsl(219,92%,2%)] [top:calc(-1*var(--node-vertical-offset))] [right:var(--node-horizontal-offset)] hidden lg:block"
                 aria-hidden="true"
               />
               <div
-                class="pointer-events-none absolute z-[99] size-1.5 rotate-45 border border-offgray-100 bg-[var(--node-bg)] dark:border-offgray-900 dark:bg-[hsl(219,92%,2%)] [bottom:calc(-1*var(--node-vertical-offset))] [left:var(--node-horizontal-offset)] hidden lg:block"
+                class="pointer-events-none absolute z-[110] size-1.5 rotate-45 border border-offgray-100 bg-[var(--node-bg)] dark:border-offgray-900 dark:bg-[hsl(219,92%,2%)] [bottom:calc(-1*var(--node-vertical-offset))] [left:var(--node-horizontal-offset)] hidden lg:block"
                 aria-hidden="true"
               />
               <div
-                class="pointer-events-none absolute z-[99] size-1.5 rotate-45 border border-offgray-100 bg-[var(--node-bg)] dark:border-offgray-900 dark:bg-[hsl(219,92%,2%)] [bottom:calc(-1*var(--node-vertical-offset))] [right:var(--node-horizontal-offset)] hidden lg:block"
+                class="pointer-events-none absolute z-[110] size-1.5 rotate-45 border border-offgray-100 bg-[var(--node-bg)] dark:border-offgray-900 dark:bg-[hsl(219,92%,2%)] [bottom:calc(-1*var(--node-vertical-offset))] [right:var(--node-horizontal-offset)] hidden lg:block"
                 aria-hidden="true"
               />
               <div class="isolate relative flex h-full min-h-0 min-w-0 flex-1 flex-col justify-between gap-10 overflow-clip p-4 lg:flex lg:flex-row-reverse lg:items-start lg:gap-12 lg:gap-x-10 lg:p-12 xl:gap-x-14">
@@ -649,19 +689,19 @@ onBeforeUnmount(() => {
               </div>
             </div>
             <span class="relative z-[1] hidden flex-1 self-stretch border-x border-transparent lg:block" aria-hidden="true">
-              <div class="default-border-text-color pointer-events-none absolute top-0 bottom-[-1px] left-[-0.5px] w-[10px] -translate-x-1/2">
+              <div class="default-border-text-color pointer-events-none absolute top-0 bottom-0 left-[-0.5px] w-[10px] -translate-x-1/2">
                 <div class="absolute top-0 bottom-0 left-1/2 flex w-px -translate-x-1/2 flex-col">
                   <div class="w-px flex-[2.45501] bg-current" />
-                  <div class="w-px flex-[3.12177] bg-[repeating-linear-gradient(to_bottom,currentColor_0_4px,transparent_4px_8px)]" />
-                  <div class="w-px flex-[4.95768] bg-[repeating-linear-gradient(to_bottom,currentColor_0_4px,transparent_4px_8px)]" />
+                  <div class="w-px flex-[3.12177] bg-current" />
+                  <div class="w-px flex-[4.95768] bg-current" />
                   <div class="w-px flex-[4.67424] bg-current" />
                 </div>
               </div>
             </span>
             <span class="relative z-[1] w-4 shrink-0 self-stretch border-l border-transparent sm:w-6 md:w-12 lg:border-l-0" aria-hidden="true">
-              <div class="default-border-text-color pointer-events-none absolute top-0 bottom-[-1px] left-[-0.5px] w-[10px] -translate-x-1/2">
+              <div class="default-border-text-color pointer-events-none absolute top-0 bottom-0 left-[-0.5px] w-[10px] -translate-x-1/2">
                 <div class="absolute top-0 bottom-0 left-1/2 flex w-px -translate-x-1/2 flex-col">
-                  <div class="w-px flex-[3.24898] bg-[repeating-linear-gradient(to_bottom,currentColor_0_4px,transparent_4px_8px)]" />
+                  <div class="w-px flex-[3.24898] bg-current" />
                   <div class="w-px flex-[3.4364] bg-current" />
                   <div class="w-px flex-[4.80649] bg-current" />
                 </div>
@@ -671,7 +711,7 @@ onBeforeUnmount(() => {
         </main>
 
         <main v-else class="flex flex-1 flex-col">
-          <section class="outer-section-node-offset relative flex min-w-0 border-t default-border-color py-10">
+          <section class="outer-section-node-offset relative flex min-h-[calc(100vh-57px)] min-w-0 border-t default-border-color py-10">
             <span class="relative z-[1] w-4 shrink-0 border-r border-transparent sm:w-6 md:w-12 lg:border-r-0" aria-hidden="true" />
             <span class="relative z-[1] hidden flex-1 border-x border-[var(--border)] lg:block" aria-hidden="true" />
             <div class="zed-article container-max-w relative flex-1 px-4 lg:px-12 VPDoc">
