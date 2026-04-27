@@ -1,5 +1,5 @@
 <script setup>
-import { BookOpen, FolderGit2, Github, Menu, Moon, MoreHorizontal, Search, Sun } from 'lucide-vue-next'
+import { BookOpen, Github, Library, Menu, Moon, MoreHorizontal, Search, Sun } from 'lucide-vue-next'
 import { Content, inBrowser, useData, useRoute, withBase } from 'vitepress'
 import { VPNavBarSearch } from 'vitepress/theme'
 import VPDocAsideOutline from 'vitepress/dist/client/theme-default/components/VPDocAsideOutline.vue'
@@ -188,14 +188,14 @@ onBeforeUnmount(() => {
                     class="min-w-[11rem] rounded-md border border-[var(--border)] bg-[var(--nav-bg-color)] py-1 shadow-[0_12px_40px_rgba(0,0,0,0.12),var(--shadow-blue-alt)] dark:shadow-[0_12px_40px_rgba(0,0,0,0.35)]"
                   >
                     <a
-                      href="https://github.com/liguwe/pre-34.5"
+                      href="https://liguwe.site/pre-34.5"
                       target="_blank"
                       rel="noopener noreferrer"
                       class="flex items-center gap-2.5 px-3 py-2 text-sm text-offgray-1000 hover:bg-accent-blue/10 dark:text-white dark:hover:bg-accent-blue/15"
                       role="menuitem"
                     >
-                      <FolderGit2 class="size-4 shrink-0 text-offgray-500 dark:text-offgray-400" stroke-width="2" aria-hidden="true" />
-                      <span class="min-w-0 flex-1">pre-34.5</span>
+                      <Library class="size-4 shrink-0 text-offgray-500 dark:text-offgray-400" stroke-width="2" aria-hidden="true" />
+                      <span class="min-w-0 flex-1">个人知识库</span>
                       <span class="shrink-0 text-offgray-400 dark:text-offgray-500">↗</span>
                     </a>
                     <a
@@ -205,7 +205,7 @@ onBeforeUnmount(() => {
                       class="flex items-center gap-2.5 px-3 py-2 text-sm text-offgray-1000 hover:bg-accent-blue/10 dark:text-white dark:hover:bg-accent-blue/15"
                       role="menuitem"
                     >
-                      <BookOpen class="size-4 shrink-0 text-offgray-500 dark:text-offgray-400" stroke-width="2" aria-hidden="true" />
+                      <img :src="withBase('/yuque.svg')" class="size-[18px] shrink-0 opacity-70 dark:invert" aria-hidden="true" />
                       <span class="min-w-0 flex-1">语雀</span>
                       <span class="shrink-0 text-offgray-400 dark:text-offgray-500">↗</span>
                     </a>
@@ -688,7 +688,7 @@ onBeforeUnmount(() => {
                 class="pointer-events-none absolute z-[110] size-1.5 rotate-45 border border-offgray-100 bg-[var(--node-bg)] dark:border-offgray-900 dark:bg-[hsl(219,92%,2%)] [bottom:calc(-1*var(--node-vertical-offset))] [right:var(--node-horizontal-offset)] hidden lg:block"
                 aria-hidden="true"
               />
-              <div class="isolate relative flex min-h-0 min-w-0 flex-1 flex-col justify-between gap-5 pl-2 pr-0 py-6 lg:flex lg:flex-row-reverse lg:items-start lg:gap-6 lg:gap-x-5 lg:pl-6 lg:pr-0 lg:py-12 xl:gap-x-7">
+              <div class="isolate relative flex min-h-0 min-w-0 flex-1 flex-col justify-between gap-6 pl-3 pr-0 pt-4 pb-6 lg:flex lg:flex-row-reverse lg:items-start lg:gap-8 lg:gap-x-6 lg:pl-7 lg:pr-0 lg:pt-9 lg:pb-12 xl:gap-x-8">
                 <aside
                   class="post-doc-aside sticky top-24 hidden w-[min(272px,32vw)] shrink-0 flex-col gap-4 lg:flex"
                   aria-label="本页目录"
