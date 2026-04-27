@@ -118,14 +118,14 @@ body {
   flex-direction: column;
 }
 
-.site-root > .relative.overflow-x-clip {
+.site-root>.relative.overflow-x-clip {
   flex: 1 1 auto;
   display: flex;
   flex-direction: column;
 }
 
 /* 整页 flex 柱：header 固定高度，main flex:1 吃掉剩余视口高度，列表/文章区竖线才能贯通到底 */
-.site-page-shell > main {
+.site-page-shell>main {
   flex: 1 1 auto;
   min-height: 0;
 }
@@ -938,7 +938,7 @@ html.dark .avatar {
   color: var(--text);
 }
 
-.article-content > :first-child {
+.article-content> :first-child {
   margin-top: 0;
 }
 
@@ -1034,7 +1034,7 @@ html.dark .avatar {
   font-size: 0.9em;
 }
 
-.article-content :not(pre) > code {
+.article-content :not(pre)>code {
   padding: 0.12rem 0.28rem;
   border: 1px solid var(--border);
   border-radius: 3px;
@@ -1226,6 +1226,7 @@ html.dark .vp-nav-local-search .DocSearch-Button:hover {
 }
 
 @media (max-width: 1023px) {
+
   .topbar,
   .page-section,
   .footer-section {
@@ -1351,4 +1352,11 @@ html.dark .vp-nav-local-search .DocSearch-Button:hover {
 .custom-dashed-border-l {
   border-left-width: 1px;
   border-image: repeating-linear-gradient(to bottom, var(--border) 0, var(--border) 4px, transparent 4px, transparent 12px) 1;
+}
+
+/* Override VitePress default h2 styles: remove top border, tighter margin */
+.vp-doc h2 {
+  margin: 0;
+  border-top: none;
+  padding-top: 8px;
 }

@@ -3,8 +3,9 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
+    "make": "node make.js",
     "dev": "vitepress dev docs",
-    "build": "vitepress build docs",
+    "build": "node make.js && vitepress build docs",
     "preview": "vitepress preview docs"
   },
   "repository": {

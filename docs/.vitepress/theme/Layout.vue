@@ -5,28 +5,31 @@ import { VPNavBarSearch } from 'vitepress/theme'
 import VPDocAsideOutline from 'vitepress/dist/client/theme-default/components/VPDocAsideOutline.vue'
 import { computed, nextTick, onBeforeUnmount, onMounted, ref } from 'vue'
 import SiteLogo from './components/SiteLogo.vue'
-import { categories, posts } from './posts'
+import { posts, tagColor, years } from './posts'
 
 const { page, isDark, theme } = useData()
 const route = useRoute()
 
-const activeCategory = ref('all')
+const activeYear = ref('all')
 const menuOpen = ref(false)
 
 const isHome = computed(() => page.value.relativePath === 'index.md')
 /** docs/blog 下仅数字 slug：0.md、1.md … 无子目录 */
 const isPost = computed(() => /^blog\/\d+\.md$/.test(page.value.relativePath))
 
+const yearFilters = computed(() => [
+  { id: 'all', label: '全部' },
+  ...years.map((y) => ({ id: y, label: y })),
+])
+
 const latestPost = computed(() => [...posts].sort((a, b) => b.date.localeCompare(a.date))[0])
 
 const appearanceLabel = computed(() => (isDark.value ? '切换到浅色模式' : '切换到深色模式'))
 
 const visiblePosts = computed(() => {
-  if (activeCategory.value === 'all')
+  if (activeYear.value === 'all')
     return posts
-  if (activeCategory.value === 'featured')
-    return posts.filter((post) => post.featured)
-  return posts.filter((post) => post.category === activeCategory.value)
+  return posts.filter((post) => post.year === activeYear.value)
 })
 
 const postSlugFromPath = computed(() => {
@@ -42,8 +45,8 @@ const currentPost = computed(() => {
 })
 
 const postHeroTitle = computed(() => currentPost.value?.title ?? page.value.title ?? '')
-const postHeroDate = computed(() => currentPost.value?.displayDate ?? '')
-const postHeroCategory = computed(() => currentPost.value?.categoryLabel ?? '')
+const postHeroDate = computed(() => currentPost.value?.date ?? '')
+const postHeroTags = computed(() => currentPost.value?.tags ?? [])
 
 const pageName = computed(() =>
   route.path.replace(/[./]+/g, '_').replace(/_html$/, ''),
@@ -75,17 +78,17 @@ function onKeydown(event) {
   }
 }
 
-function categoryActive(id) {
-  return activeCategory.value === id
+function yearActive(id) {
+  return activeYear.value === id
 }
 
-function setActiveCategory(id) {
-  activeCategory.value = id
+function setActiveYear(id) {
+  activeYear.value = id
 }
 
-function categoryLinkClass(id) {
+function yearLinkClass(id) {
   const base = 'p-2.5 lg:px-4 lg:py-1 fv-style w-full shrink-0 text-nowrap lg:text-wrap border-b lg:border-b-0 lg:border-l text-center lg:text-left focus-visible:[outline-offset:-4px]!'
-  if (categoryActive(id)) {
+  if (yearActive(id)) {
     return `${base} !text-accent-blue bg-accent-blue/5 dark:bg-accent-blue/12 border-accent-blue/50 scroll-mt-0 scroll-ml-0 dark:border-blue-300/40 dark:!text-blue-400`
   }
   return `${base} hover:bg-accent-blue/10 default-border-color lg:!border-transparent`
@@ -421,21 +424,21 @@ onBeforeUnmount(() => {
               <div class="isolate relative flex min-h-0 flex-1 flex-col overflow-x-clip p-0">
                 <div class="relative grid min-h-0 w-full flex-1 auto-rows-[minmax(0,1fr)] grid-cols-5">
                   <div class="col-span-5 flex max-w-5xl min-h-0 flex-col lg:col-span-1">
-                    <nav class="max-md:[mask-image:linear-gradient(to_right,black_85%,transparent)] md:[mask-image:none]" aria-label="Blog categories">
+                    <nav class="max-md:[mask-image:linear-gradient(to_right,black_85%,transparent)] md:[mask-image:none]" aria-label="Blog years">
                       <div class="sticky top-24 py-10">
                         <div class="subheader text-center lg:text-left px-0 pb-2.5 lg:pl-[15px] border-b lg:border-b-0 default-border-color">
-                          Categories
+                          年份
                         </div>
                         <ul class="flex list-none gap-0 overflow-x-auto pr-12 text-sm md:pr-0 lg:flex-col lg:pr-0" role="tablist">
-                          <li v-for="cat in categories" :key="cat.id" class="flex w-full flex-1">
+                          <li v-for="yf in yearFilters" :key="yf.id" class="flex w-full flex-1">
                             <a
                               role="tab"
                               :href="withBase('/')"
-                              :aria-selected="categoryActive(cat.id)"
-                              :class="categoryLinkClass(cat.id)"
-                              @click.prevent="setActiveCategory(cat.id)"
+                              :aria-selected="yearActive(yf.id)"
+                              :class="yearLinkClass(yf.id)"
+                              @click.prevent="setActiveYear(yf.id)"
                             >
-                              {{ cat.label }}
+                              {{ yf.label }}
                             </a>
                           </li>
                         </ul>
@@ -473,14 +476,16 @@ onBeforeUnmount(() => {
                       {{ post.title }}
                     </h2>
                   </div>
-                  <div class="flex w-full flex-wrap items-center gap-2 lg:w-auto">
+                  <div class="flex w-full flex-wrap items-center gap-1.5 lg:w-auto">
                     <span
-                      v-if="post.featured"
-                      class="rounded-xs flex h-[18px] w-fit shrink-0 items-center gap-1.5 border border-green-300/50 bg-green-200/10 px-1 pt-px font-mono text-[0.625rem] leading-6 text-green-900 dark:border-green-400/15 dark:bg-green-800/5 dark:text-green-200"
-                    >Featured</span>
-                    <span class="hidden opacity-15 lg:flex dark:opacity-[0.08]" aria-hidden="true">|</span>
-                    <p class="ml-auto font-mono text-[0.625rem] text-offgray-600 dark:text-offgray-500">
-                      {{ post.displayDate }}
+                      v-for="tag in post.tags"
+                      :key="tag"
+                      class="rounded-xs flex h-[18px] w-fit shrink-0 items-center px-1.5 pt-px font-mono text-[0.5625rem] leading-6 border"
+                      :class="[tagColor(tag).bg, tagColor(tag).text, tagColor(tag).border]"
+                    >{{ tag }}</span>
+                    <span v-if="post.tags.length" class="hidden opacity-15 lg:flex dark:opacity-[0.08]" aria-hidden="true">|</span>
+                    <p class="ml-auto font-mono text-[0.625rem] text-offgray-600 dark:text-offgray-500 tabular-nums">
+                      {{ post.date }}
                     </p>
                   </div>
                   <hr class="default-border-color mt-2 w-full opacity-70 group-last:hidden lg:hidden">
@@ -573,12 +578,19 @@ onBeforeUnmount(() => {
                   <h1 class="zed-detail-hero-title font-plex-serif text-balance scroll-mt-24 text-accent-blue dark:text-blue-300">
                     {{ postHeroTitle }}
                   </h1>
-                  <div v-if="postHeroDate || postHeroCategory" class="flex flex-col gap-2.5">
-                    <p class="text-xs text-offgray-600 dark:text-offgray-500">
-                      <template v-if="postHeroDate">{{ postHeroDate }}</template>
-                      <template v-if="postHeroDate && postHeroCategory"> · </template>
-                      <template v-if="postHeroCategory">{{ postHeroCategory }}</template>
-                    </p>
+                  <div v-if="postHeroDate || postHeroTags.length" class="flex flex-col gap-2.5">
+                    <div class="flex flex-wrap items-center gap-2">
+                      <p v-if="postHeroDate" class="text-xs text-offgray-600 dark:text-offgray-500 tabular-nums">
+                        {{ postHeroDate }}
+                      </p>
+                      <span v-if="postHeroDate && postHeroTags.length" class="text-xs text-offgray-400">·</span>
+                      <span
+                        v-for="tag in postHeroTags"
+                        :key="tag"
+                        class="rounded-xs flex h-[18px] w-fit shrink-0 items-center px-1.5 pt-px font-mono text-[0.5625rem] leading-6 border"
+                        :class="[tagColor(tag).bg, tagColor(tag).text, tagColor(tag).border]"
+                      >{{ tag }}</span>
+                    </div>
                   </div>
                 </header>
                 <svg
