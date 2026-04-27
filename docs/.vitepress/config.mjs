@@ -5,6 +5,8 @@ export default defineConfig({
   title: 'Liguwe',
   description: 'Liguwe\'s Personal Website',
   base: '/',
+  /** 站内链接与地址栏为 /blog/39 等形式；托管需能将无后缀路径映射到对应 .html（GitHub Pages 默认支持） */
+  cleanUrls: true,
   appearance: true,
   vite: {
     plugins: [tailwindcss()],

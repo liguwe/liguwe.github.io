@@ -266,7 +266,7 @@ function main() {
 
       posts.push({
         slug,
-        href: `/blog/${slug}.html`,
+        href: `/blog/${slug}`,
         title,
         date,
         year,
