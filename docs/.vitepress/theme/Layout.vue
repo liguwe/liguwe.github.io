@@ -86,7 +86,7 @@ function setActiveCategory(id) {
 function categoryLinkClass(id) {
   const base = 'p-2.5 lg:px-4 lg:py-1 fv-style w-full shrink-0 text-nowrap lg:text-wrap border-b lg:border-b-0 lg:border-l text-center lg:text-left focus-visible:[outline-offset:-4px]!'
   if (categoryActive(id)) {
-    return `${base} text-accent-blue bg-accent-blue/5 dark:bg-accent-blue/12 border-accent-blue/50 scroll-mt-0 scroll-ml-0 dark:border-blue-300/40 dark:text-blue-400`
+    return `${base} !text-accent-blue bg-accent-blue/5 dark:bg-accent-blue/12 border-accent-blue/50 scroll-mt-0 scroll-ml-0 dark:border-blue-300/40 dark:!text-blue-400`
   }
   return `${base} hover:bg-accent-blue/10 default-border-color lg:!border-transparent`
 }

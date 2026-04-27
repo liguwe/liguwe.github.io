@@ -8,6 +8,12 @@ export default defineConfig({
   appearance: true,
   vite: {
     plugins: [tailwindcss()],
+    server: {
+      port: 7001,
+    },
+    preview: {
+      port: 7001,
+    },
   },
   head: [
     ['meta', { name: 'theme-color', content: 'var(--nav-bg-color)' }],

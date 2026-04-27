@@ -7,7 +7,8 @@
   --sh-alt: 6px 6px 0 #074dcf0f;
   --offgray-600: color-mix(in oklch, var(--offgray), #000 8%);
   --offgray-800: color-mix(in oklch, var(--offgray), #000 42%);
-  --accent-blue: oklch(48% 0.23 264);
+  /* 与 zed-detail-active.html / zed.dev 博客侧栏激活态一致 */
+  --accent-blue: oklch(48.8% 0.243 264.376);
   --blue-soft: #1e69f6;
   --cream: oklch(57.5% 0.0282 89);
   --offgray: oklch(57.94% 0.0169 262.86);
