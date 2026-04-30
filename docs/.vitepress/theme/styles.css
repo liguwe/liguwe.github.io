@@ -1398,3 +1398,23 @@ html.dark .post-doc-aside::-webkit-scrollbar-thumb:hover {
   margin: 0;
   border-top: none;
 }
+
+.vp-doc .mermaid-diagram {
+  margin: 1.5rem 0;
+  overflow-x: auto;
+  border: 1px solid var(--border);
+  background: var(--surface);
+}
+
+.vp-doc .mermaid-diagram .mermaid {
+  display: flex;
+  min-width: max-content;
+  justify-content: center;
+  padding: 1.25rem;
+  background: transparent;
+}
+
+.vp-doc .mermaid-diagram svg {
+  max-width: 100%;
+  height: auto;
+}

@@ -1,6 +1,15 @@
 import tailwindcss from '@tailwindcss/vite'
 import { defineConfig } from 'vitepress'
 
+function escapeHtml(value) {
+  return value
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#39;')
+}
+
 export default defineConfig({
   title: 'Liguwe',
   description: 'Liguwe\'s Personal Website',
@@ -25,6 +34,20 @@ export default defineConfig({
     theme: {
       light: 'github-light',
       dark: 'github-dark',
+    },
+    config(md) {
+      const defaultFence = md.renderer.rules.fence
+
+      md.renderer.rules.fence = (tokens, idx, options, env, self) => {
+        const token = tokens[idx]
+        const language = token.info.trim().split(/\s+/)[0]
+
+        if (language === 'mermaid') {
+          return `<div class="mermaid-diagram"><pre class="mermaid">${escapeHtml(token.content)}</pre></div>`
+        }
+
+        return defaultFence(tokens, idx, options, env, self)
+      }
     },
   },
   themeConfig: {

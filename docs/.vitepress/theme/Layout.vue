@@ -14,7 +14,7 @@ import {
 import { Content, inBrowser, useData, useRoute, withBase } from "vitepress";
 import { VPNavBarSearch } from "vitepress/theme";
 import VPDocAsideOutline from "vitepress/dist/client/theme-default/components/VPDocAsideOutline.vue";
-import { computed, nextTick, onBeforeUnmount, onMounted, ref } from "vue";
+import { computed, nextTick, onBeforeUnmount, onMounted, ref, watch } from "vue";
 import SiteLogo from "./components/SiteLogo.vue";
 import { posts, tagColor, years } from "./posts";
 
@@ -115,13 +115,50 @@ function yearLinkClass(id) {
     return `${base} hover:bg-accent-blue/10 default-border-color lg:!border-transparent`;
 }
 
+async function renderMermaid() {
+    if (!inBrowser) return;
+
+    const nodes = Array.from(
+        document.querySelectorAll(".mermaid:not([data-processed='true'])"),
+    );
+    if (nodes.length === 0) return;
+
+    const { default: mermaid } = await import("mermaid");
+    mermaid.initialize({
+        startOnLoad: false,
+        securityLevel: "strict",
+        theme: isDark.value ? "dark" : "default",
+    });
+    await mermaid.run({ nodes });
+}
+
+function scheduleMermaidRender() {
+    if (!inBrowser) return;
+
+    nextTick(() => {
+        window.requestAnimationFrame(() => {
+            renderMermaid().catch((error) => {
+                console.warn("Failed to render mermaid diagram", error);
+            });
+        });
+    });
+}
+
 onMounted(() => {
     window.addEventListener("keydown", onKeydown);
+    scheduleMermaidRender();
 });
 
 onBeforeUnmount(() => {
     window.removeEventListener("keydown", onKeydown);
 });
+
+watch(
+    () => route.path,
+    () => {
+        scheduleMermaidRender();
+    },
+);
 </script>
 
 <template>
