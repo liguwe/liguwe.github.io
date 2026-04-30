@@ -1,6 +1,17 @@
 {
-  "generatedAt": "2026-04-27T22:56:43.991Z",
+  "generatedAt": "2026-04-30T03:13:46.367Z",
   "posts": [
+    {
+      "slug": "42",
+      "href": "/blog/42",
+      "title": "我的 AI Agent Skills 管理工作流",
+      "date": "2026.04.30",
+      "year": "2026",
+      "tags": [
+        "agent",
+        "skills"
+      ]
+    },
     {
       "slug": "41",
       "href": "/blog/41",
