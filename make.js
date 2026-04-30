@@ -24,6 +24,7 @@ const themeRoot = path.resolve(docsRoot, ".vitepress/theme");
 const excludeReg = /@832|@ing|@todo|@/;
 const yearReg = /^\d{4}$/;
 const indexReg = /^(\d+)\.\s*/;
+const articleIndexReg = /^(\d+)\.\s+/;
 const metadataDateReg = /^(\d{4})\/(\d{2})\/(\d{2})$/;
 const calloutTypeMap = {
   tip: "tip",
@@ -253,6 +254,41 @@ function convertObsidianCallouts(content) {
   return output.join("\n");
 }
 
+function getWikiLinkText(rawTarget, alias) {
+  const text =
+    alias ||
+    rawTarget
+      .split("#")[0]
+      .split("/")
+      .pop()
+      .replace(/\.md$/i, "");
+
+  return text.replace(articleIndexReg, "");
+}
+
+function getWikiBlogHref(rawTarget) {
+  const targetPath = rawTarget.split("#")[0];
+  const pathParts = targetPath.split("/");
+  const isYearRootArticle =
+    pathParts.length === 1 || yearReg.test(pathParts[0]);
+  if (!isYearRootArticle) {
+    return "";
+  }
+
+  const targetFileName = pathParts.pop().replace(/\.md$/i, "");
+  const match = targetFileName.match(articleIndexReg);
+
+  if (!match) {
+    return "";
+  }
+
+  return `/blog/${match[1]}`;
+}
+
+function escapeMarkdownLinkText(text) {
+  return text.replace(/\\/g, "\\\\").replace(/]/g, "\\]");
+}
+
 /**
  * 转换文件内容（简化版：处理元信息、callout、高亮、Vue 模板、tags）
  */
@@ -262,18 +298,17 @@ function transformContent(file) {
   // 处理 Obsidian 图片嵌入 ![[xxx]] → 移除（简化处理）
   content = content.replace(/!\[\[([^\]]+)\]\]/g, "");
 
-  // 处理 Obsidian wiki 链接 [[xxx]] → 纯文本
+  // 处理 Obsidian wiki 链接 [[2026/42. 标题|别名]] → [别名](/blog/42)
   content = content.replace(/\[\[([^\]]+)\]\]/g, (match, rawLink) => {
     const [rawTarget, alias] = rawLink.split("|");
-    const text =
-      alias ||
-      rawTarget
-        .split("#")[0]
-        .split("/")
-        .pop()
-        .replace(/\.md$/i, "")
-        .replace(indexReg, "");
-    return text;
+    const text = getWikiLinkText(rawTarget, alias);
+    const href = getWikiBlogHref(rawTarget);
+
+    if (!href) {
+      return text;
+    }
+
+    return `[${escapeMarkdownLinkText(text)}](${href})`;
   });
 
   // 去掉首行元信息（详情页 Hero 已经展示了标题和 tags）
@@ -299,6 +334,27 @@ function ensureDir(dir) {
   fs.mkdirSync(dir, { recursive: true });
 }
 
+function collectMarkdownFiles(dir) {
+  const files = [];
+  const entries = fs.readdirSync(dir, { withFileTypes: true });
+
+  for (const entry of entries) {
+    if (shouldExclude(entry.name)) continue;
+
+    const entryPath = path.resolve(dir, entry.name);
+    if (entry.isDirectory()) {
+      files.push(...collectMarkdownFiles(entryPath));
+      continue;
+    }
+
+    if (entry.isFile() && /\.md$/i.test(entry.name)) {
+      files.push(entryPath);
+    }
+  }
+
+  return files;
+}
+
 function main() {
   if (!fs.existsSync(obsidianRoot)) {
     throw new Error(`Obsidian root does not exist: ${obsidianRoot}`);
@@ -320,15 +376,10 @@ function main() {
     const year = yearDir.name;
     const yearPath = path.resolve(obsidianRoot, year);
 
-    // 读取年份文件夹下的 md 文件
-    const files = fs.readdirSync(yearPath, { withFileTypes: true });
-    for (const file of files) {
-      if (!file.isFile()) continue;
-      if (!/\.md$/i.test(file.name)) continue;
-      if (shouldExclude(file.name)) continue;
-
-      const { slug, title } = parseFileName(file.name);
-      const sourcePath = path.resolve(yearPath, file.name);
+    // 递归读取年份文件夹下的 md 文件
+    const files = collectMarkdownFiles(yearPath);
+    for (const sourcePath of files) {
+      const { slug, title } = parseFileName(path.basename(sourcePath));
       const content = fs.readFileSync(sourcePath, "utf8");
       const { date, tags } = parseFirstLine(content);
 
@@ -357,8 +408,8 @@ function main() {
     }
   }
 
-  // 按日期降序排序（YYYY.MM.DD 格式可直接字符串比较）
-  posts.sort((a, b) => b.date.localeCompare(a.date));
+  // 按文件序号降序排序：43.md、42.md、41.md ...
+  posts.sort((a, b) => Number(b.slug) - Number(a.slug));
 
   // 生成 posts.json
   const postsJson = {

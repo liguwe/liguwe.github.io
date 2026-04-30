@@ -34,7 +34,7 @@ const yearFilters = computed(() => [
 ]);
 
 const latestPost = computed(
-    () => [...posts].sort((a, b) => b.date.localeCompare(a.date))[0],
+    () => posts[0],
 );
 
 const appearanceLabel = computed(() =>

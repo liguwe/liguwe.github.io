@@ -1,15 +1,29 @@
 {
-  "generatedAt": "2026-04-30T10:17:05.979Z",
+  "generatedAt": "2026-04-30T11:48:03.836Z",
   "posts": [
     {
-      "slug": "42",
-      "href": "/blog/42",
-      "title": "我的 AI Agent Skills 管理工作流",
+      "slug": "46",
+      "href": "/blog/46",
+      "title": "我的 AI Agent Skills 管理新路历程：篇2",
       "date": "2026.04.30",
       "year": "2026",
       "tags": [
         "agent",
-        "skills"
+        "skills",
+        "AIGC"
+      ]
+    },
+    {
+      "slug": "45",
+      "href": "/blog/45",
+      "title": "小宇宙播客语音转文本的实践路径：我最后为什么选了半自动",
+      "date": "2026.04.30",
+      "year": "2026",
+      "tags": [
+        "podcast",
+        "workflow",
+        "skills",
+        "AIGC"
       ]
     },
     {
@@ -20,6 +34,17 @@
       "year": "2026",
       "tags": [
         "flomo"
+      ]
+    },
+    {
+      "slug": "42",
+      "href": "/blog/42",
+      "title": "我的 AI Agent Skills 管理工作流",
+      "date": "2026.04.30",
+      "year": "2026",
+      "tags": [
+        "agent",
+        "skills"
       ]
     },
     {
@@ -152,20 +177,20 @@
       ]
     },
     {
-      "slug": "18",
-      "href": "/blog/18",
-      "title": "人生体检报告·症状篇",
-      "date": "2025.11.06",
+      "slug": "19",
+      "href": "/blog/19",
+      "title": "Winter is coming again ？",
+      "date": "2025.10.30",
       "year": "2025",
       "tags": [
         "周报"
       ]
     },
     {
-      "slug": "19",
-      "href": "/blog/19",
-      "title": "Winter is coming again ？",
-      "date": "2025.10.30",
+      "slug": "18",
+      "href": "/blog/18",
+      "title": "人生体检报告·症状篇",
+      "date": "2025.11.06",
       "year": "2025",
       "tags": [
         "周报"
@@ -279,13 +304,15 @@
       ]
     },
     {
-      "slug": "3",
-      "href": "/blog/3",
-      "title": "AI 时代的频率跃迁背景下个人的选择：高频的卷或低频的定",
-      "date": "2024.02.25",
+      "slug": "5",
+      "href": "/blog/5",
+      "title": "人生危机不是崩溃而是瓦解",
+      "date": "2023.12.04",
       "year": "2024",
       "tags": [
-        "播客"
+        "播客",
+        "哲学",
+        "生活哲学"
       ]
     },
     {
@@ -299,22 +326,10 @@
       ]
     },
     {
-      "slug": "5",
-      "href": "/blog/5",
-      "title": "人生危机不是崩溃而是瓦解",
-      "date": "2023.12.04",
-      "year": "2024",
-      "tags": [
-        "播客",
-        "哲学",
-        "生活哲学"
-      ]
-    },
-    {
-      "slug": "1",
-      "href": "/blog/1",
-      "title": "rrweb 作者的某期播客节目纪要",
-      "date": "2023.02.25",
+      "slug": "3",
+      "href": "/blog/3",
+      "title": "AI 时代的频率跃迁背景下个人的选择：高频的卷或低频的定",
+      "date": "2024.02.25",
       "year": "2024",
       "tags": [
         "播客"
@@ -328,6 +343,16 @@
       "year": "2024",
       "tags": [
         "常用工具"
+      ]
+    },
+    {
+      "slug": "1",
+      "href": "/blog/1",
+      "title": "rrweb 作者的某期播客节目纪要",
+      "date": "2023.02.25",
+      "year": "2024",
+      "tags": [
+        "播客"
       ]
     }
   ]
