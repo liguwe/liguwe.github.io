@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-04-30T07:17:14.514Z",
+  "generatedAt": "2026-04-30T07:21:51.082Z",
   "posts": [
     {
       "slug": "42",
@@ -10,6 +10,16 @@
       "tags": [
         "agent",
         "skills"
+      ]
+    },
+    {
+      "slug": "43",
+      "href": "/blog/43",
+      "title": "我的个人月报工作流：从 flomo 到 AI 语料",
+      "date": "2026.04.30",
+      "year": "2026",
+      "tags": [
+        "flomo"
       ]
     },
     {
@@ -319,14 +329,6 @@
       "tags": [
         "常用工具"
       ]
-    },
-    {
-      "slug": "43",
-      "href": "/blog/43",
-      "title": "我的个人月报工作流：从 flomo 到 AI 语料",
-      "date": "",
-      "year": "2026",
-      "tags": []
     }
   ]
 }

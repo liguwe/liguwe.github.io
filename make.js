@@ -70,15 +70,15 @@ function parseFileName(fileName) {
 }
 
 /**
- * 从文件首行解析日期和 tags
+ * 从文件开头解析日期和 tags
  * 首行示例：#2026/01/05 #人生周报 #周报
  * 日期：#YYYY/MM/DD → "YYYY.MM.DD"
  * tags：#xxx（排除日期格式）
  */
 function parseFirstLine(content) {
   const lines = content.split("\n");
-  const firstLine = (lines[0] || "").trim();
-  return parseMetadataLine(firstLine);
+  const firstContentLine = lines.find((line) => line.trim() !== "") || "";
+  return parseMetadataLine(firstContentLine.trim());
 }
 
 /**
@@ -197,14 +197,18 @@ function convertTags(content) {
  */
 function removeLeadingMetadataLine(content) {
   const lines = content.split("\n");
-  const firstLine = (lines[0] || "").trim();
-  const metadata = parseMetadataLine(firstLine);
+  const metadataLineIndex = lines.findIndex((line) => line.trim() !== "");
+  if (metadataLineIndex === -1) {
+    return content;
+  }
+
+  const metadata = parseMetadataLine(lines[metadataLineIndex].trim());
 
   if (!metadata.isMetadataLine) {
     return content;
   }
 
-  lines.shift();
+  lines.splice(0, metadataLineIndex + 1);
   while (lines.length > 0 && lines[0].trim() === "") {
     lines.shift();
   }
