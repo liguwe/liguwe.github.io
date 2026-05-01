@@ -1,6 +1,19 @@
 {
-  "generatedAt": "2026-04-30T11:48:03.836Z",
+  "generatedAt": "2026-05-01T00:21:35.691Z",
   "posts": [
+    {
+      "slug": "47",
+      "href": "/blog/47",
+      "title": "使用 Codex 配置 Zed 支持 DeepSeek v4 后的一些思考",
+      "date": "2026.05.01",
+      "year": "2026",
+      "tags": [
+        "AI",
+        "Codex",
+        "Zed",
+        "AIGC"
+      ]
+    },
     {
       "slug": "46",
       "href": "/blog/46",
