@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-05-01T00:24:34.657Z",
+  "generatedAt": "2026-05-01T02:14:31.478Z",
   "posts": [
     {
       "slug": "47",
@@ -367,6 +367,98 @@
       "tags": [
         "播客"
       ]
+    }
+  ],
+  "tags": [
+    {
+      "id": "AI",
+      "label": "AI",
+      "href": "/blog/AI"
+    },
+    {
+      "id": "Codex",
+      "label": "Codex",
+      "href": "/blog/Codex"
+    },
+    {
+      "id": "Zed",
+      "label": "Zed",
+      "href": "/blog/Zed"
+    },
+    {
+      "id": "AIGC",
+      "label": "AIGC",
+      "href": "/blog/AIGC"
+    },
+    {
+      "id": "agent",
+      "label": "agent",
+      "href": "/blog/agent"
+    },
+    {
+      "id": "skills",
+      "label": "skills",
+      "href": "/blog/skills"
+    },
+    {
+      "id": "podcast",
+      "label": "podcast",
+      "href": "/blog/podcast"
+    },
+    {
+      "id": "workflow",
+      "label": "workflow",
+      "href": "/blog/workflow"
+    },
+    {
+      "id": "flomo",
+      "label": "flomo",
+      "href": "/blog/flomo"
+    },
+    {
+      "id": "claude-code",
+      "label": "claude-code",
+      "href": "/blog/claude-code"
+    },
+    {
+      "id": "周报",
+      "label": "周报",
+      "href": "/blog/周报"
+    },
+    {
+      "id": "翻译",
+      "label": "翻译",
+      "href": "/blog/翻译"
+    },
+    {
+      "id": "cursor",
+      "label": "cursor",
+      "href": "/blog/cursor"
+    },
+    {
+      "id": "AI工具",
+      "label": "AI工具",
+      "href": "/blog/AI工具"
+    },
+    {
+      "id": "播客",
+      "label": "播客",
+      "href": "/blog/播客"
+    },
+    {
+      "id": "哲学",
+      "label": "哲学",
+      "href": "/blog/哲学"
+    },
+    {
+      "id": "生活哲学",
+      "label": "生活哲学",
+      "href": "/blog/生活哲学"
+    },
+    {
+      "id": "常用工具",
+      "label": "常用工具",
+      "href": "/blog/常用工具"
     }
   ]
 }

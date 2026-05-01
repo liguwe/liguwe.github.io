@@ -16,7 +16,7 @@ import { VPNavBarSearch } from "vitepress/theme";
 import VPDocAsideOutline from "vitepress/dist/client/theme-default/components/VPDocAsideOutline.vue";
 import { computed, nextTick, onBeforeUnmount, onMounted, ref, watch } from "vue";
 import SiteLogo from "./components/SiteLogo.vue";
-import { posts, tagColor, years } from "./posts";
+import { posts, tagColor, tags as blogTags, years } from "./posts";
 
 const { page, isDark, theme } = useData();
 const route = useRoute();
@@ -28,10 +28,21 @@ const isHome = computed(() => page.value.relativePath === "index.md");
 /** docs/blog 下仅数字 slug：0.md、1.md … 无子目录 */
 const isPost = computed(() => /^blog\/\d+\.md$/.test(page.value.relativePath));
 
+const currentTag = computed(() => {
+    const match = page.value.relativePath.match(/^blog\/(.+)\.md$/);
+    if (!match || /^\d+$/.test(match[1])) return "";
+    return match[1];
+});
+
+const isTagPage = computed(() => Boolean(currentTag.value));
+const isBlogIndex = computed(() => isHome.value || isTagPage.value);
+
 const yearFilters = computed(() => [
     { id: "all", label: "全部" },
     ...years.map((y) => ({ id: y, label: y })),
 ]);
+
+const tagFilters = computed(() => blogTags);
 
 const latestPost = computed(
     () => posts[0],
@@ -42,9 +53,17 @@ const appearanceLabel = computed(() =>
 );
 
 const visiblePosts = computed(() => {
+    if (currentTag.value) {
+        return posts.filter((post) => post.tags?.includes(currentTag.value));
+    }
     if (activeYear.value === "all") return posts;
     return posts.filter((post) => post.year === activeYear.value);
 });
+
+const blogHeroTitle = computed(() => currentTag.value || "AI 实践笔记");
+const blogHeroSubtitle = computed(() =>
+    currentTag.value ? "" : "少一点旁观，多一点动手",
+);
 
 const postSlugFromPath = computed(() => {
     const m = page.value.relativePath.match(/^blog\/(\d+)\.md$/);
@@ -98,21 +117,44 @@ function onKeydown(event) {
     }
 }
 
+function tagHref(tag) {
+    return `/blog/${tag}`;
+}
+
 function yearActive(id) {
-    return activeYear.value === id;
+    return !currentTag.value && activeYear.value === id;
 }
 
 function setActiveYear(id) {
     activeYear.value = id;
 }
 
-function yearLinkClass(id) {
+function onYearClick(event, id) {
+    setActiveYear(id);
+    if (!currentTag.value) {
+        event.preventDefault();
+    }
+}
+
+function filterLinkClass(active) {
     const base =
         "p-2.5 lg:px-4 lg:py-1 fv-style w-full shrink-0 text-nowrap lg:text-wrap border-b lg:border-b-0 lg:border-l text-center lg:text-left focus-visible:[outline-offset:-4px]!";
-    if (yearActive(id)) {
+    if (active) {
         return `${base} !text-accent-blue bg-accent-blue/5 dark:bg-accent-blue/12 border-accent-blue/50 scroll-mt-0 scroll-ml-0 dark:border-blue-300/40 dark:!text-blue-400`;
     }
     return `${base} hover:bg-accent-blue/10 default-border-color lg:!border-transparent`;
+}
+
+function yearLinkClass(id) {
+    return filterLinkClass(yearActive(id));
+}
+
+function tagActive(id) {
+    return currentTag.value === id;
+}
+
+function tagLinkClass(id) {
+    return filterLinkClass(tagActive(id));
 }
 
 async function renderMermaid() {
@@ -392,7 +434,7 @@ watch(
                     />
                 </header>
 
-                <main v-if="isHome" class="flex min-h-0 flex-1 flex-col">
+                <main v-if="isBlogIndex" class="flex min-h-0 flex-1 flex-col">
                     <section
                         class="outer-section-node-offset relative z-[1] flex shrink-0 !min-h-fit min-w-0"
                     >
@@ -509,12 +551,13 @@ watch(
                                     <h1
                                         class="zed-blog-hero-title font-plex-serif text-balance scroll-mt-24 mb-2 text-center text-accent-blue dark:text-blue-300"
                                     >
-                                        AI 实践笔记
+                                        {{ blogHeroTitle }}
                                     </h1>
                                     <p
+                                        v-if="blogHeroSubtitle"
                                         class="text-center text-balance tracking-tight text-offgray-600 dark:text-offgray-500"
                                     >
-                                        少一点旁观，多一点动手
+                                        {{ blogHeroSubtitle }}
                                     </p>
                                 </hgroup>
                                 <svg
@@ -759,8 +802,8 @@ watch(
                                         class="col-span-5 max-w-5xl lg:col-span-1"
                                     >
                                         <nav
-                                            class="max-md:[mask-image:linear-gradient(to_right,black_85%,transparent)] md:[mask-image:none] sticky top-14 py-6 lg:py-10"
-                                            aria-label="Blog years"
+                                            class="max-md:[mask-image:linear-gradient(to_right,black_85%,transparent)] md:[mask-image:none] sticky top-14 py-6 lg:max-h-[calc(100vh-3.5rem)] lg:overflow-y-auto lg:overscroll-contain lg:py-10 lg:pr-1"
+                                            aria-label="Blog filters"
                                         >
                                             <div
                                                 class="subheader text-center lg:text-left px-0 pb-2.5 lg:pl-[15px] border-b lg:border-b-0 default-border-color"
@@ -785,11 +828,44 @@ watch(
                                                         :class="
                                                             yearLinkClass(yf.id)
                                                         "
-                                                        @click.prevent="
-                                                            setActiveYear(yf.id)
+                                                        @click="
+                                                            onYearClick(
+                                                                $event,
+                                                                yf.id,
+                                                            )
                                                         "
                                                     >
                                                         {{ yf.label }}
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                            <div
+                                                class="subheader text-center lg:text-left px-0 pb-2.5 pt-5 lg:pl-[15px] border-b lg:border-b-0 default-border-color"
+                                            >
+                                                分类
+                                            </div>
+                                            <ul
+                                                class="flex list-none gap-0 overflow-x-auto pr-12 text-sm md:pr-0 lg:flex-col lg:pr-0"
+                                            >
+                                                <li
+                                                    v-for="tag in tagFilters"
+                                                    :key="tag.id"
+                                                    class="flex w-full flex-1"
+                                                >
+                                                    <a
+                                                        :href="
+                                                            withBase(tag.href)
+                                                        "
+                                                        :aria-current="
+                                                            tagActive(tag.id)
+                                                                ? 'page'
+                                                                : undefined
+                                                        "
+                                                        :class="
+                                                            tagLinkClass(tag.id)
+                                                        "
+                                                    >
+                                                        {{ tag.label }}
                                                     </a>
                                                 </li>
                                             </ul>
@@ -809,10 +885,9 @@ watch(
                                                 class="pointer-events-none absolute z-[110] size-1.5 rotate-45 border border-offgray-100 bg-[var(--node-bg)] dark:border-offgray-900 dark:bg-[hsl(219,92%,2%)] [bottom:calc(-1*var(--node-vertical-offset))] [left:var(--node-horizontal-offset)] hidden lg:block"
                                                 aria-hidden="true"
                                             />
-                                            <a
+                                            <article
                                                 v-for="post in visiblePosts"
                                                 :key="post.slug"
-                                                :href="withBase(post.href)"
                                                 class="group fv-style relative isolate flex flex-col items-start justify-between gap-2 rounded border border-transparent py-2 hover:border-blue-300 hover:bg-blue-50/50 hover:[box-shadow:var(--sh-alt)] lg:min-h-[42px] lg:flex-row lg:items-center lg:px-2 dark:hover:border-blue-300/20 dark:hover:bg-blue-700/5"
                                             >
                                                 <svg
@@ -849,15 +924,29 @@ watch(
                                                     <h2
                                                         class="text-[0.9375rem] text-offgray-900 underline decoration-accent-blue/20 decoration-1 underline-offset-[3px] hover:decoration-accent-blue/80 group-hover:decoration-accent-blue/80 dark:text-offgray-100 dark:decoration-blue-300/20 dark:hover:decoration-blue-400/80 dark:group-hover:decoration-blue-400/80"
                                                     >
-                                                        {{ post.title }}
+                                                        <a
+                                                            :href="
+                                                                withBase(
+                                                                    post.href,
+                                                                )
+                                                            "
+                                                            >{{
+                                                                post.title
+                                                            }}</a
+                                                        >
                                                     </h2>
                                                 </div>
                                                 <div
                                                     class="flex w-full flex-wrap items-center gap-1.5 lg:w-auto"
                                                 >
-                                                    <span
+                                                    <a
                                                         v-for="tag in post.tags"
                                                         :key="tag"
+                                                        :href="
+                                                            withBase(
+                                                                tagHref(tag),
+                                                            )
+                                                        "
                                                         class="rounded-xs flex h-[18px] w-fit shrink-0 items-center px-1.5 pt-px font-mono text-[0.5625rem] leading-6 border"
                                                         :class="[
                                                             tagColor(tag).bg,
@@ -865,7 +954,7 @@ watch(
                                                             tagColor(tag)
                                                                 .border,
                                                         ]"
-                                                        >{{ tag }}</span
+                                                        >{{ tag }}</a
                                                     >
                                                     <span
                                                         v-if="post.tags.length"
@@ -882,7 +971,7 @@ watch(
                                                 <hr
                                                     class="default-border-color mt-2 w-full opacity-70 group-last:hidden lg:hidden"
                                                 />
-                                            </a>
+                                            </article>
                                         </div>
                                     </div>
                                 </div>
@@ -1071,16 +1160,17 @@ watch(
                                                 class="text-xs text-offgray-400"
                                                 >·</span
                                             >
-                                            <span
+                                            <a
                                                 v-for="tag in postHeroTags"
                                                 :key="tag"
+                                                :href="withBase(tagHref(tag))"
                                                 class="rounded-xs flex h-[18px] w-fit shrink-0 items-center px-1.5 pt-px font-mono text-[0.5625rem] leading-6 border"
                                                 :class="[
                                                     tagColor(tag).bg,
                                                     tagColor(tag).text,
                                                     tagColor(tag).border,
                                                 ]"
-                                                >{{ tag }}</span
+                                                >{{ tag }}</a
                                             >
                                         </div>
                                     </div>

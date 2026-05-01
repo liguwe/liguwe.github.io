@@ -1418,3 +1418,29 @@ html.dark .post-doc-aside::-webkit-scrollbar-thumb:hover {
   max-width: 100%;
   height: auto;
 }
+
+.vp-doc .simple-flowchart {
+  color: var(--text);
+}
+
+.vp-doc .simple-flowchart-node rect {
+  fill: var(--panel);
+  stroke: var(--border-strong);
+  stroke-width: 1;
+}
+
+.vp-doc .simple-flowchart-node text {
+  fill: currentColor;
+  font-family: var(--font-writer);
+  font-size: 13px;
+}
+
+.vp-doc .simple-flowchart-edges path {
+  fill: none;
+  stroke: color-mix(in oklch, var(--accent-blue), var(--text-muted) 44%);
+  stroke-width: 1.35;
+}
+
+.vp-doc .simple-flowchart marker path {
+  fill: color-mix(in oklch, var(--accent-blue), var(--text-muted) 44%);
+}

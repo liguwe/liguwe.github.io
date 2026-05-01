@@ -2,6 +2,24 @@ import postsData from './posts.json'
 
 export const posts = postsData.posts
 
+function uniqueTagsFromPosts() {
+  const tagMap = new Map()
+  for (const post of posts) {
+    for (const tag of post.tags || []) {
+      if (!tagMap.has(tag)) {
+        tagMap.set(tag, {
+          id: tag,
+          label: tag,
+          href: `/blog/${tag}`,
+        })
+      }
+    }
+  }
+  return Array.from(tagMap.values())
+}
+
+export const tags = postsData.tags || uniqueTagsFromPosts()
+
 /** 动态提取去重的年份列表，降序排列 */
 export const years = [...new Set(posts.map((p) => p.year))].sort((a, b) => b.localeCompare(a))
 
