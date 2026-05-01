@@ -17,6 +17,38 @@ import Layout from './Layout.vue'
 import './styles.css'
 import '../tailwind.css'
 
+function getZoomableImages() {
+  return Array.from(document.querySelectorAll('.vp-doc img:not(.no-zoom)'))
+    .filter((image) => !image.closest('a'))
+}
+
 export default {
   Layout,
+  async enhanceApp({ router }) {
+    if (import.meta.env.SSR) return
+
+    const { default: mediumZoom } = await import('medium-zoom')
+    const zoom = mediumZoom({
+      margin: 24,
+      background: 'rgba(8, 12, 18, 0.86)',
+      scrollOffset: 40,
+    })
+
+    const refreshZoom = () => {
+      window.requestAnimationFrame(() => {
+        zoom.detach()
+        zoom.attach(getZoomableImages())
+      })
+    }
+
+    const previousAfterRouteChange =
+      router.onAfterRouteChange ?? router.onAfterRouteChanged
+
+    router.onAfterRouteChange = async (to) => {
+      await previousAfterRouteChange?.(to)
+      refreshZoom()
+    }
+
+    refreshZoom()
+  },
 }

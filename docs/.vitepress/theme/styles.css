@@ -1400,18 +1400,13 @@ html.dark .post-doc-aside::-webkit-scrollbar-thumb:hover {
 }
 
 .vp-doc .mermaid-diagram {
+  display: flex;
+  justify-content: center;
   margin: 1.5rem 0;
+  padding: 1.25rem;
   overflow-x: auto;
   border: 1px solid var(--border);
   background: var(--surface);
-}
-
-.vp-doc .mermaid-diagram .mermaid {
-  display: flex;
-  min-width: max-content;
-  justify-content: center;
-  padding: 1.25rem;
-  background: transparent;
 }
 
 .vp-doc .mermaid-diagram svg {
@@ -1419,28 +1414,16 @@ html.dark .post-doc-aside::-webkit-scrollbar-thumb:hover {
   height: auto;
 }
 
-.vp-doc .simple-flowchart {
-  color: var(--text);
+.vp-doc img:not(.no-zoom) {
+  cursor: zoom-in;
 }
 
-.vp-doc .simple-flowchart-node rect {
-  fill: var(--panel);
-  stroke: var(--border-strong);
-  stroke-width: 1;
+.vp-doc a img,
+.vp-doc img.no-zoom {
+  cursor: inherit;
 }
 
-.vp-doc .simple-flowchart-node text {
-  fill: currentColor;
-  font-family: var(--font-writer);
-  font-size: 13px;
-}
-
-.vp-doc .simple-flowchart-edges path {
-  fill: none;
-  stroke: color-mix(in oklch, var(--accent-blue), var(--text-muted) 44%);
-  stroke-width: 1.35;
-}
-
-.vp-doc .simple-flowchart marker path {
-  fill: color-mix(in oklch, var(--accent-blue), var(--text-muted) 44%);
+.medium-zoom-overlay,
+.medium-zoom-image--opened {
+  z-index: 10000;
 }

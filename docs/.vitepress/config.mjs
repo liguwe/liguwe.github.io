@@ -1,17 +1,9 @@
 import tailwindcss from '@tailwindcss/vite'
 import { defineConfig } from 'vitepress'
+import { withMermaid } from 'vitepress-plugin-mermaid'
 
-function escapeHtml(value) {
-  return value
-    .replace(/&/g, '&amp;')
-    .replace(/</g, '&lt;')
-    .replace(/>/g, '&gt;')
-    .replace(/"/g, '&quot;')
-    .replace(/'/g, '&#39;')
-}
-
-export default defineConfig({
-  title: 'Liguwe',
+export default withMermaid(defineConfig({
+  title: 'liguwe.site',
   description: 'Liguwe\'s Personal Website',
   base: '/',
   /** 站内链接与地址栏为 /blog/39 等形式；托管需能将无后缀路径映射到对应 .html（GitHub Pages 默认支持） */
@@ -35,20 +27,13 @@ export default defineConfig({
       light: 'github-light',
       dark: 'github-dark',
     },
-    config(md) {
-      const defaultFence = md.renderer.rules.fence
-
-      md.renderer.rules.fence = (tokens, idx, options, env, self) => {
-        const token = tokens[idx]
-        const language = token.info.trim().split(/\s+/)[0]
-
-        if (language === 'mermaid') {
-          return `<div class="mermaid-diagram"><pre class="mermaid">${escapeHtml(token.content)}</pre></div>`
-        }
-
-        return defaultFence(tokens, idx, options, env, self)
-      }
-    },
+  },
+  mermaid: {
+    startOnLoad: false,
+    securityLevel: 'strict',
+  },
+  mermaidPlugin: {
+    class: 'mermaid-diagram',
   },
   themeConfig: {
     outline: {
@@ -85,4 +70,4 @@ export default defineConfig({
       { icon: 'github', link: 'https://github.com/liguwe' },
     ],
   },
-})
+}))

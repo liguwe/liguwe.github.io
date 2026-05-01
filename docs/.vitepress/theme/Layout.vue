@@ -60,10 +60,8 @@ const visiblePosts = computed(() => {
     return posts.filter((post) => post.year === activeYear.value);
 });
 
-const blogHeroTitle = computed(() => currentTag.value || "AI 实践笔记");
-const blogHeroSubtitle = computed(() =>
-    currentTag.value ? "" : "少一点旁观，多一点动手",
-);
+const blogHeroTitle = computed(() => "AI 实践笔记");
+const blogHeroSubtitle = computed(() => "少一点旁观，多一点动手");
 
 const postSlugFromPath = computed(() => {
     const m = page.value.relativePath.match(/^blog\/(\d+)\.md$/);
@@ -157,50 +155,40 @@ function tagLinkClass(id) {
     return filterLinkClass(tagActive(id));
 }
 
-async function renderMermaid() {
-    if (!inBrowser) return;
+const tagFilterElements = new Map();
 
-    const nodes = Array.from(
-        document.querySelectorAll(".mermaid:not([data-processed='true'])"),
-    );
-    if (nodes.length === 0) return;
-
-    const { default: mermaid } = await import("mermaid");
-    mermaid.initialize({
-        startOnLoad: false,
-        securityLevel: "strict",
-        theme: isDark.value ? "dark" : "default",
-    });
-    await mermaid.run({ nodes });
+function setTagFilterElement(id, element) {
+    if (element) {
+        tagFilterElements.set(id, element);
+    } else {
+        tagFilterElements.delete(id);
+    }
 }
 
-function scheduleMermaidRender() {
-    if (!inBrowser) return;
+function scrollCurrentTagIntoView() {
+    if (!inBrowser || !currentTag.value) return;
 
     nextTick(() => {
         window.requestAnimationFrame(() => {
-            renderMermaid().catch((error) => {
-                console.warn("Failed to render mermaid diagram", error);
-            });
+            tagFilterElements
+                .get(currentTag.value)
+                ?.scrollIntoView({ block: "nearest", inline: "nearest" });
         });
     });
 }
 
 onMounted(() => {
     window.addEventListener("keydown", onKeydown);
-    scheduleMermaidRender();
+    scrollCurrentTagIntoView();
 });
 
 onBeforeUnmount(() => {
     window.removeEventListener("keydown", onKeydown);
 });
 
-watch(
-    () => route.path,
-    () => {
-        scheduleMermaidRender();
-    },
-);
+watch(currentTag, () => {
+    scrollCurrentTagIntoView();
+});
 </script>
 
 <template>
@@ -853,6 +841,13 @@ watch(
                                                     class="flex w-full flex-1"
                                                 >
                                                     <a
+                                                        :ref="
+                                                            (element) =>
+                                                                setTagFilterElement(
+                                                                    tag.id,
+                                                                    element,
+                                                                )
+                                                        "
                                                         :href="
                                                             withBase(tag.href)
                                                         "
