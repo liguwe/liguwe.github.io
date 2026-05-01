@@ -23,6 +23,7 @@ const route = useRoute();
 
 const activeYear = ref("all");
 const menuOpen = ref(false);
+const blogFilterNav = ref(null);
 
 const isHome = computed(() => page.value.relativePath === "index.md");
 /** docs/blog 下仅数字 slug：0.md、1.md … 无子目录 */
@@ -156,6 +157,7 @@ function tagLinkClass(id) {
 }
 
 const tagFilterElements = new Map();
+let blogFilterFrame = 0;
 
 function setTagFilterElement(id, element) {
     if (element) {
@@ -177,18 +179,56 @@ function scrollCurrentTagIntoView() {
     });
 }
 
+function updateBlogFilterHeight() {
+    if (!inBrowser || !blogFilterNav.value) return;
+
+    const top = blogFilterNav.value.getBoundingClientRect().top;
+    const visibleHeight = Math.max(180, window.innerHeight - Math.max(0, top));
+    blogFilterNav.value.style.setProperty(
+        "--blog-filter-visible-height",
+        `${visibleHeight}px`,
+    );
+}
+
+function scheduleBlogFilterHeightUpdate() {
+    if (!inBrowser || blogFilterFrame) return;
+
+    blogFilterFrame = window.requestAnimationFrame(() => {
+        blogFilterFrame = 0;
+        updateBlogFilterHeight();
+    });
+}
+
 onMounted(() => {
     window.addEventListener("keydown", onKeydown);
+    window.addEventListener("scroll", scheduleBlogFilterHeightUpdate, {
+        passive: true,
+    });
+    window.addEventListener("resize", scheduleBlogFilterHeightUpdate);
+    scheduleBlogFilterHeightUpdate();
     scrollCurrentTagIntoView();
 });
 
 onBeforeUnmount(() => {
     window.removeEventListener("keydown", onKeydown);
+    window.removeEventListener("scroll", scheduleBlogFilterHeightUpdate);
+    window.removeEventListener("resize", scheduleBlogFilterHeightUpdate);
+    if (blogFilterFrame) {
+        window.cancelAnimationFrame(blogFilterFrame);
+    }
 });
 
 watch(currentTag, () => {
+    scheduleBlogFilterHeightUpdate();
     scrollCurrentTagIntoView();
 });
+
+watch(
+    () => route.path,
+    () => {
+        nextTick(scheduleBlogFilterHeightUpdate);
+    },
+);
 </script>
 
 <template>
@@ -790,7 +830,8 @@ watch(currentTag, () => {
                                         class="col-span-5 max-w-5xl lg:col-span-1"
                                     >
                                         <nav
-                                            class="max-md:[mask-image:linear-gradient(to_right,black_85%,transparent)] md:[mask-image:none] sticky top-14 py-6 lg:max-h-[calc(100vh-3.5rem)] lg:overflow-y-auto lg:overscroll-contain lg:py-10 lg:pr-1"
+                                            ref="blogFilterNav"
+                                            class="max-md:[mask-image:linear-gradient(to_right,black_85%,transparent)] md:[mask-image:none] sticky top-14 py-6 lg:max-h-[var(--blog-filter-visible-height,calc(100vh-3.5rem))] lg:overflow-y-auto lg:overscroll-contain lg:py-10 lg:pr-1"
                                             aria-label="Blog filters"
                                         >
                                             <div

@@ -29,7 +29,7 @@ export default {
 
     const { default: mediumZoom } = await import('medium-zoom')
     const zoom = mediumZoom({
-      margin: 24,
+      margin: 0,
       background: 'rgba(8, 12, 18, 0.86)',
       scrollOffset: 40,
     })
