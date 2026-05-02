@@ -28,7 +28,7 @@ npm run make
 - `docs/blog/*.md`
 - `docs/.vitepress/theme/posts.json`
 
-默认源目录是仓库上一级的 `../832`，也可以通过环境变量 `OBSIDIAN_ROOT` 指定。
+默认源目录是仓库上一级的 `../832OS`，也可以通过环境变量 `OBSIDIAN_ROOT` 指定。
 
 ## 构建
 

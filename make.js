@@ -15,7 +15,7 @@ const path = require("path");
 
 const repoRoot = __dirname;
 const obsidianRoot = path.resolve(
-  process.env.OBSIDIAN_ROOT || path.resolve(repoRoot, "../832"),
+  process.env.OBSIDIAN_ROOT || path.resolve(repoRoot, "../832OS"),
 );
 const docsRoot = path.resolve(repoRoot, "docs");
 const blogRoot = path.resolve(docsRoot, "blog");

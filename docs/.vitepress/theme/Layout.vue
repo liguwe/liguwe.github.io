@@ -15,6 +15,7 @@ import { Content, inBrowser, useData, useRoute, withBase } from "vitepress";
 import { VPNavBarSearch } from "vitepress/theme";
 import VPDocAsideOutline from "vitepress/dist/client/theme-default/components/VPDocAsideOutline.vue";
 import { computed, nextTick, onBeforeUnmount, onMounted, ref, watch } from "vue";
+import GiscusComments from "./components/GiscusComments.vue";
 import SiteLogo from "./components/SiteLogo.vue";
 import { posts, tagColor, tags as blogTags, years } from "./posts";
 
@@ -1434,6 +1435,7 @@ watch(
                                                 'external-link-icon-enabled',
                                         ]"
                                     />
+                                    <GiscusComments />
                                 </div>
                             </div>
                         </div>
