@@ -1,5 +1,5 @@
 /**
- * @description 从 Obsidian 仓库中解析年份文件夹下的 Markdown 文件，
+ * @description 从 832OS/blog 中解析年份文件夹下的 Markdown 文件，
  * 复制到 VitePress 博客目录 docs/blog/，并生成 posts.json。
  *
  * 规则：
@@ -16,6 +16,9 @@ const path = require("path");
 const repoRoot = __dirname;
 const obsidianRoot = path.resolve(
   process.env.OBSIDIAN_ROOT || path.resolve(repoRoot, "../832OS"),
+);
+const publicBlogSourceRoot = path.resolve(
+  process.env.PUBLIC_BLOG_ROOT || path.resolve(obsidianRoot, "blog"),
 );
 const docsRoot = path.resolve(repoRoot, "docs");
 const blogRoot = path.resolve(docsRoot, "blog");
@@ -363,6 +366,9 @@ async function main() {
   if (!fs.existsSync(obsidianRoot)) {
     throw new Error(`Obsidian root does not exist: ${obsidianRoot}`);
   }
+  if (!fs.existsSync(publicBlogSourceRoot)) {
+    throw new Error(`Public blog source does not exist: ${publicBlogSourceRoot}`);
+  }
 
   // 清理旧的 blog 文件
   fs.rmSync(blogRoot, { recursive: true, force: true });
@@ -370,15 +376,15 @@ async function main() {
 
   const posts = [];
 
-  // 读取 obsidian 根目录下的年份文件夹
-  const entries = fs.readdirSync(obsidianRoot, { withFileTypes: true });
+  // 读取 832OS/blog 下的年份文件夹
+  const entries = fs.readdirSync(publicBlogSourceRoot, { withFileTypes: true });
   const yearDirs = entries.filter(
     (e) => e.isDirectory() && yearReg.test(e.name) && !shouldExclude(e.name),
   );
 
   for (const yearDir of yearDirs) {
     const year = yearDir.name;
-    const yearPath = path.resolve(obsidianRoot, year);
+    const yearPath = path.resolve(publicBlogSourceRoot, year);
 
     // 递归读取年份文件夹下的 md 文件
     const files = collectMarkdownFiles(yearPath);
@@ -447,7 +453,7 @@ async function main() {
   );
 
   console.log(
-    `✅ Generated ${posts.length} posts from ${obsidianRoot}`,
+    `✅ Generated ${posts.length} posts from ${publicBlogSourceRoot}`,
   );
   console.log(`   Tag pages → ${tags.length}`);
   console.log(`   Blog files → ${blogRoot}`);
