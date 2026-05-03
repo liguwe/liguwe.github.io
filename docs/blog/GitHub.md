@@ -1,3 +1,3 @@
 ---
-title: "GitHub"
+title: "github"
 ---

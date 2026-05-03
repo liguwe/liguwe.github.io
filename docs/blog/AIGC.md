@@ -1,3 +1,3 @@
 ---
-title: "AIGC"
+title: "aigc"
 ---

@@ -1,3 +1,3 @@
 ---
-title: "Zed"
+title: "zed"
 ---

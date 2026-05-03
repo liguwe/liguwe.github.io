@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-05-03T03:58:59.964Z",
+  "generatedAt": "2026-05-03T04:39:50.610Z",
   "posts": [
     {
       "slug": "49",
@@ -8,9 +8,9 @@
       "date": "2026.05.03",
       "year": "2026",
       "tags": [
-        "Raycast",
-        "GitHub",
-        "832OS",
+        "raycast",
+        "github",
+        "832os",
         "效率工具"
       ]
     },
@@ -21,8 +21,8 @@
       "date": "2026.05.03",
       "year": "2026",
       "tags": [
-        "AI",
-        "832OS",
+        "ai",
+        "832os",
         "个人知识管理"
       ]
     },
@@ -33,10 +33,10 @@
       "date": "2026.05.01",
       "year": "2026",
       "tags": [
-        "AI",
-        "Codex",
-        "Zed",
-        "AIGC"
+        "ai",
+        "codex",
+        "zed",
+        "aigc"
       ]
     },
     {
@@ -48,7 +48,7 @@
       "tags": [
         "agent",
         "skills",
-        "AIGC"
+        "aigc"
       ]
     },
     {
@@ -61,7 +61,7 @@
         "podcast",
         "workflow",
         "skills",
-        "AIGC"
+        "aigc"
       ]
     },
     {
@@ -92,7 +92,7 @@
       "date": "2026.03.16",
       "year": "2026",
       "tags": [
-        "AI"
+        "ai"
       ]
     },
     {
@@ -102,8 +102,8 @@
       "date": "2026.03.15",
       "year": "2026",
       "tags": [
-        "AI",
-        "AIGC"
+        "ai",
+        "aigc"
       ]
     },
     {
@@ -327,7 +327,7 @@
       "date": "2025.03.21",
       "year": "2025",
       "tags": [
-        "AI"
+        "ai"
       ]
     },
     {
@@ -338,7 +338,7 @@
       "year": "2025",
       "tags": [
         "cursor",
-        "AI工具"
+        "ai工具"
       ]
     },
     {
@@ -395,19 +395,19 @@
   ],
   "tags": [
     {
-      "id": "Raycast",
-      "label": "Raycast",
-      "href": "/blog/Raycast"
+      "id": "raycast",
+      "label": "raycast",
+      "href": "/blog/raycast"
     },
     {
-      "id": "GitHub",
-      "label": "GitHub",
-      "href": "/blog/GitHub"
+      "id": "github",
+      "label": "github",
+      "href": "/blog/github"
     },
     {
-      "id": "832OS",
-      "label": "832OS",
-      "href": "/blog/832OS"
+      "id": "832os",
+      "label": "832os",
+      "href": "/blog/832os"
     },
     {
       "id": "效率工具",
@@ -415,9 +415,9 @@
       "href": "/blog/效率工具"
     },
     {
-      "id": "AI",
-      "label": "AI",
-      "href": "/blog/AI"
+      "id": "ai",
+      "label": "ai",
+      "href": "/blog/ai"
     },
     {
       "id": "个人知识管理",
@@ -425,19 +425,19 @@
       "href": "/blog/个人知识管理"
     },
     {
-      "id": "Codex",
-      "label": "Codex",
-      "href": "/blog/Codex"
+      "id": "codex",
+      "label": "codex",
+      "href": "/blog/codex"
     },
     {
-      "id": "Zed",
-      "label": "Zed",
-      "href": "/blog/Zed"
+      "id": "zed",
+      "label": "zed",
+      "href": "/blog/zed"
     },
     {
-      "id": "AIGC",
-      "label": "AIGC",
-      "href": "/blog/AIGC"
+      "id": "aigc",
+      "label": "aigc",
+      "href": "/blog/aigc"
     },
     {
       "id": "agent",
@@ -485,9 +485,9 @@
       "href": "/blog/cursor"
     },
     {
-      "id": "AI工具",
-      "label": "AI工具",
-      "href": "/blog/AI工具"
+      "id": "ai工具",
+      "label": "ai工具",
+      "href": "/blog/ai工具"
     },
     {
       "id": "播客",

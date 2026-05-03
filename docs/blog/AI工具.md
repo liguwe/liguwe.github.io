@@ -1,3 +1,3 @@
 ---
-title: "AI工具"
+title: "ai工具"
 ---
