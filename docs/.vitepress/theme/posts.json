@@ -1,6 +1,18 @@
 {
-  "generatedAt": "2026-05-03T00:25:22.293Z",
+  "generatedAt": "2026-05-03T00:56:35.884Z",
   "posts": [
+    {
+      "slug": "48",
+      "href": "/blog/48",
+      "title": "AI 时代，重建个人 OS：832OS",
+      "date": "2026.05.03",
+      "year": "2026",
+      "tags": [
+        "AI",
+        "832OS",
+        "个人知识管理"
+      ]
+    },
     {
       "slug": "47",
       "href": "/blog/47",
@@ -374,6 +386,16 @@
       "id": "AI",
       "label": "AI",
       "href": "/blog/AI"
+    },
+    {
+      "id": "832OS",
+      "label": "832OS",
+      "href": "/blog/832OS"
+    },
+    {
+      "id": "个人知识管理",
+      "label": "个人知识管理",
+      "href": "/blog/个人知识管理"
     },
     {
       "id": "Codex",
