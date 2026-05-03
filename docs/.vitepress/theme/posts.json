@@ -1,6 +1,19 @@
 {
-  "generatedAt": "2026-05-03T00:56:35.884Z",
+  "generatedAt": "2026-05-03T03:58:59.964Z",
   "posts": [
+    {
+      "slug": "49",
+      "href": "/blog/49",
+      "title": "Raycast 小技巧：把入口做轻，把系统接起来",
+      "date": "2026.05.03",
+      "year": "2026",
+      "tags": [
+        "Raycast",
+        "GitHub",
+        "832OS",
+        "效率工具"
+      ]
+    },
     {
       "slug": "48",
       "href": "/blog/48",
@@ -336,8 +349,7 @@
       "year": "2024",
       "tags": [
         "播客",
-        "哲学",
-        "生活哲学"
+        "哲学"
       ]
     },
     {
@@ -383,14 +395,29 @@
   ],
   "tags": [
     {
-      "id": "AI",
-      "label": "AI",
-      "href": "/blog/AI"
+      "id": "Raycast",
+      "label": "Raycast",
+      "href": "/blog/Raycast"
+    },
+    {
+      "id": "GitHub",
+      "label": "GitHub",
+      "href": "/blog/GitHub"
     },
     {
       "id": "832OS",
       "label": "832OS",
       "href": "/blog/832OS"
+    },
+    {
+      "id": "效率工具",
+      "label": "效率工具",
+      "href": "/blog/效率工具"
+    },
+    {
+      "id": "AI",
+      "label": "AI",
+      "href": "/blog/AI"
     },
     {
       "id": "个人知识管理",
@@ -471,11 +498,6 @@
       "id": "哲学",
       "label": "哲学",
       "href": "/blog/哲学"
-    },
-    {
-      "id": "生活哲学",
-      "label": "生活哲学",
-      "href": "/blog/生活哲学"
     },
     {
       "id": "常用工具",
