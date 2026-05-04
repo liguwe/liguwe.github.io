@@ -1,6 +1,21 @@
 {
-  "generatedAt": "2026-05-03T04:39:50.610Z",
+  "generatedAt": "2026-05-04T14:29:06.698Z",
   "posts": [
+    {
+      "slug": "50",
+      "href": "/blog/50",
+      "title": "三个 AI 编程工具的配置边界：规则、命令、Skills 和 MCP 放哪里",
+      "date": "2026.05.04",
+      "year": "2026",
+      "tags": [
+        "agent",
+        "codex",
+        "cursor",
+        "claude",
+        "mcp",
+        "skills"
+      ]
+    },
     {
       "slug": "49",
       "href": "/blog/49",
@@ -395,6 +410,36 @@
   ],
   "tags": [
     {
+      "id": "agent",
+      "label": "agent",
+      "href": "/blog/agent"
+    },
+    {
+      "id": "codex",
+      "label": "codex",
+      "href": "/blog/codex"
+    },
+    {
+      "id": "cursor",
+      "label": "cursor",
+      "href": "/blog/cursor"
+    },
+    {
+      "id": "claude",
+      "label": "claude",
+      "href": "/blog/claude"
+    },
+    {
+      "id": "mcp",
+      "label": "mcp",
+      "href": "/blog/mcp"
+    },
+    {
+      "id": "skills",
+      "label": "skills",
+      "href": "/blog/skills"
+    },
+    {
       "id": "raycast",
       "label": "raycast",
       "href": "/blog/raycast"
@@ -425,11 +470,6 @@
       "href": "/blog/个人知识管理"
     },
     {
-      "id": "codex",
-      "label": "codex",
-      "href": "/blog/codex"
-    },
-    {
       "id": "zed",
       "label": "zed",
       "href": "/blog/zed"
@@ -438,16 +478,6 @@
       "id": "aigc",
       "label": "aigc",
       "href": "/blog/aigc"
-    },
-    {
-      "id": "agent",
-      "label": "agent",
-      "href": "/blog/agent"
-    },
-    {
-      "id": "skills",
-      "label": "skills",
-      "href": "/blog/skills"
     },
     {
       "id": "podcast",
@@ -478,11 +508,6 @@
       "id": "翻译",
       "label": "翻译",
       "href": "/blog/翻译"
-    },
-    {
-      "id": "cursor",
-      "label": "cursor",
-      "href": "/blog/cursor"
     },
     {
       "id": "ai工具",
