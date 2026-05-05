@@ -924,7 +924,7 @@ watch(
                                             <article
                                                 v-for="post in visiblePosts"
                                                 :key="post.slug"
-                                                class="group fv-style relative isolate flex flex-col items-stretch justify-between gap-2 rounded border border-transparent py-2 hover:border-blue-300 hover:bg-blue-50/50 hover:[box-shadow:var(--sh-alt)] lg:min-h-[58px] lg:px-2 dark:hover:border-blue-300/20 dark:hover:bg-blue-700/5"
+                                                class="group fv-style relative isolate flex flex-col items-start justify-between gap-2 rounded border border-transparent py-2 hover:border-blue-300 hover:bg-blue-50/50 hover:[box-shadow:var(--sh-alt)] lg:min-h-[42px] lg:flex-row lg:items-center lg:px-2 dark:hover:border-blue-300/20 dark:hover:bg-blue-700/5"
                                             >
                                                 <svg
                                                     class="pointer-events-none absolute inset-0 -z-10 size-full select-none text-offgray-200/70 opacity-50 [mask-image:linear-gradient(to_left,#ffffffad,transparent)] invisible group-hover:visible dark:text-blue-400/10 dark:opacity-80"
@@ -955,10 +955,10 @@ watch(
                                                     />
                                                 </svg>
                                                 <div
-                                                    class="flex min-w-0 items-start gap-3"
+                                                    class="flex min-w-0 items-center gap-3 lg:flex-1"
                                                 >
                                                     <h2
-                                                        class="min-w-0 text-[0.9375rem] leading-6 text-offgray-900 underline decoration-accent-blue/20 decoration-1 underline-offset-[3px] hover:decoration-accent-blue/80 group-hover:decoration-accent-blue/80 dark:text-offgray-100 dark:decoration-blue-300/20 dark:hover:decoration-blue-400/80 dark:group-hover:decoration-blue-400/80"
+                                                        class="min-w-0 text-[0.9375rem] text-offgray-900 underline decoration-accent-blue/20 decoration-1 underline-offset-[3px] hover:decoration-accent-blue/80 group-hover:decoration-accent-blue/80 dark:text-offgray-100 dark:decoration-blue-300/20 dark:hover:decoration-blue-400/80 dark:group-hover:decoration-blue-400/80"
                                                     >
                                                         <a
                                                             :href="
@@ -966,6 +966,7 @@ watch(
                                                                     post.href,
                                                                 )
                                                             "
+                                                            class="block truncate"
                                                             >{{
                                                                 post.title
                                                             }}</a
@@ -973,7 +974,7 @@ watch(
                                                     </h2>
                                                 </div>
                                                 <div
-                                                    class="flex w-full flex-wrap items-center justify-end gap-1.5"
+                                                    class="flex w-full flex-wrap items-center gap-1.5 lg:w-auto lg:flex-none"
                                                 >
                                                     <a
                                                         v-for="tag in post.tags"
@@ -999,7 +1000,7 @@ watch(
                                                         >|</span
                                                     >
                                                     <p
-                                                        class="ml-2 font-mono text-[0.625rem] text-offgray-600 dark:text-offgray-500 tabular-nums"
+                                                        class="ml-auto font-mono text-[0.625rem] text-offgray-600 dark:text-offgray-500 tabular-nums"
                                                     >
                                                         {{ post.date }}
                                                     </p>
