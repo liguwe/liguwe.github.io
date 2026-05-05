@@ -1,6 +1,20 @@
 {
-  "generatedAt": "2026-05-04T14:29:06.698Z",
+  "generatedAt": "2026-05-05T00:30:48.176Z",
   "posts": [
+    {
+      "slug": "51",
+      "href": "/blog/51",
+      "title": "使用 vercel-labs skills 管理个人 AI 技能",
+      "date": "2026.05.05",
+      "year": "2026",
+      "tags": [
+        "agent",
+        "skills",
+        "codex",
+        "cursor",
+        "claude"
+      ]
+    },
     {
       "slug": "50",
       "href": "/blog/50",
@@ -415,6 +429,11 @@
       "href": "/blog/agent"
     },
     {
+      "id": "skills",
+      "label": "skills",
+      "href": "/blog/skills"
+    },
+    {
       "id": "codex",
       "label": "codex",
       "href": "/blog/codex"
@@ -433,11 +452,6 @@
       "id": "mcp",
       "label": "mcp",
       "href": "/blog/mcp"
-    },
-    {
-      "id": "skills",
-      "label": "skills",
-      "href": "/blog/skills"
     },
     {
       "id": "raycast",
