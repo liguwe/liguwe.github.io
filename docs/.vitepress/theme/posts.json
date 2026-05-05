@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-05-05T10:04:39.407Z",
+  "generatedAt": "2026-05-05T10:25:40.394Z",
   "posts": [
     {
       "slug": "52",
@@ -18,7 +18,7 @@
     {
       "slug": "51",
       "href": "/blog/51",
-      "title": "三个 AI 编程工具的配置边界：规则、命令、Skills 和 MCP 放哪里",
+      "title": "codex、cursor、calude-code 的 rules、command、Skills 和 MCP 都放哪里？",
       "date": "2026.05.04",
       "year": "2026",
       "tags": [
