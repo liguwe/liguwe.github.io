@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-05-05T10:36:18.774Z",
+  "generatedAt": "2026-05-06T07:13:45.195Z",
   "posts": [
     {
       "slug": "52",
@@ -31,9 +31,9 @@
       ]
     },
     {
-      "slug": "49",
-      "href": "/blog/49",
-      "title": "Raycast 小技巧：把入口做轻，把系统接起来",
+      "slug": "50",
+      "href": "/blog/50",
+      "title": "我是怎么使用 Raycast 的",
       "date": "2026.05.03",
       "year": "2026",
       "tags": [
