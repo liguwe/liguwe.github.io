@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-05-06T07:13:45.195Z",
+  "generatedAt": "2026-05-06T12:33:14.499Z",
   "posts": [
     {
       "slug": "52",
@@ -58,7 +58,7 @@
     {
       "slug": "47",
       "href": "/blog/47",
-      "title": "使用 Codex 配置 Zed 支持 DeepSeek v4 后的一些思考",
+      "title": "Codex 配置 Zed 支持 DeepSeek v4 后的一些思考",
       "date": "2026.05.01",
       "year": "2026",
       "tags": [
