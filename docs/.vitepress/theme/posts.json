@@ -1,9 +1,20 @@
 {
-  "generatedAt": "2026-05-08T01:46:24.551Z",
+  "generatedAt": "2026-05-08T10:13:59.655Z",
   "posts": [
     {
-      "slug": "52",
-      "href": "/blog/52",
+      "slug": "112",
+      "href": "/blog/112",
+      "title": "个人常用的 Codex 命令",
+      "date": "2026.05.08",
+      "year": "2026",
+      "tags": [
+        "codex",
+        "白话"
+      ]
+    },
+    {
+      "slug": "109",
+      "href": "/blog/109",
       "title": "使用 vercel-labs skills 管理个人 AI 技能",
       "date": "2026.05.05",
       "year": "2026",
@@ -16,8 +27,8 @@
       ]
     },
     {
-      "slug": "51",
-      "href": "/blog/51",
+      "slug": "108",
+      "href": "/blog/108",
       "title": "codex、cursor、calude-code 的 rules、command、Skills 和 MCP 都放哪里？",
       "date": "2026.05.04",
       "year": "2026",
@@ -31,8 +42,8 @@
       ]
     },
     {
-      "slug": "50",
-      "href": "/blog/50",
+      "slug": "107",
+      "href": "/blog/107",
       "title": "我是怎么使用 Raycast 的",
       "date": "2026.05.03",
       "year": "2026",
@@ -44,8 +55,8 @@
       ]
     },
     {
-      "slug": "48",
-      "href": "/blog/48",
+      "slug": "105",
+      "href": "/blog/105",
       "title": "AI 时代，重建个人 OS：832OS",
       "date": "2026.05.03",
       "year": "2026",
@@ -56,8 +67,8 @@
       ]
     },
     {
-      "slug": "47",
-      "href": "/blog/47",
+      "slug": "104",
+      "href": "/blog/104",
       "title": "Codex 配置 Zed 支持 DeepSeek v4 后的一些思考",
       "date": "2026.05.01",
       "year": "2026",
@@ -69,8 +80,8 @@
       ]
     },
     {
-      "slug": "46",
-      "href": "/blog/46",
+      "slug": "102",
+      "href": "/blog/102",
       "title": "我的 AI Agent Skills 管理工作流：篇二",
       "date": "2026.04.30",
       "year": "2026",
@@ -81,8 +92,8 @@
       ]
     },
     {
-      "slug": "45",
-      "href": "/blog/45",
+      "slug": "101",
+      "href": "/blog/101",
       "title": "小宇宙播客语音转文本的实践路：我最后为什么选了半自动",
       "date": "2026.04.30",
       "year": "2026",
@@ -94,8 +105,8 @@
       ]
     },
     {
-      "slug": "44",
-      "href": "/blog/44",
+      "slug": "100",
+      "href": "/blog/100",
       "title": "我的个人月报工作流：从 flomo 到 AI 语料",
       "date": "2026.04.30",
       "year": "2026",
@@ -104,8 +115,8 @@
       ]
     },
     {
-      "slug": "42",
-      "href": "/blog/42",
+      "slug": "98",
+      "href": "/blog/98",
       "title": "我的 AI Agent Skills 管理工作流",
       "date": "2026.04.30",
       "year": "2026",
@@ -115,8 +126,8 @@
       ]
     },
     {
-      "slug": "41",
-      "href": "/blog/41",
+      "slug": "96",
+      "href": "/blog/96",
       "title": "OpenClaw 命令行拍照功能配置指南",
       "date": "2026.03.16",
       "year": "2026",
@@ -125,8 +136,8 @@
       ]
     },
     {
-      "slug": "40",
-      "href": "/blog/40",
+      "slug": "95",
+      "href": "/blog/95",
       "title": "OpenClaw 配置经验总结",
       "date": "2026.03.15",
       "year": "2026",
@@ -136,8 +147,8 @@
       ]
     },
     {
-      "slug": "39",
-      "href": "/blog/39",
+      "slug": "94",
+      "href": "/blog/94",
       "title": "Claude Code 终极指南（上）：从记忆系统到多代理架构",
       "date": "2026.03.04",
       "year": "2026",
@@ -146,8 +157,8 @@
       ]
     },
     {
-      "slug": "37",
-      "href": "/blog/37",
+      "slug": "91",
+      "href": "/blog/91",
       "title": "周报：卸载，减负",
       "date": "2026.01.05",
       "year": "2026",
@@ -156,8 +167,8 @@
       ]
     },
     {
-      "slug": "36",
-      "href": "/blog/36",
+      "slug": "88",
+      "href": "/blog/88",
       "title": "周报：普通人与 AI，别被 AI 淹没了",
       "date": "2025.12.30",
       "year": "2025",
@@ -166,8 +177,8 @@
       ]
     },
     {
-      "slug": "35",
-      "href": "/blog/35",
+      "slug": "87",
+      "href": "/blog/87",
       "title": "周报：要完美地毁掉向AI领域的职业转型，最有效的方法是什么？",
       "date": "2025.12.23",
       "year": "2025",
@@ -176,8 +187,8 @@
       ]
     },
     {
-      "slug": "34",
-      "href": "/blog/34",
+      "slug": "86",
+      "href": "/blog/86",
       "title": "周报：通过专业深度获得自主和安全感",
       "date": "2025.12.19",
       "year": "2025",
@@ -186,8 +197,8 @@
       ]
     },
     {
-      "slug": "32",
-      "href": "/blog/32",
+      "slug": "84",
+      "href": "/blog/84",
       "title": "Anthropic 内部如何通过 AI 变革工作方式",
       "date": "2025.12.09",
       "year": "2025",
@@ -196,8 +207,8 @@
       ]
     },
     {
-      "slug": "30",
-      "href": "/blog/30",
+      "slug": "82",
+      "href": "/blog/82",
       "title": "周报：今天，最小的输出是什么？",
       "date": "2025.12.02",
       "year": "2025",
@@ -206,8 +217,8 @@
       ]
     },
     {
-      "slug": "29",
-      "href": "/blog/29",
+      "slug": "80",
+      "href": "/blog/80",
       "title": "周报：假努力、真内耗，除了焦虑和体重，什么都没涨",
       "date": "2025.11.25",
       "year": "2025",
@@ -216,16 +227,16 @@
       ]
     },
     {
-      "slug": "28",
-      "href": "/blog/28",
+      "slug": "79",
+      "href": "/blog/79",
       "title": "PPT 在线化技术方案调研报告",
       "date": "2025.11.24",
       "year": "2025",
       "tags": []
     },
     {
-      "slug": "24",
-      "href": "/blog/24",
+      "slug": "75",
+      "href": "/blog/75",
       "title": "周报：对自己的战争？但“你”是“你之所以成为你”的全部材料",
       "date": "2025.11.19",
       "year": "2025",
@@ -234,8 +245,8 @@
       ]
     },
     {
-      "slug": "21",
-      "href": "/blog/21",
+      "slug": "72",
+      "href": "/blog/72",
       "title": "周报：一份写给自己的诊断书",
       "date": "2025.11.12",
       "year": "2025",
@@ -244,8 +255,8 @@
       ]
     },
     {
-      "slug": "19",
-      "href": "/blog/19",
+      "slug": "70",
+      "href": "/blog/70",
       "title": "周报：人生体检报告·症状篇",
       "date": "2025.11.06",
       "year": "2025",
@@ -254,8 +265,8 @@
       ]
     },
     {
-      "slug": "18",
-      "href": "/blog/18",
+      "slug": "68",
+      "href": "/blog/68",
       "title": "周报：Winter is coming again ？",
       "date": "2025.10.30",
       "year": "2025",
@@ -264,8 +275,8 @@
       ]
     },
     {
-      "slug": "16",
-      "href": "/blog/16",
+      "slug": "65",
+      "href": "/blog/65",
       "title": "周报：主角只有一个",
       "date": "2025.09.30",
       "year": "2025",
@@ -274,16 +285,16 @@
       ]
     },
     {
-      "slug": "15",
-      "href": "/blog/15",
+      "slug": "64",
+      "href": "/blog/64",
       "title": "Excel 与 Web 的完美融合：从导入到导出，前端 Excel 处理技术选型浅析",
       "date": "2025.09.16",
       "year": "2025",
       "tags": []
     },
     {
-      "slug": "14",
-      "href": "/blog/14",
+      "slug": "63",
+      "href": "/blog/63",
       "title": "周报：侥幸",
       "date": "2025.09.11",
       "year": "2025",
@@ -292,8 +303,8 @@
       ]
     },
     {
-      "slug": "13",
-      "href": "/blog/13",
+      "slug": "61",
+      "href": "/blog/61",
       "title": "周报：戒酒",
       "date": "2025.08.26",
       "year": "2025",
@@ -302,8 +313,8 @@
       ]
     },
     {
-      "slug": "12",
-      "href": "/blog/12",
+      "slug": "60",
+      "href": "/blog/60",
       "title": "周报：你需要的不是更多笔记，而是转身的行动",
       "date": "2025.08.12",
       "year": "2025",
@@ -312,8 +323,8 @@
       ]
     },
     {
-      "slug": "11",
-      "href": "/blog/11",
+      "slug": "59",
+      "href": "/blog/59",
       "title": "周报：持续构建人生上下文",
       "date": "2025.08.04",
       "year": "2025",
@@ -322,16 +333,16 @@
       ]
     },
     {
-      "slug": "10",
-      "href": "/blog/10",
+      "slug": "58",
+      "href": "/blog/58",
       "title": "播客：AI 是一面镜子，照见人类最后的价值",
       "date": "2025.08.01",
       "year": "2025",
       "tags": []
     },
     {
-      "slug": "9",
-      "href": "/blog/9",
+      "slug": "56",
+      "href": "/blog/56",
       "title": "周报：为什么不能准时的二、四、六跑步？",
       "date": "2025.07.29",
       "year": "2025",
@@ -340,8 +351,8 @@
       ]
     },
     {
-      "slug": "8",
-      "href": "/blog/8",
+      "slug": "55",
+      "href": "/blog/55",
       "title": "周报：什么是真正的开始？",
       "date": "2025.07.21",
       "year": "2025",
@@ -350,8 +361,8 @@
       ]
     },
     {
-      "slug": "7",
-      "href": "/blog/7",
+      "slug": "50",
+      "href": "/blog/50",
       "title": "模型上下文协议（MCP）",
       "date": "2025.03.21",
       "year": "2025",
@@ -360,8 +371,8 @@
       ]
     },
     {
-      "slug": "6",
-      "href": "/blog/6",
+      "slug": "49",
+      "href": "/blog/49",
       "title": "Cursor 使用技巧总结",
       "date": "2025.03.08",
       "year": "2025",
@@ -371,8 +382,8 @@
       ]
     },
     {
-      "slug": "5",
-      "href": "/blog/5",
+      "slug": "34",
+      "href": "/blog/34",
       "title": "AI 时代的频率跃迁背景下个人的选择：高频的卷或低频的定",
       "date": "2024.02.25",
       "year": "2024",
@@ -381,8 +392,8 @@
       ]
     },
     {
-      "slug": "4",
-      "href": "/blog/4",
+      "slug": "30",
+      "href": "/blog/30",
       "title": "张云帆的芒格之道",
       "date": "2023.12.23",
       "year": "2023",
@@ -391,8 +402,8 @@
       ]
     },
     {
-      "slug": "3",
-      "href": "/blog/3",
+      "slug": "29",
+      "href": "/blog/29",
       "title": "人生危机不是崩溃而是瓦解",
       "date": "2023.12.04",
       "year": "2023",
@@ -402,8 +413,8 @@
       ]
     },
     {
-      "slug": "2",
-      "href": "/blog/2",
+      "slug": "18",
+      "href": "/blog/18",
       "title": "rrweb 作者的某期播客节目纪要",
       "date": "2023.02.25",
       "year": "2023",
@@ -412,8 +423,8 @@
       ]
     },
     {
-      "slug": "1",
-      "href": "/blog/1",
+      "slug": "14",
+      "href": "/blog/14",
       "title": "个人常用工具及技巧分享",
       "date": "2022.12.25",
       "year": "2022",
@@ -424,6 +435,16 @@
   ],
   "tags": [
     {
+      "id": "codex",
+      "label": "codex",
+      "href": "/blog/codex"
+    },
+    {
+      "id": "白话",
+      "label": "白话",
+      "href": "/blog/白话"
+    },
+    {
       "id": "agent",
       "label": "agent",
       "href": "/blog/agent"
@@ -432,11 +453,6 @@
       "id": "skills",
       "label": "skills",
       "href": "/blog/skills"
-    },
-    {
-      "id": "codex",
-      "label": "codex",
-      "href": "/blog/codex"
     },
     {
       "id": "cursor",
