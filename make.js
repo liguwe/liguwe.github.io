@@ -269,7 +269,7 @@ function getWikiLinkText(rawTarget, alias) {
   return text.replace(articleIndexReg, "");
 }
 
-function getWikiBlogHref(rawTarget) {
+function getWikiBlogHref(rawTarget, validBlogSlugs) {
   const targetPath = rawTarget.split("#")[0];
   const pathParts = targetPath.split("/");
   const isYearRootArticle =
@@ -285,6 +285,10 @@ function getWikiBlogHref(rawTarget) {
     return "";
   }
 
+  if (validBlogSlugs && !validBlogSlugs.has(match[1])) {
+    return "";
+  }
+
   return `/blog/${match[1]}`;
 }
 
@@ -295,7 +299,7 @@ function escapeMarkdownLinkText(text) {
 /**
  * 转换文件内容（简化版：处理元信息、callout、高亮、Vue 模板、tags）
  */
-async function transformContent(file) {
+async function transformContent(file, validBlogSlugs) {
   let content = fs.readFileSync(file.sourcePath, "utf8");
 
   // 处理 Obsidian 图片嵌入 ![[xxx]] → 移除（简化处理）
@@ -305,7 +309,7 @@ async function transformContent(file) {
   content = content.replace(/\[\[([^\]]+)\]\]/g, (match, rawLink) => {
     const [rawTarget, alias] = rawLink.split("|");
     const text = getWikiLinkText(rawTarget, alias);
-    const href = getWikiBlogHref(rawTarget);
+    const href = getWikiBlogHref(rawTarget, validBlogSlugs);
 
     if (!href) {
       return text;
@@ -375,6 +379,7 @@ async function main() {
   ensureDir(blogRoot);
 
   const posts = [];
+  const articleFiles = [];
 
   // 读取 832OS/blog 下的年份文件夹
   const entries = fs.readdirSync(publicBlogSourceRoot, { withFileTypes: true });
@@ -402,20 +407,28 @@ async function main() {
         tags,
       };
 
-      // 转换并写入文件
-      const outputContent = await transformContent(fileInfo);
-      const outputPath = path.resolve(blogRoot, `${slug}.md`);
-      fs.writeFileSync(outputPath, outputContent);
-
-      posts.push({
-        slug,
-        href: `/blog/${slug}`,
-        title,
-        date,
-        year,
-        tags,
-      });
+      articleFiles.push(fileInfo);
     }
+  }
+
+  const validBlogSlugs = new Set(articleFiles.map((file) => file.slug));
+
+  for (const fileInfo of articleFiles) {
+    const { slug, title, date, year, tags } = fileInfo;
+
+    // 转换并写入文件
+    const outputContent = await transformContent(fileInfo, validBlogSlugs);
+    const outputPath = path.resolve(blogRoot, `${slug}.md`);
+    fs.writeFileSync(outputPath, outputContent);
+
+    posts.push({
+      slug,
+      href: `/blog/${slug}`,
+      title,
+      date,
+      year,
+      tags,
+    });
   }
 
   // 按文件序号降序排序：43.md、42.md、41.md ...
