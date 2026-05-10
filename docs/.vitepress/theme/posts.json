@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-05-10T13:03:52.030Z",
+  "generatedAt": "2026-05-10T13:24:11.391Z",
   "posts": [
     {
       "slug": "115",
@@ -19,6 +19,18 @@
         "github",
         "project",
         "issues"
+      ]
+    },
+    {
+      "slug": "113",
+      "href": "/blog/113",
+      "title": "把多个工程组合成一个工作区",
+      "date": "2026.05.10",
+      "year": "2026",
+      "tags": [
+        "agent",
+        "workspace",
+        "ai"
       ]
     },
     {
@@ -480,6 +492,21 @@
       "href": "/blog/issues"
     },
     {
+      "id": "agent",
+      "label": "agent",
+      "href": "/blog/agent"
+    },
+    {
+      "id": "workspace",
+      "label": "workspace",
+      "href": "/blog/workspace"
+    },
+    {
+      "id": "ai",
+      "label": "ai",
+      "href": "/blog/ai"
+    },
+    {
       "id": "codex",
       "label": "codex",
       "href": "/blog/codex"
@@ -488,11 +515,6 @@
       "id": "白话",
       "label": "白话",
       "href": "/blog/白话"
-    },
-    {
-      "id": "agent",
-      "label": "agent",
-      "href": "/blog/agent"
     },
     {
       "id": "skills",
@@ -528,11 +550,6 @@
       "id": "效率工具",
       "label": "效率工具",
       "href": "/blog/效率工具"
-    },
-    {
-      "id": "ai",
-      "label": "ai",
-      "href": "/blog/ai"
     },
     {
       "id": "个人知识管理",
