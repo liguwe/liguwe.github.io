@@ -1,6 +1,26 @@
 {
-  "generatedAt": "2026-05-10T04:46:47.414Z",
+  "generatedAt": "2026-05-10T12:58:17.648Z",
   "posts": [
+    {
+      "slug": "115",
+      "href": "/blog/115",
+      "title": "静态资源回到工程里",
+      "date": "2026.05.10",
+      "year": "2026",
+      "tags": []
+    },
+    {
+      "slug": "114",
+      "href": "/blog/114",
+      "title": "用 GitHub Projects 管理 issues",
+      "date": "2026.05.10",
+      "year": "2026",
+      "tags": [
+        "github",
+        "project",
+        "issues"
+      ]
+    },
     {
       "slug": "112",
       "href": "/blog/112",
@@ -445,6 +465,21 @@
   ],
   "tags": [
     {
+      "id": "github",
+      "label": "github",
+      "href": "/blog/github"
+    },
+    {
+      "id": "project",
+      "label": "project",
+      "href": "/blog/project"
+    },
+    {
+      "id": "issues",
+      "label": "issues",
+      "href": "/blog/issues"
+    },
+    {
       "id": "codex",
       "label": "codex",
       "href": "/blog/codex"
@@ -483,11 +518,6 @@
       "id": "raycast",
       "label": "raycast",
       "href": "/blog/raycast"
-    },
-    {
-      "id": "github",
-      "label": "github",
-      "href": "/blog/github"
     },
     {
       "id": "832os",

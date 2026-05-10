@@ -359,18 +359,26 @@ function registerPublishedAsset(target, assetRefs) {
     throw new Error(`Published asset does not exist: ${sourcePath}`);
   }
 
-  const relativeToAssets = normalizedTarget.replace(/^assets\//, "");
-  const outputPath = path.resolve(publicOsAssetsRoot, relativeToAssets);
+  const outputFilename = path.posix.basename(normalizedTarget);
+  const outputPath = path.resolve(publicOsAssetsRoot, outputFilename);
   if (!outputPath.startsWith(`${publicOsAssetsRoot}${path.sep}`)) {
     throw new Error(`Asset output path escapes public assets: ${target}`);
+  }
+
+  for (const [existingSourcePath, existingOutputPath] of assetRefs) {
+    if (existingOutputPath === outputPath && existingSourcePath !== sourcePath) {
+      throw new Error(
+        `Published asset filename conflict: ${sourcePath} conflicts with ${existingSourcePath}`,
+      );
+    }
   }
 
   assetRefs.set(sourcePath, outputPath);
 
   return {
     type: getAssetType(normalizedTarget),
-    publicUrl: `/assets/os/${encodeUrlPath(relativeToAssets)}`,
-    label: path.posix.basename(normalizedTarget),
+    publicUrl: `/assets/os/${encodeUrlPath(outputFilename)}`,
+    label: outputFilename,
   };
 }
 
