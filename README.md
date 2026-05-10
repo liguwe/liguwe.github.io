@@ -27,8 +27,11 @@ npm run make
 
 - `docs/blog/*.md`
 - `docs/.vitepress/theme/posts.json`
+- `docs/public/assets/os/*`
 
 默认源目录是仓库上一级的 `../os`，也可以通过环境变量 `OBSIDIAN_ROOT` 指定。
+
+`make.js` 会把已发布文章里实际引用的 `os/assets/` 本地资源复制到 `docs/public/assets/os/`，并把 Obsidian 资源嵌入改写成站点可访问路径。未发布稿和未引用资源不会进入公开站点仓库。
 
 ## 构建
 

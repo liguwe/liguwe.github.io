@@ -22,6 +22,8 @@ const publicBlogSourceRoot = path.resolve(
 );
 const docsRoot = path.resolve(repoRoot, "docs");
 const blogRoot = path.resolve(docsRoot, "blog");
+const publicRoot = path.resolve(docsRoot, "public");
+const publicOsAssetsRoot = path.resolve(publicRoot, "assets/os");
 const themeRoot = path.resolve(docsRoot, ".vitepress/theme");
 
 const excludeReg = /@832|@ing|@todo|@/;
@@ -29,6 +31,17 @@ const yearReg = /^\d{4}$/;
 const indexReg = /^(\d+)\.\s*/;
 const articleIndexReg = /^(\d+)\.\s+/;
 const metadataDateReg = /^(\d{4})\/(\d{2})\/(\d{2})$/;
+const imageExts = new Set([
+  ".avif",
+  ".gif",
+  ".jpeg",
+  ".jpg",
+  ".png",
+  ".svg",
+  ".webp",
+]);
+const audioExts = new Set([".aac", ".flac", ".m4a", ".mp3", ".ogg", ".wav"]);
+const videoExts = new Set([".mov", ".mp4", ".webm"]);
 const calloutTypeMap = {
   tip: "tip",
   success: "tip",
@@ -296,14 +309,133 @@ function escapeMarkdownLinkText(text) {
   return text.replace(/\\/g, "\\\\").replace(/]/g, "\\]");
 }
 
+function toPosixPath(value) {
+  return value.split(path.sep).join("/");
+}
+
+function encodeUrlPath(value) {
+  return value.split("/").map(encodeURIComponent).join("/");
+}
+
+function getAssetType(targetPath) {
+  const ext = path.posix.extname(targetPath.split("#")[0]).toLowerCase();
+  if (imageExts.has(ext)) return "image";
+  if (audioExts.has(ext)) return "audio";
+  if (videoExts.has(ext)) return "video";
+  if (ext === ".pdf") return "pdf";
+  return "file";
+}
+
+function parseObsidianEmbed(rawLink) {
+  const [rawTarget, rawAlias] = rawLink.split("|");
+  const target = rawTarget.trim();
+  return {
+    target,
+    alias: rawAlias?.trim() || "",
+  };
+}
+
+function normalizeLocalAssetTarget(target) {
+  const cleanTarget = target.trim().replace(/^<|>$/g, "");
+  const withoutAnchor = cleanTarget.split("#")[0];
+  const normalized = path.posix.normalize(withoutAnchor);
+
+  if (!normalized.startsWith("assets/") || normalized.includes("..")) {
+    return null;
+  }
+
+  return normalized;
+}
+
+function registerPublishedAsset(target, assetRefs) {
+  const normalizedTarget = normalizeLocalAssetTarget(target);
+  if (!normalizedTarget) return null;
+
+  const sourcePath = path.resolve(obsidianRoot, normalizedTarget);
+  if (!sourcePath.startsWith(`${obsidianRoot}${path.sep}`)) {
+    throw new Error(`Asset path escapes Obsidian root: ${target}`);
+  }
+  if (!fs.existsSync(sourcePath) || !fs.statSync(sourcePath).isFile()) {
+    throw new Error(`Published asset does not exist: ${sourcePath}`);
+  }
+
+  const relativeToAssets = normalizedTarget.replace(/^assets\//, "");
+  const outputPath = path.resolve(publicOsAssetsRoot, relativeToAssets);
+  if (!outputPath.startsWith(`${publicOsAssetsRoot}${path.sep}`)) {
+    throw new Error(`Asset output path escapes public assets: ${target}`);
+  }
+
+  assetRefs.set(sourcePath, outputPath);
+
+  return {
+    type: getAssetType(normalizedTarget),
+    publicUrl: `/assets/os/${encodeUrlPath(relativeToAssets)}`,
+    label: path.posix.basename(normalizedTarget),
+  };
+}
+
+function renderPublishedAsset(asset, options = {}) {
+  const label = escapeMarkdownLinkText(options.label || asset.label);
+  if (asset.type === "image") {
+    return `![${label}](${asset.publicUrl})`;
+  }
+  if (asset.type === "audio") {
+    return `<audio controls src="${asset.publicUrl}"></audio>`;
+  }
+  if (asset.type === "video") {
+    return `<video controls src="${asset.publicUrl}"></video>`;
+  }
+  return `[${label}](${asset.publicUrl})`;
+}
+
+function convertObsidianAssetEmbeds(content, assetRefs) {
+  return content.replace(/!\[\[([^\]]+)\]\]/g, (match, rawLink) => {
+    const embed = parseObsidianEmbed(rawLink);
+    const asset = registerPublishedAsset(embed.target, assetRefs);
+
+    if (!asset) {
+      return "";
+    }
+
+    return renderPublishedAsset(asset, {
+      label: embed.alias ? `${asset.label}|${embed.alias}` : asset.label,
+    });
+  });
+}
+
+function convertMarkdownAssetLinks(content, assetRefs) {
+  return content.replace(
+    /(!?)\[([^\]]*)\]\((<?assets\/[^)\n>]+>?)\)/g,
+    (match, bang, rawLabel, rawTarget) => {
+      const target = rawTarget.replace(/^<|>$/g, "");
+      const asset = registerPublishedAsset(target, assetRefs);
+      if (!asset) return match;
+
+      return renderPublishedAsset(asset, {
+        label: rawLabel || asset.label,
+        forceImage: Boolean(bang),
+      });
+    },
+  );
+}
+
+function copyPublishedAssets(assetRefs) {
+  fs.rmSync(publicOsAssetsRoot, { recursive: true, force: true });
+
+  for (const [sourcePath, outputPath] of assetRefs) {
+    ensureDir(path.dirname(outputPath));
+    fs.copyFileSync(sourcePath, outputPath);
+  }
+}
+
 /**
  * 转换文件内容（简化版：处理元信息、callout、高亮、Vue 模板、tags）
  */
-async function transformContent(file, validBlogSlugs) {
+async function transformContent(file, validBlogSlugs, assetRefs) {
   let content = fs.readFileSync(file.sourcePath, "utf8");
 
-  // 处理 Obsidian 图片嵌入 ![[xxx]] → 移除（简化处理）
-  content = content.replace(/!\[\[([^\]]+)\]\]/g, "");
+  content = convertObsidianAssetEmbeds(content, assetRefs);
+  content = convertMarkdownAssetLinks(content, assetRefs);
 
   // 处理 Obsidian wiki 链接 [[2026/42. 标题|别名]] → [别名](/blog/42)
   content = content.replace(/\[\[([^\]]+)\]\]/g, (match, rawLink) => {
@@ -380,6 +512,7 @@ async function main() {
 
   const posts = [];
   const articleFiles = [];
+  const assetRefs = new Map();
 
   // 读取 os/blog 下的年份文件夹
   const entries = fs.readdirSync(publicBlogSourceRoot, { withFileTypes: true });
@@ -417,7 +550,11 @@ async function main() {
     const { slug, title, date, year, tags } = fileInfo;
 
     // 转换并写入文件
-    const outputContent = await transformContent(fileInfo, validBlogSlugs);
+    const outputContent = await transformContent(
+      fileInfo,
+      validBlogSlugs,
+      assetRefs,
+    );
     const outputPath = path.resolve(blogRoot, `${slug}.md`);
     fs.writeFileSync(outputPath, outputContent);
 
@@ -453,6 +590,8 @@ async function main() {
     fs.writeFileSync(outputPath, transformTagPage(tag.label));
   }
 
+  copyPublishedAssets(assetRefs);
+
   // 生成 posts.json
   const postsJson = {
     generatedAt: new Date().toISOString(),
@@ -470,6 +609,7 @@ async function main() {
   );
   console.log(`   Tag pages → ${tags.length}`);
   console.log(`   Blog files → ${blogRoot}`);
+  console.log(`   Assets → ${assetRefs.size}`);
   console.log(`   Posts JSON → ${path.resolve(themeRoot, "posts.json")}`);
 }
 
