@@ -70,15 +70,17 @@ function shouldExclude(name) {
 
 /**
  * 从文件名中解析 slug 和 title
- * "37. 周报v17：卸载，减负.md" → { slug: "37", title: "周报v17：卸载，减负" }
+ * "37. 周报v17：卸载，减负.md" → { slug: "37", title: "37. 周报v17：卸载，减负" }
  */
 function parseFileName(fileName) {
   const baseName = fileName.replace(/\.md$/i, "");
   const match = baseName.match(indexReg);
   if (match) {
+    const slug = match[1];
+    const title = baseName.replace(indexReg, "");
     return {
-      slug: match[1],
-      title: baseName.replace(indexReg, ""),
+      slug,
+      title: `${slug}. ${title}`,
     };
   }
   return {
