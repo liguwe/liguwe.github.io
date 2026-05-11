@@ -1399,21 +1399,6 @@ html.dark .post-doc-aside::-webkit-scrollbar-thumb:hover {
   border-top: none;
 }
 
-.vp-doc .mermaid-diagram {
-  display: flex;
-  justify-content: center;
-  margin: 1.5rem 0;
-  padding: 1.25rem;
-  overflow-x: auto;
-  border: 1px solid var(--border);
-  background: var(--surface);
-}
-
-.vp-doc .mermaid-diagram svg {
-  max-width: 100%;
-  height: auto;
-}
-
 .vp-doc img:not(.no-zoom) {
   cursor: zoom-in;
 }

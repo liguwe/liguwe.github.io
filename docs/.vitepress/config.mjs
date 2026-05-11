@@ -1,8 +1,7 @@
 import tailwindcss from '@tailwindcss/vite'
 import { defineConfig } from 'vitepress'
-import { withMermaid } from 'vitepress-plugin-mermaid'
 
-export default withMermaid(defineConfig({
+export default defineConfig({
   title: 'liguwe.site',
   description: 'Liguwe\'s Personal Website',
   base: '/',
@@ -27,13 +26,6 @@ export default withMermaid(defineConfig({
       light: 'github-light',
       dark: 'github-dark',
     },
-  },
-  mermaid: {
-    startOnLoad: false,
-    securityLevel: 'strict',
-  },
-  mermaidPlugin: {
-    class: 'mermaid-diagram',
   },
   themeConfig: {
     outline: {
@@ -70,4 +62,4 @@ export default withMermaid(defineConfig({
       { icon: 'github', link: 'https://github.com/liguwe' },
     ],
   },
-}))
+})
