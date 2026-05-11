@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-05-10T13:38:21.557Z",
+  "generatedAt": "2026-05-11T01:23:31.864Z",
   "posts": [
     {
       "slug": "115",
@@ -29,8 +29,7 @@
       "year": "2026",
       "tags": [
         "agent",
-        "workspace",
-        "ai"
+        "workspace"
       ]
     },
     {
@@ -502,11 +501,6 @@
       "href": "/blog/workspace"
     },
     {
-      "id": "ai",
-      "label": "ai",
-      "href": "/blog/ai"
-    },
-    {
       "id": "codex",
       "label": "codex",
       "href": "/blog/codex"
@@ -550,6 +544,11 @@
       "id": "效率工具",
       "label": "效率工具",
       "href": "/blog/效率工具"
+    },
+    {
+      "id": "ai",
+      "label": "ai",
+      "href": "/blog/ai"
     },
     {
       "id": "个人知识管理",

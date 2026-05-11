@@ -40,6 +40,7 @@ const imageExts = new Set([
   ".svg",
   ".webp",
 ]);
+const webpSourceImageExts = new Set([".jpeg", ".jpg", ".png"]);
 const audioExts = new Set([".aac", ".flac", ".m4a", ".mp3", ".ogg", ".wav"]);
 const videoExts = new Set([".mov", ".mp4", ".webm"]);
 const calloutTypeMap = {
@@ -326,6 +327,17 @@ function getAssetType(targetPath) {
   return "file";
 }
 
+function getPublicAssetOutputFilename(normalizedTarget) {
+  const ext = path.posix.extname(normalizedTarget).toLowerCase();
+  const basename = path.posix.basename(normalizedTarget, ext);
+
+  if (webpSourceImageExts.has(ext)) {
+    return `${basename}.webp`;
+  }
+
+  return path.posix.basename(normalizedTarget);
+}
+
 function parseObsidianEmbed(rawLink) {
   const [rawTarget, rawAlias] = rawLink.split("|");
   const target = rawTarget.trim();
@@ -359,7 +371,7 @@ function registerPublishedAsset(target, assetRefs) {
     throw new Error(`Published asset does not exist: ${sourcePath}`);
   }
 
-  const outputFilename = path.posix.basename(normalizedTarget);
+  const outputFilename = getPublicAssetOutputFilename(normalizedTarget);
   const outputPath = path.resolve(publicOsAssetsRoot, outputFilename);
   if (!outputPath.startsWith(`${publicOsAssetsRoot}${path.sep}`)) {
     throw new Error(`Asset output path escapes public assets: ${target}`);
@@ -427,13 +439,19 @@ function convertMarkdownAssetLinks(content, assetRefs) {
   );
 }
 
-function copyPublishedAssets(assetRefs) {
+async function copyPublishedAssets(assetRefs) {
+  const { publishPublicAssets } = await import(
+    "./scripts/optimize-public-assets.mjs"
+  );
+
   fs.rmSync(publicOsAssetsRoot, { recursive: true, force: true });
 
-  for (const [sourcePath, outputPath] of assetRefs) {
-    ensureDir(path.dirname(outputPath));
-    fs.copyFileSync(sourcePath, outputPath);
-  }
+  await publishPublicAssets(
+    Array.from(assetRefs, ([sourcePath, outputPath]) => ({
+      sourcePath,
+      outputPath,
+    })),
+  );
 }
 
 /**
@@ -598,7 +616,7 @@ async function main() {
     fs.writeFileSync(outputPath, transformTagPage(tag.label));
   }
 
-  copyPublishedAssets(assetRefs);
+  await copyPublishedAssets(assetRefs);
 
   // 生成 posts.json
   const postsJson = {
