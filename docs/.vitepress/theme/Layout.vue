@@ -361,26 +361,6 @@ watch(
                                         class="min-w-[11rem] rounded-md border border-[var(--border)] bg-[var(--nav-bg-color)] py-1 shadow-[0_12px_40px_rgba(0,0,0,0.12),var(--shadow-blue-alt)] dark:shadow-[0_12px_40px_rgba(0,0,0,0.35)]"
                                     >
                                         <a
-                                            href="https://liguwe.site/pre-34.5"
-                                            target="_blank"
-                                            rel="noopener noreferrer"
-                                            class="flex items-center gap-2.5 px-3 py-2 text-sm text-offgray-1000 hover:bg-accent-blue/10 dark:text-white dark:hover:bg-accent-blue/15"
-                                            role="menuitem"
-                                        >
-                                            <Library
-                                                class="size-4 shrink-0 text-offgray-500 dark:text-offgray-400"
-                                                stroke-width="2"
-                                                aria-hidden="true"
-                                            />
-                                            <span class="min-w-0 flex-1"
-                                                >Pre AI Age</span
-                                            >
-                                            <span
-                                                class="shrink-0 text-offgray-400 dark:text-offgray-500"
-                                                >↗</span
-                                            >
-                                        </a>
-                                        <a
                                             href="https://www.yuque.com/liguwe"
                                             target="_blank"
                                             rel="noopener noreferrer"
@@ -394,6 +374,26 @@ watch(
                                             />
                                             <span class="min-w-0 flex-1"
                                                 >语雀</span
+                                            >
+                                            <span
+                                                class="shrink-0 text-offgray-400 dark:text-offgray-500"
+                                                >↗</span
+                                            >
+                                        </a>
+                                        <a
+                                            href="https://liguwe.site/pre-34.5"
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            class="flex items-center gap-2.5 px-3 py-2 text-sm text-offgray-1000 hover:bg-accent-blue/10 dark:text-white dark:hover:bg-accent-blue/15"
+                                            role="menuitem"
+                                        >
+                                            <Library
+                                                class="size-4 shrink-0 text-offgray-500 dark:text-offgray-400"
+                                                stroke-width="2"
+                                                aria-hidden="true"
+                                            />
+                                            <span class="min-w-0 flex-1"
+                                                >Pre AI Age</span
                                             >
                                             <span
                                                 class="shrink-0 text-offgray-400 dark:text-offgray-500"
