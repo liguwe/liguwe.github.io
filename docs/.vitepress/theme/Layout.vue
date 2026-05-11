@@ -393,7 +393,7 @@ watch(
                                                 aria-hidden="true"
                                             />
                                             <span class="min-w-0 flex-1"
-                                                >语雀花园</span
+                                                >语雀</span
                                             >
                                             <span
                                                 class="shrink-0 text-offgray-400 dark:text-offgray-500"
