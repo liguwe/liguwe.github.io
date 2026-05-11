@@ -1,5 +1,5 @@
 /**
- * @description 从 os/blog 中解析年份文件夹下的 Markdown 文件，
+ * @description 从 os/notes 中解析年份文件夹下的 Markdown 文件，
  * 复制到 VitePress 博客目录 docs/blog/，并生成 posts.json。
  *
  * 规则：
@@ -18,7 +18,7 @@ const obsidianRoot = path.resolve(
   process.env.OBSIDIAN_ROOT || path.resolve(repoRoot, "../os"),
 );
 const publicBlogSourceRoot = path.resolve(
-  process.env.PUBLIC_BLOG_ROOT || path.resolve(obsidianRoot, "blog"),
+  process.env.PUBLIC_BLOG_ROOT || path.resolve(obsidianRoot, "notes"),
 );
 const docsRoot = path.resolve(repoRoot, "docs");
 const blogRoot = path.resolve(docsRoot, "blog");
@@ -540,7 +540,7 @@ async function main() {
   const articleFiles = [];
   const assetRefs = new Map();
 
-  // 读取 os/blog 下的年份文件夹
+  // 读取 os/notes 下的年份文件夹
   const entries = fs.readdirSync(publicBlogSourceRoot, { withFileTypes: true });
   const yearDirs = entries.filter(
     (e) => e.isDirectory() && yearReg.test(e.name) && !shouldExclude(e.name),
