@@ -31,6 +31,7 @@ const route = useRoute();
 const activeYear = ref("all");
 const menuOpen = ref(false);
 const blogFilterNav = ref(null);
+const isMounted = ref(false);
 
 const isHome = computed(() => page.value.relativePath === "index.md");
 /** docs/blog 下仅数字 slug：0.md、1.md … 无子目录 */
@@ -91,7 +92,7 @@ const pageName = computed(() =>
 );
 
 function toggleAppearance() {
-    if (!inBrowser) return;
+    if (!inBrowser || !isMounted.value) return;
     isDark.value = !isDark.value;
 }
 
@@ -205,6 +206,7 @@ function scheduleBlogFilterHeightUpdate() {
 }
 
 onMounted(() => {
+    isMounted.value = true;
     window.addEventListener("keydown", onKeydown);
     window.addEventListener("scroll", scheduleBlogFilterHeightUpdate, {
         passive: true,
@@ -215,6 +217,7 @@ onMounted(() => {
 });
 
 onBeforeUnmount(() => {
+    isMounted.value = false;
     window.removeEventListener("keydown", onKeydown);
     window.removeEventListener("scroll", scheduleBlogFilterHeightUpdate);
     window.removeEventListener("resize", scheduleBlogFilterHeightUpdate);
@@ -324,20 +327,31 @@ watch(
                             <li>
                                 <button
                                     type="button"
-                                    class="fv-style inline-flex size-8 select-none items-center justify-center rounded-sm border border-[var(--border)] text-offgray-600 hover:bg-offgray-100/60 dark:text-offgray-300 dark:hover:bg-offgray-500/10"
+                                    class="fv-style relative inline-flex size-8 select-none items-center justify-center rounded-sm border border-[var(--border)] text-offgray-600 hover:bg-offgray-100/60 disabled:pointer-events-none disabled:opacity-70 dark:text-offgray-300 dark:hover:bg-offgray-500/10"
                                     :aria-label="appearanceLabel"
                                     :aria-pressed="isDark"
+                                    :disabled="!isMounted"
                                     @click="toggleAppearance"
                                 >
                                     <Sun
-                                        v-if="isDark"
-                                        class="size-[18px] shrink-0 text-offgray-600 dark:text-offgray-200"
+                                        class="absolute size-[18px] shrink-0 text-offgray-600 transition-opacity dark:text-offgray-200"
+                                        :class="
+                                            isDark
+                                                ? 'opacity-100'
+                                                : 'opacity-0'
+                                        "
                                         stroke-width="2"
+                                        aria-hidden="true"
                                     />
                                     <Moon
-                                        v-else
-                                        class="size-[18px] shrink-0 text-offgray-600 dark:text-offgray-200"
+                                        class="absolute size-[18px] shrink-0 text-offgray-600 transition-opacity dark:text-offgray-200"
+                                        :class="
+                                            isDark
+                                                ? 'opacity-0'
+                                                : 'opacity-100'
+                                        "
                                         stroke-width="2"
+                                        aria-hidden="true"
                                     />
                                 </button>
                             </li>
@@ -1611,9 +1625,10 @@ watch(
                 </button>
                 <button
                     type="button"
-                    class="rounded-md px-3 py-2 text-left text-offgray-1000 hover:bg-accent-blue/10 dark:text-white"
+                    class="rounded-md px-3 py-2 text-left text-offgray-1000 hover:bg-accent-blue/10 disabled:pointer-events-none disabled:opacity-70 dark:text-white"
                     :aria-label="appearanceLabel"
                     :aria-pressed="isDark"
+                    :disabled="!isMounted"
                     @click="toggleAppearance"
                 >
                     {{ isDark ? "浅色" : "深色" }}
