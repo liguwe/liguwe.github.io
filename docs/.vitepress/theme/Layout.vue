@@ -14,7 +14,14 @@ import {
 import { Content, inBrowser, useData, useRoute, withBase } from "vitepress";
 import { VPNavBarSearch } from "vitepress/theme";
 import VPDocAsideOutline from "vitepress/dist/client/theme-default/components/VPDocAsideOutline.vue";
-import { computed, nextTick, onBeforeUnmount, onMounted, ref, watch } from "vue";
+import {
+    computed,
+    nextTick,
+    onBeforeUnmount,
+    onMounted,
+    ref,
+    watch,
+} from "vue";
 import SiteLogo from "./components/SiteLogo.vue";
 import { posts, tagColor, tags as blogTags, years } from "./posts";
 
@@ -45,9 +52,7 @@ const yearFilters = computed(() => [
 
 const tagFilters = computed(() => blogTags);
 
-const latestPost = computed(
-    () => posts[0],
-);
+const latestPost = computed(() => posts[0]);
 
 const appearanceLabel = computed(() =>
     isDark.value ? "切换到浅色模式" : "切换到深色模式",
@@ -368,7 +373,7 @@ watch(
                                                 aria-hidden="true"
                                             />
                                             <span class="min-w-0 flex-1"
-                                                >个人知识库</span
+                                                >Pre AI Age</span
                                             >
                                             <span
                                                 class="shrink-0 text-offgray-400 dark:text-offgray-500"
@@ -376,27 +381,7 @@ watch(
                                             >
                                         </a>
                                         <a
-                                            href="https://liguwe.site/codex-docs/"
-                                            target="_blank"
-                                            rel="noopener noreferrer"
-                                            class="flex items-center gap-2.5 px-3 py-2 text-sm text-offgray-1000 hover:bg-accent-blue/10 dark:text-white dark:hover:bg-accent-blue/15"
-                                            role="menuitem"
-                                        >
-                                            <FileText
-                                                class="size-4 shrink-0 text-offgray-500 dark:text-offgray-400"
-                                                stroke-width="2"
-                                                aria-hidden="true"
-                                            />
-                                            <span class="min-w-0 flex-1"
-                                                >Codex Docs</span
-                                            >
-                                            <span
-                                                class="shrink-0 text-offgray-400 dark:text-offgray-500"
-                                                >↗</span
-                                            >
-                                        </a>
-                                        <a
-                                            href="https://www.yuque.com/liguwe/post"
+                                            href="https://www.yuque.com/liguwe"
                                             target="_blank"
                                             rel="noopener noreferrer"
                                             class="flex items-center gap-2.5 px-3 py-2 text-sm text-offgray-1000 hover:bg-accent-blue/10 dark:text-white dark:hover:bg-accent-blue/15"
@@ -408,7 +393,7 @@ watch(
                                                 aria-hidden="true"
                                             />
                                             <span class="min-w-0 flex-1"
-                                                >语雀</span
+                                                >语雀花园</span
                                             >
                                             <span
                                                 class="shrink-0 text-offgray-400 dark:text-offgray-500"
@@ -967,9 +952,7 @@ watch(
                                                                 )
                                                             "
                                                             class="block truncate"
-                                                            >{{
-                                                                post.title
-                                                            }}</a
+                                                            >{{ post.title }}</a
                                                         >
                                                     </h2>
                                                 </div>
