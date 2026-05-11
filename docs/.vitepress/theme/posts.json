@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-05-11T21:51:52.927Z",
+  "generatedAt": "2026-05-11T22:37:10.653Z",
   "posts": [
     {
       "slug": "118",
@@ -11,6 +11,16 @@
         "832os",
         "workspace",
         "个人工作台"
+      ]
+    },
+    {
+      "slug": "116",
+      "href": "/blog/116",
+      "title": "116. 周报：当我的系统足够完美、工具足够顺滑时，真正的创造就会自然且高效地发生？",
+      "date": "2026.05.11",
+      "year": "2026",
+      "tags": [
+        "周报"
       ]
     },
     {
@@ -503,6 +513,11 @@
       "href": "/blog/个人工作台"
     },
     {
+      "id": "周报",
+      "label": "周报",
+      "href": "/blog/周报"
+    },
+    {
       "id": "github",
       "label": "github",
       "href": "/blog/github"
@@ -601,11 +616,6 @@
       "id": "claude-code",
       "label": "claude-code",
       "href": "/blog/claude-code"
-    },
-    {
-      "id": "周报",
-      "label": "周报",
-      "href": "/blog/周报"
     },
     {
       "id": "翻译",
