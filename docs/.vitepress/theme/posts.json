@@ -1,6 +1,18 @@
 {
-  "generatedAt": "2026-05-11T15:08:09.620Z",
+  "generatedAt": "2026-05-11T15:17:34.591Z",
   "posts": [
+    {
+      "slug": "118",
+      "href": "/blog/118",
+      "title": "118. 个人工作台（最终版）",
+      "date": "2026.05.11",
+      "year": "2026",
+      "tags": [
+        "832os",
+        "workspace",
+        "个人工作台"
+      ]
+    },
     {
       "slug": "115",
       "href": "/blog/115",
@@ -476,6 +488,21 @@
   ],
   "tags": [
     {
+      "id": "832os",
+      "label": "832os",
+      "href": "/blog/832os"
+    },
+    {
+      "id": "workspace",
+      "label": "workspace",
+      "href": "/blog/workspace"
+    },
+    {
+      "id": "个人工作台",
+      "label": "个人工作台",
+      "href": "/blog/个人工作台"
+    },
+    {
       "id": "github",
       "label": "github",
       "href": "/blog/github"
@@ -494,11 +521,6 @@
       "id": "agent",
       "label": "agent",
       "href": "/blog/agent"
-    },
-    {
-      "id": "workspace",
-      "label": "workspace",
-      "href": "/blog/workspace"
     },
     {
       "id": "codex",
@@ -534,11 +556,6 @@
       "id": "raycast",
       "label": "raycast",
       "href": "/blog/raycast"
-    },
-    {
-      "id": "832os",
-      "label": "832os",
-      "href": "/blog/832os"
     },
     {
       "id": "效率工具",
