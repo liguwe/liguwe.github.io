@@ -327,14 +327,14 @@ watch(
                             <li>
                                 <button
                                     type="button"
-                                    class="fv-style relative inline-flex size-8 select-none items-center justify-center rounded-sm border border-[var(--border)] text-offgray-600 hover:bg-offgray-100/60 disabled:pointer-events-none disabled:opacity-70 dark:text-offgray-300 dark:hover:bg-offgray-500/10"
+                                    class="fv-style grid size-8 select-none place-items-center rounded-sm border border-[var(--border)] text-offgray-600 hover:bg-offgray-100/60 disabled:pointer-events-none disabled:opacity-70 dark:text-offgray-300 dark:hover:bg-offgray-500/10"
                                     :aria-label="appearanceLabel"
                                     :aria-pressed="isDark"
                                     :disabled="!isMounted"
                                     @click="toggleAppearance"
                                 >
                                     <Sun
-                                        class="absolute size-[18px] shrink-0 text-offgray-600 transition-opacity dark:text-offgray-200"
+                                        class="col-start-1 row-start-1 size-[18px] shrink-0 text-offgray-600 transition-opacity dark:text-offgray-200"
                                         :class="
                                             isDark
                                                 ? 'opacity-100'
@@ -344,7 +344,7 @@ watch(
                                         aria-hidden="true"
                                     />
                                     <Moon
-                                        class="absolute size-[18px] shrink-0 text-offgray-600 transition-opacity dark:text-offgray-200"
+                                        class="col-start-1 row-start-1 size-[18px] shrink-0 text-offgray-600 transition-opacity dark:text-offgray-200"
                                         :class="
                                             isDark
                                                 ? 'opacity-0'
