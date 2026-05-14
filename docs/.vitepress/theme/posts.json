@@ -1,6 +1,16 @@
 {
-  "generatedAt": "2026-05-13T06:59:28.893Z",
+  "generatedAt": "2026-05-14T14:21:30.009Z",
   "posts": [
+    {
+      "slug": "121",
+      "href": "/blog/121",
+      "title": "121. 通过一个小事来理解 “MCP” 的意义",
+      "date": "2026.05.14",
+      "year": "2026",
+      "tags": [
+        "mcp"
+      ]
+    },
     {
       "slug": "120",
       "href": "/blog/120",
@@ -514,6 +524,11 @@
   ],
   "tags": [
     {
+      "id": "mcp",
+      "label": "mcp",
+      "href": "/blog/mcp"
+    },
+    {
       "id": "832os",
       "label": "832os",
       "href": "/blog/832os"
@@ -577,11 +592,6 @@
       "id": "claude",
       "label": "claude",
       "href": "/blog/claude"
-    },
-    {
-      "id": "mcp",
-      "label": "mcp",
-      "href": "/blog/mcp"
     },
     {
       "id": "raycast",
