@@ -1,6 +1,19 @@
 {
-  "generatedAt": "2026-05-17T07:53:35.373Z",
+  "generatedAt": "2026-05-17T09:56:24.216Z",
   "posts": [
+    {
+      "slug": "123",
+      "href": "/blog/123",
+      "title": "123. 播客：Meshy.AI胡渊鸣与红杉吴茗谈AI原生游戏、世界模型与PMF",
+      "date": "2026.05.17",
+      "year": "2026",
+      "tags": [
+        "AI",
+        "游戏",
+        "创业",
+        "播客"
+      ]
+    },
     {
       "slug": "122",
       "href": "/blog/122",
@@ -534,6 +547,26 @@
   ],
   "tags": [
     {
+      "id": "AI",
+      "label": "AI",
+      "href": "/blog/AI"
+    },
+    {
+      "id": "游戏",
+      "label": "游戏",
+      "href": "/blog/游戏"
+    },
+    {
+      "id": "创业",
+      "label": "创业",
+      "href": "/blog/创业"
+    },
+    {
+      "id": "播客",
+      "label": "播客",
+      "href": "/blog/播客"
+    },
+    {
       "id": "周报",
       "label": "周报",
       "href": "/blog/周报"
@@ -662,11 +695,6 @@
       "id": "ai工具",
       "label": "ai工具",
       "href": "/blog/ai工具"
-    },
-    {
-      "id": "播客",
-      "label": "播客",
-      "href": "/blog/播客"
     },
     {
       "id": "哲学",
