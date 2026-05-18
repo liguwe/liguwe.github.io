@@ -69,7 +69,7 @@ const visiblePosts = computed(() => {
 
 const blogHeroTitle = computed(() => "AI-Native Notes");
 const blogHeroSubtitle = computed(
-    () => "面向 AI-Native，用 Agent 解决真实问题，全栈构建产品，以 832OS 持续交付。",
+    () => "面向 AI-Native，与 Agent 解决真实问题，全栈构建产品，以 832OS 持续交付。",
 );
 const blogHeroGoals = [
     {
