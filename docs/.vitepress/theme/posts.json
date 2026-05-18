@@ -1,6 +1,17 @@
 {
-  "generatedAt": "2026-05-18T05:50:43.662Z",
+  "generatedAt": "2026-05-18T06:15:06.552Z",
   "posts": [
+    {
+      "slug": "127",
+      "href": "/blog/127",
+      "title": "127. 飞书CLi 和 飞书 MCP 实践",
+      "date": "2026.05.18",
+      "year": "2026",
+      "tags": [
+        "codex",
+        "agent"
+      ]
+    },
     {
       "slug": "126",
       "href": "/blog/126",
@@ -578,6 +589,16 @@
   ],
   "tags": [
     {
+      "id": "codex",
+      "label": "codex",
+      "href": "/blog/codex"
+    },
+    {
+      "id": "agent",
+      "label": "agent",
+      "href": "/blog/agent"
+    },
+    {
       "id": "AI",
       "label": "AI",
       "href": "/blog/AI"
@@ -636,16 +657,6 @@
       "id": "issues",
       "label": "issues",
       "href": "/blog/issues"
-    },
-    {
-      "id": "agent",
-      "label": "agent",
-      "href": "/blog/agent"
-    },
-    {
-      "id": "codex",
-      "label": "codex",
-      "href": "/blog/codex"
     },
     {
       "id": "白话",
