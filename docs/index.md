@@ -1,3 +1,3 @@
 ---
-title: AI 实践笔记
+title: AI-Native 实践笔记
 ---

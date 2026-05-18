@@ -67,8 +67,32 @@ const visiblePosts = computed(() => {
     return posts.filter((post) => post.year === activeYear.value);
 });
 
-const blogHeroTitle = computed(() => "AI 实践笔记");
-const blogHeroSubtitle = computed(() => "少一点旁观，多一点动手");
+const blogHeroTitle = computed(() => "AI-Native 实践笔记");
+const blogHeroSubtitle = computed(
+    () => "面向 AI-Native，用 Agent 解决真实问题，全栈构建产品，以 832OS 持续交付。",
+);
+const blogHeroGoals = [
+    {
+        label: "AI-Native",
+        src: "https://img.shields.io/badge/-AI--Native-7C3AED?style=flat-square",
+    },
+    {
+        label: "Agent Engineer",
+        src: "https://img.shields.io/badge/-Agent%20Engineer-0EA5E9?style=flat-square",
+    },
+    {
+        label: "Full-Stack Builder",
+        src: "https://img.shields.io/badge/-Full--Stack%20Builder-2563EB?style=flat-square",
+    },
+    {
+        label: "AI Product Builder",
+        src: "https://img.shields.io/badge/-AI%20Product%20Builder-059669?style=flat-square",
+    },
+    {
+        label: "Personal OS",
+        src: "https://img.shields.io/badge/-Personal%20OS-F59E0B?style=flat-square",
+    },
+];
 
 const postSlugFromPath = computed(() => {
     const m = page.value.relativePath.match(/^blog\/(\d+)\.md$/);
@@ -573,8 +597,22 @@ watch(
                                 class="relative isolate size-full w-full overflow-clip p-4 py-8 lg:pt-12 lg:pb-14"
                             >
                                 <hgroup
-                                    class="mx-auto flex w-full max-w-lg flex-col items-center gap-2"
+                                    class="mx-auto flex w-full max-w-4xl flex-col items-center gap-2"
                                 >
+                                    <div
+                                        class="mb-2 flex max-w-xl flex-wrap items-center justify-center gap-2"
+                                        aria-label="目标标签"
+                                    >
+                                        <img
+                                            v-for="goal in blogHeroGoals"
+                                            :key="goal.label"
+                                            :alt="goal.label"
+                                            :src="goal.src"
+                                            class="h-5 w-auto max-w-full shrink-0 select-none"
+                                            decoding="async"
+                                            loading="lazy"
+                                        />
+                                    </div>
                                     <h1
                                         class="zed-blog-hero-title font-plex-serif text-balance scroll-mt-24 mb-2 text-center text-accent-blue dark:text-blue-300"
                                     >
@@ -582,7 +620,7 @@ watch(
                                     </h1>
                                     <p
                                         v-if="blogHeroSubtitle"
-                                        class="text-center text-balance tracking-tight text-offgray-600 dark:text-offgray-500"
+                                        class="max-w-full whitespace-nowrap text-center text-xs tracking-tight text-offgray-600 sm:text-sm md:text-base dark:text-offgray-500"
                                     >
                                         {{ blogHeroSubtitle }}
                                     </p>
