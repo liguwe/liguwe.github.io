@@ -67,7 +67,7 @@ const visiblePosts = computed(() => {
     return posts.filter((post) => post.year === activeYear.value);
 });
 
-const blogHeroTitle = computed(() => "AI-Native 实践笔记");
+const blogHeroTitle = computed(() => "AI-Native Notes");
 const blogHeroSubtitle = computed(
     () => "面向 AI-Native，用 Agent 解决真实问题，全栈构建产品，以 832OS 持续交付。",
 );
