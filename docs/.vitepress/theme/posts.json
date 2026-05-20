@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-05-19T22:48:35.785Z",
+  "generatedAt": "2026-05-20T01:27:11.587Z",
   "posts": [
     {
       "slug": "131",
@@ -14,11 +14,12 @@
     {
       "slug": "128",
       "href": "/blog/128",
-      "title": "128. 接下来的主线：code-agent-lab",
+      "title": "128. 接下来的主线：general-agent-lab",
       "date": "2026.05.19",
       "year": "2026",
       "tags": [
-        "agent"
+        "agent",
+        "general-agent-lab"
       ]
     },
     {
@@ -617,6 +618,11 @@
       "id": "agent",
       "label": "agent",
       "href": "/blog/agent"
+    },
+    {
+      "id": "general-agent-lab",
+      "label": "general-agent-lab",
+      "href": "/blog/general-agent-lab"
     },
     {
       "id": "codex",
