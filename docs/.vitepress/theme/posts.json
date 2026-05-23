@@ -1,6 +1,16 @@
 {
-  "generatedAt": "2026-05-23T01:29:56.278Z",
+  "generatedAt": "2026-05-23T04:33:46.666Z",
   "posts": [
+    {
+      "slug": "137",
+      "href": "/blog/137",
+      "title": "137. 周报：大胆的压缩，不要担心遗漏什么",
+      "date": "2026.05.23",
+      "year": "2026",
+      "tags": [
+        "周报"
+      ]
+    },
     {
       "slug": "136",
       "href": "/blog/136",
@@ -642,6 +652,11 @@
   ],
   "tags": [
     {
+      "id": "周报",
+      "label": "周报",
+      "href": "/blog/周报"
+    },
+    {
       "id": "agent",
       "label": "agent",
       "href": "/blog/agent"
@@ -680,11 +695,6 @@
       "id": "游戏",
       "label": "游戏",
       "href": "/blog/游戏"
-    },
-    {
-      "id": "周报",
-      "label": "周报",
-      "href": "/blog/周报"
     },
     {
       "id": "mcp",
