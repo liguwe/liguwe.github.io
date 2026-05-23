@@ -1,6 +1,19 @@
 {
-  "generatedAt": "2026-05-23T10:27:36.066Z",
+  "generatedAt": "2026-05-23T22:22:04.319Z",
   "posts": [
+    {
+      "slug": "139",
+      "href": "/blog/139",
+      "title": "139. 工具探索已经成为一种高级拖延，一直在准备着，看起来勤奋，实则在偷懒",
+      "date": "2026.05.24",
+      "year": "2026",
+      "tags": [
+        "agent",
+        "build",
+        "拖延",
+        "偷懒"
+      ]
+    },
     {
       "slug": "137",
       "href": "/blog/137",
@@ -652,14 +665,29 @@
   ],
   "tags": [
     {
-      "id": "周报",
-      "label": "周报",
-      "href": "/blog/周报"
-    },
-    {
       "id": "agent",
       "label": "agent",
       "href": "/blog/agent"
+    },
+    {
+      "id": "build",
+      "label": "build",
+      "href": "/blog/build"
+    },
+    {
+      "id": "拖延",
+      "label": "拖延",
+      "href": "/blog/拖延"
+    },
+    {
+      "id": "偷懒",
+      "label": "偷懒",
+      "href": "/blog/偷懒"
+    },
+    {
+      "id": "周报",
+      "label": "周报",
+      "href": "/blog/周报"
     },
     {
       "id": "精读",
