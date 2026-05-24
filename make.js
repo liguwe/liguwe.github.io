@@ -446,14 +446,89 @@ async function copyPublishedAssets(assetRefs) {
     "./scripts/optimize-public-assets.mjs"
   );
 
-  fs.rmSync(publicOsAssetsRoot, { recursive: true, force: true });
+  const stagingRoot = path.resolve(publicRoot, "assets/.os-publish-staging");
+  fs.rmSync(stagingRoot, { recursive: true, force: true });
+  fs.mkdirSync(stagingRoot, { recursive: true });
 
-  await publishPublicAssets(
-    Array.from(assetRefs, ([sourcePath, outputPath]) => ({
-      sourcePath,
-      outputPath,
-    })),
-  );
+  const stagedAssets = Array.from(assetRefs, ([sourcePath, outputPath]) => ({
+    sourcePath,
+    outputPath: path.resolve(stagingRoot, path.basename(outputPath)),
+  }));
+
+  await publishPublicAssets(stagedAssets);
+
+  for (const { outputPath } of stagedAssets) {
+    if (!fs.existsSync(outputPath)) {
+      throw new Error(
+        `Published asset missing after optimize: ${path.basename(outputPath)}`,
+      );
+    }
+  }
+
+  fs.rmSync(publicOsAssetsRoot, { recursive: true, force: true });
+  fs.renameSync(stagingRoot, publicOsAssetsRoot);
+}
+
+const lockPath = path.resolve(repoRoot, ".make.lock");
+const lockDirPath = path.resolve(repoRoot, ".make.lock.d");
+
+function acquireMakeLock() {
+  for (let attempt = 0; attempt < 600; attempt += 1) {
+    try {
+      fs.mkdirSync(lockDirPath);
+      fs.writeFileSync(lockPath, String(process.pid), { flag: "wx" });
+      return;
+    } catch (error) {
+      if (error.code !== "EEXIST") {
+        throw error;
+      }
+    }
+
+    const ownerPid = fs.existsSync(lockPath)
+      ? Number(fs.readFileSync(lockPath, "utf8").trim())
+      : NaN;
+    if (Number.isInteger(ownerPid) && ownerPid > 0) {
+      try {
+        process.kill(ownerPid, 0);
+      } catch (killError) {
+        if (killError.code === "ESRCH") {
+          try {
+            fs.unlinkSync(lockPath);
+          } catch {
+            // ignore stale lock cleanup races
+          }
+          try {
+            fs.rmdirSync(lockDirPath);
+          } catch {
+            // ignore stale lock dir cleanup races
+          }
+          continue;
+        }
+        throw killError;
+      }
+    }
+
+    Atomics.wait(new Int32Array(new SharedArrayBuffer(4)), 0, 0, 200);
+  }
+
+  throw new Error("Timed out waiting for make.js lock");
+}
+
+function releaseMakeLock() {
+  if (fs.existsSync(lockPath)) {
+    const owner = fs.readFileSync(lockPath, "utf8").trim();
+    if (owner === String(process.pid)) {
+      fs.unlinkSync(lockPath);
+    }
+  }
+
+  if (fs.existsSync(lockDirPath)) {
+    try {
+      fs.rmdirSync(lockDirPath);
+    } catch {
+      // ignore lock dir cleanup races
+    }
+  }
 }
 
 /**
@@ -527,6 +602,8 @@ function collectMarkdownFiles(dir) {
 }
 
 async function main() {
+  acquireMakeLock();
+  try {
   if (!fs.existsSync(obsidianRoot)) {
     throw new Error(`Obsidian root does not exist: ${obsidianRoot}`);
   }
@@ -639,6 +716,9 @@ async function main() {
   console.log(`   Blog files → ${blogRoot}`);
   console.log(`   Assets → ${assetRefs.size}`);
   console.log(`   Posts JSON → ${path.resolve(themeRoot, "posts.json")}`);
+  } finally {
+    releaseMakeLock();
+  }
 }
 
 main().catch((error) => {
