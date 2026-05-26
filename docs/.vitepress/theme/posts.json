@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-05-26T22:58:54.996Z",
+  "generatedAt": "2026-05-26T23:19:02.870Z",
   "posts": [
     {
       "slug": "148",
@@ -8,7 +8,8 @@
       "date": "2026.05.27",
       "year": "2026",
       "tags": [
-        "工具"
+        "codex",
+        "cursor"
       ]
     },
     {
@@ -685,9 +686,14 @@
   ],
   "tags": [
     {
-      "id": "工具",
-      "label": "工具",
-      "href": "/blog/工具"
+      "id": "codex",
+      "label": "codex",
+      "href": "/blog/codex"
+    },
+    {
+      "id": "cursor",
+      "label": "cursor",
+      "href": "/blog/cursor"
     },
     {
       "id": "好文",
@@ -728,11 +734,6 @@
       "id": "general-agent-lab",
       "label": "general-agent-lab",
       "href": "/blog/general-agent-lab"
-    },
-    {
-      "id": "codex",
-      "label": "codex",
-      "href": "/blog/codex"
     },
     {
       "id": "播客",
@@ -798,11 +799,6 @@
       "id": "skills",
       "label": "skills",
       "href": "/blog/skills"
-    },
-    {
-      "id": "cursor",
-      "label": "cursor",
-      "href": "/blog/cursor"
     },
     {
       "id": "claude",
