@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-05-26T23:23:45.280Z",
+  "generatedAt": "2026-05-27T01:37:37.900Z",
   "posts": [
     {
       "slug": "148",
@@ -10,6 +10,18 @@
       "tags": [
         "codex",
         "cursor"
+      ]
+    },
+    {
+      "slug": "142",
+      "href": "/blog/142",
+      "title": "142. 播客：AI悖论：自动化越多，人越重要，Dan Shipper 预测未来一年工作方式巨变",
+      "date": "2026.05.25",
+      "year": "2026",
+      "tags": [
+        "AI",
+        "播客",
+        "agent"
       ]
     },
     {
@@ -696,14 +708,24 @@
       "href": "/blog/cursor"
     },
     {
-      "id": "好文",
-      "label": "好文",
-      "href": "/blog/好文"
+      "id": "AI",
+      "label": "AI",
+      "href": "/blog/AI"
+    },
+    {
+      "id": "播客",
+      "label": "播客",
+      "href": "/blog/播客"
     },
     {
       "id": "agent",
       "label": "agent",
       "href": "/blog/agent"
+    },
+    {
+      "id": "好文",
+      "label": "好文",
+      "href": "/blog/好文"
     },
     {
       "id": "build",
@@ -734,16 +756,6 @@
       "id": "general-agent-lab",
       "label": "general-agent-lab",
       "href": "/blog/general-agent-lab"
-    },
-    {
-      "id": "播客",
-      "label": "播客",
-      "href": "/blog/播客"
-    },
-    {
-      "id": "AI",
-      "label": "AI",
-      "href": "/blog/AI"
     },
     {
       "id": "创业",
