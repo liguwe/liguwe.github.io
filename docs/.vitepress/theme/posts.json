@@ -1,6 +1,28 @@
 {
-  "generatedAt": "2026-05-28T09:52:37.639Z",
+  "generatedAt": "2026-05-29T10:07:45.769Z",
   "posts": [
+    {
+      "slug": "150",
+      "href": "/blog/150",
+      "title": "150. Zed编辑器启示：Agent 最大的问题不是不会做，而是让人等",
+      "date": "2026.05.29",
+      "year": "2026",
+      "tags": [
+        "agent",
+        "acp"
+      ]
+    },
+    {
+      "slug": "149",
+      "href": "/blog/149",
+      "title": "149. 关于 CLI：它是 Agent 的底层接口，不是人的",
+      "date": "2026.05.29",
+      "year": "2026",
+      "tags": [
+        "agent",
+        "cli"
+      ]
+    },
     {
       "slug": "148",
       "href": "/blog/148",
@@ -708,6 +730,21 @@
   ],
   "tags": [
     {
+      "id": "agent",
+      "label": "agent",
+      "href": "/blog/agent"
+    },
+    {
+      "id": "acp",
+      "label": "acp",
+      "href": "/blog/acp"
+    },
+    {
+      "id": "cli",
+      "label": "cli",
+      "href": "/blog/cli"
+    },
+    {
       "id": "codex",
       "label": "codex",
       "href": "/blog/codex"
@@ -726,11 +763,6 @@
       "id": "播客",
       "label": "播客",
       "href": "/blog/播客"
-    },
-    {
-      "id": "agent",
-      "label": "agent",
-      "href": "/blog/agent"
     },
     {
       "id": "好文",
