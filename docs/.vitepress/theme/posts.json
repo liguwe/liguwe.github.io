@@ -1,6 +1,16 @@
 {
-  "generatedAt": "2026-06-11T14:53:57.764Z",
+  "generatedAt": "2026-06-11T15:40:01.927Z",
   "posts": [
+    {
+      "slug": "183",
+      "href": "/blog/183",
+      "title": "183. 播客：工程师如何放大生产力，AI 重塑团队分工的通才时代",
+      "date": "2026.06.11",
+      "year": "2026",
+      "tags": [
+        "AI/Agent"
+      ]
+    },
     {
       "slug": "182",
       "href": "/blog/182",
@@ -942,6 +952,11 @@
     }
   ],
   "tags": [
+    {
+      "id": "AI/Agent",
+      "label": "AI/Agent",
+      "href": "/blog/AI/Agent"
+    },
     {
       "id": "播客",
       "label": "播客",

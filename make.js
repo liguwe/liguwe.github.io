@@ -692,6 +692,7 @@ async function main() {
 
   for (const tag of tags) {
     const outputPath = path.resolve(blogRoot, `${tag.id}.md`);
+    fs.mkdirSync(path.dirname(outputPath), { recursive: true });
     fs.writeFileSync(outputPath, transformTagPage(tag.label));
   }
 
