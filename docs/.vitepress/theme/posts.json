@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-11T15:40:01.927Z",
+  "generatedAt": "2026-06-11T15:50:39.171Z",
   "posts": [
     {
       "slug": "183",
@@ -8,7 +8,8 @@
       "date": "2026.06.11",
       "year": "2026",
       "tags": [
-        "AI/Agent"
+        "ai",
+        "agent"
       ]
     },
     {
@@ -953,9 +954,14 @@
   ],
   "tags": [
     {
-      "id": "AI/Agent",
-      "label": "AI/Agent",
-      "href": "/blog/AI/Agent"
+      "id": "ai",
+      "label": "ai",
+      "href": "/blog/ai"
+    },
+    {
+      "id": "agent",
+      "label": "agent",
+      "href": "/blog/agent"
     },
     {
       "id": "播客",
@@ -996,11 +1002,6 @@
       "id": "opencode",
       "label": "opencode",
       "href": "/blog/opencode"
-    },
-    {
-      "id": "agent",
-      "label": "agent",
-      "href": "/blog/agent"
     },
     {
       "id": "周报",
@@ -1126,11 +1127,6 @@
       "id": "效率工具",
       "label": "效率工具",
       "href": "/blog/效率工具"
-    },
-    {
-      "id": "ai",
-      "label": "ai",
-      "href": "/blog/ai"
     },
     {
       "id": "个人知识管理",

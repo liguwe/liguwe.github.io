@@ -123,6 +123,9 @@ function parseMetadataLine(line) {
     if (dateMatch) {
       date = `${dateMatch[1]}.${dateMatch[2]}.${dateMatch[3]}`;
     } else {
+      if (value.includes("/")) {
+        throw new Error(`文章标签不允许包含 /：#${value}`);
+      }
       tags.push(value);
     }
   }
