@@ -1,6 +1,16 @@
 {
-  "generatedAt": "2026-06-12T03:37:55.155Z",
+  "generatedAt": "2026-06-12T04:00:26.500Z",
   "posts": [
+    {
+      "slug": "185",
+      "href": "/blog/185",
+      "title": "185. 播客：宏观悲观和你没关系、少让故事带走，多让行动带路",
+      "date": "2026.06.12",
+      "year": "2026",
+      "tags": [
+        "播客"
+      ]
+    },
     {
       "slug": "183",
       "href": "/blog/183",
@@ -954,6 +964,11 @@
   ],
   "tags": [
     {
+      "id": "播客",
+      "label": "播客",
+      "href": "/blog/播客"
+    },
+    {
       "id": "ai",
       "label": "ai",
       "href": "/blog/ai"
@@ -962,11 +977,6 @@
       "id": "agent",
       "label": "agent",
       "href": "/blog/agent"
-    },
-    {
-      "id": "播客",
-      "label": "播客",
-      "href": "/blog/播客"
     },
     {
       "id": "组织",
