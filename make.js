@@ -101,6 +101,10 @@ function parseFirstLine(content) {
   return parseMetadataLine(firstContentLine.trim());
 }
 
+function normalizeTag(value) {
+  return value.replace(/\//g, "-").toLowerCase();
+}
+
 /**
  * 解析首行元信息：仅由 #tag / #YYYY/MM/DD 组成时认为是文章元信息
  */
@@ -123,10 +127,7 @@ function parseMetadataLine(line) {
     if (dateMatch) {
       date = `${dateMatch[1]}.${dateMatch[2]}.${dateMatch[3]}`;
     } else {
-      if (value.includes("/")) {
-        throw new Error(`文章标签不允许包含 /：#${value}`);
-      }
-      tags.push(value);
+      tags.push(normalizeTag(value));
     }
   }
 
