@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-19T04:04:42.941Z",
+  "generatedAt": "2026-06-19T04:27:31.853Z",
   "posts": [
     {
       "slug": "204",
@@ -269,7 +269,7 @@
     {
       "slug": "155",
       "href": "/blog/155",
-      "title": "155. CLI 入口层：为什么用 Node shim 包原生二进制",
+      "title": "155. 技术：CLI 入口层：为什么用 Node shim 包原生二进制",
       "date": "2026.06.02",
       "year": "2026",
       "tags": [
@@ -281,7 +281,7 @@
     {
       "slug": "154",
       "href": "/blog/154",
-      "title": "154. 使用 submodule 来管理 codex 和 opencode",
+      "title": "154. 技术：使用 submodule 来管理 codex 和 opencode",
       "date": "2026.06.02",
       "year": "2026",
       "tags": [
@@ -314,7 +314,7 @@
     {
       "slug": "150",
       "href": "/blog/150",
-      "title": "150. Zed编辑器启示：Agent 最大的问题不是不会做，而是让人等",
+      "title": "150. 技术：Zed编辑器启示 - Agent 最大的问题不是不会做，而是让人等",
       "date": "2026.05.29",
       "year": "2026",
       "tags": [
@@ -325,7 +325,7 @@
     {
       "slug": "149",
       "href": "/blog/149",
-      "title": "149. 关于 CLI：它是 Agent 的底层，但不是人的主界面",
+      "title": "149. 技术：关于 CLI：它是 Agent 的底层，但不是人的主界面",
       "date": "2026.05.29",
       "year": "2026",
       "tags": [
@@ -336,7 +336,7 @@
     {
       "slug": "148",
       "href": "/blog/148",
-      "title": "148. 把工作环境塞进Codex、Cursor 中：连接公司研发平台",
+      "title": "148. 技术：把工作环境塞进Codex、Cursor 中：连接公司研发平台",
       "date": "2026.05.27",
       "year": "2026",
       "tags": [
@@ -369,7 +369,7 @@
     {
       "slug": "140",
       "href": "/blog/140",
-      "title": "140. 好文：Railway 创始人分享 35 人团队如何服务300万用户",
+      "title": "140. 精读：好文 - Railway 创始人分享 35 人团队如何服务300万用户",
       "date": "2026.05.25",
       "year": "2026",
       "tags": [
@@ -379,7 +379,7 @@
     {
       "slug": "139",
       "href": "/blog/139",
-      "title": "139. 看起来勤奋，实则在偷懒；一直在准备，始终没开始。",
+      "title": "139. 复盘：看起来勤奋，实则在偷懒；一直在准备，始终没开始。",
       "date": "2026.05.24",
       "year": "2026",
       "tags": [
@@ -402,7 +402,7 @@
     {
       "slug": "136",
       "href": "/blog/136",
-      "title": "136. Agent = Model + Harness",
+      "title": "136. 精读：Agent = Model + Harness",
       "date": "2026.05.22",
       "year": "2026",
       "tags": [
@@ -424,7 +424,7 @@
     {
       "slug": "134",
       "href": "/blog/134",
-      "title": "134. 如何用好 Codex",
+      "title": "134. 技术：如何用好 Codex",
       "date": "2026.05.21",
       "year": "2026",
       "tags": [
@@ -444,7 +444,7 @@
     {
       "slug": "130",
       "href": "/blog/130",
-      "title": "130. opencode 工程概览与技术栈分析",
+      "title": "130. 技术：opencode 工程概览与技术栈分析",
       "date": "2026.06.02",
       "year": "2026",
       "tags": [
@@ -455,7 +455,7 @@
     {
       "slug": "129",
       "href": "/blog/129",
-      "title": "129. codex-cli 工程概览及技术栈分析",
+      "title": "129. 技术：codex-cli 工程概览及技术栈分析",
       "date": "2026.06.02",
       "year": "2026",
       "tags": [
@@ -466,7 +466,7 @@
     {
       "slug": "128",
       "href": "/blog/128",
-      "title": "128. 接下来的主线：general-agent-lab",
+      "title": "128. 技术：接下来的主线 - general-agent-lab",
       "date": "2026.05.19",
       "year": "2026",
       "tags": [
@@ -477,7 +477,7 @@
     {
       "slug": "127",
       "href": "/blog/127",
-      "title": "127. 飞书 CLi 和 飞书 MCP 实践",
+      "title": "127. 技术：飞书 CLi 和 飞书 MCP 实践",
       "date": "2026.05.18",
       "year": "2026",
       "tags": [
@@ -542,7 +542,7 @@
     {
       "slug": "121",
       "href": "/blog/121",
-      "title": "121. 通过一个小事来理解 “MCP” 的意义",
+      "title": "121. 技术：通过一个小事来理解 “MCP” 的意义",
       "date": "2026.05.14",
       "year": "2026",
       "tags": [
@@ -552,7 +552,7 @@
     {
       "slug": "120",
       "href": "/blog/120",
-      "title": "120. 个人工作台入口应该用户级可用",
+      "title": "120. 技术：个人工作台入口应该用户级可用",
       "date": "2026.05.13",
       "year": "2026",
       "tags": []
@@ -560,7 +560,7 @@
     {
       "slug": "119",
       "href": "/blog/119",
-      "title": "119. 富文本导入语雀、MCP连接语雀语料",
+      "title": "119. 技术：富文本导入语雀、MCP连接语雀语料",
       "date": "2026.05.12",
       "year": "2026",
       "tags": []
@@ -568,7 +568,7 @@
     {
       "slug": "118",
       "href": "/blog/118",
-      "title": "118. 个人工作台（最终版）",
+      "title": "118. 技术：个人工作台（最终版）",
       "date": "2026.05.11",
       "year": "2026",
       "tags": [
@@ -590,7 +590,7 @@
     {
       "slug": "115",
       "href": "/blog/115",
-      "title": "115. 静态资源回到工程里",
+      "title": "115. 技术：静态资源回到工程里",
       "date": "2026.05.10",
       "year": "2026",
       "tags": []
@@ -598,7 +598,7 @@
     {
       "slug": "114",
       "href": "/blog/114",
-      "title": "114. 用 GitHub Projects 管理 issues",
+      "title": "114. 技术：用 GitHub Projects 管理 issues",
       "date": "2026.05.10",
       "year": "2026",
       "tags": [
@@ -610,7 +610,7 @@
     {
       "slug": "113",
       "href": "/blog/113",
-      "title": "113. 把多个工程组合成一个工作区",
+      "title": "113. 技术：把多个工程组合成一个工作区",
       "date": "2026.05.10",
       "year": "2026",
       "tags": [
@@ -621,7 +621,7 @@
     {
       "slug": "112",
       "href": "/blog/112",
-      "title": "112. 个人常用的 Codex 命令",
+      "title": "112. 技术：个人常用的 Codex 命令",
       "date": "2026.05.08",
       "year": "2026",
       "tags": [
@@ -632,7 +632,7 @@
     {
       "slug": "109",
       "href": "/blog/109",
-      "title": "109. 使用 vercel-labs skills 管理个人 AI 技能",
+      "title": "109. 技术：使用 vercel-labs skills 管理个人 AI 技能",
       "date": "2026.05.05",
       "year": "2026",
       "tags": [
@@ -646,7 +646,7 @@
     {
       "slug": "108",
       "href": "/blog/108",
-      "title": "108. codex、cursor、calude-code 的 rules、command、Skills 和 MCP 都放哪里？",
+      "title": "108. 技术：codex、cursor、calude-code 的 rules、command、Skills 和 MCP 都放哪里？",
       "date": "2026.05.04",
       "year": "2026",
       "tags": [
@@ -661,7 +661,7 @@
     {
       "slug": "107",
       "href": "/blog/107",
-      "title": "107. 我是怎么使用 Raycast 的",
+      "title": "107. 技术：我是怎么使用 Raycast 的",
       "date": "2026.05.03",
       "year": "2026",
       "tags": [
@@ -674,7 +674,7 @@
     {
       "slug": "105",
       "href": "/blog/105",
-      "title": "105. AI 时代，重建个人 OS：832OS",
+      "title": "105. 技术：AI 时代，重建个人 OS：832OS",
       "date": "2026.05.03",
       "year": "2026",
       "tags": [
@@ -686,7 +686,7 @@
     {
       "slug": "104",
       "href": "/blog/104",
-      "title": "104. Codex 配置 Zed 支持 DeepSeek v4 后的一些思考",
+      "title": "104. 技术：Codex 配置 Zed 支持 DeepSeek v4 后的一些思考",
       "date": "2026.05.01",
       "year": "2026",
       "tags": [
@@ -699,7 +699,7 @@
     {
       "slug": "102",
       "href": "/blog/102",
-      "title": "102. 我的 AI Agent Skills 管理工作流：篇二",
+      "title": "102. 技术：我的 AI Agent Skills 管理工作流：篇二",
       "date": "2026.04.30",
       "year": "2026",
       "tags": [
@@ -711,7 +711,7 @@
     {
       "slug": "101",
       "href": "/blog/101",
-      "title": "101. 小宇宙播客语音转文本的实践路：我最后为什么选了半自动",
+      "title": "101. 技术：小宇宙播客语音转文本的实践路 - 我最后为什么选了半自动",
       "date": "2026.04.30",
       "year": "2026",
       "tags": [
@@ -724,7 +724,7 @@
     {
       "slug": "100",
       "href": "/blog/100",
-      "title": "100. 我的个人月报工作流：从 flomo 到 AI 语料",
+      "title": "100. 文章：我的个人月报工作流 - 从 flomo 到 AI 语料",
       "date": "2026.04.30",
       "year": "2026",
       "tags": [
@@ -734,7 +734,7 @@
     {
       "slug": "98",
       "href": "/blog/98",
-      "title": "98. 我的 AI Agent Skills 管理工作流",
+      "title": "98. 技术：我的 AI Agent Skills 管理工作流",
       "date": "2026.04.30",
       "year": "2026",
       "tags": [
@@ -745,7 +745,7 @@
     {
       "slug": "96",
       "href": "/blog/96",
-      "title": "96. OpenClaw 命令行拍照功能配置指南",
+      "title": "96. 技术：OpenClaw 命令行拍照功能配置指南",
       "date": "2026.03.16",
       "year": "2026",
       "tags": [
@@ -755,7 +755,7 @@
     {
       "slug": "95",
       "href": "/blog/95",
-      "title": "95. OpenClaw 配置经验总结",
+      "title": "95. 技术：OpenClaw 配置经验总结",
       "date": "2026.03.15",
       "year": "2026",
       "tags": [
@@ -766,7 +766,7 @@
     {
       "slug": "94",
       "href": "/blog/94",
-      "title": "94. Claude Code 终极指南（上）：从记忆系统到多代理架构",
+      "title": "94. 技术：Claude Code 终极指南（上）：从记忆系统到多代理架构",
       "date": "2026.03.04",
       "year": "2026",
       "tags": [
@@ -816,7 +816,7 @@
     {
       "slug": "84",
       "href": "/blog/84",
-      "title": "84. Anthropic 内部如何通过 AI 变革工作方式",
+      "title": "84. 精读：Anthropic 内部如何通过 AI 变革工作方式",
       "date": "2025.12.09",
       "year": "2025",
       "tags": [
@@ -846,7 +846,7 @@
     {
       "slug": "79",
       "href": "/blog/79",
-      "title": "79. PPT 在线化技术方案调研报告",
+      "title": "79. 方案：PPT 在线化技术方案调研报告",
       "date": "2025.11.24",
       "year": "2025",
       "tags": []
@@ -904,7 +904,7 @@
     {
       "slug": "64",
       "href": "/blog/64",
-      "title": "64. Excel 与 Web 的完美融合：从导入到导出，前端 Excel 处理技术选型浅析",
+      "title": "64. 技术：Excel 与 Web 的完美融合：从导入到导出，前端 Excel 处理技术选型浅析",
       "date": "2025.09.16",
       "year": "2025",
       "tags": []
@@ -982,7 +982,7 @@
     {
       "slug": "50",
       "href": "/blog/50",
-      "title": "50. 模型上下文协议（MCP）",
+      "title": "50. 技术：模型上下文协议（MCP）",
       "date": "2025.03.21",
       "year": "2025",
       "tags": [
@@ -992,7 +992,7 @@
     {
       "slug": "49",
       "href": "/blog/49",
-      "title": "49. Cursor 使用技巧总结",
+      "title": "49. 技术：Cursor 使用技巧总结",
       "date": "2025.03.08",
       "year": "2025",
       "tags": [
@@ -1003,7 +1003,7 @@
     {
       "slug": "34",
       "href": "/blog/34",
-      "title": "34. AI 时代的频率跃迁背景下个人的选择：高频的卷或低频的定",
+      "title": "34. 播客：AI 时代的频率跃迁背景下个人的选择：高频的卷或低频的定",
       "date": "2024.02.25",
       "year": "2024",
       "tags": [
@@ -1034,7 +1034,7 @@
     {
       "slug": "18",
       "href": "/blog/18",
-      "title": "18. rrweb 作者的某期播客节目纪要",
+      "title": "18. 播客：rrweb 作者的某期播客节目纪要",
       "date": "2023.02.25",
       "year": "2023",
       "tags": [
@@ -1044,7 +1044,7 @@
     {
       "slug": "14",
       "href": "/blog/14",
-      "title": "14. 个人常用工具及技巧分享",
+      "title": "14. 技术：个人常用工具及技巧分享",
       "date": "2022.12.25",
       "year": "2022",
       "tags": [
