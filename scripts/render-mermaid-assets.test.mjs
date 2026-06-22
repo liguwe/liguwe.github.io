@@ -6,6 +6,7 @@ import test from "node:test";
 
 import {
   MAX_SVG_BYTES,
+  addSvgIntrinsicDimensions,
   ensureMermaidSvgCache,
   mermaidContentHash,
   normalizeMermaidDefinition,
@@ -23,7 +24,7 @@ function temporaryWorkspace() {
 }
 
 function safeSvg() {
-  return '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10"><path d="M0 0h10v10z"/></svg>';
+  return '<svg width="10" height="10" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10"><path d="M0 0h10v10z"/></svg>';
 }
 
 test("normalizes line endings and creates a stable content hash", () => {
@@ -135,6 +136,22 @@ test("validates safe SVG and rejects unsafe or oversized output", () => {
   assert.throws(() => validateSvg(foreignObjectPath), /foreignObject/);
   assert.throws(() => validateSvg(externalPath), /external href/);
   assert.throws(() => validateSvg(oversizedPath), /exceeds 1 MiB/);
+});
+
+test("adds numeric intrinsic dimensions from viewBox", () => {
+  const source = '<svg width="100%" style="max-width: 268px" viewBox="-50 -10 268.0625 1059.8"><path/></svg>';
+  const output = addSvgIntrinsicDimensions(source, {
+    diagramIndex: 1,
+    sourcePath: "/notes/214.md",
+  });
+
+  assert.match(output, /^<svg width="268\.0625" height="1059\.8"/);
+  assert.doesNotMatch(output, /width="100%"/);
+  assert.match(output, /viewBox="-50 -10 268\.0625 1059\.8"/);
+  assert.throws(
+    () => addSvgIntrinsicDimensions('<svg viewBox="0 0 0 10"/>'),
+    /invalid viewBox dimensions/,
+  );
 });
 
 test("uses a valid cache without resolving Chrome or running npm", async () => {

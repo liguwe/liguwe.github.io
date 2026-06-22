@@ -6,6 +6,7 @@ import { spawnSync } from "node:child_process";
 
 export const MERMAID_CLI_VERSION = "11.15.0";
 export const MAX_SVG_BYTES = 1024 * 1024;
+export const SVG_POSTPROCESS_VERSION = 1;
 
 export const MERMAID_RENDER_CONFIG = Object.freeze({
   backgroundColor: "white",
@@ -42,6 +43,7 @@ export function mermaidContentHash(definition) {
     cliVersion: MERMAID_CLI_VERSION,
     definition: normalizeMermaidDefinition(definition),
     renderConfig: MERMAID_RENDER_CONFIG,
+    svgPostprocessVersion: SVG_POSTPROCESS_VERSION,
   });
   return crypto.createHash("sha256").update(payload).digest("hex");
 }
@@ -199,6 +201,49 @@ export function validateSvg(svgPath, usage = {}) {
       throw new Error(`Unsafe Mermaid SVG: ${location} (${name})`);
     }
   }
+
+  const rootTag = svg.match(/<svg\b[^>]*>/i)?.[0] || "";
+  const width = rootTag.match(/\bwidth\s*=\s*["']([^"']+)["']/i)?.[1];
+  const height = rootTag.match(/\bheight\s*=\s*["']([^"']+)["']/i)?.[1];
+  if (!(Number(width) > 0) || !(Number(height) > 0)) {
+    throw new Error(
+      `Invalid Mermaid SVG: ${location} (missing numeric width/height)`,
+    );
+  }
+}
+
+export function addSvgIntrinsicDimensions(svg, usage = {}) {
+  const location = usage.sourcePath
+    ? `${usage.sourcePath} (diagram ${usage.diagramIndex})`
+    : "Mermaid SVG";
+  const rootTagMatch = svg.match(/<svg\b[^>]*>/i);
+  if (!rootTagMatch) {
+    throw new Error(`Invalid Mermaid SVG: ${location} (missing svg root)`);
+  }
+
+  const rootTag = rootTagMatch[0];
+  const viewBox = rootTag.match(/\bviewBox\s*=\s*["']([^"']+)["']/i)?.[1];
+  const values = viewBox?.trim().split(/[\s,]+/).map(Number) || [];
+  if (
+    values.length !== 4 ||
+    !values.every(Number.isFinite) ||
+    values[2] <= 0 ||
+    values[3] <= 0
+  ) {
+    throw new Error(
+      `Invalid Mermaid SVG: ${location} (invalid viewBox dimensions)`,
+    );
+  }
+
+  const sizedRootTag = rootTag
+    .replace(/\s+width\s*=\s*["'][^"']*["']/i, "")
+    .replace(/\s+height\s*=\s*["'][^"']*["']/i, "")
+    .replace(
+      /^<svg\b/i,
+      `<svg width="${values[2]}" height="${values[3]}"`,
+    );
+
+  return `${svg.slice(0, rootTagMatch.index)}${sizedRootTag}${svg.slice(rootTagMatch.index + rootTag.length)}`;
 }
 
 export function resolveChromePath(env = process.env) {
@@ -382,6 +427,11 @@ export async function ensureMermaidSvgCache(
           `Mermaid renderer did not create an SVG for ${entry.usages[0].sourcePath} (diagram ${entry.usages[0].diagramIndex})`,
         );
       }
+      const svg = fs.readFileSync(renderedPath, "utf8");
+      fs.writeFileSync(
+        renderedPath,
+        addSvgIntrinsicDimensions(svg, entry.usages[0]),
+      );
       validateSvg(renderedPath, entry.usages[0]);
       fs.mkdirSync(path.dirname(entry.cachePath), { recursive: true });
       const temporaryCachePath = `${entry.cachePath}.${process.pid}.tmp`;

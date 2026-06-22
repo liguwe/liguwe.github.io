@@ -1403,6 +1403,23 @@ html.dark .post-doc-aside::-webkit-scrollbar-thumb:hover {
   cursor: zoom-in;
 }
 
+/* Mermaid 以静态 SVG 发布。长流程图显示为完整缩略图，点击后使用 medium-zoom 查看。 */
+.vp-doc p:has(> img[src*="/assets/os/mermaid-"]) {
+  margin: 1.5rem 0;
+  padding: 1rem;
+  border: 1px solid var(--border);
+  background: #fff;
+}
+
+.vp-doc p:has(> img[src*="/assets/os/mermaid-"])>img {
+  display: block;
+  width: auto;
+  max-width: 100%;
+  max-height: min(72vh, 720px);
+  margin: 0 auto;
+  background: #fff;
+}
+
 .vp-doc a img,
 .vp-doc img.no-zoom {
   cursor: inherit;
