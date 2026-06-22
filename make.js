@@ -24,6 +24,7 @@ const docsRoot = path.resolve(repoRoot, "docs");
 const blogRoot = path.resolve(docsRoot, "blog");
 const publicRoot = path.resolve(docsRoot, "public");
 const publicOsAssetsRoot = path.resolve(publicRoot, "assets/os");
+const mermaidCacheRoot = path.resolve(publicRoot, "assets/.cache/mermaid");
 const themeRoot = path.resolve(docsRoot, ".vitepress/theme");
 
 const excludeReg = /@832|@ing|@todo|@/;
@@ -538,8 +539,26 @@ function releaseMakeLock() {
 /**
  * 转换文件内容（简化版：处理元信息、callout、高亮、Vue 模板、tags）
  */
-async function transformContent(file, validBlogSlugs, assetRefs) {
+async function transformContent(
+  file,
+  validBlogSlugs,
+  assetRefs,
+  diagramRegistry,
+) {
   let content = fs.readFileSync(file.sourcePath, "utf8");
+
+  // Mermaid 必须最先提取，避免 [[节点]]、#颜色、{{ }} 等图表语法被正文转换破坏。
+  const { replaceMermaidBlocks } = await import(
+    "./scripts/render-mermaid-assets.mjs"
+  );
+  content = replaceMermaidBlocks(content, {
+    articleTitle: file.title,
+    assetRefs,
+    cacheRoot: mermaidCacheRoot,
+    diagramRegistry,
+    publicAssetsRoot: publicOsAssetsRoot,
+    sourcePath: file.sourcePath,
+  });
 
   content = convertObsidianAssetEmbeds(content, assetRefs);
   content = convertMarkdownAssetLinks(content, assetRefs);
@@ -615,13 +634,11 @@ async function main() {
     throw new Error(`Public blog source does not exist: ${publicBlogSourceRoot}`);
   }
 
-  // 清理旧的 blog 文件
-  fs.rmSync(blogRoot, { recursive: true, force: true });
-  ensureDir(blogRoot);
-
   const posts = [];
   const articleFiles = [];
   const assetRefs = new Map();
+  const diagramRegistry = new Map();
+  const transformedArticles = [];
 
   // 读取 os/notes 下的年份文件夹
   const entries = fs.readdirSync(publicBlogSourceRoot, { withFileTypes: true });
@@ -658,14 +675,14 @@ async function main() {
   for (const fileInfo of articleFiles) {
     const { slug, title, date, year, tags } = fileInfo;
 
-    // 转换并写入文件
+    // 先在内存中完成全部转换和 Mermaid 注册，验证成功后再覆盖旧发布结果。
     const outputContent = await transformContent(
       fileInfo,
       validBlogSlugs,
       assetRefs,
+      diagramRegistry,
     );
-    const outputPath = path.resolve(blogRoot, `${slug}.md`);
-    fs.writeFileSync(outputPath, outputContent);
+    transformedArticles.push({ outputContent, slug });
 
     posts.push({
       slug,
@@ -676,6 +693,11 @@ async function main() {
       tags,
     });
   }
+
+  const { ensureMermaidSvgCache } = await import(
+    "./scripts/render-mermaid-assets.mjs"
+  );
+  const mermaidStats = await ensureMermaidSvgCache(diagramRegistry);
 
   // 按文件序号降序排序：43.md、42.md、41.md ...
   posts.sort((a, b) => Number(b.slug) - Number(a.slug));
@@ -693,6 +715,15 @@ async function main() {
     }
   }
   const tags = Array.from(tagMap.values());
+
+  // Mermaid 和全部正文都验证成功后，才替换上一次有效的生成结果。
+  fs.rmSync(blogRoot, { recursive: true, force: true });
+  ensureDir(blogRoot);
+
+  for (const { outputContent, slug } of transformedArticles) {
+    const outputPath = path.resolve(blogRoot, `${slug}.md`);
+    fs.writeFileSync(outputPath, outputContent);
+  }
 
   for (const tag of tags) {
     const outputPath = path.resolve(blogRoot, `${tag.id}.md`);
@@ -720,6 +751,9 @@ async function main() {
   console.log(`   Tag pages → ${tags.length}`);
   console.log(`   Blog files → ${blogRoot}`);
   console.log(`   Assets → ${assetRefs.size}`);
+  console.log(
+    `   Mermaid SVG → ${mermaidStats.total} total, ${mermaidStats.rendered} rendered, ${mermaidStats.cacheHits} cached`,
+  );
   console.log(`   Posts JSON → ${path.resolve(themeRoot, "posts.json")}`);
   } finally {
     releaseMakeLock();
