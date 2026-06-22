@@ -43,7 +43,7 @@ MERMAID_CHROME_PATH="/path/to/chrome" npm run make
 
 渲染器通过 `npm exec` 按需安装在本机 npm 缓存中，不属于站点 `package.json` 依赖，也不会进入 GitHub Actions 的站点构建链。
 
-站点会把 Mermaid 长图按比例限制在最高 `min(72vh, 720px)` 的白色预览区域内，不提供图内滚动；点击图片后使用正文现有的放大能力查看细节。
+站点按 SVG 的固有宽高直接显示 Mermaid 长图，不添加额外白色容器或图内滚动；点击图片后仍可使用正文现有的放大能力查看细节。
 
 本仓库是公开发布边界，`docs/public/assets/` 里的文件默认视为公开静态资源；资源隐私不再依赖图床或 COS 配置，而依赖进入本仓库前的发布筛选和仓库本身的公开状态。
 
