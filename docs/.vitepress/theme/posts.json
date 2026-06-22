@@ -1,6 +1,17 @@
 {
-  "generatedAt": "2026-06-21T06:04:30.475Z",
+  "generatedAt": "2026-06-22T15:26:06.708Z",
   "posts": [
+    {
+      "slug": "214",
+      "href": "/blog/214",
+      "title": "214. 技术：HarnessX 第 0 课：先让 hx 命令跑起来、Agent 的第一性原理其实就一个 HTTP 接口",
+      "date": "2026.06.22",
+      "year": "2026",
+      "tags": [
+        "技术",
+        "harnessx"
+      ]
+    },
     {
       "slug": "211",
       "href": "/blog/211",
@@ -1084,6 +1095,16 @@
     }
   ],
   "tags": [
+    {
+      "id": "技术",
+      "label": "技术",
+      "href": "/blog/技术"
+    },
+    {
+      "id": "harnessx",
+      "label": "harnessx",
+      "href": "/blog/harnessx"
+    },
     {
       "id": "播客",
       "label": "播客",
