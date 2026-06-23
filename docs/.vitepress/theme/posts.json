@@ -1,6 +1,17 @@
 {
-  "generatedAt": "2026-06-23T03:13:22.051Z",
+  "generatedAt": "2026-06-23T03:22:36.905Z",
   "posts": [
+    {
+      "slug": "218",
+      "href": "/blog/218",
+      "title": "218. 技术：HarnessX 第 1 课：Agent 循环，本质就是一个会反复调用模型、执行工具、回传结果的 while 循环",
+      "date": "2026.06.23",
+      "year": "2026",
+      "tags": [
+        "技术",
+        "harnessx"
+      ]
+    },
     {
       "slug": "214",
       "href": "/blog/214",
