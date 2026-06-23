@@ -1,6 +1,17 @@
 {
-  "generatedAt": "2026-06-23T03:22:36.905Z",
+  "generatedAt": "2026-06-23T10:49:36.460Z",
   "posts": [
+    {
+      "slug": "219",
+      "href": "/blog/219",
+      "title": "219. 技术：HarnessX 第 2 课：把工具调用从一个 bash 扩展成工具分发表，让 Agent 能读写和查找文件",
+      "date": "2026.06.23",
+      "year": "2026",
+      "tags": [
+        "技术",
+        "harnessx"
+      ]
+    },
     {
       "slug": "218",
       "href": "/blog/218",
