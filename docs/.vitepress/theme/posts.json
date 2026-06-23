@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-06-22T22:51:11.047Z",
+  "generatedAt": "2026-06-23T02:36:20.379Z",
   "posts": [
     {
       "slug": "214",
       "href": "/blog/214",
-      "title": "214. 技术：HarnessX 第 0 课：先让 hx 命令跑起来、Agent 的第一性原理其实就一个 HTTP 接口",
+      "title": "214. 技术：HarnessX 第 0 课：先让 hx 命令跑起来、Agent 的第一性原理",
       "date": "2026.06.22",
       "year": "2026",
       "tags": [
