@@ -1,6 +1,17 @@
 {
-  "generatedAt": "2026-06-24T06:42:12.588Z",
+  "generatedAt": "2026-06-24T09:09:21.440Z",
   "posts": [
+    {
+      "slug": "222",
+      "href": "/blog/222",
+      "title": "222. 技术：HarnessX 第 4 课：把权限、日志和收尾统计挂到 Hooks 上，让 Agent Loop 保持干净",
+      "date": "2026.06.24",
+      "year": "2026",
+      "tags": [
+        "技术",
+        "harnessx"
+      ]
+    },
     {
       "slug": "221",
       "href": "/blog/221",
