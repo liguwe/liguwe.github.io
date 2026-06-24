@@ -1,6 +1,17 @@
 {
-  "generatedAt": "2026-06-24T01:35:28.024Z",
+  "generatedAt": "2026-06-24T06:42:12.588Z",
   "posts": [
+    {
+      "slug": "221",
+      "href": "/blog/221",
+      "title": "221. 技术：HarnessX 第 3 课：在工具真正执行前加权限门，让 Agent 先判断 allow、ask、deny",
+      "date": "2026.06.24",
+      "year": "2026",
+      "tags": [
+        "技术",
+        "harnessx"
+      ]
+    },
     {
       "slug": "219",
       "href": "/blog/219",
