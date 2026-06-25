@@ -1,6 +1,17 @@
 {
-  "generatedAt": "2026-06-25T08:31:48.871Z",
+  "generatedAt": "2026-06-25T09:27:56.620Z",
   "posts": [
+    {
+      "slug": "228",
+      "href": "/blog/228",
+      "title": "228. 技术：HarnessX 第 7 课：用 load_skill 按需加载项目规则，让 Agent 不把所有 Skill 都塞进 system prompt",
+      "date": "2026.06.25",
+      "year": "2026",
+      "tags": [
+        "技术",
+        "harnessx"
+      ]
+    },
     {
       "slug": "227",
       "href": "/blog/227",
