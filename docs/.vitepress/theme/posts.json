@@ -1,6 +1,17 @@
 {
-  "generatedAt": "2026-06-25T02:16:07.527Z",
+  "generatedAt": "2026-06-25T08:12:50.168Z",
   "posts": [
+    {
+      "slug": "226",
+      "href": "/blog/226",
+      "title": "226. 技术：HarnessX 第 5 课：给 Agent 加 todo_write，让长任务先有计划、执行中能更新状态",
+      "date": "2026.06.25",
+      "year": "2026",
+      "tags": [
+        "技术",
+        "harnessx"
+      ]
+    },
     {
       "slug": "225",
       "href": "/blog/225",
@@ -1150,11 +1161,6 @@
   ],
   "tags": [
     {
-      "id": "播客",
-      "label": "播客",
-      "href": "/blog/播客"
-    },
-    {
       "id": "技术",
       "label": "技术",
       "href": "/blog/技术"
@@ -1163,6 +1169,11 @@
       "id": "harnessx",
       "label": "harnessx",
       "href": "/blog/harnessx"
+    },
+    {
+      "id": "播客",
+      "label": "播客",
+      "href": "/blog/播客"
     },
     {
       "id": "复盘",
