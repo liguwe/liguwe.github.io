@@ -1,6 +1,17 @@
 {
-  "generatedAt": "2026-06-25T10:01:06.419Z",
+  "generatedAt": "2026-06-25T10:43:03.668Z",
   "posts": [
+    {
+      "slug": "229",
+      "href": "/blog/229",
+      "title": "229. 技术：HarnessX 第 8 课：给 Agent 加上下文压缩，让工具输出别把 messages 撑爆",
+      "date": "2026.06.25",
+      "year": "2026",
+      "tags": [
+        "技术",
+        "harnessx"
+      ]
+    },
     {
       "slug": "228",
       "href": "/blog/228",
