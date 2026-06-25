@@ -1,6 +1,17 @@
 {
-  "generatedAt": "2026-06-25T08:12:50.168Z",
+  "generatedAt": "2026-06-25T08:31:48.871Z",
   "posts": [
+    {
+      "slug": "227",
+      "href": "/blog/227",
+      "title": "227. 技术：HarnessX 第 6 课：给 Agent 加 task 子代理，让局部探索不污染主上下文",
+      "date": "2026.06.25",
+      "year": "2026",
+      "tags": [
+        "技术",
+        "harnessx"
+      ]
+    },
     {
       "slug": "226",
       "href": "/blog/226",
