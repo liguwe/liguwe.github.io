@@ -1,6 +1,16 @@
 {
-  "generatedAt": "2026-06-25T10:43:03.668Z",
+  "generatedAt": "2026-06-26T02:12:02.626Z",
   "posts": [
+    {
+      "slug": "231",
+      "href": "/blog/231",
+      "title": "231. 播客：你是不是在狡辩？最关键的是往前走、把手弄脏、规模效应和共生演化",
+      "date": "2026.06.26",
+      "year": "2026",
+      "tags": [
+        "播客"
+      ]
+    },
     {
       "slug": "229",
       "href": "/blog/229",
@@ -1194,6 +1204,11 @@
   ],
   "tags": [
     {
+      "id": "播客",
+      "label": "播客",
+      "href": "/blog/播客"
+    },
+    {
       "id": "技术",
       "label": "技术",
       "href": "/blog/技术"
@@ -1202,11 +1217,6 @@
       "id": "harnessx",
       "label": "harnessx",
       "href": "/blog/harnessx"
-    },
-    {
-      "id": "播客",
-      "label": "播客",
-      "href": "/blog/播客"
     },
     {
       "id": "复盘",
