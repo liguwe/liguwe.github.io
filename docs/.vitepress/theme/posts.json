@@ -1,6 +1,17 @@
 {
-  "generatedAt": "2026-06-26T06:07:40.085Z",
+  "generatedAt": "2026-06-26T23:47:56.065Z",
   "posts": [
+    {
+      "slug": "235",
+      "href": "/blog/235",
+      "title": "235. 技术：HarnessX 第 9 课：给 Agent 加长期记忆，让稳定偏好跨会话留下来",
+      "date": "2026.06.27",
+      "year": "2026",
+      "tags": [
+        "技术",
+        "harnessx"
+      ]
+    },
     {
       "slug": "231",
       "href": "/blog/231",
@@ -1214,11 +1225,6 @@
   ],
   "tags": [
     {
-      "id": "播客",
-      "label": "播客",
-      "href": "/blog/播客"
-    },
-    {
       "id": "技术",
       "label": "技术",
       "href": "/blog/技术"
@@ -1227,6 +1233,11 @@
       "id": "harnessx",
       "label": "harnessx",
       "href": "/blog/harnessx"
+    },
+    {
+      "id": "播客",
+      "label": "播客",
+      "href": "/blog/播客"
     },
     {
       "id": "复盘",
