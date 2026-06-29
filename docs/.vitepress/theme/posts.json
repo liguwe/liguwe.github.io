@@ -1,6 +1,17 @@
 {
-  "generatedAt": "2026-06-29T01:49:06.172Z",
+  "generatedAt": "2026-06-29T09:04:22.264Z",
   "posts": [
+    {
+      "slug": "238",
+      "href": "/blog/238",
+      "title": "238. 技术：HarnessX 第 10 课：让 System Prompt 根据真实状态组装，context 不变就复用缓存",
+      "date": "2026.06.27",
+      "year": "2026",
+      "tags": [
+        "技术",
+        "harnessx"
+      ]
+    },
     {
       "slug": "235",
       "href": "/blog/235",
