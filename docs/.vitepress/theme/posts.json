@@ -1,6 +1,17 @@
 {
-  "generatedAt": "2026-06-29T11:00:49.636Z",
+  "generatedAt": "2026-06-30T01:15:54.782Z",
   "posts": [
+    {
+      "slug": "243",
+      "href": "/blog/243",
+      "title": "243. 技术：HarnessX 第 11 课：让 Agent 识别三类模型故障，用重试、压缩和续写恢复执行",
+      "date": "2026.06.29",
+      "year": "2026",
+      "tags": [
+        "技术",
+        "harnessx"
+      ]
+    },
     {
       "slug": "242",
       "href": "/blog/242",
@@ -1252,14 +1263,14 @@
       "href": "/blog/技术"
     },
     {
-      "id": "博客",
-      "label": "博客",
-      "href": "/blog/博客"
-    },
-    {
       "id": "harnessx",
       "label": "harnessx",
       "href": "/blog/harnessx"
+    },
+    {
+      "id": "博客",
+      "label": "博客",
+      "href": "/blog/博客"
     },
     {
       "id": "播客",
