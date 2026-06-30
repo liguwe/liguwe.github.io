@@ -1,6 +1,28 @@
 {
-  "generatedAt": "2026-06-30T09:05:42.552Z",
+  "generatedAt": "2026-06-30T10:32:37.202Z",
   "posts": [
+    {
+      "slug": "247",
+      "href": "/blog/247",
+      "title": "247. 技术：HarnessX 第 14 课：让定时任务到点自动进入 Agent Loop，用调度器、队列和空闲交付拆开时间与执行",
+      "date": "2026.06.30",
+      "year": "2026",
+      "tags": [
+        "技术",
+        "harnessx"
+      ]
+    },
+    {
+      "slug": "246",
+      "href": "/blog/246",
+      "title": "246. 技术：HarnessX 第 13 课：让慢 bash 先进后台，完成后用通知回到 Agent Loop",
+      "date": "2026.06.30",
+      "year": "2026",
+      "tags": [
+        "技术",
+        "harnessx"
+      ]
+    },
     {
       "slug": "245",
       "href": "/blog/245",
