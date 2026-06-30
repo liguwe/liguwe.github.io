@@ -1,6 +1,17 @@
 {
-  "generatedAt": "2026-06-30T10:34:46.743Z",
+  "generatedAt": "2026-06-30T12:38:54.999Z",
   "posts": [
+    {
+      "slug": "248",
+      "href": "/blog/248",
+      "title": "248. 技术：HarnessX 第 15 课：让 Lead 拉起队友线程，用文件邮箱把一个 Agent 的压力拆成团队协作",
+      "date": "2026.06.30",
+      "year": "2026",
+      "tags": [
+        "技术",
+        "harnessx"
+      ]
+    },
     {
       "slug": "247",
       "href": "/blog/247",
