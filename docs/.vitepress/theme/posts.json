@@ -1,6 +1,18 @@
 {
-  "generatedAt": "2026-07-03T05:32:37.368Z",
+  "generatedAt": "2026-07-10T03:05:10.399Z",
   "posts": [
+    {
+      "slug": "270",
+      "href": "/blog/270",
+      "title": "270. 博客：个人技能要从真实使用中长出来",
+      "date": "2026.07.10",
+      "year": "2026",
+      "tags": [
+        "博客",
+        "skills",
+        "agent"
+      ]
+    },
     {
       "slug": "254",
       "href": "/blog/254",
@@ -1322,6 +1334,21 @@
   ],
   "tags": [
     {
+      "id": "博客",
+      "label": "博客",
+      "href": "/blog/博客"
+    },
+    {
+      "id": "skills",
+      "label": "skills",
+      "href": "/blog/skills"
+    },
+    {
+      "id": "agent",
+      "label": "agent",
+      "href": "/blog/agent"
+    },
+    {
       "id": "播客",
       "label": "播客",
       "href": "/blog/播客"
@@ -1337,11 +1364,6 @@
       "href": "/blog/harnessx"
     },
     {
-      "id": "博客",
-      "label": "博客",
-      "href": "/blog/博客"
-    },
-    {
       "id": "复盘",
       "label": "复盘",
       "href": "/blog/复盘"
@@ -1350,11 +1372,6 @@
       "id": "ai",
       "label": "ai",
       "href": "/blog/ai"
-    },
-    {
-      "id": "agent",
-      "label": "agent",
-      "href": "/blog/agent"
     },
     {
       "id": "组织",
@@ -1490,11 +1507,6 @@
       "id": "白话",
       "label": "白话",
       "href": "/blog/白话"
-    },
-    {
-      "id": "skills",
-      "label": "skills",
-      "href": "/blog/skills"
     },
     {
       "id": "claude",
