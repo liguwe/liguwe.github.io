@@ -1,6 +1,19 @@
 {
-  "generatedAt": "2026-07-10T09:29:18.859Z",
+  "generatedAt": "2026-07-10T13:08:42.963Z",
   "posts": [
+    {
+      "slug": "274",
+      "href": "/blog/274",
+      "title": "274. 复盘：从 0.1 长出来，不要让 AI 先生成 10000",
+      "date": "2026.07.10",
+      "year": "2026",
+      "tags": [
+        "复盘",
+        "ai协作",
+        "832os",
+        "学习"
+      ]
+    },
     {
       "slug": "270",
       "href": "/blog/270",
@@ -1334,6 +1347,26 @@
   ],
   "tags": [
     {
+      "id": "复盘",
+      "label": "复盘",
+      "href": "/blog/复盘"
+    },
+    {
+      "id": "ai协作",
+      "label": "ai协作",
+      "href": "/blog/ai协作"
+    },
+    {
+      "id": "832os",
+      "label": "832os",
+      "href": "/blog/832os"
+    },
+    {
+      "id": "学习",
+      "label": "学习",
+      "href": "/blog/学习"
+    },
+    {
       "id": "博客",
       "label": "博客",
       "href": "/blog/博客"
@@ -1362,11 +1395,6 @@
       "id": "harnessx",
       "label": "harnessx",
       "href": "/blog/harnessx"
-    },
-    {
-      "id": "复盘",
-      "label": "复盘",
-      "href": "/blog/复盘"
     },
     {
       "id": "ai",
@@ -1472,11 +1500,6 @@
       "id": "mcp",
       "label": "mcp",
       "href": "/blog/mcp"
-    },
-    {
-      "id": "832os",
-      "label": "832os",
-      "href": "/blog/832os"
     },
     {
       "id": "workspace",
