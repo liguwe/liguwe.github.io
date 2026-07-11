@@ -1,6 +1,17 @@
 {
-  "generatedAt": "2026-07-11T00:15:13.068Z",
+  "generatedAt": "2026-07-11T02:59:42.642Z",
   "posts": [
+    {
+      "slug": "275",
+      "href": "/blog/275",
+      "title": "275. 复盘：当前最严重的 5 个问题",
+      "date": "2026.07.11",
+      "year": "2026",
+      "tags": [
+        "复盘",
+        "832os"
+      ]
+    },
     {
       "slug": "274",
       "href": "/blog/274",
@@ -1352,14 +1363,14 @@
       "href": "/blog/复盘"
     },
     {
-      "id": "ai协作",
-      "label": "ai协作",
-      "href": "/blog/ai协作"
-    },
-    {
       "id": "832os",
       "label": "832os",
       "href": "/blog/832os"
+    },
+    {
+      "id": "ai协作",
+      "label": "ai协作",
+      "href": "/blog/ai协作"
     },
     {
       "id": "学习",
