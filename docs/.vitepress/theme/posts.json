@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-23T09:34:45.215Z",
+  "generatedAt": "2026-07-23T10:55:16.914Z",
   "posts": [
     {
       "slug": "313",
@@ -24,7 +24,8 @@
       "tags": [
         "教程",
         "智能体",
-        "agent"
+        "agent工程",
+        "面试"
       ]
     },
     {
@@ -1454,9 +1455,9 @@
       "href": "/blog/前端"
     },
     {
-      "id": "agent",
-      "label": "agent",
-      "href": "/blog/agent"
+      "id": "面试",
+      "label": "面试",
+      "href": "/blog/面试"
     },
     {
       "id": "llm",
@@ -1507,6 +1508,11 @@
       "id": "skills",
       "label": "skills",
       "href": "/blog/skills"
+    },
+    {
+      "id": "agent",
+      "label": "agent",
+      "href": "/blog/agent"
     },
     {
       "id": "技术",
