@@ -1,6 +1,20 @@
 {
-  "generatedAt": "2026-07-23T09:08:47.467Z",
+  "generatedAt": "2026-07-23T09:34:45.215Z",
   "posts": [
+    {
+      "slug": "313",
+      "href": "/blog/313",
+      "title": "313. Agent：什么是智能体（篇二：案例篇）",
+      "date": "2026.07.23",
+      "year": "2026",
+      "tags": [
+        "教程",
+        "智能体",
+        "agent工程",
+        "chatgpt",
+        "前端"
+      ]
+    },
     {
       "slug": "312",
       "href": "/blog/312",
@@ -1425,14 +1439,24 @@
       "href": "/blog/智能体"
     },
     {
-      "id": "agent",
-      "label": "agent",
-      "href": "/blog/agent"
-    },
-    {
       "id": "agent工程",
       "label": "agent工程",
       "href": "/blog/agent工程"
+    },
+    {
+      "id": "chatgpt",
+      "label": "chatgpt",
+      "href": "/blog/chatgpt"
+    },
+    {
+      "id": "前端",
+      "label": "前端",
+      "href": "/blog/前端"
+    },
+    {
+      "id": "agent",
+      "label": "agent",
+      "href": "/blog/agent"
     },
     {
       "id": "llm",
