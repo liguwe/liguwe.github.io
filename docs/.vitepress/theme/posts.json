@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-22T14:04:07.063Z",
+  "generatedAt": "2026-07-23T02:07:23.112Z",
   "posts": [
     {
       "slug": "312",
@@ -9,7 +9,8 @@
       "year": "2026",
       "tags": [
         "教程",
-        "智能体"
+        "智能体",
+        "agent"
       ]
     },
     {
@@ -20,7 +21,8 @@
       "year": "2026",
       "tags": [
         "教程",
-        "智能体"
+        "智能体",
+        "agent"
       ]
     },
     {
@@ -1422,6 +1424,11 @@
       "href": "/blog/智能体"
     },
     {
+      "id": "agent",
+      "label": "agent",
+      "href": "/blog/agent"
+    },
+    {
       "id": "精读",
       "label": "精读",
       "href": "/blog/精读"
@@ -1465,11 +1472,6 @@
       "id": "skills",
       "label": "skills",
       "href": "/blog/skills"
-    },
-    {
-      "id": "agent",
-      "label": "agent",
-      "href": "/blog/agent"
     },
     {
       "id": "技术",
