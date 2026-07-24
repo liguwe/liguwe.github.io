@@ -67,30 +67,26 @@ const visiblePosts = computed(() => {
     return posts.filter((post) => post.year === activeYear.value);
 });
 
-const blogHeroTitle = computed(() => "AI-Native Notes");
+const blogHeroTitle = computed(() => "从 FED 转向 FDE");
 const blogHeroSubtitle = computed(
-    () => "面向 AI-Native，与 Agent 解决真实问题，全栈构建产品，以 832OS 持续交付。",
+    () => "从前端开发走向前沿部署工程师：AgentX 解决“做什么”，HarnessX 解决“怎么跑”，FDE 对“客户是否成功”负责。",
 );
 const blogHeroGoals = [
     {
-        label: "AI-Native",
-        src: "https://img.shields.io/badge/-AI--Native-7C3AED?style=flat-square",
+        label: "FDE",
+        src: "https://img.shields.io/badge/-FDE-059669?style=flat-square",
     },
     {
-        label: "Agent Engineer",
-        src: "https://img.shields.io/badge/-Agent%20Engineer-0EA5E9?style=flat-square",
+        label: "AgentX",
+        src: "https://img.shields.io/badge/-AgentX-0EA5E9?style=flat-square",
     },
     {
-        label: "Full-Stack Builder",
-        src: "https://img.shields.io/badge/-Full--Stack%20Builder-2563EB?style=flat-square",
+        label: "HarnessX",
+        src: "https://img.shields.io/badge/-HarnessX-7C3AED?style=flat-square",
     },
     {
-        label: "AI Product Builder",
-        src: "https://img.shields.io/badge/-AI%20Product%20Builder-059669?style=flat-square",
-    },
-    {
-        label: "Personal OS",
-        src: "https://img.shields.io/badge/-Personal%20OS-F59E0B?style=flat-square",
+        label: "832OS",
+        src: "https://img.shields.io/badge/-832OS-F59E0B?style=flat-square",
     },
 ];
 
@@ -620,7 +616,7 @@ watch(
                                     </h1>
                                     <p
                                         v-if="blogHeroSubtitle"
-                                        class="max-w-full whitespace-nowrap text-center text-xs tracking-tight text-offgray-600 sm:text-sm md:text-base dark:text-offgray-500"
+                                        class="max-w-3xl text-balance text-center text-xs tracking-tight text-offgray-600 sm:text-sm md:text-base dark:text-offgray-500"
                                     >
                                         {{ blogHeroSubtitle }}
                                     </p>
