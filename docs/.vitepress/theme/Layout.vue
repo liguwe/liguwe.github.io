@@ -67,9 +67,9 @@ const visiblePosts = computed(() => {
     return posts.filter((post) => post.year === activeYear.value);
 });
 
-const blogHeroTitle = computed(() => "从 FED 转向 FDE");
+const blogHeroTitle = computed(() => "FED → FDE");
 const blogHeroSubtitle = computed(
-    () => "从前端开发走向前沿部署工程师：AgentX 解决“做什么”，HarnessX 解决“怎么跑”，FDE 对“客户是否成功”负责。",
+    () => "FDE 对客户成功负责；AgentX 是应用层，HarnessX 是运行层。",
 );
 const blogHeroGoals = [
     {
