@@ -69,7 +69,7 @@ const visiblePosts = computed(() => {
 
 const blogHeroTitle = computed(() => "FED → FDE");
 const blogHeroSubtitle = computed(
-    () => "FDE 对客户成功负责；AgentX 是应用层，HarnessX 是运行层。",
+    () => "只和电脑打交道的职业路径已经走不通了。走进客户现场，从真实需求出发，对客户成功负责。",
 );
 const blogHeroGoals = [
     {
