@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-25T13:31:08.343Z",
+  "generatedAt": "2026-07-25T13:49:37.341Z",
   "posts": [
     {
       "slug": "313",
@@ -11,8 +11,7 @@
         "教程",
         "智能体",
         "agent工程",
-        "chatgpt",
-        "前端"
+        "chatgpt"
       ]
     },
     {
@@ -1447,11 +1446,6 @@
       "id": "chatgpt",
       "label": "chatgpt",
       "href": "/blog/chatgpt"
-    },
-    {
-      "id": "前端",
-      "label": "前端",
-      "href": "/blog/前端"
     },
     {
       "id": "llm",
