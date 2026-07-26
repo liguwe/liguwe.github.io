@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-25T13:49:37.341Z",
+  "generatedAt": "2026-07-26T03:03:37.272Z",
   "posts": [
     {
       "slug": "313",
@@ -22,8 +22,7 @@
       "year": "2026",
       "tags": [
         "教程",
-        "智能体",
-        "agent工程"
+        "agentx"
       ]
     },
     {
@@ -1446,6 +1445,11 @@
       "id": "chatgpt",
       "label": "chatgpt",
       "href": "/blog/chatgpt"
+    },
+    {
+      "id": "agentx",
+      "label": "agentx",
+      "href": "/blog/agentx"
     },
     {
       "id": "llm",
