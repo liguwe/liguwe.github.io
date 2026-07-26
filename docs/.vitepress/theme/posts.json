@@ -1,6 +1,16 @@
 {
-  "generatedAt": "2026-07-26T03:03:37.272Z",
+  "generatedAt": "2026-07-26T12:10:37.205Z",
   "posts": [
+    {
+      "slug": "326",
+      "href": "/blog/326",
+      "title": "326. AgentX：《大模型应用开发极简入门》：前言",
+      "date": "2026.07.26",
+      "year": "2026",
+      "tags": [
+        "agentx"
+      ]
+    },
     {
       "slug": "313",
       "href": "/blog/313",
@@ -1427,6 +1437,11 @@
   ],
   "tags": [
     {
+      "id": "agentx",
+      "label": "agentx",
+      "href": "/blog/agentx"
+    },
+    {
       "id": "教程",
       "label": "教程",
       "href": "/blog/教程"
@@ -1445,11 +1460,6 @@
       "id": "chatgpt",
       "label": "chatgpt",
       "href": "/blog/chatgpt"
-    },
-    {
-      "id": "agentx",
-      "label": "agentx",
-      "href": "/blog/agentx"
     },
     {
       "id": "llm",
