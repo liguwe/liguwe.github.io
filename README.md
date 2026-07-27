@@ -33,6 +33,14 @@ npm run make
 
 默认源目录是仓库上一级的 `../os`，也可以通过环境变量 `OBSIDIAN_ROOT` 指定。
 
+源笔记可以继续保留真实的内部引用。生成公开文章时，`make.js` 会统一处理 Obsidian WikiLink 和本地 Markdown 链接：
+
+- 指向已经公开的 `os/notes` 文章时，生成站内链接。
+- 指向私有或未发布的 `os` 内容，或者指向 `os` 仓库外的本地内容时，生成纯文本 `【内部：原标题】`，不保留链接地址。
+- `http`、`https` 等公开网页链接保持不变。
+
+这项转换只发生在 `liguwe.github.io` 的生成结果中，不改写 `os` 源笔记。
+
 `make.js` 会把已发布文章里实际引用的 `os/assets/` 本地资源发布到 `docs/public/assets/os/`，并把 Obsidian 资源嵌入改写成站点可访问路径。PNG/JPEG 图片会在发布副本层转换为 WebP，源图仍保留在 `os/assets/`；公开资源输出是扁平路径 `/assets/os/<文件名>`，不保留 `os` 内部的 `cos/YYYY/MM` 或 `files/` 目录层级。未发布稿和未引用资源不会进入公开站点仓库。
 
 `os/notes` 可以继续使用 Mermaid 代码块。发布时，`make.js` 会通过固定版本的 `@mermaid-js/mermaid-cli` 把代码块转换为带内容哈希的 SVG，并在生成 Markdown 中替换为 `/assets/os/mermaid-<hash>.svg` 图片引用。站点和语雀只消费静态 SVG，不加载 Mermaid 浏览器运行库，也不会公开 Mermaid 源码。

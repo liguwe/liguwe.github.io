@@ -1,6 +1,19 @@
 {
-  "generatedAt": "2026-07-26T14:34:44.192Z",
+  "generatedAt": "2026-07-27T07:49:04.731Z",
   "posts": [
+    {
+      "slug": "328",
+      "href": "/blog/328",
+      "title": "328. AgentX：《大模型应用开发极简入门》：GPT 只有 Decoder，为什么翻译也挺好？",
+      "date": "2026.07.27",
+      "year": "2026",
+      "tags": [
+        "fde",
+        "agentx",
+        "大模型基础",
+        "翻译"
+      ]
+    },
     {
       "slug": "327",
       "href": "/blog/327",
@@ -1447,9 +1460,24 @@
   ],
   "tags": [
     {
+      "id": "fde",
+      "label": "fde",
+      "href": "/blog/fde"
+    },
+    {
       "id": "agentx",
       "label": "agentx",
       "href": "/blog/agentx"
+    },
+    {
+      "id": "大模型基础",
+      "label": "大模型基础",
+      "href": "/blog/大模型基础"
+    },
+    {
+      "id": "翻译",
+      "label": "翻译",
+      "href": "/blog/翻译"
     },
     {
       "id": "教程",
@@ -1550,11 +1578,6 @@
       "id": "ai变革",
       "label": "ai变革",
       "href": "/blog/ai变革"
-    },
-    {
-      "id": "fde",
-      "label": "fde",
-      "href": "/blog/fde"
     },
     {
       "id": "商业",
@@ -1715,11 +1738,6 @@
       "id": "claude-code",
       "label": "claude-code",
       "href": "/blog/claude-code"
-    },
-    {
-      "id": "翻译",
-      "label": "翻译",
-      "href": "/blog/翻译"
     },
     {
       "id": "ai工具",

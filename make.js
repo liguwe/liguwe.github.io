@@ -280,7 +280,7 @@ function convertObsidianCallouts(content) {
 
 function getWikiLinkText(rawTarget, alias) {
   const text =
-    alias ||
+    alias?.trim() ||
     rawTarget
       .split("#")[0]
       .split("/")
@@ -291,8 +291,11 @@ function getWikiLinkText(rawTarget, alias) {
 }
 
 function getWikiBlogHref(rawTarget, validBlogSlugs) {
-  const targetPath = rawTarget.split("#")[0];
-  const pathParts = targetPath.split("/");
+  const targetPath = rawTarget.trim().split("#")[0];
+  const pathParts = targetPath.split("/").filter(Boolean);
+  if (pathParts[0] === "notes") {
+    pathParts.shift();
+  }
   const isYearRootArticle =
     pathParts.length === 1 || yearReg.test(pathParts[0]);
   if (!isYearRootArticle) {
@@ -315,6 +318,156 @@ function getWikiBlogHref(rawTarget, validBlogSlugs) {
 
 function escapeMarkdownLinkText(text) {
   return text.replace(/\\/g, "\\\\").replace(/]/g, "\\]");
+}
+
+function formatInternalReference(text) {
+  return `【内部：${text.trim()}】`;
+}
+
+function convertObsidianWikiLinks(content, validBlogSlugs) {
+  return content.replace(/\[\[([^\]]+)\]\]/g, (match, rawLink) => {
+    const [rawTarget, alias] = rawLink.split("|");
+    const text = getWikiLinkText(rawTarget, alias);
+
+    if (rawTarget.trim().startsWith("#")) {
+      return text;
+    }
+
+    const href = getWikiBlogHref(rawTarget, validBlogSlugs);
+    if (!href) {
+      return formatInternalReference(text);
+    }
+
+    return `[${escapeMarkdownLinkText(text)}](${href})`;
+  });
+}
+
+function getMarkdownLinkDestination(rawTarget) {
+  const target = rawTarget.trim();
+  if (target.startsWith("<")) {
+    const closingIndex = target.indexOf(">");
+    return closingIndex === -1 ? target : target.slice(1, closingIndex);
+  }
+
+  const destinationMatch = target.match(
+    /^(\S+?)(?:\s+(?:"[^"]*"|'[^']*'|\([^)]*\)))?$/,
+  );
+  return destinationMatch ? destinationMatch[1] : target;
+}
+
+function getLocalLinkPath(destination) {
+  const delimiterIndexes = [destination.indexOf("?"), destination.indexOf("#")]
+    .filter((index) => index >= 0);
+  const endIndex =
+    delimiterIndexes.length > 0 ? Math.min(...delimiterIndexes) : destination.length;
+  return destination.slice(0, endIndex);
+}
+
+function getLocalLinkAnchor(destination) {
+  const hashIndex = destination.indexOf("#");
+  return hashIndex === -1 ? "" : destination.slice(hashIndex);
+}
+
+function isPathInside(candidatePath, rootPath) {
+  const relativePath = path.relative(rootPath, candidatePath);
+  return (
+    relativePath === "" ||
+    (!relativePath.startsWith(`..${path.sep}`) &&
+      relativePath !== ".." &&
+      !path.isAbsolute(relativePath))
+  );
+}
+
+function getPublishedMarkdownHref(
+  destination,
+  sourcePath,
+  sourceRoot,
+  publishedArticlePaths,
+) {
+  let localPath = getLocalLinkPath(destination);
+  try {
+    localPath = decodeURIComponent(localPath);
+  } catch {
+    return "";
+  }
+
+  const resolvedPath = localPath.startsWith("notes/")
+    ? path.resolve(sourceRoot, localPath)
+    : path.resolve(path.dirname(sourcePath), localPath);
+
+  if (!isPathInside(resolvedPath, sourceRoot)) {
+    return "";
+  }
+
+  const candidates = [resolvedPath];
+  if (!path.extname(resolvedPath)) {
+    candidates.push(`${resolvedPath}.md`);
+  }
+
+  for (const candidatePath of candidates) {
+    const slug = publishedArticlePaths.get(path.resolve(candidatePath));
+    if (slug) {
+      return `/blog/${slug}${getLocalLinkAnchor(destination)}`;
+    }
+  }
+
+  return "";
+}
+
+function convertMarkdownDocumentLinks(
+  content,
+  { sourcePath, sourceRoot, publishedArticlePaths },
+) {
+  return content.replace(
+    /(?<!!)\[([^\]\n]+)\]\((<[^>\n]+>|[^)\n]+)\)/g,
+    (match, rawLabel, rawTarget) => {
+      const label = rawLabel.trim();
+      const destination = getMarkdownLinkDestination(rawTarget);
+
+      if (
+        !destination ||
+        destination.startsWith("#") ||
+        destination.startsWith("/") ||
+        destination.startsWith("//") ||
+        /^(?:https?|mailto|tel):/i.test(destination)
+      ) {
+        return match;
+      }
+
+      if (/^[a-z][a-z\d+.-]*:/i.test(destination)) {
+        return formatInternalReference(label);
+      }
+
+      const href = getPublishedMarkdownHref(
+        destination,
+        sourcePath,
+        sourceRoot,
+        publishedArticlePaths,
+      );
+
+      if (href) {
+        return `[${escapeMarkdownLinkText(label)}](${href})`;
+      }
+
+      return formatInternalReference(label);
+    },
+  );
+}
+
+function convertPublicationLinks(
+  content,
+  { sourcePath, sourceRoot, validBlogSlugs, publishedArticlePaths },
+) {
+  const wikiLinksConverted = convertObsidianWikiLinks(
+    content,
+    validBlogSlugs,
+  );
+
+  return convertMarkdownDocumentLinks(wikiLinksConverted, {
+    sourcePath,
+    sourceRoot,
+    publishedArticlePaths,
+  });
 }
 
 function toPosixPath(value) {
@@ -542,6 +695,7 @@ function releaseMakeLock() {
 async function transformContent(
   file,
   validBlogSlugs,
+  publishedArticlePaths,
   assetRefs,
   diagramRegistry,
 ) {
@@ -562,18 +716,11 @@ async function transformContent(
 
   content = convertObsidianAssetEmbeds(content, assetRefs);
   content = convertMarkdownAssetLinks(content, assetRefs);
-
-  // 处理 Obsidian wiki 链接 [[2026/42. 标题|别名]] → [别名](/blog/42)
-  content = content.replace(/\[\[([^\]]+)\]\]/g, (match, rawLink) => {
-    const [rawTarget, alias] = rawLink.split("|");
-    const text = getWikiLinkText(rawTarget, alias);
-    const href = getWikiBlogHref(rawTarget, validBlogSlugs);
-
-    if (!href) {
-      return text;
-    }
-
-    return `[${escapeMarkdownLinkText(text)}](${href})`;
+  content = convertPublicationLinks(content, {
+    sourcePath: file.sourcePath,
+    sourceRoot: obsidianRoot,
+    validBlogSlugs,
+    publishedArticlePaths,
   });
 
   // 去掉首行元信息（详情页 Hero 已经展示了标题和 tags）
@@ -671,6 +818,9 @@ async function main() {
   }
 
   const validBlogSlugs = new Set(articleFiles.map((file) => file.slug));
+  const publishedArticlePaths = new Map(
+    articleFiles.map((file) => [path.resolve(file.sourcePath), file.slug]),
+  );
 
   for (const fileInfo of articleFiles) {
     const { slug, title, date, year, tags } = fileInfo;
@@ -679,6 +829,7 @@ async function main() {
     const outputContent = await transformContent(
       fileInfo,
       validBlogSlugs,
+      publishedArticlePaths,
       assetRefs,
       diagramRegistry,
     );
@@ -760,7 +911,13 @@ async function main() {
   }
 }
 
-main().catch((error) => {
-  console.error(error);
-  process.exit(1);
-});
+if (require.main === module) {
+  main().catch((error) => {
+    console.error(error);
+    process.exit(1);
+  });
+}
+
+module.exports = {
+  convertPublicationLinks,
+};
