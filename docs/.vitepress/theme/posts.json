@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-29T06:28:05.563Z",
+  "generatedAt": "2026-07-29T08:01:24.757Z",
   "posts": [
     {
       "slug": "338",
@@ -21,6 +21,28 @@
       "tags": [
         "播客",
         "投资"
+      ]
+    },
+    {
+      "slug": "336",
+      "href": "/blog/336",
+      "title": "336. ProductX：豆包和微信语音输入法怎样把我说的话变成可编辑文字？",
+      "date": "2026.07.28",
+      "year": "2026",
+      "tags": [
+        "fde",
+        "productx"
+      ]
+    },
+    {
+      "slug": "335",
+      "href": "/blog/335",
+      "title": "335. ProductX：为什么我能像打电话一样和豆包实时聊天？",
+      "date": "2026.07.28",
+      "year": "2026",
+      "tags": [
+        "fde",
+        "productx"
       ]
     },
     {
@@ -1539,6 +1561,11 @@
       "id": "fde",
       "label": "fde",
       "href": "/blog/fde"
+    },
+    {
+      "id": "productx",
+      "label": "productx",
+      "href": "/blog/productx"
     },
     {
       "id": "agentx",
