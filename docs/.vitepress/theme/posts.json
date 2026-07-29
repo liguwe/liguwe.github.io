@@ -1,6 +1,28 @@
 {
-  "generatedAt": "2026-07-29T08:01:24.757Z",
+  "generatedAt": "2026-07-29T10:02:18.185Z",
   "posts": [
+    {
+      "slug": "340",
+      "href": "/blog/340",
+      "title": "340. AgentX：LangChain 入门：它解决什么问题，怎样搭出第一个 Agent？",
+      "date": "2026.07.29",
+      "year": "2026",
+      "tags": [
+        "fde",
+        "agentx"
+      ]
+    },
+    {
+      "slug": "339",
+      "href": "/blog/339",
+      "title": "339. AgentX：DeepSeek 的 logprobs 到底有什么用？",
+      "date": "2026.07.29",
+      "year": "2026",
+      "tags": [
+        "fde",
+        "agentx"
+      ]
+    },
     {
       "slug": "338",
       "href": "/blog/338",
@@ -1548,6 +1570,16 @@
   ],
   "tags": [
     {
+      "id": "fde",
+      "label": "fde",
+      "href": "/blog/fde"
+    },
+    {
+      "id": "agentx",
+      "label": "agentx",
+      "href": "/blog/agentx"
+    },
+    {
       "id": "播客",
       "label": "播客",
       "href": "/blog/播客"
@@ -1558,19 +1590,9 @@
       "href": "/blog/投资"
     },
     {
-      "id": "fde",
-      "label": "fde",
-      "href": "/blog/fde"
-    },
-    {
       "id": "productx",
       "label": "productx",
       "href": "/blog/productx"
-    },
-    {
-      "id": "agentx",
-      "label": "agentx",
-      "href": "/blog/agentx"
     },
     {
       "id": "大模型基础",
