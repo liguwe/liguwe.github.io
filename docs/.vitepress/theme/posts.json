@@ -1,6 +1,17 @@
 {
-  "generatedAt": "2026-07-30T11:53:51.994Z",
+  "generatedAt": "2026-07-30T13:48:41.738Z",
   "posts": [
+    {
+      "slug": "343",
+      "href": "/blog/343",
+      "title": "343. AgentX：语言人工智能能完成哪些工作？",
+      "date": "2026.07.30",
+      "year": "2026",
+      "tags": [
+        "fde",
+        "agentx"
+      ]
+    },
     {
       "slug": "341",
       "href": "/blog/341",
