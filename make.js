@@ -568,13 +568,20 @@ function renderPublishedAsset(asset, options = {}) {
   return `[${label}](${asset.publicUrl})`;
 }
 
-function convertObsidianAssetEmbeds(content, assetRefs) {
+function convertObsidianEmbeds(content, assetRefs, validBlogSlugs) {
   return content.replace(/!\[\[([^\]]+)\]\]/g, (match, rawLink) => {
     const embed = parseObsidianEmbed(rawLink);
     const asset = registerPublishedAsset(embed.target, assetRefs);
 
     if (!asset) {
-      return "";
+      const text = getWikiLinkText(embed.target, embed.alias);
+      const href = getWikiBlogHref(embed.target, validBlogSlugs);
+
+      if (!href) {
+        return formatInternalReference(text);
+      }
+
+      return `[${escapeMarkdownLinkText(text)}](${href})`;
     }
 
     return renderPublishedAsset(asset, {
@@ -714,7 +721,7 @@ async function transformContent(
     sourcePath: file.sourcePath,
   });
 
-  content = convertObsidianAssetEmbeds(content, assetRefs);
+  content = convertObsidianEmbeds(content, assetRefs, validBlogSlugs);
   content = convertMarkdownAssetLinks(content, assetRefs);
   content = convertPublicationLinks(content, {
     sourcePath: file.sourcePath,
@@ -919,5 +926,6 @@ if (require.main === module) {
 }
 
 module.exports = {
+  convertObsidianEmbeds,
   convertPublicationLinks,
 };

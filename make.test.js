@@ -2,7 +2,10 @@ const assert = require("node:assert/strict");
 const path = require("node:path");
 const test = require("node:test");
 
-const { convertPublicationLinks } = require("./make.js");
+const {
+  convertObsidianEmbeds,
+  convertPublicationLinks,
+} = require("./make.js");
 
 const sourceRoot = "/workspace/os";
 const sourcePath = path.resolve(
@@ -65,4 +68,24 @@ test("公开网页链接保持不变", () => {
     "参考[Attention Is All You Need](https://arxiv.org/abs/1706.03762)。";
 
   assert.equal(convertPublicationLinks(content, options), content);
+});
+
+test("已公开文章的 Obsidian 内容嵌入降级为站内链接", () => {
+  const content =
+    "复习：![[notes/2026/327. AgentX：LLM 为什么能生成 Token#Token 是什么|Token]]";
+
+  assert.equal(
+    convertObsidianEmbeds(content, new Map(), options.validBlogSlugs),
+    "复习：[Token](/blog/327)",
+  );
+});
+
+test("私有或未发布文章的 Obsidian 内容嵌入降级为内部标题", () => {
+  const content =
+    "复习：![[notes/2026/329. AgentX：私有草稿#结论|私有结论]]";
+
+  assert.equal(
+    convertObsidianEmbeds(content, new Map(), options.validBlogSlugs),
+    "复习：【内部：私有结论】",
+  );
 });
