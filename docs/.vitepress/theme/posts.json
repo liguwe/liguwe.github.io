@@ -1,6 +1,17 @@
 {
-  "generatedAt": "2026-07-30T13:48:41.738Z",
+  "generatedAt": "2026-07-31T01:56:18.884Z",
   "posts": [
+    {
+      "slug": "344",
+      "href": "/blog/344",
+      "title": "344. AgentX：词频统计（词袋）和 word2vec：文字怎样变成可比较的数字？",
+      "date": "2026.07.30",
+      "year": "2026",
+      "tags": [
+        "fde",
+        "agentx"
+      ]
+    },
     {
       "slug": "343",
       "href": "/blog/343",
