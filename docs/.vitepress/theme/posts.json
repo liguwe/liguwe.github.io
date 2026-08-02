@@ -1,6 +1,18 @@
 {
-  "generatedAt": "2026-07-31T01:56:18.884Z",
+  "generatedAt": "2026-08-02T13:34:05.445Z",
   "posts": [
+    {
+      "slug": "349",
+      "href": "/blog/349",
+      "title": "349. 博客：For FDE or For POC，应该如何选择默认技术栈？",
+      "date": "2026.08.01",
+      "year": "2026",
+      "tags": [
+        "博客",
+        "技术",
+        "fde"
+      ]
+    },
     {
       "slug": "344",
       "href": "/blog/344",
@@ -1603,6 +1615,16 @@
   ],
   "tags": [
     {
+      "id": "博客",
+      "label": "博客",
+      "href": "/blog/博客"
+    },
+    {
+      "id": "技术",
+      "label": "技术",
+      "href": "/blog/技术"
+    },
+    {
       "id": "fde",
       "label": "fde",
       "href": "/blog/fde"
@@ -1688,11 +1710,6 @@
       "href": "/blog/学习"
     },
     {
-      "id": "博客",
-      "label": "博客",
-      "href": "/blog/博客"
-    },
-    {
       "id": "skills",
       "label": "skills",
       "href": "/blog/skills"
@@ -1701,11 +1718,6 @@
       "id": "agent",
       "label": "agent",
       "href": "/blog/agent"
-    },
-    {
-      "id": "技术",
-      "label": "技术",
-      "href": "/blog/技术"
     },
     {
       "id": "harnessx",
