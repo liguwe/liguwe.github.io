@@ -1,6 +1,17 @@
 {
-  "generatedAt": "2026-08-02T15:33:58.497Z",
+  "generatedAt": "2026-08-04T03:43:11.246Z",
   "posts": [
+    {
+      "slug": "354",
+      "href": "/blog/354",
+      "title": "354. Python 篇一：装饰器、async 与类型、函数参数默认值",
+      "date": "2026.08.03",
+      "year": "2026",
+      "tags": [
+        "openapi",
+        "python"
+      ]
+    },
     {
       "slug": "349",
       "href": "/blog/349",
@@ -1614,6 +1625,16 @@
     }
   ],
   "tags": [
+    {
+      "id": "openapi",
+      "label": "openapi",
+      "href": "/blog/openapi"
+    },
+    {
+      "id": "python",
+      "label": "python",
+      "href": "/blog/python"
+    },
     {
       "id": "博客",
       "label": "博客",
