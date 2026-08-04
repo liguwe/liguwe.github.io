@@ -1,6 +1,16 @@
 {
-  "generatedAt": "2026-08-04T03:43:11.246Z",
+  "generatedAt": "2026-08-04T04:13:56.663Z",
   "posts": [
+    {
+      "slug": "355",
+      "href": "/blog/355",
+      "title": "355. Python 篇二：变量、字符串、列表、元组与字典",
+      "date": "2026.08.04",
+      "year": "2026",
+      "tags": [
+        "python"
+      ]
+    },
     {
       "slug": "354",
       "href": "/blog/354",
@@ -1626,14 +1636,14 @@
   ],
   "tags": [
     {
-      "id": "openapi",
-      "label": "openapi",
-      "href": "/blog/openapi"
-    },
-    {
       "id": "python",
       "label": "python",
       "href": "/blog/python"
+    },
+    {
+      "id": "openapi",
+      "label": "openapi",
+      "href": "/blog/openapi"
     },
     {
       "id": "博客",
