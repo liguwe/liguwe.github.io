@@ -1,6 +1,16 @@
 {
-  "generatedAt": "2026-08-04T04:13:56.663Z",
+  "generatedAt": "2026-08-04T13:04:10.103Z",
   "posts": [
+    {
+      "slug": "356",
+      "href": "/blog/356",
+      "title": "356. Python 篇三：函数、参数、返回值与模块",
+      "date": "2026.08.04",
+      "year": "2026",
+      "tags": [
+        "python"
+      ]
+    },
     {
       "slug": "355",
       "href": "/blog/355",
