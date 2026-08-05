@@ -1,6 +1,17 @@
 {
-  "generatedAt": "2026-08-04T13:04:10.103Z",
+  "generatedAt": "2026-08-05T02:13:47.945Z",
   "posts": [
+    {
+      "slug": "357",
+      "href": "/blog/357",
+      "title": "357. Python 篇四：类、对象、继承与数据模型定义",
+      "date": "2026.08.04",
+      "year": "2026",
+      "tags": [
+        "教程",
+        "python"
+      ]
+    },
     {
       "slug": "356",
       "href": "/blog/356",
@@ -1646,6 +1657,11 @@
   ],
   "tags": [
     {
+      "id": "教程",
+      "label": "教程",
+      "href": "/blog/教程"
+    },
+    {
       "id": "python",
       "label": "python",
       "href": "/blog/python"
@@ -1699,11 +1715,6 @@
       "id": "翻译",
       "label": "翻译",
       "href": "/blog/翻译"
-    },
-    {
-      "id": "教程",
-      "label": "教程",
-      "href": "/blog/教程"
     },
     {
       "id": "智能体",
