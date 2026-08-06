@@ -1,6 +1,17 @@
 {
-  "generatedAt": "2026-08-05T02:13:47.945Z",
+  "generatedAt": "2026-08-06T02:06:49.163Z",
   "posts": [
+    {
+      "slug": "358",
+      "href": "/blog/358",
+      "title": "358. Python 篇五：一个 HTTP 请求怎样串起 FastAPI 后端开发全貌？",
+      "date": "2026.08.04",
+      "year": "2026",
+      "tags": [
+        "fde",
+        "python"
+      ]
+    },
     {
       "slug": "357",
       "href": "/blog/357",
@@ -1657,14 +1668,19 @@
   ],
   "tags": [
     {
-      "id": "教程",
-      "label": "教程",
-      "href": "/blog/教程"
+      "id": "fde",
+      "label": "fde",
+      "href": "/blog/fde"
     },
     {
       "id": "python",
       "label": "python",
       "href": "/blog/python"
+    },
+    {
+      "id": "教程",
+      "label": "教程",
+      "href": "/blog/教程"
     },
     {
       "id": "openapi",
@@ -1680,11 +1696,6 @@
       "id": "技术",
       "label": "技术",
       "href": "/blog/技术"
-    },
-    {
-      "id": "fde",
-      "label": "fde",
-      "href": "/blog/fde"
     },
     {
       "id": "agentx",
